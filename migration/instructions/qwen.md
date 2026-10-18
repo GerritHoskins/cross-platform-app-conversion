@@ -24,9 +24,9 @@ Require R00's successful Qwen-to-reviewer handshake before product implementatio
 
 1. Write `migration/handoffs/<ID>.md` and `migration/submissions/<ID>-r<N>.json`.
 2. Record HEAD, pre-existing changes, new/changed files and hashes, commands/results, evidence, failures and unverified checks. Include untracked files.
-3. Submit one `delegate_task` task with a self-contained read-only review goal, package/revision, repository root, handoff/manifest paths, focused context and next eligible package.
+3. Submit one `delegate_task` task. Put everything the reviewer needs in `goal`: "read migration/instructions/reviewer.md first", read-only, package/revision, repository root, branch and HEAD, handoff/manifest/evidence paths, and next eligible package. R00 found that `context` text does not reliably reach the child; set `context` to "See goal."
 4. Use the installed tool schema. Model/provider/reasoning are profile settings, not invented tool arguments.
-5. If dispatched asynchronously, record its handle and END YOUR TURN. Do not poll, sleep-loop, edit the submission, or begin other work. Hermes delivers the result after the turn ends.
+5. If dispatched asynchronously, report its handle in your reply and END YOUR TURN. Do not write any file after the manifest (no dispatch logs), poll, sleep-loop, edit the submission, or begin other work. Hermes delivers the result after the turn ends. The only write allowed after dispatch is saving the verdict verbatim to `migration/reviews/<ID>-r<N>.md`.
 6. Accept only a matching package/revision verdict: APPROVE, CHANGES_REQUIRED or BLOCKED, plus CONTINUE <ID>, REVISE <ID> or STOP.
 7. APPROVE plus an explicit CONTINUE assignment permits that package. CHANGES_REQUIRED permits only the in-scope revision. Resubmit changed work with a new revision. A support opinion alone is not approval.
 8. Missing, failed, stale or ambiguous responses leave review pending. Never switch reviewer models silently.
