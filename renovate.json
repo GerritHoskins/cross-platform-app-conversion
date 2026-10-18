@@ -1,0 +1,57 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "description": "Renovate may only open or update PRs on Mondays, 6-10am ET.",
+  "timezone": "America/New_York",
+  "minimumReleaseAge": "3 days",
+  "schedule": ["* 6-10 * * 1"],
+  "semanticCommits": "enabled",
+  "ignorePaths": ["android/**", "ios/**"],
+  "gitIgnoredAuthors": ["hi@ionicframework.com"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@ionic/**"],
+      "minimumReleaseAge": "0 days",
+      "groupName": "ionic"
+    },
+    {
+      "matchPackageNames": ["vue", "vuex"],
+      "groupName": "vue"
+    },
+    {
+      "matchPackageNames": ["@capacitor/**"],
+      "groupName": "capacitor"
+    },
+    {
+      "matchPackageNames": ["leaflet", "@types/leaflet"],
+      "groupName": "leaflet"
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/**", "terser"],
+      "groupName": "vite"
+    },
+    {
+      "matchPackageNames": [
+        "vitest*",
+        "cypress*",
+        "@vue/test-utils",
+        "jsdom"
+      ],
+      "groupName": "testing"
+    },
+    {
+      "matchPackageNames": [
+        "eslint",
+        "@eslint/**",
+        "eslint-plugin-*",
+        "@vue/eslint-config-typescript",
+        "typescript",
+        "vue-tsc"
+      ],
+      "groupName": "dev-tools"
+    }
+  ]
+}
