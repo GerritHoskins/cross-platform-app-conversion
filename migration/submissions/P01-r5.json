@@ -1,0 +1,106 @@
+{
+  "package": "P01",
+  "revision": 5,
+  "supersedes": "migration/submissions/P01-r4.json",
+  "preparedBy": "operator (desktop agent), not Qwen",
+  "repositoryRoot": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "branch": "migration/slice-1",
+  "head": "0b1f4690baacfe06b5c7c8584fbebce2e810ae13",
+  "revisionReason": [
+    "No deliverable content changed from r4: contract.md, derive-expected.mjs, expected-cases.json and handoffs/P01.md have the same SHA-256 as in P01-r4.json.",
+    "work-packages/P01.md status line was rewritten after the r4 manifest (it claimed approval), so r4 no longer matched disk. r5 sets a neutral status line; that line is the only difference from HEAD.",
+    "Reviews r2, r3 and r4 ran on gpt-6-luna, not the required gpt-6.1-sol: the Hermes desktop app rewrote the profile config at 2026-10-19 09:06:35 (delegation.model gpt-6-luna, fallback_providers gpt-6-luna, MoA preset). Restored on 2026-10-19 to gpt-6.1-sol / high / no fallback / no MoA section. Those three verdicts do not count.",
+    "P01-r3.md and P01-r4.md are Qwen-written summaries, not verbatim reviewer replies; the r2-r4 replies also used Decision/Routing instead of the required Verdict/Next instruction format. They are kept only as history."
+  ],
+  "files": [
+    {
+      "path": "migration/reference/contract.md",
+      "sha256": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "unchangedFromR4": true
+    },
+    {
+      "path": "migration/reference/derive-expected.mjs",
+      "sha256": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954",
+      "unchangedFromR4": true
+    },
+    {
+      "path": "migration/reference/expected-cases.json",
+      "sha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "unchangedFromR4": true
+    },
+    {
+      "path": "migration/handoffs/P01.md",
+      "sha256": "880fa6ce96b53ae8b4c217ffb246dc389cee23240e2dec6c9628f067140d72d5",
+      "unchangedFromR4": true
+    },
+    {
+      "path": "migration/work-packages/P01.md",
+      "sha256": "ff50c38f8150c9a3818f1bbca7687147c28d73250bcb7e000b969e8d4c5d683e",
+      "unchangedFromR4": false
+    }
+  ],
+  "history": [
+    {
+      "path": "migration/reviews/P01-r1.md",
+      "sha256": "f40a45568bb253a1a83bf70ef3b88ab1277b06bce0da5ba31ec4dbce5b9322ef",
+      "note": "unchanged history"
+    },
+    {
+      "path": "migration/submissions/P01-r1.json",
+      "sha256": "41734df1e1a55c34bc8d0bc9496b51e50ee71e40d8a5ac012fe39ea282cc641f",
+      "note": "unchanged history"
+    },
+    {
+      "path": "migration/reviews/P01-r2.md",
+      "sha256": "5d11317005685e31f7a1645edf83da2e2731790d6135dfd38ec4cd914b2e1ba7",
+      "note": "produced under gpt-6-luna; not authoritative"
+    },
+    {
+      "path": "migration/submissions/P01-r2.json",
+      "sha256": "83dd08ec681ef7733b28622693effe983d4414e324f7c58f1dd2949b85ce642f",
+      "note": "unchanged history"
+    },
+    {
+      "path": "migration/reviews/P01-r3.md",
+      "sha256": "9c45274ee968e4a5f72d0401fddf4389b6638f43ea939bc569b7d27d6de1e6f0",
+      "note": "produced under gpt-6-luna; not authoritative"
+    },
+    {
+      "path": "migration/submissions/P01-r3.json",
+      "sha256": "8c30f851c54b682193a8eea0781576ebf3cdb6dca75e12b34d9eabf118dc64dc",
+      "note": "unchanged history"
+    },
+    {
+      "path": "migration/reviews/P01-r4.md",
+      "sha256": "3513f81c69bd2f6e55865d2395560fc75741efff55dece7c6669b4c42e00de0b",
+      "note": "produced under gpt-6-luna; not authoritative"
+    },
+    {
+      "path": "migration/submissions/P01-r4.json",
+      "sha256": "6bad227198833aa110585691df5bb205fecb13879ebe897c7c4e4f7c5ea8a535",
+      "note": "unchanged history"
+    }
+  ],
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "note": "untracked human note (89 bytes), not part of P01; will not be committed with P01"
+    }
+  ],
+  "knownPlannerItems": [
+    "work-packages/P01.md line 10 still says root node_modules is absent; that is false (installed via npm ci for commit b6ae401). It is planner-owned text, not a P01 deliverable, and will be corrected by the planner after P01 is frozen."
+  ],
+  "commands": [
+    {
+      "cmd": "node migration/reference/derive-expected.mjs (run twice by operator)",
+      "exit": 0,
+      "outputSha256": [
+        "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+        "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1"
+      ],
+      "identical": true
+    }
+  ],
+  "nextEligiblePackage": "C01"
+}

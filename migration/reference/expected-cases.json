@@ -1,0 +1,518 @@
+{
+  "sourceDataSha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+  "normalizedSessionCount": 20,
+  "cases": [
+    {
+      "id": "default-all",
+      "description": "First-load state (sessions.ts:123-128): every track appearing on a session is selected, search empty, \"all\" mode (SessionList.vue:293-299). All 20 sessions render; group headings come from the group time and groups appear in first-occurrence order after the timeStart sort; within the 10:00 am group sessions 6 and 7 share 10:15 am and keep input order, and in the 11:00 am group sessions 10 and 11 share 11:30 am and keep input order (stability, SessionList.vue:270-272).",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [
+          1,
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "groups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "no-tracks",
+      "description": "Track filter emptied: allFiltered returns no sessions when trackFilters is empty (sessions.ts:194-195), so the list shows the \"No Sessions Found\" state (SessionList.vue:102-104).",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [],
+        "groups": []
+      }
+    },
+    {
+      "id": "single-track",
+      "description": "Only the \"Ionic\" track selected: every session track must be included in the selection (sessions.ts:198), so only the single-track \"Ionic\" sessions 2, 4, 5 remain; session 3 (\"Ionic Tooling\", a \"Tooling\" session) is excluded despite matching the text. Fixture note: every session in this data.json is single-track [derived], so the multi-track exclusion branch of the rule is encoded but not separately exercised by any fixture.",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Ionic"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [
+          4,
+          2,
+          5
+        ],
+        "groups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "search-case-insensitive",
+      "description": "Mixed-case query \"IOnic\" with all tracks selected: both query and name are lowercased (sessions.ts:202), so 15 sessions whose names contain \"ionic\" render, including \"The Evolution of Ionicons\" (session 7) via substring match. Sessions without the substring (1, 6, 10, 12, 20) are excluded.",
+      "input": {
+        "searchText": "IOnic",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [
+          4,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "groups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              11
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "search-no-match",
+      "description": "Query matching no session name: empty pool, \"No Sessions Found\" state (SessionList.vue:102-104).",
+      "input": {
+        "searchText": "zzz-no-such-session",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [],
+        "groups": []
+      }
+    },
+    {
+      "id": "search-plus-track",
+      "description": "Query \"Ionic\" intersected with the track subset [Ionic, Design]: a session must satisfy both the name match and the every-track-inclusion rule (sessions.ts:193-205). Remaining: the name-matching sessions whose track is Ionic (2, 4, 5) or Design (7, 18). Excluded although their names match the query: 3 (Tooling), 8 and 15 and 16 (Services), 9 (Workshop), 11 (Navigation), 13 and 14 (Communication), 17 (Documentation), 19 (Vue).",
+      "input": {
+        "searchText": "Ionic",
+        "selectedTracks": [
+          "Ionic",
+          "Design"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "expected": {
+        "sessionIds": [
+          4,
+          2,
+          5,
+          7,
+          18
+        ],
+        "groups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              7
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              18
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorites-empty",
+      "description": "\"Favorites\" mode with an empty favorite list: favoritesFiltered excludes everything (sessions.ts:210), so no sessions render.",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [],
+        "mode": "favorites"
+      },
+      "expected": {
+        "sessionIds": [],
+        "groups": []
+      }
+    },
+    {
+      "id": "favorites-some",
+      "description": "Favorite list [12, 3] with only [Food] selected: favorite 12 (Lunch, Food) renders; favorite 3 (Ionic Tooling, Tooling) is still excluded by the track filter although it is favorited (sessions.ts:208-224).",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food"
+        ],
+        "favoriteIds": [
+          12,
+          3
+        ],
+        "mode": "favorites"
+      },
+      "expected": {
+        "sessionIds": [
+          12
+        ],
+        "groups": [
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorites-order",
+      "description": "Favorite list [20, 1] built in reverse chronological order (20 starts 3:30 pm, 1 starts 8:00 am): groupedByStartTime re-sorts by timeStart, so the 8:00 am section renders before the 3:00 pm section (SessionList.vue:269-291); input order of the favorite list does not affect display order.",
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [
+          20,
+          1
+        ],
+        "mode": "favorites"
+      },
+      "expected": {
+        "sessionIds": [
+          1,
+          20
+        ],
+        "groups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              20
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "add-duplicate",
+      "description": "favoriteSessions is [1, 12] and the list \"Favorite\" action fires for session 12: the action branch detects the existing favorite instead of adding (SessionList.vue:306-308) and the store mutation itself is a no-op without duplicates (sessions.ts:72-76). expected.favoriteIds equals the pre-state.",
+      "action": {
+        "op": "addFavorite",
+        "sessionId": 12
+      },
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [
+          1,
+          12
+        ],
+        "mode": "favorites"
+      },
+      "expected": {
+        "favoriteIds": [
+          1,
+          12
+        ],
+        "sessionIds": [
+          1,
+          12
+        ],
+        "groups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "remove-absent",
+      "description": "favoriteSessions is [1, 12] and removeFavorite is dispatched for session 99, which is not in the list: the filter is a no-op (sessions.ts:77-79). expected.favoriteIds equals the pre-state.",
+      "action": {
+        "op": "removeFavorite",
+        "sessionId": 99
+      },
+      "input": {
+        "searchText": "",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [
+          1,
+          12
+        ],
+        "mode": "favorites"
+      },
+      "expected": {
+        "favoriteIds": [
+          1,
+          12
+        ],
+        "sessionIds": [
+          1,
+          12
+        ],
+        "groups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
