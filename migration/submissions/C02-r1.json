@@ -1,0 +1,133 @@
+{
+  "package": "C02",
+  "revision": 1,
+  "supersedes": null,
+  "preparedBy": "Qwen (local, Hermes profile translation-migration), Windows desktop",
+  "repositoryRoot": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "branch": "migration/slice-1",
+  "head": "c4ca6fc91d24090d3d166e0485723276e44cbcc5 (HEAD at C02 start; C02 changes are uncommitted, pending reviewer verdict, per C02 step 8)",
+  "prerequisite": {
+    "package": "C01",
+    "review": "migration/reviews/C01-r1.md",
+    "verdict": "APPROVE",
+    "nextInstruction": "CONTINUE C02"
+  },
+  "reviewerModelPreCheck": {
+    "command": "hermes -p translation-migration config get delegation.model",
+    "value": "gpt-6.1-sol",
+    "note": "run immediately before dispatch (step 7); correct reviewer model"
+  },
+  "environment": {
+    "node": "v26.3.0",
+    "npm": "11.1.0",
+    "os": "Windows (git-bash terminal)"
+  },
+  "fixedDecisionException": {
+    "applied": "as-is",
+    "failure": "none (every prescribed command passed on the first attempt)",
+    "replacementLine": null,
+    "secondOpinionSavedTo": null,
+    "waiver": false
+  },
+  "files": [
+    {
+      "path": "migration/core/src/types.ts",
+      "sha256": "fe3475b890d8c5c6c7ebe94373773288217ba4e5d023a70c666f0f0f33d49a17",
+      "note": "new: fixed interface types (Conference, Session, Track, Speaker)"
+    },
+    {
+      "path": "migration/core/src/time.ts",
+      "sha256": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "note": "new: parseTimeToMinutes and compareTimes, logic copied from the reference implementation in src/utils/time.ts"
+    },
+    {
+      "path": "migration/core/src/normalize.ts",
+      "sha256": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+      "note": "new: normalizeConference and ConferenceDataError (class with readonly path; message starts with the path)"
+    },
+    {
+      "path": "migration/core/src/index.ts",
+      "sha256": "7b1b6ad8cfefbac1a6a25a133b84d61a4f0ac48fec9c6ac394500aa38a573aaf",
+      "note": "modified: C01 constants kept; added exactly the C02 fixed exports, no extra exports"
+    },
+    {
+      "path": "migration/core/test/time.test.ts",
+      "sha256": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+      "note": "new: 6 tests — am/pm, noon/midnight, malformed → Infinity, whitespace case-insensitivity, sort order, malformed-last/equal"
+    },
+    {
+      "path": "migration/core/test/normalize.test.ts",
+      "sha256": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+      "note": "new: 14 tests — fixture shape, session 1 contract values, per-session finiteness/ordering/resolution, unresolved names omitted (built in-test), all 8 prescribed error cases with path-prefixed messages, input non-mutation, no shared arrays across runs; reads data.json via fs.readFileSync(path.resolve('../../public/data/data.json')) and verifies SHA-256 against ../reference/expected-cases.json first"
+    },
+    {
+      "path": "migration/work-packages/C02.md",
+      "sha256": "a25a33f6c0cc9eef238a3f32e2e13bff26bf7a33ff7fd8ad896d70047aa0c868",
+      "note": "status line only"
+    },
+    {
+      "path": "migration/handoffs/C02.md",
+      "sha256": "e4c7d2239c07bd54a935b28fde1db014304dd827e2912f686f163e8dbdccff6f",
+      "note": "handoff"
+    }
+  ],
+  "byteIdenticalC01Files": [
+    {
+      "path": "migration/core/package.json",
+      "sha256": "1ec048dc37dbf8a50e4d45b328214467515d7ffa550684382e7247a361bf807a",
+      "note": "matches C01 manifest hash and C01 handoff; git diff --exit-code clean"
+    },
+    {
+      "path": "migration/core/package-lock.json",
+      "sha256": "05fa0a14619ad5abd7349805a48e4157d1b20b1b691f3c93cfbe8e87da50bf6a",
+      "note": "matches C01 manifest hash; git diff --exit-code clean"
+    }
+  ],
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "note": "untracked human note, predates C01, hash matches P01/C01 records; not read, not modified, not part of C02"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "npm --prefix migration/core run typecheck (repo root)",
+      "exit": 0,
+      "last": "build + tsc -p tsconfig.test.json --noEmit, tsc silent"
+    },
+    {
+      "cmd": "npm --prefix migration/core test (repo root, run 1)",
+      "exit": 0,
+      "last": "22 named tests all pass; ℹ tests 22 / pass 22 / fail 0 / duration_ms 89.8628"
+    },
+    {
+      "cmd": "npm --prefix migration/core test (repo root, run 2)",
+      "exit": 0,
+      "last": "identical result count: ℹ tests 22 / pass 22 / fail 0 / duration_ms 75.9185"
+    },
+    {
+      "cmd": "git diff --exit-code -- migration/core/package.json migration/core/package-lock.json (repo root)",
+      "exit": 0,
+      "last": "byte-identical"
+    },
+    {
+      "cmd": "git status --porcelain -uall (repo root)",
+      "exit": 0,
+      "last": "M migration/core/src/index.ts; ?? IDEA.md + 5 new C02 files; node_modules/dist/build-test gitignored; handoff and manifest added afterwards per step 7"
+    },
+    {
+      "cmd": "hermes -p translation-migration config get delegation.model (reviewer-model pre-check, immediately before dispatch)",
+      "exit": 0,
+      "last": "gpt-6.1-sol"
+    }
+  ],
+  "unverified": [
+    "None within C02 scope (no native or device behavior; target-app consumption is C03+ work)"
+  ],
+  "reviewDispatch": {
+    "nextEligiblePackage": "C03",
+    "reviewerInputs": "goal contains: reviewer.md first-read instruction, package path migration/work-packages/C02.md, full file list, fixed interface, fixed decision, acceptance evidence, R00 prerequisite, expected start state; context='See goal.'",
+    "status": "submitted"
+  }
+}
