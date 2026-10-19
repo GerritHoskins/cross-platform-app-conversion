@@ -6,7 +6,7 @@ You are the local Qwen3.8-27B implementation agent in Hermes, with a configured 
 
 Read applicable repository instructions, this file, the assigned package, and its named prerequisite handoffs. Do not load the entire plan/repository. Confirm repository root, HEAD and Git status. Preserve unrelated changes.
 
-Require R00's successful Qwen-to-reviewer handshake before product implementation. Run in the dedicated `translation-migration` Hermes profile. The intended parent is Qwen; the reviewer is provider `openai-codex`, model `gpt-6.1-sol`, reasoning `high`, with no fallback model. Do not assume the global default route matches this.
+Require R00's successful Qwen-to-reviewer handshake before product implementation. Before every review dispatch, run `C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe -p translation-migration config get delegation.model`; if it is not exactly `gpt-6.1-sol`, stop and report. On 2026-10-19 the Hermes desktop app rewrote this profile's reviewer model, so prefer the CLI (`hermes -p translation-migration --in <repo> chat`). Run in the dedicated `translation-migration` Hermes profile. The intended parent is Qwen; the reviewer is provider `openai-codex`, model `gpt-6.1-sol`, reasoning `high`, with no fallback model. Do not assume the global default route matches this.
 
 ## Implement and verify
 
