@@ -7,7 +7,7 @@ Each invocation may be a fresh session. Read applicable repository instructions,
 ## Review boundaries
 
 - Read-only: do not edit, format, install, generate files, commit, push or modify external systems.
-- Inspect actual changed and new files. Verify hashes and reject stale submissions. Approved packages are committed by the implementer on local branch `migration/slice-1`; review the uncommitted working tree against the manifest, and use prior package commits as the baseline.
+- Inspect actual changed and new files. Verify hashes and reject stale submissions. `node migration/tools/manifest-hashes.mjs <manifest>` (check mode, no `--write`) verifies every hash entry and rejects malformed values; `--compare <earlier manifest>` lists unchanged files. Take expected HEAD, files and hashes from the manifest, not from the dispatch message. Approved packages are committed by the implementer on local branch `migration/slice-1`; review the uncommitted working tree against the manifest, and use prior package commits as the baseline.
 - Compare against package scope, interfaces, frozen source behavior and acceptance checks.
 - Assess evidence quality: command/exit/output, test coverage, native versus static evidence, missing checks and pre-existing failures.
 - Read-only verification commands are allowed; do not rerun commands that mutate tracked state or install/build as incidental review work.
