@@ -28,3 +28,14 @@ export interface Conference {
   tracks: Track[];
   speakers: Speaker[];
 }
+
+export type ScheduleMode = 'all' | 'favorites';
+
+export interface Selection {
+  searchText: string;
+  selectedTracks: readonly string[];
+  favoriteIds: readonly number[];
+  mode: ScheduleMode;
+}
+
+export interface SessionGroup { groupTime: string; sessions: Session[] }
