@@ -1,0 +1,761 @@
+{
+  "package": "RN01",
+  "revision": 2,
+  "status": "READY FOR REVIEW",
+  "branch": "migration/slice-1",
+  "head": "7461a5ac88e0090c311610a113976e9db81ca51e",
+  "headTree": "bf97b5ce4f7dbcf0706a13090f8ed0511702dfe6",
+  "headSource": "Programmatically read from git rev-parse HEAD and HEAD^{tree} during coordinator preflight.",
+  "date": "2026-10-21",
+  "rn02": "NOT STARTED and UNASSIGNED. Stop after the RN01-r2 verdict, including an APPROVE verdict.",
+  "commits": "No RN01 commit, push or publication. Tracked baselines and index unchanged; untracked RN01 source, evidence and packet documents are the submitted work.",
+  "priorRevision": {
+    "package": "RN01",
+    "revision": "r1",
+    "status": "BLOCKED (G1 typecheck RED; G2 native acceptance unverified)",
+    "manifest": "migration/submissions/RN01-r1.json — preserved unchanged as history",
+    "note": "r1 recorded C02-r1 as the APPROVE baseline; the corrected approved baseline is C02-r3 (see priorApprovedBaseline). The r1 JSON was not rewritten — the correction is recorded in this manifest and in the r2 handoff."
+  },
+  "priorApprovedBaseline": {
+    "C02": "C02-r3 APPROVE — migration/reviews/C02-r3.md",
+    "C03": "C03-r2 APPROVE — migration/reviews/C03-r2.md (CONTINUE RN01), committed as 7461a5a on migration/slice-1"
+  },
+  "protectedBaseline": {
+    "check": "git diff --exit-code -- package.json package-lock.json src public android ios migration/core migration/reference (repo root) -> exit 0 (verified at packet freeze, 2026-10-21): no changes to tracked baselines",
+    "ideaMd": {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "gitObjectId": "2575019d3f8f51794e06769d6878188d274c6b28",
+      "note": "Hash-only baseline, compared with RN01-r1. Never read into context, edited, staged or committed. Not a deliverable."
+    }
+  },
+  "session": "Qwen made source and generated-build corrections in bounded translation-migration phases. The scaffold/default-profile checkpoint predated dedicated r1 verification; session 20261020_210755_f95112 verified carry-over. Coordinator executed the Qwen-authored final validation script, repeated native acceptance, inspected captures, stopped owned Metro and corrected packet metadata during preflight.",
+  "environment": {
+    "node": "v24.19.0; enforced by final-validation.sh and printed before the final native run.",
+    "nodeExecutable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "npmCli": "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "java": "Pre-existing JDK 21.0.7.6 at C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot",
+    "sdkRoot": "C:/Users/Gerrit/AppData/Local/Android/Sdk",
+    "sdkPreExisting": "API36 Google Play x86_64 image, emulator, platform-tools and standard SDK license reused; no image reinstall.",
+    "sdkInstalledThisWork": [
+      "command-line tools 22.0, archive build 15859902",
+      "platform android-37.0",
+      "build-tools 37.0.0",
+      "NDK 27.1.12297006",
+      "CMake 3.22.1"
+    ],
+    "avd": "Dedicated Pixel6 RN01_API36; serial emulator-5554; existing image reused.",
+    "boundaries": "No OS feature/hypervisor/driver or dependency-pin changes. Source corrections are the two listed RN01 product files. Native library sources were not patched."
+  },
+  "environmentWorkaround": {
+    "description": "generated android/build.gradle (git-ignored, non-deliverable): maps CMake build staging dirs for react-native-screens, react-native-worklets, react-native-reanimated, expo-modules-core, react-native-gesture-handler and app to short directories under C:/Users/Gerrit/rn01-cxx/{screens,worklets,reanimated,expo-core,gesture-handler,app}; appends -DCMAKE_OBJECT_PATH_MAX=200 for reanimated/expo-core/gesture-handler and -DCMAKE_OBJECT_PATH_MAX=240 for app",
+    "reason": "Windows deep-path Ninja failures; actual diagnostic evidence includes android-run.log, reanimated-short-build.log, object-path-200-build.log, app-object-240-build.log and expo-core-short-build.log.",
+    "evidenceCopy": "migration/evidence/RN01-r2/native-build-workaround.gradle (byte-identical copy; verified by hash at freeze)",
+    "reproduction": "After Expo prebuild, insert the captured subprojects hook before the React root-project plugin in ignored target android/build.gradle, with dedicated short local staging paths. Then rerun the target Android command under Node24/JDK21/SDK."
+  },
+  "runResults": {
+    "finalSoftwareBattery": {
+      "script": "migration/evidence/RN01-r2/final-validation.sh; Qwen-authored, executed sequentially by coordinator after all previous processes ended.",
+      "evidence": "migration/evidence/RN01-r2/final-exits.txt: last complete Node v24.19.0 block.",
+      "history": "Earlier interrupted install attempts and the Node v26.3.0 battery are historical; the latter reported the stale Explore-route type error. Current evidence is the final complete block and final acceptance logs.",
+      "steps": [
+        {
+          "command": "npm ci",
+          "log": "migration/evidence/RN01-r2/final-npm-ci.log",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run typecheck",
+          "log": "migration/evidence/RN01-r2/final-typecheck.log",
+          "exitCode": 0
+        },
+        {
+          "result": "1 suite / 1 test, no snapshots",
+          "command": "npm test",
+          "run": 1,
+          "log": "migration/evidence/RN01-r2/final-test-1.log",
+          "exitCode": 0
+        },
+        {
+          "result": "1 suite / 1 test, no snapshots",
+          "command": "npm test",
+          "run": 2,
+          "log": "migration/evidence/RN01-r2/final-test-2.log",
+          "exitCode": 0
+        },
+        {
+          "result": "Dependencies are up to date",
+          "command": "npm exec -- expo install --check",
+          "log": "migration/evidence/RN01-r2/final-expo-install-check.log",
+          "exitCode": 0
+        },
+        {
+          "result": "20/20 checks passed",
+          "command": "npm exec --yes -- expo-doctor --verbose",
+          "log": "migration/evidence/RN01-r2/final-expo-doctor.log",
+          "exitCode": 0
+        },
+        {
+          "result": "Android export produced",
+          "command": "npm run bundle:android",
+          "log": "migration/evidence/RN01-r2/final-bundle-android.log",
+          "exitCode": 0
+        }
+      ],
+      "lockfile": {
+        "beforeLog": "migration/evidence/RN01-r2/final-lockfile-hash-before.txt",
+        "currentDigest": "199be5a270084e64d8eebc52783fd4dd5d39f11036518dff71f0b445523bbf64",
+        "unchanged": true,
+        "afterLog": "migration/evidence/RN01-r2/final-lockfile-hash-after.txt"
+      }
+    },
+    "nativeAcceptance": {
+      "result": "BUILD SUCCESSFUL in 1m 35s; app-debug.apk installed; development client opened on RN01_API36; Android Bundled; dev.translationtest.rn/.MainActivity resumed. Owned Metro intentionally stopped after capture; development-server termination is not a build failure.",
+      "ui": {
+        "xml": "migration/evidence/RN01-r2/final-ui.xml",
+        "redScreen": "not visible in inspected captures",
+        "heading": "Conference",
+        "inspection": "migration/evidence/RN01-r2/coordinator-final-visual-inspection.txt",
+        "image": "migration/evidence/RN01-r2/final-ui.png",
+        "body": "Welcome to the conference app."
+      },
+      "command": "npm run android under Node24/JDK21 after the final npm ci; coordinator executed.",
+      "log": "migration/evidence/RN01-r2/final-native-install-launch.log",
+      "observations": "migration/evidence/RN01-r2/final-native-observations.txt",
+      "logcat": "migration/evidence/RN01-r2/final-app-pid.logcat; no fatal/ReactNativeJS errors in recorded scan; startup warnings retained."
+    }
+  },
+  "notRun": [
+    "Web and iOS acceptance",
+    "Soak/stability beyond two recorded launch windows on one AVD",
+    "Features/navigation beyond the shell",
+    "RN02, commits, push and publication — unassigned"
+  ],
+  "reviewerRouting": {
+    "reasoningEffort": "high",
+    "model": "gpt-6.1-sol",
+    "dispatch": "One formal RN01-r2 review; stop at verdict; RN02 is unassigned.",
+    "fallbackProviders": [],
+    "provider": "openai-codex",
+    "source": "All four delegation keys verified via translation-migration profile CLI during coordinator preflight; dispatcher must recheck immediately before submission."
+  },
+  "hashGate": {
+    "checkCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN01-r2.json",
+    "requiredProblems": 0,
+    "freeze": "All packet edits precede hashes; no self hash or future-review hash. IDEA is protected baseline only, outside files[].",
+    "writeCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN01-r2.json --write"
+  },
+  "files": [
+    {
+      "path": "migration/react-native/.gitignore",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "a4539afae80e04c845f5d58c1ba36a0e1291e5f9a25ff5a0e1de136daf8498f4"
+    },
+    {
+      "path": "migration/react-native/LICENSE",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+    },
+    {
+      "path": "migration/react-native/README.md",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "752737655eb43815dd10a934a043537d83402eca61ba2e6cdc0348c86b6f4b75"
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "c6b84c00fa00c9757c6a092b77849a8befa119f9406a89e2eb053e1f2737195c"
+    },
+    {
+      "path": "migration/react-native/app.json",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "88d351708f2e5031b3f00b8c07879e82a34a4155ea7949a5931eea2545f8dd2e"
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/Assets/expo-symbol 2.svg",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "ad117d20fd819f4ec71876ce09c0e8b9275b1f20c5ec3c9d7d1914977ceffec6"
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/Assets/grid.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "8247d79a2b31328fe4e330a973e6fae16924ed9aebd72c64d464d6856ab18c72"
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/icon.json",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "747c56e178222a6255c6dd61c5de011b286cdc935febe89f04d1b191c3d076fe"
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-background.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "fb139c2dee362ebf2070e23b96da6fc0d43f8492de38b8af1fd7223e19b5861d"
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-foreground.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "9e3d0315a33c6799de601dd34cd8bf8cc3a8d16f3bf75592baec2ceb7240b391"
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-monochrome.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "6371fc2c12e33ad2215a86c281db3d682a81bebe7c957a842c13b8bf00cceb83"
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-badge-white.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "d9ba28c5e93aea3c2dabd901ee96fea3bb296ad8e648f6f64706dae11a1a62bd"
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-badge.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "ff353c7efadbd379903923cb604fca11c908cba0d4658cc2bd1f147d98317249"
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-logo.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f"
+    },
+    {
+      "path": "migration/react-native/assets/images/favicon.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba"
+    },
+    {
+      "path": "migration/react-native/assets/images/icon.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "7a667804bb80a6a424a5daf18a2599c4f32237cf06fe78fc0de45dbb09e0eccf"
+    },
+    {
+      "path": "migration/react-native/assets/images/logo-glow.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "bbd98a3f3c12d090f4df6065b7462fcdf6bc266209d002b4ef5fe554c245f66c"
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "224b7636b15e672801579b5b418077cbc2ca42f0146389062364356b0ecb5c5c"
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo@2x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "fa600be9ad2f869c7a8dbaffc78bb15af741123e1319c948f0be51753a153cde"
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo@3x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "cd84e02a5d542a3e71b7fa10a685c1b9fb51db4aff92aca6c0da6461ce17be16"
+    },
+    {
+      "path": "migration/react-native/assets/images/splash-icon.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "e2dea1c2d20929d83e8eebd74818e808b1b72e376d3a1f3a03679fff0255d073"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore@2x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "1b54913b3a0acc3e1fb72d3b9b79ad04814304b35bbb9d03a533e6130ad6c26a"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore@3x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "2f3e43801df70ebe83273b90a7d170bacf5ca74a8a8dc5c154a020c2c8b06609"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "3829632ec7d495225395f5da3d0942935d7d055979b174613d1ade82fe420e76"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home@2x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "21c5a07df9017d97464a0a8256e265288f2fca0741ca651de05e12b32f32f5ab"
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home@3x.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "fe5b397975e7cb70ae7a122472d174ed12ec2ae106f7b49c968225ad37f8b3b8"
+    },
+    {
+      "path": "migration/react-native/assets/images/tutorial-web.png",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "e372ec23ad6262e2e0dc2799ce416b495a631a565bcd24f0615d4afc04dac3bd"
+    },
+    {
+      "path": "migration/react-native/package-lock.json",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "199be5a270084e64d8eebc52783fd4dd5d39f11036518dff71f0b445523bbf64"
+    },
+    {
+      "path": "migration/react-native/package.json",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "1b6773b2fa2315f55d374fab4243a4a5baa619f7400bd51f96159b96365a9b9f"
+    },
+    {
+      "path": "migration/react-native/scripts/reset-project.js",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "e1989c1ca90f059a21b3319c7428bccd875e165dcb41f7ee3c580f407b21aa1b"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "d21fce3fa9fb3a35c5750fdf71c61624d60e771c958ab417785e9138c569b86f"
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "02317f86dacac01f8a1052e7ca6492c465f38167c693a30014a56eaa08505b1c"
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.module.css",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "a70d5b1b0561336e53541e4fcca0431fa9e3671fc29dd232a44d546ff488423c"
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "53772b1cfee876e9e79be0456fc6a4500b76a88e12990c63b3cc96d9ba9842b5"
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.web.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "d99b902d487bb7a0c6357b201cc5c5fda1fd1a482e6edea3d896324e949712d2"
+    },
+    {
+      "path": "migration/react-native/src/components/app-tabs.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "69f9558ef4b19a57d6ab124e12a95d778e36d4691df3e2a135ddbc91c5f5ec92"
+    },
+    {
+      "path": "migration/react-native/src/components/app-tabs.web.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "ac95e9f5379239e28b777800df5bb7b67f14001d8133081fe873d747959df045"
+    },
+    {
+      "path": "migration/react-native/src/components/external-link.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "2838582e2dc21877652b710d4aee5f4ba5a795b17fcf63bd7ac9c25a749c8c26"
+    },
+    {
+      "path": "migration/react-native/src/components/hint-row.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "2b5b1bbd4da6d9946e9a267587d7d6279059b0fab01dfeca144cd8cc3653a099"
+    },
+    {
+      "path": "migration/react-native/src/components/themed-text.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "ae907d2b52a6a231963db7882acb5f853e6a08b94c34efc88d89fb1cd5f83264"
+    },
+    {
+      "path": "migration/react-native/src/components/themed-view.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "e13930b2f4dfd4dab093d1a86c1586825a97d56e895ba8cb9c89233e654138c9"
+    },
+    {
+      "path": "migration/react-native/src/components/ui/collapsible.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "73613fbb9c2d64215f7c365683ec790dbf6f04160bea48bc7273cc0a36d4a95b"
+    },
+    {
+      "path": "migration/react-native/src/components/web-badge.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "0af7715337e070c7c476202c8dd77f2fd6a3514255ace1ead9f832ccc8351a7f"
+    },
+    {
+      "path": "migration/react-native/src/constants/theme.ts",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "5c524dc8b8c75b01e6f5d10ec0d2efa094f3e4591cb8b2866508573806311a69"
+    },
+    {
+      "path": "migration/react-native/src/global.css",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "3d65b4b82fe8112cd874d5058bb78b94743d2679958a421191802f4239cedf56"
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-color-scheme.ts",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "33beb965500ae5fdfe5c8699805a6be94c8c126a751fbe2ed7bcae87df394882"
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-color-scheme.web.ts",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "84f19b5c1a8e941ab9868d2e83f6e61db11d3d9bf4fa91fac979bcd0fdc8019b"
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-theme.ts",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "267508aef2ef836c3267d3ffb52bbd499282a4ea1dab2c36e061e008945d77b8"
+    },
+    {
+      "path": "migration/react-native/src/screens/shell-screen.tsx",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "76aca37f0af53e9112c22a7f629a4143fcd37eb78872cec4266ac08eb4c3aa7f"
+    },
+    {
+      "path": "migration/react-native/tsconfig.json",
+      "note": "RN01 product deliverable; compare with r1 for the two scoped source corrections.",
+      "sha256": "b3fcbc507af0df8008ffae41c5132e2bafceb650f6f55347d7492e0d8f98e3c0"
+    },
+    {
+      "path": "migration/evidence/RN01/expo-router-tabtrigger-slotprops-versions.txt",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "d02c2faf7aff34f41b4d47fe3a371ee94ec7f68f5a303d08a5bc07bef19121e9"
+    },
+    {
+      "path": "migration/evidence/RN01/jest-pass-1.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "b61f4f8feb56c7a7a721b3a553688aa1794ccceb1f706a232bcb840e34cf342c"
+    },
+    {
+      "path": "migration/evidence/RN01/jest-pass-2.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "0ccfa3b5815beeff8641142033317f4b1bed9eff7c0559632773de811f773a18"
+    },
+    {
+      "path": "migration/evidence/RN01/jest-pass-node24-20261020.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "f3aa25fba81361e286baf23e317a0ccf666b30fc3b31f33a1f205aed2e627ac3"
+    },
+    {
+      "path": "migration/evidence/RN01/npm-ls-depth0.txt",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "9c3395dc3d7784f4748ab56ec06da74691c13160dc95e1fff96cab504b933aac"
+    },
+    {
+      "path": "migration/evidence/RN01/reverify-notes-20261020.txt",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "e719bcca00e8e1f542e973abd468b9cd252f4ae4e6f238632be439634c18dc6b"
+    },
+    {
+      "path": "migration/evidence/RN01/template-compare-node24-20261020.txt",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "c9312d100cfaad33cf2ce176fad4eb61d611932782e64d75252fa15f835671fc"
+    },
+    {
+      "path": "migration/evidence/RN01/tree-vs-canonical-template.txt",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "5d34a6d7b5bd4800af839a5dee7490c7e03c4bdd0173c4a9a6f8a05ed1473175"
+    },
+    {
+      "path": "migration/evidence/RN01/typecheck-pristine-canonical.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "02ea939da8b6df3bdb581809e0573485cfb5a0428639a8327d8b1aef6d7e9ea9"
+    },
+    {
+      "path": "migration/evidence/RN01/typecheck-target-node24-20261020.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "57c84234d88327593203340b24f4c8dfa2678c28ec00ba300cd5f120c2705638"
+    },
+    {
+      "path": "migration/evidence/RN01/typecheck-target.log",
+      "note": "Historical r1 evidence, preserved unchanged.",
+      "sha256": "57c84234d88327593203340b24f4c8dfa2678c28ec00ba300cd5f120c2705638"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/android-bundle.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "837797648a6981193a2d7f4239c25168d701cd2b39455725a91df7a1d33e0196"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/android-run.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "4f148e46eb0545ce8f5cd9473319915e03257a438f100ff541c314c926439507"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/app-object-240-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "1867a58d76443919a794e7208a2505d31eda58ac461d1d53b3b1037209ee340d"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/app-pid.logcat",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "11b6009af3eb543906ca70d2ec0c765e75dbfadd9036bfebe6e2e08624faa048"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/app-short-object-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "3ce3cb022ee851fdf1366e114ef8ab128edbb0ae2c55369783cc7321cd971594"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/battery-exits.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "85e95b8c70752baca30b8e2d55f0719e31a36b10d5bdd9334ab1965068eac18f"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/battery-lockfile-after.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "20a5eb61df6dc32da446102448c14af66068707bf953ed97bf151972b159efa3"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/battery-lockfile-before.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "20a5eb61df6dc32da446102448c14af66068707bf953ed97bf151972b159efa3"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/bundle-verify.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "9ff1f16cb9bb2bb75c93c9fd2211daa6c2baa18fcbcab5e91918eeb544717742"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/coordinator-final-visual-inspection.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "8a29e47c86386718176054f044c4aff4ad075d0cb1ad55de8280f8b65e8318a9"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/coordinator-visual-inspection.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "cb82bc472fd738114a1fd5788a03f23a1e1e5bce7d422f5fa951124ad4aea545"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/doctor-verify.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "53a19f6a9f6e7bf4384dcafd78076cd430035dc803911970852ec9b1bf0706ff"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/expo-core-short-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "e7b78bd01136af646d1df70fd9d31d87be3c61494826a008724d47894d413af3"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/expo-install-check-verify.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "8152e1dfe2839254529bd71a5c9d6f299c93bc1132025c5930dcc5dc042489db"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-app-pid.logcat",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "48cec4da979a8bac2dc525266d91f776ddd8262f1dfa6021214a39a4876568b2"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-bundle-android.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "7ef734e4e53574c87737df90b6f08403ee13b599b993947529449cd4e43c0bed"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-exits.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "6fb471626a086d89ddd40bb67de897e5beb337f873563e3ec891988d94858851"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-expo-doctor.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "a815ab50ecf702cbee5526b8c03aef34a6599f00f0e5a71cd93046eb4efeca68"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-expo-install-check.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "8152e1dfe2839254529bd71a5c9d6f299c93bc1132025c5930dcc5dc042489db"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-lockfile-hash-after.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "20a5eb61df6dc32da446102448c14af66068707bf953ed97bf151972b159efa3"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-lockfile-hash-before.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "20a5eb61df6dc32da446102448c14af66068707bf953ed97bf151972b159efa3"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-native-install-launch.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "95588857669c56fce31d696046bff79ace824c273ad94b6505e66ceaca818951"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-native-observations.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "cb1f31e410438176b062531deadc2bd68cf89f318d7f3bd4d789da6709b2cc95"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-npm-ci-interrupted.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "60e65a159a2e6d5fb0826971de1b1940f7bded0f0e790e3c6fd1fa27fe47e4b2"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-npm-ci.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "66a39be35df6bc2bfe6e632c0d42c943a0ec3f690e5cbdba7fe39f03edb80f9f"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-test-1.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "cd8734e8e054e13f36ba4c34f18e53074adc394889a7382e1b4c90fb9778a921"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-test-2.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "94e69a60645522fd4fd546d17de940d5edc697a2f573a8e16963d2d5d2be5a8e"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-typecheck.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-ui.png",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "f978e12a74f5f71282ca72822f52fc3bd7a029021a92c9a9be5e3be5d252ccf4"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-ui.xml",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "c0a32680ca4b0669ff1b50bc2db6e126882985513e87a9a52abd227e58a6007d"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/final-validation.sh",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "e561c62bc593b8b945a5df2ec2476daf19363f19e17d115a4e29cb5211519040"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/gesture-handler-short-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "a3eab2b1a9a2fb3ee775c372fb4e1003b79d04a19fdae44a8ffdf0b166aefe05"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/jest-pass-1.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "d4496db6b82a4315706757ba13ae242df6b7786a8e9692e9aad8d25afc9b8a2d"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/jest-pass-2.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "727b3e4d2125dbd8065363ee765df6ff087c03737ed0cb32445e18d3c33ad3ae"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/jest-verify-1.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "292d067a4de31134e96b6de3ff0d58b9c71b9699a50c875005b19cfcee017a99"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/jest-verify-2.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "5a0a331cfda511b7a094f34892593b7d2dbe34f24a49cd1bf39d630ccd09d190"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/native-advisor-opinion.txt",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "343eefebb6589b2aeab20f7e3632d701d00cdbd06bb67f6281f22b17dc00b82d"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/native-build-workaround.gradle",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "b68ade3003ce0099a2021ab07cca838b1ecd672a0474f32a596b8b60875b5056"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/native-install-launch.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "e845f456571c311d2874a864791d8847985509c2d00b27c5c1b667a3d03e1720"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/npm-cci-verify.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "85c713003bc7093e85c24a8433b668f550d9ce08a8609986d9e70e3e3da17a86"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/object-path-200-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "bdf17ca6b874f790f51d2d482af6b7b5f5da66309e12c3c25099c8d476f27c24"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/object-path-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "2c524f5951c4445706f835d0dd6e042f3c2031a6f00df3c15ffeef1c59598d0f"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/reanimated-original-ninja.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "e8e28d56186dd1b6c3bc10639077ca31375d95c16b889a22bb5e4a147fc44844"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/reanimated-short-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "d7ab89aea8f3ad13592fe998c0185fa27df42223e3419c1592e088dacdbcba75"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/reanimated-short-configure.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "1f21adf7a236811c1590aca4befa201fcb0f735e3a87a20a468e1db61432eb77"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/reanimated-short-ninja.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "969f92a14c03d9e423d7413499e6c395a6c8f33800fb278d2f8fc8331fc5ffc8"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/rn01r2-gradle-configure.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "59145ccc8c7c3853520397572a477d683c08515e5cc48589756019e74a0fae0b"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/rn01r2-ninja-dryrun.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "94d59ffafe388803243e79409b5362d8c02aca85cdd6b265e9d3e6457eb4ab0e"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/rn01r2-typecheck-explore-removal.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "9c52d5b09e40ed2ef518d9a6628726342289adc48d0ae9f413c883c2a373f3e0"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/short-staging-build.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "1f7aa36974e9c1ee5cb9e963855536779706f3face3c3fd8a94b2a0323469ea9"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/short-staging-configure.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "19b53b4062df181b88b1ea9be448a88f525dd36137fb184fc64ee35298e82fab"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/short-staging-ninja.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "6f5cb7eebf36ed5a4505497a1a9e1cbc8c9ef11c691fca3abe2dc949be0319e2"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/typecheck-verify.log",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "30f9b601027bb8d457635e0cbed1b38b2a333f91fa76f0f74200542afec7bf21"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/ui.png",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "f978e12a74f5f71282ca72822f52fc3bd7a029021a92c9a9be5e3be5d252ccf4"
+    },
+    {
+      "path": "migration/evidence/RN01-r2/ui.xml",
+      "note": "Revision-2 evidence; final acceptance and diagnostic chronology are described in RN01 handoff.",
+      "sha256": "c0a32680ca4b0669ff1b50bc2db6e126882985513e87a9a52abd227e58a6007d"
+    },
+    {
+      "path": "migration/handoffs/RN01-checkpoint.md",
+      "note": "RN01 packet/history document; current handoff identifies superseded and immutable records.",
+      "sha256": "3cea696d0311f63e31ae6cc34aada74802655247926d48f009b02e83801dd79d"
+    },
+    {
+      "path": "migration/handoffs/RN01.md",
+      "note": "RN01 packet/history document; current handoff identifies superseded and immutable records.",
+      "sha256": "249900698c9d64cbc987e32992893897dbc9b73ca327f2aef109ce0c04ffbb23"
+    },
+    {
+      "path": "migration/reviews/RN01-r1.md",
+      "note": "RN01 packet/history document; current handoff identifies superseded and immutable records.",
+      "sha256": "df0851776fbcf2feac3fb6ec224d55d4225fd479f363c690b6b106adc5eb81e9"
+    },
+    {
+      "path": "migration/submissions/RN01-r1.json",
+      "note": "RN01 packet/history document; current handoff identifies superseded and immutable records.",
+      "sha256": "914c20d620e789ab4884cbdede63bb935cb9197f4a0f4c9bde14aacfb40496ee"
+    },
+    {
+      "path": "migration/work-packages/RN01.md",
+      "note": "RN01 packet/history document; current handoff identifies superseded and immutable records.",
+      "sha256": "ce9fa6e16a649439edcad49dc0b6a89bf37d2caa8ae0cfe4e23004c1626a17eb"
+    }
+  ],
+  "preExistingChanges": "At revision-2 startup, IDEA.md and the RN01 target, package, handoff/checkpoint, r1 submission/review and legacy evidence were already untracked. No tracked changes. Current deliverable inventory is files[]; IDEA.md is protected and excluded from that array."
+}

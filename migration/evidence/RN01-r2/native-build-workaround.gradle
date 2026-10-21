@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath('com.android.tools.build:gradle')
+    classpath('com.facebook.react:react-native-gradle-plugin')
+    def kotlinVersion = findProperty('android.kotlinVersion')
+    classpath(kotlinVersion ? "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion" : 'org.jetbrains.kotlin:kotlin-gradle-plugin')
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+  }
+}
+
+apply plugin: "expo-root-project"
+// RN01: stage CMake out-of-tree for native subprojects whose deep .cxx inputs ninja marks missing
+subprojects { subproject ->
+  def rn01Staging = [
+    'react-native-screens': 'C:/Users/Gerrit/rn01-cxx/screens',
+    'react-native-worklets': 'C:/Users/Gerrit/rn01-cxx/worklets',
+    'react-native-reanimated': 'C:/Users/Gerrit/rn01-cxx/reanimated',
+    'expo-modules-core': 'C:/Users/Gerrit/rn01-cxx/expo-core',
+    'react-native-gesture-handler': 'C:/Users/Gerrit/rn01-cxx/gesture-handler'
+  ][subproject.name]
+  if (rn01Staging != null) {
+    subproject.plugins.withId('com.android.library') {
+      subproject.extensions.getByName('android').externalNativeBuild.cmake.buildStagingDirectory = file(rn01Staging)
+      if (subproject.name in ['react-native-reanimated', 'expo-modules-core', 'react-native-gesture-handler']) {
+        subproject.extensions.getByName('android').defaultConfig.externalNativeBuild.cmake.arguments.add('-DCMAKE_OBJECT_PATH_MAX=200')
+      }
+    }
+  }
+  if (subproject.name == 'app') {
+    subproject.plugins.withId('com.android.application') {
+      subproject.extensions.getByName('android').externalNativeBuild.cmake.buildStagingDirectory = file('C:/Users/Gerrit/rn01-cxx/app')
+      subproject.extensions.getByName('android').defaultConfig.externalNativeBuild.cmake.arguments.add('-DCMAKE_OBJECT_PATH_MAX=240')
+    }
+  }
+}
+apply plugin: "com.facebook.react.rootproject"
