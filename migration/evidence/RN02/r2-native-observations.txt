@@ -1,0 +1,38 @@
+=== RN02-r2 native observation (gate 7, fresh, 2026-10-21) ===
+Host: Windows 11, branch migration/slice-1, HEAD af44ce10e1c3c6c62f598a8f2c17cfda943872be
+AVD: RN01_API36 (sdk_gphone64_x86_64, API 36), booted headless by this session (emulator pid 36400), adb device emulator-5554
+App: dev.translationtest.rn, versionCode=1, lastUpdateTime 2026-10-21 16:04:56 (reinstalled during r1 final expo run:android), firstInstallTime 2026-10-21 07:01:33
+
+Owned dev server (this session): npm start (expo start --dev-client --port 8082)
+  session proc_4afeb01f17ef, npm pid 31040, metro node pid 32236
+  env: NODE_OPTIONS=--max-old-space-size=8192, EXPO_NO_TELEMETRY=1 (heap ceiling to prevent r1-style OOM)
+  readiness: "Waiting on http://localhost:8082" (16:41Z)
+  delivery: "Android Bundled 802ms node_modules\expo-router\entry.js (1359 modules)" — fresh bundle served to the app in this run
+  full verbatim log: r2-metro.log — NO OOM, NO JS heap exhaustion in r2 (contrasts r1's exit 134)
+
+Launch (CLI-offered open equivalent, recorded):
+  16:42:08Z adb shell am start -W -n dev.translationtest.rn/.MainActivity
+  Status: ok, LaunchState: COLD, TotalTime: 4820 ms, routed to expo.modules.devlauncher.launcher.DevLauncherActivity
+  app pid 19482
+  dev menu visible (dump r2-dump-1): "DEVELOPMENT SERVERS" / "Conference Migration RN" / "http://172.27.224.1:8082" (entry bounds [179,662][514,701])
+  16:42:16Z tapped server entry at (346,681)
+  after connection: screen texts exactly: "Conference" | "Sessions: 20" | "First session: 1 — Breakfast" (uiautomator dump r2-ui.xml, 10,195 bytes)
+
+Expected (RN02 package + reference/contract): Conference | Sessions: 20 | First session: 1 — Breakfast
+RESULT: MATCH
+
+Exception status (verbatim from r2-app-pid.logcat, app pid 19482):
+  10-21 16:42:17.584 W ReactHost{0}.raiseSoftException(onWindowFocusChange(hasFocus="true")): Tried to access onWindowFocusChange while context is not ready
+  10-21 16:42:17.600 E ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException (raiseSoftException, ReactHostImpl.kt:906)
+  CLASSIFICATION: nonfatal bridge soft exception during cold start (window focus before React context ready). The app recovered and rendered the expected screen (verified after the event); NO FATAL / AndroidRuntime in the app-pid log; app ran continuously until recorded shutdown.
+  Reproduced both in r1 (device 16:07, final-app-pid.logcat:125-166) and r2 (this run) — stable cold-start behavior in this shell, not a functional failure, but NOT an absence of exceptions: an absent-exception claim is false and is corrected in the handoff.
+
+Captured artifacts (this run): r2-ui.png, r2-ui.xml, r2-app-pid.logcat (251 app-pid lines), r2-metro.log
+Visual pixel inspection: delegated to a vision-capable reviewer (strict gate-7 expectations) — saved as r2-visual-inspection.md; XML alone is not treated as visual verification.
+
+Shutdown (only owned processes):
+  16:45:15 device time: adb shell am force-stop dev.translationtest.rn (exit 0)
+  metro session proc_4afeb01f17ef killed (process.kill, completion_reason recorded) after log capture
+  netstat: PORT_8082_FREE
+  emulator pid 36400 stopped (Stop-Process -Force, exit 0); remaining node.exe processes belong to Hermes infrastructure, left untouched
+  r1 processes (expo/metro 20600, app, r1 AVD) were already dead/stopped before r2 began

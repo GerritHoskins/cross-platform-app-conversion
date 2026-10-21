@@ -5,6 +5,7 @@
   "main": "expo-router/entry",
   "dependencies": {
     "@expo/ui": "~58.0.21",
+    "@migration/core": "file:../core",
     "expo": "~58.0.16",
     "expo-constants": "~58.0.12",
     "expo-dev-client": "58.0.14",
@@ -46,6 +47,9 @@
     "bundle:android": "expo export --platform android --output-dir dist-android"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleNameMapper": {
+      "^@babel/runtime/(.*)$": "<rootDir>/node_modules/@babel/runtime/$1"
+    }
   }
 }

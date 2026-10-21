@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native';
 
+import { loadConference } from '../data/load-conference';
+
 const PALETTES = {
   light: {
     background: '#F9FAFB',
@@ -16,6 +18,8 @@ const PALETTES = {
 export default function ShellScreen() {
   const scheme = useColorScheme() ?? 'light';
   const palette = PALETTES[scheme];
+  const conference = loadConference();
+  const first = conference.sessions[0];
 
   return (
     <View style={[styles.root, { backgroundColor: palette.background }]}>
@@ -27,7 +31,10 @@ export default function ShellScreen() {
         Conference
       </Text>
       <Text style={[styles.body, { color: palette.body }]}>
-        Welcome to the conference app.
+        Sessions: {conference.sessions.length}
+      </Text>
+      <Text style={[styles.body, { color: palette.body }]}>
+        First session: {first.id} — {first.name}
       </Text>
     </View>
   );

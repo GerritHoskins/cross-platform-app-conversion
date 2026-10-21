@@ -1,0 +1,330 @@
+{
+  "package": "RN02",
+  "revision": 1,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+  "headTree": "b2741ab8f38e233cd167ca3d3e56174b79453c2e",
+  "headSource": "Starting and current HEAD is the approved RN01 baseline commit; ancestor verified via git merge-base --is-ancestor. No RN02 work was committed.",
+  "date": "2026-10-21",
+  "rn03": "NOT STARTED and UNASSIGNED. Stop after the RN02-r1 verdict, including an APPROVE verdict. RN03 requires a separate human assignment.",
+  "commits": "No RN02 commit, push or publication. Tracked baselines and index unchanged; RN02 work is tracked-file modifications plus untracked new files, none staged or committed.",
+  "priorApprovedBaseline": {
+    "commit": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+    "review": "migration/reviews/RN01-r2.md",
+    "verdict": "APPROVE / STOP",
+    "note": "RN01 revision 2 approved; RN01 records preserved unchanged by this revision."
+  },
+  "protectedBaseline": {
+    "ideaMd": {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "gitObjectId": "2575019d3f8f51794e06769d6878188d274c6b28",
+      "note": "Hash-only baseline, compared with the RN01 preflight value at start and re-hashed before freeze; equal. Never read into context, edited, staged or committed. Not a deliverable."
+    },
+    "protectedDiff": "git diff --exit-code -- package.json package-lock.json src public android ios migration/core migration/reference -> exit 0; git diff --cached --exit-code -> exit 0; git diff --check -> clean.",
+    "fixtureReference": {
+      "expected": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "source": "public/data/data.json",
+      "copy": "migration/react-native/src/data/conference.json",
+      "mechanism": "verify-core-integration.cjs recompute + cmp byte identity; 22/22 checks PASS."
+    }
+  },
+  "session": {
+    "executor": "local Qwen3.8-27B, Hermes profile translation-migration, context 65,536 tokens, one fresh session",
+    "delegation": {
+      "model": "gpt-6.1-sol",
+      "provider": "openai-codex",
+      "reasoningEffort": "high",
+      "fallbackProviders": []
+    },
+    "note": "Delegation verified per the profile pre-check and immediately before dispatch."
+  },
+  "environment": {
+    "node": "v24.19.0 at C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "npm": "npm 11.16 via C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "sdkRoot": "C:/Users/Gerrit/AppData/Local/Android/Sdk",
+    "jdk": "C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot",
+    "avd": "RN01_API36 (emulator-5554, API36)",
+    "adb": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "app": "dev.translationtest.rn (activity .MainActivity)"
+  },
+  "runResults": {
+    "preflight": {
+      "branch": "migration/slice-1",
+      "headAtStart": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+      "preExistingUntracked": [
+        "IDEA.md (protected)",
+        "migration/work-packages/RN02.md (prepared package)"
+      ],
+      "ideaHashCheck": "preflight value equals RN01 protectedBaseline.ideaMd.sha256",
+      "protectedPathsDiff": "exit 0 before work",
+      "delegation": "openai-codex / gpt-6.1-sol / high / [] verified"
+    },
+    "coreGate": {
+      "commands": [
+        "npm --prefix migration/core run typecheck",
+        "npm --prefix migration/core test"
+      ],
+      "exits": [
+        0,
+        0
+      ],
+      "result": "53/53 tests PASS — approved baseline count unchanged; current CommonJS dist + declarations rebuilt"
+    },
+    "installAndFixture": {
+      "commands": [
+        "npm --prefix migration/react-native install",
+        "Copy-Item public/data/data.json -> migration/react-native/src/data/conference.json"
+      ],
+      "lockfileDelta": "local @migration/core entry + root dependency metadata + 41 existing packages re-marked dev<->non-dev (dev-reachable chains only); no new registry packages, no version changes, no audit-fix/force/legacy-peer-deps",
+      "fixture": "byte-identical (cmp PASS); source, copy and reference SHA-256 all da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75"
+    },
+    "softwareBatteryFinal": {
+      "script": "manual sequential battery under Node v24.19.0 after all edits; last complete block is migration/evidence/RN02/final-exits.txt (2026-10-21T18:17Z)",
+      "steps": [
+        {
+          "command": "npm --prefix migration/core test",
+          "exit": 0,
+          "evidence": "migration/evidence/RN02/final-core-test.log"
+        },
+        {
+          "command": "npm --prefix migration/react-native ci (lockfile SHA-256 hashed immediately before/after)",
+          "exit": 0,
+          "evidence": "migration/evidence/RN02/final-npm-ci.log; final-lockfile-before-ci.txt; final-lockfile-after-ci.txt",
+          "lockfile": "identical c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb"
+        },
+        {
+          "command": "node migration/react-native/scripts/verify-core-integration.cjs",
+          "exit": 0,
+          "evidence": "migration/evidence/RN02/final-verify-core-integration.log",
+          "result": "22/22 checks PASS; symlinked sibling dist reported as valid; dist inventory + byte hashes equal after clean reinstall"
+        },
+        {
+          "command": "npm --prefix migration/react-native run typecheck",
+          "exit": 0,
+          "evidence": "migration/evidence/RN02/final-typecheck.log"
+        },
+        {
+          "command": "npm --prefix migration/react-native test",
+          "exit": 0,
+          "run": 1,
+          "evidence": "migration/evidence/RN02/final-test-run1.log",
+          "result": "1 suite / 4 tests PASS, no snapshots"
+        },
+        {
+          "command": "npm --prefix migration/react-native test",
+          "exit": 0,
+          "run": 2,
+          "evidence": "migration/evidence/RN02/final-test-run2.log",
+          "result": "1 suite / 4 tests PASS, no snapshots"
+        },
+        {
+          "command": "npm --prefix migration/react-native run bundle:android",
+          "exit": 0,
+          "evidence": "migration/evidence/RN02/final-android-export.log",
+          "artifact": "migration/react-native/dist-android/_expo/static/js/android/entry-7b7c44862269f57b31d4eca64d9436bf.hbc (ignored output, not in files[])"
+        }
+      ]
+    },
+    "nativeAcceptance": {
+      "context": "development client absent on the dedicated AVD; existing debug build produced via target npm run android (expo run:android) under Node24/JDK21; no native dependency changed; RN01 ignored workaround evidence preserved untouched",
+      "build": "BUILD SUCCESSFUL; APK installed on emulator-5554",
+      "metro": "npm run start (expo start --dev-client --port 8082) owned and stopped by this session after evidence capture",
+      "observation": "fresh dev bundle from Metro; UI text Conference / Sessions: 20 / First session: 1 — Breakfast; logcat --pid: one ReactNativeJS INFO startup line, zero fatal/exception/error lines; screenshot final-ui.png pending visual inspection by reviewer/coordinator (local agent not vision-capable)"
+    },
+    "freezeChecks": {
+      "protectedDiff": "exit 0",
+      "stagedDiff": "exit 0",
+      "whitespace": "git diff --check clean",
+      "ideaMdRehashed": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d (equals preflight)"
+    }
+  },
+  "notRun": [
+    "Web and iOS acceptance",
+    "New native SDK downloads or OS changes (not needed)",
+    "Soak/stability beyond recorded launch windows on one AVD",
+    "Features beyond the RN02 diagnostic shell body",
+    "RN03, commits, push and publication — unassigned"
+  ],
+  "reviewerRouting": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoningEffort": "high",
+    "fallbackProviders": [],
+    "note": "Verified via the Hermes profile pre-check and re-verified immediately before dispatch; no credentials printed."
+  },
+  "hashGate": {
+    "checkCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN02-r1.json",
+    "writeCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN02-r1.json --write",
+    "requiredProblems": 0,
+    "freeze": "All packet text finished before hash generation. No self hash or future-review hash in files[]. IDEA is protected baseline only, outside files[]. Handoff not edited after freezing; check output recorded in this execution metadata and the session response per the self-reference convention."
+  },
+  "files": [
+    {
+      "path": "migration/react-native/package.json",
+      "note": "RN02 product: @migration/core file:../core dependency + narrow jest moduleNameMapper fix inside the existing jest key (allowlist item 1).",
+      "sha256": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016"
+    },
+    {
+      "path": "migration/react-native/package-lock.json",
+      "note": "RN02 generated exception: local package entry only; no registry version changes.",
+      "sha256": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb"
+    },
+    {
+      "path": "migration/react-native/src/data/load-conference.ts",
+      "note": "RN02 product (allowlist item 3): synchronous loadConference(): Conference over the bundled fixture.",
+      "sha256": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5"
+    },
+    {
+      "path": "migration/react-native/src/data/conference.json",
+      "note": "RN02 generated exception: byte-identical copy of public/data/data.json.",
+      "sha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75"
+    },
+    {
+      "path": "migration/react-native/src/screens/shell-screen.tsx",
+      "note": "RN02 product (allowlist item 4): diagnostic body from real loader output (Sessions: 20 / First session: 1 — Breakfast).",
+      "sha256": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f"
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "note": "RN02 product (allowlist item 5): loader contract, mutation isolation and render assertions (4 tests).",
+      "sha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1"
+    },
+    {
+      "path": "migration/react-native/scripts/verify-core-integration.cjs",
+      "note": "RN02 product (allowlist item 6): terminating read-only cwd-independent integration verification (22 checks).",
+      "sha256": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6"
+    },
+    {
+      "path": "migration/evidence/RN02/final-core-test.log",
+      "note": "Final gate 1 evidence: core suite 53/53 under Node v24.19.0.",
+      "sha256": "555a4601e4e7fd8cc6a7dfcab36585d4c84f50a693984d1e1ce8a8fc0db9a50a"
+    },
+    {
+      "path": "migration/evidence/RN02/final-npm-ci.log",
+      "note": "Final gate 2 evidence: clean reinstall of target.",
+      "sha256": "373d15317d9bdebe03a4759294dccfb881627ec0ceaf958be5dc438f8514fbbe"
+    },
+    {
+      "path": "migration/evidence/RN02/final-lockfile-before-ci.txt",
+      "note": "Lockfile SHA-256 immediately before npm ci.",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/final-lockfile-after-ci.txt",
+      "note": "Lockfile SHA-256 immediately after npm ci; must equal before.",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/final-verify-core-integration.log",
+      "note": "Final gate 3 evidence: 22/22 checks PASS incl. fixture hashes, dist byte-compare and contract assertions.",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736"
+    },
+    {
+      "path": "migration/evidence/RN02/final-typecheck.log",
+      "note": "Final gate 4 evidence: tsc --noEmit exit 0.",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN02/final-test-run1.log",
+      "note": "Final gate 5a evidence: 1 suite / 4 tests PASS.",
+      "sha256": "1b4c4bb000c144f3c890084ccd09c3919eea615437550a0b3196c8ad794e1206"
+    },
+    {
+      "path": "migration/evidence/RN02/final-test-run2.log",
+      "note": "Final gate 5b evidence: 1 suite / 4 tests PASS (second sequential run).",
+      "sha256": "26b4bf5a380e210f1c2a31625f11bbd5ab6e71bfd46ede30ede24ef59646ddfc"
+    },
+    {
+      "path": "migration/evidence/RN02/final-android-export.log",
+      "note": "Final gate 6 evidence: expo export android exit 0 (Metro bundled linked core + JSON).",
+      "sha256": "038fe6b604b1f54155923ec813bda81f4e715c473fc28783b94566ea3581055d"
+    },
+    {
+      "path": "migration/evidence/RN02/final-android-run.log",
+      "note": "Native gate build evidence: BUILD SUCCESSFUL and APK install on emulator-5554.",
+      "sha256": "085830b42dc79f7b559c353421a2d2aab82c6322d1cac39871ebe4759403d2e9"
+    },
+    {
+      "path": "migration/evidence/RN02/final-app-pid.logcat",
+      "note": "Native gate: app-PID logcat; one ReactNativeJS INFO startup line, zero errors.",
+      "sha256": "6d276c061f586ca9d6197b377013d9a277643ecccc828bc9b7705d2ff6294831"
+    },
+    {
+      "path": "migration/evidence/RN02/final-ui.xml",
+      "note": "Native gate: uiautomator dump; text Conference / Sessions: 20 / First session: 1 — Breakfast.",
+      "sha256": "7dbbb210abb4b904762eccde86a6f9ec0c706561c92b836171244ebb96c9ba75"
+    },
+    {
+      "path": "migration/evidence/RN02/final-ui.png",
+      "note": "Native gate: screenshot; visual inspection requested from reviewer/coordinator.",
+      "sha256": "b20d48c021e81751e53dc28d2e007cdd35a8348c9f019d9c630e89d47dd29714"
+    },
+    {
+      "path": "migration/evidence/RN02/final-native-observations.txt",
+      "note": "Native gate: device/app identity, observed values, reference comparison, RESULT: MATCH.",
+      "sha256": "cb59bb76d4d749ab6bfc4dbefc550bfea2d82411eac2ee130559aa0a3d13c156"
+    },
+    {
+      "path": "migration/evidence/RN02/final-exits.txt",
+      "note": "Final ordered gate sequence summary with timestamps, versions, HEAD and exits.",
+      "sha256": "c031b3159745604c9591d04aa012e1852e2858250ba659329c37369b2c50c8f0"
+    },
+    {
+      "path": "migration/evidence/RN02/install-lockfile-before.txt",
+      "note": "Historical step-2 evidence: lockfile before the initial npm install.",
+      "sha256": "4beae8a5d3bda40853b9beebcedcbf8d665941d5ca487b1d5ccbfe2c93bf40c2"
+    },
+    {
+      "path": "migration/evidence/RN02/install-lockfile-after.txt",
+      "note": "Historical step-2 evidence: lockfile after the initial npm install.",
+      "sha256": "8f483ff8a1e86a3455302a596d54be3c923b6c7d31a6711457fc80276bd4964e"
+    },
+    {
+      "path": "migration/work-packages/RN02.md",
+      "note": "RN02 package document (recorded as deliverable; began untracked); status line updated to READY_FOR_REVIEW.",
+      "sha256": "46011f08b368891b7a725e3cd7b1626116124c4f7c52db786421e424619a0062"
+    },
+    {
+      "path": "migration/handoffs/RN02.md",
+      "note": "RN02-r1 handoff.",
+      "sha256": "c48d2b6389f04163fda897d26801a53d26522ff8d42ece3c31f0e634aaa5e0cb"
+    },
+    {
+      "path": "migration/reviews/RN01-r2.md",
+      "note": "Prior approved baseline review (APPROVE / STOP); immutable.",
+      "sha256": "e34cf757f8a5e6c80526b12109ce705d2b94258919943a03c94c6a7d4068173e"
+    },
+    {
+      "path": "migration/submissions/RN01-r2.json",
+      "note": "Prior approved baseline submission; immutable.",
+      "sha256": "bbaef8da4754550040ae36d1d164af142ab052f5f35ebd860637f4a1444828f1"
+    },
+    {
+      "path": "migration/handoffs/RN01.md",
+      "note": "Prior approved baseline handoff; immutable.",
+      "sha256": "249900698c9d64cbc987e32992893897dbc9b73ca327f2aef109ce0c04ffbb23"
+    },
+    {
+      "path": "migration/reviews/RN01-r1.md",
+      "note": "Historical RN01 r1 record (superseded); immutable.",
+      "sha256": "df0851776fbcf2feac3fb6ec224d55d4225fd479f363c690b6b106adc5eb81e9"
+    },
+    {
+      "path": "migration/submissions/RN01-r1.json",
+      "note": "Historical RN01 r1 record (superseded); immutable.",
+      "sha256": "914c20d620e789ab4884cbdede63bb935cb9197f4a0f4c9bde14aacfb40496ee"
+    }
+  ],
+  "preExistingChanges": [
+    "IDEA.md untracked at start (protected; hash-only handling).",
+    "migration/work-packages/RN02.md untracked at start (prepared package document, preserved)."
+  ],
+  "notes": [
+    "RN01 dev-flag lockfile re-marks (41 packages) are a legitimate npm 11.16 re-classification of dev-reachable chains, not new dependencies; verified by registry-key diff of the committed vs current lockfile.",
+    "Jest fix is the only RN02 configuration change beyond the local dependency, and is inside the existing jest key as the narrow resolution fix allowlist item 1 permits.",
+    "dist-android is ignored output and intentionally absent from files[]; its final artifact hash is recorded in runResults.softwareBatteryFinal.steps[6].",
+    "Screenshot visual inspection is delegated to the reviewer/coordinator per step 5 (XML text alone is not claimed as visual inspection)."
+  ]
+}

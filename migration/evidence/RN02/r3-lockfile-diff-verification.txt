@@ -1,0 +1,78 @@
+RN02 r3 lockfile scope verification (read-only)
+baseline : git show af44ce10e1c3c6c62f598a8f2c17cfda943872be:migration/react-native/package-lock.json
+current  : C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\package-lock.json (working tree)
+runner   : C:\Users\Gerrit\AppData\Local\hermes\profiles\translation-migration\cache\scratch\rn02-r3-lockfile-diff.cjs
+
+--- top level (excluding packages) ---
+(no changes)
+
+packages entries: baseline 1163, current 1165
+
+--- added entries (2) ---
+../core: {"name":"@migration/core","version":"0.1.0","devDependencies":{"@types/node":"26.6.5","typescript":"5.9.3"}}
+node_modules/@migration/core: {"resolved":"../core","link":true}
+
+--- removed entries (0) ---
+(none)
+
+--- shared entries with ONLY {dev: true} removed (41) ---
+node_modules/@emnapi/core
+node_modules/@emnapi/runtime
+node_modules/@emnapi/wasi-threads
+node_modules/@napi-rs/wasm-runtime
+node_modules/@parcel/watcher-android-arm64
+node_modules/@parcel/watcher-darwin-arm64
+node_modules/@parcel/watcher-darwin-x64
+node_modules/@parcel/watcher-freebsd-x64
+node_modules/@parcel/watcher-linux-arm-glibc
+node_modules/@parcel/watcher-linux-arm-musl
+node_modules/@parcel/watcher-linux-arm64-glibc
+node_modules/@parcel/watcher-linux-arm64-musl
+node_modules/@parcel/watcher-linux-x64-glibc
+node_modules/@parcel/watcher-linux-x64-musl
+node_modules/@parcel/watcher-win32-arm64
+node_modules/@parcel/watcher-win32-x64
+node_modules/@pkgjs/parseargs
+node_modules/@tybys/wasm-util
+node_modules/@unrs/resolver-binding-android-arm-eabi
+node_modules/@unrs/resolver-binding-android-arm64
+node_modules/@unrs/resolver-binding-darwin-arm64
+node_modules/@unrs/resolver-binding-darwin-x64
+node_modules/@unrs/resolver-binding-freebsd-x64
+node_modules/@unrs/resolver-binding-linux-arm-gnueabihf
+node_modules/@unrs/resolver-binding-linux-arm-musleabihf
+node_modules/@unrs/resolver-binding-linux-arm64-gnu
+node_modules/@unrs/resolver-binding-linux-arm64-musl
+node_modules/@unrs/resolver-binding-linux-loong64-gnu
+node_modules/@unrs/resolver-binding-linux-loong64-musl
+node_modules/@unrs/resolver-binding-linux-ppc64-gnu
+node_modules/@unrs/resolver-binding-linux-riscv64-gnu
+node_modules/@unrs/resolver-binding-linux-riscv64-musl
+node_modules/@unrs/resolver-binding-linux-s390x-gnu
+node_modules/@unrs/resolver-binding-linux-x64-gnu
+node_modules/@unrs/resolver-binding-linux-x64-musl
+node_modules/@unrs/resolver-binding-openharmony-arm64
+node_modules/@unrs/resolver-binding-wasm32-wasi
+node_modules/@unrs/resolver-binding-win32-arm64-msvc
+node_modules/@unrs/resolver-binding-win32-ia32-msvc
+node_modules/@unrs/resolver-binding-win32-x64-msvc
+node_modules/tslib
+
+--- shared entries with ANY other change (0) ---
+(none)
+
+--- SCOPE VERDICT ---
+authorized set = {node_modules/@migration/core link entry} + {../core link-target manifest metadata} + {one core dep at root} + {exactly 41 dev:true removals}
+
+added entries exactly match the authorized core-link entries: YES
+root entry gains only the @migration/core runtime dep: YES
+top-level (name/lockfileVersion/version) unchanged: YES
+no entries removed: YES
+dev:true removals exactly 41: YES (count=41)
+zero non-dev field changes: YES (count=0)
+
+--- AUTHORIZED-SCOPE CHECKS ---
+no registry version/integrity/resolved changed on any shared entry: verified (only dev:true removals among shared entries; see sections above)
+typescript 5.9.3 NOT an installed entry in current lockfile (it is metadata in ../core only): YES
+@types/node 26.6.5 already installed in baseline lockfile (unchanged, pre-existing): YES
+RESULT: PASS — diff is exactly the authorized scope

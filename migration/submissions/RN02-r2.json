@@ -1,0 +1,389 @@
+{
+  "package": "RN02",
+  "revision": 2,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+  "headTree": "b2741ab8f38e233cd167ca3d3e56174b79453c2e",
+  "headSource": "Starting and current HEAD is the approved RN01 baseline commit; ancestor verified via git merge-base --is-ancestor. No RN02 work was committed.",
+  "date": "2026-10-21",
+  "rn03": "NOT STARTED and UNASSIGNED. Stop after the RN02-r2 verdict, including an APPROVE verdict. RN03 requires a separate human assignment.",
+  "commits": "No RN02 commit, push or publication. Tracked baselines and index unchanged; RN02 work is tracked-file modifications plus untracked new files, none staged or committed.",
+  "priorApprovedBaseline": {
+    "commit": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+    "review": "migration/reviews/RN01-r2.md",
+    "verdict": "APPROVE / STOP",
+    "note": "RN01 revision 2 approved; RN01 records preserved unchanged by this revision."
+  },
+  "priorRevision": {
+    "review": "migration/reviews/RN02-r1.md",
+    "verdict": "CHANGES_REQUIRED",
+    "worktree": "Unchanged code state; revision 2 is records, corrected narratives, fresh r2 evidence and delegated pixel inspection. Code file hashes are identical to the r1 submission where listed."
+  },
+  "protectedBaseline": {
+    "ideaMd": {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "gitObjectId": "2575019d3f8f51794e06769d6878188d274c6b28",
+      "note": "Hash-only baseline, compared with the RN01 preflight value and re-hashed before this freeze; equal. Never read into context, edited, staged or committed. Not a deliverable."
+    },
+    "protectedDiff": "git diff --exit-code -- package.json package-lock.json src public android ios migration/core migration/reference -> exit 0; git diff --cached --exit-code -> exit 0; git diff --check -> clean.",
+    "fixtureReference": {
+      "expected": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "source": "public/data/data.json",
+      "copy": "migration/react-native/src/data/conference.json",
+      "mechanism": "verify-core-integration.cjs recompute + cmp byte identity; r2 run: 22/22 checks PASS."
+    }
+  },
+  "session": {
+    "executor": "local Qwen3.8-27B, Hermes profile translation-migration, context 65,536 tokens, one fresh session",
+    "delegation": {
+      "model": "gpt-6.1-sol",
+      "provider": "openai-codex",
+      "reasoningEffort": "high",
+      "fallbackProviders": []
+    },
+    "note": "Delegation verified per the profile pre-check and immediately before each dispatch. Uses: r1 review (CHANGES_REQUIRED) and r2 pixel inspection (PASS, deleg_ed15c8ec)."
+  },
+  "environment": {
+    "node": "v24.19.0 at C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "npm": "npm 11.16 via C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js (multi-version churn test also used npm 11.19 and 12.0.2 in scratch only)",
+    "sdkRoot": "C:/Users/Gerrit/AppData/Local/Android/Sdk",
+    "jdk": "C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot",
+    "avd": "RN01_API36 (emulator-5554, API36)",
+    "adb": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "app": "dev.translationtest.rn (activity .MainActivity)"
+  },
+  "revisionContext": {
+    "findings": [
+      "The native diagnosis misstates at least three separate results: it turns the Metro OOM, the exception, and the running app status into one success story.",
+      "The screenshot pixel inspection is still incomplete.",
+      "The lockfile still includes RN01 legacy dev-flag changes. The package correctly asks you to stop for unrelated changes, so please have the human make that scope decision, rather than treating it as an accepted deviation.",
+      "The submission inventory is incomplete or inconsistent: one location lists 15 files, while the handover lists 18."
+    ],
+    "actions": [
+      "Finding 1: corrected and accurate narrative in the r2 handoff (build+install succeeded; post-install OOM of the expo-start/Metro helper, exit 134, not an app crash; nonfatal ReactNoCrashSoftException disclosed as present in r1 and reproduced in r2, app functional after it, no fatal crash). r2 redid the native observation with a session-owned Metro under a heap ceiling (no OOM in r2-metro.log; bundle delivered 1359 modules in 802 ms).",
+      "Finding 2: completed by delegation to GPT-6.1 Sol vision per the revision mandate; verdict PASS with expected text and no error state; saved verbatim in migration/evidence/RN02/r2-visual-inspection.md (deleg_ed15c8ec).",
+      "Finding 3: reported as one exception class requiring the human scope decision (not silently accepted). Empirical evidence: npm 11.16, 11.19 and 12.0.2 each reproduce the identical 41 dev-flag re-marks (172 -> 131) from the RN01 baseline scratch with zero user edits; churn is npm-intrinsic (dev-reachable chain re-classification), no new packages or version changes. Hand-editing the lockfile is outside the RN02 allowlist and was not done.",
+      "Finding 4: this submission lists every recorded file (see files[] categories: 7 product, 17 r1 evidence, 16 r2 evidence, 9 packet/history documents = 49 entries), each hash machine-computed at freeze time; two r1 scratch logs were deleted only after their SHA-256 was captured and are documented in the handoff rather than listed as deliverables."
+    ]
+  },
+  "runResults": {
+    "r2SoftwareBattery": {
+      "commandSet": [
+        "npm --prefix migration/core test",
+        "npm --prefix migration/react-native ci (lockfile SHA-256 before/after)",
+        "node migration/react-native/scripts/verify-core-integration.cjs",
+        "npm --prefix migration/react-native run typecheck",
+        "npm --prefix migration/react-native test (run 1)",
+        "npm --prefix migration/react-native test (run 2)",
+        "npm --prefix migration/react-native run bundle:android"
+      ],
+      "result": "ALL EXIT 0: core 53/53 PASS; npm ci lockfile identical c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb; verify 22/22 PASS; typecheck PASS; Jest 4/4 twice, no snapshots; bundle:android OK",
+      "artifact": "migration/react-native/dist-android/_expo/static/js/android/entry-7b7c44862269f57b31d4eca64d9436bf.hbc, sha256 c9bacb0a68dd61eab33db468148100f7a914939ac0373e7958057f88565f454d, 2861541 bytes (ignored output, not in files[])",
+      "evidence": [
+        "migration/evidence/RN02/r2-core-test.log",
+        "migration/evidence/RN02/r2-npm-ci.log",
+        "migration/evidence/RN02/r2-lockfile-before-ci.txt",
+        "migration/evidence/RN02/r2-lockfile-after-ci.txt",
+        "migration/evidence/RN02/r2-verify-core-integration.log",
+        "migration/evidence/RN02/r2-typecheck.log",
+        "migration/evidence/RN02/r2-test-run1.log",
+        "migration/evidence/RN02/r2-test-run2.log",
+        "migration/evidence/RN02/r2-android-export.log",
+        "migration/evidence/RN02/r2-exits.txt"
+      ]
+    },
+    "r2Native": {
+      "result": "MATCH (text+behavior): Conference | Sessions: 20 | First session: 1 — Breakfast; one nonfatal cold-start ReactNoCrashSoftException (app functional after it, no fatal); owned Metro no OOM, 1359 modules in 802 ms; pixel inspection PASS (delegated)",
+      "evidence": [
+        "migration/evidence/RN02/r2-native-observations.txt",
+        "migration/evidence/RN02/r2-metro.log",
+        "migration/evidence/RN02/r2-ui.png",
+        "migration/evidence/RN02/r2-ui.xml",
+        "migration/evidence/RN02/r2-app-pid.logcat",
+        "migration/evidence/RN02/r2-visual-inspection.md"
+      ]
+    },
+    "r1SoftwareBatteryRetained": "r1 record preserved at its original evidence paths (final-*.log etc.); r1 native record (final-android-run.log, final-app-pid.logcat, final-ui.png) retained as historical evidence with the corrected interpretation now stated in the r2 handoff."
+  },
+  "notRun": [
+    "Web and iOS acceptance",
+    "New native SDK downloads or OS changes (not needed)",
+    "Soak/stability beyond recorded launch windows on one AVD",
+    "Features beyond the RN02 diagnostic shell body",
+    "RN03, commits, push and publication — unassigned"
+  ],
+  "reviewerRouting": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoningEffort": "high",
+    "fallbackProviders": [],
+    "note": "Verified via the Hermes profile pre-check and re-verified immediately before each dispatch; no credentials printed."
+  },
+  "hashGate": {
+    "checkCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN02-r2.json",
+    "writeCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN02-r2.json --write",
+    "requiredProblems": 0,
+    "freeze": "All packet text finished before hash generation; every files[] sha256 computed from disk at freeze time by the r2 generator script, then written. No self hash or future-review hash in files[]. IDEA is the protected baseline only, outside files[]. Check output recorded in the session response per the self-reference convention."
+  },
+  "files": [
+    {
+      "path": "migration/react-native/package.json",
+      "note": "RN02 product: @migration/core file:../core dependency + narrow jest moduleNameMapper fix inside the existing jest key (allowlist item 1). Unchanged since r1.",
+      "sha256": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016"
+    },
+    {
+      "path": "migration/react-native/package-lock.json",
+      "note": "RN02 generated exception (reported, not accepted): local package entry + 41 dev-flag re-marks empirically reproduced by npm 11.16/11.19/12.0.2 with zero user edits (identical 172->131 delta); no new registry packages or version changes. Human scope decision requested per finding 3.",
+      "sha256": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb"
+    },
+    {
+      "path": "migration/react-native/src/data/load-conference.ts",
+      "note": "RN02 product (allowlist item 3): synchronous loadConference(): Conference over the bundled fixture.",
+      "sha256": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5"
+    },
+    {
+      "path": "migration/react-native/src/data/conference.json",
+      "note": "RN02 generated exception: byte-identical copy of public/data/data.json.",
+      "sha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75"
+    },
+    {
+      "path": "migration/react-native/src/screens/shell-screen.tsx",
+      "note": "RN02 product (allowlist item 4): diagnostic body from real loader output (Sessions: 20 / First session: 1 — Breakfast).",
+      "sha256": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f"
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "note": "RN02 product (allowlist item 5): loader contract, mutation isolation and render assertions (4 tests).",
+      "sha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1"
+    },
+    {
+      "path": "migration/react-native/scripts/verify-core-integration.cjs",
+      "note": "RN02 product (allowlist item 6): terminating read-only cwd-independent integration verification (22 checks).",
+      "sha256": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6"
+    },
+    {
+      "path": "migration/evidence/RN02/final-core-test.log",
+      "note": "r1 gate 1 evidence: core suite 53/53 under Node v24.19.0.",
+      "sha256": "555a4601e4e7fd8cc6a7dfcab36585d4c84f50a693984d1e1ce8a8fc0db9a50a"
+    },
+    {
+      "path": "migration/evidence/RN02/final-npm-ci.log",
+      "note": "r1 gate 2 evidence: clean reinstall of target.",
+      "sha256": "373d15317d9bdebe03a4759294dccfb881627ec0ceaf958be5dc438f8514fbbe"
+    },
+    {
+      "path": "migration/evidence/RN02/final-lockfile-before-ci.txt",
+      "note": "r1 lockfile SHA-256 immediately before npm ci.",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/final-lockfile-after-ci.txt",
+      "note": "r1 lockfile SHA-256 immediately after npm ci; equals before.",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/final-verify-core-integration.log",
+      "note": "r1 gate 3 evidence: 22/22 checks PASS incl. fixture hashes, dist byte-compare and contract assertions.",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736"
+    },
+    {
+      "path": "migration/evidence/RN02/final-typecheck.log",
+      "note": "r1 gate 4 evidence: tsc --noEmit exit 0.",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN02/final-test-run1.log",
+      "note": "r1 gate 5a evidence: 1 suite / 4 tests PASS.",
+      "sha256": "1b4c4bb000c144f3c890084ccd09c3919eea615437550a0b3196c8ad794e1206"
+    },
+    {
+      "path": "migration/evidence/RN02/final-test-run2.log",
+      "note": "r1 gate 5b evidence: 1 suite / 4 tests PASS (second sequential run).",
+      "sha256": "26b4bf5a380e210f1c2a31625f11bbd5ab6e71bfd46ede30ede24ef59646ddfc"
+    },
+    {
+      "path": "migration/evidence/RN02/final-android-export.log",
+      "note": "r1 gate 6 evidence: expo export android exit 0 (Metro bundled linked core + JSON).",
+      "sha256": "038fe6b604b1f54155923ec813bda81f4e715c473fc28783b94566ea3581055d"
+    },
+    {
+      "path": "migration/evidence/RN02/final-android-run.log",
+      "note": "r1 native gate build evidence: BUILD SUCCESSFUL, APK install SUCCESSFUL, then post-install Metro/expo-start OOM (process exit 134) — corrected interpretation per r2 handoff finding 1.",
+      "sha256": "085830b42dc79f7b559c353421a2d2aab82c6322d1cac39871ebe4759403d2e9"
+    },
+    {
+      "path": "migration/evidence/RN02/final-app-pid.logcat",
+      "note": "r1 native gate: app-PID logcat; contains one nonfatal ReactNoCrashSoftException (cold-start bridge artifact); no fatal crash; corrected per r2 finding 1.",
+      "sha256": "6d276c061f586ca9d6197b377013d9a277643ecccc828bc9b7705d2ff6294831"
+    },
+    {
+      "path": "migration/evidence/RN02/final-ui.xml",
+      "note": "r1 native gate: uiautomator dump; text Conference / Sessions: 20 / First session: 1 — Breakfast.",
+      "sha256": "7dbbb210abb4b904762eccde86a6f9ec0c706561c92b836171244ebb96c9ba75"
+    },
+    {
+      "path": "migration/evidence/RN02/final-ui.png",
+      "note": "r1 native gate screenshot; used as r2 visual-reference comparison.",
+      "sha256": "b20d48c021e81751e53dc28d2e007cdd35a8348c9f019d9c630e89d47dd29714"
+    },
+    {
+      "path": "migration/evidence/RN02/final-native-observations.txt",
+      "note": "r1 native gate: device/app identity, observed values, reference comparison, RESULT: MATCH.",
+      "sha256": "cb59bb76d4d749ab6bfc4dbefc550bfea2d82411eac2ee130559aa0a3d13c156"
+    },
+    {
+      "path": "migration/evidence/RN02/final-exits.txt",
+      "note": "r1 ordered gate sequence summary with timestamps, versions, HEAD and exits.",
+      "sha256": "c031b3159745604c9591d04aa012e1852e2858250ba659329c37369b2c50c8f0"
+    },
+    {
+      "path": "migration/evidence/RN02/install-lockfile-before.txt",
+      "note": "Historical step-2 evidence: lockfile before the initial npm install.",
+      "sha256": "4beae8a5d3bda40853b9beebcedcbf8d665941d5ca487b1d5ccbfe2c93bf40c2"
+    },
+    {
+      "path": "migration/evidence/RN02/install-lockfile-after.txt",
+      "note": "Historical step-2 evidence: lockfile after the initial npm install.",
+      "sha256": "8f483ff8a1e86a3455302a596d54be3c923b6c7d31a6711457fc80276bd4964e"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-core-test.log",
+      "note": "r2 gate 1: core suite 53/53 PASS (fresh).",
+      "sha256": "8f4411e380b8a421b9c4e9b3d7363b081426e837a88ca5d1f21909675e14a6e0"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-npm-ci.log",
+      "note": "r2 gate 2: npm ci exit 0 (fresh).",
+      "sha256": "abd28d500dfd00320d6ed75872aee6de693f8516ffa7b69070324549dc803381"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-lockfile-before-ci.txt",
+      "note": "r2 lockfile SHA-256 before npm ci.",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-lockfile-after-ci.txt",
+      "note": "r2 lockfile SHA-256 after npm ci; equals before (invariance).",
+      "sha256": "f103a4a39866e2f924e22e0f52d345c50308e95f46d27cc0bae761c8486f87ad"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-verify-core-integration.log",
+      "note": "r2 gate 3: 22/22 checks PASS (fresh).",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-typecheck.log",
+      "note": "r2 gate 4: tsc --noEmit exit 0 (fresh).",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-test-run1.log",
+      "note": "r2 gate 5a: 1 suite / 4 tests PASS (fresh).",
+      "sha256": "95a41c67b477ab16859327b219853cafa413a9dd7b8f1c20946207b8e0b0e114"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-test-run2.log",
+      "note": "r2 gate 5b: 1 suite / 4 tests PASS (fresh, second run).",
+      "sha256": "921e1fcf1e2161b73eb1b55f1f3516bf270f123aa0fbb575c22dc5378152f2ec"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-android-export.log",
+      "note": "r2 gate 6: expo export:android OK (fresh).",
+      "sha256": "c0af1d101ad7293c0ee340a2b94043d3d58e04ed0203fdf8111104cfc9d9a204"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-metro.log",
+      "note": "r2 gate 7: session-owned Metro log; readiness, bundle delivery 1359 modules in 802 ms, no OOM (heap ceiling 8192).",
+      "sha256": "bebbe84ac8c4370ece08b50ab17eb1c7ec282a761adf278861befd1d0b594833"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-ui.png",
+      "note": "r2 gate 7 screenshot; pixel inspection delegated, PASS.",
+      "sha256": "b20d48c021e81751e53dc28d2e007cdd35a8348c9f019d9c630e89d47dd29714"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-ui.xml",
+      "note": "r2 gate 7: uiautomator dump; text Conference / Sessions: 20 / First session: 1 — Breakfast.",
+      "sha256": "7dbbb210abb4b904762eccde86a6f9ec0c706561c92b836171244ebb96c9ba75"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-app-pid.logcat",
+      "note": "r2 gate 7: app-PID logcat; one nonfatal ReactNoCrashSoftException (16:42:17); no fatal; app functional after it.",
+      "sha256": "e47e40f216391111ee4da95d21e1a0d217f9b4a52d1e4d7935d71eed9902b16f"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-native-observations.txt",
+      "note": "r2 gate 7: device/app identity, launch sequence, observed values, RESULT: MATCH, teardown record.",
+      "sha256": "c419284323c6e88a0c6ccd1e0d10755be5976044cb2f8cbeedd40778a405d1ff"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-exits.txt",
+      "note": "r2 ordered gate sequence summary (software battery + native, exits, artifact hash/size).",
+      "sha256": "fa23ee16c5ac821a5beda8d7c2b8b3b7198c8f70a8ee385de427a0932f780e39"
+    },
+    {
+      "path": "migration/evidence/RN02/r2-visual-inspection.md",
+      "note": "r2 gate 7 pixel inspection: GPT-6.1 Sol vision, verdict PASS, verbatim inspector report (deleg_ed15c8ec).",
+      "sha256": "168429c94f395753fa1a776fa3aaff6350ff08b62a2e587aa40692db990b77b9"
+    },
+    {
+      "path": "migration/work-packages/RN02.md",
+      "note": "RN02 package document (recorded as deliverable; began untracked); status line updated for revision 2.",
+      "sha256": "988f0892d708847ad4b2018c8a6f79a182aa9ede94b95e65292630baaa5158b3"
+    },
+    {
+      "path": "migration/handoffs/RN02.md",
+      "note": "RN02-r2 handoff (revision 2; replaces the r1 handoff text per the RN01 in-place-revision convention; r1 submission hash record preserved in submissions/RN02-r1.json).",
+      "sha256": "5cdfb7636d3fe024dad6764bc289175406eb76b30157d11915ccfcc45094966f"
+    },
+    {
+      "path": "migration/reviews/RN02-r1.md",
+      "note": "RN02-r1 review response saved verbatim (CHANGES_REQUIRED, 4 findings); immutable record.",
+      "sha256": "7fce7ffbd39a938c28ea9dd209aebc215e64976575b6dcd1e7d55e31b85e0517"
+    },
+    {
+      "path": "migration/submissions/RN02-r1.json",
+      "note": "Superseded r1 submission; immutable record (its handoff-file hash entry reflects the r1 handoff text as it was at r2 time, per the established RN01 convention).",
+      "sha256": "75a16068648e066283c0c29f89a0347ee95aca8a6bcca14cee30b6d6d620d842"
+    },
+    {
+      "path": "migration/reviews/RN01-r2.md",
+      "note": "Prior approved baseline review (APPROVE / STOP); immutable.",
+      "sha256": "e34cf757f8a5e6c80526b12109ce705d2b94258919943a03c94c6a7d4068173e"
+    },
+    {
+      "path": "migration/submissions/RN01-r2.json",
+      "note": "Prior approved baseline submission; immutable.",
+      "sha256": "bbaef8da4754550040ae36d1d164af142ab052f5f35ebd860637f4a1444828f1"
+    },
+    {
+      "path": "migration/handoffs/RN01.md",
+      "note": "Prior approved baseline handoff; immutable.",
+      "sha256": "249900698c9d64cbc987e32992893897dbc9b73ca327f2aef109ce0c04ffbb23"
+    },
+    {
+      "path": "migration/reviews/RN01-r1.md",
+      "note": "Historical RN01 r1 record (superseded); immutable.",
+      "sha256": "df0851776fbcf2feac3fb6ec224d55d4225fd479f363c690b6b106adc5eb81e9"
+    },
+    {
+      "path": "migration/submissions/RN01-r1.json",
+      "note": "Historical RN01 r1 record (superseded); immutable.",
+      "sha256": "914c20d620e789ab4884cbdede63bb935cb9197f4a0f4c9bde14aacfb40496ee"
+    }
+  ],
+  "preExistingChanges": [
+    "IDEA.md untracked at start (protected; hash-only handling).",
+    "migration/work-packages/RN02.md untracked at start (prepared package document, preserved; status line updated).",
+    "Two r1 scratch logs (tmp-core-test.log, tmp-install.log) were deleted by the executor after their SHA-256 was captured; recorded in the r2 handoff, not listed in files[]."
+  ],
+  "notes": [
+    "The 41 dev-flag lockfile re-marks are an npm-intrinsic re-classification of dev-reachable chains when resolving the file:../core local dependency; empirically reproduced identically by npm 11.16, 11.19 and 12.0.2 with zero user edits (172 -> 131 dev:true). Reported as the exception class requiring the human scope decision per reviewer finding 3; not silently accepted.",
+    "Jest fix is the only RN02 configuration change beyond the local dependency, and is inside the existing jest key as the narrow resolution fix allowlist item 1 permits.",
+    "dist-android is ignored output and intentionally absent from files[]; its r2 artifact hash/size is recorded in runResults.r2SoftwareBattery.artifact.",
+    "Screenshot pixel inspection was completed by a delegated GPT-6.1 Sol vision subagent (local terminal-only executor, vision tool not loaded); verdict PASS recorded in r2-visual-inspection.md.",
+    "All code-file hashes are identical to the r1 submission (unchanged product); r2 added evidence and packet documents only."
+  ]
+}
