@@ -1,0 +1,269 @@
+{
+  "timestamp": "2026-10-25T10:26:11.083Z",
+  "assertions": {
+    "search01": true,
+    "detail02": true,
+    "detail03Selected": true,
+    "detail03NoAlertNode": true,
+    "search04": true,
+    "added05": true,
+    "required06Alert": false,
+    "retry06Alert": true,
+    "favorites07Both": true,
+    "confirm08": true,
+    "cancel09KeepsY": true,
+    "remove10OnlyX": true,
+    "remove11Empty": true,
+    "unknown12": true,
+    "directCold13Detail": false,
+    "directCold13Launcher": true,
+    "assistedCold13Detail": true,
+    "coldBack14": true
+  },
+  "expectedFalse": [
+    "required06Alert",
+    "directCold13Detail"
+  ],
+  "assertionProblems": [],
+  "preservation": {
+    "baselineFileCount": 583,
+    "unchangedProblems": [],
+    "statusOnly": true,
+    "headUnchanged": true
+  },
+  "git": [
+    {
+      "timestamp": "2026-10-25T10:26:10.885Z",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "timestamp": "2026-10-25T10:26:10.930Z",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "timestamp": "2026-10-25T10:26:10.951Z",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257\n",
+      "stderr": ""
+    },
+    {
+      "timestamp": "2026-10-25T10:26:10.981Z",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "stdout": "migration/slice-1\n",
+      "stderr": ""
+    }
+  ],
+  "adbCommandCount": 140,
+  "adbFailures": [],
+  "captures": [
+    {
+      "name": "RN04-01-schedule-search",
+      "bytes": 159361,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "e29d591168d524d7c18097d63e7107cd0def33aa493e22d7d3b95451cb1b47c2",
+      "xmlSha256": "135a51d431a0b31ec3e3d8267cebb14a03313cdcd901befd81c83240f0ac38ba",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-02-detail-opened",
+      "bytes": 208839,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "3a73fa3faf9c88c86b375398acab1570276e9170a867fecb39cacc83fe66e640",
+      "xmlSha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-03-detail-favorited",
+      "bytes": 208640,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "8051a1065487bfc9ed0af1faaafe34b23e4c63262e1830b5b43e43db00136ca9",
+      "xmlSha256": "240ff360e9e9488afddb6498860b0fcc9e8ea5340546980050582bf27c254f56",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-04-back-search-retained",
+      "bytes": 151960,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "32b1630e302f217cb027ca110f8fff7cbccbda5b5e8f55f38d3081dd7323b0ec",
+      "xmlSha256": "b6d11ade174e80a59c052849e16ab04da179c6accdf9cdcb1add808fb7a8f272",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-05-favorite-added-alert",
+      "bytes": 145003,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "9d43a638465d00dc9061798e422cbdac00de9721b1c27fd4e75df282019a3390",
+      "xmlSha256": "1cd484cec56b9a83dcf3b414cef00da4dd1e40dd2c6f63763f5b0a8db7c1067b",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-06-already-favorite-alert",
+      "bytes": 154731,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "8478316193be79859284211b9d7150461e16bd80e72429834a388227aa310b25",
+      "xmlSha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "missingExpected": [
+        "Favorite already added",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ]
+    },
+    {
+      "name": "RN04-06-already-favorite-alert-retry",
+      "bytes": 165093,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "0a1a29bfe012cc6fdec431488c2cdf1aeb74bd5c58654b9a81f017ffd248aad8",
+      "xmlSha256": "5fbaec2075a39272fa57cd287af7842f27f29414fb1957cb66cc9976a4225b48",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-07-favorites-after-cancel",
+      "bytes": 109798,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "21d6389337f5f9ab5c3d55e6094c3120d7103bba2222f039f9fc4ab3dcd7f4c9",
+      "xmlSha256": "f03ba5e7eb92015cabc975cc17291d2595e2019a707048750398b36e61311a0c",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-08-remove-confirm-alert",
+      "bytes": 125584,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "3388ff64d566a400d6ce0563e7f159e097e1f04eff0df9b4590bba290f3e82fc",
+      "xmlSha256": "a340e22a60aa5d8391b1fbfb2ea9efbbaa21a5a724b4acb07ca8910e82e5de00",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-09-favorites-after-remove-cancel",
+      "bytes": 109798,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "21d6389337f5f9ab5c3d55e6094c3120d7103bba2222f039f9fc4ab3dcd7f4c9",
+      "xmlSha256": "f03ba5e7eb92015cabc975cc17291d2595e2019a707048750398b36e61311a0c",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-10-favorites-after-remove",
+      "bytes": 86762,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "99bf316136ff29ff6962028b4a51d72fd07160b20c491f544f7a855d1b6a3a39",
+      "xmlSha256": "c3dd39edcb2287c761bb58fac22e3b4e0d5d3f3a59af009143e8e1fa1dc0763f",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-11-already-favorite-remove",
+      "bytes": 67807,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "77b3f6281062ebfef3f08ecbe1ed40a2c75196ca3ba93fedde14edb8a7d90fae",
+      "xmlSha256": "49d6e7b37963118e6a7f26fb25e414bf155ef7a418bd37846e63a4df568b5c9e",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-12-unknown-id",
+      "bytes": 80259,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "32459b9338501d802f6b92efb553917ebf2ca15ed9589d1328833b850a02145d",
+      "xmlSha256": "8bea13961b8f893af2c2ad533ce2f8d2bbf4f8afe46a8a70bc36918bcf5abda0",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-13-cold-entry",
+      "bytes": 122914,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "6d6f98985a862b2bfc2955835071a2cd5b5a130a2b47aa69c7c0736fb872724a",
+      "xmlSha256": "30604f2f27fe3f6b5c79be78a553ae4c83c65e4357f495071288baa58aea180c",
+      "missingExpected": [
+        "University of Ionic",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Navigate up"
+      ]
+    },
+    {
+      "name": "RN04-13-cold-entry-after-connect",
+      "bytes": 208839,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "3a73fa3faf9c88c86b375398acab1570276e9170a867fecb39cacc83fe66e640",
+      "xmlSha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "missingExpected": []
+    },
+    {
+      "name": "RN04-14-cold-entry-back",
+      "bytes": 154827,
+      "width": 1080,
+      "height": 2400,
+      "imageSha256": "9df8d5a5de7d308f3945bc8652f39cfa82228cb02aacaa172fb4dc9e98490018",
+      "xmlSha256": "e5735af71b5dd37cc30a4c5a42992d55ad263271c34a5fc4d05e6b1ae8fb5acb",
+      "missingExpected": []
+    }
+  ],
+  "relocatedSupport": [
+    "after-already-cancel.xml",
+    "all-after-x-remove.xml",
+    "all-for-remove-x.xml",
+    "already-alert-check.xml",
+    "already-alert-retry-check.xml",
+    "already-x-remove-check.xml",
+    "app-launch.xml",
+    "app-loaded.xml",
+    "back-retained-check.xml",
+    "cold-entry-back-check.xml",
+    "cold-entry-check.xml",
+    "detail-opened-check.xml",
+    "devclient-new-server.xml",
+    "devclient-url-typed.xml",
+    "favorites-both-check.xml",
+    "first-add-alert-check.xml",
+    "native-commands.jsonl",
+    "native-state.json",
+    "preflight-ui.xml",
+    "preservation-baseline.json",
+    "reconnected-after-cold.xml",
+    "remove-y-again-check.xml",
+    "remove-y-confirm-check.xml",
+    "search-cleared.xml",
+    "search-focused.xml",
+    "search-typed.xml",
+    "unknown-link-check.xml",
+    "verification.json"
+  ]
+}

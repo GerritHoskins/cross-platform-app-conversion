@@ -1,0 +1,4066 @@
+{
+  "package": "RN04",
+  "revision": 2,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+  "headTree": "214a695cdc318b2c0605d0b785842d681b598aa9",
+  "date": "2026-10-25T11:17:53.000Z",
+  "headSource": "Live continuation git branch/HEAD/HEAD^{tree}/GIT_COMMITTER_IDENT receipts; migration/evidence/RN04/checks-r2/cont-baseline.json",
+  "priorApprovedBaseline": {
+    "commit": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+    "package": "RN03",
+    "revision": 2,
+    "verdict": "APPROVE",
+    "review": "migration/reviews/RN03-r2.md",
+    "ancestorReceipt": "migration/evidence/RN04/checks-r2/rn03-ancestor.receipt.json"
+  },
+  "session": {
+    "executor": "Hermes GPT-6.1 Sol/high, openai-codex, translation-migration",
+    "substitution": "Explicit human choice replaces package-named local Qwen3.8-27B in phases A–C2",
+    "coordinator": "Claude Code with live output",
+    "scope": "Revision 2 evidence-only freeze; first freeze completed gates/inventory/archive; continuation completes handoff/status/manifest; no app/test/config or existing evidence edits",
+    "runtime": "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze2-20261025",
+    "formalReviewDispatched": false,
+    "stop": "READY_FOR_REVIEW; formal Sol/high review pending; no approval; STOP; no RN05",
+    "priorFreezeRuntime": "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze-20261025"
+  },
+  "environment": {
+    "nodeExecutable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "nodeVersion": "v24.19.0",
+    "npmCli": "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "childPath": "Pinned Node directory first",
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "spawn": "spawnSync argument arrays, shell:false",
+    "deviceInteractionThisPreparation": false,
+    "historicalNative": {
+      "serial": "emulator-5554",
+      "avd": "RN01_API36",
+      "appId": "dev.translationtest.rn",
+      "metro": "http://127.0.0.1:8082",
+      "ownership": "Coordinator booted RN01_API36 visible window, -gpu swiftshader, no wipe; started Metro with existing script under pinned Node; set adb reverse tcp:8082 tcp:8082. Phase B observed; phases C/C2 did not touch device/Metro. Both revision 2 freeze sessions leave emulator/device/Metro untouched; native retry2 is prior evidence, not a freeze action."
+    }
+  },
+  "runResults": {
+    "commands": [
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "c283c7e",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.375Z",
+        "durationMs": 33,
+        "receipt": "migration/evidence/RN04/checks-a/ancestor.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "c283c7e",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.483Z",
+        "durationMs": 21,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-ancestor.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.417Z",
+        "durationMs": 20,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-branch.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.438Z",
+        "durationMs": 21,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-head-tree.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.392Z",
+        "durationMs": 22,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-node.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN03-r2.md"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.459Z",
+        "durationMs": 23,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-rn03.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain=v1"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:58:53.505Z",
+        "durationMs": 40,
+        "receipt": "migration/evidence/RN04/checks-a/baseline-status.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.333Z",
+        "durationMs": 20,
+        "receipt": "migration/evidence/RN04/checks-a/branch.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "bundle:android"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:05:10.120Z",
+        "durationMs": 20925,
+        "receipt": "migration/evidence/RN04/checks-a/bundle-android.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:08:57.027Z",
+        "durationMs": 21,
+        "receipt": "migration/evidence/RN04/checks-a/cached-diff.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:09:26.168Z",
+        "durationMs": 34,
+        "receipt": "migration/evidence/RN04/checks-a/cached-diff-final.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:08:56.914Z",
+        "durationMs": 80,
+        "receipt": "migration/evidence/RN04/checks-a/diff-check.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:09:26.038Z",
+        "durationMs": 77,
+        "receipt": "migration/evidence/RN04/checks-a/diff-check-final.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:08:57.048Z",
+        "durationMs": 28,
+        "receipt": "migration/evidence/RN04/checks-a/final-status.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:09:26.203Z",
+        "durationMs": 48,
+        "receipt": "migration/evidence/RN04/checks-a/final-status-final.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.354Z",
+        "durationMs": 20,
+        "receipt": "migration/evidence/RN04/checks-a/head-tree.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 2,
+        "startedAt": "2026-10-25T10:01:10.999Z",
+        "durationMs": 2234,
+        "receipt": "migration/evidence/RN04/checks-a/implementation-typecheck.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:03:57.418Z",
+        "durationMs": 1841,
+        "receipt": "migration/evidence/RN04/checks-a/implementation-typecheck-2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.410Z",
+        "durationMs": 61,
+        "receipt": "migration/evidence/RN04/checks-a/integration.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\jest1.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:59.351Z",
+        "durationMs": 5070,
+        "receipt": "migration/evidence/RN04/checks-a/jest1.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\jest2.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:05:04.423Z",
+        "durationMs": 5696,
+        "receipt": "migration/evidence/RN04/checks-a/jest2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.311Z",
+        "durationMs": 20,
+        "receipt": "migration/evidence/RN04/checks-a/node-version.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:08:56.999Z",
+        "durationMs": 27,
+        "receipt": "migration/evidence/RN04/checks-a/protected-diff.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:09:26.119Z",
+        "durationMs": 48,
+        "receipt": "migration/evidence/RN04/checks-a/protected-diff-final.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/session-detail-screen.test.tsx",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\router-focused.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 1,
+        "startedAt": "2026-10-25T10:03:40.496Z",
+        "durationMs": 16779,
+        "receipt": "migration/evidence/RN04/checks-a/router-focused.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/session-detail-screen.test.tsx",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\router-focused-2.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:28.298Z",
+        "durationMs": 4941,
+        "receipt": "migration/evidence/RN04/checks-a/router-focused-2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/schedule-screen.test.tsx",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\schedule-focused.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:02:00.299Z",
+        "durationMs": 25896,
+        "receipt": "migration/evidence/RN04/checks-a/schedule-focused.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-implement-20261025/finish.mjs",
+          "audit"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:08:57.092Z",
+        "durationMs": 222,
+        "receipt": "migration/evidence/RN04/checks-a/scope-audit.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-implement-20261025/finish.mjs",
+          "audit"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:09:26.344Z",
+        "durationMs": 243,
+        "receipt": "migration/evidence/RN04/checks-a/scope-audit-final.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/conference-state.test.ts",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-a\\state-focused.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T09:59:52.970Z",
+        "durationMs": 19234,
+        "receipt": "migration/evidence/RN04/checks-a/state-focused.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:04:57.471Z",
+        "durationMs": 1878,
+        "receipt": "migration/evidence/RN04/checks-a/typecheck.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "node-version",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.272Z",
+        "durationMs": 25,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/node-version.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/node-version.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/node-version.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "branch",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.300Z",
+        "durationMs": 26,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/branch.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/branch.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/branch.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "head",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.327Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/head.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/head.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/head.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "head-tree",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.348Z",
+        "durationMs": 24,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/head-tree.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/head-tree.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/head-tree.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "rn03-commit",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN03-r2.md"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.372Z",
+        "durationMs": 34,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/rn03-commit.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/rn03-commit.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/rn03-commit.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "rn03-full",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "c283c7e"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.407Z",
+        "durationMs": 22,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/rn03-full.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/rn03-full.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/rn03-full.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "rn03-ancestor",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "c283c7e",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.430Z",
+        "durationMs": 23,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/rn03-ancestor.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/rn03-ancestor.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/rn03-ancestor.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "integration",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.453Z",
+        "durationMs": 149,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/integration.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/integration.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/integration.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "typecheck",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:26.601Z",
+        "durationMs": 10134,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/typecheck.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/typecheck.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/typecheck.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "jest1",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-c\\jest1.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:30:36.736Z",
+        "durationMs": 29173,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/jest1.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/jest1.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/jest1.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "jest2",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\checks-c\\jest2.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:05.910Z",
+        "durationMs": 5751,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/jest2.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/jest2.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/jest2.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "bundle-android",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "bundle:android"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:11.661Z",
+        "durationMs": 19274,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/bundle-android.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/bundle-android.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/bundle-android.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "diff-check",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:30.936Z",
+        "durationMs": 69,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/diff-check.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/diff-check.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/diff-check.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "protected-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:31.005Z",
+        "durationMs": 40,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/protected-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/protected-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/protected-diff.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "cached-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:31.045Z",
+        "durationMs": 27,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/cached-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/cached-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/cached-diff.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "idea-hash",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-freeze-20261025/checks-c.mjs",
+          "--idea-hash"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:31.073Z",
+        "durationMs": 69,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/idea-hash.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/idea-hash.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/idea-hash.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "final-status",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:31.143Z",
+        "durationMs": 33,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/final-status.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/final-status.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/final-status.receipt.json"
+      },
+      {
+        "phase": "C",
+        "label": "git-date",
+        "command": "git",
+        "args": [
+          "var",
+          "GIT_COMMITTER_IDENT"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:31:31.176Z",
+        "durationMs": 24,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c/git-date.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c/git-date.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c/git-date.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "node-version",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.552Z",
+        "durationMs": 19,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/node-version.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/node-version.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/node-version.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "branch",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.575Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/branch.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/branch.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/branch.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "head",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.597Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/head.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/head.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/head.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "head-tree",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.618Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/head-tree.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/head-tree.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/head-tree.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "rn03-commit",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN03-r2.md"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.640Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/rn03-commit.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/rn03-commit.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/rn03-commit.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "rn03-full",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "c283c7e"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.663Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/rn03-full.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/rn03-full.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/rn03-full.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "rn03-ancestor",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "c283c7e",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.683Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/rn03-ancestor.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/rn03-ancestor.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/rn03-ancestor.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "preservation",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-freeze2-20261025/checks-c2.mjs",
+          "--preservation"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.705Z",
+        "durationMs": 66,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/preservation.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/preservation.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/preservation.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "diff-check",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.773Z",
+        "durationMs": 81,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/diff-check.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/diff-check.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/diff-check.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "protected-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.855Z",
+        "durationMs": 45,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/protected-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/protected-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/protected-diff.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "cached-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.902Z",
+        "durationMs": 35,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/cached-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/cached-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/cached-diff.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "idea-hash",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-freeze2-20261025/checks-c2.mjs",
+          "--idea-hash"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.939Z",
+        "durationMs": 45,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/idea-hash.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/idea-hash.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/idea-hash.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "status",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:40.985Z",
+        "durationMs": 30,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/status.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/status.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/status.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "scope-audit",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-freeze2-20261025/checks-c2.mjs",
+          "--scope"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:41.016Z",
+        "durationMs": 39,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/scope-audit.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/scope-audit.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/scope-audit.receipt.json"
+      },
+      {
+        "phase": "C2",
+        "label": "git-date",
+        "command": "git",
+        "args": [
+          "var",
+          "GIT_COMMITTER_IDENT"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T10:36:41.056Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-c2/git-date.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-c2/git-date.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-c2/git-date.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "node-version",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:15.978Z",
+        "durationMs": 28,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/node-version.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/node-version.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/node-version.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "branch",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.009Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/branch.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/branch.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/branch.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "head",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.029Z",
+        "durationMs": 19,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/head.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/head.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/head.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "head-tree",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.050Z",
+        "durationMs": 22,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/head-tree.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/head-tree.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/head-tree.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "rn03-commit",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN03-r2.md"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.073Z",
+        "durationMs": 23,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/rn03-commit.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/rn03-commit.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/rn03-commit.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "rn03-full",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "c283c7e"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.097Z",
+        "durationMs": 32,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/rn03-full.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/rn03-full.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/rn03-full.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "rn03-ancestor",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "c283c7e",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.131Z",
+        "durationMs": 33,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/rn03-ancestor.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/rn03-ancestor.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/rn03-ancestor.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "r1-hash-gate",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/tools/manifest-hashes.mjs",
+          "migration/submissions/RN04-r1.json"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.166Z",
+        "durationMs": 157,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/r1-hash-gate.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/r1-hash-gate.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/r1-hash-gate.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "diff-check",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.326Z",
+        "durationMs": 43,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/diff-check.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/diff-check.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/diff-check.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "protected-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.370Z",
+        "durationMs": 39,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/protected-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/protected-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/protected-diff.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "cached-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.411Z",
+        "durationMs": 37,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cached-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cached-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cached-diff.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "idea-hash",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze-20261025/freeze-checks.mjs",
+          "--idea-hash"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.450Z",
+        "durationMs": 68,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/idea-hash.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/idea-hash.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/idea-hash.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "status",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.520Z",
+        "durationMs": 53,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/status.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/status.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/status.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "scope-audit",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze-20261025/freeze-checks.mjs",
+          "--scope-audit"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.574Z",
+        "durationMs": 92,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/scope-audit.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/scope-audit.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/scope-audit.receipt.json"
+      },
+      {
+        "phase": "r2-freeze",
+        "id": "git-date",
+        "command": "git",
+        "args": [
+          "var",
+          "GIT_COMMITTER_IDENT"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:13:16.668Z",
+        "durationMs": 31,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/git-date.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/git-date.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/git-date.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-head",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:52.959Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-head.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-head.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-head.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-cached-diff",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:52.983Z",
+        "durationMs": 26,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-cached-diff.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-cached-diff.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-cached-diff.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-r1-hash-gate",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/tools/manifest-hashes.mjs",
+          "migration/submissions/RN04-r1.json"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:53.011Z",
+        "durationMs": 152,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-idea-hash",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze2-20261025/continuation.mjs",
+          "idea"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:53.165Z",
+        "durationMs": 66,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-idea-hash.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-idea-hash.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-idea-hash.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-branch",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:53.232Z",
+        "durationMs": 19,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-branch.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-branch.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-branch.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-head-tree",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:53.252Z",
+        "durationMs": 21,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-head-tree.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-head-tree.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-head-tree.receipt.json"
+      },
+      {
+        "phase": "r2-freeze2",
+        "id": "cont-git-date",
+        "command": "git",
+        "args": [
+          "var",
+          "GIT_COMMITTER_IDENT"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:17:53.275Z",
+        "durationMs": 20,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN04/checks-r2/cont-git-date.stdout.log",
+        "stderr": "migration/evidence/RN04/checks-r2/cont-git-date.stderr.log",
+        "receipt": "migration/evidence/RN04/checks-r2/cont-git-date.receipt.json"
+      }
+    ],
+    "softwareChecksReused": {
+      "policy": "No product check rerun or export/rebuild in revision 2; passing r1 receipts still apply to unchanged implementation and evidence",
+      "command": [
+        "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "migration/tools/manifest-hashes.mjs",
+        "migration/submissions/RN04-r1.json"
+      ],
+      "result": "294 hash entries, 0 problem(s)",
+      "receipts": [
+        "migration/evidence/RN04/checks-r2/r1-hash-gate.receipt.json",
+        "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.receipt.json"
+      ],
+      "temporalBoundary": "Both r1 checks passed before authorized handoff/status replacements; archived r1 handoff and all earlier evidence/implementation remain preserved",
+      "preservation": {
+        "preservedPaths": 408,
+        "mismatches": 0,
+        "workPackageStatusOnly": true,
+        "lfOnly": true
+      }
+    },
+    "jest": [
+      {
+        "report": "migration/evidence/RN04/checks-a/jest1.json",
+        "suites": 4,
+        "tests": 60,
+        "failed": 0,
+        "pending": 0,
+        "perSuite": [
+          {
+            "path": "react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 11,
+            "passed": 11
+          },
+          {
+            "path": "react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 30,
+            "passed": 30
+          },
+          {
+            "path": "react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15
+          },
+          {
+            "path": "react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4
+          }
+        ]
+      },
+      {
+        "report": "migration/evidence/RN04/checks-a/jest2.json",
+        "suites": 4,
+        "tests": 60,
+        "failed": 0,
+        "pending": 0,
+        "perSuite": [
+          {
+            "path": "react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 11,
+            "passed": 11
+          },
+          {
+            "path": "react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15
+          },
+          {
+            "path": "react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 30,
+            "passed": 30
+          },
+          {
+            "path": "react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4
+          }
+        ]
+      },
+      {
+        "report": "migration/evidence/RN04/checks-c/jest1.json",
+        "suites": 4,
+        "tests": 60,
+        "failed": 0,
+        "pending": 0,
+        "perSuite": [
+          {
+            "path": "react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 11,
+            "passed": 11
+          },
+          {
+            "path": "react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15
+          },
+          {
+            "path": "react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4
+          },
+          {
+            "path": "react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 30,
+            "passed": 30
+          }
+        ]
+      },
+      {
+        "report": "migration/evidence/RN04/checks-c/jest2.json",
+        "suites": 4,
+        "tests": 60,
+        "failed": 0,
+        "pending": 0,
+        "perSuite": [
+          {
+            "path": "react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 11,
+            "passed": 11
+          },
+          {
+            "path": "react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15
+          },
+          {
+            "path": "react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4
+          },
+          {
+            "path": "react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 30,
+            "passed": 30
+          }
+        ]
+      }
+    ],
+    "countChangeFromRN03": {
+      "prior": {
+        "suites": 3,
+        "tests": 36,
+        "state": 24,
+        "schedule": 8,
+        "shell": 4
+      },
+      "current": {
+        "suites": 4,
+        "tests": 60,
+        "state": 30,
+        "schedule": 11,
+        "detail": 15,
+        "shell": 4
+      },
+      "additionalTests": 24,
+      "originalTests": "Retained per phase A checkpoint; full reports remain passing"
+    },
+    "historicalFailures": [
+      {
+        "phase": "A",
+        "receipt": "migration/evidence/RN04/checks-a/implementation-typecheck.receipt.json",
+        "exitCode": 2,
+        "disposition": "TS2345 interpolated numeric route; fixed typed route object/sessionId params; implementation-typecheck-2 exit 0"
+      },
+      {
+        "phase": "A",
+        "receipt": "migration/evidence/RN04/checks-a/router-focused.receipt.json",
+        "exitCode": 1,
+        "disposition": "5 failed/10 passed; accessible progress container and pathname/schedule cold-back assertions fixed; router-focused-2 exit 0, 15 passed; no config change"
+      },
+      {
+        "phase": "C",
+        "command": [
+          "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "tools/qwen-supervisor/.runs/sol-rn04-r1-freeze-20261025/checks-c.mjs"
+        ],
+        "exitCode": 1,
+        "checkpoint": "migration/handoffs/RN04-checkpoint-c-blocked.md",
+        "evidence": "migration/evidence/RN04/checks-c/blocked-checkpoint.json",
+        "disposition": "All 18 child receipts exit 0; wrapper trimmed first porcelain record leading space, causing false scope failure. Historical failure preserved; coordinator authorized corrected C2 parser and gates; not a product failure."
+      },
+      {
+        "phase": "r2-freeze",
+        "result": "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze-20261025/result.json",
+        "disposition": "BLOCKED after steps 1-3 only: write_file refused bounded-read handoff overwrite, file NOT modified; explicit coordinator continuation. Repeated refusal after complete 89-line read handled with explicitly authorized fs.writeFileSync fallback in write-handoff.mjs, LF endings; no product failure"
+      }
+    ],
+    "integration": {
+      "normalizedSessions": 20,
+      "compiledCoreMatches": "14/14",
+      "receipts": [
+        "migration/evidence/RN04/checks-a/integration.receipt.json",
+        "migration/evidence/RN04/checks-c/integration.receipt.json"
+      ]
+    },
+    "androidExport": {
+      "modules": 1307,
+      "receipt": "migration/evidence/RN04/checks-c/bundle-android.receipt.json",
+      "inventory": "migration/evidence/RN04/checks-r2/android-artifacts-current.json",
+      "historicalInventory": "migration/evidence/RN04/checks-a/android-artifacts.json",
+      "reconciliation": "migration/evidence/RN04/checks-r2/export-inventory-reconciliation.json",
+      "summary": {
+        "SAME": 28,
+        "DIFFERS": 1,
+        "ONLY_IN_HISTORICAL": 0,
+        "ONLY_IN_CURRENT": 0
+      },
+      "totalFiles": 29,
+      "limitation": "Read-only inventory of current phase C output; historical phase A inventory unchanged. No revision 2 rebuild/export. Ignored dist-android excluded from files[]; build evidence is not device evidence."
+    },
+    "decisions": [
+      "Strict ASCII decimal IDs with loaded numeric match; leading zeros accepted; stricter than source parseInt",
+      "Already-favorite all-mode confirmation deliberately reproduces source quirk",
+      "Single Stack is slice 1 schedule stack; unstable_settings.initialRouteName='index' retained despite Expo Router anchor deprecation warning"
+    ]
+  },
+  "pixelProof": {
+    "captureSet": "migration/evidence/RN04/native/capture-index.json",
+    "report": "migration/evidence/RN04/pixel-inspection-coordinator.md",
+    "verdict": "PASS (supporting only)",
+    "transport": "Claude Code coordinator direct PNG inspection; not Hermes or openai-codex",
+    "agent": "Claude Code coordinator",
+    "model": "claude-opus-5-5",
+    "directViewImage": true,
+    "executorViewedPixels": false,
+    "packageApproval": false,
+    "capturePairs": 16,
+    "frame06": "Coordinator accepts RN04-06-already-favorite-alert-retry as step-6 evidence; original is historical miscapture, not confirmation evidence or product defect",
+    "coldEntry": "Unassisted native cold VIEW opens development-client launcher; unverified natively, automated only. Assisted entry and header-back supplemental only.",
+    "chronology": "Timestamped native command/action/capture records establish sequence; identical frames do not",
+    "limitations": [
+      "Dark theme not natively tested",
+      "Large text not natively tested",
+      "Hardware back not natively tested",
+      "Keyboard behavior not natively tested",
+      "Nonzero scroll-position restoration not natively tested"
+    ],
+    "reports": [
+      "migration/evidence/RN04/pixel-inspection-coordinator.md",
+      "migration/evidence/RN04/r2-pixel-inspection-coordinator.md"
+    ],
+    "captureSets": [
+      "migration/evidence/RN04/native/capture-index.json",
+      "migration/evidence/RN04/r2-native-retry2/capture-index.json"
+    ],
+    "revision2": {
+      "report": "migration/evidence/RN04/r2-pixel-inspection-coordinator.md",
+      "captureSet": "migration/evidence/RN04/r2-native-retry2/capture-index.json",
+      "capturePairs": 5,
+      "verdict": "PASS (supporting only)",
+      "agent": "Claude Code coordinator",
+      "model": "claude-opus-5-5",
+      "transport": "Direct PNG inspection, not Hermes or openai-codex",
+      "packageApproval": false,
+      "xmlObservation": "selected true to false; immediate Add to favorites, no dialog nodes, Favorites empty after",
+      "timingDisposition": "Retry2 first-attempt row navigation with settle waits supports, but does not prove, a timing explanation for prior retry; product defect not established"
+    }
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": [],
+    "status": "Required for the coordinator's dedicated dispatcher; not dispatched by the executor"
+  },
+  "preExistingChanges": {
+    "record": "migration/evidence/RN04/checks-r2/scope-audit.json",
+    "preservationRecord": "migration/evidence/RN04/checks-c/preservation-entry.json",
+    "trackedModified": [
+      "migration/react-native/__tests__/conference-state.test.ts",
+      "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "migration/react-native/src/app/_layout.tsx",
+      "migration/react-native/src/screens/schedule-screen.tsx",
+      "migration/react-native/src/state/conference-state.tsx"
+    ],
+    "rn04AlreadyPresent": "All eight implementation files, r1 packet/review, all r2 native attempts/checkpoints, both pixel reports and first freeze checks-r2/archive present at continuation entry; preservation snapshot in continuation run directory",
+    "unrelatedPreserved": [
+      "tools/",
+      "migration/plans/rn07-android-acceptance-checklist.md",
+      "IDEA.md"
+    ]
+  },
+  "protectedBaseline": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "policy": "Hash only; outside files[]; immutable protected baseline; continuation hash compared with r1 without reading text",
+      "receipt": "migration/evidence/RN04/checks-r2/cont-idea-hash.receipt.json"
+    }
+  ],
+  "hashGate": {
+    "writeCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN04-r2.json",
+      "--write"
+    ],
+    "checkCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN04-r2.json"
+    ],
+    "requiredProblems": 0,
+    "policy": "All sha256 fields initially empty, populated by manifest-hashes.mjs; outputs/receipts only in continuation run directory; no self hash or future review",
+    "runtimeOutput": "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze2-20261025/manifest-hashes-check-final.stdout.log"
+  },
+  "notRun": [
+    "Formal review not dispatched; dedicated coordinator dispatcher pending; no approval; STOP, no RN05",
+    "No revision 2 product checks rerun; passing historical integration/typecheck/Jest/export receipts reused after r1 hash gates passed before handoff/status replacement",
+    "Unassisted cold entry/back unverified natively; automated only under development-client exception; assisted entry/header-back supplemental",
+    "Dark theme, large text, hardware back, keyboard and nonzero scroll-position restoration not natively tested; full acceptance/RN07 deferred",
+    "Earlier native retry row-link cause not established; timing explanation supported, not proved; product defect not established",
+    "No emulator/device/Metro interaction, installs, rebuild/export, delegation/review dispatch, staging, commit or push in either r2 freeze session",
+    "iOS/Web and full acceptance outside freeze"
+  ],
+  "files": [
+    {
+      "path": "migration/evidence/RN04/checks-a/ancestor.receipt.json",
+      "sha256": "c2b8335e53ecd07ce9b0180d647a06338fad3b3376395ddfd5a77c443795a21a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/android-artifacts.json",
+      "sha256": "fce9a4efa7675628a8e91c234e81553c0103b668879cd8fbafad3f9d73795336",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-ancestor.receipt.json",
+      "sha256": "22a9b5c25014d07a0411f9d066f7a6e8a5671f49ff93ceafdfd4b1e24e055cc8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-branch.receipt.json",
+      "sha256": "d0f741be07687e2204d667e74788dfcc82b4fc8d59edd9636ea13725bf4e0362",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-head-tree.receipt.json",
+      "sha256": "9512af2a7e7c61f72176dc2915b4afcd59dd0a88b0416b077bc80252b7b0d087",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-head-tree.stdout.log",
+      "sha256": "635f699948669b9a734b565b832bd61b7688572a4a48de2f296b3e57dd715d90",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-node.receipt.json",
+      "sha256": "f2928b6aae51c7b7a9e803498b929064c642f585f2f3f7312e96b6bf72346ac9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-node.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-node.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-rn03.receipt.json",
+      "sha256": "217e819b5b4ae40f63ebf31c4e703ae450edf7c3dbdf72ba47c10e9f42f4db80",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-rn03.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-rn03.stdout.log",
+      "sha256": "2b97c56a07b2a8a899481705d7d3076931b12fbcb3c21bf8396947ddcbb6b8bc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-status.receipt.json",
+      "sha256": "e9ffe484c41d4876eafdbfdb0cc6d26c82d86864cc447f52ca79688e474211d1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/baseline-status.stdout.log",
+      "sha256": "9a8783984fc4e895055ec0b82ca4eddee639887d8b854a71691c0c90e7b9535c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/branch.receipt.json",
+      "sha256": "cd15a04d28652c349f58ee1e5bd041b0e93acfc7bd142a8c480ec850e54700a2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/bundle-android.receipt.json",
+      "sha256": "b60e7e9a147b3b973a7f988efcd0c5581269c86927e206021177de4a891fe54a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/bundle-android.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/bundle-android.stdout.log",
+      "sha256": "4d1bf8b29c451a1a1c562401de535fe49b9b25b157518ddf704a85290318336e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff-final.receipt.json",
+      "sha256": "fc70f378849f67ccfc5b0ec915c6a26ca8d749b940d387fe0f046f9e0727f38b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff-final.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff.receipt.json",
+      "sha256": "b87639234501ff43351fe933b710f5a84138c5758e91161cd8bac0a23988d195",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/check-index.json",
+      "sha256": "fcafe696d111261d7081e1bbaf20d66487f64a7a0772f80583004264a822600f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check-final.receipt.json",
+      "sha256": "3328b94c724833bd335eba5b58a94723d7a03d195a9cdadd917d143f0df1b1e9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check-final.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check.receipt.json",
+      "sha256": "396d2c166ceb14ccf65d9eff0be6ff289e1c6c13c6a4c370b6b86872a3ce468e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status-final.receipt.json",
+      "sha256": "820d0197cf513eb3031215eec470e546048ba96438645707bd08d290a68067b5",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status-final.stdout.log",
+      "sha256": "608115f40d50e9974642156d90de2c7ed05ca89a9c95e7ae87a8fe42fc262038",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status.receipt.json",
+      "sha256": "716c93d6e19a07db0e8c44a181adda56f05e01a4c1203611c6226578f9b4413f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/final-status.stdout.log",
+      "sha256": "1d79412045fe9afac62c332193999f1d209a911822d8ffa1619cfed0c9ff20c4",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/head-tree.receipt.json",
+      "sha256": "0d22968ef10ce055ec729c663425279ab38f64210ea55482afc3d8850d0840ff",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/head-tree.stdout.log",
+      "sha256": "635f699948669b9a734b565b832bd61b7688572a4a48de2f296b3e57dd715d90",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/idea-baseline.json",
+      "sha256": "c5103def30708ee1b2e4c658c627cb709806a2c734d366e70fc675e313bde25d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/idea-final.json",
+      "sha256": "441747d31db3280205f0d8a54ae2864281aba0612f6556a07cad5855efdc8650",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck-2.receipt.json",
+      "sha256": "77f4179918d4f9cc8018df083483a1a4c7104a5c3b43b6d8d5f6c056391f8768",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck-2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck-2.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck.receipt.json",
+      "sha256": "23f7113232011263003f5941a6fe7366a9575dd42de2636587ee0b98726cc894",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/implementation-typecheck.stdout.log",
+      "sha256": "b99ef8acadd213128c380f962c3a4c8bf3fd0d45b639e503b12246d2278a66a2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/integration.receipt.json",
+      "sha256": "53f755ed0a473514d60df1e17b3b48a7b78556d2f110e4ba317701b35f65db91",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/integration.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/integration.stdout.log",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest1.json",
+      "sha256": "dee3a20ca4c825f346e6f8cd747f03fe01cb02f15c36bb44366f6af8882e1c2a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest1.receipt.json",
+      "sha256": "7971702b503b8689dd11dce7c39f68c94dbe4ad7fb05a6e5adce798a3f2c3eff",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest1.stderr.log",
+      "sha256": "3101547eb9b3bd477949762c532ccadfe7a768bca47e36728c39abdc60ca7e75",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest1.stdout.log",
+      "sha256": "ac1dbeb988659e3afbfba41e3e5bd4c9c265e620c5a5c9a91fe0499d4bde0add",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest2.json",
+      "sha256": "ec46884b5650cbe85e4ff5bcd070240fb9ff25b5941c0da8267b09749822c65b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest2.receipt.json",
+      "sha256": "57e3b7359ac1fc3f5d2813949013f56a4998db828ae6384be3fcb804293f27f3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest2.stderr.log",
+      "sha256": "25360c4c6290d9b91b2b54367745098139127b7fe1d6a8a7617bde48bd2ae531",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/jest2.stdout.log",
+      "sha256": "eba546bdc7896b0a00be983d6f8f9f7be871f89e15d925d79ab6be5e3305a3ee",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/node-version.receipt.json",
+      "sha256": "1dcb548a17bd9c80cb57167a147907705fd16e1f7ef710900ffb3db4cb75cd21",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/node-version.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff-final.receipt.json",
+      "sha256": "f3d93af46a2d927dcf13a19156e5c44dafcb2f64bc864e43189fd5adab7439da",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff-final.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff.receipt.json",
+      "sha256": "84822a4e92287452dd149c92ddf393e92d1fd78c4e4c8085afb36e0eabf0465f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/protected-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused-2.json",
+      "sha256": "9060df4a286626f4ca841e69bd6f60f3fdc8a47be845483ecd2992010e8f894d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused-2.receipt.json",
+      "sha256": "21f786021ca88110eb6dc9831b59313adb2ffeca287b96608b80a6d0e9e2abca",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused-2.stderr.log",
+      "sha256": "6824dbf12b3386557f23c3e0eee1996d27b350612125aed54850c5b1558d2edb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused-2.stdout.log",
+      "sha256": "649ebdc0b0d6716502254b2ab2a61e82e2256b7b90dd826626720b07a2617304",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused.json",
+      "sha256": "3f1efab8fab8a180070bce4f6fde7ed18d5c46da608d3e46a73a1964ebf56c18",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused.receipt.json",
+      "sha256": "952c28a4a844cbfdb08f5b252c33945953252950bb8e74c2e21c294232813d1f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused.stderr.log",
+      "sha256": "980cf95976c3fec4020b3ce98f7b21ea2f29bef5f160df3692f86215c63eaccc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/router-focused.stdout.log",
+      "sha256": "06f83e2cc6753d405cb9d14ce058fd04dc3b04e0757597cb55c9c410afe1dcc7",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/schedule-focused.json",
+      "sha256": "05c7b4133c545c2c0955f1d9ac3bd30bc8d504d26a0670118c66baec821cb21c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/schedule-focused.receipt.json",
+      "sha256": "2f0fe946cc24ae558179668d36e5f09fe0445136968af1b250909072a6943805",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/schedule-focused.stderr.log",
+      "sha256": "63ba461d7cbdc7014c86a0b60d544e8fdf6c9e50e3e977caf2511a1badafb0bb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/schedule-focused.stdout.log",
+      "sha256": "7cdb8f12ce98d5da14bf9ee70a4f05e844bc9f4fd19dc2580c4c41554ad652a8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit-final.receipt.json",
+      "sha256": "11199472ed9a8a4663646b99a3a99b62e2dcbc0c3df6eccdbb3c39f855064174",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit-final.stdout.log",
+      "sha256": "6ca5dd66a085b4545a7b8c3b7b29beb6b054a1b35bf9a70242b8c88ddbf770c4",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit.json",
+      "sha256": "6ffd15e67c51009e77f4f50b4768ad86b2d60a6bbf6da689eb753c5c96e841ea",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit.receipt.json",
+      "sha256": "a92ea974ee2f6f96ab190362a67f4b29902e77916c2fc13804a623cc9c443ce9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/scope-audit.stdout.log",
+      "sha256": "151ed08f62f1d336ce8d0e11db2da6394c765c8fb852e1877a3c2c5d013b04a8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/state-focused.json",
+      "sha256": "e7c7d1946cd6c5a8e9212f939e7f33143679cdee7e68030ccbb5d45a95cccd6b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/state-focused.receipt.json",
+      "sha256": "eeec874590b65e7001fb32f709428f2bd23d1c132bc61c5a358101c0766da7ae",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/state-focused.stderr.log",
+      "sha256": "ef4e574bd59f3f7a51ab0e8da7f87f66de6ae518e827ff5f37e0d3330ce2e08a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/state-focused.stdout.log",
+      "sha256": "d379341372b991f28d0d30f3574a5090551271ecd8b31c9782d5f81d9f6c5f43",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/test-counts.json",
+      "sha256": "cd2b11ea33f3a468669c94075f19d13fc694d8473602c537112aac034fcdb045",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/typecheck.receipt.json",
+      "sha256": "3b74c9897cc07eefe91b70d2189de66fa9b72ae7f1ee208e63c6fd74ea9e0a46",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-a/typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/blocked-checkpoint.json",
+      "sha256": "c583c599fe49fe9dd2a570db202078732c6e99f9579f4ec07a7622064f133ab5",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/branch.receipt.json",
+      "sha256": "5eaa3679fa460e9273db2f0086f56b7d6c716efc87473bb3eac017e911a9311c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/bundle-android.receipt.json",
+      "sha256": "276eb1e03052ca0deb2796b040030707ff8c9cd51f20b1ca61e2a2e47ee4e41a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/bundle-android.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/bundle-android.stdout.log",
+      "sha256": "699211577d33ad6de9bbc5fcfbdcb4f676bb4cb68ca1fddbe5cc90eb973d78f1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/cached-diff.receipt.json",
+      "sha256": "51865ab2493cbd91e05283e4ff1a53029415f63d925a27f99da3f6c53f033f21",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/capture-summary-blocked.json",
+      "sha256": "a693e1c9e469f792323aa4bf51d53f3f3955301df569cb632146d117280e9165",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/check-index.json",
+      "sha256": "2991f68574543118e2765347aa8cf06b8e22aabed9eca3aae5e6d3f13233093d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/diff-check.receipt.json",
+      "sha256": "8e18eb5bfa55e4685e0df1d09d72eca7d74a5bd98638b721daca93e191514a7e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/final-status.receipt.json",
+      "sha256": "39c6714b07dda807894f4583dcea5b50e9ded98c1dabea4d5713585721e08ee4",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/final-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/final-status.stdout.log",
+      "sha256": "4b73588fb7317168b15df9edc0dcb9ebb7bc55a53b28c9329304f200b4cdd907",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/git-date.receipt.json",
+      "sha256": "d4696952caaf36f62910f7188601146309d4110b19f8e3db6bffa3f570a8cf0a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/git-date.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/git-date.stdout.log",
+      "sha256": "7e96db2ece1831935e56b6e1816755922a0a63f8ad7314cb89b5eea4c719afeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head-tree.receipt.json",
+      "sha256": "904369b9834cd39e6fa670162b206d8bf30b7daf0d9b7be1030b91d472b4e203",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head-tree.stdout.log",
+      "sha256": "f0dde3999d6e52fe401eeb6f177f0d3d22fa49892e3af873062c3ed472d19d10",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head.receipt.json",
+      "sha256": "450e8fbcb8ab4bbc60a6ca5126f54960cc469daaa501ab22a22f9dbb699bd1ea",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/head.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/idea-hash.receipt.json",
+      "sha256": "86e69ac050c6dab2f3efcc2864c9ffd8fa629d7d38646f5b74584b14f2cd17f8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/idea-hash.stdout.log",
+      "sha256": "f988443d83f0ba40d40f8f6ded75ad69548e85296dea0a059f3510518b060821",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/integration.receipt.json",
+      "sha256": "81dac275fd3d01624fa2d7df95b49652225cf4486d15f5491e818d7604894b9f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/integration.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/integration.stdout.log",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest1.json",
+      "sha256": "6d0bcde425108315eb3621f84a19a6900b32c338d7d8c8896e4eb0d39d4ed5fa",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest1.receipt.json",
+      "sha256": "d45d357c0a5562cd0466d90447c3e5d43b85caaafdf0cf9cc37d0547aedbb6be",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest1.stderr.log",
+      "sha256": "8126e59013cc1b3c2f428e14afa789907e66342731fda812ab59b929f3423c54",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest1.stdout.log",
+      "sha256": "71fb7aaa783e6e57362bf2c950d7b06bbc27db86e6d97ab317377a602a120ae1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest2.json",
+      "sha256": "8ddc258a0c0b89b8ec23935ba84164a2ce7064320afa520b6eac06f5ef73abc0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest2.receipt.json",
+      "sha256": "538cb091ed59480a60765a77dd7063e048a2bf55dd76ec00a9c6ec46007bd2a8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest2.stderr.log",
+      "sha256": "7f167d314e8ccb7bc016ee7fd5176fb240d8c802833f5489889c27ed48604379",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/jest2.stdout.log",
+      "sha256": "641703fb8aec0ab441a3f69e28edf73903d20c0366a3245d1e3e89fb19450e08",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/node-version.receipt.json",
+      "sha256": "4150700c5f506724ec544aa87df47ff9a62ed6cbe9786fa62d03f3a3217e65f0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/node-version.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/preservation-entry.json",
+      "sha256": "f66102916d501463ec03768ef6e3691e036381cc8a96927b52542424b78250fd",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/protected-diff.receipt.json",
+      "sha256": "65a36cdafe5a0f505aff6031699ad69338f383d0eee431f6439681020d626318",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/protected-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/protected-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-ancestor.receipt.json",
+      "sha256": "8b6849f9b0af01003f2ade0e75f8338a256bbb66e60fb010e15bb20eb15b341d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-commit.receipt.json",
+      "sha256": "84e9d33be7fab543e434051684aefd436d0b34bbf350562e8ed54afdb71e5ac2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-commit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-commit.stdout.log",
+      "sha256": "2b97c56a07b2a8a899481705d7d3076931b12fbcb3c21bf8396947ddcbb6b8bc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-full.receipt.json",
+      "sha256": "50a122d9f857a6019571c99f9de88d2c0042e1425606885c589908ba65960695",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/rn03-full.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/test-counts.json",
+      "sha256": "e68676e881fad393ee6dbf7ea1f54cf6d126d61b80653beabb5e179db4236274",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/typecheck.receipt.json",
+      "sha256": "c134ec9990fb795ffb87eb5ff711c8c0e2abd925de03451aa8b8ac2778596172",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c/typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/baseline.json",
+      "sha256": "f264000020fa0101424cd23c468d83ce443f41f3465599c57fd291e00f8a6e4f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/branch.receipt.json",
+      "sha256": "be76e45a1bea72066dd94ab555603dc54f4f1a7c28955a8c45099c43d06faa0c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/cached-diff.receipt.json",
+      "sha256": "c8ec92994ca74c447fb25daf2552de5baa8c7bbd13a9e06f02775ddad6e3a8a0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/check-index.json",
+      "sha256": "704fa1a758e0fbf51df1daafa21108796c82aa877c60effbcb6926e3fac6484a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/diff-check.receipt.json",
+      "sha256": "156d05f7473cf558447aa9458983d08744b88a9a261087bbf1d243d0622c403a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/git-date.receipt.json",
+      "sha256": "fe9008fdc192ebd6b0a83d7f032b30fbf8c8f8189d27cbde882ae3aa1092f16a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/git-date.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/git-date.stdout.log",
+      "sha256": "47aeed7e636686c73f9157374efbb72b30f96120cbfea3f1b29f1473e8cb1854",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head-tree.receipt.json",
+      "sha256": "8e770640c6d1eab205c792168c974ebee3fae7e3f30d0b6b3fad26de19f0dfd6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head-tree.stdout.log",
+      "sha256": "f0dde3999d6e52fe401eeb6f177f0d3d22fa49892e3af873062c3ed472d19d10",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head.receipt.json",
+      "sha256": "9c2b245c6cd01004b0b29dc5bf953ec79629643ed7fb56299664119e71f230bc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/head.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/idea-hash.receipt.json",
+      "sha256": "7c176a4aae331483dade710fe32203414970523f9762be9b0701e74434813e06",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/idea-hash.stdout.log",
+      "sha256": "f988443d83f0ba40d40f8f6ded75ad69548e85296dea0a059f3510518b060821",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/node-version.receipt.json",
+      "sha256": "823b53c0a8fc31f579a11695302821dbac5039d71da8cf0f6fee4884a07b817d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/node-version.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/preservation-comparison.json",
+      "sha256": "aa7167502afba7ae4a943de729f2efb80d7d630eb75e422a0f8ceeccc35d92dd",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/preservation.receipt.json",
+      "sha256": "e1ff0ddf0b77cadcc31340ca9227c9d286201655bcb9b35344b2d72cc77b9368",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/preservation.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/preservation.stdout.log",
+      "sha256": "e6abff08e13bd2791239b7b2ff4b19486f6895593c0ca36ecf97d8c2b7aade2e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/protected-diff.receipt.json",
+      "sha256": "3fed409c1f9ac6f6abf11c9c94d64342ebae5478f2bb5509a222fd0101cef2b0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/protected-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/protected-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-ancestor.receipt.json",
+      "sha256": "7a2c0844b4625f3d15c2d74607172816bbd3b24194fe36c8efd7e651f3d08e94",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-commit.receipt.json",
+      "sha256": "d1d527b16bc8260c4669e33d266b11b6163bdf22eb97b3a5818480991d478776",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-commit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-commit.stdout.log",
+      "sha256": "2b97c56a07b2a8a899481705d7d3076931b12fbcb3c21bf8396947ddcbb6b8bc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-full.receipt.json",
+      "sha256": "859e94eb23e86ae2276c107ad23200dacd535438e264eaa900e786deb7236e24",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/rn03-full.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/scope-audit.json",
+      "sha256": "888ebd50ba404e5cad245596b1175f823bd60229900096ec1e084241e334ef49",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/scope-audit.receipt.json",
+      "sha256": "4cd229426675d20d3d4b3ccad7388a243da2541df6f1c1fe58798c8db079148b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/scope-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/scope-audit.stdout.log",
+      "sha256": "dc06ea60dae7f596888d51b497fd6a89fe74afc8234be77bed8cba3b034043dc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/status.receipt.json",
+      "sha256": "412afdf3d3eb6029b16bd6810d9b57e26002029537311e651dd6e848881c3773",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-c2/status.stdout.log",
+      "sha256": "909990e5e2ace4f4fdf1102f19d59929ecf8203ebf925b81b8fc93015819efea",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/android-artifacts-current.json",
+      "sha256": "504740a353480e8711b9c64152587d2a3b61400a3ade7a73a99bfc487ce6fb74",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/baseline.json",
+      "sha256": "4633e355ee22e536c6432d33949a57f43994961305737a538cf1866388f4ab2b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/branch.receipt.json",
+      "sha256": "11e83a1fd37562b4a5e49942e5062e620ad9207519275850d64c38f4572161e6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cached-diff.receipt.json",
+      "sha256": "67eba3f63e246198228421921a1968e6e2664340ed26c5b8e7364ad538793bd2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/check-index.json",
+      "sha256": "59939675ee6c56ec28dde1dbef66f619bf68b25533cfd7e6984c6e3b451d7be6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-baseline.json",
+      "sha256": "e8d2e6d7f46b72c47f92efa7405185e931cff48aabbbd0f226c7fce403cac1b0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-branch.receipt.json",
+      "sha256": "1c52b36e29be95f9df5e4d038892d5dc7cc97fb39c6b1b01811aa49d659c0dfd",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-cached-diff.receipt.json",
+      "sha256": "7857304abd4b4c8812364b1ab7d80c5f82bb717522fd8821077515218ca1c16c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-check-index.json",
+      "sha256": "00015029f730f19637429fcd261761e16b23fa81da4fa592e76d3d1ec7906b87",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-git-date.receipt.json",
+      "sha256": "83bdf398e58fd1e1c07dfabbdf7d32ec9b3b664fa3de902ca4f24f5be6def53f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-git-date.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-git-date.stdout.log",
+      "sha256": "645f829b0866b47522370c0e3c3401aaffd4978bf6d9eb357811a595471b5450",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head-tree.receipt.json",
+      "sha256": "9f2a84c9d7f7f6ca246d2e43c139c7d17dd10578910e3f4894bba0c8a79ae2dd",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head-tree.stdout.log",
+      "sha256": "f0dde3999d6e52fe401eeb6f177f0d3d22fa49892e3af873062c3ed472d19d10",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head.receipt.json",
+      "sha256": "0fa58052930f605d2b41eaa9fccb0395b652db186e895622a128e0adbf300e65",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-head.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-idea-hash.receipt.json",
+      "sha256": "9b5a261d702c09f80a1e4991e8afc00caba0be804bde3551b9cf3cdd3871fff9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-idea-hash.stdout.log",
+      "sha256": "58c73022427e45fcad68ef28ba1d7c04c4ba88f35efa8c4952ee8e0523b64817",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.receipt.json",
+      "sha256": "9f2730817e31fc6665e0bd5d5f3e8e8bf44dd1b30fc0396036d706e555f2071d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stdout.log",
+      "sha256": "f56187524ad552d01bb19405e8c7ecd4a53c9a1c797e6b55eed281390e3d63e6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/diff-check.receipt.json",
+      "sha256": "b1718d034fcb6969af5876de26f5d4b81855f030d4ca6b1157065e4368334a26",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/export-inventory-reconciliation.json",
+      "sha256": "f6d37837b865638b0aed4417529320e120501403f64c7e48f9d38723e5308f32",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/git-date.receipt.json",
+      "sha256": "216ef5b3555224e7fd67b1256767bd75d703a66e86f88b345f470a173151e4e3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/git-date.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/git-date.stdout.log",
+      "sha256": "dbe256524dd690d06ac326bc5363ec847595e6aa5fed83be60ae0590d27ee623",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head-tree.receipt.json",
+      "sha256": "a2286490848f83425dd1235e30046c8f4790d2d01b0bd420af4c6e5a024ddcd7",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head-tree.stdout.log",
+      "sha256": "f0dde3999d6e52fe401eeb6f177f0d3d22fa49892e3af873062c3ed472d19d10",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head.receipt.json",
+      "sha256": "0d202f129d9940b97891519df4584baba4b8ddbb8e65e9675448e1830498addb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/head.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/idea-hash.receipt.json",
+      "sha256": "350b54bb01c69273678fb22604388662caad21503b492870b06046373b57908d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/idea-hash.stdout.log",
+      "sha256": "2a604ad030eb966a966c5ee21de2bedc867853c92cf06923f1f3a0de766b992d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/node-version.receipt.json",
+      "sha256": "24f07ce51a0800b8a5e64dfee7353f2b36bc62ea902b46a15a81508467decabf",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/node-version.stdout.log",
+      "sha256": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/protected-diff.receipt.json",
+      "sha256": "12f4dbdc764e77eb6fde8a62374f999c8d47e9ac04fdd7a2fa3d88a5ed32c1a2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/protected-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/protected-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/r1-handoff-archive.json",
+      "sha256": "0746e0922999badad71e71ae758946ad6e663eb3914ae2cccd176a7dfa5879bd",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/r1-hash-gate.receipt.json",
+      "sha256": "646eff04748df32afed2d02f779371e0389d9e22dbfe5950f6bd21db41309ccc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/r1-hash-gate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/r1-hash-gate.stdout.log",
+      "sha256": "f56187524ad552d01bb19405e8c7ecd4a53c9a1c797e6b55eed281390e3d63e6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-ancestor.receipt.json",
+      "sha256": "202bfd6ead84cfe5d88c92403608baef9c46a9489cc73c3e3dc90be842b5d605",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-commit.receipt.json",
+      "sha256": "adb509dc37f9e0dafb2e6e58403aeb9b3ad6dc65dcffb4351958ed98a5d82e3e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-commit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-commit.stdout.log",
+      "sha256": "2b97c56a07b2a8a899481705d7d3076931b12fbcb3c21bf8396947ddcbb6b8bc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-full.receipt.json",
+      "sha256": "9014918fbd2c2c129cf32d0816cceb383ba5f70bd8c8ec0815ae1b45b5e5c83e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/rn03-full.stdout.log",
+      "sha256": "db6cc4c6f8b05ce623c3010cb91ef2e81feaad61bd57939f349c29080e3f0b58",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/scope-audit.json",
+      "sha256": "bbd2be9df15a05c139c0772383f67bec4b189cdb924caf68c8a895d7e4a2ae00",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/scope-audit.receipt.json",
+      "sha256": "0b7a581c1a3d63cd7169e35a826cbd6c811e8e9fd8e552d46d1bfef099bf0e27",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/scope-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/scope-audit.stdout.log",
+      "sha256": "bbd2be9df15a05c139c0772383f67bec4b189cdb924caf68c8a895d7e4a2ae00",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/status.receipt.json",
+      "sha256": "c738e8b3b78668e0e63b33acb53a4bdeb2332126defae46e81ba1fb3073b2ca1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/checks-r2/status.stdout.log",
+      "sha256": "dcb53951e277c2a82749e0f88d29762d7bc4a67ea5cc0a3c763075c51c2c9185",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-01-schedule-search.png",
+      "sha256": "e29d591168d524d7c18097d63e7107cd0def33aa493e22d7d3b95451cb1b47c2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-01-schedule-search.xml",
+      "sha256": "135a51d431a0b31ec3e3d8267cebb14a03313cdcd901befd81c83240f0ac38ba",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-02-detail-opened.png",
+      "sha256": "3a73fa3faf9c88c86b375398acab1570276e9170a867fecb39cacc83fe66e640",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-02-detail-opened.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-03-detail-favorited.png",
+      "sha256": "8051a1065487bfc9ed0af1faaafe34b23e4c63262e1830b5b43e43db00136ca9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-03-detail-favorited.xml",
+      "sha256": "240ff360e9e9488afddb6498860b0fcc9e8ea5340546980050582bf27c254f56",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-04-back-search-retained.png",
+      "sha256": "32b1630e302f217cb027ca110f8fff7cbccbda5b5e8f55f38d3081dd7323b0ec",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-04-back-search-retained.xml",
+      "sha256": "b6d11ade174e80a59c052849e16ab04da179c6accdf9cdcb1add808fb7a8f272",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-05-favorite-added-alert.png",
+      "sha256": "9d43a638465d00dc9061798e422cbdac00de9721b1c27fd4e75df282019a3390",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-05-favorite-added-alert.xml",
+      "sha256": "1cd484cec56b9a83dcf3b414cef00da4dd1e40dd2c6f63763f5b0a8db7c1067b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-06-already-favorite-alert-retry.png",
+      "sha256": "0a1a29bfe012cc6fdec431488c2cdf1aeb74bd5c58654b9a81f017ffd248aad8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-06-already-favorite-alert-retry.xml",
+      "sha256": "5fbaec2075a39272fa57cd287af7842f27f29414fb1957cb66cc9976a4225b48",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-06-already-favorite-alert.png",
+      "sha256": "8478316193be79859284211b9d7150461e16bd80e72429834a388227aa310b25",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-06-already-favorite-alert.xml",
+      "sha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-07-favorites-after-cancel.png",
+      "sha256": "21d6389337f5f9ab5c3d55e6094c3120d7103bba2222f039f9fc4ab3dcd7f4c9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-07-favorites-after-cancel.xml",
+      "sha256": "f03ba5e7eb92015cabc975cc17291d2595e2019a707048750398b36e61311a0c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-08-remove-confirm-alert.png",
+      "sha256": "3388ff64d566a400d6ce0563e7f159e097e1f04eff0df9b4590bba290f3e82fc",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-08-remove-confirm-alert.xml",
+      "sha256": "a340e22a60aa5d8391b1fbfb2ea9efbbaa21a5a724b4acb07ca8910e82e5de00",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-09-favorites-after-remove-cancel.png",
+      "sha256": "21d6389337f5f9ab5c3d55e6094c3120d7103bba2222f039f9fc4ab3dcd7f4c9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-09-favorites-after-remove-cancel.xml",
+      "sha256": "f03ba5e7eb92015cabc975cc17291d2595e2019a707048750398b36e61311a0c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-10-favorites-after-remove.png",
+      "sha256": "99bf316136ff29ff6962028b4a51d72fd07160b20c491f544f7a855d1b6a3a39",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-10-favorites-after-remove.xml",
+      "sha256": "c3dd39edcb2287c761bb58fac22e3b4e0d5d3f3a59af009143e8e1fa1dc0763f",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-11-already-favorite-remove.png",
+      "sha256": "77b3f6281062ebfef3f08ecbe1ed40a2c75196ca3ba93fedde14edb8a7d90fae",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-11-already-favorite-remove.xml",
+      "sha256": "49d6e7b37963118e6a7f26fb25e414bf155ef7a418bd37846e63a4df568b5c9e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-12-unknown-id.png",
+      "sha256": "32459b9338501d802f6b92efb553917ebf2ca15ed9589d1328833b850a02145d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-12-unknown-id.xml",
+      "sha256": "8bea13961b8f893af2c2ad533ce2f8d2bbf4f8afe46a8a70bc36918bcf5abda0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-13-cold-entry-after-connect.png",
+      "sha256": "3a73fa3faf9c88c86b375398acab1570276e9170a867fecb39cacc83fe66e640",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-13-cold-entry-after-connect.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-13-cold-entry.png",
+      "sha256": "6d6f98985a862b2bfc2955835071a2cd5b5a130a2b47aa69c7c0736fb872724a",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-13-cold-entry.xml",
+      "sha256": "30604f2f27fe3f6b5c79be78a553ae4c83c65e4357f495071288baa58aea180c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-14-cold-entry-back.png",
+      "sha256": "9df8d5a5de7d308f3945bc8652f39cfa82228cb02aacaa172fb4dc9e98490018",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/RN04-14-cold-entry-back.xml",
+      "sha256": "e5735af71b5dd37cc30a4c5a42992d55ad263271c34a5fc4d05e6b1ae8fb5acb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/capture-index.json",
+      "sha256": "0965eba1e3f64245f50c88053eabc478e1aef59edebf81ab92d09678468f63de",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/capture-notes.md",
+      "sha256": "35ad852b385f2724732564e6019f5d5c4440364a8be1b4acedad74579dbb52d1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/commands.jsonl",
+      "sha256": "98c8b7e50686fa6165c8e1f9f1fd8bff24c473b3711ec61fae7e816ec20a8c6e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/after-already-cancel.xml",
+      "sha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/all-after-x-remove.xml",
+      "sha256": "5d0067d3029a60e07f3066bcd9c33f2becb1ad68156928e9f8c48223e5700b9c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/all-for-remove-x.xml",
+      "sha256": "5d0067d3029a60e07f3066bcd9c33f2becb1ad68156928e9f8c48223e5700b9c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/already-alert-check.xml",
+      "sha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/already-alert-retry-check.xml",
+      "sha256": "5fbaec2075a39272fa57cd287af7842f27f29414fb1957cb66cc9976a4225b48",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/already-x-remove-check.xml",
+      "sha256": "5fbaec2075a39272fa57cd287af7842f27f29414fb1957cb66cc9976a4225b48",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/app-launch.xml",
+      "sha256": "300589686783ecd162eb16f779808b047b052f7811c60d24f6795c07ba78a7aa",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/app-loaded.xml",
+      "sha256": "e5735af71b5dd37cc30a4c5a42992d55ad263271c34a5fc4d05e6b1ae8fb5acb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/back-retained-check.xml",
+      "sha256": "b6d11ade174e80a59c052849e16ab04da179c6accdf9cdcb1add808fb7a8f272",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/cold-entry-back-check.xml",
+      "sha256": "e5735af71b5dd37cc30a4c5a42992d55ad263271c34a5fc4d05e6b1ae8fb5acb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/cold-entry-check.xml",
+      "sha256": "30604f2f27fe3f6b5c79be78a553ae4c83c65e4357f495071288baa58aea180c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/detail-opened-check.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/devclient-new-server.xml",
+      "sha256": "24d23611f16819e13bed8eef131695ce9befc00ae6b9426b68c9cb4f26df2219",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/devclient-url-typed.xml",
+      "sha256": "2e41d1abc776b4d971f76bc32d86c476f1bfc786fa87e599e3dae2e4d12783d9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/favorites-both-check.xml",
+      "sha256": "f03ba5e7eb92015cabc975cc17291d2595e2019a707048750398b36e61311a0c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/first-add-alert-check.xml",
+      "sha256": "1cd484cec56b9a83dcf3b414cef00da4dd1e40dd2c6f63763f5b0a8db7c1067b",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/native-commands.jsonl",
+      "sha256": "5bf7b7ef94481000a692e2c922a104eefccc02e33bf225db2bc82f158f332031",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/native-state.json",
+      "sha256": "3c7f56aee16d8875df56271b3937b7d347b44afa758f9b0d10e8cae58a96c0d1",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/preflight-ui.xml",
+      "sha256": "a29a83fadba3ee09cc65d6ddac15c00b4f0d78397bc954e26c56abcee3bf4ec7",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/preservation-baseline.json",
+      "sha256": "520c9ecae1dcc17541094139d7a3e7838000637b792c345ea45ecc6a0a811f29",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/reconnected-after-cold.xml",
+      "sha256": "7153db1ab7e637970b116ea3ba51298d0c751f5e46c81f4a5c435cc87122fcd8",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/remove-y-again-check.xml",
+      "sha256": "a340e22a60aa5d8391b1fbfb2ea9efbbaa21a5a724b4acb07ca8910e82e5de00",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/remove-y-confirm-check.xml",
+      "sha256": "a340e22a60aa5d8391b1fbfb2ea9efbbaa21a5a724b4acb07ca8910e82e5de00",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/search-cleared.xml",
+      "sha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/search-focused.xml",
+      "sha256": "ed885de26d3af9913bfd18dbab26654d0dc9db4c1d74e70a4a6443b2e7360eeb",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/search-typed.xml",
+      "sha256": "135a51d431a0b31ec3e3d8267cebb14a03313cdcd901befd81c83240f0ac38ba",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/unknown-link-check.xml",
+      "sha256": "8bea13961b8f893af2c2ad533ce2f8d2bbf4f8afe46a8a70bc36918bcf5abda0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/support/verification.json",
+      "sha256": "4ec2d0873adb0de5bcffadef141410b9b909036314629fb6bf592674d97faa96",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/native/validation.json",
+      "sha256": "2e84622cddae08e7ebd377afd4f4f4c116f0bc826b0fe7a4e8c4f55e5da1b112",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/pixel-inspection-coordinator.md",
+      "sha256": "4023ed656e42f3b8b905393755b602443be78d6892740d018a2de1a51f8cda4e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-archive/RN04-r1-handoff.md",
+      "sha256": "2b3da6bedeadcb62a268d7d7721c45f2128a7613dc44b689997c6e995ec89c93",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry/capture-index.json",
+      "sha256": "e3969310e9c6a9e89e5b711a9f6ffc8c5c363d0a52f87e29fa7557c071018de0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry/capture-notes.md",
+      "sha256": "9d25a226bb8d47e63aace1866a3453e57a557defeb3cfffd8d72d870517fd2ff",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry/commands.jsonl",
+      "sha256": "85fef1a0eb0ca8f075f9f5bf299bea5a3d9212d295cbe2466e2b8fbffa13ff27",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-01-detail-favorited.png",
+      "sha256": "8051a1065487bfc9ed0af1faaafe34b23e4c63262e1830b5b43e43db00136ca9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-01-detail-favorited.xml",
+      "sha256": "240ff360e9e9488afddb6498860b0fcc9e8ea5340546980050582bf27c254f56",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-02-favorites-with-x.png",
+      "sha256": "99bf316136ff29ff6962028b4a51d72fd07160b20c491f544f7a855d1b6a3a39",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-02-favorites-with-x.xml",
+      "sha256": "f857fcc475bcefab74dcd537280eb1de27886a3fcb865d64eadf4e7582a7c4c3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-03-detail-from-favorites.png",
+      "sha256": "8051a1065487bfc9ed0af1faaafe34b23e4c63262e1830b5b43e43db00136ca9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-03-detail-from-favorites.xml",
+      "sha256": "31ef4796af2cacaff154cbb3404a30333056d7e1c9072ed35ea9dcae6ccdd260",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-04-detail-removed.png",
+      "sha256": "3a73fa3faf9c88c86b375398acab1570276e9170a867fecb39cacc83fe66e640",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-04-detail-removed.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-05-favorites-after-detail-removal.png",
+      "sha256": "41824c1549cfdc44a073192b4091174a61f4e41a86c028cb8d4a60286d314b69",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/RN04-R2-05-favorites-after-detail-removal.xml",
+      "sha256": "95e8ee01347ab4655598f827e8d4e085205e23effdd7463d9e7f2ffb307411f9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/acquisition-validation.json",
+      "sha256": "72cd559c20e20be3913873ed6816c9b8e93ae8bf394b4735ff5e613cf724a7b0",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/capture-index.json",
+      "sha256": "1481b54c09628a107946d9ba79ff570be5225393a0366c850d0322aa6819f6e6",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/capture-notes.md",
+      "sha256": "86caf401fa30305cfc89150e649fc828577958e2b0e6311144e3b05c5376585c",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/commands.jsonl",
+      "sha256": "630d7a802bb84ad259d6fa69675e0d9fdd29eea8d6eb39e1cc1b3ee405b5622e",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/detail-before-add.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/final-all-sessions.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/final-before-all.xml",
+      "sha256": "95e8ee01347ab4655598f827e8d4e085205e23effdd7463d9e7f2ffb307411f9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/first-row-after-2s.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/first-row-before-tap.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame02-after-header-back.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame02-before-favorites.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame02-before-header-back.xml",
+      "sha256": "240ff360e9e9488afddb6498860b0fcc9e8ea5340546980050582bf27c254f56",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame03-before-row-link.xml",
+      "sha256": "f857fcc475bcefab74dcd537280eb1de27886a3fcb865d64eadf4e7582a7c4c3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame04-before-remove.xml",
+      "sha256": "31ef4796af2cacaff154cbb3404a30333056d7e1c9072ed35ea9dcae6ccdd260",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/frame05-before-header-back.xml",
+      "sha256": "25975373dfa67939835954cfb7e557ead0bd9756478b42d6bb5c71d63eed6e4d",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/setup-all-sessions.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/setup-before-all.xml",
+      "sha256": "95e8ee01347ab4655598f827e8d4e085205e23effdd7463d9e7f2ffb307411f9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/setup-before-favorites.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/setup-empty-favorites.xml",
+      "sha256": "95e8ee01347ab4655598f827e8d4e085205e23effdd7463d9e7f2ffb307411f9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native-retry2/setup-initial.xml",
+      "sha256": "76419887c38aa4ea528dbd22e935fd48759437f984bc71fe1406644da25bb661",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native/capture-index.json",
+      "sha256": "77085e10759a966081f295100d057977fa0cee145f8faceef398f7b2ac8a4ae2",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native/capture-notes.md",
+      "sha256": "0d598405f7d8700ea2eb28200d0fe325a92d79a027a463136b72142ef75d3af9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-native/commands.jsonl",
+      "sha256": "b23992223b6a8e49c67f9c38ed83bd3395ae4866a4ea081c8a29dd94218388a9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/evidence/RN04/r2-pixel-inspection-coordinator.md",
+      "sha256": "f61963d42ab4c9ba7e6d6f8e14e1b683b7657c6411c8101995b1aa8678f72fa9",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-checkpoint-a.md",
+      "sha256": "1d0fe1ad12a88293ee4dce989483f109e0dc36715fd12f7abf043e52da980480",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-checkpoint-b.md",
+      "sha256": "570dce2c13cae114f9247f26ce93f4949643d529f84972e62e896c659e3f7220",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-checkpoint-c-blocked.md",
+      "sha256": "81861aca43a62a6266aad51571acd092e5bd1e3ea87994354f235700f6d03751",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-r2-checkpoint-native-retry.md",
+      "sha256": "fd43bf08e618b8b4e5c435dc4c7993d14fe373c4a59f90c2979a714d66073a67",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-r2-checkpoint-native-retry2.md",
+      "sha256": "bd52a9f9498d6e2c4f407a93de9eecec74b0315352a844156efeba9c4ea8ccc3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04-r2-checkpoint-native.md",
+      "sha256": "0ee1fb4a3f72edbcc0132b27b296fe02d6c85a614d3fb8dddc4afe874253b8c3",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN04.md",
+      "sha256": "018acd03bf32a89ea9fbe9bec00e9fd6d9b2dd34fe633a564bfa56b936cac1d7",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "sha256": "aeff2f9bf4d497dff79dd279689867a3e8826c8d508b8202fce49b9710747092",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "sha256": "5d465597727c1cea1ae603a219260ee6768667c6c0a09ce38019b0320d89c983",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+      "sha256": "a2b209e89ed2698fc80c2e9adc2dd04e46752a656110835043cb7aa08cda93c7",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "sha256": "6866d7d9f83975da593ebe2ba9bec37f0fb21bef474a2a8ff0f4c9f1a741677e",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/src/app/session/[sessionId].tsx",
+      "sha256": "82aef2a4af75eef30d6905f046414f6dd3a3d34b1f3a81a49a878bf8baa1f7c1",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "sha256": "697c6372785c897791df30342024a9642514981836f987b2242edd4f049bf87d",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/src/screens/session-detail-screen.tsx",
+      "sha256": "172483ff91d97a3a2293d51ceae506ef95284c2cb4ddc57c41b08783455641d0",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "sha256": "c56e8e0e6bee8ab782da47a535e6aa49242bb52242a35ec719fd1d5e58793308",
+      "note": "RN04 implementation/test unchanged from r1"
+    },
+    {
+      "path": "migration/reviews/RN04-r1.md",
+      "sha256": "d0a3daae01de58a1e06c4440dcca2efa83d1abcce904f13dac6fd4109fa06ffe",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/submissions/RN04-r1.json",
+      "sha256": "f0c510caac728e7a91c20897d13ce291c5fd85facb5a6ececf85211a162c2474",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    },
+    {
+      "path": "migration/work-packages/RN04.md",
+      "sha256": "070e8b5c209ca993ad529132c12d9a1f9aa55188f8c49b96410d1b2805dff767",
+      "note": "RN04 revision 2 packet; earlier evidence/checkpoints and r1 submission/review remain historical"
+    }
+  ],
+  "priorRevision": {
+    "submission": "migration/submissions/RN04-r1.json",
+    "review": "migration/reviews/RN04-r1.md",
+    "verdict": "CHANGES_REQUIRED",
+    "archivedHandoff": "migration/evidence/RN04/r2-archive/RN04-r1-handoff.md"
+  },
+  "r1Findings": [
+    {
+      "finding": 1,
+      "issue": "Native detail-toggle removal not exercised in revision 1",
+      "disposition": "Addressed with five-frame native detail-removal sequence, XML selected true to false, no dialog nodes, Favorites empty after, and coordinator supporting pixel PASS; no product change",
+      "captureIndex": "migration/evidence/RN04/r2-native-retry2/capture-index.json",
+      "pixelReport": "migration/evidence/RN04/r2-pixel-inspection-coordinator.md",
+      "incidents": [
+        {
+          "path": "migration/evidence/RN04/r2-native/",
+          "disposition": "Stopped before capture: executor keyevent 4 reached launcher; relaunch reset in-memory favorites; preserved incident"
+        },
+        {
+          "path": "migration/evidence/RN04/r2-native-retry/",
+          "disposition": "Stopped before capture: row tap followed about 90 ms later by dump still showing schedule; cause not established. Retry2 first-attempt navigation with settle waits supports, but does not prove, timing explanation; product defect not established"
+        }
+      ]
+    },
+    {
+      "finding": 2,
+      "issue": "Phase C export receipt paired with phase A artifact inventory",
+      "disposition": "checks-a/android-artifacts.json describes the phase A export, superseded by the phase C rebuild. Current dist-android was last written during phase C (about 11:31 local); this inventory reads the current phase C output without rebuilding or exporting. Historical phase A inventory remains unchanged. The mismatch alone does not establish a product defect.",
+      "summary": {
+        "SAME": 28,
+        "DIFFERS": 1,
+        "ONLY_IN_HISTORICAL": 0,
+        "ONLY_IN_CURRENT": 0
+      }
+    }
+  ],
+  "androidExport": {
+    "modules": 1307,
+    "receipt": "migration/evidence/RN04/checks-c/bundle-android.receipt.json",
+    "inventory": "migration/evidence/RN04/checks-r2/android-artifacts-current.json",
+    "historicalInventory": "migration/evidence/RN04/checks-a/android-artifacts.json",
+    "reconciliation": "migration/evidence/RN04/checks-r2/export-inventory-reconciliation.json",
+    "summary": {
+      "SAME": 28,
+      "DIFFERS": 1,
+      "ONLY_IN_HISTORICAL": 0,
+      "ONLY_IN_CURRENT": 0
+    },
+    "totalFiles": 29,
+    "limitation": "Read-only inventory of current phase C output; historical phase A inventory unchanged. No revision 2 rebuild/export. Ignored dist-android excluded from files[]; build evidence is not device evidence."
+  }
+}

@@ -1,4 +1,5 @@
-import { Pressable, SectionList, Text } from 'react-native';
+import { router } from 'expo-router';
+import { Alert, Pressable, SectionList, Text } from 'react-native';
 import type { Fiber } from 'test-renderer';
 
 import type { Conference } from '@migration/core';
@@ -272,6 +273,84 @@ describe('ScheduleScreen lifecycle (provider-driven)', () => {
 
     expect(consoleErrorSpy).not.toHaveBeenCalled();
     consoleErrorSpy.mockRestore();
+  });
+});
+
+// Test-only observation of the real provider; no substitute state or core implementation.
+function FavoriteIdsProbe() {
+  const { state } = useConference();
+  return <Text testID="favorite-ids">{JSON.stringify(state.selection?.favoriteIds ?? [])}</Text>;
+}
+
+describe('ScheduleScreen favorite controls', () => {
+  afterEach(() => jest.restoreAllMocks());
+
+  async function mountSchedule() {
+    const view = await render(
+      <ConferenceProvider>
+        <ScheduleScreen />
+        <FavoriteIdsProbe />
+      </ConferenceProvider>,
+    );
+    await screen.findByTestId('session-1');
+    return view;
+  }
+
+  test('adds before OK is invoked and its sibling button does not navigate', async () => {
+    const alert = jest.spyOn(Alert, 'alert');
+    const push = jest.spyOn(router, 'push');
+    const view = await mountSchedule();
+    await fireEvent.press(screen.getByRole('button', { name: 'Favorite Breakfast' }));
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[1]');
+    expect(alert).toHaveBeenCalledWith('Favorite Added', undefined, [{ text: 'OK' }]);
+    expect(push).not.toHaveBeenCalled();
+    // The informational OK has no state mutation; the favorite already exists.
+    await act(async () => { alert.mock.calls[0][2]?.[0].onPress?.(); });
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[1]');
+    await view.unmount();
+  });
+
+  test('already-favorite quirk confirms removal: Cancel keeps, Remove removes', async () => {
+    const alert = jest.spyOn(Alert, 'alert');
+    const view = await mountSchedule();
+    await fireEvent.press(screen.getByRole('button', { name: 'Favorite Breakfast' }));
+    alert.mockClear();
+    await fireEvent.press(screen.getByRole('button', { name: 'Favorite Breakfast' }));
+    expect(alert).toHaveBeenLastCalledWith('Favorite already added', 'Would you like to remove this session from your favorites?', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Remove', style: 'destructive', onPress: expect.any(Function) },
+    ]);
+    await act(async () => { alert.mock.calls[0][2]?.[0].onPress?.(); });
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[1]');
+    await fireEvent.press(screen.getByRole('button', { name: 'Favorite Breakfast' }));
+    await act(async () => { alert.mock.calls[1][2]?.[1].onPress?.(); });
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[]');
+    expect(screen.getByTestId('session-1')).toBeTruthy();
+    await view.unmount();
+  });
+
+  test('favorites-mode removal keeps the row on Cancel and removes it on Remove', async () => {
+    const alert = jest.spyOn(Alert, 'alert');
+    const push = jest.spyOn(router, 'push');
+    const view = await mountSchedule();
+    await fireEvent.press(screen.getByRole('button', { name: 'Favorite Breakfast' }));
+    await fireEvent.press(screen.getByTestId('mode-favorites'));
+    alert.mockClear();
+    await fireEvent.press(screen.getByRole('button', { name: 'Remove Breakfast' }));
+    expect(alert).toHaveBeenLastCalledWith('Remove Favorite', 'Would you like to remove this session from your favorites?', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Remove', style: 'destructive', onPress: expect.any(Function) },
+    ]);
+    await act(async () => { alert.mock.calls[0][2]?.[0].onPress?.(); });
+    expect(screen.getByTestId('session-1')).toBeTruthy();
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[1]');
+    await fireEvent.press(screen.getByRole('button', { name: 'Remove Breakfast' }));
+    await act(async () => { alert.mock.calls[1][2]?.[1].onPress?.(); });
+    expect(screen.queryByTestId('session-1')).toBeNull();
+    expect(screen.getByText('No favorite sessions.')).toBeTruthy();
+    expect(screen.getByTestId('favorite-ids').props.children).toBe('[]');
+    expect(push).not.toHaveBeenCalled();
+    await view.unmount();
   });
 });
 

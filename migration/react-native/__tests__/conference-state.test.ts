@@ -6,6 +6,8 @@ import {
   conferenceReducer,
   createConferenceState,
   selectScheduleGroups,
+  selectSessionById,
+  selectIsFavorite,
   type ConferenceAction,
   type ConferenceState,
 } from '../src/state/conference-state';
@@ -274,6 +276,69 @@ describe('conferenceReducer immutability', () => {
     expect(base.selection?.favoriteIds).toEqual([]);
     expect(tracksState.selection?.selectedTracks).toEqual(['Food', 'Ionic']);
     expect(favoriteState.selection?.favoriteIds).toEqual([3]);
+  });
+});
+
+describe('favorite actions and selectors', () => {
+  test('adds/removes immutably, tolerates duplicate/absent IDs, and preserves all other fields', () => {
+    let base = conferenceReducer(readyState(), { type: 'setSearchText', searchText: 'IOnic' });
+    base = conferenceReducer(base, { type: 'setMode', mode: 'favorites' });
+    base = deepFreeze(base);
+    const added = deepFreeze(conferenceReducer(base, { type: 'favoriteAdded', sessionId: 3 }));
+    expect(added.selection).toEqual({ ...base.selection, favoriteIds: [3] });
+    expect(added.status).toBe(base.status);
+    expect(added.conference).toBe(base.conference);
+    expect(added.error).toBe(base.error);
+    expect(base.selection?.favoriteIds).toEqual([]);
+    const duplicate = deepFreeze(conferenceReducer(added, { type: 'favoriteAdded', sessionId: 3 }));
+    expect(duplicate).toEqual(added);
+    const absent = deepFreeze(conferenceReducer(duplicate, { type: 'favoriteRemoved', sessionId: 9999 }));
+    expect(absent).toEqual(duplicate);
+    const removed = conferenceReducer(absent, { type: 'favoriteRemoved', sessionId: 3 });
+    expect(removed).toEqual(base);
+    expect(absent.selection?.favoriteIds).toEqual([3]);
+  });
+
+  test('both favorite actions are no-ops before selection exists', () => {
+    for (const state of [createConferenceState(), conferenceReducer(createConferenceState(), { type: 'loadStarted' })]) {
+      expect(conferenceReducer(deepFreeze(state), { type: 'favoriteAdded', sessionId: 3 })).toBe(state);
+      expect(conferenceReducer(state, { type: 'favoriteRemoved', sessionId: 3 })).toBe(state);
+    }
+  });
+
+  test('consecutive favorite dispatches compose in order from current reducer state', () => {
+    const first = deepFreeze(conferenceReducer(readyState(), { type: 'favoriteAdded', sessionId: 12 }));
+    const second = conferenceReducer(first, { type: 'favoriteAdded', sessionId: 3 });
+    expect(second.selection?.favoriteIds).toEqual([12, 3]);
+    expect(first.selection?.favoriteIds).toEqual([12]);
+  });
+
+  test('session and favorite selectors handle known, unknown, and pre-load states', () => {
+    const ready = conferenceReducer(readyState(), { type: 'favoriteAdded', sessionId: 3 });
+    expect(selectSessionById(ready, 3)).toBe(ready.conference?.sessions.find(({ id }) => id === 3));
+    expect(selectSessionById(ready, 9999)).toBeUndefined();
+    expect(selectIsFavorite(ready, 3)).toBe(true);
+    expect(selectIsFavorite(ready, 9999)).toBe(false);
+    for (const state of [createConferenceState(), conferenceReducer(ready, { type: 'loadStarted' }), conferenceReducer(ready, { type: 'loadFailed', error: 'boom' })]) {
+      expect(selectSessionById(state, 3)).toBeUndefined();
+    }
+    expect(selectIsFavorite(createConferenceState(), 3)).toBe(false);
+    expect(selectSessionById({ ...ready, conference: null }, 3)).toBeUndefined();
+  });
+
+  test.each(['favorites-some', 'favorites-order'])('favorite actions reproduce frozen %s groups', (caseId) => {
+    const reference = expectedCaseList.find(({ id }) => id === caseId)!;
+    let state = readyState();
+    state = conferenceReducer(state, { type: 'setSearchText', searchText: reference.input.searchText });
+    state = conferenceReducer(state, { type: 'setSelectedTracks', selectedTracks: reference.input.selectedTracks });
+    state = conferenceReducer(state, { type: 'setMode', mode: reference.input.mode });
+    for (const sessionId of reference.input.favoriteIds) {
+      state = conferenceReducer(deepFreeze(state), { type: 'favoriteAdded', sessionId });
+    }
+    expect(state.selection?.favoriteIds).toEqual(reference.input.favoriteIds);
+    const groups = selectScheduleGroups(state);
+    expect(groups.map(({ groupTime, sessions }) => ({ groupTime, sessionIds: sessions.map(({ id }) => id) }))).toEqual(reference.expected.groups);
+    expect(groups.flatMap(({ sessions }) => sessions.map(({ id }) => id))).toEqual(reference.expected.sessionIds);
   });
 });
 
