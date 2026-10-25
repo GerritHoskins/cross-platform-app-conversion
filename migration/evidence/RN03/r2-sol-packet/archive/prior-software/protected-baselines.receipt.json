@@ -1,0 +1,29 @@
+{
+  "id": "protected-baselines",
+  "file": "git",
+  "args": [
+    "diff",
+    "--exit-code",
+    "--",
+    "package.json",
+    "package-lock.json",
+    "src",
+    "public",
+    "android",
+    "ios",
+    "migration/core",
+    "migration/reference",
+    "migration/react-native/package.json",
+    "migration/react-native/package-lock.json",
+    "migration/react-native/tsconfig.json",
+    "migration/react-native/src/data",
+    "migration/react-native/src/screens/shell-screen.tsx",
+    "migration/react-native/__tests__/shell-screen.test.tsx",
+    "migration/react-native/scripts/verify-core-integration.cjs"
+  ],
+  "cwd": ".",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "interrupted": false
+}

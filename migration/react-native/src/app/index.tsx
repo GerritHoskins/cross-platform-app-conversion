@@ -1,1 +1,1 @@
-export { default } from '@/screens/shell-screen';
+export { default } from '@/screens/schedule-screen';

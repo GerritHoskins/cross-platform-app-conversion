@@ -1,0 +1,1239 @@
+[
+  {
+    "source": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/commands.jsonl",
+    "commandCount": 105,
+    "selectedCommandCount": 48,
+    "commands": [
+      {
+        "start": "2026-10-24T06:47:34.150Z",
+        "elapsedMs": 31,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "avd",
+          "name"
+        ],
+        "exit": 0,
+        "stdout": "RN01_API36\r\r\nOK\r\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:07.500Z",
+        "elapsedMs": 38,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "avd",
+          "name"
+        ],
+        "exit": 0,
+        "stdout": "RN01_API36\r\r\nOK\r\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:07.539Z",
+        "elapsedMs": 31,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "kill"
+        ],
+        "exit": 0,
+        "stdout": "OK: killing emulator, bye bye\r\r\nOK\r\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:39.927Z",
+        "elapsedMs": 65,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-boot.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/boot.xml"
+        ],
+        "exit": 1,
+        "stdout": "",
+        "stderr": "adb: error: failed to stat remote object '/sdcard/rn03-r3-boot.xml': No such file or directory\r\n"
+      },
+      {
+        "start": "2026-10-24T06:49:51.571Z",
+        "elapsedMs": 53,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-boot.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/boot.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-boot.xml: 1 file pulled, 0 skipped. 1.1 MB/s (13604 bytes in 0.011s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:49:51.626Z",
+        "elapsedMs": 25,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "avd",
+          "name"
+        ],
+        "exit": 0,
+        "stdout": "RN01_API36\r\r\nOK\r\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:51.651Z",
+        "elapsedMs": 26,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "reverse",
+          "--list"
+        ],
+        "exit": 0,
+        "stdout": "\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:51.677Z",
+        "elapsedMs": 36,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "reverse",
+          "tcp:8082",
+          "tcp:8082"
+        ],
+        "exit": 0,
+        "stdout": "8082\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:49:51.713Z",
+        "elapsedMs": 25,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "reverse",
+          "--list"
+        ],
+        "exit": 0,
+        "stdout": "host-8 tcp:8082 tcp:8082\r\n\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:50:14.636Z",
+        "elapsedMs": 354,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "start",
+          "-a",
+          "android.intent.action.VIEW",
+          "-d",
+          "exp+conference-migration-rn://?__expo_url=http%3A%2F%2Flocalhost%3A8082"
+        ],
+        "exit": 0,
+        "stdout": "Starting: Intent { act=android.intent.action.VIEW dat=exp+conference-migration-rn:///... }\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:50:33.214Z",
+        "elapsedMs": 40,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-app-ready.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/app-ready.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-app-ready.xml: 1 file pulled, 0 skipped. 1.4 MB/s (4464 bytes in 0.003s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:51:29.054Z",
+        "elapsedMs": 295,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_BACK"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:51:33.032Z",
+        "elapsedMs": 38,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-app-after-dialog.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/app-after-dialog.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-app-after-dialog.xml: 1 file pulled, 0 skipped. 2.8 MB/s (20870 bytes in 0.007s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:51:53.563Z",
+        "elapsedMs": 266,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "tap",
+          "540",
+          "458"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:51:57.622Z",
+        "elapsedMs": 52,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-search-focused.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/search-focused.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-search-focused.xml: 1 file pulled, 0 skipped. 1.2 MB/s (13604 bytes in 0.011s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:52:13.039Z",
+        "elapsedMs": 211,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "start",
+          "-a",
+          "android.intent.action.VIEW",
+          "-d",
+          "exp+conference-migration-rn://?__expo_url=http%3A%2F%2Flocalhost%3A8082"
+        ],
+        "exit": 0,
+        "stdout": "Starting: Intent { act=android.intent.action.VIEW dat=exp+conference-migration-rn:///... }\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:52:25.513Z",
+        "elapsedMs": 48,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-app-second-ready.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/app-second-ready.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-app-second-ready.xml: 1 file pulled, 0 skipped. 1.7 MB/s (6224 bytes in 0.004s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:52:41.862Z",
+        "elapsedMs": 47,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-app-settled.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/app-settled.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-app-settled.xml: 1 file pulled, 0 skipped. 1.5 MB/s (20870 bytes in 0.014s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:52:58.815Z",
+        "elapsedMs": 622,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "tap",
+          "540",
+          "458"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:53:07.135Z",
+        "elapsedMs": 88,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-search-focus-second.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/search-focus-second.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-search-focus-second.xml: 1 file pulled, 0 skipped. 0.6 MB/s (20869 bytes in 0.036s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:53:37.389Z",
+        "elapsedMs": 1218,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "text",
+          "IOnic"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:53:42.849Z",
+        "elapsedMs": 48,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-ionic-confirmed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/ionic-confirmed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-ionic-confirmed.xml: 1 file pulled, 0 skipped. 8.0 MB/s (21235 bytes in 0.003s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:53:46.343Z",
+        "elapsedMs": 504,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_MOVE_END"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:53:46.849Z",
+        "elapsedMs": 685,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:53:51.866Z",
+        "elapsedMs": 36,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-ionic-cleared.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/ionic-cleared.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-ionic-cleared.xml: 1 file pulled, 0 skipped. 9.7 MB/s (20869 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:22.563Z",
+        "elapsedMs": 1085,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-r3-RN03-05-ionic-cleared-restored.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:54:23.649Z",
+        "elapsedMs": 47,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-05-ionic-cleared-restored.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-05-ionic-cleared-restored.png: 1 file pulled, 0 skipped. 26.4 MB/s (173386 bytes in 0.006s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:27.016Z",
+        "elapsedMs": 32,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-05-ionic-cleared-restored.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-05-ionic-cleared-restored.xml: 1 file pulled, 0 skipped. 12.3 MB/s (20869 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:27.121Z",
+        "elapsedMs": 940,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "text",
+          "zzz-no-such-session"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:54:31.034Z",
+        "elapsedMs": 43,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-no-match-confirmed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/no-match-confirmed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-no-match-confirmed.xml: 1 file pulled, 0 skipped. 4.7 MB/s (12067 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:38.862Z",
+        "elapsedMs": 967,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-r3-RN03-06-search-no-match.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:54:39.831Z",
+        "elapsedMs": 41,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-06-search-no-match.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-06-search-no-match.png: 1 file pulled, 0 skipped. 58.4 MB/s (147863 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:43.302Z",
+        "elapsedMs": 57,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-06-search-no-match.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-06-search-no-match.xml: 1 file pulled, 0 skipped. 0.6 MB/s (12067 bytes in 0.020s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:43.423Z",
+        "elapsedMs": 181,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_MOVE_END"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:54:43.605Z",
+        "elapsedMs": 1812,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL",
+          "KEYCODE_DEL"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:54:49.339Z",
+        "elapsedMs": 37,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-no-match-cleared.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/no-match-cleared.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-no-match-cleared.xml: 1 file pulled, 0 skipped. 6.8 MB/s (20869 bytes in 0.003s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:54:56.759Z",
+        "elapsedMs": 449,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "tap",
+          "776",
+          "596"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:55:01.992Z",
+        "elapsedMs": 60,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-favorites-confirmed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/favorites-confirmed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-favorites-confirmed.xml: 1 file pulled, 0 skipped. 1.1 MB/s (12042 bytes in 0.010s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:55:02.162Z",
+        "elapsedMs": 1184,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-r3-RN03-07-favorites-empty.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:55:03.348Z",
+        "elapsedMs": 52,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-07-favorites-empty.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-07-favorites-empty.png: 1 file pulled, 0 skipped. 8.0 MB/s (140580 bytes in 0.017s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:55:07.012Z",
+        "elapsedMs": 82,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-07-favorites-empty.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-07-favorites-empty.xml: 1 file pulled, 0 skipped. 10.4 MB/s (12042 bytes in 0.001s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:55:15.475Z",
+        "elapsedMs": 357,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "tap",
+          "303",
+          "596"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:55:21.385Z",
+        "elapsedMs": 55,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-all-restored-confirmed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-native-20261024-r3/all-restored-confirmed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-all-restored-confirmed.xml: 1 file pulled, 0 skipped. 2.8 MB/s (20868 bytes in 0.007s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:55:21.694Z",
+        "elapsedMs": 745,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-r3-RN03-08-all-sessions-restored.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:55:22.441Z",
+        "elapsedMs": 97,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-08-all-sessions-restored.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-08-all-sessions-restored.png: 1 file pulled, 0 skipped. 10.6 MB/s (173386 bytes in 0.016s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:55:25.343Z",
+        "elapsedMs": 38,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-r3-RN03-08-all-sessions-restored.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-r3-RN03-08-all-sessions-restored.xml: 1 file pulled, 0 skipped. 2.3 MB/s (20868 bytes in 0.009s)\r\n"
+      },
+      {
+        "start": "2026-10-24T06:56:04.021Z",
+        "elapsedMs": 26,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "reverse",
+          "--list"
+        ],
+        "exit": 0,
+        "stdout": "host-8 tcp:8082 tcp:8082\r\n\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T06:56:04.048Z",
+        "elapsedMs": 23,
+        "file": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "avd",
+          "name"
+        ],
+        "exit": 0,
+        "stdout": "RN01_API36\r\r\nOK\r\r\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "source": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/correction-commands.jsonl",
+    "commandCount": 49,
+    "selectedCommandCount": 29,
+    "commands": [
+      {
+        "start": "2026-10-24T07:16:01.723Z",
+        "end": "2026-10-24T07:16:01.766Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "emu",
+          "avd",
+          "name"
+        ],
+        "exit": 0,
+        "stdout": "RN01_API36\r\r\nOK\r\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:01.805Z",
+        "end": "2026-10-24T07:16:01.833Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "reverse",
+          "--list"
+        ],
+        "exit": 0,
+        "stdout": "host-8 tcp:8082 tcp:8082\r\n\r\n",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:05.480Z",
+        "end": "2026-10-24T07:16:05.516Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-current.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/current.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-current.xml: 1 file pulled, 0 skipped. 8.1 MB/s (20868 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:05.526Z",
+        "end": "2026-10-24T07:16:06.064Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-sol-correction-current.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:06.064Z",
+        "end": "2026-10-24T07:16:06.104Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-current.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/current.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-current.png: 1 file pulled, 0 skipped. 38.9 MB/s (173489 bytes in 0.004s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:18.218Z",
+        "end": "2026-10-24T07:16:18.479Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-sol-correction-RN03-01-initial-schedule.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:18.480Z",
+        "end": "2026-10-24T07:16:18.520Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-01-initial-schedule.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-01-initial-schedule.png: 1 file pulled, 0 skipped. 42.0 MB/s (173386 bytes in 0.004s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:20.706Z",
+        "end": "2026-10-24T07:16:20.741Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-01-initial-schedule.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-01-initial-schedule.xml: 1 file pulled, 0 skipped. 10.0 MB/s (20868 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:20.873Z",
+        "end": "2026-10-24T07:16:21.009Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "tap",
+          "540",
+          "458"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:23.229Z",
+        "end": "2026-10-24T07:16:23.267Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-focused.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/focused.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-focused.xml: 1 file pulled, 0 skipped. 10.5 MB/s (20868 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:23.341Z",
+        "end": "2026-10-24T07:16:23.669Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "text",
+          "IOnic"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:25.936Z",
+        "end": "2026-10-24T07:16:25.975Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-typed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/typed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-typed.xml: 1 file pulled, 0 skipped. 5.0 MB/s (21234 bytes in 0.004s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:26.041Z",
+        "end": "2026-10-24T07:16:26.097Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "keyevent",
+          "KEYCODE_BACK"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:28.259Z",
+        "end": "2026-10-24T07:16:28.294Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-dismissed.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/dismissed.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-dismissed.xml: 1 file pulled, 0 skipped. 9.2 MB/s (21234 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:39.828Z",
+        "end": "2026-10-24T07:16:40.093Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-sol-correction-RN03-02-search-ionic-top.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:40.094Z",
+        "end": "2026-10-24T07:16:40.126Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-02-search-ionic-top.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-02-search-ionic-top.png: 1 file pulled, 0 skipped. 42.8 MB/s (156471 bytes in 0.003s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:42.297Z",
+        "end": "2026-10-24T07:16:42.327Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-02-search-ionic-top.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-02-search-ionic-top.xml: 1 file pulled, 0 skipped. 9.0 MB/s (21234 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:42.404Z",
+        "end": "2026-10-24T07:16:42.916Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "swipe",
+          "540",
+          "1950",
+          "540",
+          "930",
+          "450"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:45.313Z",
+        "end": "2026-10-24T07:16:45.358Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-intermediate.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/intermediate.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-intermediate.xml: 1 file pulled, 0 skipped. 10.4 MB/s (23860 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:45.428Z",
+        "end": "2026-10-24T07:16:45.664Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-sol-correction-RN03-03-search-ionic-scrolled.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:45.665Z",
+        "end": "2026-10-24T07:16:45.700Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-03-search-ionic-scrolled.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-03-search-ionic-scrolled.png: 1 file pulled, 0 skipped. 52.9 MB/s (162190 bytes in 0.003s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:47.801Z",
+        "end": "2026-10-24T07:16:47.832Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-03-search-ionic-scrolled.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-03-search-ionic-scrolled.xml: 1 file pulled, 0 skipped. 10.0 MB/s (23860 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:47.938Z",
+        "end": "2026-10-24T07:16:48.445Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "swipe",
+          "540",
+          "1950",
+          "540",
+          "930",
+          "450"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:16:50.835Z",
+        "end": "2026-10-24T07:16:50.869Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-later.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/later.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-later.xml: 1 file pulled, 0 skipped. 13.1 MB/s (23522 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:16:58.275Z",
+        "end": "2026-10-24T07:16:58.802Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "input",
+          "swipe",
+          "540",
+          "1950",
+          "540",
+          "930",
+          "450"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:17:01.064Z",
+        "end": "2026-10-24T07:17:01.108Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-bottom.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/bottom.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-bottom.xml: 1 file pulled, 0 skipped. 12.0 MB/s (23509 bytes in 0.002s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:17:01.179Z",
+        "end": "2026-10-24T07:17:01.448Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "screencap",
+          "-p",
+          "/sdcard/rn03-sol-correction-RN03-04-search-ionic-bottom.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "start": "2026-10-24T07:17:01.448Z",
+        "end": "2026-10-24T07:17:01.484Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-04-search-ionic-bottom.png",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-04-search-ionic-bottom.png: 1 file pulled, 0 skipped. 40.5 MB/s (164364 bytes in 0.004s)\r\n"
+      },
+      {
+        "start": "2026-10-24T07:17:03.598Z",
+        "end": "2026-10-24T07:17:03.635Z",
+        "exe": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "pull",
+          "/sdcard/rn03-sol-correction-RN03-04-search-ionic-bottom.xml",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.xml"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": "/sdcard/rn03-sol-correction-RN03-04-search-ionic-bottom.xml: 1 file pulled, 0 skipped. 11.7 MB/s (23509 bytes in 0.002s)\r\n"
+      }
+    ]
+  }
+]

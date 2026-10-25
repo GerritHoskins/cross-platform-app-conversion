@@ -1,2 +1,9 @@
 # Manifest SHA-256 hashes are computed on LF files; keep them byte-identical on checkout.
 migration/** text=auto eol=lf
+# RN03 frozen evidence captured with CRLF; store bytes as-is so manifest hashes hold.
+migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/emulator.stderr.log -text
+migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/emulator.stdout.log -text
+migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.stdout.log -text
+migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stdout.log -text
+migration/evidence/RN03/r2-sol-packet/pixel-initial-assessment.md -text
+migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md -text

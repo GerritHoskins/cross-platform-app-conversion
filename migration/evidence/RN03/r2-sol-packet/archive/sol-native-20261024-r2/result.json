@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED",
+  "summary": "No new acceptance frames captured. Historical clear command used MOVE_END (123), not Backspace (67). Current Android activity/window services are unavailable; XML and screenshot capture failed before any corrected input attempt. Existing RN03 evidence and app source/tests remained unchanged; Metro is live on 8082.",
+  "files": [
+    "migration/evidence/RN03/r2-native-sol-recovery/capture-index.json",
+    "migration/evidence/RN03/r2-native-sol-recovery/capture-notes.md",
+    "migration/handoffs/RN03-sol-native-checkpoint.md",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/commands.jsonl",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/preservation-baseline.json",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/preservation-check.json",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/android-keyevent-reference.html",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/recovery.mjs",
+    "tools/qwen-supervisor/.runs/sol-native-20261024-r2/finalize.mjs"
+  ],
+  "unresolved": [
+    "Frames 05-08 missing; no fresh diagnostic PNG/XML could be captured.",
+    "Current app package/focus, Search sessions bounds/query, mode and tutorial pixels unverified.",
+    "Android activity/window services unavailable; separate coordinator authorization needed for remediation.",
+    "Independent pixel inspection and remaining packet work pending; independent Sol/high formal review mandatory.",
+    "Initial curl accidentally targeted native C:/tmp/android-keyevent-reference.html; its bytes differ from the retained reference, so no deletion was attempted. Coordinator cleanup needed; not used as evidence."
+  ]
+}

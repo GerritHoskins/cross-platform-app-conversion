@@ -1,0 +1,27 @@
+{
+  "provider": "openai-codex",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "fallback": "[]",
+  "executable": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+  "args": [
+    "-p",
+    "translation-migration",
+    "chat",
+    "--provider",
+    "openai-codex",
+    "--model",
+    "gpt-6.1-sol",
+    "--reasoning",
+    "high",
+    "--toolsets",
+    "terminal,file",
+    "--max-turns",
+    "40",
+    "--format",
+    "stream-json",
+    "--pass-session-id",
+    "--query-file",
+    "tools/qwen-supervisor/.runs/sol-pixel-correction-20261024/prompt.txt"
+  ]
+}

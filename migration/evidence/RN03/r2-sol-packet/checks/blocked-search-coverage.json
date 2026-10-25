@@ -1,0 +1,714 @@
+{
+  "package": "RN03",
+  "revision": 2,
+  "status": "BLOCKED",
+  "date": "2026-10-24T07:25:34.244Z",
+  "branch": "migration/slice-1",
+  "head": "f78a759741b57ed1a19c7b6630af67640571ff61",
+  "headTree": "4fa34700ccc50f54d103d89904d7c2d4b2d83be0",
+  "nodeVersion": "v24.19.0",
+  "prerequisiteReview": {
+    "path": "migration/reviews/RN02-r3.md",
+    "verdict": "APPROVE",
+    "ancestorExit": 0
+  },
+  "finding": {
+    "id": "RN03-r1-MODERATE-unresolved",
+    "severity": "MODERATE",
+    "kind": "UI search regression-test coverage defect, not an established current app filtering defect",
+    "evidence": [
+      {
+        "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+        "lines": "285-291, 330",
+        "observation": "GroupsProbe reads useConference().groups; equality checks provider output, not SectionList sections."
+      },
+      {
+        "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+        "lines": "335-354",
+        "observation": "Mounted rows need only be a nonempty subset of expected IDs. Mounted headers are obtained by filtering expectedGroupTimes; missing later headers/rows are allowed."
+      },
+      {
+        "path": "migration/react-native/src/screens/schedule-screen.tsx",
+        "lines": "122-124, 204-211",
+        "observation": "Current screen maps groups faithfully. That separate screen-to-list transformation is not read by GroupsProbe."
+      }
+    ],
+    "counterexampleByInspection": "A screen-only search regression that passes just the first expected section or a matching subset to SectionList leaves provider groups unchanged, retains matching mounted rows and first expected header, and satisfies these search assertions. This is static reasoning, not a mutation-test execution.",
+    "requiredResolution": "A separately authorized test change must assert the actual SectionList section/row mapping against frozen expected groups, or exercise all expected rows via a controlled viewport/scroll. Preserve real SectionList. This evidence-only assignment forbids that edit."
+  },
+  "sources": [
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "sha256": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008",
+      "actual": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008"
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "sha256": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9",
+      "actual": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "sha256": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3",
+      "actual": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3"
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "sha256": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "actual": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a"
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "sha256": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa",
+      "actual": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa"
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "sha256": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7",
+      "actual": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7"
+    }
+  ],
+  "selectedCaptures": [
+    {
+      "name": "RN03-01-initial-schedule",
+      "image": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png",
+      "imageExpected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "imageActual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.xml",
+      "uiXmlExpected": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+      "uiXmlActual": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a"
+    },
+    {
+      "name": "RN03-02-search-ionic-top",
+      "image": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png",
+      "imageExpected": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+      "imageActual": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.xml",
+      "uiXmlExpected": "b4af894517a6b7080a5c5a3bb46117b2cbfc07df223e22dd21c69c58f87e620f",
+      "uiXmlActual": "b4af894517a6b7080a5c5a3bb46117b2cbfc07df223e22dd21c69c58f87e620f"
+    },
+    {
+      "name": "RN03-03-search-ionic-scrolled",
+      "image": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png",
+      "imageExpected": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+      "imageActual": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.xml",
+      "uiXmlExpected": "a6d43cb02daf7e9e1f9cdcb2452ddc369ba839e7fede534d51ed0b9704c83b65",
+      "uiXmlActual": "a6d43cb02daf7e9e1f9cdcb2452ddc369ba839e7fede534d51ed0b9704c83b65"
+    },
+    {
+      "name": "RN03-04-search-ionic-bottom",
+      "image": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png",
+      "imageExpected": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+      "imageActual": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.xml",
+      "uiXmlExpected": "cbde5e493c3f60593f1126144c5906b36bb855aa5ba1896fdd90f4a018b8f5d5",
+      "uiXmlActual": "cbde5e493c3f60593f1126144c5906b36bb855aa5ba1896fdd90f4a018b8f5d5"
+    },
+    {
+      "name": "RN03-05-ionic-cleared-restored",
+      "image": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png",
+      "imageExpected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "imageActual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.xml",
+      "uiXmlExpected": "5137bcf7638190794b86ee87fd553b3e0da4bbf1d77d3a30585c0038cddbb0e9",
+      "uiXmlActual": "5137bcf7638190794b86ee87fd553b3e0da4bbf1d77d3a30585c0038cddbb0e9"
+    },
+    {
+      "name": "RN03-06-search-no-match",
+      "image": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png",
+      "imageExpected": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+      "imageActual": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.xml",
+      "uiXmlExpected": "cc5633a05287addfcb449f494cae8a40ceb559f8c1ac1d1575329ae965dc55f9",
+      "uiXmlActual": "cc5633a05287addfcb449f494cae8a40ceb559f8c1ac1d1575329ae965dc55f9"
+    },
+    {
+      "name": "RN03-07-favorites-empty",
+      "image": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png",
+      "imageExpected": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+      "imageActual": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.xml",
+      "uiXmlExpected": "5ab2e2024a58904373210a2d8cec9463f48f8d2759896ba0879e760c9e181057",
+      "uiXmlActual": "5ab2e2024a58904373210a2d8cec9463f48f8d2759896ba0879e760c9e181057"
+    },
+    {
+      "name": "RN03-08-all-sessions-restored",
+      "image": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png",
+      "imageExpected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "imageActual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "uiXml": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.xml",
+      "uiXmlExpected": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+      "uiXmlActual": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a"
+    }
+  ],
+  "pixelProof": {
+    "report": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md",
+    "routing": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-routing.json",
+    "transport": "Codex native collaboration",
+    "verdict": "PASS",
+    "packageApproval": false,
+    "checks": [
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png",
+        "expected": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+        "actual": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png",
+        "expected": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+        "actual": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png",
+        "expected": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+        "actual": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png",
+        "expected": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+        "actual": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png",
+        "expected": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+        "actual": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+        "verdict": "PASS"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "verdict": "PASS"
+      }
+    ]
+  },
+  "preservation": {
+    "entries": [
+      {
+        "path": "IDEA.md",
+        "expected": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+        "actual": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-01-initial-schedule.png",
+        "expected": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+        "actual": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-02-search-ionic-top.png",
+        "expected": "51bddac8805f8737ee1cbfdfcadcc08f6d9dc19f20722f96c5420632bec0a244",
+        "actual": "51bddac8805f8737ee1cbfdfcadcc08f6d9dc19f20722f96c5420632bec0a244"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-03-search-ionic-scrolled.png",
+        "expected": "2020b10d17b6c857dd904b0361c863d4da355c3b95aaa1c03ade00c4aa81d98e",
+        "actual": "2020b10d17b6c857dd904b0361c863d4da355c3b95aaa1c03ade00c4aa81d98e"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-04-search-ionic-bottom.png",
+        "expected": "011bc1d14cf41a7f85618db02c34afab0bc035fbdbb357c570e923f4124529bd",
+        "actual": "011bc1d14cf41a7f85618db02c34afab0bc035fbdbb357c570e923f4124529bd"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-05-ionic-cleared-restored.png",
+        "expected": "e9cab6bb4e3868f2384baa999208b1567c7e8873831335d305959849f3777270",
+        "actual": "e9cab6bb4e3868f2384baa999208b1567c7e8873831335d305959849f3777270"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-06-search-no-match.png",
+        "expected": "a274f558e1f2c163234f0c5cf8e62caec87cfbcee65ae1304f1f21c6adc64860",
+        "actual": "a274f558e1f2c163234f0c5cf8e62caec87cfbcee65ae1304f1f21c6adc64860"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-07-favorites-empty.png",
+        "expected": "4efc6eb458067e35bdb5c1e6b82803c0175866e513ae151f01833cbc3617230f",
+        "actual": "4efc6eb458067e35bdb5c1e6b82803c0175866e513ae151f01833cbc3617230f"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-08-all-sessions-restored.png",
+        "expected": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+        "actual": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-native-observations.txt",
+        "expected": "32fffcf150cae69940ccca472ed3377e27bb28763d3e11228504b5ae71e8aa35",
+        "actual": "32fffcf150cae69940ccca472ed3377e27bb28763d3e11228504b5ae71e8aa35"
+      },
+      {
+        "path": "migration/evidence/RN03/RN03-pixel-inspection-r2.md",
+        "expected": "cc72d97e2cc46d843c164e541e01e1c7b9f67f04bf197227b0297f9fc5db8eba",
+        "actual": "cc72d97e2cc46d843c164e541e01e1c7b9f67f04bf197227b0297f9fc5db8eba"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png",
+        "expected": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+        "actual": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml",
+        "expected": "06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2",
+        "actual": "06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.png",
+        "expected": "4bb41c25d12ea3c6b4450aee29d355b206d45b9bdd221730e6de5de4506bc58f",
+        "actual": "4bb41c25d12ea3c6b4450aee29d355b206d45b9bdd221730e6de5de4506bc58f"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.xml",
+        "expected": "58926c3f0e41bced8119daa3a07a2cb6077d18f80f36ae1451f752f2ab1311a4",
+        "actual": "58926c3f0e41bced8119daa3a07a2cb6077d18f80f36ae1451f752f2ab1311a4"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.png",
+        "expected": "0a7fc50afdcc953ef7f7e5b144edb734d7a25d583cb8bc486f67b1758defa75e",
+        "actual": "0a7fc50afdcc953ef7f7e5b144edb734d7a25d583cb8bc486f67b1758defa75e"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.xml",
+        "expected": "9e7cb9775d8299d4240ceb294513be25b7ce6570ab075885f5d2da6b64db7d8e",
+        "actual": "9e7cb9775d8299d4240ceb294513be25b7ce6570ab075885f5d2da6b64db7d8e"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.png",
+        "expected": "9b399327cc2e8a6de13eb70f59e2fcdf84fe20218a73211e8ffd436c3ad7fc60",
+        "actual": "9b399327cc2e8a6de13eb70f59e2fcdf84fe20218a73211e8ffd436c3ad7fc60"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.xml",
+        "expected": "3bed8eb8f1990853037937e2d22a1bd613da179c4ed3d6b26d9ca3fbc9fe1a41",
+        "actual": "3bed8eb8f1990853037937e2d22a1bd613da179c4ed3d6b26d9ca3fbc9fe1a41"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.png",
+        "expected": "cf2c1dffd4d4bd1f952942e2aa89a38c86d569e782592c1a7089ab681b28ab84",
+        "actual": "cf2c1dffd4d4bd1f952942e2aa89a38c86d569e782592c1a7089ab681b28ab84"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.xml",
+        "expected": "2e705bc81fbdd9d72a5b15cc4e09db164ca008aa38e6dd315ab4a7bea4f3135e",
+        "actual": "2e705bc81fbdd9d72a5b15cc4e09db164ca008aa38e6dd315ab4a7bea4f3135e"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/capture-draft.json",
+        "expected": "217a7d021cb17c2b037eb02288f8fe9a1384d19aa1dfa9322bb09526d082cbda",
+        "actual": "217a7d021cb17c2b037eb02288f8fe9a1384d19aa1dfa9322bb09526d082cbda"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-recovery/capture-notes.md",
+        "expected": "75d31390cd730fa59bd514421dc82ac5a6817c50997a4f284b004d8d6778aa26",
+        "actual": "75d31390cd730fa59bd514421dc82ac5a6817c50997a4f284b004d8d6778aa26"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.xml",
+        "expected": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+        "actual": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png",
+        "expected": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+        "actual": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.xml",
+        "expected": "b4af894517a6b7080a5c5a3bb46117b2cbfc07df223e22dd21c69c58f87e620f",
+        "actual": "b4af894517a6b7080a5c5a3bb46117b2cbfc07df223e22dd21c69c58f87e620f"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png",
+        "expected": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+        "actual": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.xml",
+        "expected": "a6d43cb02daf7e9e1f9cdcb2452ddc369ba839e7fede534d51ed0b9704c83b65",
+        "actual": "a6d43cb02daf7e9e1f9cdcb2452ddc369ba839e7fede534d51ed0b9704c83b65"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png",
+        "expected": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+        "actual": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.xml",
+        "expected": "cbde5e493c3f60593f1126144c5906b36bb855aa5ba1896fdd90f4a018b8f5d5",
+        "actual": "cbde5e493c3f60593f1126144c5906b36bb855aa5ba1896fdd90f4a018b8f5d5"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/capture-index.json",
+        "expected": "24f07ce96fc82f9749e9949156e6843795a9715e067c8a122bbd132d07c403ee",
+        "actual": "24f07ce96fc82f9749e9949156e6843795a9715e067c8a122bbd132d07c403ee"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-corrected/capture-notes.md",
+        "expected": "e0778ef14992417ecff21e3657fefa8420523c99bb7866e1e441d8fb3a183cf0",
+        "actual": "e0778ef14992417ecff21e3657fefa8420523c99bb7866e1e441d8fb3a183cf0"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.xml",
+        "expected": "5137bcf7638190794b86ee87fd553b3e0da4bbf1d77d3a30585c0038cddbb0e9",
+        "actual": "5137bcf7638190794b86ee87fd553b3e0da4bbf1d77d3a30585c0038cddbb0e9"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png",
+        "expected": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+        "actual": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.xml",
+        "expected": "cc5633a05287addfcb449f494cae8a40ceb559f8c1ac1d1575329ae965dc55f9",
+        "actual": "cc5633a05287addfcb449f494cae8a40ceb559f8c1ac1d1575329ae965dc55f9"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png",
+        "expected": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+        "actual": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.xml",
+        "expected": "5ab2e2024a58904373210a2d8cec9463f48f8d2759896ba0879e760c9e181057",
+        "actual": "5ab2e2024a58904373210a2d8cec9463f48f8d2759896ba0879e760c9e181057"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png",
+        "expected": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+        "actual": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.xml",
+        "expected": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+        "actual": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/capture-index.json",
+        "expected": "22c00dfbb205cd93b1d5d1ab2cbed1024585d074acb0f8a0e421432e229aa5df",
+        "actual": "22c00dfbb205cd93b1d5d1ab2cbed1024585d074acb0f8a0e421432e229aa5df"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/capture-notes.md",
+        "expected": "2acc22c58bebedcce8b96b776ce76557d84c700e70510772184c81c7fd9116da",
+        "actual": "2acc22c58bebedcce8b96b776ce76557d84c700e70510772184c81c7fd9116da"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery/capture-index.json",
+        "expected": "8bfcf4da6664a00b38b0f6008f6bdaf69949ff98ad42b88cc9807159a0c60798",
+        "actual": "8bfcf4da6664a00b38b0f6008f6bdaf69949ff98ad42b88cc9807159a0c60798"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-native-sol-recovery/capture-notes.md",
+        "expected": "532b8d9d08c7affdf0bc3b918ed57a47884a345a5308d5d3fc8e808e8c18e7fd",
+        "actual": "532b8d9d08c7affdf0bc3b918ed57a47884a345a5308d5d3fc8e808e8c18e7fd"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-sol-packet/capture-set.json",
+        "expected": "2b82fa8489348cfeffde78a64136411992fe9d5500306571b699c18fb219636f",
+        "actual": "2b82fa8489348cfeffde78a64136411992fe9d5500306571b699c18fb219636f"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-sol-packet/pixel-initial-assessment.md",
+        "expected": "5e2594ca828c6b182fb4c2135033f44aa3a4b0bd5364a31fc7801f3f56b848ab",
+        "actual": "5e2594ca828c6b182fb4c2135033f44aa3a4b0bd5364a31fc7801f3f56b848ab"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-routing.json",
+        "expected": "c30f5809a75321c182e7c908af45ab71ec366ea9030905dcfc5462e8aae72f23",
+        "actual": "c30f5809a75321c182e7c908af45ab71ec366ea9030905dcfc5462e8aae72f23"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md",
+        "expected": "e7dbe534a4da0ed2c9974a47b719da1f45224cb23ba944f4a66f4b63e4baaae8",
+        "actual": "e7dbe534a4da0ed2c9974a47b719da1f45224cb23ba944f4a66f4b63e4baaae8"
+      },
+      {
+        "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection.json",
+        "expected": "04aaa855dd6ccc5b00b06f6e668194cdc9e6146f9eb30425ad08f7f7a61a4534",
+        "actual": "04aaa855dd6ccc5b00b06f6e668194cdc9e6146f9eb30425ad08f7f7a61a4534"
+      },
+      {
+        "path": "migration/handoffs/RN03-checkpoint.md",
+        "expected": "7054e3239776763ec849ba737c08b73e18eaada8796d533833f518360d15f13c",
+        "actual": "7054e3239776763ec849ba737c08b73e18eaada8796d533833f518360d15f13c"
+      },
+      {
+        "path": "migration/handoffs/RN03-sol-corrected-checkpoint.md",
+        "expected": "21a7dfe97a36a29b3032a6011e0ab3413302a15de33b65c469c915b0b780e3c2",
+        "actual": "21a7dfe97a36a29b3032a6011e0ab3413302a15de33b65c469c915b0b780e3c2"
+      },
+      {
+        "path": "migration/handoffs/RN03-sol-native-checkpoint-r3.md",
+        "expected": "c762fc65296ec0465ddd45dee519ba9cf24478ec1c24add0c3a0078f6adce032",
+        "actual": "c762fc65296ec0465ddd45dee519ba9cf24478ec1c24add0c3a0078f6adce032"
+      },
+      {
+        "path": "migration/handoffs/RN03-sol-native-checkpoint.md",
+        "expected": "3c84e795ce751c644887000540db2a71425cd4d825141162a2e1199dd2902b90",
+        "actual": "3c84e795ce751c644887000540db2a71425cd4d825141162a2e1199dd2902b90"
+      },
+      {
+        "path": "migration/handoffs/RN03-supervisor-software-checkpoint.md",
+        "expected": "83e88744899ef6e91dc9c646870c9000bd70dca3b1657bb3260cbfb396d14ede",
+        "actual": "83e88744899ef6e91dc9c646870c9000bd70dca3b1657bb3260cbfb396d14ede"
+      },
+      {
+        "path": "migration/handoffs/RN03.md",
+        "expected": "c488bba4409909b41da1413005b510a0edda0fa723738cc473c62a0df6b7daca",
+        "actual": "c488bba4409909b41da1413005b510a0edda0fa723738cc473c62a0df6b7daca"
+      },
+      {
+        "path": "migration/plans/rn07-android-acceptance-checklist.md",
+        "expected": "3377626a98b4c51fc2d06414e695965745f66b08ada01614c2b1d394ba4aaccb",
+        "actual": "3377626a98b4c51fc2d06414e695965745f66b08ada01614c2b1d394ba4aaccb"
+      },
+      {
+        "path": "migration/react-native/__tests__/conference-state.test.ts",
+        "expected": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa",
+        "actual": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa"
+      },
+      {
+        "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+        "expected": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7",
+        "actual": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7"
+      },
+      {
+        "path": "migration/react-native/src/app/_layout.tsx",
+        "expected": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3",
+        "actual": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3"
+      },
+      {
+        "path": "migration/react-native/src/app/index.tsx",
+        "expected": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+        "actual": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a"
+      },
+      {
+        "path": "migration/react-native/src/screens/schedule-screen.tsx",
+        "expected": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9",
+        "actual": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9"
+      },
+      {
+        "path": "migration/react-native/src/state/conference-state.tsx",
+        "expected": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008",
+        "actual": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008"
+      },
+      {
+        "path": "migration/reviews/RN03-r1.md",
+        "expected": "771662c808650a25062c569de8cf03e2e306979b09783432c2888840493fa54a",
+        "actual": "771662c808650a25062c569de8cf03e2e306979b09783432c2888840493fa54a"
+      },
+      {
+        "path": "migration/submissions/RN03-r1.json",
+        "expected": "9d87167a556f2384124b7dbe760e616ab28c84dad7c9baf4d950f33ca8ece54d",
+        "actual": "9d87167a556f2384124b7dbe760e616ab28c84dad7c9baf4d950f33ca8ece54d"
+      },
+      {
+        "path": "migration/work-packages/RN03.md",
+        "expected": "a866f293b88d6b933ab10477447c0edbe96bb06c67c86cc3c9f78406b9acf5cf",
+        "actual": "a866f293b88d6b933ab10477447c0edbe96bb06c67c86cc3c9f78406b9acf5cf"
+      }
+    ],
+    "beforeAfterChanges": [],
+    "hashProblems": []
+  },
+  "commands": [
+    {
+      "label": "node-version",
+      "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:33.893Z",
+      "ended": "2026-10-24T07:25:33.926Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stderr.log"
+    },
+    {
+      "label": "branch",
+      "executable": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:33.926Z",
+      "ended": "2026-10-24T07:25:33.953Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stderr.log"
+    },
+    {
+      "label": "head",
+      "executable": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:33.954Z",
+      "ended": "2026-10-24T07:25:33.988Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stderr.log"
+    },
+    {
+      "label": "tree",
+      "executable": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:33.989Z",
+      "ended": "2026-10-24T07:25:34.022Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stderr.log"
+    },
+    {
+      "label": "rn02-ancestor",
+      "executable": "git",
+      "args": [
+        "merge-base",
+        "--is-ancestor",
+        "f78a759741b57ed1a19c7b6630af67640571ff61",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:34.023Z",
+      "ended": "2026-10-24T07:25:34.049Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stderr.log"
+    },
+    {
+      "label": "status",
+      "executable": "git",
+      "args": [
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:34.049Z",
+      "ended": "2026-10-24T07:25:34.100Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-status.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-status.stderr.log"
+    },
+    {
+      "label": "whitespace",
+      "executable": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:34.139Z",
+      "ended": "2026-10-24T07:25:34.174Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-whitespace.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-whitespace.stderr.log"
+    },
+    {
+      "label": "protected",
+      "executable": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:34.174Z",
+      "ended": "2026-10-24T07:25:34.204Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-protected.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-protected.stderr.log"
+    },
+    {
+      "label": "index-clean",
+      "executable": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "started": "2026-10-24T07:25:34.204Z",
+      "ended": "2026-10-24T07:25:34.236Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "migration/evidence/RN03/r2-sol-packet/checks/blocked-index-clean.stdout.log",
+      "stderr": "migration/evidence/RN03/r2-sol-packet/checks/blocked-index-clean.stderr.log"
+    }
+  ],
+  "notRun": [
+    "core integration",
+    "typecheck",
+    "Jest pass 1 with JSON",
+    "Jest pass 2 with JSON",
+    "Android export",
+    "manifest write/check"
+  ],
+  "notRunReason": "Stopped on unresolved r1 test-coverage defect before software verification/freeze, as explicitly required by the evidence-only assignment. No fresh suite counts or export claims.",
+  "preserved": "No source/test/config/dependency/capture/pixel/handoff/status/history changes. IDEA.md hash-only. No device action, Metro/emulator intervention, installation, staging, commit, RN04 or formal-review dispatch.",
+  "initialStatus": "M migration/react-native/src/app/_layout.tsx\n M migration/react-native/src/app/index.tsx\n?? IDEA.md\n?? migration/evidence/RN03/RN03-01-initial-schedule.png\n?? migration/evidence/RN03/RN03-02-search-ionic-top.png\n?? migration/evidence/RN03/RN03-03-search-ionic-scrolled.png\n?? migration/evidence/RN03/RN03-04-search-ionic-bottom.png\n?? migration/evidence/RN03/RN03-05-ionic-cleared-restored.png\n?? migration/evidence/RN03/RN03-06-search-no-match.png\n?? migration/evidence/RN03/RN03-07-favorites-empty.png\n?? migration/evidence/RN03/RN03-08-all-sessions-restored.png\n?? migration/evidence/RN03/RN03-native-observations.txt\n?? migration/evidence/RN03/RN03-pixel-inspection-r2.md\n?? migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png\n?? migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml\n?? migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.png\n?? migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.xml\n?? migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.png\n?? migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.xml\n?? migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.png\n?? migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.xml\n?? migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.png\n?? migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.xml\n?? migration/evidence/RN03/r2-native-recovery/capture-draft.json\n?? migration/evidence/RN03/r2-native-recovery/capture-notes.md\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.xml\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.xml\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.xml\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png\n?? migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.xml\n?? migration/evidence/RN03/r2-native-sol-corrected/capture-index.json\n?? migration/evidence/RN03/r2-native-sol-corrected/capture-notes.md\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.xml\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.xml\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.xml\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.xml\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/capture-index.json\n?? migration/evidence/RN03/r2-native-sol-recovery-r3/capture-notes.md\n?? migration/evidence/RN03/r2-native-sol-recovery/capture-index.json\n?? migration/evidence/RN03/r2-native-sol-recovery/capture-notes.md\n?? migration/evidence/RN03/r2-sol-packet/capture-set.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.receipt.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stderr.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stdout.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-head.receipt.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stderr.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stdout.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.receipt.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stderr.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stdout.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.receipt.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stderr.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stdout.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.receipt.json\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stderr.log\n?? migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stdout.log\n?? migration/evidence/RN03/r2-sol-packet/pixel-initial-assessment.md\n?? migration/evidence/RN03/r2-sol-packet/pixel-inspection-routing.json\n?? migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md\n?? migration/evidence/RN03/r2-sol-packet/pixel-inspection.json\n?? migration/handoffs/RN03-checkpoint.md\n?? migration/handoffs/RN03-sol-corrected-checkpoint.md\n?? migration/handoffs/RN03-sol-native-checkpoint-r3.md\n?? migration/handoffs/RN03-sol-native-checkpoint.md\n?? migration/handoffs/RN03-supervisor-software-checkpoint.md\n?? migration/handoffs/RN03.md\n?? migration/plans/rn07-android-acceptance-checklist.md\n?? migration/react-native/__tests__/conference-state.test.ts\n?? migration/react-native/__tests__/schedule-screen.test.tsx\n?? migration/react-native/src/screens/schedule-screen.tsx\n?? migration/react-native/src/state/conference-state.tsx\n?? migration/reviews/RN03-r1.md\n?? migration/submissions/RN03-r1.json\n?? migration/work-packages/RN03.md\n?? tools/qwen-supervisor/.gitignore\n?? tools/qwen-supervisor/README.md\n?? tools/qwen-supervisor/capture-validator.mjs\n?? tools/qwen-supervisor/config.example.json\n?? tools/qwen-supervisor/progress.mjs\n?? tools/qwen-supervisor/rn03-native-recovery.md\n?? tools/qwen-supervisor/rn03-r2-native-flow.md\n?? tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery-retry.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery.json\n?? tools/qwen-supervisor/rn03-r2-native.json\n?? tools/qwen-supervisor/rn03-r2-next.json\n?? tools/qwen-supervisor/rn03-r2-packet.json\n?? tools/qwen-supervisor/rn03-r2-recovery-packet.json\n?? tools/qwen-supervisor/supervisor.mjs\n?? tools/qwen-supervisor/test/capture-validator.test.mjs\n?? tools/qwen-supervisor/test/fake-hermes.mjs\n?? tools/qwen-supervisor/test/supervisor.test.mjs"
+}

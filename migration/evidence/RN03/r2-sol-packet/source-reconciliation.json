@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-24T07:34:13.262Z",
+  "captureSet": "migration/evidence/RN03/r2-sol-packet/capture-set.json",
+  "captureSetSha256": "2b82fa8489348cfeffde78a64136411992fe9d5500306571b699c18fb219636f",
+  "reason": "Coordinator amendment authorizes only strengthening the existing search test. Capture-set source hash is historical and intentionally remains unchanged.",
+  "sources": [
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "oldSha256": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008",
+      "newSha256": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008",
+      "changed": false
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "oldSha256": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9",
+      "newSha256": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9",
+      "changed": false
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "oldSha256": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3",
+      "newSha256": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3",
+      "changed": false
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "oldSha256": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "newSha256": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "changed": false
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "oldSha256": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa",
+      "newSha256": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa",
+      "changed": false
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "oldSha256": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7",
+      "newSha256": "5dcc5aad9607034f4ed39a3e86875fc9384cb16489068dd2437b36827842d6ae",
+      "changed": true
+    }
+  ],
+  "appRuntimeUnchanged": true,
+  "otherFiveListedFilesUnchanged": true,
+  "selectedPixelSetRemainsApplicable": "Only the test changed; runtime app, fixture and selected PNG/XML bytes are unchanged. Original pixel/capture records are not relabeled or retimestamped.",
+  "originalTestArchive": "migration/evidence/RN03/r2-sol-packet/archive/history/schedule-screen.before-amendment.tsx",
+  "testDiff": "migration/evidence/RN03/r2-sol-packet/checks-r2/test-only.diff",
+  "coverage": "Real imported SectionList fiber memoizedProps.sections title/key/ordered data.id compared to full frozen search-case-insensitive and default-all cases; no-match requires zero SectionList fibers and rows. Two copied truncated mappings rejected by the same equality assertion. No production mutation, mock, provider probe, source-text assertion or runtime hook."
+}

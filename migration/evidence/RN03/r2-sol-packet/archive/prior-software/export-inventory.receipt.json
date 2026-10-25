@@ -1,0 +1,13 @@
+{
+  "id": "export-inventory",
+  "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+  "args": [
+    "-e",
+    "const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');const root='migration/react-native/dist-android';if(!fs.statSync(root).isDirectory())throw Error('Missing export directory');const files=fs.readdirSync(root,{recursive:true}).map(p=>path.join(root,p)).filter(p=>fs.statSync(p).isFile());if(!files.length)throw Error('Empty Android export');console.log(JSON.stringify(files.map(p=>({path:p.replaceAll('\\\\','/'),bytes:fs.statSync(p).size,sha256:crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')})),null,2));"
+  ],
+  "cwd": ".",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "interrupted": false
+}
