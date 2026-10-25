@@ -10,6 +10,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ title: 'Conference' }} />
         <Stack.Screen name="session/[sessionId]" options={{ title: 'Session' }} />
+        <Stack.Screen name="filter" options={{ title: 'Filter Sessions', presentation: 'modal' }} />
       </Stack>
     </ConferenceProvider>
   );

@@ -67,6 +67,28 @@ function TestRetryControl() {
   );
 }
 
+describe('ScheduleScreen Filter control', () => {
+  afterEach(() => jest.restoreAllMocks());
+
+  test('is labeled, disabled while loading, enabled when ready and pushes /filter', async () => {
+    const pending = createDeferred<Conference>();
+    const loader = () => pending.promise;
+    const push = jest.spyOn(router, 'push').mockImplementation(() => {});
+    const view = await render(<ConferenceProvider loader={loader}><ScheduleScreen /></ConferenceProvider>);
+    const button = screen.getByRole('button', { name: 'Filter sessions' });
+    expect(screen.getByText('Filter')).toBeTruthy();
+    expect(button.props.accessibilityState).toMatchObject({ disabled: true });
+    await fireEvent.press(button);
+    expect(push).not.toHaveBeenCalled();
+    await act(async () => { pending.resolve(loadConference()); });
+    expect(screen.getByRole('button', { name: 'Filter sessions' }).props.accessibilityState).toMatchObject({ disabled: false });
+    await fireEvent.press(screen.getByRole('button', { name: 'Filter sessions' }));
+    expect(push).toHaveBeenCalledTimes(1);
+    expect(push).toHaveBeenCalledWith('/filter');
+    await view.unmount();
+  });
+});
+
 describe('ScheduleScreen lifecycle (provider-driven)', () => {
   test('pending loader shows loading, controls disabled; resolution shows the ready schedule', async () => {
     const conference = loadConference();

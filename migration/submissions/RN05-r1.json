@@ -1,0 +1,2313 @@
+{
+  "package": "RN05",
+  "revision": 1,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "3970e40a9debb3897e1bcd84cff431ac96e95cfc",
+  "headTree": "ecf8f2763366d7c780b6ea5a3c9ebebef8ba9b36",
+  "date": "2026-10-25T12:08:28.000Z",
+  "headSource": "Live git branch/HEAD/HEAD^{tree}/GIT_COMMITTER_IDENT receipts; migration/evidence/RN05/checks-c/baseline.json; prefreeze-head receipt confirms unchanged HEAD/tree",
+  "priorApprovedBaseline": {
+    "commit": "3970e40a9debb3897e1bcd84cff431ac96e95cfc",
+    "package": "RN04",
+    "revision": 2,
+    "verdict": "APPROVE",
+    "review": "migration/reviews/RN04-r2.md",
+    "ancestorReceipt": "migration/evidence/RN05/checks-c/rn04-ancestor.receipt.json"
+  },
+  "session": {
+    "executor": "Hermes GPT-6.1 Sol high, openai-codex, translation-migration, as RN05.md names",
+    "coordinator": "Claude Code with live output",
+    "scope": "Phase C final gates, handoff/status and frozen revision 1 submission only; no app/test/config or existing evidence edits",
+    "runtime": "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025",
+    "formalReviewDispatched": false,
+    "stop": "READY_FOR_REVIEW; formal Sol/high review pending; not approved; STOP; no RN06"
+  },
+  "environment": {
+    "nodeExecutable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "nodeVersion": "v24.19.0",
+    "npmCli": "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "spawn": "spawnSync argument arrays, shell:false",
+    "deviceInteractionThisPreparation": false,
+    "historicalNative": {
+      "appId": "dev.translationtest.rn",
+      "serial": "emulator-5554",
+      "avd": "RN01_API36",
+      "foreground": "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}",
+      "reverse": "host-16 tcp:8082 tcp:8082",
+      "metroStatus": "packager-status:running",
+      "metro": "http://127.0.0.1:8082",
+      "ownership": "Coordinator booted RN01_API36 during RN04 (visible window, -gpu swiftshader, no wipe), started Metro with existing script under pinned Node, and set adb reverse tcp:8082; still running and reused unchanged in B. C did not touch emulator/device/Metro."
+    }
+  },
+  "runResults": {
+    "commands": [
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "3970e40",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.815Z",
+        "durationMs": 21,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-ancestor.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.716Z",
+        "durationMs": 27,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-branch.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.745Z",
+        "durationMs": 24,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-head.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.910Z",
+        "durationMs": 23,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-index.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN04-r2.md"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.793Z",
+        "durationMs": 20,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-rn04.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.935Z",
+        "durationMs": 29,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-status.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "3970e40",
+          "--",
+          "migration/react-native/src/state/conference-state.tsx",
+          "migration/react-native/src/screens/schedule-screen.tsx",
+          "migration/react-native/src/screens/filter-screen.tsx",
+          "migration/react-native/src/app/filter.tsx",
+          "migration/react-native/src/app/_layout.tsx",
+          "migration/react-native/__tests__/conference-state.test.ts",
+          "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "migration/react-native/__tests__/filter-screen.test.tsx"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.837Z",
+        "durationMs": 38,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-targets.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.877Z",
+        "durationMs": 32,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-tracked.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.770Z",
+        "durationMs": 22,
+        "receipt": "migration/evidence/RN05/checks-a/baseline-tree.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "bundle:android"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:47:08.837Z",
+        "durationMs": 8153,
+        "receipt": "migration/evidence/RN05/checks-a/bundle-android.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.185Z",
+        "durationMs": 28,
+        "receipt": "migration/evidence/RN05/checks-a/cached-diff.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/filter-screen.test.tsx",
+          "--testNamePattern",
+          "toggle Ionic changes only"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 1,
+        "startedAt": "2026-10-25T11:45:48.397Z",
+        "durationMs": 4903,
+        "receipt": "migration/evidence/RN05/checks-a/fiber-diagnostic.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/filter-screen.test.tsx",
+          "__tests__/schedule-screen.test.tsx"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 1,
+        "startedAt": "2026-10-25T11:45:04.737Z",
+        "durationMs": 6903,
+        "receipt": "migration/evidence/RN05/checks-a/filter-focused-2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/filter-screen.test.tsx",
+          "__tests__/schedule-screen.test.tsx"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:46:20.117Z",
+        "durationMs": 7471,
+        "receipt": "migration/evidence/RN05/checks-a/filter-focused-3.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/filter-screen.test.tsx",
+          "__tests__/schedule-screen.test.tsx"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 1,
+        "startedAt": "2026-10-25T11:43:30.420Z",
+        "durationMs": 6013,
+        "receipt": "migration/evidence/RN05/checks-a/filter-focused.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.406Z",
+        "durationMs": 26,
+        "receipt": "migration/evidence/RN05/checks-a/final-head.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.336Z",
+        "durationMs": 55,
+        "receipt": "migration/evidence/RN05/checks-a/final-status.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.100Z",
+        "durationMs": 52,
+        "receipt": "migration/evidence/RN05/checks-a/git-diff-check.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-implement-20261025/idea-hash.mjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.214Z",
+        "durationMs": 68,
+        "receipt": "migration/evidence/RN05/checks-a/idea-hash.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:43:28.218Z",
+        "durationMs": 2197,
+        "receipt": "migration/evidence/RN05/checks-a/implementation-typecheck-2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 2,
+        "startedAt": "2026-10-25T11:43:12.238Z",
+        "durationMs": 2288,
+        "receipt": "migration/evidence/RN05/checks-a/implementation-typecheck.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:46:50.008Z",
+        "durationMs": 48,
+        "receipt": "migration/evidence/RN05/checks-a/integration.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN05/checks-a/jest1.json"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:46:51.816Z",
+        "durationMs": 8389,
+        "receipt": "migration/evidence/RN05/checks-a/jest1.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN05/checks-a/jest2.json"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:47:00.206Z",
+        "durationMs": 8629,
+        "receipt": "migration/evidence/RN05/checks-a/jest2.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.696Z",
+        "durationMs": 17,
+        "receipt": "migration/evidence/RN05/checks-a/node-version.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-implement-20261025/preservation-verify.mjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:52:03.603Z",
+        "durationMs": 112,
+        "receipt": "migration/evidence/RN05/checks-a/preservation-verify.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/app/session",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/src/screens/session-detail-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.154Z",
+        "durationMs": 30,
+        "receipt": "migration/evidence/RN05/checks-a/protected-paths.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+        "args": [
+          "-p",
+          "translation-migration",
+          "config",
+          "get",
+          "delegation.model"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:40:47.966Z",
+        "durationMs": 2512,
+        "receipt": "migration/evidence/RN05/checks-a/routing-model.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-implement-20261025/scope-audit.mjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:50:41.284Z",
+        "durationMs": 120,
+        "receipt": "migration/evidence/RN05/checks-a/scope-audit.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/conference-state.test.ts"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:41:25.960Z",
+        "durationMs": 6209,
+        "receipt": "migration/evidence/RN05/checks-a/selector-tests.receipt.json"
+      },
+      {
+        "phase": "A",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T11:46:50.061Z",
+        "durationMs": 1754,
+        "receipt": "migration/evidence/RN05/checks-a/typecheck.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.118Z",
+        "durationMs": 30,
+        "receipt": "migration/evidence/RN05/checks-c/cached-diff.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.628Z",
+        "durationMs": 45,
+        "receipt": "migration/evidence/RN05/checks-c/git-branch.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "var",
+          "GIT_COMMITTER_IDENT"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.279Z",
+        "durationMs": 30,
+        "receipt": "migration/evidence/RN05/checks-c/git-date.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.000Z",
+        "durationMs": 64,
+        "receipt": "migration/evidence/RN05/checks-c/git-diff-check.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.674Z",
+        "durationMs": 46,
+        "receipt": "migration/evidence/RN05/checks-c/git-head.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "3970e40"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.820Z",
+        "durationMs": 41,
+        "receipt": "migration/evidence/RN05/checks-c/git-rn04-full.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "log",
+          "--format=%h",
+          "-1",
+          "--",
+          "migration/reviews/RN04-r2.md"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.772Z",
+        "durationMs": 47,
+        "receipt": "migration/evidence/RN05/checks-c/git-rn04.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.195Z",
+        "durationMs": 37,
+        "receipt": "migration/evidence/RN05/checks-c/git-status.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.722Z",
+        "durationMs": 49,
+        "receipt": "migration/evidence/RN05/checks-c/git-tree.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025/gates.mjs",
+          "idea"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.149Z",
+        "durationMs": 45,
+        "receipt": "migration/evidence/RN05/checks-c/idea-hash.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.597Z",
+        "durationMs": 26,
+        "receipt": "migration/evidence/RN05/checks-c/node-version.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025/freeze.mjs",
+          "audit"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:11:40.846Z",
+        "durationMs": 75,
+        "receipt": "migration/evidence/RN05/checks-c/prefreeze-audit.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "rev-parse",
+          "HEAD",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:11:40.925Z",
+        "durationMs": 28,
+        "receipt": "migration/evidence/RN05/checks-c/prefreeze-head.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "status",
+          "--porcelain",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:11:40.954Z",
+        "durationMs": 45,
+        "receipt": "migration/evidence/RN05/checks-c/prefreeze-status.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025/gates.mjs",
+          "preserve"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.912Z",
+        "durationMs": 88,
+        "receipt": "migration/evidence/RN05/checks-c/preservation.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/app.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/app/index.tsx",
+          "migration/react-native/src/app/session",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/src/screens/session-detail-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.065Z",
+        "durationMs": 52,
+        "receipt": "migration/evidence/RN05/checks-c/protected-paths.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "3970e40",
+          "HEAD"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:27.862Z",
+        "durationMs": 48,
+        "receipt": "migration/evidence/RN05/checks-c/rn04-ancestor.receipt.json"
+      },
+      {
+        "phase": "C",
+        "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025/gates.mjs",
+          "scope"
+        ],
+        "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+        "exitCode": 0,
+        "startedAt": "2026-10-25T12:08:28.233Z",
+        "durationMs": 46,
+        "receipt": "migration/evidence/RN05/checks-c/scope-audit.receipt.json"
+      }
+    ],
+    "softwareEvidence": "Phase A passing integration/typecheck/Jest/export retained after phase C SHA-256 preservation gate; not rerun or rebuilt in C",
+    "testCounts": {
+      "jest1": {
+        "suites": 5,
+        "passedSuites": 5,
+        "tests": 78,
+        "passed": 78,
+        "failed": 0,
+        "pending": 0,
+        "deltaFromRN04": 18,
+        "perSuite": [
+          {
+            "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+            "status": "passed",
+            "tests": 12,
+            "passed": 12,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 35,
+            "passed": 35,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 12,
+            "passed": 12,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "pending": 0
+          }
+        ]
+      },
+      "jest2": {
+        "suites": 5,
+        "passedSuites": 5,
+        "tests": 78,
+        "passed": 78,
+        "failed": 0,
+        "pending": 0,
+        "deltaFromRN04": 18,
+        "perSuite": [
+          {
+            "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+            "status": "passed",
+            "tests": 12,
+            "passed": 12,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+            "status": "passed",
+            "tests": 15,
+            "passed": 15,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "tests": 12,
+            "passed": 12,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "pending": 0
+          },
+          {
+            "path": "migration/react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "tests": 35,
+            "passed": 35,
+            "failed": 0,
+            "pending": 0
+          }
+        ]
+      }
+    },
+    "interimFailures": [
+      {
+        "id": "implementation-typecheck",
+        "exitCode": 2,
+        "disposition": "Fixed Fiber | null helper input; implementation-typecheck-2 exit 0"
+      },
+      {
+        "id": "filter-focused",
+        "exitCode": 1,
+        "disposition": "SectionList observation lookup and inaccessible progressbar; retained history"
+      },
+      {
+        "id": "filter-focused-2",
+        "exitCode": 1,
+        "disposition": "Fresh list-role host unavailable; progressbar fix passed; retained history"
+      },
+      {
+        "id": "fiber-diagnostic",
+        "exitCode": 1,
+        "disposition": "Diagnostic only found actual SectionList in fresh row ancestry; diagnostic removed and filter-focused-3 exit 0"
+      }
+    ],
+    "preservation": {
+      "receipt": "migration/evidence/RN05/checks-c/preservation.receipt.json",
+      "comparison": "migration/evidence/RN05/checks-c/preservation-comparison.json",
+      "comparisons": 226,
+      "mismatches": 0,
+      "authorizedLaterChange": "RN05 work-package status line only"
+    },
+    "prefreezeAudit": "migration/evidence/RN05/checks-c/prefreeze-audit.receipt.json"
+  },
+  "androidExport": {
+    "receipt": "migration/evidence/RN05/checks-a/bundle-android.receipt.json",
+    "inventory": "migration/evidence/RN05/checks-a/android-artifacts.json",
+    "modules": 1309,
+    "totalFiles": 29,
+    "limitation": "Same-run phase A export and immediately captured inventory; preserved in B/C, no rebuild/export in C. Ignored dist-android excluded from files[]; build evidence is not native evidence."
+  },
+  "pixelProof": {
+    "report": "migration/evidence/RN05/pixel-inspection-coordinator.md",
+    "captureIndex": "migration/evidence/RN05/native/capture-index.json",
+    "notes": "migration/evidence/RN05/native/capture-notes.md",
+    "commands": "migration/evidence/RN05/native/commands.jsonl",
+    "summary": "migration/evidence/RN05/checks-c/native-summary.json",
+    "inspector": "Claude Code coordinator (claude-opus-5-5)",
+    "route": "Coordinator direct image inspection; not Hermes/openai-codex",
+    "verdict": "PASS",
+    "status": "Supporting only, not formal review or approval",
+    "frames": 12,
+    "freshLoad": false,
+    "navigationAttempts": "Every navigation on first attempt; no retries",
+    "hardwareBackSent": false,
+    "sameStateIdentities": [
+      "02=09",
+      "03=05=08",
+      "04=07=10"
+    ],
+    "eventOrder": "Notes/commands/XML establish event order between byte-identical same-state frames",
+    "closeAffordance": "Header Navigate up android.widget.ImageButton; approved close",
+    "modalDisposition": "Full-screen modal card with no backdrop or swipe handle; RN07 E08 N/A expected",
+    "limits": [
+      "Only viewport restored rows observed; complete restored groups automated",
+      "favorites-some and search-plus-track automated-only",
+      "Hardware Back, dark theme, large text remain RN07",
+      "Historical pending pixel labels retained unchanged; coordinator report is later supporting disposition"
+    ]
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": [],
+    "status": "Required for the coordinator's dedicated dispatcher; not dispatched by the executor"
+  },
+  "preExistingChanges": {
+    "phaseAEntry": "No tracked target changes at baseline; pre-existing unrelated untracked IDEA.md, tools/, migration/plans/rn07-android-acceptance-checklist.md; RN05 work-package was also untracked and authorized",
+    "phaseCEntry": "Eight phase A implementation paths, RN05 evidence and checkpoints retained; no overlap beyond allowlist",
+    "unrelated": [
+      {
+        "status": "??",
+        "path": "IDEA.md"
+      },
+      {
+        "status": "??",
+        "path": "migration/plans/rn07-android-acceptance-checklist.md"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/.gitignore"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/README.md"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/capture-validator.mjs"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/config.example.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/progress.mjs"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-native-recovery.md"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-native-flow.md"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-native-recovery-retry.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-native-recovery.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-native.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-next.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-packet.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/rn03-r2-recovery-packet.json"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/supervisor.mjs"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/test/capture-validator.test.mjs"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/test/fake-hermes.mjs"
+      },
+      {
+        "status": "??",
+        "path": "tools/qwen-supervisor/test/supervisor.test.mjs"
+      }
+    ],
+    "scopeReceipt": "migration/evidence/RN05/checks-c/scope-audit.receipt.json",
+    "prefreezeScope": "migration/evidence/RN05/checks-c/prefreeze-scope.json",
+    "policy": "Preserve unrelated files; do not stage, commit or push; raw porcelain never trimmed"
+  },
+  "protectedBaseline": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "policy": "Hash only; immutable protected baseline outside files[]; no contents read/printed, edit, staging or commit",
+      "receipt": "migration/evidence/RN05/checks-c/idea-hash.receipt.json"
+    }
+  ],
+  "hashGate": {
+    "writeCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN05-r1.json",
+      "--write"
+    ],
+    "checkCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN05-r1.json"
+    ],
+    "requiredProblems": 0,
+    "policy": "Every sha256 initially empty, populated by manifest-hashes.mjs --write then read-only check; logs/receipts only in run directory; no hashed changes afterwards; no self/future review hash",
+    "runtimeOutput": "tools/qwen-supervisor/.runs/sol-rn05-r1-freeze-20261025/manifest-hashes-check.stdout.log"
+  },
+  "notRun": [
+    "Formal Sol/high review not dispatched; coordinator dedicated dispatcher pending; not approval; STOP, no RN06",
+    "No phase C integration/typecheck/Jest rerun or export/rebuild; preserved phase A passing receipts bind unchanged inputs",
+    "No phase C emulator/device/Metro interaction, install, delegation, staging, commit or push",
+    "No fresh-load native observation; favorites-some and search-plus-track automated-only",
+    "Hardware Back, dark theme and large text deferred to RN07; no backdrop/swipe handle, E08 N/A expected",
+    "Off-viewport restored rows not claimed as visually observed",
+    "iOS, swipes/RN06 and human acceptance outside RN05 freeze"
+  ],
+  "files": [
+    {
+      "path": "migration/evidence/RN05/checks-a/android-artifacts.json",
+      "sha256": "30f235ed0547764295ce2a75c4ca7e92b8026c1366499763b6e3a0f02bdd1a3b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-ancestor.receipt.json",
+      "sha256": "ecacce3528b1a01d8d97114756a26765c11930098538017e05e9e2020aa2629b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-branch.receipt.json",
+      "sha256": "cb2bd27bf3faca71d1c683273fa38eb79a3fa8f23fe28e06479c24639a620e30",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-head.receipt.json",
+      "sha256": "c65c5369b43710c20b47fcbb2957d6055abf7d968ae77f8dca2e3244d6c0fd18",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-head.stdout.log",
+      "sha256": "62100306f40b9da872b337b1f2db3a59eb12d14264da853fbbee482f1edb5dcb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-index.receipt.json",
+      "sha256": "bbedc37dc4a8c8e2d008fd1cb3e4b2114e17959504292f1719910d6ce5a16c95",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-rn04.receipt.json",
+      "sha256": "41593a75de45892c72a216387be2b0d8fb86d33395404632440a26f991f74d02",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-rn04.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-rn04.stdout.log",
+      "sha256": "aa06f635f2b61dba7a1739ed95d6d2c43aa078a4a45a633b1c95c3ffbd4d67b3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-status.receipt.json",
+      "sha256": "ad52043f3f1a33628b5043a0fe97e6e960842f11c2c03ebe2c060437d64c2dfd",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-status.stdout.log",
+      "sha256": "280d0f4289167c17b3993a0481f6e71fc9d72330ebc1302e78d9f90330c2d079",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-targets.receipt.json",
+      "sha256": "9a0d5f2c55c11416b3c148ed8c54cb9fbd965bd3db61510ba75f04110b005828",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-targets.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-targets.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tracked.receipt.json",
+      "sha256": "4dc8eb6b6516c5b1694efa7f1668edea61049b8ea2d2fad9fdb403f941aa6b70",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tracked.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tracked.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tree.receipt.json",
+      "sha256": "20bfd0f7897c2459be95ec9eb885a0dd0ce96c29fe756480bca277d8c04313e0",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline-tree.stdout.log",
+      "sha256": "ef2670dd3ead77cb91360186f6c6b09322aad694b256066850c740795231b071",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/baseline.json",
+      "sha256": "0abe9e6a0212c64f1176ef52a02ce39dc610e437ff0ae9ca773454b80ae04f82",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/bundle-android.receipt.json",
+      "sha256": "efbe29b4956364a94f9a6fb2c3159f63377ec35e0b4cf1e52ef7be85b8a83a9f",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/bundle-android.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/bundle-android.stdout.log",
+      "sha256": "387fe71ad2485c56539eae668aeba14a4af30289404d353511e4734432ad1093",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/cached-diff.receipt.json",
+      "sha256": "25248b2246323a9cb4c3b77bb935d71a0be4710b75bfd5eeb9ff5f2e31df8627",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/check-index-final.json",
+      "sha256": "16df60f603826ecb6e6c84449cdf8b6b3d2d67d64c55ac0eea040463fd35d4b7",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/check-index.json",
+      "sha256": "7e117c1cb388e732264d97afe1c1776cea1142c92c7d6f355b9f94386c618b55",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/fiber-diagnostic.receipt.json",
+      "sha256": "7c2f13310e1230c76d2827b2b3b5aa6b610ddeea2bc0c67a8708bec58bad21dc",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/fiber-diagnostic.stderr.log",
+      "sha256": "79c922d9c0280595d6ca2b92625557831de67bc228f2b253dabf8f1718cab783",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/fiber-diagnostic.stdout.log",
+      "sha256": "7b8fc23962dddd915803af2a6d88a56d0f17c8a6af1a35d6637b3aa781bba665",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-2.receipt.json",
+      "sha256": "76c0c27c8a5cb0f12dbdeb8e6f97e9137dc0c4ba2324ea37ecd9dea88caa7653",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-2.stderr.log",
+      "sha256": "69d38f7608287d2fca044e248af49578aa3076f3533de25475af57ba58949ccc",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-2.stdout.log",
+      "sha256": "cca8f2971fbc40d2bd66c46d2b286c0d2649e51cdcba48ce57591deea1a2140c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-3.receipt.json",
+      "sha256": "aaecc8bffdc51b9d432d2a5db04abdf9a5693553d9c5616d6ef4228127fa54ab",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-3.stderr.log",
+      "sha256": "87ee671a9db5eed2c4a2fed648109b02f0641d2f4561b23797dbe9f68821def1",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused-3.stdout.log",
+      "sha256": "cca8f2971fbc40d2bd66c46d2b286c0d2649e51cdcba48ce57591deea1a2140c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused.receipt.json",
+      "sha256": "04a64bb389aacc94dc844ba737924d13f34fe6406dc8544105b248b13a080663",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused.stderr.log",
+      "sha256": "30dc8e41a50f54479077f4d41eb7a85f281dc2f6f9b1097ee8a2eca00b5897d1",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/filter-focused.stdout.log",
+      "sha256": "cca8f2971fbc40d2bd66c46d2b286c0d2649e51cdcba48ce57591deea1a2140c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-head.receipt.json",
+      "sha256": "9d8fc84cf6b72f6b3f56177ab5841bb6e6a187bcbd41e64696550134e63c2a15",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-head.stdout.log",
+      "sha256": "62100306f40b9da872b337b1f2db3a59eb12d14264da853fbbee482f1edb5dcb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-status.receipt.json",
+      "sha256": "9acd61f1d92a2f4f151f10265589d97f10741df257099c9d8850c325ae831f0b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/final-status.stdout.log",
+      "sha256": "92ed3a99e819e78d773c3a41f20545b306829353040462b713b0a395c1bf0308",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/git-diff-check.receipt.json",
+      "sha256": "e33ac305e8fb59ac5143028932aa39cf435f433d1c218a1b091524233f80eb9e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/git-diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/git-diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/idea-hash.receipt.json",
+      "sha256": "8be919cd27d01db18763dcdf5a79f9180edca0220b39f86b34a9373e01acc97b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/idea-hash.stdout.log",
+      "sha256": "f988443d83f0ba40d40f8f6ded75ad69548e85296dea0a059f3510518b060821",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck-2.receipt.json",
+      "sha256": "491a8bc48f78153df8938649ada583c68845b5b3e3f0a3ba80d9a301d735834f",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck-2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck-2.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck.receipt.json",
+      "sha256": "f5730c68ead20bd605e79e8882aceee4f4109afd62179ab7fcbaf52a87ef927e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/implementation-typecheck.stdout.log",
+      "sha256": "9863966fc2296e8a3b831b541fd45ef58280c57a735d436b160ba430ecdc43fd",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/integration.receipt.json",
+      "sha256": "a3b03f5288540ab5d968bed854e730f9a030b88eebe9f3fd941982a90145f351",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/integration.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/integration.stdout.log",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest1.json",
+      "sha256": "30a6b9d1c8fc8dac1c4012bbc32a0b2da4336f8454792cfa3bcaa545450b88f9",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest1.receipt.json",
+      "sha256": "4c36be06ae02060b4ad46726be1e88150f3ac72c4b74fc3eb4520dba26bc2318",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest1.stderr.log",
+      "sha256": "62c4980919a9df226b24c9f05b845d5bb761c3f62c63e50e4a2c583349a53b8a",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest1.stdout.log",
+      "sha256": "78ade12d878410b9d15544358b913708d867d9bbaeb493a935c2389106ece99a",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest2.json",
+      "sha256": "c8f6f0ef0973f3705d0a2e46f438cbb976a966d58b833e00a3ef1b0eb5077a81",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest2.receipt.json",
+      "sha256": "f28ed6421f7d1f0b47edeeb19d24daec146a067e1c5af6fcb8ac23e435d38d85",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest2.stderr.log",
+      "sha256": "e86ad6327ecd4b6cf9b5f40d0c2f553f66cf1b81e4d24d6c71b80437121dc382",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/jest2.stdout.log",
+      "sha256": "fd7a403a9c27a3bca4cc2b9499847e3b05328405eababc4195b6845bd452eb98",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/line-endings.json",
+      "sha256": "d4cfe84fdf100c88b83c6c3ae21768f27ae840acac3f95f4237a7dcb745cc383",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/node-version.receipt.json",
+      "sha256": "c4a561e1800c2681ad5c30a4fc016a87d8ce72eae8b81d28cef638df96847a68",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/node-version.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/preservation-entry.json",
+      "sha256": "02461738ae9df9c27a2a25d7a7c7d8f5f581f8b90f7ced2eaa5f6a520dbc256e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/preservation-final.json",
+      "sha256": "0c87e6c0f60ea61b581016bd1868fd863cb018ff84e47637cd2c66665da0b82e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/preservation-verify.receipt.json",
+      "sha256": "e936c6922024db8e1ceed22a00832367af53d4e5841d5e1baaa533b6478af736",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/preservation-verify.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/preservation-verify.stdout.log",
+      "sha256": "57fded24cec6ff7cca504cffd68fe1fb6bc8b69f495f2f214359dfc7ae7553b2",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/protected-paths.receipt.json",
+      "sha256": "9b81c595cc6886f23bcdb69f4ae4de5e7636740abe95fa8317cbcdd095536e51",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/protected-paths.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/protected-paths.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/routing-model.receipt.json",
+      "sha256": "fda19707046203b0773d058052c485dca29830e042875e83f2b27f6398137cd3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/routing-model.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/routing-model.stdout.log",
+      "sha256": "df967ff5da655a6f4210c0c56a63cfc07317bbe7395c7b6474f22acef7ce5748",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/scope-audit.json",
+      "sha256": "7dbaedbf838f17e4817eae7ae769882d8d98c491598594674463ecaecbf5589d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/scope-audit.receipt.json",
+      "sha256": "8a57da0ab87afa50f1509841461bf3edfc9fb92c5e3f21954495688b76b077f6",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/scope-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/scope-audit.stdout.log",
+      "sha256": "198912d688101b8bb85f9e3ed7ae5d6ac3d8ef9055c23497f5a4f8bf5aa78232",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/selector-tests.receipt.json",
+      "sha256": "e1839d8baf88559bb372939a6eb4b094cf8798e7eaa3e44628784a83bf8f299f",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/selector-tests.stderr.log",
+      "sha256": "73c9fb43fab36f33a192125ae7c90ad84a9298ae78517d5d6ef5cfa080dfcad4",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/selector-tests.stdout.log",
+      "sha256": "5477a195b8aabd5d724f36ce13202d0b21b4be60052ad546f6792beb90729bc7",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/test-counts.json",
+      "sha256": "490e3c496ad073c8c185f73fc877245292b1026a4ea19cbbde16e6a59caf7773",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/typecheck.receipt.json",
+      "sha256": "77aa521f8cf2493642299d566970057d5674fbfdc84f3b2d1d28fc8c157ed947",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-a/typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/baseline.json",
+      "sha256": "48736d9c03e20aea0f8611b6195d75bf719e648630f0ded866968d1dc42e1692",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/cached-diff.receipt.json",
+      "sha256": "bf8e5f7200deb6f24b2d0ab9e11bf3d189d11ee31683b0773fa0a2d729d2da5a",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/cached-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/cached-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/check-index.json",
+      "sha256": "dd80a61b8356155f26c62d94081f8fc16e21881c5249f3fd2c415edf90ec3867",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/freeze-entry.json",
+      "sha256": "a90c5868391d91d89d7efd09f9bb0e44cee34ec66c7b95f4ed32a0b4cf15f273",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-branch.receipt.json",
+      "sha256": "7327023e24b15c244231b9c8f6931738da6cd8d0232b73857da8ed7b3e5dcd29",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-date.receipt.json",
+      "sha256": "dc4a72b3ee2ff23622c0e395bee1bb4310b77d30f320af6b9bb51b79d5ae73d3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-date.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-date.stdout.log",
+      "sha256": "3bbffb1673bb714a9a195010c15dc9fa4e3d2ccce096617e09285ac9b639bbd7",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-diff-check.receipt.json",
+      "sha256": "3cd7f7f8c65c261b2b6cf5e292292ce641b08f3351df7641c5d8cbd0659c00cd",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-head.receipt.json",
+      "sha256": "0adc135c3e13edf81cdd1419c6a43c3ce8445665ec13b78393b4e8f5b6fc3001",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-head.stdout.log",
+      "sha256": "62100306f40b9da872b337b1f2db3a59eb12d14264da853fbbee482f1edb5dcb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04-full.receipt.json",
+      "sha256": "4634da18a6d4436100dfff0d15210a2e0907bdf20e48e60171b82223a9f6b7ad",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04-full.stdout.log",
+      "sha256": "62100306f40b9da872b337b1f2db3a59eb12d14264da853fbbee482f1edb5dcb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04.receipt.json",
+      "sha256": "032c887a7cbdd996828173ea50fbff30f2ff9ad2124beefba73e94b74107d9ed",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-rn04.stdout.log",
+      "sha256": "aa06f635f2b61dba7a1739ed95d6d2c43aa078a4a45a633b1c95c3ffbd4d67b3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-status.receipt.json",
+      "sha256": "eb54b00685e18cfe332695c700e8473f15a1e9de1c125884e333970b3be8bd19",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-status.stdout.log",
+      "sha256": "003c798f1423d985dc941ddd829b5fd303453e8d8500f9bbdb8f7326a8989cd1",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-tree.receipt.json",
+      "sha256": "f952004f1bbd3ce9f4539e8e57330e4b96343bf5348365c5571c77357212b4c3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/git-tree.stdout.log",
+      "sha256": "ef2670dd3ead77cb91360186f6c6b09322aad694b256066850c740795231b071",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/idea-hash.json",
+      "sha256": "f1dccc1e02ab2d51ff9df020b59b892dd9489d92d7afdaef4f43f51477e90e6d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/idea-hash.receipt.json",
+      "sha256": "8f1d2c4073c0250b5bd740a132a9f8f68e9f2eddb6769c5a462e7bbed127a8ac",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/idea-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/idea-hash.stdout.log",
+      "sha256": "5754b2f713ec749019c23a48fea72261aee8fe4e6f539cca9f2ddbf5a59479eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/native-summary.json",
+      "sha256": "8d1a0f1215da5da2bd297cd504299ea6feae748ad074ef9f255a03fba58a1fa4",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/node-version.receipt.json",
+      "sha256": "1afc961df72e524e0435a82afec8bcc9f5778b6da244494ea9389fe894afe06c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/node-version.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-audit.receipt.json",
+      "sha256": "c12705b0e5666aa12827dd15cd13fda06ae60c36edabc0ef70d0fc2bd3c99c0c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-audit.stdout.log",
+      "sha256": "b03153a0abbcad54fc4e04c3e3fe9b7b365d04f72b89c4b7d6106f1dfb29f5ee",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-head.receipt.json",
+      "sha256": "3587da2a0f553ee9a37ef907fea33de07339bcfdce5a2bfe4573b585ff5c7578",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-head.stdout.log",
+      "sha256": "dbd0c1f8ae0e6860e00f77efde0059f50866278aa743662d091b6a7ae2b7d60b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-scope.json",
+      "sha256": "9367340ed124e4ef4c3f5ef51d0179191e5dedc901010d7f511ef5706dee3897",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-status.receipt.json",
+      "sha256": "852b62c0386dc9565a93832841274f55186dc390e0af09460a3eac29251f941c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/prefreeze-status.stdout.log",
+      "sha256": "cd72a9b18a87ef3d2354689f1791da4cc50d14361065f2c7dbc7af836bf3c8a9",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/preservation-comparison.json",
+      "sha256": "fc0c51e1390fdd1b9c01acc23bfc7cd490d3d1fa01748429668b2264ba692a87",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/preservation.receipt.json",
+      "sha256": "1dcfdf7c96a8fffcbee0003b37563b5942cea7eab4c56c20739f1bed385f460c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/preservation.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/preservation.stdout.log",
+      "sha256": "9f5c9237a2a42c6b6d9e534d6288ceaf3376c2ba408e970006a80d7c190c9d41",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/protected-paths.receipt.json",
+      "sha256": "088abf794f2b9e6271648d2db047f8c4a2ef13a25dd7a2bf6faa695e15d311d1",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/protected-paths.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/protected-paths.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/rn04-ancestor.receipt.json",
+      "sha256": "88637ae0b6623457713b75d59a3afc26e234985155843b1a8d39abae378aec27",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/rn04-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/rn04-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/scope-audit.json",
+      "sha256": "116a37ecf7756b88be7243150e29ee6ed3df2ef7cdea440ebe04b86fa32e30b6",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/scope-audit.receipt.json",
+      "sha256": "0bba95a703373b0e2c6414f980ed7a90864a5a4289198bb1bd90d6811f4ef157",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/scope-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/checks-c/scope-audit.stdout.log",
+      "sha256": "5e075cac69b0fe6ce85d7ff858278a70afedb7c4e6c60b05506f46c2875a9e35",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-01-filter-opened.png",
+      "sha256": "092b60b0db439daf4f752d8a70c391748c594dc3279141a50bc68e885fcecd6f",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-01-filter-opened.xml",
+      "sha256": "adcb6656124f9054f0fce3c937d4c62e83f3599d9fdea3a89b39ee3c9050c353",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-02-draft-deselected.png",
+      "sha256": "b06e240b30b93e2db0835be1e26f7d48b173d331a57cb6f1b6fcde1f46f19287",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-02-draft-deselected.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-03-draft-ionic.png",
+      "sha256": "306b8769ac4ca04d204fe68afd8e4e8e842e1bf5f66a5e66e8df7e2cd64ed313",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-03-draft-ionic.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-04-ionic-applied.png",
+      "sha256": "45c0f9fdd634308d06b58af5667e7cb4292e89491d8eb2b5147970068600128e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-04-ionic-applied.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-05-reopened-mirrors.png",
+      "sha256": "306b8769ac4ca04d204fe68afd8e4e8e842e1bf5f66a5e66e8df7e2cd64ed313",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-05-reopened-mirrors.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-06-draft-design.png",
+      "sha256": "26fc52798ee8a496638e2e07a1bbd4c87516d40ca6801813a88d5e502861804c",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-06-draft-design.xml",
+      "sha256": "7e3d20792c25440522aa613da1959b485c4728dbe8ab3588c4032ea48f1fe3ed",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-07-closed-unchanged.png",
+      "sha256": "45c0f9fdd634308d06b58af5667e7cb4292e89491d8eb2b5147970068600128e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-07-closed-unchanged.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-08-reopened-after-close.png",
+      "sha256": "306b8769ac4ca04d204fe68afd8e4e8e842e1bf5f66a5e66e8df7e2cd64ed313",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-08-reopened-after-close.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-09-reset-draft.png",
+      "sha256": "b06e240b30b93e2db0835be1e26f7d48b173d331a57cb6f1b6fcde1f46f19287",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-09-reset-draft.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-10-closed-after-reset.png",
+      "sha256": "45c0f9fdd634308d06b58af5667e7cb4292e89491d8eb2b5147970068600128e",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-10-closed-after-reset.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-11-none-applied.png",
+      "sha256": "2e2657af90cf0f6826a5208716ba3333951a9f7e71298896f10c9ee6314e7025",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-11-none-applied.xml",
+      "sha256": "e4766049eea1c59468d0e9fd5ad4f208fc135d61eb626f02c472ef05603c882b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-12-all-applied.png",
+      "sha256": "61a45cfc8c72d2fdbb5498f1e7ff74f97d48444095b6a1e76555cac04cf91dc2",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/RN05-12-all-applied.xml",
+      "sha256": "a7f90401dd0f1014a6f378e3fb724afcadec3f1c41e7000a9727e223aa3fe0eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/capture-index.json",
+      "sha256": "0b27267fd7ace69f6592139a967016f8c2b93e2a92898e4230ec944cd5827b5d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/capture-notes.md",
+      "sha256": "3917513686ab94424568ba2f6984b843cda9e2c1f828c5a76a564f03c18794f5",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/commands.jsonl",
+      "sha256": "5d981efadda81d345586c7f4eb05da60ab339ae893d8abb14cd2c7f560e9aaa4",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/finalization-notes.md",
+      "sha256": "2088b6fcb7e35479e0705665b2c40783bafb64e46423c82729d3c2c368fef9b6",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame01-open-after.xml",
+      "sha256": "adcb6656124f9054f0fce3c937d4c62e83f3599d9fdea3a89b39ee3c9050c353",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame01-open-before.xml",
+      "sha256": "a7f90401dd0f1014a6f378e3fb724afcadec3f1c41e7000a9727e223aa3fe0eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame02-deselect-after.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame02-deselect-before.xml",
+      "sha256": "adcb6656124f9054f0fce3c937d4c62e83f3599d9fdea3a89b39ee3c9050c353",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame03-ionic-after.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame03-ionic-before.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame04-done-after.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame04-done-before.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame05-open-after.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame05-open-before.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame06-design-after.xml",
+      "sha256": "7e3d20792c25440522aa613da1959b485c4728dbe8ab3588c4032ea48f1fe3ed",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame06-design-before.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame07-header-close-after.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame07-header-close-before.xml",
+      "sha256": "7e3d20792c25440522aa613da1959b485c4728dbe8ab3588c4032ea48f1fe3ed",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame08-open-after.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame08-open-before.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame09-reset-after.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame09-reset-before.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame10-header-close-after.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame10-header-close-before.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-deselect-after.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-deselect-before.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-done-after.xml",
+      "sha256": "e4766049eea1c59468d0e9fd5ad4f208fc135d61eb626f02c472ef05603c882b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-done-before.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-open-after.xml",
+      "sha256": "5ce18a64843ec36d82afd2ef3e1ec6f24accef29bac125c18431d89d3763fd28",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame11-open-before.xml",
+      "sha256": "64463b51989374699d3f96f471fd06e113fe8e90c78aeb26dc872706cb03544d",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-done-after.xml",
+      "sha256": "a7f90401dd0f1014a6f378e3fb724afcadec3f1c41e7000a9727e223aa3fe0eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-done-before.xml",
+      "sha256": "adcb6656124f9054f0fce3c937d4c62e83f3599d9fdea3a89b39ee3c9050c353",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-open-after.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-open-before.xml",
+      "sha256": "e4766049eea1c59468d0e9fd5ad4f208fc135d61eb626f02c472ef05603c882b",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-select-after.xml",
+      "sha256": "adcb6656124f9054f0fce3c937d4c62e83f3599d9fdea3a89b39ee3c9050c353",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/frame12-select-before.xml",
+      "sha256": "d60a76d56444590ff06b8c770e68ff6fd465ebe39ee628732edb9b884a48d7aa",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/initial-schedule.xml",
+      "sha256": "a7f90401dd0f1014a6f378e3fb724afcadec3f1c41e7000a9727e223aa3fe0eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/native/pre-sequence-schedule.xml",
+      "sha256": "a7f90401dd0f1014a6f378e3fb724afcadec3f1c41e7000a9727e223aa3fe0eb",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/evidence/RN05/pixel-inspection-coordinator.md",
+      "sha256": "321c8aa36ee076cb666e3ac3ff1081d577129180e9e4387de98ac053a67eb5e3",
+      "note": "RN05 evidence; historical records retained without edits"
+    },
+    {
+      "path": "migration/handoffs/RN05-checkpoint-a.md",
+      "sha256": "c831d9a95f9d2e8ffd263f35aa0f24ac9fc3b332444435981e76ca88c897dea6",
+      "note": "RN05 final handoff or preserved phase checkpoint"
+    },
+    {
+      "path": "migration/handoffs/RN05-checkpoint-b.md",
+      "sha256": "b1dc02bb247b00e464cb4dcc47bd0dd6d28cb9c9a808d418681dba17a4a6cf46",
+      "note": "RN05 final handoff or preserved phase checkpoint"
+    },
+    {
+      "path": "migration/handoffs/RN05.md",
+      "sha256": "c5bb47bba8e90894249db1ca34550f346d161b735d79d9fcd041173b0256c940",
+      "note": "RN05 final handoff or preserved phase checkpoint"
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "sha256": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+      "sha256": "890870f7f864ef135822ee09b0d27007977e89bab2335ac5327c141f461841ee",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "sha256": "eb605a0f399d8a6b17e67567a402b5ac0c955336a41073e3caf542878e3a5e11",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "sha256": "026e49b6c656822ba29d2062b24286a96f05c730f3609a8969211ece767812c8",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/src/app/filter.tsx",
+      "sha256": "957b8baf2914f45c7ffa23abb7ba2e8193e074ba63a9e5d80225535fb7831292",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/src/screens/filter-screen.tsx",
+      "sha256": "450056947d4453ffe58614e33fe0f4f699b23fe4891b5ccda51dbe8b230b7e70",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "sha256": "92ec74b2d0b85dfaff1e7955da9ae28d5df8299fc1648537df1b6bb734b2cb91",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "sha256": "7358cda6b6677b5537c4964cf913efd29f9edcc3ff9ad706e0f64565c4c326d0",
+      "note": "RN05 eight-file implementation allowlist; phase A bytes preserved"
+    },
+    {
+      "path": "migration/work-packages/RN05.md",
+      "sha256": "e431dfb55abd92e4d3cbca7a4a231bab22ca7b97109613dd5bc6e11fe702a080",
+      "note": "Final status line only changed in phase C"
+    }
+  ]
+}

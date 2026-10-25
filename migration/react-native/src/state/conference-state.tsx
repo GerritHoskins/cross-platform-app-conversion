@@ -15,7 +15,7 @@ import type {
   Session,
   SessionGroup,
 } from '@migration/core';
-import { addFavorite, createInitialSelection, groupSessions, removeFavorite, selectSessions } from '@migration/core';
+import { addFavorite, createInitialSelection, groupSessions, removeFavorite, selectSessions, sortTracksByName } from '@migration/core';
 
 import { loadConference } from '../data/load-conference';
 
@@ -142,6 +142,22 @@ export function selectScheduleGroups(state: ConferenceState): SessionGroup[] {
     return [];
   }
   return groupSessions(selectSessions(state.conference.sessions, state.selection));
+}
+
+export interface TrackOption {
+  name: string;
+  checked: boolean;
+}
+
+export function selectTrackOptions(state: ConferenceState): TrackOption[] {
+  if (state.status !== 'ready' || state.conference === null || state.selection === null) {
+    return [];
+  }
+  const { selectedTracks } = state.selection;
+  return sortTracksByName(state.conference.tracks).map(({ name }) => ({
+    name,
+    checked: selectedTracks.includes(name),
+  }));
 }
 
 export type ConferenceLoader = () => Conference | Promise<Conference>;

@@ -1,0 +1,149 @@
+
+> conference-migration-rn@1.0.0 test
+> jest --runInBand --watch=false --runTestsByPath __tests__/filter-screen.test.tsx --testNamePattern toggle Ionic changes only
+
+  console.warn
+    `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+  console.log
+    RN05 list diagnostic {
+      listHost: false,
+      ancestry: [
+        'View',
+        'View',
+        'Row',
+        'ItemWithSeparator',
+        'View',
+        'View',
+        'VirtualizedListContext',
+        'VirtualizedListCellContextProvider',
+        'CellRenderer',
+        'View',
+        'View',
+        'RCTScrollView',
+        'RCTScrollView',
+        'ScrollView',
+        'VirtualizedListContext',
+        'VirtualizedListContextProvider',
+        '[object Object]',
+        'VirtualizedList',
+        'VirtualizedSectionList',
+        'SectionList',
+        'View',
+        'View',
+        'ScheduleScreen(./index.js)',
+        'WrappedScreenComponent',
+        'null',
+        'null',
+        'ZoomTransitionTargetContextProvider',
+        '[object Object]',
+        'RouteNode',
+        '[object Object]',
+        'Route',
+        'Route(index)',
+        'StaticContainer',
+        '[object Object]',
+        '[object Object]',
+        'EnsureSingleNavigator',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        'PreventRemovalProvider',
+        '[object Object]',
+        'SceneView',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        'NavigationProvider',
+        '[object Object]',
+        '[object Object]',
+        'NavigationActivityProvider',
+        'HeaderBackContext',
+        'HeaderShownContext',
+        'HeaderHeightContext',
+        '[object Object]',
+        '[object Object]',
+        'RNSScreenContentWrapper',
+        'RNSScreenContentWrapper',
+        'ScreenContentWrapper',
+        'DebugContainer',
+        '[object Object]',
+        '[object Object]',
+        'RNSScreen',
+        'RNSScreen',
+        'Animated(RNSScreen)',
+        'Suspender',
+        'null',
+        'null',
+        'Freeze',
+        'DelayedFreeze',
+        '[object Object]',
+        'Screen',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        'NavigationProvider',
+        'SceneView',
+        'RNSScreenStack',
+        'RNSScreenStack',
+        '',
+        '[object Object]',
+        'ScreenStack',
+        'View',
+        'View',
+        '[object Object]',
+        'FrameSizeProvider',
+        'SafeAreaProviderCompat',
+        'NativeStackView',
+        '[object Object]',
+        '[object Object]',
+        'NativeStackNavigatorContent',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        '[object Object]',
+        'NavigationContent',
+        '',
+        'StandardRouterNavigator',
+        '[object Object]',
+        '[object Object]',
+        ... 81 more items
+      ]
+    }
+
+      at log (__tests__/filter-screen.test.tsx:37:11)
+

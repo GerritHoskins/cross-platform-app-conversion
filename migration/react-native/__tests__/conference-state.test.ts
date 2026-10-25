@@ -8,6 +8,7 @@ import {
   selectScheduleGroups,
   selectSessionById,
   selectIsFavorite,
+  selectTrackOptions,
   type ConferenceAction,
   type ConferenceState,
 } from '../src/state/conference-state';
@@ -339,6 +340,60 @@ describe('favorite actions and selectors', () => {
     const groups = selectScheduleGroups(state);
     expect(groups.map(({ groupTime, sessions }) => ({ groupTime, sessionIds: sessions.map(({ id }) => id) }))).toEqual(reference.expected.groups);
     expect(groups.flatMap(({ sessions }) => sessions.map(({ id }) => id))).toEqual(reference.expected.sessionIds);
+  });
+});
+
+describe('selectTrackOptions', () => {
+  test('returns no options before readiness or without conference/selection', () => {
+    const ready = readyState();
+    for (const state of [
+      createConferenceState(),
+      conferenceReducer(ready, { type: 'loadStarted' }),
+      conferenceReducer(ready, { type: 'loadFailed', error: 'boom' }),
+      { ...ready, conference: null },
+      { ...ready, selection: null },
+    ]) {
+      expect(selectTrackOptions(state)).toEqual([]);
+    }
+  });
+
+  test('initially checks all ten sorted tracks; top-level and session track sets agree', () => {
+    const state = readyState();
+    const names = [
+      'Communication', 'Design', 'Documentation', 'Food', 'Ionic',
+      'Navigation', 'Services', 'Tooling', 'Vue', 'Workshop',
+    ];
+    expect(selectTrackOptions(state)).toEqual(names.map((name) => ({ name, checked: true })));
+    expect([...initialSelectedTracks(state.conference!.sessions)].sort()).toEqual(names);
+    expect(state.conference!.tracks.map(({ name }) => name).sort()).toEqual(names);
+  });
+
+  test('mirrors only Ionic after replacement', () => {
+    const state = conferenceReducer(readyState(), { type: 'setSelectedTracks', selectedTracks: ['Ionic'] });
+    const options = selectTrackOptions(state);
+    expect(options).toHaveLength(10);
+    expect(options.filter(({ checked }) => checked)).toEqual([{ name: 'Ionic', checked: true }]);
+  });
+
+  test('mirrors an empty applied selection', () => {
+    const state = conferenceReducer(readyState(), { type: 'setSelectedTracks', selectedTracks: [] });
+    const options = selectTrackOptions(state);
+    expect(options).toHaveLength(10);
+    expect(options.every(({ checked }) => !checked)).toBe(true);
+  });
+
+  test('returns fresh arrays and objects without mutating the frozen state', () => {
+    const state = deepFreeze(readyState());
+    const before = JSON.stringify(state);
+    const first = selectTrackOptions(state);
+    const second = selectTrackOptions(state);
+    expect(first).not.toBe(second);
+    expect(first[0]).not.toBe(second[0]);
+    first[0].checked = false;
+    first[0].name = 'changed';
+    first.pop();
+    expect(selectTrackOptions(state)).toEqual(second);
+    expect(JSON.stringify(state)).toBe(before);
   });
 });
 
