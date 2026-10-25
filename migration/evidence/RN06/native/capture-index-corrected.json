@@ -1,0 +1,2595 @@
+{
+  "package": "RN06",
+  "revision": 1,
+  "head": "7a1fe5a1fb06b271c54a4b2d51edcdff9c860af8",
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "appId": "dev.translationtest.rn",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "foreground": "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}"
+  },
+  "freshLoad": {
+    "performed": true,
+    "actions": [
+      {
+        "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "force-stop",
+          "dev.translationtest.rn"
+        ],
+        "output": ""
+      },
+      {
+        "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "args": [
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "start",
+          "-n",
+          "dev.translationtest.rn/.MainActivity"
+        ],
+        "output": "Starting: Intent { cmp=dev.translationtest.rn/.MainActivity }\n"
+      }
+    ],
+    "launcherConnection": {
+      "timestamp": "2026-10-25T14:57:01.536Z",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "319",
+        "1397"
+      ],
+      "target": {
+        "index": "1",
+        "text": "http://127.0.0.1:8082",
+        "resource-id": "",
+        "class": "android.widget.TextView",
+        "package": "dev.translationtest.rn",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[179,1378][459,1417]",
+        "drawing-order": "1",
+        "hint": "",
+        "box": [
+          179,
+          1378,
+          459,
+          1417
+        ]
+      },
+      "preXml": "launcher-connect-before.xml",
+      "preWaitMs": 1500,
+      "postWaitMs": 2000
+    }
+  },
+  "rows": {
+    "A": {
+      "id": 2,
+      "name": "Getting Started with Ionic"
+    },
+    "B": {
+      "id": 3,
+      "name": "Ionic Tooling"
+    }
+  },
+  "captures": [
+    {
+      "name": "RN06-01-baseline",
+      "image": "RN06-01-baseline.png",
+      "uiXml": "RN06-01-baseline.xml",
+      "step": 1,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T14:57:01.536Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "319",
+            "1397"
+          ],
+          "target": {
+            "index": "1",
+            "text": "http://127.0.0.1:8082",
+            "resource-id": "",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[179,1378][459,1417]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              179,
+              1378,
+              459,
+              1417
+            ]
+          },
+          "preXml": "launcher-connect-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T14:58:35.117Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "target": {
+            "index": "6",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Filter sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,743][1004,852]",
+            "drawing-order": "7",
+            "hint": "",
+            "box": [
+              76,
+              743,
+              1004,
+              852
+            ]
+          },
+          "preXml": "start-tracks-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T14:58:43.114Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "73",
+            "201"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.ImageButton",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Navigate up",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,128][147,275]",
+            "drawing-order": "3",
+            "hint": "",
+            "box": [
+              0,
+              128,
+              147,
+              275
+            ]
+          },
+          "preXml": "start-tracks-back-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T14:58:51.232Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "776",
+            "661"
+          ],
+          "target": {
+            "index": "5",
+            "text": "",
+            "resource-id": "mode-favorites",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Favorite sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[550,605][1003,717]",
+            "drawing-order": "6",
+            "hint": "",
+            "box": [
+              550,
+              605,
+              1003,
+              717
+            ]
+          },
+          "preXml": "start-favorites-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T14:58:59.200Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "303",
+            "661"
+          ],
+          "target": {
+            "index": "4",
+            "text": "",
+            "resource-id": "mode-all",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "All sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,605][530,717]",
+            "drawing-order": "5",
+            "hint": "",
+            "box": [
+              76,
+              605,
+              530,
+              717
+            ]
+          },
+          "preXml": "start-all-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "Favorite Breakfast",
+        "Favorite University of Ionic",
+        "Favorite Getting Started with Ionic",
+        "All sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains Favorite Breakfast",
+        "XML contains Favorite University of Ionic",
+        "XML contains Favorite Getting Started with Ionic",
+        "XML contains All sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][1038,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,1038,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1232][318,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1232,318,1340]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1523][1038,1874]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1523,1038,1874]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1731][318,1839]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1731,318,1839]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1894][1038,2244]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1894,1038,2244]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2102][318,2211]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2102,318,2211]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2265][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2265,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3]",
+        "Positive-area viewport row bounds IDs=[1,4,2,3] (not pixel visibility)",
+        "Link Breakfast bounds [76,1058][1004,1221]",
+        "Link University of Ionic bounds [76,1557][1004,1720]",
+        "Link Getting Started with Ionic bounds [76,1928][1004,2091]",
+        "Link Ionic Tooling bounds [76,2299][1004,2358]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 3,
+      "capturedAt": "2026-10-25T14:59:05.937Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,1058][1004,1221]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,1557][1004,1720]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1928][1004,2091]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,2299][1004,2358]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-02-revealed-favorite",
+      "image": "RN06-02-revealed-favorite.png",
+      "uiXml": "RN06-02-revealed-favorite.xml",
+      "step": 2,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T14:59:09.760Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1199",
+            "638",
+            "1199",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "breakfast-reveal-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "Favorite",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains Favorite",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][786,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,786,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1232][66,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[42,1232,66,1340]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1523][1038,1874]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1523,1038,1874]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1731][318,1839]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1731,318,1839]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1894][1038,2244]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1894,1038,2244]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2102][318,2211]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2102,318,2211]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2265][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2265,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3]",
+        "Positive-area viewport row bounds IDs=[1,4,2,3] (not pixel visibility)",
+        "Link Breakfast bounds [42,1058][752,1221]",
+        "Link University of Ionic bounds [76,1557][1004,1720]",
+        "Link Getting Started with Ionic bounds [76,1928][1004,2091]",
+        "Link Ionic Tooling bounds [76,2299][1004,2358]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T14:59:16.855Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "expectedActionPanelVisible": true,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[42,1058][752,1221]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,1557][1004,1720]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1928][1004,2091]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,2299][1004,2358]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-03-favorite-added-alert",
+      "image": "RN06-03-favorite-added-alert.png",
+      "uiXml": "RN06-03-favorite-added-alert.xml",
+      "step": 3,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T14:59:27.248Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "912",
+            "1199"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "swipe-action-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[786,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              786,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "breakfast-action-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite Added",
+        "OK"
+      ],
+      "xmlConfirmed": [
+        "XML contains Favorite Added",
+        "XML contains OK",
+        "Mounted session IDs=[]",
+        "Positive-area viewport row bounds IDs=[] (not pixel visibility)"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [],
+      "alertTitle": "Favorite Added",
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T14:59:33.779Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [],
+      "expectedActionPanelVisible": null,
+      "linkBounds": []
+    },
+    {
+      "name": "RN06-04-closed-after-ok",
+      "image": "RN06-04-closed-after-ok.png",
+      "uiXml": "RN06-04-closed-after-ok.xml",
+      "step": 4,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T14:59:37.527Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "894",
+            "1365"
+          ],
+          "target": {
+            "index": "0",
+            "text": "OK",
+            "resource-id": "android:id/button1",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[810,1294][978,1436]",
+            "drawing-order": "4",
+            "hint": "",
+            "box": [
+              810,
+              1294,
+              978,
+              1436
+            ]
+          },
+          "preXml": "added-ok-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][1038,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,1038,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1232][318,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1232,318,1340]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1523][1038,1874]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1523,1038,1874]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1731][318,1839]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1731,318,1839]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1894][1038,2244]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1894,1038,2244]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2102][318,2211]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2102,318,2211]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2265][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2265,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3]",
+        "Positive-area viewport row bounds IDs=[1,4,2,3] (not pixel visibility)",
+        "Link Breakfast bounds [76,1058][1004,1221]",
+        "Link University of Ionic bounds [76,1557][1004,1720]",
+        "Link Getting Started with Ionic bounds [76,1928][1004,2091]",
+        "Link Ionic Tooling bounds [76,2299][1004,2358]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T14:59:44.394Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,1058][1004,1221]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,1557][1004,1720]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1928][1004,2091]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,2299][1004,2358]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-05-already-favorite-alert",
+      "image": "RN06-05-already-favorite-alert.png",
+      "uiXml": "RN06-05-already-favorite-alert.xml",
+      "step": 5,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T14:59:48.275Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1199",
+            "638",
+            "1199",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "breakfast-reveal-again-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T14:59:56.551Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "912",
+            "1199"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "swipe-action-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[786,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              786,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "breakfast-action-again-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite already added",
+        "CANCEL"
+      ],
+      "xmlConfirmed": [
+        "XML contains Favorite already added",
+        "XML contains CANCEL",
+        "Mounted session IDs=[]",
+        "Positive-area viewport row bounds IDs=[] (not pixel visibility)"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [],
+      "alertTitle": "Favorite already added",
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:00:03.128Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [],
+      "expectedActionPanelVisible": null,
+      "linkBounds": []
+    },
+    {
+      "name": "RN06-06-closed-after-cancel",
+      "image": "RN06-06-closed-after-cancel.png",
+      "uiXml": "RN06-06-closed-after-cancel.xml",
+      "step": 6,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:00:11.075Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "669",
+            "1365"
+          ],
+          "target": {
+            "index": "0",
+            "text": "CANCEL",
+            "resource-id": "android:id/button2",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[568,1294][770,1436]",
+            "drawing-order": "3",
+            "hint": "",
+            "box": [
+              568,
+              1294,
+              770,
+              1436
+            ]
+          },
+          "preXml": "already-cancel-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][1038,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,1038,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1232][318,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1232,318,1340]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1523][1038,1874]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1523,1038,1874]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1731][318,1839]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1731,318,1839]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1894][1038,2244]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1894,1038,2244]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2102][318,2211]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2102,318,2211]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2265][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2265,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3]",
+        "Positive-area viewport row bounds IDs=[1,4,2,3] (not pixel visibility)",
+        "Link Breakfast bounds [76,1058][1004,1221]",
+        "Link University of Ionic bounds [76,1557][1004,1720]",
+        "Link Getting Started with Ionic bounds [76,1928][1004,2091]",
+        "Link Ionic Tooling bounds [76,2299][1004,2358]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:00:17.781Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,1058][1004,1221]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,1557][1004,1720]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1928][1004,2091]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,2299][1004,2358]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-07-favorites-revealed-remove",
+      "image": "RN06-07-favorites-revealed-remove.png",
+      "uiXml": "RN06-07-favorites-revealed-remove.xml",
+      "step": 7,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:00:21.614Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "776",
+            "661"
+          ],
+          "target": {
+            "index": "5",
+            "text": "",
+            "resource-id": "mode-favorites",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Favorite sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[550,605][1003,717]",
+            "drawing-order": "6",
+            "hint": "",
+            "box": [
+              550,
+              605,
+              1003,
+              717
+            ]
+          },
+          "preXml": "favorites-select-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:00:29.713Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1199",
+            "638",
+            "1199",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "favorites-breakfast-reveal-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "Remove",
+        "Favorite sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains Remove",
+        "XML contains Favorite sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][786,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,786,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Remove Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1232][68,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[42,1232,68,1340]}",
+        "Mounted session IDs=[1]",
+        "Positive-area viewport row bounds IDs=[1] (not pixel visibility)",
+        "Link Breakfast bounds [42,1058][752,1221]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:00:36.670Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1
+      ],
+      "expectedActionPanelVisible": true,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[42,1058][752,1221]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-08-remove-confirm",
+      "image": "RN06-08-remove-confirm.png",
+      "uiXml": "RN06-08-remove-confirm.xml",
+      "step": 8,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:00:40.404Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "912",
+            "1199"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "swipe-action-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[786,1024][1038,1375]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              786,
+              1024,
+              1038,
+              1375
+            ]
+          },
+          "preXml": "remove-action-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Remove Favorite",
+        "REMOVE"
+      ],
+      "xmlConfirmed": [
+        "XML contains Remove Favorite",
+        "XML contains REMOVE",
+        "Mounted session IDs=[]",
+        "Positive-area viewport row bounds IDs=[] (not pixel visibility)"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [],
+      "alertTitle": "Remove Favorite",
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:00:46.927Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [],
+      "expectedActionPanelVisible": null,
+      "linkBounds": []
+    },
+    {
+      "name": "RN06-09-after-remove",
+      "image": "RN06-09-after-remove.png",
+      "uiXml": "RN06-09-after-remove.xml",
+      "step": 9,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:00:50.679Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "874",
+            "1365"
+          ],
+          "target": {
+            "index": "1",
+            "text": "REMOVE",
+            "resource-id": "android:id/button1",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[770,1294][978,1436]",
+            "drawing-order": "4",
+            "hint": "",
+            "box": [
+              770,
+              1294,
+              978,
+              1436
+            ]
+          },
+          "preXml": "remove-confirm-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "No favorite sessions."
+      ],
+      "xmlConfirmed": [
+        "XML contains No favorite sessions.",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "Mounted session IDs=[]",
+        "Positive-area viewport row bounds IDs=[] (not pixel visibility)"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:00:57.290Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [],
+      "expectedActionPanelVisible": false,
+      "linkBounds": []
+    },
+    {
+      "name": "RN06-10-before-vertical",
+      "image": "RN06-10-before-vertical.png",
+      "uiXml": "RN06-10-before-vertical.xml",
+      "step": 10,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:01:01.008Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "303",
+            "661"
+          ],
+          "target": {
+            "index": "4",
+            "text": "",
+            "resource-id": "mode-all",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "All sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,605][530,717]",
+            "drawing-order": "5",
+            "hint": "",
+            "box": [
+              76,
+              605,
+              530,
+              717
+            ]
+          },
+          "preXml": "return-all-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Breakfast",
+        "8:00 am",
+        "All sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Breakfast",
+        "XML contains 8:00 am",
+        "XML contains All sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1024][1038,1375]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1024,1038,1375]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1232][318,1340]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1232,318,1340]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1523][1038,1874]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1523,1038,1874]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1731][318,1839]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1731,318,1839]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1894][1038,2244]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1894,1038,2244]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2102][318,2211]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2102,318,2211]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2265][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2265,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3]",
+        "Positive-area viewport row bounds IDs=[1,4,2,3] (not pixel visibility)",
+        "Link Breakfast bounds [76,1058][1004,1221]",
+        "Link University of Ionic bounds [76,1557][1004,1720]",
+        "Link Getting Started with Ionic bounds [76,1928][1004,2091]",
+        "Link Ionic Tooling bounds [76,2299][1004,2358]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:01:07.672Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,1058][1004,1221]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,1557][1004,1720]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1928][1004,2091]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,2299][1004,2358]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-11-after-vertical",
+      "image": "RN06-11-after-vertical.png",
+      "uiXml": "RN06-11-after-vertical.xml",
+      "step": 11,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:01:37.901Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "540",
+            "1800",
+            "540",
+            "900",
+            "400"
+          ],
+          "target": {
+            "index": "7",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.AbsListView",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "true",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,917][1038,2358]",
+            "drawing-order": "8",
+            "hint": "",
+            "box": [
+              42,
+              917,
+              1038,
+              2358
+            ]
+          },
+          "preXml": "vertical-scroll-authorized-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "All sessions",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains All sessions",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,1048]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,1048]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,1013]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,1013]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][1038,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,1038,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1276][318,1385]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1276,318,1385]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1439][1038,1789]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1439,1038,1789]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Ionic Tooling\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1647][318,1755]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1647,318,1755]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1938][1038,2288]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1938,1038,2288]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2146][318,2254]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2146,318,2254]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-6\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2310][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2310,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3,5,6]",
+        "Positive-area viewport row bounds IDs=[4,2,3,5,6] (not pixel visibility)",
+        "Link Breakfast bounds [76,917][1004,395]",
+        "Link University of Ionic bounds [76,917][1004,894]",
+        "Link Getting Started with Ionic bounds [76,1102][1004,1265]",
+        "Link Ionic Tooling bounds [76,1473][1004,1636]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:01:47.760Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,894]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1102][1004,1265]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,1473][1004,1636]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-12-row-open",
+      "image": "RN06-12-row-open.png",
+      "uiXml": "RN06-12-row-open.xml",
+      "step": 12,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:02:30.601Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1243",
+            "638",
+            "1243",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1068][1038,1418]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1068,
+              1038,
+              1418
+            ]
+          },
+          "preXml": "row-a-reveal-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Getting Started with Ionic",
+        "Favorite",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Getting Started with Ionic",
+        "XML contains Favorite",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,1048]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,1048]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,1013]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,1013]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][786,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,786,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1276][66,1385]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[42,1276,66,1385]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1439][1038,1789]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1439,1038,1789]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Ionic Tooling\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1647][318,1755]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1647,318,1755]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1938][1038,2288]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1938,1038,2288]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2146][318,2254]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2146,318,2254]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-6\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2310][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2310,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3,5,6]",
+        "Positive-area viewport row bounds IDs=[4,2,3,5,6] (not pixel visibility)",
+        "Link Breakfast bounds [76,917][1004,395]",
+        "Link University of Ionic bounds [76,917][1004,894]",
+        "Link Getting Started with Ionic bounds [42,1102][752,1265]",
+        "Link Ionic Tooling bounds [76,1473][1004,1636]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:02:37.730Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "expectedActionPanelVisible": true,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,894]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[42,1102][752,1265]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,1473][1004,1636]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-13-link-tap-closes",
+      "image": "RN06-13-link-tap-closes.png",
+      "uiXml": "RN06-13-link-tap-closes.xml",
+      "step": 13,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:02:41.481Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "397",
+            "1132"
+          ],
+          "target": {
+            "index": "0",
+            "text": "Getting Started with Ionic",
+            "resource-id": "",
+            "class": "android.view.View",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1102][752,1163]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1102,
+              752,
+              1163
+            ]
+          },
+          "preXml": "row-a-link-closes-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Getting Started with Ionic",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Getting Started with Ionic",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,1048]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,1048]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,1013]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,1013]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][1038,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,1038,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1276][318,1385]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1276,318,1385]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1439][1038,1789]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1439,1038,1789]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Ionic Tooling\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1647][318,1755]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1647,318,1755]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1938][1038,2288]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1938,1038,2288]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2146][318,2254]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2146,318,2254]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-6\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2310][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2310,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3,5,6]",
+        "Positive-area viewport row bounds IDs=[4,2,3,5,6] (not pixel visibility)",
+        "Link Breakfast bounds [76,917][1004,395]",
+        "Link University of Ionic bounds [76,917][1004,894]",
+        "Link Getting Started with Ionic bounds [76,1102][1004,1265]",
+        "Link Ionic Tooling bounds [76,1473][1004,1636]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T15:02:48.141Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,894]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1102][1004,1265]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,1473][1004,1636]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-14-detail-opens",
+      "image": "RN06-14-detail-opens.png",
+      "uiXml": "RN06-14-detail-opens.xml",
+      "step": 14,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:02:51.944Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "1132"
+          ],
+          "target": {
+            "index": "0",
+            "text": "Getting Started with Ionic",
+            "resource-id": "",
+            "class": "android.view.View",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,1102][1004,1163]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              76,
+              1102,
+              1004,
+              1163
+            ]
+          },
+          "preXml": "row-a-link-detail-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Getting Started with Ionic",
+        "Navigate up"
+      ],
+      "xmlConfirmed": [
+        "XML contains Getting Started with Ionic",
+        "XML contains Navigate up",
+        "Mounted session IDs=[]",
+        "Positive-area viewport row bounds IDs=[] (not pixel visibility)"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [],
+      "alertTitle": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T15:02:58.484Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [],
+      "expectedActionPanelVisible": null,
+      "linkBounds": []
+    },
+    {
+      "name": "RN06-15-a-open",
+      "image": "RN06-15-a-open.png",
+      "uiXml": "RN06-15-a-open.xml",
+      "step": 15,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:03:02.220Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "73",
+            "201"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.ImageButton",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Navigate up",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,128][147,275]",
+            "drawing-order": "3",
+            "hint": "",
+            "box": [
+              0,
+              128,
+              147,
+              275
+            ]
+          },
+          "preXml": "detail-header-back-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:03:10.187Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1243",
+            "638",
+            "1243",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1068][1038,1418]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1068,
+              1038,
+              1418
+            ]
+          },
+          "preXml": "row-a-reopen-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Getting Started with Ionic",
+        "Favorite",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Getting Started with Ionic",
+        "XML contains Favorite",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,1048]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,1048]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,1013]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,1013]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][786,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,786,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1276][66,1385]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[42,1276,66,1385]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1439][1038,1789]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1439,1038,1789]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Ionic Tooling\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1647][318,1755]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1647,318,1755]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1938][1038,2288]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1938,1038,2288]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2146][318,2254]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2146,318,2254]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-6\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2310][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2310,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3,5,6]",
+        "Positive-area viewport row bounds IDs=[4,2,3,5,6] (not pixel visibility)",
+        "Link Breakfast bounds [76,917][1004,395]",
+        "Link University of Ionic bounds [76,917][1004,894]",
+        "Link Getting Started with Ionic bounds [42,1102][752,1265]",
+        "Link Ionic Tooling bounds [76,1473][1004,1636]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T15:03:17.187Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "expectedActionPanelVisible": true,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,894]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[42,1102][752,1265]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[76,1473][1004,1636]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-16-b-open-a-closed",
+      "image": "RN06-16-b-open-a-closed.png",
+      "uiXml": "RN06-16-b-open-a-closed.xml",
+      "step": 16,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:03:20.968Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1614",
+            "638",
+            "1614",
+            "300"
+          ],
+          "target": {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-3",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1439][1038,1789]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1439,
+              1038,
+              1789
+            ]
+          },
+          "preXml": "row-b-reveal-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "Getting Started with Ionic",
+        "Ionic Tooling",
+        "Favorite",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains Getting Started with Ionic",
+        "XML contains Ionic Tooling",
+        "XML contains Favorite",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Search sessions\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-1\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Breakfast\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,1048]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,1048]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,1013]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,1013]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][1038,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,1038,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1276][318,1385]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1276,318,1385]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-3\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1439][786,1789]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1439,786,1789]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Ionic Tooling\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1647][66,1755]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[42,1647,66,1755]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1938][1038,2288]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1938,1038,2288]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,2146][318,2254]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,2146,318,2254]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-6\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,2310][1038,2358]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,2310,1038,2358]}",
+        "Mounted session IDs=[1,4,2,3,5,6]",
+        "Positive-area viewport row bounds IDs=[4,2,3,5,6] (not pixel visibility)",
+        "Link Breakfast bounds [76,917][1004,395]",
+        "Link University of Ionic bounds [76,917][1004,894]",
+        "Link Getting Started with Ionic bounds [76,1102][1004,1265]",
+        "Link Ionic Tooling bounds [42,1473][752,1636]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:03:27.925Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "mountedSessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "expectedActionPanelVisible": true,
+      "linkBounds": [
+        {
+          "name": "Breakfast",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,894]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,1102][1004,1265]"
+        },
+        {
+          "name": "Ionic Tooling",
+          "bounds": "[42,1473][752,1636]"
+        }
+      ]
+    },
+    {
+      "name": "RN06-17-filter-search-applied",
+      "image": "RN06-17-filter-search-applied.png",
+      "uiXml": "RN06-17-filter-search-applied.xml",
+      "step": 17,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T15:04:42.874Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "397",
+            "1503"
+          ],
+          "target": {
+            "index": "0",
+            "text": "Ionic Tooling",
+            "resource-id": "",
+            "class": "android.view.View",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1473][752,1534]",
+            "drawing-order": "1",
+            "hint": "",
+            "box": [
+              42,
+              1473,
+              752,
+              1534
+            ]
+          },
+          "preXml": "row-b-link-closes-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:04:51.154Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "target": {
+            "index": "6",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Filter sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,743][1004,852]",
+            "drawing-order": "7",
+            "hint": "",
+            "box": [
+              76,
+              743,
+              1004,
+              852
+            ]
+          },
+          "preXml": "step9-filter-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:04:59.136Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "391",
+            "497"
+          ],
+          "target": {
+            "index": "3",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Deselect All",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[247,434][535,560]",
+            "drawing-order": "4",
+            "hint": "",
+            "box": [
+              247,
+              434,
+              535,
+              560
+            ]
+          },
+          "preXml": "step9-deselect-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:05:07.086Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "1373"
+          ],
+          "target": {
+            "index": "4",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.CheckBox",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Ionic",
+            "checkable": "true",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,1296][1038,1451]",
+            "drawing-order": "5",
+            "hint": "",
+            "box": [
+              42,
+              1296,
+              1038,
+              1451
+            ]
+          },
+          "preXml": "step9-ionic-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:05:15.007Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "910",
+            "497"
+          ],
+          "target": {
+            "index": "5",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Done",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[823,434][998,560]",
+            "drawing-order": "6",
+            "hint": "",
+            "box": [
+              823,
+              434,
+              998,
+              560
+            ]
+          },
+          "preXml": "step9-done-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:05:23.021Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "523"
+          ],
+          "target": {
+            "index": "3",
+            "text": "Search sessions",
+            "resource-id": "",
+            "class": "android.widget.EditText",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Search sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,468][1004,579]",
+            "drawing-order": "4",
+            "hint": "Search sessions",
+            "box": [
+              76,
+              468,
+              1004,
+              579
+            ]
+          },
+          "preXml": "step9-search-focus-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "text",
+            "Ionic"
+          ],
+          "target": {
+            "index": "3",
+            "text": "Search sessions",
+            "resource-id": "",
+            "class": "android.widget.EditText",
+            "package": "dev.translationtest.rn",
+            "content-desc": "Search sessions",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "true",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[76,468][1004,579]",
+            "drawing-order": "4",
+            "hint": "Search sessions",
+            "box": [
+              76,
+              468,
+              1004,
+              579
+            ]
+          },
+          "preXml": "search-text-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        },
+        {
+          "timestamp": "2026-10-25T15:05:39.573Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "359"
+          ],
+          "target": {
+            "index": "1",
+            "text": "Conference",
+            "resource-id": "",
+            "class": "android.view.View",
+            "package": "dev.translationtest.rn",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[42,317][1038,402]",
+            "drawing-order": "2",
+            "hint": "",
+            "box": [
+              42,
+              317,
+              1038,
+              402
+            ]
+          },
+          "preXml": "step9-keyboard-dismiss-before.xml",
+          "preWaitMs": 1500,
+          "postWaitMs": 2000
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic",
+        "Ionic",
+        "Filter sessions"
+      ],
+      "xmlConfirmed": [
+        "XML contains University of Ionic",
+        "XML contains Getting Started with Ionic",
+        "XML contains Migrating to Ionic",
+        "XML contains Ionic",
+        "XML contains Filter sessions",
+        "{\"index\":\"3\",\"text\":\"Ionic\",\"resource-id\":\"\",\"class\":\"android.widget.EditText\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Search sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"true\",\"scrollable\":\"false\",\"long-clickable\":\"true\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,468][1004,579]\",\"drawing-order\":\"4\",\"hint\":\"Search sessions\",\"box\":[76,468,1004,579]}",
+        "{\"index\":\"4\",\"text\":\"\",\"resource-id\":\"mode-all\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"All sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"true\",\"bounds\":\"[76,605][530,717]\",\"drawing-order\":\"5\",\"hint\":\"\",\"box\":[76,605,530,717]}",
+        "{\"index\":\"5\",\"text\":\"\",\"resource-id\":\"mode-favorites\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite sessions\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[550,605][1003,717]\",\"drawing-order\":\"6\",\"hint\":\"\",\"box\":[550,605,1003,717]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-4\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,549]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,549]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite University of Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,514]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,514]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-2\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,917][1038,919]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,917,1038,919]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Getting Started with Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,917][318,886]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,917,318,886]}",
+        "{\"index\":\"0\",\"text\":\"\",\"resource-id\":\"session-5\",\"class\":\"android.view.ViewGroup\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"false\",\"enabled\":\"true\",\"focusable\":\"false\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[42,1068][1038,1418]\",\"drawing-order\":\"1\",\"hint\":\"\",\"box\":[42,1068,1038,1418]}",
+        "{\"index\":\"2\",\"text\":\"\",\"resource-id\":\"\",\"class\":\"android.widget.Button\",\"package\":\"dev.translationtest.rn\",\"content-desc\":\"Favorite Migrating to Ionic\",\"checkable\":\"false\",\"checked\":\"false\",\"clickable\":\"true\",\"enabled\":\"true\",\"focusable\":\"true\",\"focused\":\"false\",\"scrollable\":\"false\",\"long-clickable\":\"false\",\"password\":\"false\",\"selected\":\"false\",\"bounds\":\"[76,1276][318,1384]\",\"drawing-order\":\"3\",\"hint\":\"\",\"box\":[76,1276,318,1384]}",
+        "Mounted session IDs=[4,2,5]",
+        "Positive-area viewport row bounds IDs=[2,5] (not pixel visibility)",
+        "Link University of Ionic bounds [76,917][1004,395]",
+        "Link Getting Started with Ionic bounds [76,917][1004,766]"
+      ],
+      "actionPanelVisible": null,
+      "visibleSessionIds": [
+        2,
+        5
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 2,
+      "capturedAt": "2026-10-25T15:06:18.612Z",
+      "missingExpected": [],
+      "png": {
+        "width": 1080,
+        "height": 2400
+      },
+      "stateAcquired": false,
+      "unmetConditions": [
+        "Conference heading tap did not establish mInputShown=false; keyboard remains shown"
+      ],
+      "mountedSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "expectedActionPanelVisible": false,
+      "linkBounds": [
+        {
+          "name": "University of Ionic",
+          "bounds": "[76,917][1004,395]"
+        },
+        {
+          "name": "Getting Started with Ionic",
+          "bounds": "[76,917][1004,766]"
+        }
+      ]
+    }
+  ],
+  "status": "BLOCKED",
+  "final": {
+    "foreground": "topResumedActivity=ActivityRecord{92860834 u0 dev.translationtest.rn/.MainActivity t30}",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "schedule": true,
+    "keyboardShown": true,
+    "search": "Ionic",
+    "onlyIonicAppliedConfirmedBeforeDone": true
+  },
+  "unperformed": [
+    "RN06-18-filter-search-retained",
+    "RN06-19-filter-still-ionic"
+  ],
+  "navigationAttemptsDefinition": "Per-frame route-intent taps, including link guard taps and header up; mode switches excluded.",
+  "metadataCorrection": {
+    "at": "2026-10-25T15:10:12.086Z",
+    "supersedes": "capture-index.json",
+    "reason": "Original metadata parser assumed android:id/alertTitle; device XML actually uses dev.translationtest.rn:id/alert_title. Three null alertTitle fields corrected from exact XML. Original index and captures remain unchanged.",
+    "corrections": [
+      {
+        "name": "RN06-03-favorite-added-alert",
+        "previous": null,
+        "corrected": "Favorite Added",
+        "node": {
+          "index": "0",
+          "text": "Favorite Added",
+          "resource-id": "dev.translationtest.rn:id/alert_title",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.rn",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[133,1065][947,1136]",
+          "drawing-order": "1",
+          "hint": ""
+        }
+      },
+      {
+        "name": "RN06-05-already-favorite-alert",
+        "previous": null,
+        "corrected": "Favorite already added",
+        "node": {
+          "index": "0",
+          "text": "Favorite already added",
+          "resource-id": "dev.translationtest.rn:id/alert_title",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.rn",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[133,1065][947,1136]",
+          "drawing-order": "1",
+          "hint": ""
+        }
+      },
+      {
+        "name": "RN06-08-remove-confirm",
+        "previous": null,
+        "corrected": "Remove Favorite",
+        "node": {
+          "index": "0",
+          "text": "Remove Favorite",
+          "resource-id": "dev.translationtest.rn:id/alert_title",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.rn",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[133,1065][947,1136]",
+          "drawing-order": "1",
+          "hint": ""
+        }
+      }
+    ]
+  }
+}

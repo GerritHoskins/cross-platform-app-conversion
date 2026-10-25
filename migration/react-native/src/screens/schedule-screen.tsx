@@ -1,4 +1,6 @@
 import { router } from 'expo-router';
+import { useCallback, useEffect, useRef } from 'react';
+import Swipeable, { type SwipeableMethods } from 'react-native-gesture-handler/ReanimatedSwipeable';
 
 import {
   ActivityIndicator,
@@ -86,50 +88,107 @@ function ModeButton({
   );
 }
 
-function Row({ session, palette }: { session: Session; palette: Palette }) {
+function Row({ session, palette, onRowOpen, onRowClose }: {
+  session: Session;
+  palette: Palette;
+  onRowOpen: (methods: SwipeableMethods) => void;
+  onRowClose: (methods: SwipeableMethods) => void;
+}) {
+  const swipeable = useRef<SwipeableMethods | null>(null);
+  const open = useRef(false);
+  useEffect(() => () => {
+    if (swipeable.current) onRowClose(swipeable.current);
+  }, [onRowClose]);
   const { state, dispatch } = useConference();
   const favoritesMode = state.selection?.mode === 'favorites';
   const favorite = state.selection?.favoriteIds.includes(session.id) ?? false;
 
-  const handleFavorite = () => {
+  const handleFavorite = (onSettled?: () => void) => {
     if (favoritesMode || favorite) {
       Alert.alert(
         favoritesMode ? 'Remove Favorite' : 'Favorite already added',
         'Would you like to remove this session from your favorites?',
         [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Remove', style: 'destructive', onPress: () => dispatch({ type: 'favoriteRemoved', sessionId: session.id }) },
+          { text: 'Cancel', style: 'cancel', onPress: onSettled },
+          {
+            text: 'Remove',
+            style: 'destructive',
+            onPress: () => {
+              dispatch({ type: 'favoriteRemoved', sessionId: session.id });
+              onSettled?.();
+            },
+          },
         ],
       );
     } else {
       dispatch({ type: 'favoriteAdded', sessionId: session.id });
-      Alert.alert('Favorite Added', undefined, [{ text: 'OK' }]);
+      Alert.alert('Favorite Added', undefined, [{ text: 'OK', onPress: onSettled }]);
     }
   };
 
   return (
-    <View testID={`session-${session.id}`} style={[styles.row, { backgroundColor: palette.surface, borderColor: palette.border }]}>
-      <Pressable accessibilityRole="link" accessibilityLabel={session.name} onPress={() => router.push({ pathname: '/session/[sessionId]', params: { sessionId: String(session.id) } })}>
-        <Text
-          accessibilityRole="header"
-          style={[styles.sessionName, { color: palette.text }]}
+    <Swipeable
+      ref={swipeable}
+      friction={2}
+      rightThreshold={40}
+      overshootRight={false}
+      onSwipeableWillOpen={() => {
+        open.current = true;
+        if (swipeable.current) onRowOpen(swipeable.current);
+      }}
+      onSwipeableClose={() => {
+        open.current = false;
+        if (swipeable.current) onRowClose(swipeable.current);
+      }}
+      renderRightActions={(_progress, _translation, methods) => (
+        <View
+          testID={`swipe-action-${session.id}`}
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
+          style={[styles.swipeAction, { backgroundColor: palette.accentSoft }]}
         >
-          {session.name}
-        </Text>
-        <Text style={[styles.meta, { color: palette.subtle }]}>
-          {session.timeStart}–{session.timeEnd} · {session.location}
-        </Text>
-        <Text style={[styles.meta, { color: palette.subtle }]}>{session.tracks.join(', ')}</Text>
-      </Pressable>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={`${favoritesMode ? 'Remove' : 'Favorite'} ${session.name}`}
-        onPress={handleFavorite}
-        style={[styles.retryButton, { borderColor: palette.accent, alignSelf: 'flex-start' }]}
-      >
-        <Text style={{ color: palette.accent }}>{favoritesMode ? 'Remove' : 'Favorite'}</Text>
-      </Pressable>
-    </View>
+          <Pressable
+            onPress={() => handleFavorite(() => methods.close())}
+            style={styles.swipeActionButton}
+          >
+            <Text style={{ color: palette.accent, fontWeight: '600' }}>{favoritesMode ? 'Remove' : 'Favorite'}</Text>
+          </Pressable>
+        </View>
+      )}
+    >
+      <View testID={`session-${session.id}`} style={[styles.row, { backgroundColor: palette.surface, borderColor: palette.border }]}>
+        <Pressable
+          accessibilityRole="link"
+          accessibilityLabel={session.name}
+          onPress={() => {
+            if (open.current) {
+              swipeable.current?.close();
+              return;
+            }
+            router.push({ pathname: '/session/[sessionId]', params: { sessionId: String(session.id) } });
+          }}
+        >
+          <Text
+            accessibilityRole="header"
+            style={[styles.sessionName, { color: palette.text }]}
+          >
+            {session.name}
+          </Text>
+          <Text style={[styles.meta, { color: palette.subtle }]}>
+            {session.timeStart}–{session.timeEnd} · {session.location}
+          </Text>
+          <Text style={[styles.meta, { color: palette.subtle }]}>{session.tracks.join(', ')}</Text>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${favoritesMode ? 'Remove' : 'Favorite'} ${session.name}`}
+          onPress={() => handleFavorite()}
+          style={[styles.retryButton, { borderColor: palette.accent, alignSelf: 'flex-start' }]}
+        >
+          <Text style={{ color: palette.accent }}>{favoritesMode ? 'Remove' : 'Favorite'}</Text>
+        </Pressable>
+      </View>
+    </Swipeable>
   );
 }
 
@@ -143,6 +202,19 @@ export default function ScheduleScreen() {
   const searchText = selection?.searchText ?? '';
   const activeMode: ScheduleMode = selection?.mode ?? 'all';
   const favoritesCount = selection?.favoriteIds.length ?? 0;
+  const openRow = useRef<SwipeableMethods | null>(null);
+  const onRowOpen = useCallback((methods: SwipeableMethods) => {
+    if (openRow.current && openRow.current !== methods) openRow.current.close();
+    openRow.current = methods;
+  }, []);
+  const onRowClose = useCallback((methods: SwipeableMethods) => {
+    if (openRow.current === methods) openRow.current = null;
+  }, []);
+
+  useEffect(() => {
+    openRow.current?.close();
+    openRow.current = null;
+  }, [searchText, activeMode, selection?.selectedTracks]);
 
   const handleSearch = (nextSearchText: string) => {
     dispatch({ type: 'setSearchText', searchText: nextSearchText });
@@ -252,7 +324,7 @@ export default function ScheduleScreen() {
             sections={sections}
             keyExtractor={(item: Session) => String(item.id)}
             stickySectionHeadersEnabled={false}
-            renderItem={({ item }: { item: Session }) => <Row session={item} palette={palette} />}
+            renderItem={({ item }: { item: Session }) => <Row session={item} palette={palette} onRowOpen={onRowOpen} onRowClose={onRowClose} />}
             renderSectionHeader={({ section }: { section: { key: string; title: string; data: Session[] } }) => (
               <Text style={[styles.sectionHeader, { color: palette.accent }]}>{section.title}</Text>
             )}
@@ -323,6 +395,16 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 8,
+  },
+  swipeAction: {
+    width: 96,
+    minHeight: 48,
+    borderRadius: 10,
+  },
+  swipeActionButton: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   row: {
     borderRadius: 10,

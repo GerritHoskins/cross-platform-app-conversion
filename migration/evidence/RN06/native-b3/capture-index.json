@@ -1,0 +1,94 @@
+{
+  "package": "RN06",
+  "revision": 1,
+  "phase": "B3",
+  "head": "7a1fe5a1fb06b271c54a4b2d51edcdff9c860af8",
+  "device": "emulator-5554",
+  "captures": [
+    {
+      "name": "RN06-B3-18a-favorite-added-alert",
+      "image": "migration/evidence/RN06/native-b3/RN06-B3-18a-favorite-added-alert.png",
+      "uiXml": "migration/evidence/RN06/native-b3/RN06-B3-18a-favorite-added-alert.xml",
+      "step": "18a",
+      "actions": [
+        "Single tap of row4 revealed Favorite panel at XML-confirmed bounds [786,1024][1038,1375]; no retry"
+      ],
+      "expectedVisibleText": [
+        "Favorite Added",
+        "OK"
+      ],
+      "alertTitle": "Favorite Added",
+      "xmlConfirmed": true,
+      "visibleSessionIds": [],
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:22:52.076Z"
+    },
+    {
+      "name": "RN06-B3-18-filter-search-retained",
+      "image": "migration/evidence/RN06/native-b3/RN06-B3-18-filter-search-retained.png",
+      "uiXml": "migration/evidence/RN06/native-b3/RN06-B3-18-filter-search-retained.xml",
+      "step": "18",
+      "actions": [
+        "Press Favorite Added alert OK using XML-confirmed bounds; single OK already completed before helper-only assertion correction"
+      ],
+      "expectedVisibleText": [
+        "Ionic",
+        "All sessions",
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic"
+      ],
+      "alertTitle": null,
+      "xmlConfirmed": true,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:23:51.194Z"
+    },
+    {
+      "name": "RN06-B3-19-filter-still-ionic",
+      "image": "migration/evidence/RN06/native-b3/RN06-B3-19-filter-still-ionic.png",
+      "uiXml": "migration/evidence/RN06/native-b3/RN06-B3-19-filter-still-ionic.xml",
+      "step": "19",
+      "actions": [
+        "Tap Filter sessions using XML-confirmed bounds; no checkbox changes"
+      ],
+      "expectedVisibleText": [
+        "Filter Sessions",
+        "Tracks",
+        "Ionic"
+      ],
+      "alertTitle": null,
+      "xmlConfirmed": true,
+      "visibleSessionIds": [],
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:24:31.324Z"
+    }
+  ],
+  "favoritesCheck": {
+    "checkedAt": "2026-10-25T15:24:46.711Z",
+    "uiXml": "migration/evidence/RN06/native-b3/select-favorite-sessions-after.xml",
+    "selectedMode": "favorites",
+    "visibleSessionIds": [
+      4
+    ],
+    "expectedVisibleText": [
+      "University of Ionic"
+    ],
+    "xmlConfirmed": true,
+    "universityOfIonicListed": true,
+    "restoredAllSessions": true,
+    "restoredAt": "2026-10-25T15:24:56.993Z",
+    "restoredUiXml": "migration/evidence/RN06/native-b3/final-schedule.xml",
+    "restoredVisibleSessionIds": [
+      4,
+      2,
+      5
+    ],
+    "restoredSearch": "Ionic",
+    "keyboardShown": false
+  }
+}

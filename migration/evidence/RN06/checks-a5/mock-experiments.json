@@ -1,0 +1,89 @@
+{
+  "mocksUsed": [
+    "react-native-gesture-handler/ReanimatedSwipeable"
+  ],
+  "setupImportNeeded": {
+    "schedule-screen.test.tsx": true,
+    "filter-screen.test.tsx": true,
+    "session-detail-screen.test.tsx": true
+  },
+  "retainedSetup": "react-native-gesture-handler/jestSetup",
+  "workletsMock": false,
+  "reanimatedMock": false,
+  "reanimatedSetUpTests": false,
+  "historicalBefore": [
+    "migration/evidence/RN06/checks-a4/existing-worklets.receipt.json",
+    "migration/evidence/RN06/checks-a4/existing-both-mocks.receipt.json"
+  ],
+  "initialDoubleHoistFailure": "migration/evidence/RN06/checks-a5/existing-double-only.receipt.json",
+  "successfulDoubleOnly": "migration/evidence/RN06/checks-a5/existing-double-only-fixed.receipt.json",
+  "withoutImports": {
+    "receipt": "migration/evidence/RN06/checks-a5/existing-without-imports.receipt.json",
+    "counts": {
+      "suites": 3,
+      "passedSuites": 0,
+      "tests": 27,
+      "passed": 7,
+      "failed": 20,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "status": "failed",
+          "tests": 15,
+          "passed": 7,
+          "failed": 8
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "status": "failed",
+          "tests": 12,
+          "passed": 0,
+          "failed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "status": "failed",
+          "tests": 0,
+          "passed": 0,
+          "failed": 0
+        }
+      ]
+    }
+  },
+  "restoredImports": {
+    "receipt": "migration/evidence/RN06/checks-a5/existing-restored.receipt.json",
+    "counts": {
+      "suites": 3,
+      "passedSuites": 3,
+      "tests": 39,
+      "passed": 39,
+      "failed": 0,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "status": "passed",
+          "tests": 15,
+          "passed": 15,
+          "failed": 0
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "status": "passed",
+          "tests": 12,
+          "passed": 12,
+          "failed": 0
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "status": "passed",
+          "tests": 12,
+          "passed": 12,
+          "failed": 0
+        }
+      ]
+    }
+  },
+  "contract": "Renders children and right actions with placeholder shared values and stable jest.fn close/openRight/reset/openLeft methods; forwards ref, testID and open/close callbacks. Tests invoke callbacks separately. No favorite logic, pan activation, animation or product behavior."
+}
