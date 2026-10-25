@@ -12,9 +12,10 @@ import type {
   Conference,
   ScheduleMode,
   Selection,
+  Session,
   SessionGroup,
 } from '@migration/core';
-import { createInitialSelection, groupSessions, selectSessions } from '@migration/core';
+import { addFavorite, createInitialSelection, groupSessions, removeFavorite, selectSessions } from '@migration/core';
 
 import { loadConference } from '../data/load-conference';
 
@@ -43,7 +44,9 @@ export type ConferenceAction =
   | { type: 'setSearchText'; searchText: string }
   | { type: 'setMode'; mode: ScheduleMode }
   | { type: 'setSelectedTracks'; selectedTracks: readonly string[] }
-  | { type: 'setFavoriteIds'; favoriteIds: readonly number[] };
+  | { type: 'setFavoriteIds'; favoriteIds: readonly number[] }
+  | { type: 'favoriteAdded'; sessionId: number }
+  | { type: 'favoriteRemoved'; sessionId: number };
 
 function toErrorMessage(error: unknown): string {
   if (typeof error === 'string') {
@@ -108,9 +111,30 @@ export function conferenceReducer(state: ConferenceState, action: ConferenceActi
         ...selection,
         favoriteIds: [...action.favoriteIds],
       }));
+    case 'favoriteAdded':
+      return updateSelection(state, (selection) => ({
+        ...selection,
+        favoriteIds: addFavorite(selection.favoriteIds, action.sessionId),
+      }));
+    case 'favoriteRemoved':
+      return updateSelection(state, (selection) => ({
+        ...selection,
+        favoriteIds: removeFavorite(selection.favoriteIds, action.sessionId),
+      }));
     default:
       return state;
   }
+}
+
+export function selectSessionById(state: ConferenceState, sessionId: number): Session | undefined {
+  if (state.status !== 'ready' || state.conference === null) {
+    return undefined;
+  }
+  return state.conference.sessions.find((session) => session.id === sessionId);
+}
+
+export function selectIsFavorite(state: ConferenceState, sessionId: number): boolean {
+  return state.selection?.favoriteIds.includes(sessionId) ?? false;
 }
 
 export function selectScheduleGroups(state: ConferenceState): SessionGroup[] {

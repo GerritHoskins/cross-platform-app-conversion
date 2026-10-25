@@ -1,0 +1,2304 @@
+{
+  "package": "RN04",
+  "revision": 1,
+  "head": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+  "branch": "migration/slice-1",
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "appId": "dev.translationtest.rn",
+    "foreground": "topResumedActivity=ActivityRecord{233534046 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t5}",
+    "window": "mCurrentFocus=Window{46f762e u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}\r\n  mFocusedApp=ActivityRecord{233534046 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t5}",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "final": {
+      "capturedAt": "2026-10-25T10:22:19.305Z",
+      "foreground": "topResumedActivity=ActivityRecord{208955065 u0 dev.translationtest.rn/.MainActivity t28}",
+      "reverse": "host-16 tcp:8082 tcp:8082",
+      "metroStatus": "packager-status:running"
+    }
+  },
+  "sessions": {
+    "X": {
+      "id": 4,
+      "name": "University of Ionic"
+    },
+    "Y": {
+      "id": 1,
+      "name": "Breakfast"
+    }
+  },
+  "captures": [
+    {
+      "name": "RN04-01-schedule-search",
+      "image": "migration/evidence/RN04/native/RN04-01-schedule-search.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-01-schedule-search.xml",
+      "step": 1,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:14:34.611Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "devices",
+            "-l"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:34.629Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "emu",
+            "avd",
+            "name"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:34.647Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:34.778Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "window"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:35.074Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "reverse",
+            "--list"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:35.177Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-preflight-ui.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:38.187Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-preflight-ui.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\preflight-ui.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:49.518Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "909",
+            "1970"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:52.608Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-app-launch.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:14:57.301Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-app-launch.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\app-launch.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:13.374Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-app-loaded.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:15.711Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-app-loaded.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\app-loaded.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:30.439Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "440",
+            "520"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:30.548Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-search-focused.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:32.832Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-search-focused.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\search-focused.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:50.203Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "text",
+            "IOnic"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:50.389Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-search-typed.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:15:52.558Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-search-typed.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\search-typed.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:17.798Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "input_method"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:18.255Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "keyevent",
+            "4"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:18.394Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:18.754Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-01-schedule-search.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:20.961Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-01-schedule-search.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-01-schedule-search.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "IOnic",
+        "All sessions",
+        "University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "IOnic",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Favorite University of Ionic",
+        "Favorite",
+        "Getting Started with Ionic",
+        "9:30 am–9:45 am · Hall 2",
+        "Favorite Getting Started with Ionic",
+        "Ionic Tooling",
+        "9:45 am–10:00 am · Executive Ballroom",
+        "Tooling",
+        "Favorite Ionic Tooling",
+        "10:00 am",
+        "Migrating to Ionic",
+        "10:00 am–10:15 am · Hall 1",
+        "Favorite Migrating to Ionic"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:16:18.393Z"
+    },
+    {
+      "name": "RN04-02-detail-opened",
+      "image": "migration/evidence/RN04/native/RN04-02-detail-opened.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-02-detail-opened.xml",
+      "step": 2,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:16:32.456Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "460",
+            "962"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:33.030Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-detail-opened-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:35.532Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-detail-opened-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\detail-opened-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:51.367Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:51.730Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-02-detail-opened.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:53.935Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-02-detail-opened.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-02-detail-opened.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Add to favorites"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Navigate up",
+        "Session",
+        "University of Ionic",
+        "Ionic",
+        "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Vue, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Vue.",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Add to favorites",
+        "☆ Add to favorites",
+        "Share",
+        "Watch",
+        "Add to Calendar",
+        "Mark as Unwatched",
+        "Download Video",
+        "Leave Feedback"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:16:51.367Z"
+    },
+    {
+      "name": "RN04-03-detail-favorited",
+      "image": "migration/evidence/RN04/native/RN04-03-detail-favorited.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-03-detail-favorited.xml",
+      "step": 3,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:16:54.042Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "1463"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:54.141Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:54.344Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-03-detail-favorited.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:16:56.388Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-03-detail-favorited.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-03-detail-favorited.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "Remove from favorites"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Navigate up",
+        "Session",
+        "University of Ionic",
+        "Ionic",
+        "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Vue, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Vue.",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Remove from favorites",
+        "★ Remove from favorites",
+        "Share",
+        "Watch",
+        "Add to Calendar",
+        "Mark as Unwatched",
+        "Download Video",
+        "Leave Feedback"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:16:54.141Z"
+    },
+    {
+      "name": "RN04-04-back-search-retained",
+      "image": "migration/evidence/RN04/native/RN04-04-back-search-retained.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-04-back-search-retained.xml",
+      "step": 4,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:17:04.049Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "70",
+            "200"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:04.102Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-back-retained-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:06.566Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-back-retained-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\back-retained-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:06.702Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:06.893Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-04-back-search-retained.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:09.015Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-04-back-search-retained.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-04-back-search-retained.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "IOnic",
+        "All sessions",
+        "University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "IOnic",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Favorite University of Ionic",
+        "Favorite",
+        "Getting Started with Ionic",
+        "9:30 am–9:45 am · Hall 2",
+        "Favorite Getting Started with Ionic",
+        "Ionic Tooling",
+        "9:45 am–10:00 am · Executive Ballroom",
+        "Tooling",
+        "Favorite Ionic Tooling",
+        "10:00 am",
+        "Migrating to Ionic",
+        "10:00 am–10:15 am · Hall 1",
+        "Favorite Migrating to Ionic"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:17:06.701Z"
+    },
+    {
+      "name": "RN04-05-favorite-added-alert",
+      "image": "migration/evidence/RN04/native/RN04-05-favorite-added-alert.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-05-favorite-added-alert.xml",
+      "step": 5,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:17:16.129Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "420",
+            "520"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:16.193Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "keyevent",
+            "123"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:16.457Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "keyevent",
+            "67",
+            "67",
+            "67",
+            "67",
+            "67"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:16.970Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-search-cleared.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:19.281Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-search-cleared.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\search-cleared.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:19.399Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "input_method"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:19.931Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "keyevent",
+            "4"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:26.101Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "194",
+            "1152"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:26.151Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-first-add-alert-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:28.286Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-first-add-alert-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\first-add-alert-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:28.400Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:28.605Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-05-favorite-added-alert.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:30.649Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-05-favorite-added-alert.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-05-favorite-added-alert.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite Added",
+        "OK"
+      ],
+      "xmlConfirmed": [
+        "Favorite Added",
+        "OK"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:17:28.398Z"
+    },
+    {
+      "name": "RN04-06-already-favorite-alert",
+      "image": "migration/evidence/RN04/native/RN04-06-already-favorite-alert.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-06-already-favorite-alert.xml",
+      "step": 6,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:17:40.296Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "894",
+            "1365"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:40.338Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "195",
+            "1650"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:40.418Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-already-alert-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:42.553Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-already-alert-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\already-alert-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:42.678Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:42.862Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-06-already-favorite-alert.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:17:44.938Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-06-already-favorite-alert.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-06-already-favorite-alert.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite already added",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "8:00 am",
+        "Breakfast",
+        "8:00 am–9:00 am · Dining Hall",
+        "Food",
+        "Favorite Breakfast",
+        "Favorite",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Favorite University of Ionic",
+        "Getting Started with Ionic",
+        "9:30 am–9:45 am · Hall 2",
+        "Favorite Getting Started with Ionic",
+        "Ionic Tooling",
+        "9:45 am–10:00 am · Executive Ballroom",
+        "Tooling",
+        "Favorite Ionic Tooling"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:17:42.677Z"
+    },
+    {
+      "name": "RN04-06-already-favorite-alert-retry",
+      "image": "migration/evidence/RN04/native/RN04-06-already-favorite-alert-retry.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-06-already-favorite-alert-retry.xml",
+      "step": 6,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:18:25.577Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "195",
+            "1650"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:25.616Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-already-alert-retry-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:27.686Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-already-alert-retry-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\already-alert-retry-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:35.664Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:35.904Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-06-already-favorite-alert-retry.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:37.914Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-06-already-favorite-alert-retry.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-06-already-favorite-alert-retry.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite already added",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ],
+      "xmlConfirmed": [
+        "Favorite already added",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:18:35.662Z"
+    },
+    {
+      "name": "RN04-07-favorites-after-cancel",
+      "image": "migration/evidence/RN04/native/RN04-07-favorites-after-cancel.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-07-favorites-after-cancel.xml",
+      "step": 7,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:18:38.003Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "669",
+            "1365"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:38.556Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-after-already-cancel.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:40.667Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-after-already-cancel.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\after-already-cancel.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:50.563Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "778",
+            "662"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:50.609Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-favorites-both-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:52.621Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-favorites-both-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\favorites-both-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:52.726Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:52.923Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-07-favorites-after-cancel.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:18:54.932Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-07-favorites-after-cancel.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-07-favorites-after-cancel.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite sessions",
+        "Breakfast",
+        "University of Ionic",
+        "Remove Breakfast",
+        "Remove University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "8:00 am",
+        "Breakfast",
+        "8:00 am–9:00 am · Dining Hall",
+        "Food",
+        "Remove Breakfast",
+        "Remove",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Remove University of Ionic"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:18:52.725Z"
+    },
+    {
+      "name": "RN04-08-remove-confirm-alert",
+      "image": "migration/evidence/RN04/native/RN04-08-remove-confirm-alert.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-08-remove-confirm-alert.xml",
+      "step": 8,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:19:02.506Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "198",
+            "1152"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:02.541Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-remove-y-confirm-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:04.586Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-remove-y-confirm-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\remove-y-confirm-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:04.693Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:04.917Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-08-remove-confirm-alert.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:06.904Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-08-remove-confirm-alert.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-08-remove-confirm-alert.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Remove Favorite",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ],
+      "xmlConfirmed": [
+        "Remove Favorite",
+        "Would you like to remove this session from your favorites?",
+        "CANCEL",
+        "REMOVE"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:19:04.691Z"
+    },
+    {
+      "name": "RN04-09-favorites-after-remove-cancel",
+      "image": "migration/evidence/RN04/native/RN04-09-favorites-after-remove-cancel.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-09-favorites-after-remove-cancel.xml",
+      "step": 9,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:19:07.006Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "669",
+            "1365"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:07.636Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:07.809Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-09-favorites-after-remove-cancel.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:09.809Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-09-favorites-after-remove-cancel.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-09-favorites-after-remove-cancel.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite sessions",
+        "Breakfast",
+        "University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "8:00 am",
+        "Breakfast",
+        "8:00 am–9:00 am · Dining Hall",
+        "Food",
+        "Remove Breakfast",
+        "Remove",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Remove University of Ionic"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:19:07.635Z"
+    },
+    {
+      "name": "RN04-10-favorites-after-remove",
+      "image": "migration/evidence/RN04/native/RN04-10-favorites-after-remove.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-10-favorites-after-remove.xml",
+      "step": 10,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:19:21.192Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "198",
+            "1152"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:21.225Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-remove-y-again-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:23.282Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-remove-y-again-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\remove-y-again-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:23.397Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "874",
+            "1365"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:24.005Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:24.181Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-10-favorites-after-remove.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:26.189Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-10-favorites-after-remove.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-10-favorites-after-remove.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite sessions",
+        "University of Ionic",
+        "Remove University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Remove University of Ionic",
+        "Remove"
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:19:24.005Z"
+    },
+    {
+      "name": "RN04-11-already-favorite-remove",
+      "image": "migration/evidence/RN04/native/RN04-11-already-favorite-remove.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-11-already-favorite-remove.xml",
+      "step": 11,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:19:31.050Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "305",
+            "662"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:31.604Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-all-for-remove-x.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:33.679Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-all-for-remove-x.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\all-for-remove-x.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:41.868Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "195",
+            "1650"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:41.904Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-already-x-remove-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:43.982Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-already-x-remove-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\already-x-remove-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:44.078Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "874",
+            "1365"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:44.625Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-all-after-x-remove.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:46.736Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-all-after-x-remove.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\all-after-x-remove.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:53.788Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "778",
+            "662"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:54.402Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:54.624Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-11-already-favorite-remove.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:56.632Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-11-already-favorite-remove.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-11-already-favorite-remove.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Favorite sessions",
+        "No favorite sessions."
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "No favorite sessions."
+      ],
+      "deepLinkRouted": null,
+      "capturedAt": "2026-10-25T10:19:54.401Z"
+    },
+    {
+      "name": "RN04-12-unknown-id",
+      "image": "migration/evidence/RN04/native/RN04-12-unknown-id.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-12-unknown-id.xml",
+      "step": 12,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:19:56.721Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "am",
+            "start",
+            "-a",
+            "android.intent.action.VIEW",
+            "-d",
+            "conference-migration-rn://session/9999",
+            "dev.translationtest.rn"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:19:59.808Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-unknown-link-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:01.812Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-unknown-link-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\unknown-link-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:08.487Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:08.677Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-12-unknown-id.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:10.670Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-12-unknown-id.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-12-unknown-id.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Session not found.",
+        "Add to favorites"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Navigate up",
+        "Session",
+        "Session not found.",
+        "Add to favorites",
+        "☆ Add to favorites",
+        "Share",
+        "Watch",
+        "Add to Calendar",
+        "Mark as Unwatched",
+        "Download Video",
+        "Leave Feedback"
+      ],
+      "deepLinkRouted": true,
+      "capturedAt": "2026-10-25T10:20:08.486Z"
+    },
+    {
+      "name": "RN04-13-cold-entry",
+      "image": "migration/evidence/RN04/native/RN04-13-cold-entry.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-13-cold-entry.xml",
+      "step": 13,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:20:10.756Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "am",
+            "force-stop",
+            "dev.translationtest.rn"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:10.830Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "am",
+            "start",
+            "-a",
+            "android.intent.action.VIEW",
+            "-d",
+            "conference-migration-rn://session/4",
+            "dev.translationtest.rn"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:20.942Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-cold-entry-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:23.253Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-cold-entry-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\cold-entry-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:36.459Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:36.877Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-13-cold-entry.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:39.192Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-13-cold-entry.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-13-cold-entry.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Navigate up"
+      ],
+      "xmlConfirmed": [
+        "App Icon",
+        "Conference Migration RN",
+        "Development Build",
+        "User",
+        "DEVELOPMENT SERVERS",
+        "INFO",
+        "http://169.254.83.107:8082",
+        "Chevron",
+        "Plus",
+        "New development server",
+        "RECENTLY OPENED",
+        "RESET",
+        "http://localhost:8082",
+        "Home",
+        "Updates",
+        "Settings"
+      ],
+      "deepLinkRouted": false,
+      "capturedAt": "2026-10-25T10:20:36.458Z"
+    },
+    {
+      "name": "RN04-13-cold-entry-after-connect",
+      "image": "migration/evidence/RN04/native/RN04-13-cold-entry-after-connect.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-13-cold-entry-after-connect.xml",
+      "step": 13,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:20:39.364Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "365",
+            "827"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:39.462Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-devclient-new-server.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:41.762Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-devclient-new-server.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\devclient-new-server.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:50.078Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "500",
+            "954"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:50.188Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "text",
+            "http://127.0.0.1:8082"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:51.747Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-devclient-url-typed.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:20:54.479Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-devclient-url-typed.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\devclient-url-typed.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:01.441Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "input_method"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:02.352Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "keyevent",
+            "4"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:02.561Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "1102"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:12.660Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-reconnected-after-cold.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:15.123Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-reconnected-after-cold.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\reconnected-after-cold.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:27.442Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:27.655Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-13-cold-entry-after-connect.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:29.638Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-13-cold-entry-after-connect.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-13-cold-entry-after-connect.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Navigate up",
+        "Add to favorites"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Navigate up",
+        "Session",
+        "University of Ionic",
+        "Ionic",
+        "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Vue, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Vue.",
+        "9:15 am – 9:30 am",
+        "Hall 3",
+        "Add to favorites",
+        "☆ Add to favorites",
+        "Share",
+        "Watch",
+        "Add to Calendar",
+        "Mark as Unwatched",
+        "Download Video",
+        "Leave Feedback"
+      ],
+      "deepLinkRouted": true,
+      "capturedAt": "2026-10-25T10:21:27.441Z"
+    },
+    {
+      "name": "RN04-14-cold-entry-back",
+      "image": "migration/evidence/RN04/native/RN04-14-cold-entry-back.png",
+      "uiXml": "migration/evidence/RN04/native/RN04-14-cold-entry-back.xml",
+      "step": 14,
+      "actions": [
+        {
+          "timestamp": "2026-10-25T10:21:29.815Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "70",
+            "200"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:30.364Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-cold-entry-back-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:32.766Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-cold-entry-back-check.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn04-r1-native-20261025\\cold-entry-back-check.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:32.933Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:33.135Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/rn04-RN04-14-cold-entry-back.xml"
+          ],
+          "exitCode": 0
+        },
+        {
+          "timestamp": "2026-10-25T10:21:35.191Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "pull",
+            "/sdcard/rn04-RN04-14-cold-entry-back.xml",
+            "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN04\\native\\RN04-14-cold-entry-back.xml"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Breakfast",
+        "University of Ionic"
+      ],
+      "xmlConfirmed": [
+        "Tools",
+        "Conference",
+        "Search sessions",
+        "All sessions",
+        "Favorite sessions",
+        "8:00 am",
+        "Breakfast",
+        "8:00 am–9:00 am · Dining Hall",
+        "Food",
+        "Favorite Breakfast",
+        "Favorite",
+        "9:15 am",
+        "University of Ionic",
+        "9:15 am–9:30 am · Hall 3",
+        "Ionic",
+        "Favorite University of Ionic",
+        "Getting Started with Ionic",
+        "9:30 am–9:45 am · Hall 2",
+        "Favorite Getting Started with Ionic",
+        "Ionic Tooling",
+        "9:45 am–10:00 am · Executive Ballroom",
+        "Tooling",
+        "Favorite Ionic Tooling"
+      ],
+      "deepLinkRouted": true,
+      "capturedAt": "2026-10-25T10:21:32.932Z"
+    }
+  ],
+  "commandOffset": 138,
+  "startedAt": "2026-10-25T10:14:35.175Z"
+}

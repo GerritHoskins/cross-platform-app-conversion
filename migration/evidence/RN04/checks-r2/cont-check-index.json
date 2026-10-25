@@ -1,0 +1,115 @@
+[
+  {
+    "id": "cont-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:52.959Z",
+    "durationMs": 21,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-head.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-head.stderr.log"
+  },
+  {
+    "id": "cont-cached-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:52.983Z",
+    "durationMs": 26,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-cached-diff.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-cached-diff.stderr.log"
+  },
+  {
+    "id": "cont-r1-hash-gate",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN04-r1.json"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:53.011Z",
+    "durationMs": 152,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-r1-hash-gate.stderr.log"
+  },
+  {
+    "id": "cont-idea-hash",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "tools/qwen-supervisor/.runs/sol-rn04-r2-freeze2-20261025/continuation.mjs",
+      "idea"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:53.165Z",
+    "durationMs": 66,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-idea-hash.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-idea-hash.stderr.log"
+  },
+  {
+    "id": "cont-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:53.232Z",
+    "durationMs": 19,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-branch.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-branch.stderr.log"
+  },
+  {
+    "id": "cont-head-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD^{tree}"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:53.252Z",
+    "durationMs": 21,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-head-tree.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-head-tree.stderr.log"
+  },
+  {
+    "id": "cont-git-date",
+    "command": "git",
+    "args": [
+      "var",
+      "GIT_COMMITTER_IDENT"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-25T11:17:53.275Z",
+    "durationMs": 20,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/RN04/checks-r2/cont-git-date.stdout.log",
+    "stderr": "migration/evidence/RN04/checks-r2/cont-git-date.stderr.log"
+  }
+]

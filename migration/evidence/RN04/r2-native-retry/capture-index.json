@@ -1,0 +1,84 @@
+{
+  "package": "RN04",
+  "revision": 2,
+  "head": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "appId": "dev.translationtest.rn",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082"
+  },
+  "session": {
+    "id": 4,
+    "name": "University of Ionic"
+  },
+  "setupActions": [
+    {
+      "timestamp": "2026-10-25T10:59:25.728Z",
+      "reason": "Verify accepted empty-favorites starting precondition",
+      "target": "Favorite sessions",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "776",
+        "661"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:59:27.929Z",
+      "reason": "Return to All sessions after empty favorites verification",
+      "target": "All sessions",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "303",
+        "661"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:59:27.841Z",
+      "confirmation": "Empty search; Favorite sessions selected=true; No favorite sessions.; no favorites listed",
+      "xml": "tools/qwen-supervisor/.runs/sol-rn04-r2-native2-20261025/setup-empty-favorites.xml"
+    },
+    {
+      "timestamp": "2026-10-25T10:59:30.296Z",
+      "confirmation": "All sessions selected=true; empty search; University of Ionic link visible",
+      "xml": "tools/qwen-supervisor/.runs/sol-rn04-r2-native2-20261025/setup-all-sessions.xml"
+    }
+  ],
+  "captures": [],
+  "status": "BLOCKED",
+  "attemptedActions": [
+    {
+      "timestamp": "2026-10-25T10:59:30.391Z",
+      "reason": "Open session X from row link, not Favorite button",
+      "target": "University of Ionic",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "540",
+        "1503"
+      ]
+    }
+  ],
+  "unresolved": [
+    "University of Ionic row-link tap at (540,1503) exited zero but the following UI XML still showed the schedule; a later read-only dump confirmed it remained on the schedule. Cause not established; no product defect is inferred.",
+    "RN04-R2-01 through RN04-R2-05 were not captured. Native detail add/removal, immediate unselected Add to favorites state, no-alert behavior after removal and favorites propagation remain unverified.",
+    "Pixels are not yet inspected; no PNGs were acquired. Coordinator pixel acceptance is pending.",
+    "Export-inventory reconciliation, final handoff and r2 submission manifest remain deferred to a later authorized session."
+  ],
+  "recordedAt": "2026-10-25T11:01:30.872Z"
+}

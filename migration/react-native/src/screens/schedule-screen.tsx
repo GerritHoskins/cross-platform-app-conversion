@@ -1,5 +1,8 @@
+import { router } from 'expo-router';
+
 import {
   ActivityIndicator,
+  Alert,
   Pressable,
   SectionList,
   StyleSheet,
@@ -84,18 +87,48 @@ function ModeButton({
 }
 
 function Row({ session, palette }: { session: Session; palette: Palette }) {
+  const { state, dispatch } = useConference();
+  const favoritesMode = state.selection?.mode === 'favorites';
+  const favorite = state.selection?.favoriteIds.includes(session.id) ?? false;
+
+  const handleFavorite = () => {
+    if (favoritesMode || favorite) {
+      Alert.alert(
+        favoritesMode ? 'Remove Favorite' : 'Favorite already added',
+        'Would you like to remove this session from your favorites?',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Remove', style: 'destructive', onPress: () => dispatch({ type: 'favoriteRemoved', sessionId: session.id }) },
+        ],
+      );
+    } else {
+      dispatch({ type: 'favoriteAdded', sessionId: session.id });
+      Alert.alert('Favorite Added', undefined, [{ text: 'OK' }]);
+    }
+  };
+
   return (
     <View testID={`session-${session.id}`} style={[styles.row, { backgroundColor: palette.surface, borderColor: palette.border }]}>
-      <Text
-        accessibilityRole="header"
-        style={[styles.sessionName, { color: palette.text }]}
+      <Pressable accessibilityRole="link" accessibilityLabel={session.name} onPress={() => router.push({ pathname: '/session/[sessionId]', params: { sessionId: String(session.id) } })}>
+        <Text
+          accessibilityRole="header"
+          style={[styles.sessionName, { color: palette.text }]}
+        >
+          {session.name}
+        </Text>
+        <Text style={[styles.meta, { color: palette.subtle }]}>
+          {session.timeStart}–{session.timeEnd} · {session.location}
+        </Text>
+        <Text style={[styles.meta, { color: palette.subtle }]}>{session.tracks.join(', ')}</Text>
+      </Pressable>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${favoritesMode ? 'Remove' : 'Favorite'} ${session.name}`}
+        onPress={handleFavorite}
+        style={[styles.retryButton, { borderColor: palette.accent, alignSelf: 'flex-start' }]}
       >
-        {session.name}
-      </Text>
-      <Text style={[styles.meta, { color: palette.subtle }]}>
-        {session.timeStart}–{session.timeEnd} · {session.location}
-      </Text>
-      <Text style={[styles.meta, { color: palette.subtle }]}>{session.tracks.join(', ')}</Text>
+        <Text style={{ color: palette.accent }}>{favoritesMode ? 'Remove' : 'Favorite'}</Text>
+      </Pressable>
     </View>
   );
 }
