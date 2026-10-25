@@ -1,0 +1,263 @@
+--------- beginning of main
+10-25 17:00:45.480 18170 18170 I nslationtest.rn: Late-enabling -Xcheck:jni
+10-25 17:00:45.594 18170 18170 I nslationtest.rn: Using CollectorTypeCMC GC.
+10-25 17:00:45.647 18170 18170 W nslationtest.rn: Unexpected CPU variant for x86: x86_64.
+10-25 17:00:45.647 18170 18170 W nslationtest.rn: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-25 17:00:45.882 18170 18170 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-25 17:00:46.105 18170 18170 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-25 17:00:46.105 18170 18170 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+10-25 17:00:46.632 18170 18170 D nativeloader: Configuring clns-9 for other apk /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/lib/x86_64:/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.rn
+10-25 17:00:46.644 18170 18170 I nslationtest.rn: AssetManager2(0x7845cea1fd38) locale list changing from [] to [en-US]
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment: Currently set values for:
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment: dev.translationtest.rn is not listed in per-application setting
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment: dev.translationtest.rn is not listed in ANGLE allowlist or settings, returning default
+10-25 17:00:46.668 18170 18170 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-25 17:00:46.764 18170 18170 W SoLoader: Initializing SoLoader: 0
+10-25 17:00:46.769 18170 18170 W SoLoader: Recording new base apk path: /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk
+10-25 17:00:46.769 18170 18170 W SoLoader: Previously recorded 0 base apk paths.
+10-25 17:00:46.774 18170 18170 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+10-25 17:00:46.774 18170 18170 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+10-25 17:00:46.774 18170 18170 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64]]
+10-25 17:00:46.807 18170 18170 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/lib/x86_64 flags = 0]]
+10-25 17:00:46.807 18170 18170 I SoLoader: init finish: 4 SO sources prepared
+10-25 17:00:46.807 18170 18170 W SoLoader: SoLoader initialized: 8
+10-25 17:00:46.868 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libc++_shared.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:46.896 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libjsi.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:46.907 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libfbjni.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.028 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreactnative.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7845213a07d0
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7845215fdbb0
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x78452160f810
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7845216c1f60
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x7845219d4d60
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7845219e7ca0
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x784521a0b460
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x784521a16cc0
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x784521a93130
+10-25 17:00:47.030 18170 18170 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x784521be8140
+10-25 17:00:47.031 18170 18170 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x784521bfe690
+10-25 17:00:47.031 18170 18170 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x784521c0db40
+10-25 17:00:47.031 18170 18170 D jni_lib_merge: About to register 12 actual methods.
+10-25 17:00:47.059 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_rngesturehandler_codegen.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.083 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_rnscreens.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.083 18170 18170 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 17:00:47.083 18170 18170 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+10-25 17:00:47.083 18170 18170 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7845213a07d0
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7845215fdbb0
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x78452160f810
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7845216c1f60
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x7845219d4d60
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7845219e7ca0
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x784521a0b460
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x784521a16cc0
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x784521a93130
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x784521be8140
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x784521bfe690
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x784521c0db40
+10-25 17:00:47.084 18170 18170 D jni_lib_merge: About to register 12 actual methods.
+10-25 17:00:47.093 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.119 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libappmodules.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.314 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libhermesvm.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.319 18170 18170 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libhermestooling.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x78450ef4f280
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x78450ef7b600
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x78450ef7d3a0
+10-25 17:00:47.320 18170 18170 D jni_lib_merge: About to register 3 actual methods.
+10-25 17:00:47.524 18170 18170 I nslationtest.rn: hiddenapi: Accessing hidden field Ljava/lang/reflect/Field;->accessFlags:I (runtime_flags=0, domain=core-platform, api=unsupported) from Lexpo/modules/devlauncher/helpers/DevLauncherReflectionExtensionsKt; (domain=app) using reflection: allowed
+10-25 17:00:47.885 18170 18170 I Choreographer: Skipped 67 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-25 17:00:47.888 18170 18199 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-25 17:00:47.890 18170 18170 I nslationtest.rn: AssetManager2(0x7845cea1d7b8) locale list changing from [] to [en-US]
+10-25 17:00:47.946 18170 18199 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-25 17:00:47.947 18170 18199 I EGL_emulation: Opening libGLESv2_emulation.so
+10-25 17:00:47.956 18170 18199 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-25 17:00:48.004 18170 18170 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-25 17:00:48.005 18170 18170 I nslationtest.rn: AssetManager2(0x7845cea21958) locale list changing from [] to [en-US]
+10-25 17:00:48.018 18170 18170 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-25 17:00:48.057 18170 18170 D CompatChangeReporter: Compat change id reported: 377864165; UID 10215; state: ENABLED
+10-25 17:00:48.058 18170 18170 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-25 17:00:48.083 18170 18170 I nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-25 17:00:48.140 18170 18170 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-25 17:00:48.140 18170 18170 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-25 17:00:48.176 18170 18170 W HWUI    : Unknown dataspace 0
+10-25 17:00:48.273 18170 18170 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-25 17:00:48.561 18170 18175 I nslationtest.rn: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-25 17:00:49.281 18170 18170 W HWUI    : Image decoding logging dropped!
+10-25 17:00:49.285 18170 18170 W HWUI    : Image decoding logging dropped!
+10-25 17:00:49.287 18170 18170 W HWUI    : Image decoding logging dropped!
+10-25 17:00:50.024 18170 18170 I nslationtest.rn: hiddenapi: Accessing hidden method Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/compose/ui/platform/AndroidComposeView$Companion; (domain=app) using reflection: allowed
+10-25 17:00:50.042 18170 18184 I HWUI    : Davey! duration=1740ms; Flags=1, FrameTimelineVsyncId=10260195, IntendedVsync=24607803744912, Vsync=24607803744912, InputEventId=0, HandleInputStart=24607805288400, AnimationStart=24607805303300, PerformTraversalsStart=24607805325200, DrawStart=24609201400500, FrameDeadline=24607820411578, FrameStartTime=24607805279300, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=24609230779000, SyncStart=24609231096300, IssueDrawCommandsStart=24609231700200, SwapBuffers=24609459408400, FrameCompleted=24609544914500, DequeueBufferDuration=17700, QueueBufferDuration=15360900, GpuCompleted=24609544834400, SwapBuffersCompleted=24609544914500, DisplayPresentTime=0, CommandSubmissionCompleted=24609459408400, 
+10-25 17:00:50.073 18170 18170 I Choreographer: Skipped 96 frames!  The application may be doing too much work on its main thread.
+10-25 17:00:50.191 18170 18181 I HWUI    : Davey! duration=1693ms; Flags=0, FrameTimelineVsyncId=10260217, IntendedVsync=24607987078238, Vsync=24609587078174, InputEventId=0, HandleInputStart=24609601610200, AnimationStart=24609601625800, PerformTraversalsStart=24609619040500, DrawStart=24609625305500, FrameDeadline=24609570411508, FrameStartTime=24609601119000, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=24609626567300, SyncStart=24609627389300, IssueDrawCommandsStart=24609627552100, SwapBuffers=24609637057700, FrameCompleted=24609681502400, DequeueBufferDuration=32600, QueueBufferDuration=2137200, GpuCompleted=24609681389400, SwapBuffersCompleted=24609681502400, DisplayPresentTime=0, CommandSubmissionCompleted=24609637057700, 
+10-25 17:00:50.442 18170 18170 D InsetsController: hide(ime(), fromIme=false)
+10-25 17:00:50.443 18170 18170 I ImeTracker: dev.translationtest.rn:b27cf275: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-25 17:00:50.500 18170 18170 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@3a18b37
+10-25 17:00:50.502 18170 18170 D ViewRootImpl: Skipping stats log for color mode
+10-25 17:00:53.517 18170 18170 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSelection()Landroid/view/accessibility/AccessibilityNodeInfo$Selection; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied
+10-25 17:00:53.520 18170 18170 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->setSelection(Landroid/view/accessibility/AccessibilityNodeInfo$Selection;)V (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied
+10-25 17:00:53.520 18170 18170 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->setSelection(Landroid/view/accessibility/AccessibilityNodeInfo$Selection;)V (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied
+10-25 17:00:53.718 18170 18229 D ProfileInstaller: Installing profile for dev.translationtest.rn
+10-25 17:01:05.881 18170 18170 I nslationtest.rn: AssetManager2(0x7845cea32618) locale list changing from [] to [en-US]
+10-25 17:01:05.959 18170 18170 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Schedule
+10-25 17:01:05.959 18170 18170 W unknown:BridgelessReact: ReactHost{0}.attachSurface(surfaceId = 0)
+10-25 17:01:05.960 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+10-25 17:01:05.960 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Start
+10-25 17:01:05.960 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getJSBundleLoader()
+10-25 17:01:05.960 18170 18262 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning()
+10-25 17:01:05.982 18170 18170 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-25 17:01:05.982 18170 18170 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-25 17:01:05.984 18170 18170 W unknown:BridgelessReact: ReactHost{0}.onHostResume(activity)
+10-25 17:01:06.018 18170 18205 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning(): Async result = true
+10-25 17:01:06.019 18170 18262 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro()
+10-25 17:01:06.285 18170 18170 D VRI[DevLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-25 17:01:06.416 18170 18170 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@d72032e
+10-25 17:01:06.421 18170 18170 D ViewRootImpl: Skipping stats log for color mode
+10-25 17:01:06.523 18170 18170 W unknown:BridgelessReact: ReactHost{0}.raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: Unhandled SoftException
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.kt:906)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException$default(ReactHostImpl.kt:897)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.onWindowFocusChange(ReactHostImpl.kt:679)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.ReactDelegate.onWindowFocusChanged(ReactDelegate.kt:226)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.ReactActivityDelegate.onWindowFocusChanged(ReactActivityDelegate.java:237)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invokeSuspend(ReactActivityDelegateWrapper.kt:322)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:8)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:4)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$launchLifecycleScopeWithLock$1.invokeSuspend(ReactActivityDelegateWrapper.kt:469)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt.launch(Unknown Source:1)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source:1)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock(ReactActivityDelegateWrapper.kt:467)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock$default(ReactActivityDelegateWrapper.kt:463)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.onWindowFocusChanged(ReactActivityDelegateWrapper.kt:320)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.facebook.react.ReactActivity.onWindowFocusChanged(ReactActivity.java:161)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at androidx.appcompat.view.WindowCallbackWrapper.onWindowFocusChanged(WindowCallbackWrapper.java:124)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at expo.modules.devmenu.detectors.InterceptingWindowCallback.onWindowFocusChanged(Unknown Source:2)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.android.internal.policy.DecorView.onWindowFocusChanged(DecorView.java:1818)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.View.dispatchWindowFocusChanged(View.java:16952)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewGroup.dispatchWindowFocusChanged(ViewGroup.java:1530)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewRootImpl.dispatchFocusEvent(ViewRootImpl.java:4873)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewRootImpl.handleWindowFocusChanged(ViewRootImpl.java:4777)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewRootImpl.-$$Nest$mhandleWindowFocusChanged(Unknown Source:0)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessageImpl(ViewRootImpl.java:7017)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:6927)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.os.Looper.loop(Looper.java:338)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at java.lang.reflect.Method.invoke(Native Method)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-25 17:01:06.527 18170 18170 E unknown:ReactHost: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-25 17:01:06.533 18170 18264 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro(): Creating BundleLoader
+10-25 17:01:06.543 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating BridgelessReactContext
+10-25 17:01:06.547 18170 18170 D InsetsController: hide(ime(), fromIme=false)
+10-25 17:01:06.551 18170 18170 I ImeTracker: dev.translationtest.rn:2f6741f8: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-25 17:01:06.553 18170 18170 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@c019d4e
+10-25 17:01:06.563 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+10-25 17:01:07.316 18170 18262 I ExpoModulesCore: ✅ AppContext was initialized
+10-25 17:01:07.426 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+10-25 17:01:07.426 18170 18262 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): DevSupportManager.onNewReactContextCreated()
+10-25 17:01:07.430 18170 18170 W unknown:ReactNative: Packager connection already open, nooping.
+10-25 17:01:07.431 18170 18262 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Execute
+10-25 17:01:07.431 18170 18170 W unknown:BridgelessReact: ReactHost{0}.ReactContext.onHostResume()
+10-25 17:01:07.436 18170 18170 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+10-25 17:01:07.577 18170 18271 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libworklets.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:07.718 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libexpo-modules-jsi.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:07.736 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libexpo-modules-core.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:07.745 18170 18270 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+10-25 17:01:07.763 18170 18270 I ExpoModulesCore: ✅ JSI interop was installed
+10-25 17:01:07.771 18170 18270 I ExpoModulesCore: ✅ Constants were exported
+10-25 17:01:07.938 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+10-25 17:01:07.940 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+10-25 17:01:07.942 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+10-25 17:01:07.944 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.reanimated.view.REASharedTransitionBoundaryManager
+10-25 17:01:07.947 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.host.TabsHostViewManager
+10-25 17:01:07.948 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+10-25 17:01:07.949 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+10-25 17:01:07.951 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.modals.formsheet.FormSheetHostViewManager
+10-25 17:01:07.955 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.scrollviewmarker.ScrollViewMarkerViewManager
+10-25 17:01:07.956 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.modals.formsheet.FormSheetContentWrapperViewManager
+10-25 17:01:07.956 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContentWrapperManager
+10-25 17:01:07.960 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.screen.StackScreenViewManager
+10-25 17:01:07.962 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+10-25 17:01:07.963 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+10-25 17:01:07.964 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+10-25 17:01:07.965 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.header.config.StackHeaderConfigViewManager
+10-25 17:01:07.966 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+10-25 17:01:07.966 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+10-25 17:01:07.967 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.host.StackHostViewManager
+10-25 17:01:07.968 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenFooterManager
+10-25 17:01:07.969 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+10-25 17:01:07.970 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.safearea.SafeAreaViewManager
+10-25 17:01:07.971 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+10-25 17:01:07.971 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.header.subview.StackHeaderSubviewViewManager
+10-25 17:01:07.972 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class org.reactnative.maskedview.RNCMaskedViewManager
+10-25 17:01:07.974 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.screen.TabsScreenViewManager
+10-25 17:01:08.196 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.debuggingoverlay.DebuggingOverlayManager
+10-25 17:01:08.205 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager
+10-25 17:01:08.214 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+10-25 17:01:08.219 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+10-25 17:01:08.223 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerDetectorViewManager
+10-25 17:01:08.226 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+10-25 17:01:08.230 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+10-25 17:01:08.234 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+10-25 17:01:08.238 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+10-25 17:01:08.241 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+10-25 17:01:08.245 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+10-25 17:01:08.254 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+10-25 17:01:08.261 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+10-25 17:01:08.264 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+10-25 17:01:08.267 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+10-25 17:01:08.270 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+10-25 17:01:08.274 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+10-25 17:01:08.278 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.SelectableTextViewManager
+10-25 17:01:08.281 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager
+10-25 17:01:08.283 18170 18270 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.virtual.view.ReactVirtualViewManager
+10-25 17:01:08.340 18170 18271 I nslationtest.rn: AssetManager2(0x7845cea21958) locale list changing from [] to [en-US]
+10-25 17:01:08.340 18170 18271 I WebViewFactory: Loading com.google.android.webview version 155.0.8059.46 (code 805904608)
+10-25 17:01:08.341 18170 18271 W ResourcesManager: Found a null ResourcesImpl, skipped.
+10-25 17:01:08.341 18170 18271 I nslationtest.rn: AssetManager2(0x7845cea20cd8) locale list changing from [] to [en-US]
+10-25 17:01:08.341 18170 18271 I nslationtest.rn: AssetManager2(0x7845cea2e798) locale list changing from [] to [en-US]
+10-25 17:01:08.343 18170 18271 I nslationtest.rn: AssetManager2(0x7845cea367b8) locale list changing from [] to [en-US]
+10-25 17:01:08.343 18170 18271 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=e73a6864 mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk,/system/framework/android.test.base.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={420dpi always-compat} mLoaders=[]}
+10-25 17:01:08.344 18170 18271 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-25 17:01:08.344 18170 18271 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-25 17:01:08.353 18170 18271 D nativeloader: Configuring clns-10 for other apk /data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/lib/x86_64:/data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+10-25 17:01:08.458 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/librnscreens.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes2.dex): ok
+10-25 17:01:08.468 18170 18271 I cr_WVCFactoryProvider: version=155.0.8059.46 (805904608) minSdkVersion=29 multiprocess=true packageId=2 splits=<none>
+10-25 17:01:08.475 18170 18271 D nativeloader: Load /data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk!/lib/x86_64/libwebviewchromium.so using class loader ns clns-10 (caller=/data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk): ok
+10-25 17:01:08.502 18170 18270 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+10-25 17:01:08.504 18170 18271 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-10 (caller=/data/app/~~V1BJWh9ZxC68gOb7ThNBjQ==/com.google.android.webview-hi2eJ-kpHvwUhGkHdw4vvg==/base.apk): ok
+10-25 17:01:08.615 18170 18271 I cr_LibraryLoader: Successfully loaded native library
+10-25 17:01:08.621 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libexpo-modules-worklets.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:08.623 18170 18271 I cr_CachingUmaRecorder: Flushed 37 samples from 19 histograms, 0 samples were dropped.
+10-25 17:01:08.688 18170 18170 I ExpoModulesCore: ✅ JSI interop was installed
+10-25 17:01:08.742 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libgesturehandler.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:08.870 18170 18270 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreanimated.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 17:01:09.120 18170 18270 W ReactNativeJS: `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+10-25 17:01:09.276 18170 18270 W HWUI    : Image decoding logging dropped!
+10-25 17:01:09.277 18170 18270 W HWUI    : Image decoding logging dropped!
+10-25 17:01:09.476 18170 18170 I ReactNative: [GESTURE HANDLER] Initialize gesture handler for root view com.facebook.react.runtime.ReactSurfaceView{a42012a V.E...... .......D 0,0-1080,2400 #1}
+10-25 17:01:09.498 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:09.499 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:09.808 18170 18170 I nslationtest.rn: hiddenapi: Accessing hidden field Landroid/widget/ScrollView;->mScroller:Landroid/widget/OverScroller; (runtime_flags=0, domain=platform, api=unsupported) from Lcom/facebook/react/views/scroll/ReactScrollView; (domain=app) using reflection: allowed
+10-25 17:01:21.599 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:21.599 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:28.861 18170 18270 I ReactNativeJNI: instanceHandle is null, event of type topDetached will be dropped
+10-25 17:01:28.886 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:28.887 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:28.896 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
+10-25 17:01:28.904 18170 18170 D AutofillManager: view not autofillable - not passing ime action check
