@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "package": "RN03",
+  "assignment": "When explicitly launched by the human, resume RN03 revision 2 SOFTWARE VERIFICATION ONLY from the stopped checkpoint. Do not change product code or disturb emulator/Metro. Preserve the native-interaction hold, earlier submissions, and Sol/high review gates. Finish with a new isolated handoff identifying remaining native evidence; no formal review dispatch, no RN04 and no commit/push/publication.",
+  "profile": "translation-migration",
+  "branch": "migration/slice-1",
+  "readFiles": [
+    "migration/instructions/qwen.md",
+    "migration/handoffs/RN03-checkpoint.md",
+    "migration/reviews/RN03-r1.md",
+    "migration/work-packages/RN03.md"
+  ],
+  "allowedPaths": [
+    "migration/handoffs/RN03-supervisor-software-checkpoint.md"
+  ],
+  "phases": [
+    {
+      "id": "verify-software",
+      "maxTurns": 8,
+      "budgetSeconds": 300,
+      "task": "Read only checkpoint sections 0-3, the r1 findings, and the RN03 work package check-command section. Confirm the live starting HEAD is the approved RN02 commit f78a759741b57ed1a19c7b6630af67640571ff61 on migration/slice-1. Existing uncommitted RN03 files are carry-over, not permission to edit. Do not reimplement or repair tests; the reported 31-test discrepancy was resolved by actual 36/36 runs. Do not run checks yourself: after your result, the supervisor executes every declared command serially and records fresh receipts/logs in this phase directory. Write a concise result with status continue, nextPhase summarize-and-hold, evidence [], and summary explicitly stating that machine gates have not run yet. Do not write the migration handoff in this phase. Do not interact with emulator/Metro or dispatch delegation. If current state contradicts the named prerequisite, return blocked instead of changing it.",
+      "checks": [
+        {
+          "id": "pinned-runtime-and-baseline",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process');if(process.version!=='v24.19.0')throw Error('Wrong Node');const head=cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();if(head!=='f78a759741b57ed1a19c7b6630af67640571ff61')throw Error('Baseline changed: '+head);cp.execFileSync('git',['merge-base','--is-ancestor',head,'HEAD']);console.log(process.version+'; HEAD '+head+'; expected ancestor confirmed');"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "core-integration",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "migration/react-native/scripts/verify-core-integration.cjs"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 60
+        },
+        {
+          "id": "typecheck",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process'),path=require('node:path');if(process.version!=='v24.19.0')throw Error('Pinned Node required');const env={...process.env};const key=Object.keys(env).find(k=>k.toLowerCase()==='path')||'Path';env[key]=path.dirname(process.execPath)+path.delimiter+(env[key]||'');console.log('Node '+process.version+'; npm CLI arguments: '+JSON.stringify([\"--prefix\",\"migration/react-native\",\"run\",\"typecheck\"]));const r=cp.spawnSync(process.execPath,[\"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\",...[\"--prefix\",\"migration/react-native\",\"run\",\"typecheck\"]],{stdio:'inherit',env,shell:false});if(r.error)throw r.error;process.exit(r.status??1);"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 180
+        },
+        {
+          "id": "jest-pass-1",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process'),path=require('node:path');if(process.version!=='v24.19.0')throw Error('Pinned Node required');const env={...process.env};const key=Object.keys(env).find(k=>k.toLowerCase()==='path')||'Path';env[key]=path.dirname(process.execPath)+path.delimiter+(env[key]||'');console.log('Node '+process.version+'; npm CLI arguments: '+JSON.stringify([\"--prefix\",\"migration/react-native\",\"test\"]));const r=cp.spawnSync(process.execPath,[\"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\",...[\"--prefix\",\"migration/react-native\",\"test\"]],{stdio:'inherit',env,shell:false});if(r.error)throw r.error;process.exit(r.status??1);"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 180
+        },
+        {
+          "id": "jest-pass-2",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process'),path=require('node:path');if(process.version!=='v24.19.0')throw Error('Pinned Node required');const env={...process.env};const key=Object.keys(env).find(k=>k.toLowerCase()==='path')||'Path';env[key]=path.dirname(process.execPath)+path.delimiter+(env[key]||'');console.log('Node '+process.version+'; npm CLI arguments: '+JSON.stringify([\"--prefix\",\"migration/react-native\",\"test\"]));const r=cp.spawnSync(process.execPath,[\"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\",...[\"--prefix\",\"migration/react-native\",\"test\"]],{stdio:'inherit',env,shell:false});if(r.error)throw r.error;process.exit(r.status??1);"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 180
+        },
+        {
+          "id": "android-export",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process'),path=require('node:path');if(process.version!=='v24.19.0')throw Error('Pinned Node required');const env={...process.env};const key=Object.keys(env).find(k=>k.toLowerCase()==='path')||'Path';env[key]=path.dirname(process.execPath)+path.delimiter+(env[key]||'');console.log('Node '+process.version+'; npm CLI arguments: '+JSON.stringify([\"--prefix\",\"migration/react-native\",\"run\",\"bundle:android\"]));const r=cp.spawnSync(process.execPath,[\"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\",...[\"--prefix\",\"migration/react-native\",\"run\",\"bundle:android\"]],{stdio:'inherit',env,shell:false});if(r.error)throw r.error;process.exit(r.status??1);"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 300
+        },
+        {
+          "id": "export-inventory",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');const root='migration/react-native/dist-android';if(!fs.statSync(root).isDirectory())throw Error('Missing export directory');const files=fs.readdirSync(root,{recursive:true}).map(p=>path.join(root,p)).filter(p=>fs.statSync(p).isFile());if(!files.length)throw Error('Empty Android export');console.log(JSON.stringify(files.map(p=>({path:p.replaceAll('\\\\','/'),bytes:fs.statSync(p).size,sha256:crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')})),null,2));"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 60
+        },
+        {
+          "id": "whitespace",
+          "file": "git",
+          "args": [
+            "diff",
+            "--check"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "protected-baselines",
+          "file": "git",
+          "args": [
+            "diff",
+            "--exit-code",
+            "--",
+            "package.json",
+            "package-lock.json",
+            "src",
+            "public",
+            "android",
+            "ios",
+            "migration/core",
+            "migration/reference",
+            "migration/react-native/package.json",
+            "migration/react-native/package-lock.json",
+            "migration/react-native/tsconfig.json",
+            "migration/react-native/src/data",
+            "migration/react-native/src/screens/shell-screen.tsx",
+            "migration/react-native/__tests__/shell-screen.test.tsx",
+            "migration/react-native/scripts/verify-core-integration.cjs"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "index-clean",
+          "file": "git",
+          "args": [
+            "diff",
+            "--cached",
+            "--exit-code"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        }
+      ]
+    },
+    {
+      "id": "summarize-and-hold",
+      "maxTurns": 10,
+      "budgetSeconds": 480,
+      "task": "Use the previous validated checkpoint receipt summaries. Read only bounded result lines from the adjacent 01-verify-software/*.stdout.log and *.stderr.log under this run directory to obtain actual test counts, export exit/result and dist listing. Do not reconstruct old history. Create ONLY migration/handoffs/RN03-supervisor-software-checkpoint.md, and only if that file is absent; if already present return blocked rather than overwrite it. Record starting/live HEAD, current source preservation, actual machine gates and evidence paths, suite/test counts from logs, completed Android export with output inventory, and unresolved native/pixel/observations/packet steps. Correct invocation uses Node v24.19.0 against npm-cli.js with pinned Node prepended to child PATH; never execute npm.cmd under Node. Do not claim native capture, pixel inspection, manifest freeze or reviewer approval. Existing captures 05/06 remain invalid because of the stylus tutorial; 01/03 had edge-cropping limitations, not established layout defects. Preserve the emulator-interaction HOLD: do not dismiss tutorials, type, tap, capture, restart or stop emulator/Metro. Do not edit RN03-checkpoint.md, observations, tests, source, work-package status, manifests or earlier reviews. Finish result.json with status blocked, nextPhase null, evidence [migration/handoffs/RN03-supervisor-software-checkpoint.md], and unresolved entries explaining that replacement native captures/pixel inspection require an explicit resumed assignment, followed by observations correction and RN03-r2 submission under the existing Sol/high dispatcher. This intentional stop protects the review gate; do not return ready_for_review.",
+      "checks": []
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "package": "RN03",
+  "profile": "translation-migration",
+  "branch": "migration/slice-1",
+  "assignment": "On explicit human launch, recover ONLY RN03-r2 native evidence. Preserve the two existing r2-native-recapture baseline files byte-for-byte; create new evidence only in r2-native-recovery. No app/test/config/device-setting edits, installs, service starts/restarts/kills or commits. Metro readiness is a prerequisite, not permission to start it. Normal Cancel/tap/search/scroll is allowed on the existing RN01_API36 app; if input cannot be verified after one attempt, write blocked result immediately. Stop for actual Sol/high pixel inspection; no RN04 or formal review dispatch.",
+  "readFiles": [
+    "migration/instructions/qwen.md",
+    "migration/work-packages/RN03.md",
+    "migration/handoffs/RN03-supervisor-software-checkpoint.md",
+    "migration/reviews/RN03-r1.md",
+    "migration/evidence/RN03/RN03-pixel-inspection-r2.md",
+    "tools/qwen-supervisor/rn03-native-recovery.md"
+  ],
+  "allowedPaths": [
+    "migration/evidence/RN03/r2-native-recovery/",
+    "migration/handoffs/RN03-native-recovery-checkpoint.md"
+  ],
+  "phases": [
+    {
+      "id": "preflight",
+      "maxTurns": 12,
+      "budgetSeconds": 300,
+      "task": "Read only the recovery diagnosis and software-checkpoint baseline/limits. Do not rerun dumpsys archaeology. Verify migration/evidence/RN03/r2-native-recovery and migration/handoffs/RN03-native-recovery-checkpoint.md are absent; if existing, return blocked rather than overwrite. The supervisor next checks baseline, original PNG/XML hashes, actual focused-window entry, forwarding and live Metro. Return continue/nextPhase verify-input-and-capture-search without claiming those checks already passed. If a prerequisite is known missing, return blocked with the exact issue. No device interaction in this phase. Completion reserve: write the result and return your final response well before the iteration limit. Do not spend all tool/API calls on inspection. Treat earlier missing-Metro notes as historical; the supervisor checks live readiness after you return. Avoid shell heredocs and do not rerun failed broad reads; read bounded excerpts with the installed tools. Do not fabricate success from the existence of result.json.",
+      "checks": [
+        {
+          "id": "pinned-runtime-and-baseline",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process');if(process.version!=='v24.19.0')throw Error('Wrong Node');const head=cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();if(head!=='f78a759741b57ed1a19c7b6630af67640571ff61')throw Error('Baseline changed: '+head);cp.execFileSync('git',['merge-base','--is-ancestor',head,'HEAD']);console.log(process.version+'; HEAD '+head+'; expected ancestor confirmed');"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "preserve-existing-baseline",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');for(const f of [{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png\",\"sha256\":\"adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692\"},{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml\",\"sha256\":\"06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2\"}])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex'),f.sha256,'Original capture changed: '+f.path);console.log('Original PNG/XML pair unchanged');"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "live-device-and-metro",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const cp=require('node:child_process'),http=require('node:http'),assert=require('node:assert/strict');const adb=\"C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe\",shell=args=>cp.execFileSync(adb,args,{encoding:'utf8',timeout:7000,maxBuffer:1048576});assert(shell(['devices']).includes('emulator-5554\\tdevice'),'Selected emulator not ready');const focus=shell(['-s','emulator-5554','shell','dumpsys','input']);const entry=focus.match(/FocusedWindows:\\s*\\n([^\\n]*)/);assert(entry&&entry[1].includes('dev.translationtest.rn'),'App is not the actual focused window; header alone is insufficient');assert(shell(['-s','emulator-5554','reverse','--list']).includes('tcp:8082 tcp:8082'),'Forwarding mismatch; do not change it automatically');console.log('Live focus target: '+entry[1].trim());const req=http.get('http://127.0.0.1:8082/status',res=>{let body='';res.setEncoding('utf8');res.on('data',s=>{body+=s;if(body.length>4096)req.destroy(Error('Unexpected status response'));});res.on('end',()=>{if(res.statusCode!==200||!body.includes('packager-status:running')){console.error('Metro did not report ready');process.exitCode=1;}else console.log('Metro READY at localhost:8082');});});req.setTimeout(3000,()=>req.destroy(Error('Metro timeout')));req.on('error',e=>{console.error('Metro unavailable: '+e.message+'. Start the existing project server manually before recovery; no service changes authorized.');process.exitCode=1;});"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        }
+      ]
+    },
+    {
+      "id": "verify-input-and-capture-search",
+      "maxTurns": 14,
+      "budgetSeconds": 600,
+      "task": "Read only the recovery diagnosis. User authorized normal UI, not settings changes. UI XML omitted a real stylus tutorial previously; absence from XML is NOT proof of absence. Normal Cancel was used by coordinator; the handwriting palette remained and app input was not verified. Do NOT assume that is fixed. On the existing foreground app locate the actual app Search sessions field via bounded XML; attempt query IOnic ONCE and re-dump. Unless the app EditText.text equals IOnic exactly (hint/placeholder and tutorial input do not count), save a small diagnostic PNG/XML and notes under migration/evidence/RN03/r2-native-recovery, write phase result blocked/nextPhase null immediately; no input settings, keyboard/IME reconfiguration, long diagnostics, retries or fabricated focus diagnosis. If successful, capture fresh RN03-01-initial-schedule then RN03-02-search-ionic-top, RN03-03-search-ionic-scrolled and RN03-04-search-ionic-bottom PNG/XML pairs under migration/evidence/RN03/r2-native-recovery; clear/reenter query as needed for baseline capture. Keep query IOnic for frames 02-04, with fully visible claimed text and no assumption all 15 fit in one viewport. Write capture-draft.json with package RN03/revision2/live head/device identity and four captures including name,image,uiXml,query,mode,focusVerified, tutorialStatus absent|dismissed|unknown, tutorialEvidence and tutorialDismissed only if actually true. Unknown is honest and remains pending pixel inspection; visible tutorial means blocked. Record action timestamps and original protected pair provenance in capture-notes.md. Return continue/nextPhase capture-restored-and-empty. Never overwrite the existing original PNG/XML or any old evidence; do not stop/start services.",
+      "checks": [
+        {
+          "id": "preserve-existing-baseline",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');for(const f of [{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png\",\"sha256\":\"adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692\"},{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml\",\"sha256\":\"06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2\"}])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex'),f.sha256,'Original capture changed: '+f.path);console.log('Original PNG/XML pair unchanged');"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        }
+      ]
+    },
+    {
+      "id": "capture-restored-and-empty",
+      "maxTurns": 14,
+      "budgetSeconds": 600,
+      "task": "Read only migration/evidence/RN03/r2-native-recovery/capture-draft.json and bounded action notes. Preserve first four new pairs. Capture remaining RN03-05-ionic-cleared-restored, RN03-06-search-no-match, RN03-07-favorites-empty and RN03-08-all-sessions-restored PNG/XML under migration/evidence/RN03/r2-native-recovery. Clear/re-enter through normal UI only. Query for 06 is exactly zzz-no-such-session and the APP empty message must appear with no live row; 05/07/08 query empty, 07 Favorites mode, others All. If query verification fails, record blocked immediately; no settings changes, repeated guessing or source fixes. Merge all eight records in exact numbered order into capture-index.json with hashes initially empty; preserve source head/device/provenance metadata and truthful tutorialStatus/tutorialEvidence. Update capture-notes.md. Supervisor validates query identity, PNG/XML freshness, tutorial metadata and computes hashes. Return continue/nextPhase request-pixel-inspection.",
+      "checks": [
+        {
+          "id": "preserve-existing-baseline",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "-e",
+            "const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');for(const f of [{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png\",\"sha256\":\"adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692\"},{\"path\":\"migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml\",\"sha256\":\"06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2\"}])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex'),f.sha256,'Original capture changed: '+f.path);console.log('Original PNG/XML pair unchanged');"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 30
+        },
+        {
+          "id": "capture-index-and-source-hashes",
+          "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+          "args": [
+            "tools/qwen-supervisor/capture-validator.mjs",
+            "migration/evidence/RN03/r2-native-recovery",
+            "--write"
+          ],
+          "cwd": ".",
+          "timeoutSeconds": 60
+        }
+      ]
+    },
+    {
+      "id": "request-pixel-inspection",
+      "maxTurns": 12,
+      "budgetSeconds": 480,
+      "task": "Read the just-hashed migration/evidence/RN03/r2-native-recovery/capture-index.json and short action notes. Write migration/evidence/RN03/r2-native-recovery/pixel-inspection-request.md listing the exact eight image paths and hashes, realistic per-frame visible expectations, query/mode/empty/restored assertions, correct source session names/times, and the onboarding/edge-crop pitfalls. Request ACTUAL PIXEL inspection by GPT-6.1 Sol high/openai-codex/no fallback through the existing coordinator/vision-capable dispatcher; XML alone is not inspection. Distinguish capture deficiencies from app defects. Request a verbatim response plus migration/evidence/RN03/r2-native-recovery/pixel-inspection.json using the schema in tools/qwen-supervisor/rn03-r2-native-flow.md, with actual runtime routing evidence; never fabricate or dispatch it yourself. Create migration/handoffs/RN03-native-recovery-checkpoint.md with actual capture steps, checks, hashes and pending coordinator action. Do not update RN03.md/observations/status/manifest yet. Finish result blocked, nextPhase null, evidence request+capture index+this new handoff. Explicitly state that a NEW run of rn03-r2-packet.json follows only after the real pixel report is saved; do not resume this paused hash snapshot after external report files change. No formal package review, RN04 or commit.",
+      "checks": []
+    }
+  ],
+  "preservedCaptures": [
+    {
+      "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml",
+      "sha256": "06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2"
+    }
+  ]
+}

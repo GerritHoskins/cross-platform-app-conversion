@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-10-25T17:49:35.367Z",
+  "cases": 44,
+  "statuses": {
+    "D01": "PASS",
+    "D01.no-description": "PASS",
+    "D02": "PASS",
+    "D02.header-back": "PASS",
+    "D02.system-back": "PASS",
+    "D02.scroll-restoration": "PASS",
+    "D03": "BLOCKED",
+    "D04": "BLOCKED",
+    "D05": "PASS",
+    "D05.detail": "PASS",
+    "D05.root": "PASS",
+    "E01": "PASS",
+    "E02": "PASS",
+    "E03": "PASS",
+    "E04": "PASS",
+    "E05": "PASS",
+    "E06": "PASS",
+    "E06.apply-after-bottom-scroll": "FAIL",
+    "E07": "PASS",
+    "E08": "N/A",
+    "E09": "PASS",
+    "E09.reset": "PASS",
+    "E09.deselect": "PASS",
+    "F01": "PASS",
+    "F01.add": "PASS",
+    "F01.duplicate-cancel": "PASS",
+    "F01.duplicate-remove": "PASS",
+    "F01.remove-cancel": "PASS",
+    "F01.remove-confirm": "PASS",
+    "F02": "FAIL",
+    "F02.vertical": "PASS",
+    "F02.diagonal-right": "PASS",
+    "F02.diagonal-left": "FAIL",
+    "F03": "PASS",
+    "F03.action": "PASS",
+    "F03.closed-row": "PASS",
+    "F04": "PASS",
+    "F04.recycle-observation": "PASS",
+    "F05": "PASS",
+    "F05.add": "PASS",
+    "F05.duplicate-cancel": "PASS",
+    "F05.duplicate-remove": "PASS",
+    "F05.remove-cancel": "PASS",
+    "F05.remove-confirm": "PASS"
+  },
+  "supplementary": {
+    "timestamp": "2026-10-25T17:49:35.367Z",
+    "checks": [
+      {
+        "name": "E03",
+        "headingSequence": [
+          "9:15 am",
+          "10:00 am",
+          "2:00 pm"
+        ],
+        "expected": [
+          "9:15 am",
+          "10:00 am",
+          "2:00 pm"
+        ],
+        "expectedIds": [
+          4,
+          2,
+          5,
+          7,
+          18
+        ],
+        "pass": true
+      },
+      {
+        "name": "E05",
+        "headingSequence": [
+          "8:00 am",
+          "9:15 am",
+          "10:00 am",
+          "11:00 am",
+          "12:00 pm",
+          "1:00 pm",
+          "2:00 pm",
+          "3:00 pm"
+        ],
+        "expected": [
+          "8:00 am",
+          "9:15 am",
+          "10:00 am",
+          "11:00 am",
+          "12:00 pm",
+          "1:00 pm",
+          "2:00 pm",
+          "3:00 pm"
+        ],
+        "expectedIds": [
+          1,
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "pass": true
+      }
+    ],
+    "f05OnlyButtons": true
+  }
+}
