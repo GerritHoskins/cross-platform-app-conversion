@@ -1,3 +1,4 @@
+import '../test-utils/gesture-test-setup';
 import { Alert } from 'react-native';
 import {
   act,

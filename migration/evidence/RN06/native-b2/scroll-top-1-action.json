@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-25T15:15:51.464Z",
+  "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+  "args": [
+    "-s",
+    "emulator-5554",
+    "shell",
+    "input",
+    "swipe",
+    "540",
+    "1067",
+    "540",
+    "1567",
+    "400"
+  ],
+  "boundsConfirmation": {
+    "listBounds": "[42,917][1038,2358]",
+    "keyboardRegionSource": "initial-windows.txt:316",
+    "keyboardTouchableRegion": "SkRegion((21,896,169,1586)(0,2337,1080,2400))",
+    "x": 540,
+    "y1": 1067,
+    "y2": 1567,
+    "note": "Both endpoints inside list, no overlap with reported IME touch region at x540. No keyboard dismissal."
+  },
+  "preXml": "scroll-top-1-before.xml",
+  "postXml": "scroll-top-1-after.xml",
+  "preWaitMs": 1511,
+  "postWaitMs": 4059,
+  "navigationAttempts": 0
+}

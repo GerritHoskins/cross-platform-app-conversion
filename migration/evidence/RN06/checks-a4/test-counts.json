@@ -1,0 +1,79 @@
+{
+  "baselineRN05": {
+    "state": 35,
+    "schedule": 12,
+    "filter": 12,
+    "detail": 15,
+    "shell": 4,
+    "total": 78
+  },
+  "focused": {
+    "existing-worklets": {
+      "suites": 3,
+      "passedSuites": 0,
+      "failedSuites": 3,
+      "tests": 0,
+      "passed": 0,
+      "failed": 0,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "status": "failed",
+          "assertions": 0,
+          "passed": 0,
+          "failed": 0
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "status": "failed",
+          "assertions": 0,
+          "passed": 0,
+          "failed": 0
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "status": "failed",
+          "assertions": 0,
+          "passed": 0,
+          "failed": 0
+        }
+      ]
+    },
+    "existing-both-mocks": {
+      "suites": 3,
+      "passedSuites": 0,
+      "failedSuites": 3,
+      "tests": 27,
+      "passed": 7,
+      "failed": 20,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "status": "failed",
+          "assertions": 15,
+          "passed": 7,
+          "failed": 8
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "status": "failed",
+          "assertions": 12,
+          "passed": 0,
+          "failed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "status": "failed",
+          "assertions": 0,
+          "passed": 0,
+          "failed": 0
+        }
+      ]
+    }
+  },
+  "jest1": null,
+  "jest2": null,
+  "reason": "Stopped at mandatory existing-suite gate after two failed mock fixes; no final full-suite runs."
+}

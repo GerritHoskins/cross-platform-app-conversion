@@ -1,3 +1,4 @@
+import '../test-utils/gesture-test-setup';
 import { router } from 'expo-router';
 import { SectionList } from 'react-native';
 import type { Fiber } from 'test-renderer';

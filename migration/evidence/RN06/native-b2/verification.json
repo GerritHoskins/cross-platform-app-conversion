@@ -1,0 +1,73 @@
+{
+  "auditedAt": "2026-10-25T15:19:06.883Z",
+  "protectedFileCount": 133,
+  "changedProtectedFiles": [],
+  "trackedDiffUnchanged": true,
+  "cachedDiffUnchanged": true,
+  "branch": "migration/slice-1",
+  "head": "7a1fe5a1fb06b271c54a4b2d51edcdff9c860af8",
+  "inputCount": 3,
+  "scrollCount": 1,
+  "actions": [
+    {
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "1067",
+        "540",
+        "1567",
+        "400"
+      ],
+      "preWaitMs": 1511,
+      "postWaitMs": 4059,
+      "preXml": "scroll-top-1-before.xml",
+      "postXml": "scroll-top-1-after.xml"
+    },
+    {
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "swipe",
+        "998",
+        "1199",
+        "638",
+        "1199",
+        "300"
+      ],
+      "preWaitMs": 1506,
+      "postWaitMs": 4092,
+      "preXml": "reveal-university-before.xml",
+      "postXml": "reveal-university-after.xml"
+    },
+    {
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "912",
+        "1199"
+      ],
+      "preWaitMs": 1507,
+      "postWaitMs": 4112,
+      "preXml": "tap-revealed-favorite-before.xml",
+      "postXml": "tap-revealed-favorite-after.xml"
+    }
+  ],
+  "completedCaptures": [
+    "RN06-B2-17-filter-search-applied"
+  ],
+  "textFilesWithCR": [],
+  "pixelsInspected": false,
+  "status": " M migration/react-native/__tests__/filter-screen.test.tsx\n M migration/react-native/__tests__/schedule-screen.test.tsx\n M migration/react-native/__tests__/session-detail-screen.test.tsx\n M migration/react-native/src/app/_layout.tsx\n M migration/react-native/src/screens/schedule-screen.tsx\n?? IDEA.md\n?? migration/evidence/RN06/\n?? migration/handoffs/RN06-checkpoint-a.md\n?? migration/handoffs/RN06-checkpoint-a2.md\n?? migration/handoffs/RN06-checkpoint-a3.md\n?? migration/handoffs/RN06-checkpoint-a4.md\n?? migration/handoffs/RN06-checkpoint-a5.md\n?? migration/handoffs/RN06-checkpoint-b.md\n?? migration/plans/rn07-android-acceptance-checklist.md\n?? migration/react-native/__tests__/schedule-swipe.test.tsx\n?? migration/react-native/test-utils/\n?? migration/work-packages/RN06.md\n?? tools/\n"
+}

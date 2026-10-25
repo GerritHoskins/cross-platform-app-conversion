@@ -1,0 +1,2180 @@
+{
+  "commands": [
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.121Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-branch.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.153Z",
+      "durationMs": 20,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-head.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.252Z",
+      "durationMs": 36,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-index.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "7a1fe5a"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.229Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-rn05-full.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.206Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-rn05.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.345Z",
+      "durationMs": 31,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-status.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "7a1fe5a",
+        "--",
+        "migration/react-native/src/app/_layout.tsx",
+        "migration/react-native/src/screens/schedule-screen.tsx",
+        "migration/react-native/test-utils/gesture-test-setup.ts",
+        "migration/react-native/__tests__/schedule-swipe.test.tsx",
+        "migration/react-native/__tests__/schedule-screen.test.tsx",
+        "migration/react-native/__tests__/filter-screen.test.tsx",
+        "migration/react-native/__tests__/session-detail-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.290Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-targets.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.319Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-tracked.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:56:57.175Z",
+      "durationMs": 30,
+      "receipt": "migration/evidence/RN06/checks-a/baseline-tree.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.855Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-branch.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.888Z",
+      "durationMs": 27,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-head.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.982Z",
+      "durationMs": 35,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-index.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/tools/manifest-hashes.mjs",
+        "migration/submissions/RN05-r1.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.146Z",
+      "durationMs": 147,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-manifest.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.345Z",
+      "durationMs": 18,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-node.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "7a1fe5a"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.961Z",
+      "durationMs": 20,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-rn05-full.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.938Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-rn05.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.093Z",
+      "durationMs": 50,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-status.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "7a1fe5a",
+        "--",
+        "migration/react-native/src/app/_layout.tsx",
+        "migration/react-native/src/screens/schedule-screen.tsx",
+        "migration/react-native/test-utils/gesture-test-setup.ts",
+        "migration/react-native/__tests__/schedule-swipe.test.tsx",
+        "migration/react-native/__tests__/schedule-screen.test.tsx",
+        "migration/react-native/__tests__/filter-screen.test.tsx",
+        "migration/react-native/__tests__/session-detail-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.019Z",
+      "durationMs": 39,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-targets.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.060Z",
+      "durationMs": 33,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-tracked.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:23.916Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a/baseline2-tree.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.754Z",
+      "durationMs": 26,
+      "receipt": "migration/evidence/RN06/checks-a/cached-diff.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:00:46.837Z",
+      "durationMs": 6416,
+      "receipt": "migration/evidence/RN06/checks-a/existing-setup-import.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a/existing-setup-reanimated.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:01:12.412Z",
+      "durationMs": 1568,
+      "receipt": "migration/evidence/RN06/checks-a/existing-setup-reanimated.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:00:07.522Z",
+      "durationMs": 13123,
+      "receipt": "migration/evidence/RN06/checks-a/existing-without-setup.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.845Z",
+      "durationMs": 36,
+      "receipt": "migration/evidence/RN06/checks-a/final-status.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.635Z",
+      "durationMs": 72,
+      "receipt": "migration/evidence/RN06/checks-a/git-diff-check.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:58:32.327Z",
+      "durationMs": 4023,
+      "receipt": "migration/evidence/RN06/checks-a/handler-schedule.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:58:30.098Z",
+      "durationMs": 2169,
+      "receipt": "migration/evidence/RN06/checks-a/handler-typecheck.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement-20261025/checks.mjs",
+        "idea"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.781Z",
+      "durationMs": 61,
+      "receipt": "migration/evidence/RN06/checks-a/idea-hash.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/state",
+        "migration/react-native/src/app/index.tsx",
+        "migration/react-native/src/app/filter.tsx",
+        "migration/react-native/src/app/session",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/src/screens/filter-screen.tsx",
+        "migration/react-native/src/screens/session-detail-screen.tsx",
+        "migration/react-native/__tests__/conference-state.test.ts",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.713Z",
+      "durationMs": 40,
+      "receipt": "migration/evidence/RN06/checks-a/protected-paths.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/shell-screen.test.tsx"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:58:03.847Z",
+      "durationMs": 1794,
+      "receipt": "migration/evidence/RN06/checks-a/root-shell.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:58:01.748Z",
+      "durationMs": 2015,
+      "receipt": "migration/evidence/RN06/checks-a/root-typecheck.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.fallback_providers"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:32.203Z",
+      "durationMs": 2864,
+      "receipt": "migration/evidence/RN06/checks-a/routing-delegation-fallback_providers.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.model"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:27.019Z",
+      "durationMs": 2667,
+      "receipt": "migration/evidence/RN06/checks-a/routing-delegation-model.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.provider"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:24.364Z",
+      "durationMs": 2653,
+      "receipt": "migration/evidence/RN06/checks-a/routing-delegation-provider.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.reasoning_effort"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:29.688Z",
+      "durationMs": 2514,
+      "receipt": "migration/evidence/RN06/checks-a/routing-delegation-reasoning_effort.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "fallback_providers"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T13:57:35.069Z",
+      "durationMs": 2643,
+      "receipt": "migration/evidence/RN06/checks-a/routing-fallback_providers.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement-20261025/checks.mjs",
+        "scope"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:04:28.911Z",
+      "durationMs": 65,
+      "receipt": "migration/evidence/RN06/checks-a/scope-audit.receipt.json"
+    },
+    {
+      "phase": "A",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:00:04.911Z",
+      "durationMs": 2467,
+      "receipt": "migration/evidence/RN06/checks-a/swipe-typecheck.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.223Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-branch.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.246Z",
+      "durationMs": 20,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-head.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.332Z",
+      "durationMs": 36,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-index.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/tools/manifest-hashes.mjs",
+        "migration/submissions/RN05-r1.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:10:14.419Z",
+      "durationMs": 120,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-manifest.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "7a1fe5a"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.311Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-rn05-full.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.290Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-rn05.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.369Z",
+      "durationMs": 50,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-status.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:10:14.267Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a2/baseline-tree.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.587Z",
+      "durationMs": 106,
+      "receipt": "migration/evidence/RN06/checks-a2/cached-diff.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.800Z",
+      "durationMs": 91,
+      "receipt": "migration/evidence/RN06/checks-a2/final-status.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.451Z",
+      "durationMs": 72,
+      "receipt": "migration/evidence/RN06/checks-a2/git-diff-check.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement2-20261025/close.mjs",
+        "idea"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.694Z",
+      "durationMs": 103,
+      "receipt": "migration/evidence/RN06/checks-a2/idea-hash.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement2-20261025/close.mjs",
+        "preserve-compare"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.079Z",
+      "durationMs": 369,
+      "receipt": "migration/evidence/RN06/checks-a2/prior-preservation.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/state",
+        "migration/react-native/src/app/index.tsx",
+        "migration/react-native/src/app/filter.tsx",
+        "migration/react-native/src/app/session",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/src/screens/filter-screen.tsx",
+        "migration/react-native/src/screens/session-detail-screen.tsx",
+        "migration/react-native/__tests__/conference-state.test.ts",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.524Z",
+      "durationMs": 63,
+      "receipt": "migration/evidence/RN06/checks-a2/protected-paths.receipt.json"
+    },
+    {
+      "phase": "A2",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement2-20261025/close.mjs",
+        "scope"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:12:40.891Z",
+      "durationMs": 171,
+      "receipt": "migration/evidence/RN06/checks-a2/scope-audit.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "merge-base",
+        "--is-ancestor",
+        "7a1fe5a",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.342Z",
+      "durationMs": 31,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-ancestor.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.201Z",
+      "durationMs": 31,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-branch.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn06-r1-implement3-20261025\\finish.mjs",
+        "baseline-gate"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:17:55.730Z",
+      "durationMs": 40,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-gate.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.234Z",
+      "durationMs": 29,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-head.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.374Z",
+      "durationMs": 30,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-index.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "show",
+        "HEAD:migration/submissions/RN05-r1.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.489Z",
+      "durationMs": 30,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-manifest-head.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/tools/manifest-hashes.mjs",
+        "migration/submissions/RN05-r1.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:15:41.884Z",
+      "durationMs": 117,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-manifest-working.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.178Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-node.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "7a1fe5a"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.320Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-rn05-full.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "show",
+        "7a1fe5a:migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:42.002Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-rn05-review.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.295Z",
+      "durationMs": 24,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-rn05.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.456Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-status.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "diff",
+        "--name-only",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.405Z",
+      "durationMs": 49,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-tracked.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:15:34.265Z",
+      "durationMs": 29,
+      "receipt": "migration/evidence/RN06/checks-a3/baseline-tree.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:17:55.862Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a3/cached-diff.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:17:55.932Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a3/final-status.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:17:55.803Z",
+      "durationMs": 33,
+      "receipt": "migration/evidence/RN06/checks-a3/git-diff-check.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn06-r1-implement3-20261025\\finish.mjs",
+        "idea"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:17:55.884Z",
+      "durationMs": 47,
+      "receipt": "migration/evidence/RN06/checks-a3/idea-hash.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/state",
+        "migration/react-native/src/app/index.tsx",
+        "migration/react-native/src/app/filter.tsx",
+        "migration/react-native/src/app/session",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/src/screens/filter-screen.tsx",
+        "migration/react-native/src/screens/session-detail-screen.tsx",
+        "migration/react-native/__tests__/conference-state.test.ts",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:17:55.837Z",
+      "durationMs": 24,
+      "receipt": "migration/evidence/RN06/checks-a3/protected-paths.receipt.json"
+    },
+    {
+      "phase": "A3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-rn06-r1-implement3-20261025\\finish.mjs",
+        "scope"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:17:55.965Z",
+      "durationMs": 48,
+      "receipt": "migration/evidence/RN06/checks-a3/scope-audit.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.528Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-branch.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement4-20261025/checks.mjs",
+        "gate"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.737Z",
+      "durationMs": 6945,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-gate.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.556Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-head.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.637Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-index.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.492Z",
+      "durationMs": 34,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-node.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.613Z",
+      "durationMs": 24,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-rn05.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.701Z",
+      "durationMs": 35,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-status.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "diff",
+        "--name-only",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.659Z",
+      "durationMs": 42,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-tracked.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:20:54.581Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a4/baseline-tree.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.652Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a4/cached-diff.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a4/existing-both-mocks.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:21:59.124Z",
+      "durationMs": 20329,
+      "receipt": "migration/evidence/RN06/checks-a4/existing-both-mocks.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a4/existing-worklets.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:21:22.746Z",
+      "durationMs": 16806,
+      "receipt": "migration/evidence/RN06/checks-a4/existing-worklets.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "merge-base",
+        "--is-ancestor",
+        "7a1fe5a",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.563Z",
+      "durationMs": 27,
+      "receipt": "migration/evidence/RN06/checks-a4/final-ancestor.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.491Z",
+      "durationMs": 23,
+      "receipt": "migration/evidence/RN06/checks-a4/final-branch.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.514Z",
+      "durationMs": 27,
+      "receipt": "migration/evidence/RN06/checks-a4/final-head.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.471Z",
+      "durationMs": 19,
+      "receipt": "migration/evidence/RN06/checks-a4/final-node.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.726Z",
+      "durationMs": 45,
+      "receipt": "migration/evidence/RN06/checks-a4/final-status.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.542Z",
+      "durationMs": 21,
+      "receipt": "migration/evidence/RN06/checks-a4/final-tree.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.590Z",
+      "durationMs": 34,
+      "receipt": "migration/evidence/RN06/checks-a4/git-diff-check.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement4-20261025/checks.mjs",
+        "idea"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.673Z",
+      "durationMs": 52,
+      "receipt": "migration/evidence/RN06/checks-a4/idea-hash.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/state",
+        "migration/react-native/src/app/index.tsx",
+        "migration/react-native/src/app/filter.tsx",
+        "migration/react-native/src/app/session",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/src/screens/filter-screen.tsx",
+        "migration/react-native/src/screens/session-detail-screen.tsx",
+        "migration/react-native/__tests__/conference-state.test.ts",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.624Z",
+      "durationMs": 28,
+      "receipt": "migration/evidence/RN06/checks-a4/protected-paths.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement4-20261025/finish.mjs",
+        "reports"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:23:42.830Z",
+      "durationMs": 93,
+      "receipt": "migration/evidence/RN06/checks-a4/report-preparation.receipt.json"
+    },
+    {
+      "phase": "A4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement4-20261025/checks.mjs",
+        "scope"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:25:22.772Z",
+      "durationMs": 86,
+      "receipt": "migration/evidence/RN06/checks-a4/scope-audit.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.620Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-branch.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement5-20261025/checks.mjs",
+        "baseline"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.851Z",
+      "durationMs": 7146,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-gate.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.653Z",
+      "durationMs": 26,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-head.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.738Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-index.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.590Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-node.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "log",
+        "--format=%h",
+        "-1",
+        "--",
+        "migration/reviews/RN05-r1.md"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.706Z",
+      "durationMs": 31,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-rn05.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.804Z",
+      "durationMs": 46,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-status.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "diff",
+        "--name-only",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.771Z",
+      "durationMs": 32,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-tracked.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:41:01.680Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a5/baseline-tree.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "bundle:android"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:47:13.812Z",
+      "durationMs": 27417,
+      "receipt": "migration/evidence/RN06/checks-a5/bundle-android.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.446Z",
+      "durationMs": 26,
+      "receipt": "migration/evidence/RN06/checks-a5/cached-diff.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/existing-double-only-fixed.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:42:37.544Z",
+      "durationMs": 27428,
+      "receipt": "migration/evidence/RN06/checks-a5/existing-double-only-fixed.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/existing-double-only.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:41:48.116Z",
+      "durationMs": 16667,
+      "receipt": "migration/evidence/RN06/checks-a5/existing-double-only.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/existing-restored.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:44:10.728Z",
+      "durationMs": 8046,
+      "receipt": "migration/evidence/RN06/checks-a5/existing-restored.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-screen.test.tsx",
+        "__tests__/filter-screen.test.tsx",
+        "__tests__/session-detail-screen.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/existing-without-imports.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 1,
+      "startedAt": "2026-10-25T14:43:24.145Z",
+      "durationMs": 8147,
+      "receipt": "migration/evidence/RN06/checks-a5/existing-without-imports.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "merge-base",
+        "--is-ancestor",
+        "7a1fe5a",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.254Z",
+      "durationMs": 23,
+      "receipt": "migration/evidence/RN06/checks-a5/final-ancestor.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.180Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a5/final-branch.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.206Z",
+      "durationMs": 22,
+      "receipt": "migration/evidence/RN06/checks-a5/final-head.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.148Z",
+      "durationMs": 25,
+      "receipt": "migration/evidence/RN06/checks-a5/final-node.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.520Z",
+      "durationMs": 44,
+      "receipt": "migration/evidence/RN06/checks-a5/final-status.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.229Z",
+      "durationMs": 24,
+      "receipt": "migration/evidence/RN06/checks-a5/final-tree.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.376Z",
+      "durationMs": 37,
+      "receipt": "migration/evidence/RN06/checks-a5/git-diff-check.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement5-20261025/checks.mjs",
+        "idea"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.472Z",
+      "durationMs": 47,
+      "receipt": "migration/evidence/RN06/checks-a5/idea-hash.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.278Z",
+      "durationMs": 63,
+      "receipt": "migration/evidence/RN06/checks-a5/integration.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:45:45.354Z",
+      "durationMs": 2291,
+      "receipt": "migration/evidence/RN06/checks-a5/interim-typecheck.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/jest1.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:54.379Z",
+      "durationMs": 9879,
+      "receipt": "migration/evidence/RN06/checks-a5/jest1.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/jest2.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:47:04.259Z",
+      "durationMs": 9552,
+      "receipt": "migration/evidence/RN06/checks-a5/jest2.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement5-20261025/report.mjs",
+        "readback"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:27.118Z",
+      "durationMs": 584,
+      "receipt": "migration/evidence/RN06/checks-a5/preservation-readback.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data",
+        "migration/react-native/src/state",
+        "migration/react-native/src/app/index.tsx",
+        "migration/react-native/src/app/filter.tsx",
+        "migration/react-native/src/app/session",
+        "migration/react-native/src/screens/shell-screen.tsx",
+        "migration/react-native/src/screens/filter-screen.tsx",
+        "migration/react-native/src/screens/session-detail-screen.tsx",
+        "migration/react-native/__tests__/conference-state.test.ts",
+        "migration/react-native/__tests__/shell-screen.test.tsx",
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.416Z",
+      "durationMs": 29,
+      "receipt": "migration/evidence/RN06/checks-a5/protected-paths.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement5-20261025/report.mjs",
+        "report"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:49:38.296Z",
+      "durationMs": 180,
+      "receipt": "migration/evidence/RN06/checks-a5/report-preparation.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.fallback_providers"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:32.458Z",
+      "durationMs": 2547,
+      "receipt": "migration/evidence/RN06/checks-a5/routing-delegation-fallback_providers.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.model"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:27.241Z",
+      "durationMs": 2631,
+      "receipt": "migration/evidence/RN06/checks-a5/routing-delegation-model.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.provider"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:24.443Z",
+      "durationMs": 2794,
+      "receipt": "migration/evidence/RN06/checks-a5/routing-delegation-provider.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "delegation.reasoning_effort"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:29.873Z",
+      "durationMs": 2583,
+      "receipt": "migration/evidence/RN06/checks-a5/routing-delegation-reasoning_effort.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe",
+      "args": [
+        "-p",
+        "translation-migration",
+        "config",
+        "get",
+        "fallback_providers"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:35.006Z",
+      "durationMs": 2743,
+      "receipt": "migration/evidence/RN06/checks-a5/routing-fallback_providers.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-rn06-r1-implement5-20261025/checks.mjs",
+        "scope"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:51:14.566Z",
+      "durationMs": 99,
+      "receipt": "migration/evidence/RN06/checks-a5/scope-audit.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--runTestsByPath",
+        "__tests__/schedule-swipe.test.tsx",
+        "--json",
+        "--outputFile",
+        "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/RN06/checks-a5/swipe-focused.json"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:45:40.189Z",
+      "durationMs": 4282,
+      "receipt": "migration/evidence/RN06/checks-a5/swipe-focused.receipt.json"
+    },
+    {
+      "phase": "A5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T14:46:52.342Z",
+      "durationMs": 2035,
+      "receipt": "migration/evidence/RN06/checks-a5/typecheck.receipt.json"
+    }
+  ],
+  "counts": [
+    {
+      "source": "migration/evidence/RN06/checks-a5/jest1.json",
+      "suites": 6,
+      "passed": 95,
+      "failed": 0,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "tests": 15,
+          "passed": 15
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-swipe.test.tsx",
+          "tests": 17,
+          "passed": 17
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "tests": 12,
+          "passed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "tests": 12,
+          "passed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+          "tests": 4,
+          "passed": 4
+        },
+        {
+          "path": "migration/react-native/__tests__/conference-state.test.ts",
+          "tests": 35,
+          "passed": 35
+        }
+      ]
+    },
+    {
+      "source": "migration/evidence/RN06/checks-a5/jest2.json",
+      "suites": 6,
+      "passed": 95,
+      "failed": 0,
+      "pending": 0,
+      "perSuite": [
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "tests": 15,
+          "passed": 15
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "tests": 12,
+          "passed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-swipe.test.tsx",
+          "tests": 17,
+          "passed": 17
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "tests": 12,
+          "passed": 12
+        },
+        {
+          "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+          "tests": 4,
+          "passed": 4
+        },
+        {
+          "path": "migration/react-native/__tests__/conference-state.test.ts",
+          "tests": 35,
+          "passed": 35
+        }
+      ]
+    }
+  ],
+  "disposition": "Historical commands retained, not rerun; phase A real-Worklets failure, A2/A3 coordinator gates, A4 insufficient A1 mocks, A5 completed under A2 double"
+}

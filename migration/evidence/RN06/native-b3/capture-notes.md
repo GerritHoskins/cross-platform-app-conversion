@@ -1,0 +1,26 @@
+RN06 revision 1 phase B3 - CHECKPOINTED
+Recorded 2026-10-25T15:25:35.128Z; Hermes GPT-6.1 Sol high; Claude Code coordinator.
+Branch migration/slice-1; HEAD 7a1fe5a1fb06b271c54a4b2d51edcdff9c860af8.
+
+2026-10-25T15:22:08.639Z Initial read-only verification matched the authorized continuation: emulator-5554, dev.translationtest.rn/.MainActivity resumed; schedule Search sessions=Ionic, All sessions selected, positive-area session IDs exactly [4,2,5]. University of Ionic row4 bounds [42,1024][786,1375] and revealed Favorite panel [786,1024][1038,1375]. dumpsys input_method mInputShown=false. Ionic-only checkbox state was independently confirmed later in frame19, without changing any track.
+
+2026-10-25T15:22:45.781Z Single revealed Favorite tap at (912,1199), confirmed from fresh XML panel bounds. Post-action XML showed Favorite Added, not a session-detail route. No retry.
+2026-10-25T15:22:52.076Z RN06-B3-18a-favorite-added-alert PNG/XML captured. Alert title Favorite Added; OK bounds [810,1294][978,1436]. The alert window XML contains no session rows, so visibleSessionIds=[] is intentional.
+2026-10-25T15:22:59.516Z Pressed OK once at (894,1365), from fresh XML bounds. Row4 returned to [42,1024][1038,1375], with its link restored to [76,1058][1004,1221]. Search Ionic; All sessions selected; rows exactly [4,2,5].
+A helper-only assertion incorrectly expected an Unfavorite University of Ionic accessibility label after OK. It stopped before frame18 capture or opening Filter. Read-only source inspection at schedule-screen.tsx:184 established the All-mode label remains Favorite regardless of membership. Only the helper assertion was corrected; a fresh XML check passed before continuing. No repeated Favorite or OK tap. Original diagnostic blocked.json is retained, explicitly resolved by helper-assertion-resolution.json. Actual favorite membership was verified subsequently by selecting Favorite sessions.
+2026-10-25T15:23:51.194Z RN06-B3-18-filter-search-retained PNG/XML captured. University of Ionic (4), Getting Started with Ionic (2), Migrating to Ionic (5); search Ionic; All sessions selected; row4 closed by geometry. Offscreen/under-row action nodes can remain in XML even when closed, so closure is based on restored row/link bounds, not disappearance of action nodes.
+2026-10-25T15:23:54.736Z Filter sessions tapped at (540,797), bounds [76,743][1004,852].
+2026-10-25T15:24:31.324Z RN06-B3-19-filter-still-ionic PNG/XML captured. All ten track checkboxes present: only Ionic checked; Communication, Design, Documentation, Food, Navigation, Services, Tooling, Vue, Workshop unchecked. No checkbox changes.
+2026-10-25T15:24:34.879Z Closed filter only through header Navigate up, bounds [0,128][147,275], tap (73,201). Returned to retained schedule.
+2026-10-25T15:24:42.638Z Selected Favorite sessions, bounds [550,605][1003,717], tap (776,661). Post-action XML shows selected favorites mode and exactly session4, University of Ionic, with Remove University of Ionic button; Ionic search retained. No screenshot requested or taken for this check.
+2026-10-25T15:24:50.228Z Selected All sessions again, bounds [76,605][530,717], tap (303,661). Final fresh XML confirms selected All sessions, Ionic search, rows [4,2,5]; final read-only input-method dump mInputShown=false. Device input is complete and stopped.
+
+Every input had a fresh XML dump and bounds confirmation, at least 1500ms pre-input wait, then 2000ms post-input wait before the next XML dump. Six taps total; receipts preserve bounds, coordinates, timestamps and measured waits. No keyevent, text entry, relaunch, scrolling, settings changes, or session-link navigation. capture-index navigationAttempts=0 means session-detail/link navigation attempts; the authorized filter opening and header return are recorded separately in verification.json.
+
+Capture method: adb -s emulator-5554 exec-out screencap -p, binary output saved directly; UI XML via exec-out uiautomator dump /dev/tty. All PNGs 1080x2400; signature, chunk boundaries and IDAT decompression checked. Pixels are not yet inspected. No visual PASS or review dispatched.
+commands.jsonl records helper subprocesses with spawnSync argument arrays and shell:false. Preliminary read-only terminal discovery (git status/branch/HEAD, root instruction-file git lookup, adb devices -l) preceded helper logging; the git instruction-file lookup found no tracked root instruction files. No raw logcat collected.
+
+2026-10-25T15:25:35.128Z Preservation verification: 186 protected previous phase-B/B2 evidence/run/checkpoint/work-package files byte-identical; no added protected files; tracked and staged diff hashes unchanged; branch and HEAD unchanged. New text files use LF. No app/test/config, previous evidence/checkpoint, RN06.md, or submission edits; no delegation/review/staging/commit/push. No build or app tests needed for capture-only scope.
+Coordinator attribution of the B2 lost tap to keyboardShouldPersistTaps remains an RN07 observation, not a claimed RN06 swipe defect. No keyboard or application fix was made here.
+
+Unverified: screenshot pixels require coordinator inspection. No unresolved RN06 capture blocker. STOP at CHECKPOINTED; no further device input authorized by this run.
