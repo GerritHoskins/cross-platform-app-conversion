@@ -1,0 +1,618 @@
+FAIL __tests__/filter-screen.test.tsx
+  ● Console
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+  ● filter modal with real Expo routes and shared root provider › toggle Ionic changes only the local draft; closing leaves full schedule intact
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at expectSchedule (__tests__/filter-screen.test.tsx:100:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › Deselect All changes only the local draft; closing leaves full schedule intact
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at expectSchedule (__tests__/filter-screen.test.tsx:100:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › Select All changes only the local draft; closing leaves full schedule intact
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at expectSchedule (__tests__/filter-screen.test.tsx:100:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › Reset changes only the local draft; closing leaves full schedule intact
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at expectSchedule (__tests__/filter-screen.test.tsx:100:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › Done applies only Ionic, matching every frozen single-track group and row
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at Object.expectSchedule (__tests__/filter-screen.test.tsx:128:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › Ionic and Design intersect with search, which survives another apply
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at Object.expectSchedule (__tests__/filter-screen.test.tsx:145:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › zero tracks applies the general empty state; reopening then Select All restores default-all
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at Object.expectSchedule (__tests__/filter-screen.test.tsx:168:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › closing a changed draft dispatches nothing; reopening mirrors the applied Ionic selection
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at Object.expectSchedule (__tests__/filter-screen.test.tsx:183:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter modal with real Expo routes and shared root provider › favorites 12 and 3 plus Food match favorites-some, preserving mode, search and favorites without reloading
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      45 |     return;
+      46 |   }
+    > 47 |   expect(lists).toHaveLength(1);
+         |                 ^
+      48 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      49 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      50 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:47:17)
+      at Object.expectSchedule (__tests__/filter-screen.test.tsx:206:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       9 failed, 15 passed, 24 total
+Snapshots:   0 total
+Time:        6.181 s
+Ran all test suites within paths "__tests__/filter-screen.test.tsx", "__tests__/schedule-screen.test.tsx".

@@ -203,6 +203,19 @@ export default function ScheduleScreen() {
             onPress={handleMode}
           />
         </View>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Filter sessions"
+          accessibilityState={{ disabled: !ready }}
+          disabled={!ready}
+          onPress={() => router.push('/filter')}
+          style={({ pressed }) => [
+            styles.retryButton,
+            { borderColor: palette.accent, backgroundColor: palette.surface, opacity: !ready ? 0.5 : pressed ? 0.85 : 1 },
+          ]}
+        >
+          <Text style={{ color: palette.accent, fontWeight: '600' }}>Filter</Text>
+        </Pressable>
       </View>
 
       {state.status === 'idle' || state.status === 'loading' ? (

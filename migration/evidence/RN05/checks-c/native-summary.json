@@ -1,0 +1,173 @@
+{
+  "source": "migration/evidence/RN05/native/capture-index.json",
+  "phase": "B, read-only summary in C",
+  "device": {
+    "appId": "dev.translationtest.rn",
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "foreground": "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "metroStatus": "packager-status:running"
+  },
+  "freshLoad": {
+    "performed": false,
+    "reason": "Initial schedule XML contains Filter sessions; no fresh load required.",
+    "actions": []
+  },
+  "captures": [
+    {
+      "name": "RN05-01-filter-opened",
+      "image": "RN05-01-filter-opened.png",
+      "uiXml": "RN05-01-filter-opened.xml",
+      "checkedTracks": [
+        "Communication",
+        "Design",
+        "Documentation",
+        "Food",
+        "Ionic",
+        "Navigation",
+        "Services",
+        "Tooling",
+        "Vue",
+        "Workshop"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:57:18.268Z"
+    },
+    {
+      "name": "RN05-02-draft-deselected",
+      "image": "RN05-02-draft-deselected.png",
+      "uiXml": "RN05-02-draft-deselected.xml",
+      "checkedTracks": [],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:13.969Z"
+    },
+    {
+      "name": "RN05-03-draft-ionic",
+      "image": "RN05-03-draft-ionic.png",
+      "uiXml": "RN05-03-draft-ionic.xml",
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:24.133Z"
+    },
+    {
+      "name": "RN05-04-ionic-applied",
+      "image": "RN05-04-ionic-applied.png",
+      "uiXml": "RN05-04-ionic-applied.xml",
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:34.390Z"
+    },
+    {
+      "name": "RN05-05-reopened-mirrors",
+      "image": "RN05-05-reopened-mirrors.png",
+      "uiXml": "RN05-05-reopened-mirrors.xml",
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:49.950Z"
+    },
+    {
+      "name": "RN05-06-draft-design",
+      "image": "RN05-06-draft-design.png",
+      "uiXml": "RN05-06-draft-design.xml",
+      "checkedTracks": [
+        "Design",
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:00.130Z"
+    },
+    {
+      "name": "RN05-07-closed-unchanged",
+      "image": "RN05-07-closed-unchanged.png",
+      "uiXml": "RN05-07-closed-unchanged.xml",
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:10.239Z"
+    },
+    {
+      "name": "RN05-08-reopened-after-close",
+      "image": "RN05-08-reopened-after-close.png",
+      "uiXml": "RN05-08-reopened-after-close.xml",
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:20.477Z"
+    },
+    {
+      "name": "RN05-09-reset-draft",
+      "image": "RN05-09-reset-draft.png",
+      "uiXml": "RN05-09-reset-draft.xml",
+      "checkedTracks": [],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:30.675Z"
+    },
+    {
+      "name": "RN05-10-closed-after-reset",
+      "image": "RN05-10-closed-after-reset.png",
+      "uiXml": "RN05-10-closed-after-reset.xml",
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:40.981Z"
+    },
+    {
+      "name": "RN05-11-none-applied",
+      "image": "RN05-11-none-applied.png",
+      "uiXml": "RN05-11-none-applied.xml",
+      "checkedTracks": null,
+      "visibleSessionIds": [],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:01:12.966Z"
+    },
+    {
+      "name": "RN05-12-all-applied",
+      "image": "RN05-12-all-applied.png",
+      "uiXml": "RN05-12-all-applied.xml",
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:01:39.036Z"
+    }
+  ],
+  "sameStateIdentities": [
+    "02=09",
+    "03=05=08",
+    "04=07=10"
+  ],
+  "orderSource": "Timestamped capture notes, command log and XML; not pixels",
+  "pixelReport": "migration/evidence/RN05/pixel-inspection-coordinator.md",
+  "pixelInspector": "Claude Code (claude-opus-5-5), not Hermes/openai-codex",
+  "pixelDisposition": "PASS supporting only; not approval; historical pending labels remain unchanged"
+}

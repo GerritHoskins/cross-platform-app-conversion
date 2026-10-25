@@ -1,0 +1,3209 @@
+{
+  "package": "RN05",
+  "revision": 1,
+  "head": "3970e40a9debb3897e1bcd84cff431ac96e95cfc",
+  "device": {
+    "appId": "dev.translationtest.rn",
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "foreground": "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "metroStatus": "packager-status:running"
+  },
+  "freshLoad": {
+    "performed": false,
+    "reason": "Initial schedule XML contains Filter sessions; no fresh load required.",
+    "actions": []
+  },
+  "captures": [
+    {
+      "name": "RN05-01-filter-opened",
+      "image": "RN05-01-filter-opened.png",
+      "uiXml": "RN05-01-filter-opened.xml",
+      "step": 1,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:07.880Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame01-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:07.906Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame01-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:10.036Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:10.073Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:11.625Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "timestamp": "2026-10-25T11:57:11.655Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:13.720Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame01-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:13.761Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame01-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:15.800Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:15.834Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:15.875Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-01-filter-opened.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:15.902Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-01-filter-opened.xml"
+          ],
+          "timestamp": "2026-10-25T11:57:17.913Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:57:17.940Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:57:17.973Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks",
+        "Communication",
+        "Design",
+        "Documentation",
+        "Food",
+        "Ionic",
+        "Navigation",
+        "Services",
+        "Tooling",
+        "Vue",
+        "Workshop"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "XML contains Communication",
+        "XML contains Design",
+        "XML contains Documentation",
+        "XML contains Food",
+        "XML contains Ionic",
+        "XML contains Navigation",
+        "XML contains Services",
+        "XML contains Tooling",
+        "XML contains Vue",
+        "XML contains Workshop",
+        "Ten checkbox rows in required sorted order; checked=[\"Communication\",\"Design\",\"Documentation\",\"Food\",\"Ionic\",\"Navigation\",\"Services\",\"Tooling\",\"Vue\",\"Workshop\"]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [
+        "Communication",
+        "Design",
+        "Documentation",
+        "Food",
+        "Ionic",
+        "Navigation",
+        "Services",
+        "Tooling",
+        "Vue",
+        "Workshop"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:57:18.268Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-02-draft-deselected",
+      "image": "RN05-02-draft-deselected.png",
+      "uiXml": "RN05-02-draft-deselected.xml",
+      "step": 2,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:03.706Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame02-deselect-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:03.746Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame02-deselect-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:05.811Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:05.841Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:07.388Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "391",
+            "497"
+          ],
+          "timestamp": "2026-10-25T11:59:07.414Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:09.458Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame02-deselect-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:09.494Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame02-deselect-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:11.571Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:11.602Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:11.633Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-02-draft-deselected.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:11.666Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-02-draft-deselected.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:13.676Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:13.715Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:59:13.748Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:13.969Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-03-draft-ionic",
+      "image": "RN05-03-draft-ionic.png",
+      "uiXml": "RN05-03-draft-ionic.xml",
+      "step": 3,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:13.971Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame03-ionic-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:14.007Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame03-ionic-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:16.082Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:16.111Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:17.659Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "1373"
+          ],
+          "timestamp": "2026-10-25T11:59:17.689Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:19.724Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame03-ionic-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:19.757Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame03-ionic-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:21.791Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:21.818Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:21.847Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-03-draft-ionic.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:21.872Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-03-draft-ionic.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:23.870Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:23.906Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:59:23.936Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[\"Ionic\"]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:24.133Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-04-ionic-applied",
+      "image": "RN05-04-ionic-applied.png",
+      "uiXml": "RN05-04-ionic-applied.xml",
+      "step": 4,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:24.138Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame04-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:24.176Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame04-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:26.230Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:26.265Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:27.813Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "910",
+            "497"
+          ],
+          "timestamp": "2026-10-25T11:59:27.844Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:29.892Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame04-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:29.928Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame04-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:31.941Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:31.978Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:32.013Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-04-ionic-applied.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:32.047Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-04-ionic-applied.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:34.083Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:34.126Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:59:34.157Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic"
+      ],
+      "xmlConfirmed": [
+        "XML contains University of Ionic",
+        "XML contains Getting Started with Ionic",
+        "XML contains Migrating to Ionic",
+        "All sessions selected; search empty",
+        "Visible session IDs=[4,2,5]",
+        "Ionic Tooling (session 3) absent; exactly session rows 4, 2, 5 in XML order."
+      ],
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:34.390Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-05-reopened-mirrors",
+      "image": "RN05-05-reopened-mirrors.png",
+      "uiXml": "RN05-05-reopened-mirrors.xml",
+      "step": 5,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:39.756Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame05-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:39.794Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame05-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:41.860Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:41.891Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:43.432Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "timestamp": "2026-10-25T11:59:43.472Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:45.519Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame05-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:45.564Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame05-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:47.570Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:47.601Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:47.633Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-05-reopened-mirrors.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:47.658Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-05-reopened-mirrors.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:49.676Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:49.707Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:59:49.741Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[\"Ionic\"]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T11:59:49.950Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-06-draft-design",
+      "image": "RN05-06-draft-design.png",
+      "uiXml": "RN05-06-draft-design.xml",
+      "step": 6,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:49.954Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame06-design-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:49.986Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame06-design-before.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:52.042Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:52.074Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:53.614Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "845"
+          ],
+          "timestamp": "2026-10-25T11:59:53.651Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:55.690Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame06-design-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:55.722Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame06-design-after.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:57.744Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:57.772Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:57.801Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-06-draft-design.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:57.833Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-06-draft-design.xml"
+          ],
+          "timestamp": "2026-10-25T11:59:59.868Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T11:59:59.900Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T11:59:59.926Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[\"Design\",\"Ionic\"]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [
+        "Design",
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:00.130Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-07-closed-unchanged",
+      "image": "RN05-07-closed-unchanged.png",
+      "uiXml": "RN05-07-closed-unchanged.xml",
+      "step": 7,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:00.143Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame07-header-close-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:00.177Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame07-header-close-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:02.168Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:02.197Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:03.740Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "73",
+            "201"
+          ],
+          "timestamp": "2026-10-25T12:00:03.774Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:05.816Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame07-header-close-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:05.848Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame07-header-close-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:07.886Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:07.923Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:07.958Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-07-closed-unchanged.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:07.987Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-07-closed-unchanged.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:09.966Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:09.997Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:00:10.031Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic"
+      ],
+      "xmlConfirmed": [
+        "XML contains University of Ionic",
+        "XML contains Getting Started with Ionic",
+        "XML contains Migrating to Ionic",
+        "All sessions selected; search empty",
+        "Visible session IDs=[4,2,5]",
+        "Ionic Tooling (session 3) absent; exactly session rows 4, 2, 5 in XML order."
+      ],
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:10.239Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-08-reopened-after-close",
+      "image": "RN05-08-reopened-after-close.png",
+      "uiXml": "RN05-08-reopened-after-close.xml",
+      "step": 8,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:10.245Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame08-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:10.274Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame08-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:12.321Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:12.348Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:13.893Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "timestamp": "2026-10-25T12:00:13.924Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:15.970Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame08-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:16.010Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame08-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:18.009Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:18.042Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:18.079Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-08-reopened-after-close.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:18.110Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-08-reopened-after-close.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:20.138Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:20.172Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:00:20.212Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[\"Ionic\"]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [
+        "Ionic"
+      ],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:20.477Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-09-reset-draft",
+      "image": "RN05-09-reset-draft.png",
+      "uiXml": "RN05-09-reset-draft.xml",
+      "step": 9,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:20.485Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame09-reset-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:20.520Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame09-reset-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:22.591Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:22.629Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:24.184Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "134",
+            "497"
+          ],
+          "timestamp": "2026-10-25T12:00:24.217Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:26.263Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame09-reset-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:26.310Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame09-reset-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:28.351Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:28.377Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:28.402Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-09-reset-draft.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:28.430Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-09-reset-draft.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:30.446Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:30.473Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:00:30.499Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Tracks"
+      ],
+      "xmlConfirmed": [
+        "XML contains Tracks",
+        "Ten checkbox rows in required sorted order; checked=[]",
+        "All ten row bounds within device viewport; no modal scrolling needed."
+      ],
+      "checkedTracks": [],
+      "visibleSessionIds": null,
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:30.675Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-10-closed-after-reset",
+      "image": "RN05-10-closed-after-reset.png",
+      "uiXml": "RN05-10-closed-after-reset.xml",
+      "step": 10,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:30.691Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame10-header-close-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:30.720Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame10-header-close-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:32.815Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:32.846Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:34.392Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "73",
+            "201"
+          ],
+          "timestamp": "2026-10-25T12:00:34.427Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:36.466Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame10-header-close-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:36.508Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame10-header-close-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:38.494Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:38.524Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:38.568Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-10-closed-after-reset.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:38.599Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-10-closed-after-reset.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:40.651Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:40.683Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:00:40.715Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic"
+      ],
+      "xmlConfirmed": [
+        "XML contains University of Ionic",
+        "XML contains Getting Started with Ionic",
+        "XML contains Migrating to Ionic",
+        "All sessions selected; search empty",
+        "Visible session IDs=[4,2,5]",
+        "Ionic Tooling (session 3) absent; exactly session rows 4, 2, 5 in XML order."
+      ],
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:00:40.981Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-11-none-applied",
+      "image": "RN05-11-none-applied.png",
+      "uiXml": "RN05-11-none-applied.xml",
+      "step": 11,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:47.264Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:47.297Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:49.266Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:49.293Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:50.846Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "timestamp": "2026-10-25T12:00:50.883Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:52.937Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:52.986Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:55.025Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:55.059Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:55.105Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-deselect-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:55.135Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-deselect-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:00:57.136Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:57.166Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:00:58.709Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "391",
+            "497"
+          ],
+          "timestamp": "2026-10-25T12:00:58.737Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:00.774Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-deselect-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:00.808Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-deselect-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:02.847Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:02.879Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:02.906Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:02.933Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:04.945Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:04.979Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:06.532Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "910",
+            "497"
+          ],
+          "timestamp": "2026-10-25T12:01:06.567Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:08.621Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame11-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:08.650Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame11-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:10.617Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:10.650Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:10.686Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-11-none-applied.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:10.717Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-11-none-applied.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:12.700Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:12.731Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:01:12.759Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "No sessions match your search or filters."
+      ],
+      "xmlConfirmed": [
+        "XML contains No sessions match your search or filters.",
+        "All sessions selected; search empty",
+        "Visible session IDs=[]"
+      ],
+      "checkedTracks": null,
+      "visibleSessionIds": [],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:01:12.966Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    },
+    {
+      "name": "RN05-12-all-applied",
+      "image": "RN05-12-all-applied.png",
+      "uiXml": "RN05-12-all-applied.xml",
+      "step": 12,
+      "actions": [
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:12.980Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:13.013Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-open-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:15.077Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:15.108Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:16.648Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "540",
+            "797"
+          ],
+          "timestamp": "2026-10-25T12:01:16.676Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:18.725Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:18.762Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-open-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:20.784Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:20.813Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:20.846Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-select-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:20.876Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-select-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:22.881Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:22.913Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:24.469Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "679",
+            "497"
+          ],
+          "timestamp": "2026-10-25T12:01:24.508Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:26.546Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-select-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:26.580Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-select-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:28.624Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:28.656Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:28.698Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:28.729Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-done-before.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:30.748Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:30.779Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:32.332Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "910",
+            "497"
+          ],
+          "timestamp": "2026-10-25T12:01:32.368Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:34.406Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-frame12-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:34.458Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-frame12-done-after.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:36.589Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:36.634Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:36.670Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "uiautomator",
+            "dump",
+            "/sdcard/sol-rn05-r1-RN05-12-all-applied.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:36.704Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "cat",
+            "/sdcard/sol-rn05-r1-RN05-12-all-applied.xml"
+          ],
+          "timestamp": "2026-10-25T12:01:38.758Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "dumpsys",
+            "activity",
+            "activities"
+          ],
+          "timestamp": "2026-10-25T12:01:38.784Z",
+          "exitCode": 0
+        },
+        {
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "exec-out",
+            "screencap",
+            "-p"
+          ],
+          "timestamp": "2026-10-25T12:01:38.812Z",
+          "exitCode": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "8:00 am",
+        "Breakfast"
+      ],
+      "xmlConfirmed": [
+        "XML contains 8:00 am",
+        "XML contains Breakfast",
+        "All sessions selected; search empty",
+        "Visible session IDs=[1,4,2,3]",
+        "Select All post-tap XML frame12-select-after.xml confirms all ten checked before Done. First visible group 8:00 am contains Breakfast. Off-viewport restored rows not claimed as visible."
+      ],
+      "checkedTracks": null,
+      "visibleSessionIds": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "navigationAttempts": 1,
+      "capturedAt": "2026-10-25T12:01:39.036Z",
+      "pngDimensions": {
+        "width": 1080,
+        "height": 2400
+      }
+    }
+  ],
+  "finalEnvironment": {
+    "foreground": "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082"
+  },
+  "pixelInspection": "Not yet inspected; coordinator inspection pending."
+}

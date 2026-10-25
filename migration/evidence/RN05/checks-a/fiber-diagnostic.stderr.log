@@ -1,0 +1,27 @@
+FAIL __tests__/filter-screen.test.tsx
+  ● filter modal with real Expo routes and shared root provider › toggle Ionic changes only the local draft; closing leaves full schedule intact
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      52 |     return;
+      53 |   }
+    > 54 |   expect(lists).toHaveLength(1);
+         |                 ^
+      55 |   const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
+      56 |     title: string; key: string; data: ReadonlyArray<{ id: number }>;
+      57 |   }>;
+
+      at toHaveLength (__tests__/filter-screen.test.tsx:54:17)
+      at expectSchedule (__tests__/filter-screen.test.tsx:107:5)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 11 skipped, 12 total
+Snapshots:   0 total
+Time:        4.135 s, estimated 5 s
+Ran all test suites within paths "__tests__/filter-screen.test.tsx".
