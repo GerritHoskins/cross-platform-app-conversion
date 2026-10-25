@@ -1,0 +1,174 @@
+{
+  "package": "C03",
+  "revision": 1,
+  "repositoryRoot": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "branch": "migration/slice-1",
+  "head": "7b4078063a035d4b4da73e06f6255dfee1705024",
+  "headSource": "output of `git rev-parse HEAD` (revision 1 session, 2026-10-19) — never typed from memory. Matches the expected start head from the assignment. `git log --oneline -5` shows 7b40780 (\"migration(C02): core types, time parsing and normalization\") on top, directly above planner commit f5db61e (\"docs(migration): script-generated manifest hashes; fixed review goal\").",
+  "revisionReason": "Revision 1 — first C03 dispatch. Prerequisite satisfied: migration/reviews/C02-r3.md (\"Verdict: APPROVE\", \"Next instruction: CONTINUE C03\"); C02 work is committed as 7b40780, the expected branch HEAD. No prior C03 revision exists; no review history for this package.",
+  "prerequisite": {
+    "package": "C02",
+    "review": "migration/reviews/C02-r3.md",
+    "verdict": "APPROVE",
+    "nextInstruction": "CONTINUE C03",
+    "note": "C02 handoff: migration/handoffs/C02.md (Revision 3 section). The C01/C02 core deliverables remain byte-identical to their records — see unchangedC01C02Files and the --compare evidence pasted verbatim in the handoff (the only DIFFERS are migration/core/src/index.ts and migration/core/src/types.ts, both modified by C03 as expected)."
+  },
+  "reviewerModelPreCheck": {
+    "command": "C:/Users/Gerrit/AppData/Local/hermes/bin/hermes.exe -p translation-migration config get delegation.model",
+    "value": "gpt-6.1-sol",
+    "recordedAt": "revision 1 dispatch (executed immediately before dispatch, 2026-10-19; also executed once earlier in the session — both times exit 0, output gpt-6.1-sol)"
+  },
+  "environment": {
+    "node": "v26.3.0",
+    "npm": "11.1.0",
+    "os": "Windows (git-bash terminal)"
+  },
+  "hashGate": "migration/instructions/qwen.md: HEAD taken from `git rev-parse HEAD` output, never typed from memory; every sha256 field in this manifest written as \"\" first; then `node migration/tools/manifest-hashes.mjs migration/submissions/C03-r1.json --write`; the check-only run must end with 0 problem(s); `--compare migration/submissions/C02-r3.json` must show all unchanged C01/C02 files, IDEA.md and public/data/data.json as SAME, with only migration/core/src/index.ts and migration/core/src/types.ts DIFFERS (expected — modified by C03). The required outputs are pasted verbatim in migration/handoffs/C03.md (Revision 1 section), including the final `--write` + check-only run that re-verified the handoff at its final bytes (see the self-reference note there).",
+  "files": [
+    {
+      "path": "migration/core/src/selection.ts",
+      "sha256": "9bdc15a3f88647442dfd238a9f7aa3cd648be93ccf9762f9d24d95c73929760a",
+      "note": "new in revision 1: selectSessions + initialSelectedTracks (input order preserved, C03.md line 68); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/src/grouping.ts",
+      "sha256": "df9b563448dbece50437678a7e9ccefcfb98ee14cdb25409ce85fb9f4992f3b3",
+      "note": "new in revision 1: groupSessions (display order: startMinutes ascending, then groupTime first-occurrence order; C03.md lines 71-73); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/src/favorites.ts",
+      "sha256": "b7bdee58947de72c680cb9178caf2505bc2deaeb895b94a384e84367ec970cc6",
+      "note": "new in revision 1: addFavorite/removeFavorite (returns new arrays, never mutates its argument, C03.md line 75); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/src/index.ts",
+      "sha256": "de094976cdd807afa6ef3409c6bb7236c494e36f7740633320306615577c9377",
+      "note": "modified in revision 1: C03 fixed exports added (value re-exports plus `export type`; C03.md fixed-exports section) alongside the unchanged C02 exports; DIFFERS against the C02-r3 record as expected; sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/src/types.ts",
+      "sha256": "08be30012c09c880534984873609e5065eb9656bc79764f38a2cd9b41b40ed08",
+      "note": "modified in revision 1: ScheduleMode/Selection/SessionGroup added (C03.md lines 61-63) after the C02 type definitions, which are unchanged; DIFFERS against the C02-r3 record as expected; sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/test/expected-cases.test.ts",
+      "sha256": "2191298e6505b5894ccd024b3ca0064633c084aea2d8185d649586a7df177e42",
+      "note": "new in revision 1: fixture-driven tests — loads the frozen migration/reference/expected-cases.json (hash asserted at suite start), applies the case actions, asserts expected results (selection as set + input order; groups as expected.groups; favorites as expected.favoriteIds, including add-duplicate/remove-absent semantics); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/core/test/algorithms.test.ts",
+      "sha256": "5d93cfe891590fb9049e4672213b3923a0569f700d5b2431df70fc991505cbf5",
+      "note": "new in revision 1: synthetic behavior tests per C03.md behavior rules 4-9 (case-insensitive name search, all-tracks-else-empty, favorites mode, grouping order, no mutation); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/work-packages/C03.md",
+      "sha256": "91e70fe5f2760b444e67f253d699338e2cc6cef127dd0f34346232d374d46516",
+      "note": "work-package document; line 3 now 'Status: revision 1 submitted for review (migration/submissions/C03-r1.json).' (was 'ready for human review. Not started.'); sha256 script-generated in the revision 1 session"
+    },
+    {
+      "path": "migration/handoffs/C03.md",
+      "sha256": "e217813dcb6ad0e6532df5da3379b7e8c32d55c72fd5a1e6f54aee4c2e76bb41",
+      "note": "handoff: baseline/status, environment, typecheck/test/pack runs, recorded session failures, fixture cross-check, handoff self-reference note, and the hash-run outputs pasted verbatim; sha256 script-generated in the revision 1 session (final entry set by the final --write after the paste)"
+    }
+  ],
+  "unchangedC01C02Files": {
+    "migration/core/package.json": {
+      "sha256": "1ec048dc37dbf8a50e4d45b328214467515d7ffa550684382e7247a361bf807a",
+      "note": "C01 deliverable, not modified in C03; cross-checked via --compare against the C02-r3 record in the revision 1 session"
+    },
+    "migration/core/package-lock.json": {
+      "sha256": "05fa0a14619ad5abd7349805a48e4157d1b20b1b691f3c93cfbe8e87da50bf6a",
+      "note": "C01 deliverable, not modified in C03; git diff --exit-code vs HEAD → 0; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/.gitignore": {
+      "sha256": "48ba754e605bda557b663d961731f7c80911a52c44e5cd639f565a384ecbfc78",
+      "note": "C01 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/tsconfig.json": {
+      "sha256": "67e10cfd19702ac2c839be9041bd4d8a73d48d4005a7a16d8a859c7609ecd78a",
+      "note": "C01 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/tsconfig.test.json": {
+      "sha256": "1c2b9d7b92a298a7e2f67b0609dbb1dfb5277cf5af0f493e6711e3a6dfb603bd",
+      "note": "C01 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/test/smoke.test.ts": {
+      "sha256": "7818ba913cb79fb29033ec644a8e3e29a83b7b72d2d21c93acc0bc5d98924e12",
+      "note": "C01 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/src/time.ts": {
+      "sha256": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "note": "C02 deliverable, not modified in C03; git status shows it unchanged; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/src/normalize.ts": {
+      "sha256": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+      "note": "C02 deliverable, not modified in C03 (its ConferenceDataError is re-exported from index.ts, unchanged); cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/test/time.test.ts": {
+      "sha256": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+      "note": "C02 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    },
+    "migration/core/test/normalize.test.ts": {
+      "sha256": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+      "note": "C02 deliverable, not modified in C03; cross-checked SAME against the C02-r3 record"
+    }
+  },
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "note": "untracked human note predating P01/C01; not read, not modified; matches the P01/C01 and C02 records; cross-checked SAME against the C02-r3 record via --compare in the revision 1 session"
+    }
+  ],
+  "fixture": {
+    "path": "migration/reference/expected-cases.json",
+    "sha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+    "note": "frozen case fixture (assignment Step 5: never regenerate or edit it) — git status clean in the revision 1 session; its sha256 (ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1) is recorded in migration/core/test/expected-cases.test.ts and asserted at suite start"
+  },
+  "referenceData": {
+    "path": "public/data/data.json",
+    "sha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+    "note": "frozen reference input data; `sha256sum public/data/data.json` (revision 1 session) → da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75, equal to the fixture's sourceDataSha256 (read via node -e); never read into context"
+  },
+  "verification": [
+    "R1: git branch --show-current → migration/slice-1; git rev-parse HEAD → 7b4078063a035d4b4da73e06f6255dfee1705024 (output only, never typed); git log --oneline -5 → 7b40780 (C02 commit) on top; git status --porcelain -uall → exactly the allowed C03 paths + pre-existing IDEA.md (verbatim in handoff, Revision 1 section)",
+    "R1: node --version → v26.3.0; npm --version → 11.1.0",
+    "R1: npm --prefix migration/core run typecheck — exit 0 (vite build + tsc -p tsconfig.test.json --noEmit)",
+    "R1: npm --prefix migration/core test — run 1 exit 0 (tests 51 / pass 51 / fail 0 / cancelled 0 / skipped 0 / todo 0 / duration_ms 118.0131); run 2 exit 0 (tests 51 / pass 51 / fail 0 / duration_ms 91.941); counts identical across the two runs (C03.md step 6)",
+    "R1: npm pack --dry-run (cwd = migration/core) — total files: 15, package.json + dist/* only (verbatim in handoff); the documented --prefix form from the repository root packed the root package under npm 11.1.0 (recorded as a session failure, re-executed from the package directory)",
+    "R1: sha256sum migration/reference/expected-cases.json → ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1 (frozen fixture, unmodified); sha256sum public/data/data.json → da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75 == fixture sourceDataSha256 (node -e)",
+    "R1: git diff --exit-code -- migration/core/package.json migration/core/package-lock.json migration/reference/ → exit 0 (byte-identical to HEAD)",
+    "R1: node migration/tools/manifest-hashes.mjs migration/submissions/C03-r1.json --write — first hash generation (handoff frozen with paste placeholders at this point; verbatim output in handoff)",
+    "R1: node migration/tools/manifest-hashes.mjs migration/submissions/C03-r1.json — first check-only run (verbatim output in handoff)",
+    "R1: node migration/tools/manifest-hashes.mjs migration/submissions/C03-r1.json --compare migration/submissions/C02-r3.json — unchanged C01/C02 files + IDEA.md + data.json SAME; index.ts and types.ts DIFFERS (expected, modified by C03; verbatim output in handoff)",
+    "R1: FINAL node migration/tools/manifest-hashes.mjs migration/submissions/C03-r1.json --write (after the verbatim paste refreshed the handoff's recorded bytes) + final check-only run — ends with 0 problem(s) (both verbatim outputs in handoff); every sha256 in this manifest was written as \"\" and generated by the script, never typed",
+    "R1: reviewer-model pre-check (command in this manifest) → gpt-6.1-sol, executed immediately before dispatch"
+  ],
+  "failures": [
+    "Session working failures (revised before the final green runs; recorded verbatim in the handoff): (a) first C03 test run — 4 of 51 fixture cases failed: expectations were asserted against selectSessions (input order) but the fixture sessionIds are display order; fixed by restructuring expected-cases.test.ts (selectSessions asserted as set + input order; groupSessions asserted against expected.groups); (b) two type/runtime issues in the new test files (types left in value import lists — Node type stripping keeps them in the runtime import list; 'favorites' literal widened to string) — fixed with import type; (c) npm 11.1.0 --prefix quirk packed the root package from the repository root — re-executed with cwd = migration/core. All subsequent runs: typecheck exit 0, two identical 51/51 test runs, 15-file pack.",
+    "No reviewer-flagged failures for C03: this is the first revision of the package.",
+    "No unexplained failures in the final recorded state (see verification above)."
+  ],
+  "commitState": {
+    "branch": "migration/slice-1",
+    "state": "no C03 commits — all C03 work is uncommitted (awaiting this review); no commit, no push in this session. C01 remains committed at b857af2 (\"migration(C01): core package shell\") and C02 committed at 7b40780 (\"migration(C02): core types, time parsing and normalization\"), the expected start HEAD. No C02/C01 product changes in this package.",
+    "uncommitted": [
+      "M migration/work-packages/C03.md",
+      "M migration/core/src/index.ts",
+      "M migration/core/src/types.ts",
+      "?? IDEA.md (pre-existing)",
+      "?? migration/core/src/favorites.ts",
+      "?? migration/core/src/grouping.ts",
+      "?? migration/core/src/selection.ts",
+      "?? migration/core/test/algorithms.test.ts",
+      "?? migration/core/test/expected-cases.test.ts",
+      "?? migration/handoffs/C03.md",
+      "?? migration/submissions/C03-r1.json (this file)"
+    ],
+    "note": "git status --porcelain -uall captured verbatim in the handoff (Revision 1 section, before handoff/manifest were written); the final status above adds only migration/handoffs/C03.md and this file."
+  },
+  "unverified": [
+    "Integration of the C03 functions into the Vue app — out of C03 scope (that is RN01's work). This repository has no e2e/UI test suite; verified via the core package typecheck, the node:test runs (51/51, twice, identical counts) and the frozen fixture."
+  ],
+  "nextEligiblePackage": "RN01 — only after a formal reviewer (gpt-6.1-sol) verdict of APPROVE with an explicit 'Next instruction: RN01' for this package"
+}

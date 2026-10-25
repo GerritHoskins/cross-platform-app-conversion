@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-24T07:18:46.099Z",
+  "captureCount": 4,
+  "allRecordedHashesMatch": true,
+  "assertions": [
+    {
+      "name": "RN03-01-initial-schedule",
+      "query": "",
+      "mode": "All",
+      "candidateLabels": [
+        {
+          "text": "Breakfast",
+          "bounds": "[76,858][1004,919]"
+        },
+        {
+          "text": "8:00 am–9:00 am · Dining Hall",
+          "bounds": "[76,929][1004,980]"
+        },
+        {
+          "text": "University of Ionic",
+          "bounds": "[76,1258][1004,1319]"
+        },
+        {
+          "text": "9:15 am–9:30 am · Hall 3",
+          "bounds": "[76,1329][1004,1380]"
+        }
+      ],
+      "scope": "XML exact-label and viewport-bounds check only; NOT pixel visibility or overlay verification"
+    },
+    {
+      "name": "RN03-02-search-ionic-top",
+      "query": "IOnic",
+      "mode": "All",
+      "candidateLabels": [
+        {
+          "text": "University of Ionic",
+          "bounds": "[76,858][1004,919]"
+        },
+        {
+          "text": "9:15 am–9:30 am · Hall 3",
+          "bounds": "[76,929][1004,980]"
+        },
+        {
+          "text": "Ionic Tooling",
+          "bounds": "[76,1404][1004,1465]"
+        },
+        {
+          "text": "9:45 am–10:00 am · Executive Ballroom",
+          "bounds": "[76,1475][1004,1526]"
+        }
+      ],
+      "scope": "XML exact-label and viewport-bounds check only; NOT pixel visibility or overlay verification"
+    },
+    {
+      "name": "RN03-03-search-ionic-scrolled",
+      "query": "IOnic",
+      "mode": "All",
+      "candidateLabels": [
+        {
+          "text": "Ionic Pro",
+          "bounds": "[76,955][1004,1016]"
+        },
+        {
+          "text": "10:45 am–11:00 am · Grand Ballroom A",
+          "bounds": "[76,1026][1004,1077]"
+        },
+        {
+          "text": "Ionic Workshop",
+          "bounds": "[76,1356][1004,1417]"
+        },
+        {
+          "text": "11:00 am–11:45 am · Hall 1",
+          "bounds": "[76,1427][1004,1478]"
+        },
+        {
+          "text": "Navigation in Ionic",
+          "bounds": "[76,1629][1004,1690]"
+        },
+        {
+          "text": "11:30 am–12:00 pm · Grand Ballroom A",
+          "bounds": "[76,1700][1004,1751]"
+        }
+      ],
+      "scope": "XML exact-label and viewport-bounds check only; NOT pixel visibility or overlay verification"
+    },
+    {
+      "name": "RN03-04-search-ionic-bottom",
+      "query": "IOnic",
+      "mode": "All",
+      "candidateLabels": [
+        {
+          "text": "The Ionic Package",
+          "bounds": "[76,771][1004,832]"
+        },
+        {
+          "text": "1:30 pm–2:00 pm · Grand Ballroom B",
+          "bounds": "[76,842][1004,893]"
+        },
+        {
+          "text": "Push Notifications in Ionic",
+          "bounds": "[76,1172][1004,1233]"
+        },
+        {
+          "text": "2:00 pm–2:30 pm · Hall 2",
+          "bounds": "[76,1243][1004,1294]"
+        },
+        {
+          "text": "Ionic Documentation",
+          "bounds": "[76,1445][1004,1506]"
+        },
+        {
+          "text": "2:30 pm–2:45 pm · Grand Ballroom B",
+          "bounds": "[76,1516][1004,1567]"
+        },
+        {
+          "text": "UX in Ionic",
+          "bounds": "[76,1719][1004,1780]"
+        },
+        {
+          "text": "2:45 pm–3:00 pm · Hall 3",
+          "bounds": "[76,1790][1004,1841]"
+        },
+        {
+          "text": "Building with Ionic and Vue",
+          "bounds": "[76,2119][1004,2180]"
+        },
+        {
+          "text": "3:00 pm–3:30 pm · Hall 1",
+          "bounds": "[76,2190][1004,2241]"
+        }
+      ],
+      "scope": "XML exact-label and viewport-bounds check only; NOT pixel visibility or overlay verification"
+    }
+  ],
+  "sameInitialAsPriorGood05": true,
+  "comparisonFile": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png",
+  "screencapCount": 5,
+  "screencapScope": "One runtime probe plus four fresh evidence captures; no PNG copies",
+  "allLoggedCommandsExitZero": true,
+  "visualInspection": "Not performed: this invocation exposes terminal/file tools only. Coordinator independent pixel inspection remains pending."
+}

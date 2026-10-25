@@ -1,0 +1,85 @@
+{
+  "package": "P01",
+  "revision": 3,
+  "date": "2026-10-19",
+  "supersedes": ["P01-r1", "P01-r2"],
+  "branch": "migration/slice-1",
+  "startingHead": "0b1f4690baacfe06b5c7c8584fbebce2e810ae13",
+  "currentHead": "0b1f4690baacfe06b5c7c8584fbebce2e810ae13",
+  "commitsMade": [],
+  "prerequisite": {
+    "package": "R00",
+    "reviewFile": "migration/reviews/R00-r2.md",
+    "decision": "APPROVE",
+    "routing": "CONTINUE P01"
+  },
+  "reviewsBeingAddressed": [
+    "migration/reviews/P01-r1.md (revision 1 — CHANGES_REQUIRED, 5 findings)",
+    "migration/reviews/P01-r2.md (revision 2 — CHANGES_REQUIRED, 2 items: contract revision/hash metadata + IDEA.md scope)"
+  ],
+  "findingsAddressed": [
+    {
+      "id": "P01-r1 #1 (flat vs grouped order)",
+      "status": "RESOLVED (re-verified in revision 3)",
+      "resolution": "derive-expected.mjs:183-197,292-305 derives flat IDs from groups (groups.flatMap(g => g.sessionIds)) with an invariant assertion loop that re-derives each case's flat list from its own groups and throws on mismatch. default-all, single-track, search-case-insensitive, search-plus-track now agree. Re-run exits 0; byte-identical (ab44df1e...).",
+      "evidence": ["derive-expected.mjs:183-197,292-305", "expected-cases.json (default-all, single-track, search-case-insensitive, search-plus-track)"]
+    },
+    {
+      "id": "P01-r1 #2 (stale fixture facts) + P01-r2 (contract revision/hash metadata)",
+      "status": "RESOLVED",
+      "resolution": "contract.md states 8 groups (8:00 am-3:00 pm), 13 speakers, 20 single-track sessions; single-track (Ionic) IDs 2,4,5 displayed [4,2,5]; session 3 ('Ionic Tooling', track Tooling) excluded on TRACK not name; node_modules present (npm ci). The contract header is now internally consistent: contract.md:3 = 'revision 3. Date: 2026-10-19' and contract.md:6 records the regenerated fixture SHA-256 ab44df1e... (previously 'revision 1 / 2026-10-18' and the stale a1a4... hash).",
+      "evidence": ["contract.md:3,6,14,109", "expected-cases.json:127-159"]
+    },
+    {
+      "id": "P01-r1 #3 (every-track inclusion / search x track unverified)",
+      "status": "RESOLVED (re-verified in revision 3)",
+      "resolution": "derive-expected.mjs:307-348 runs a supplemental self-check over BOTH allFiltered and favoritesFiltered on synthetic dual-track sessions (IDs 100,200; tracks AlphaTrack, BetaTrack), asserting the every-track rule; excluded when only one track is selected, kept when all are. Prints 'supplemental self-check PASSED (synthetic dual-track; not fixture): all + favorites - [AlphaTrack] -> excluded; [AlphaTrack, BetaTrack] -> [100,200] included'. Kept OUT of expected-cases.json (still 11 cases) and labeled supplemental (not fixture).",
+      "evidence": ["derive-expected.mjs:307-348", "expected-cases.json:4-6,466-518"]
+    },
+    {
+      "id": "P01-r1 #4 (SessionList.vue:405-410 competing-watchers defect)",
+      "status": "RESOLVED (re-verified in revision 3)",
+      "resolution": "contract.md:41,95 records the open defect: the allFiltered watcher unconditionally assigns selectedSessions = filtered (SessionList.vue:405-410) even in favorites mode, so the order can be overwritten on watch firing; favorites-mode expected order is the getter-level favoritesFiltered order, framed as contract INTENT, not observed behavior. Tagged [static]; not fixed (reference is static/derived only).",
+      "evidence": ["SessionList.vue:405-410", "contract.md:41,95"]
+    },
+    {
+      "id": "P01-r1 #5 (wrong citations + missing per-case fixture line refs)",
+      "status": "RESOLVED (re-verified in revision 3)",
+      "resolution": "sessions.ts:42 for isFirstLoad default; SessionListFilter.vue:114-125 for the track icon map; per-case fixture start lines attached (contract.md:107-117): default-all:6, no-tracks:113, single-track:127, search-case-insensitive:161, search-no-match:248, search-plus-track:273, favorites-empty:317, favorites-some:342, favorites-order:370, add-duplicate:414, remove-absent:466.",
+      "evidence": ["contract.md:107-117", "sessions.ts:42", "SessionListFilter.vue:114-125"]
+    },
+    {
+      "id": "P01-r2 (IDEA.md untracked, out-of-scope scope flag)",
+      "status": "RESOLVED (provenance established and recorded)",
+      "resolution": "IDEA.md at the repo root is NOT a P01 deliverable. It is a pre-existing, human-authored project note: 1 line / 89 bytes, content 'proof of concept: translating a vue/ionic/capacitor app to react native and nativeScript', never committed (git log --all -- IDEA.md is empty), mtime 2026-10-19 08:34 (before this P01 work session), and not created by this package. It is retained as-is (not deleted) and recorded under outOfScopePreExisting so its provenance is on the record.",
+      "evidence": ["IDEA.md (89 bytes)", "git log --all -- IDEA.md (empty)"]
+    }
+  ],
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "note": "Pre-existing, human-authored project note (1 line, 89 bytes: 'proof of concept: translating a vue/ionic/capacitor app to react native and nativeScript'). Never committed (git log --all -- IDEA.md empty), mtime 2026-10-19 08:34 (before this P01 session), not created by this package, outside the P01 allowed list. Retained as-is, not a migration deliverable.",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d"
+    }
+  ],
+  "files": [
+    { "path": "migration/reference/contract.md", "sha256": "161651ccc1a54860cafd0bad82cafa7fae92e63163cac39ffbaadbd6a5707ed2", "role": "contract" },
+    { "path": "migration/reference/derive-expected.mjs", "sha256": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954", "role": "derivation script (dependency-free ESM; derives flat from grouped)" },
+    { "path": "migration/reference/expected-cases.json", "sha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1", "role": "fixture (11 cases; byte-identical across runs)" },
+    { "path": "migration/handoffs/P01.md", "sha256": "526997e6f497957254cd52790c1c7cd181061dfb3258c42ecfa7ff0df72d0fdb", "role": "handoff (revision 3)" },
+    { "path": "migration/reviews/P01-r1.md", "sha256": "f40a45568bb253a1a83bf70ef3b88ab1277b06bce0da5ba31ec4dbce5b9322ef", "role": "prior review r1 (unchanged, for provenance)" },
+    { "path": "migration/submissions/P01-r1.json", "sha256": "41734df1e1a55c34bc8d0bc9496b51e50ee71e40d8a5ac012fe39ea282cc641f", "role": "prior manifest r1 (unchanged, for provenance)" },
+    { "path": "migration/reviews/P01-r2.md", "sha256": "5d11317005685e31f7a1645edf83da2e2731790d6135dfd38ec4cd914b2e1ba7", "role": "prior review r2 (CHANGES_REQUIRED — 2 items; unchanged)" },
+    { "path": "migration/submissions/P01-r2.json", "sha256": "83dd08ec681ef7733b28622693effe983d4414e324f7c58f1dd2949b85ce642f", "role": "prior manifest r2 (superseded)" },
+    { "path": "IDEA.md", "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d", "role": "out-of-scope pre-existing human note (documented, not delivered)" }
+  ],
+  "integrityCheck": {
+    "command": "node migration/reference/derive-expected.mjs (x2) + sha256sum expected-cases.json (x2) + git status --short",
+    "result": "PASS — revision 3: both script runs exit 0 and are byte-identical (ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1); supplemental self-check PASSED (both filters); git status shows only allowed P01 paths plus the documented pre-existing IDEA.md; no src/, public/, root-manifest, or native edits."
+  },
+  "unverified": [
+    "no running-app observation (node_modules present via npm ci; Ionic app intentionally not run)",
+    "every-track rule for multi-track sessions asserted only by the supplemental synthetic self-check (both filters)",
+    "SessionList.vue:405-410 competing-watchers defect identified by static reading, not by driving the app"
+  ]
+}

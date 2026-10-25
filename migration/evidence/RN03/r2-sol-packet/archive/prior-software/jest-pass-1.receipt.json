@@ -1,0 +1,13 @@
+{
+  "id": "jest-pass-1",
+  "file": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+  "args": [
+    "-e",
+    "const cp=require('node:child_process'),path=require('node:path');if(process.version!=='v24.19.0')throw Error('Pinned Node required');const env={...process.env};const key=Object.keys(env).find(k=>k.toLowerCase()==='path')||'Path';env[key]=path.dirname(process.execPath)+path.delimiter+(env[key]||'');console.log('Node '+process.version+'; npm CLI arguments: '+JSON.stringify([\"--prefix\",\"migration/react-native\",\"test\"]));const r=cp.spawnSync(process.execPath,[\"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\",...[\"--prefix\",\"migration/react-native\",\"test\"]],{stdio:'inherit',env,shell:false});if(r.error)throw r.error;process.exit(r.status??1);"
+  ],
+  "cwd": ".",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "interrupted": false
+}

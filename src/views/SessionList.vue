@@ -199,6 +199,7 @@ import { useStore } from "vuex";
 import SessionListFilter from "./SessionListFilter.vue";
 import { getMode } from '@ionic/core/components';
 import { Session } from '@/store/modules/sessions';
+import { compareTimes } from '@/utils/time';
 
 import {
   IonPage,
@@ -267,11 +268,7 @@ const presentingElement = ref<HTMLElement | null>(null);
 
 const groupedByStartTime = (sessions: Session[]): GroupedSession[] => {
   const sortedSessions = [...sessions].sort(
-    (a, b) => {
-      const timeA = new Date(`1970-01-01 ${a.timeStart}`).getTime();
-      const timeB = new Date(`1970-01-01 ${b.timeStart}`).getTime();
-      return timeA - timeB;
-    }
+    (a, b) => compareTimes(a.timeStart, b.timeStart)
   );
 
   const groups: { [key: string]: Session[] } = {};

@@ -1,0 +1,66 @@
+RN01 re-verification notes — fresh profile session 20261020_210755_f95112 (translation-migration), 2026-10-20
+Supersedes nothing: all previously saved evidence files (typecheck-target.log, typecheck-pristine-canonical.log,
+jest-pass-1.log, jest-pass-2.log, tree-vs-canonical-template.txt, npm-ls-depth0.txt,
+expo-router-tabtrigger-slotprops-versions.txt) are preserved verbatim as historical and are cited, not rewritten.
+
+Interpreter
+- Node invoked explicitly as C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe,
+  process-local PATH prepended with its bin directory; `node --version` in the same environment prints v24.19.0.
+  Interpreter verified, not inherited from the bash login shell.
+- System npm CLI (had to be used) C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js; no npm ci / npm install was run.
+- Historical caveat (kept as fact, not fixed up): prior same-day runs recorded under this evidence set were executed under
+  the login-shell Node (v26.x per npm-ls-depth0.txt). The new runs below pin v24.19.0 explicitly.
+
+Typecheck (fresh, this session)
+- Command (from migration/react-native, Node 24.19.0): <node24> node_modules/typescript/bin/tsc --noEmit -p tsconfig.json
+- Exit code: 2 (RED). Expected result per work-package spec; NOT fixed, NOT treated as an approved exception.
+- Single error: src/components/app-tabs.web.tsx(38,6): error TS2322 (react/react-native-web ref typing on TabTrigger
+  children; diagnostic cascade mentions Ref<ReactNativeElement>).
+- Log: migration/evidence/RN01/typecheck-target-node24-20261020.log (1,688 bytes, captured verbatim).
+- Historical log typecheck-target.log (prior session, Node 26.x): same single error, same location
+  (app-tabs.web.tsx(38,6) TS2322); larger diagnostic verbosity (7,041 bytes). Kept as historical.
+
+Jest (fresh, this session)
+- Command: CI=true <node24> node_modules/jest/bin/jest.js --rootDir=. --coverage=false --runInBand
+- Exit code: 0. Test Suites: 1 passed, 1 total; Tests: 1 passed, 1 total; 7.279 s.
+- Log: migration/evidence/RN01/jest-pass-node24-20261020.log (captured verbatim).
+
+Pinned-template comparison (read-only; no scaffold, no install)
+- Source: exact expo-template-default@58.0.25 tarball from the local npm _cacache (index key matched; integrity
+  sha512-CbRmpgQXMEGe6PdPI5PNuYW8F1Y4HOcrrjHIe6ZlezAnRw+A685LkNYujzpJlTYPcjL95XZZRs4uV4MIIBiB5A==; 1,407,795 bytes;
+  51 tar entries). Extracted to session scratch only.
+- Full classification: migration/evidence/RN01/template-compare-node24-20261020.txt (byte-wise SHA-256, generated, not typed).
+  Template files: 51. Byte-identical to target: 42 (including assets/expo.icon/Assets/expo-symbol 2.svg).
+  Content diffs (same name): 5 = app.json, package.json, src/app/_layout.tsx, src/app/index.tsx, tsconfig.json.
+  tsconfig.json diff is exactly one added line: "types": ["jest"] (spec allows Jest types, template options preserved).
+  .gitignore = tarball "gitignore" renamed by create-expo plus 4 appended lines (blank, "# RN01 generated outputs",
+  dist-android/, coverage/).
+  Deleted vs template: 1 = src/app/explore.tsx. Added in target (not in template): 3 = __tests__/shell-screen.test.tsx,
+  src/screens/shell-screen.tsx, package-lock.json.
+- .vscode pair: tarball ships _vscode/extensions.json + _vscode/settings.json; on disk present at .vscode/ and
+  byte-identical (cmp verified) but GIT-IGNORED by the target's own .gitignore (template line 16 ".vscode"), hence
+  absent from the untracked set. Not counted as deleted.
+
+File-count discrepancy — explanation (answers the checkpoint's known counts):
+- git status --porcelain (normal mode) collapses the untracked tree to one line; the repo-level view shows 5 entries
+  (IDEA.md, migration/evidence/RN01/, migration/handoffs/RN01-checkpoint.md, migration/react-native/,
+  migration/work-packages/RN01.md).
+- git status --porcelain -uall (core.quotePath=false): 61 paths = 51 product files under migration/react-native/
+  + 7 historical evidence + 3 new evidence files + 1 checkpoint + 1 work package + 1 IDEA.md.
+  (Before this session the evidence set held 7 files, so -uall showed 58.)
+- Target set = 51 non-ignored untracked product files = 42 identical + 1 renamed-diff (.gitignore) + 5 content-diff +
+  3 added. Visible files on disk = 54 (51 + expo-env.d.ts + 2 git-ignored .vscode files). The historical "46 files /
+  45 identical + 5 diffs" statement in tree-vs-canonical-template.txt is superseded by the byte-wise counts above;
+  the difference is the handling of the .vscode rename, tsconfig.json and the git-ignored local artifacts.
+
+Protected baseline (rechecked this session)
+- git diff --exit-code vs HEAD for package.json, package-lock.json (repo-root only if present), src, public, android,
+  ios, migration/core, migration/reference: exit 0 (no drift).
+- git ls-tree confirms no IDEA.md entry in the HEAD tree (file is untracked); git hash-object IDEA.md =
+  2575019d3f8f51794e06769d6878188d274c6b28 (stable). IDEA.md never read for content, never staged/committed.
+- HEAD = 7461a5ac88e0090c311610a113976e9db81ca51e (C03 commit); HEAD tree = bf97b5ce4f7dbcf0706a13090f8ed0511702dfe6
+  (derived live from git, not from the prompt).
+
+Not run / not verified in this session (explicitly remain open)
+- npm ci (no install of any kind); expo install --check; expo-doctor; Android bundle; native build; AVD boot/launch.
+  Typecheck stays RED; no native acceptance gate was executed.

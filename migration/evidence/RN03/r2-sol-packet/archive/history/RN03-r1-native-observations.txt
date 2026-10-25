@@ -1,0 +1,53 @@
+RN03 native observation record — revision 1 (2026-10-21)
+Environment
+- Host: Windows 11; session shell bash (Hermes Agent, profile translation-migration, session 20261021_202527_0057ee)
+- Node: v24.19.0 (pinned session runtime)
+- ADB: Android SDK platform-tools (session PATH)
+- Emulator: emulator-5554, AVD RN01_API36, Android 16 (API 36), headless (-no-window), SwiftShader
+- App: dev.translationtest.rn / .MainActivity (React Native 0.88 dev client, Metro-served)
+- Metro: session-owned `npm start` (cwd migration/react-native), port 8082; adb reverse host-32 tcp:8082 tcp:8082
+- Data: bundled src/data/conference.json via load-conference (synchronous fixture, no network)
+
+Launch sequence (final instance)
+1. adb -s emulator-5554 shell am force-stop dev.translationtest.rn
+2. adb -s emulator-5554 shell am start -n dev.translationtest.rn/.MainActivity
+3. dev-client welcome menu; tapped the dev-server card (adb shell input tap 540 650)
+4. waited ~40 s; schedule view rendered (dump: conference title, "Search sessions" field,
+   both mode buttons, first day rows with times, names, tracks)
+
+Observation steps (every assertion below is taken from the uiautomator XML dump of that instance)
+1. Initial render — RN03-01-initial-schedule.png
+   mode-all selected="true"; search field present (placeholder "Search sessions");
+   sessions listed by time, name, track chip (8:00 am "Breakfast", ...).
+2. Scrolled — RN03-02-scrolled.png
+   input swipe 540 1800 540 700 500; later rows visible (9:15 am, 10:00 am entries).
+3. Lowercase query "ionic" (committed) — RN03-03-search-lowercase-ionic-filtered.png
+   field text="ionic"; exactly 5 rows: "Getting Started with Ionic" (9:15 am),
+   "Migrating to Ionic" (11:00 am), "University of Ionic" (12:15 pm),
+   "Ionic Tooling" (2:30 pm), "The Evolution of Ionicons" (3:15 pm);
+   non-matching rows absent ("Breakfast" not present).
+4. Query extended to "ioniczzz" (committed) — RN03-04-search-no-match.png
+   field text="ioniczzz"; zero session rows; explicit message
+   "No sessions match your search or filters."; mode still all sessions.
+5. Favorites mode, no favorites — RN03-05-favorites-empty.png
+   mode-favorites selected="true", mode-all selected="false";
+   message "No favorite sessions."; zero rows.
+6. Back to All sessions — RN03-06-all-sessions-restored.png
+   mode-all selected="true"; full 20-session list restored
+   (8:00 am "Breakfast", 9:15 am, 10:00 am, ...); search field empty again
+   (placeholder "Search sessions").
+
+IME incident (environment defect, not an app defect)
+- Gboard (com.google.android.inputmethod.latin) entered a zombie state mid-session:
+  `adb shell input text` ceased committing into the focused RN TextInput
+  (XML: EditText focused="true", value unchanged) and some button taps were dropped.
+- Recovery: adb shell ime force-stop com.google.android.inputmethod.latin;
+  the next `input text "ionic"` committed immediately (XML value "ionic") and
+  mode-button taps worked; no app restart or code change was involved.
+- The earlier search capture (different query text, first instance, stale IME) is
+  superseded by the final captures listed above; the evidence directory contains
+  exactly the six listed PNGs plus this record.
+
+Not observed (out of scope for RN03)
+- favorites add/remove (RN04), detail screen (RN05), dialog (RN06),
+  swiper/hold gestures (RN07), Web target, iOS target, network data path.

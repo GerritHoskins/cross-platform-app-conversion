@@ -1,0 +1,98 @@
+RN03 native observations — revision 2, 2026-10-24
+Supporting evidence reconciled; formal review and human acceptance pending.
+
+Provenance and scope
+Historical r1 text, including incorrect counts/times and unsupported claims,
+is preserved byte-exact at r2-sol-packet/archive/history/RN03-r1-native-observations.txt.
+This preparation performed NO device/settings/IME/app restart/Metro-management
+actions. The following native actions belong to earlier acquisition runs.
+Emulator-5554/RN01_API36/API36/headless SwiftShader; dev.translationtest.rn
+existing development client/Metro8082; HEAD f78a759741b57ed1a19c7b6630af67640571ff61.
+Runtime source unchanged from captures. Only the existing screen search test
+was amended; source-reconciliation.json bridges its historical capture-set hash.
+
+Actual chronology (UTC, 2026-10-24, NOT filename order)
+Recovery r3: activity/window services initially unavailable; one separately
+authorized graceful emulator restart at06:49:07 recovered AVD, preserving
+Metro PID45232. Reverse8082 restored/read back. Bluetooth crash dialog dismissed
+with ordinary Back. First focus attempt followed by app disappearance remains
+undiagnosed; reopening and second focus succeeded. No stability claim.
+06:53:37.389: IOnic entered once; exact real app EditText query confirmed.
+06:53:46.343: MOVE_END plus five DEL; subsequent hierarchy restored Breakfast/All.
+input-ionic-cleared.json records PRE-clear field/action, not post-clear result.
+05 captured06:54:22.563–06:54:27.056, empty query/All/Breakfast restored.
+06:54:27.121: zzz-no-such-session entered; exact app query confirmed.
+06 captured06:54:38.862–06:54:43.361, generic no-match message/no rows.
+06:54:43.423: MOVE_END plus one DEL per character; unfiltered schedule restored.
+07 captured06:55:02.162–06:55:07.098, empty/Favorites/No favorite sessions.
+08 captured06:55:21.693–06:55:25.387, empty/All/Breakfast restored.
+Mode taps used fresh XML bounds; subsequent dumps confirmed selection.
+
+Later correction run:
+01 captured07:16:18.218–07:16:20.745, empty/All at top. Actual field focused,
+IOnic entered once, exact query verified; ordinary Back retained query/All.
+02 captured07:16:39.828–07:16:42.331, matching top rows.
+One ordinary list swipe;03 captured07:16:45.426–07:16:47.842.
+Two further list swipes/query-mode checks;04 captured07:17:01.178–07:17:03.638.
+Selected01–04 are later corrected captures; selected05–08 remain earlier r3.
+
+Exact selected images (matching .xml beside each .png)
+  migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png
+  migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png
+  migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png
+  migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png
+  migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png
+  migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png
+  migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png
+  migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png
+No copying, retimestamping or relabeling. All selected8 PNG/XML pairs and prior
+captures hash-checked before/after test edit. Original indexes/capture-set
+remain immutable. Frames01/05/08 are pixel-identical, showing the same visible
+state, NOT chronology. Separate live input/dump/screencap/pull commands and
+timestamps establish sequence; byte-exact proof under r2-sol-packet/archive/
+sol-native-20261024-r3 and sol-pixel-correction-20261024; archive/index.json
+records original paths/source hashes. native-action-timeline.json is a derived
+index, not a substitute for original command logs.
+
+Correct interpretation and independent pixels
+The source/frozen case IOnic has15 matching sessions in6 sections, not five.
+Default-all has20 sessions/8 sections. Fresh screen test compares the FULL
+section title/key/ordered data.id mapping received by real SectionList to the
+frozen cases. Native viewport subsets are NOT total results; all15 are not
+claimed simultaneously visible. University of Ionic is9:15am–9:30am; Ionic
+Tooling is9:45am–10:00am. R1's five-result/wrong-time statements are withdrawn.
+
+Independent supporting report: r2-sol-packet/pixel-inspection-verbatim.md;
+routing: pixel-inspection-routing.json. Actual transport: Codex native
+collaboration, separate GPT-6.1 Sol/high agent /root/rn03_pixel_r2 using direct
+view_image. NOT Hermes delegate/provider; not formal package approval.
+Overall supporting PASS for selected01–08. 01 shows Breakfast/University with
+correct times. 02 shows IOnic, University/Getting Started/Ionic Tooling;03/04
+show later interior matches including Pro/Workshop/Navigation and Building
+with Ionic and Vue. Ordinary viewport-edge clipping in03 is not an established
+app defect. 05 restored Breakfast;06 exact query/no-match message;07 Favorites
+selected/No favorite sessions.;08 All restored. Ordinary keyboard in01/05–08
+does not obscure required rows/messages. No stylus tutorial/former left toolbar
+in inspected set; developer gear unobstructive. This executor did not view
+pixels and does not equate XML silence with visual proof.
+
+Empty-query XML exposes Search sessions as both text and hint even when empty
+and focused. Normalization is supported by exact prior query, actual DEL,
+restored schedule and independent pixels; raw XML unchanged. Historical
+keyevent123 meant MOVE_END, not deletion; never replayed as deletion. Old
+tutorial-invalid05/06 and toolbar01–04 remain superseded historical evidence;
+initial failed pixel summary/full reports are preserved, not edited.
+
+Fresh software
+checks-r2 contains per-command receipts/stdout/stderr, focused screen8/8 and
+typecheck, integration/typecheck, two full Jest JSON reports (3 suites/36 passed
+each, state24/screen8/shell4), Android export and Git gates, all exit0.
+Export HBC entry-1c2fb05c5c4216cc1ec07e9437066ba3.hbc:2,872,598 bytes;
+actual29-file inventory/hashes. Historical36-file/2,872,597-byte export is not
+relabeled fresh. Prior software receipts are archived as historical only.
+No install/native rebuild/core rebuild. Error/retry/stale/unmount behavior is
+automated with injected loaders, not newly exercised on-device.
+
+Limits: no new device observation/long-soak stability/iOS/Web acceptance/RN04
+editing/details/later filtering/gestures. Independent formal review and human
+acceptance remain gates. No dispatch/approval/staging/commit/push/publication.

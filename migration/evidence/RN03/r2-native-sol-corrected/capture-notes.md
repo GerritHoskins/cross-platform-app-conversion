@@ -1,0 +1,20 @@
+RN03 fresh 01–04 acquisition; pixel correction acceptance BLOCKED pending independent inspection
+
+HEAD f78a759741b57ed1a19c7b6630af67640571ff61; branch migration/slice-1. Existing headless emulator-5554 / RN01_API36 / dev.translationtest.rn; existing Metro 8082 reported packager-status:running at preflight and final verification. Runtime routing.json records openai-codex / gpt-6.1-sol / high, fallback [], terminal/file toolsets. No routing/profile changes or review dispatch.
+
+Four newly acquired contemporaneous PNG/XML pairs, 2026-10-24T07:16:18.218Z through 2026-10-24T07:17:03.638Z. Each used live adb shell screencap, Windows-native host pull, then live XML dump/pull. See capture-index.json for four records only, timestamps, exact app field attributes, query, mode, device/source/HEAD and computed SHA256. PNG signature/IDAT inflation and 1080x2400 dimensions checked. No old PNG copies or timestamp alteration. New01 naturally has identical image bytes to existing, independently reported-good new05: true. This computed identity is not a claim of direct viewing in this invocation.
+
+Actions: starting empty field / All / top list; capture01. One tap at center of the actual current Search sessions EditText bounds [76,403][1004,514]; dump confirmed unchanged empty value. One adb input text IOnic; dump confirmed exact mixed-case app value. One ordinary Back; dump confirmed IOnic / All retained. Capture02. One ordinary upward list swipe, verified IOnic / All; capture03. Two more upward swipes, separate XML checks confirmed query/mode after each; capture04 at later/bottom content. No input failures, retries, deletion, End/Backspace commands or focus archaeology. Empty field exposes text=Search sessions equal to hint; raw XML retained, query normalized to empty. No settings/IME/handwriting changes, tutorial actions, restarts, installs or source/test/config/dependency/reference edits.
+
+Candidate assertions, based ONLY on exact XML text with full viewport bounds, not pixels:
+01 Breakfast 8:00 am–9:00 am and University of Ionic 9:15 am–9:30 am.
+02 University of Ionic 9:15 am–9:30 am; Ionic Tooling 9:45 am–10:00 am.
+03 Interior Ionic Pro, Ionic Workshop and Navigation in Ionic rows.
+04 Interior The Ionic Package, Push Notifications in Ionic, Ionic Documentation, UX in Ionic, and Building with Ionic and Vue 3:00 pm–3:30 pm.
+Some peripheral/virtualized XML nodes have cropped or inverted bounds; they are retained verbatim and excluded from candidate assertions. No claim all15 matches fit on one screen or that all15 were proven visible. Expected source result count=15 comes from human assignment, not a visible count.
+
+Limitation: no direct image-view tool is exposed in this executor invocation; capability lookup returned no image tool. Actual screenshot viewing and overlay/tutorial assessment were NOT performed. In particular XML silence cannot prove the left floating toolbar absent. tutorialStatus remains unknown for all four; independent pixel inspection pending. Four capture pairs are acquired, but the requested screenshot-based visible-app/unobstructed-label verification is unfulfilled. Status BLOCKED refers to that verification gate, not failed input or acquisition.
+
+Preservation verification: 504 pre-existing nonruntime files retained identical SHA256 and mtime; changed=[], problems=[]. Existing old01–04 and new05–08 and records preserved in place. IDEA.md excluded entirely from reads/hashes. Runtime helpers/logs written only under tools/qwen-supervisor/.runs/sol-pixel-correction-20261024. Pinned Node correct.mjs verify exited0; git diff --check exited0; branch/HEAD unchanged. Tests/build intentionally not run: evidence-only scope prohibits product changes and did not request them. No commit/staging/RN04/revision preparation, freeze or dispatch.
+
+Runtime commands/state/action receipts: correction-commands.jsonl, correction-baseline.json, correction-verification.json, capture-assertions.json, current/focused/typed/dismissed/intermediate/later/bottom XML and JSON states. All logged commands exited0. Stop for coordinator independent pixel reinspection.

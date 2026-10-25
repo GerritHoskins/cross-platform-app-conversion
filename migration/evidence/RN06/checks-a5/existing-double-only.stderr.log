@@ -1,0 +1,156 @@
+FAIL __tests__/session-detail-screen.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\test-utils\gesture-test-setup.ts: The module factory of `jest.mock()` is not allowed to reference any out-of-scope variables.
+    Invalid variable access: Props
+    Allowed objects: AbortController, AbortSignal, AggregateError, Array, ArrayBuffer, AsyncDisposableStack, Atomics, BigInt, BigInt64Array, BigUint64Array, Blob, Boolean, BroadcastChannel, Buffer, ByteLengthQueuingStrategy, CloseEvent, CompressionStream, CountQueuingStrategy, Crypto, CryptoKey, CustomEvent, DOMException, DataView, Date, DecompressionStream, DisposableStack, Error, EvalError, Event, EventTarget, File, FinalizationRegistry, Float16Array, Float32Array, Float64Array, FormData, Function, Generator, GeneratorFunction, Headers, Infinity, Int16Array, Int32Array, Int8Array, InternalError, Intl, Iterator, JSON, Map, Math, MessageChannel, MessageEvent, MessagePort, NaN, Navigator, Number, Object, Performance, PerformanceEntry, PerformanceMark, PerformanceMeasure, PerformanceObserver, PerformanceObserverEntryList, PerformanceResourceTiming, Promise, Proxy, RangeError, ReadableByteStreamController, ReadableStream, ReadableStreamBYOBReader, ReadableStreamBYOBRequest, ReadableStreamDefaultController, ReadableStreamDefaultReader, ReferenceError, Reflect, RegExp, Request, Response, Set, SharedArrayBuffer, String, SubtleCrypto, SuppressedError, Symbol, SyntaxError, TextDecoder, TextDecoderStream, TextEncoder, TextEncoderStream, TransformStream, TransformStreamDefaultController, TypeError, URIError, URL, URLPattern, URLSearchParams, Uint16Array, Uint32Array, Uint8Array, Uint8ClampedArray, WeakMap, WeakRef, WeakSet, WebAssembly, WebSocket, WritableStream, WritableStreamDefaultController, WritableStreamDefaultWriter, __dirname, __filename, arguments, atob, btoa, clearImmediate, clearInterval, clearTimeout, console, crypto, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, escape, eval, expect, exports, fetch, global, globalThis, isFinite, isNaN, jest, module, navigator, parseFloat, parseInt, performance, process, queueMicrotask, require, setImmediate, setInterval, setTimeout, structuredClone, undefined, unescape.
+    Note: This is a precaution to guard against uninitialized mock variables. If it is ensured that the mock is required lazily, variable names prefixed with `mock` (case insensitive) are permitted.
+
+      2 |   const React = require('react') as typeof import('react');
+      3 |   const { View } = require('react-native') as typeof import('react-native');
+    > 4 |   type Props = import('react').ComponentProps<typeof import('react-native-gesture-handler/ReanimatedSwipeable').default>;
+        |        ^^^^^
+      5 |   type Methods = import('react-native-gesture-handler/ReanimatedSwipeable').SwipeableMethods;
+      6 |   type SharedValue = Parameters<NonNullable<Props['renderRightActions']>>[0];
+      7 |
+
+    > 1 | import '../test-utils/gesture-test-setup';
+        | ^
+      2 | import { Alert } from 'react-native';
+      3 | import {
+      4 |   act,
+
+      at File.buildCodeFrameError (node_modules/@babel/core/src/transformation/file/file.ts:251:12)
+      at NodePath.buildError [as buildCodeFrameError] (node_modules/@babel/traverse/src/path/index.ts:161:21)
+      at call (node_modules/@babel/traverse/src/visitors.ts:299:14)
+      at NodePath.call [as _call] (node_modules/@babel/traverse/src/path/context.ts:36:20)
+      at NodePath.call (node_modules/@babel/traverse/src/path/context.ts:21:18)
+      at NodePath.call [as visit] (node_modules/@babel/traverse/src/path/context.ts:97:31)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitMultiple] (node_modules/@babel/traverse/src/context.ts:109:17)
+      at TraversalContext.visitMultiple [as visit] (node_modules/@babel/traverse/src/context.ts:192:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at NodePath.visit (node_modules/@babel/traverse/src/path/context.ts:104:33)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitSingle] (node_modules/@babel/traverse/src/context.ts:119:19)
+      at TraversalContext.visitSingle [as visit] (node_modules/@babel/traverse/src/context.ts:194:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at traverse (node_modules/@babel/traverse/src/index.ts:84:15)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:120:15)
+          at transformFile.next (<anonymous>)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:50:12)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/src/transform.ts:29:20)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)
+      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)
+      at Object.require (__tests__/session-detail-screen.test.tsx:1:1)
+
+FAIL __tests__/filter-screen.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\test-utils\gesture-test-setup.ts: The module factory of `jest.mock()` is not allowed to reference any out-of-scope variables.
+    Invalid variable access: Props
+    Allowed objects: AbortController, AbortSignal, AggregateError, Array, ArrayBuffer, AsyncDisposableStack, Atomics, BigInt, BigInt64Array, BigUint64Array, Blob, Boolean, BroadcastChannel, Buffer, ByteLengthQueuingStrategy, CloseEvent, CompressionStream, CountQueuingStrategy, Crypto, CryptoKey, CustomEvent, DOMException, DataView, Date, DecompressionStream, DisposableStack, Error, EvalError, Event, EventTarget, File, FinalizationRegistry, Float16Array, Float32Array, Float64Array, FormData, Function, Generator, GeneratorFunction, Headers, Infinity, Int16Array, Int32Array, Int8Array, InternalError, Intl, Iterator, JSON, Map, Math, MessageChannel, MessageEvent, MessagePort, NaN, Navigator, Number, Object, Performance, PerformanceEntry, PerformanceMark, PerformanceMeasure, PerformanceObserver, PerformanceObserverEntryList, PerformanceResourceTiming, Promise, Proxy, RangeError, ReadableByteStreamController, ReadableStream, ReadableStreamBYOBReader, ReadableStreamBYOBRequest, ReadableStreamDefaultController, ReadableStreamDefaultReader, ReferenceError, Reflect, RegExp, Request, Response, Set, SharedArrayBuffer, String, SubtleCrypto, SuppressedError, Symbol, SyntaxError, TextDecoder, TextDecoderStream, TextEncoder, TextEncoderStream, TransformStream, TransformStreamDefaultController, TypeError, URIError, URL, URLPattern, URLSearchParams, Uint16Array, Uint32Array, Uint8Array, Uint8ClampedArray, WeakMap, WeakRef, WeakSet, WebAssembly, WebSocket, WritableStream, WritableStreamDefaultController, WritableStreamDefaultWriter, __dirname, __filename, arguments, atob, btoa, clearImmediate, clearInterval, clearTimeout, console, crypto, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, escape, eval, expect, exports, fetch, global, globalThis, isFinite, isNaN, jest, module, navigator, parseFloat, parseInt, performance, process, queueMicrotask, require, setImmediate, setInterval, setTimeout, structuredClone, undefined, unescape.
+    Note: This is a precaution to guard against uninitialized mock variables. If it is ensured that the mock is required lazily, variable names prefixed with `mock` (case insensitive) are permitted.
+
+      2 |   const React = require('react') as typeof import('react');
+      3 |   const { View } = require('react-native') as typeof import('react-native');
+    > 4 |   type Props = import('react').ComponentProps<typeof import('react-native-gesture-handler/ReanimatedSwipeable').default>;
+        |        ^^^^^
+      5 |   type Methods = import('react-native-gesture-handler/ReanimatedSwipeable').SwipeableMethods;
+      6 |   type SharedValue = Parameters<NonNullable<Props['renderRightActions']>>[0];
+      7 |
+
+    > 1 | import '../test-utils/gesture-test-setup';
+        | ^
+      2 | import { router } from 'expo-router';
+      3 | import { SectionList } from 'react-native';
+      4 | import type { Fiber } from 'test-renderer';
+
+      at File.buildCodeFrameError (node_modules/@babel/core/src/transformation/file/file.ts:251:12)
+      at NodePath.buildError [as buildCodeFrameError] (node_modules/@babel/traverse/src/path/index.ts:161:21)
+      at call (node_modules/@babel/traverse/src/visitors.ts:299:14)
+      at NodePath.call [as _call] (node_modules/@babel/traverse/src/path/context.ts:36:20)
+      at NodePath.call (node_modules/@babel/traverse/src/path/context.ts:21:18)
+      at NodePath.call [as visit] (node_modules/@babel/traverse/src/path/context.ts:97:31)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitMultiple] (node_modules/@babel/traverse/src/context.ts:109:17)
+      at TraversalContext.visitMultiple [as visit] (node_modules/@babel/traverse/src/context.ts:192:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at NodePath.visit (node_modules/@babel/traverse/src/path/context.ts:104:33)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitSingle] (node_modules/@babel/traverse/src/context.ts:119:19)
+      at TraversalContext.visitSingle [as visit] (node_modules/@babel/traverse/src/context.ts:194:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at traverse (node_modules/@babel/traverse/src/index.ts:84:15)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:120:15)
+          at transformFile.next (<anonymous>)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:50:12)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/src/transform.ts:29:20)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)
+      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)
+      at Object.require (__tests__/filter-screen.test.tsx:1:1)
+
+FAIL __tests__/schedule-screen.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\test-utils\gesture-test-setup.ts: The module factory of `jest.mock()` is not allowed to reference any out-of-scope variables.
+    Invalid variable access: Props
+    Allowed objects: AbortController, AbortSignal, AggregateError, Array, ArrayBuffer, AsyncDisposableStack, Atomics, BigInt, BigInt64Array, BigUint64Array, Blob, Boolean, BroadcastChannel, Buffer, ByteLengthQueuingStrategy, CloseEvent, CompressionStream, CountQueuingStrategy, Crypto, CryptoKey, CustomEvent, DOMException, DataView, Date, DecompressionStream, DisposableStack, Error, EvalError, Event, EventTarget, File, FinalizationRegistry, Float16Array, Float32Array, Float64Array, FormData, Function, Generator, GeneratorFunction, Headers, Infinity, Int16Array, Int32Array, Int8Array, InternalError, Intl, Iterator, JSON, Map, Math, MessageChannel, MessageEvent, MessagePort, NaN, Navigator, Number, Object, Performance, PerformanceEntry, PerformanceMark, PerformanceMeasure, PerformanceObserver, PerformanceObserverEntryList, PerformanceResourceTiming, Promise, Proxy, RangeError, ReadableByteStreamController, ReadableStream, ReadableStreamBYOBReader, ReadableStreamBYOBRequest, ReadableStreamDefaultController, ReadableStreamDefaultReader, ReferenceError, Reflect, RegExp, Request, Response, Set, SharedArrayBuffer, String, SubtleCrypto, SuppressedError, Symbol, SyntaxError, TextDecoder, TextDecoderStream, TextEncoder, TextEncoderStream, TransformStream, TransformStreamDefaultController, TypeError, URIError, URL, URLPattern, URLSearchParams, Uint16Array, Uint32Array, Uint8Array, Uint8ClampedArray, WeakMap, WeakRef, WeakSet, WebAssembly, WebSocket, WritableStream, WritableStreamDefaultController, WritableStreamDefaultWriter, __dirname, __filename, arguments, atob, btoa, clearImmediate, clearInterval, clearTimeout, console, crypto, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, escape, eval, expect, exports, fetch, global, globalThis, isFinite, isNaN, jest, module, navigator, parseFloat, parseInt, performance, process, queueMicrotask, require, setImmediate, setInterval, setTimeout, structuredClone, undefined, unescape.
+    Note: This is a precaution to guard against uninitialized mock variables. If it is ensured that the mock is required lazily, variable names prefixed with `mock` (case insensitive) are permitted.
+
+      2 |   const React = require('react') as typeof import('react');
+      3 |   const { View } = require('react-native') as typeof import('react-native');
+    > 4 |   type Props = import('react').ComponentProps<typeof import('react-native-gesture-handler/ReanimatedSwipeable').default>;
+        |        ^^^^^
+      5 |   type Methods = import('react-native-gesture-handler/ReanimatedSwipeable').SwipeableMethods;
+      6 |   type SharedValue = Parameters<NonNullable<Props['renderRightActions']>>[0];
+      7 |
+
+    > 1 | import '../test-utils/gesture-test-setup';
+        | ^
+      2 | import { router } from 'expo-router';
+      3 | import { Alert, Pressable, SectionList, Text } from 'react-native';
+      4 | import type { Fiber } from 'test-renderer';
+
+      at File.buildCodeFrameError (node_modules/@babel/core/src/transformation/file/file.ts:251:12)
+      at NodePath.buildError [as buildCodeFrameError] (node_modules/@babel/traverse/src/path/index.ts:161:21)
+      at call (node_modules/@babel/traverse/src/visitors.ts:299:14)
+      at NodePath.call [as _call] (node_modules/@babel/traverse/src/path/context.ts:36:20)
+      at NodePath.call (node_modules/@babel/traverse/src/path/context.ts:21:18)
+      at NodePath.call [as visit] (node_modules/@babel/traverse/src/path/context.ts:97:31)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitMultiple] (node_modules/@babel/traverse/src/context.ts:109:17)
+      at TraversalContext.visitMultiple [as visit] (node_modules/@babel/traverse/src/context.ts:192:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at NodePath.visit (node_modules/@babel/traverse/src/path/context.ts:104:33)
+      at TraversalContext.visit [as visitQueue] (node_modules/@babel/traverse/src/context.ts:161:16)
+      at TraversalContext.visitQueue [as visitSingle] (node_modules/@babel/traverse/src/context.ts:119:19)
+      at TraversalContext.visitSingle [as visit] (node_modules/@babel/traverse/src/context.ts:194:19)
+      at visit (node_modules/@babel/traverse/src/traverse-node.ts:208:17)
+      at traverse (node_modules/@babel/traverse/src/index.ts:84:15)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:120:15)
+          at transformFile.next (<anonymous>)
+      at transformFile (node_modules/@babel/core/src/transformation/index.ts:50:12)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/src/transform.ts:29:20)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)
+      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)
+      at Object.require (__tests__/schedule-screen.test.tsx:1:1)
+
+Test Suites: 3 failed, 3 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        11.505 s, estimated 19 s
+Ran all test suites within paths "__tests__/schedule-screen.test.tsx", "__tests__/filter-screen.test.tsx", "__tests__/session-detail-screen.test.tsx".
+Test results written to: ..\evidence\RN06\checks-a5\existing-double-only.json

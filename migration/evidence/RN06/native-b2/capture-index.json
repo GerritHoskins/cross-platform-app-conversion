@@ -1,0 +1,213 @@
+{
+  "package": "RN06",
+  "revision": 1,
+  "phase": "B2",
+  "head": "7a1fe5a1fb06b271c54a4b2d51edcdff9c860af8",
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "appId": "dev.translationtest.rn",
+    "metro": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "foreground": "topResumedActivity=ActivityRecord{92860834 u0 dev.translationtest.rn/.MainActivity t30}"
+  },
+  "keyboardVisiblePerFrame": {
+    "RN06-B2-17-filter-search-applied": true
+  },
+  "captures": [
+    {
+      "name": "RN06-B2-17-filter-search-applied",
+      "image": "RN06-B2-17-filter-search-applied.png",
+      "uiXml": "RN06-B2-17-filter-search-applied.xml",
+      "step": 17,
+      "actions": [
+        {
+          "startedAt": "2026-10-25T15:15:51.464Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "540",
+            "1067",
+            "540",
+            "1567",
+            "400"
+          ],
+          "boundsConfirmation": {
+            "listBounds": "[42,917][1038,2358]",
+            "keyboardRegionSource": "initial-windows.txt:316",
+            "keyboardTouchableRegion": "SkRegion((21,896,169,1586)(0,2337,1080,2400))",
+            "x": 540,
+            "y1": 1067,
+            "y2": 1567,
+            "note": "Both endpoints inside list, no overlap with reported IME touch region at x540. No keyboard dismissal."
+          },
+          "preXml": "scroll-top-1-before.xml",
+          "postXml": "scroll-top-1-after.xml",
+          "preWaitMs": 1511,
+          "postWaitMs": 4059,
+          "navigationAttempts": 0
+        }
+      ],
+      "expectedVisibleText": [
+        "Ionic",
+        "University of Ionic",
+        "Getting Started with Ionic",
+        "Migrating to Ionic"
+      ],
+      "xmlConfirmed": [
+        "Search sessions text is Ionic",
+        "All sessions selected",
+        "Mounted IDs exactly [4,2,5]",
+        "Positive-area viewport IDs exactly [4,2,5]",
+        "session-4 bounds [42,1024][1038,1375]",
+        "session-2 bounds [42,1395][1038,1745]",
+        "session-5 bounds [42,1894][1038,2244]"
+      ],
+      "visibleSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "mountedSessionIds": [
+        4,
+        2,
+        5
+      ],
+      "alertTitle": null,
+      "navigationAttempts": 0,
+      "capturedAt": "2026-10-25T15:15:58.823Z",
+      "keyboardVisible": true,
+      "keyboardEvidence": {
+        "visible": true,
+        "lines": [
+          "mImeWindowVis=3",
+          "mInputShown=true"
+        ],
+        "source": "RN06-B2-17-filter-search-applied-input-method.txt"
+      },
+      "foreground": "topResumedActivity=ActivityRecord{92860834 u0 dev.translationtest.rn/.MainActivity t30}",
+      "png": {
+        "width": 1080,
+        "height": 2400,
+        "decodedBytes": 10370400,
+        "sha256": "83d8f2e840f870d67e44d2f86cd74fe48ee56b69447f7f2081ed57b5fbb33fc5",
+        "pixelsInspected": false
+      }
+    }
+  ],
+  "status": "BLOCKED",
+  "incompleteAttempts": [
+    {
+      "intendedFrame": "RN06-B2-18-filter-search-retained",
+      "actions": [
+        {
+          "startedAt": "2026-10-25T15:16:02.389Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "swipe",
+            "998",
+            "1199",
+            "638",
+            "1199",
+            "300"
+          ],
+          "boundsConfirmation": {
+            "row": "session-4",
+            "bounds": "[42,1024][1038,1375]",
+            "formula": "rowRight-40 to rowRight-400 at rowCenterY",
+            "x1": 998,
+            "x2": 638,
+            "y": 1199
+          },
+          "preXml": "reveal-university-before.xml",
+          "postXml": "reveal-university-after.xml",
+          "preWaitMs": 1506,
+          "postWaitMs": 4092,
+          "navigationAttempts": 0
+        },
+        {
+          "startedAt": "2026-10-25T15:16:38.418Z",
+          "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+          "args": [
+            "-s",
+            "emulator-5554",
+            "shell",
+            "input",
+            "tap",
+            "912",
+            "1199"
+          ],
+          "boundsConfirmation": {
+            "rowBounds": "[42,1024][786,1375]",
+            "panelBounds": "[786,1024][1038,1375]",
+            "linkBounds": "[42,1058][752,1221]",
+            "intendedAction": "revealed Favorite for session 4, not existing labeled button",
+            "node": {
+              "index": "0",
+              "text": "",
+              "resource-id": "",
+              "class": "android.view.ViewGroup",
+              "package": "dev.translationtest.rn",
+              "content-desc": "Favorite",
+              "checkable": "false",
+              "checked": "false",
+              "clickable": "true",
+              "enabled": "true",
+              "focusable": "true",
+              "focused": "false",
+              "scrollable": "false",
+              "long-clickable": "false",
+              "password": "false",
+              "selected": "false",
+              "bounds": "[786,1024][1038,1375]",
+              "drawing-order": "1",
+              "hint": "",
+              "box": [
+                786,
+                1024,
+                1038,
+                1375
+              ]
+            }
+          },
+          "preXml": "tap-revealed-favorite-before.xml",
+          "postXml": "tap-revealed-favorite-after.xml",
+          "preWaitMs": 1507,
+          "postWaitMs": 4112,
+          "navigationAttempts": 0
+        }
+      ],
+      "expectedAlert": "Favorite Added",
+      "observedAlertTitle": null,
+      "postXml": "tap-revealed-favorite-after.xml",
+      "diagnosticImage": "blocked-diagnostic.png",
+      "diagnosticUiXml": "blocked-diagnostic.xml",
+      "reason": "BLOCKED at revealed Favorite tap: mandatory post-action XML has no Favorite Added alert and row 4 stays open. Later read-only diagnostics confirm no alert; mInputShown=false. No retry or additional input."
+    }
+  ],
+  "finalState": {
+    "search": "Ionic",
+    "visibleSessionIds": [
+      4,
+      2,
+      5
+    ],
+    "keyboardVisible": false,
+    "universityRowOpenByGeometry": true,
+    "modalOpened": false
+  },
+  "unverified": [
+    "Pixels of all B2 screenshots are not yet inspected; coordinator pixel inspection required.",
+    "RN06-B2-18-filter-search-retained not captured: Favorite Added and OK sequence not completed.",
+    "RN06-B2-19-filter-still-ionic not captured: modal never opened; retained Ionic-only checkbox state unverified.",
+    "Cause of missing Favorite Added is not established; keyboard consuming first tap is only a hypothesis."
+  ]
+}

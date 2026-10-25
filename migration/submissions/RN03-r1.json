@@ -1,0 +1,253 @@
+{
+  "package": "RN03",
+  "revision": 1,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "f78a759741b57ed1a19c7b6630af67640571ff61",
+  "headTree": "4fa34700ccc50f54d103d89904d7c2d4b2d83be0",
+  "headSource": "git rev-parse HEAD / HEAD^{tree} from the session shell at freeze",
+  "date": "2026-10-21",
+  "priorApprovedBaseline": {
+    "commit": "f78a759741b57ed1a19c7b6630af67640571ff61",
+    "verdict": "APPROVE (RN02 revision 3)",
+    "review": "migration/reviews/RN02-r3.md"
+  },
+  "session": {
+    "executor": "local Qwen3.8-27B on Hermes Agent, profile translation-migration (session 20261021_202527_0057ee)",
+    "reviewer": "gpt-6.1-sol via openai-codex (reasoning high, no fallback)",
+    "delegation": "RN03-r1 review delegated via Hermes delegate_task after hash freeze"
+  },
+  "environment": {
+    "node": "v24.19.0 (pinned session runtime: C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe)",
+    "adb": "Android SDK platform-tools (session PATH)",
+    "emulator": "emulator-5554, AVD RN01_API36 (Android 16 / API 36), headless, SwiftShader",
+    "app": "dev.translationtest.rn / .MainActivity (React Native 0.88 dev client)",
+    "metro": "session-owned npm start (cwd migration/react-native), port 8082; adb reverse host-32 tcp:8082 tcp:8082",
+    "data": "bundled src/data/conference.json via load-conference (synchronous fixture, no network)"
+  },
+  "priorRevision": null,
+  "runResults": {
+    "core": "cd migration/core && npm test → 53/53 passing, exit 0 (pinned Node v24.19.0)",
+    "verifyCoreIntegration": "node scripts/verify-core-integration.cjs → exit 0",
+    "typecheck": "npx tsc --noEmit → exit 0",
+    "tests": "npm test → 36/36 (conference-state 25, schedule-screen 7, shell-screen 4), exit 0",
+    "testsRepeat": "second full npm test → 36/36, exit 0",
+    "bundleAndroid": "npm run bundle:android → success; dist-android/_expo/static/js/android/entry-1c2fb05c5c4216cc1ec07e9437066ba3.hbc, 2,872,597 bytes",
+    "gitChecks": "git diff --check exit 0; allowlist diff exit 0; staged diff empty",
+    "nativeEvidence": "six dump-proven observations, see migration/evidence/RN03/RN03-native-observations.txt"
+  },
+  "notRun": [
+    "Web and iOS targets (RN03 gate is Android-scoped)",
+    "favorites add/remove (RN04), detail (RN05), dialog (RN06), swiper/hold (RN07)",
+    "network data path (bundled fixture loads synchronously)",
+    "long-soak / multi-boot stability beyond two consecutive full test runs",
+    "pixel inspection of evidence PNGs: delegated to the reviewer (RN02 precedent)"
+  ],
+  "reviewerRouting": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoning": "high",
+    "fallback": [],
+    "reVerifiedVia": "hermes -p translation-migration config get delegation.model → exact match gpt-6.1-sol, immediately before dispatch"
+  },
+  "hashGate": {
+    "verifyCommand": "node migration/tools/manifest-hashes.mjs migration/submissions/RN03-r1.json (without --write)",
+    "freezePolicy": "all hashed text completed before freeze; hashes written with --write; nothing appended after freeze; this manifest and the future verdict are excluded from their own inventory; IDEA.md is a protected baseline only, outside files[]; no other verdict hashes present",
+    "requiredProblems": 0,
+    "literalOutput": "recorded in the session reply (self-reference convention per RN02)"
+  },
+  "preExistingChanges": [
+    "IDEA.md — untracked, hash-only protected: SHA-256 56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d (recomputed 2026-10-21, matches protected value); not read, edited, staged, or committed",
+    "migration/plans/rn07-android-acceptance-checklist.md — pre-existing untracked plan file, not created this session, untouched, not an RN03 deliverable, outside files[]",
+    "migration/react-native/dist-android/ — build output produced by the bundle gate; session artifact, outside files[]",
+    "migration/work-packages/RN03.md — untracked prepared package; only its status line was changed (in files[])"
+  ],
+  "notes": [
+    "shell-screen.test.tsx was deleted in error mid-session and restored from git (git restore --worktree); verified byte-identical to HEAD; passes 4/4 per the assignment",
+    "same gate battery also passed under Node v26.3.0 earlier in the session; the pinned v24.19.0 battery is authoritative",
+    "Gboard zombie-IME incident and recovery are documented in the evidence record (environment defect, not an app defect)",
+    "all RN02 records (review, submission, handoff, evidence) are preserved verbatim and listed in files[]"
+  ],
+  "files": [
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "note": "new RN03 state module over @migration/core (product)",
+      "sha256": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008"
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "note": "new RN03 schedule screen (product)",
+      "sha256": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "note": "ConferenceProvider wrapper (product)",
+      "sha256": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3"
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "note": "root route re-export (product)",
+      "sha256": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a"
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "note": "new RN03 state tests, 25 (test)",
+      "sha256": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa"
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "note": "new RN03 screen tests, 7 (test)",
+      "sha256": "e89f9d963af56aff3c52071a3eabbcab44a281ca8161f61143ccda182cf4caec"
+    },
+    {
+      "path": "migration/react-native/src/screens/shell-screen.tsx",
+      "note": "RN02 baseline, unchanged by RN03",
+      "sha256": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f"
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "note": "RN02 baseline, unchanged by RN03 (restored in-session after accidental deletion; byte-identical to HEAD)",
+      "sha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1"
+    },
+    {
+      "path": "migration/react-native/src/data/load-conference.ts",
+      "note": "RN02 baseline, unchanged by RN03",
+      "sha256": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5"
+    },
+    {
+      "path": "migration/react-native/src/data/conference.json",
+      "note": "bundled RN02 fixture, unchanged by RN03",
+      "sha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75"
+    },
+    {
+      "path": "migration/react-native/package.json",
+      "note": "unchanged by RN03, no new dependency",
+      "sha256": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016"
+    },
+    {
+      "path": "migration/react-native/package-lock.json",
+      "note": "unchanged by RN03",
+      "sha256": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb"
+    },
+    {
+      "path": "migration/react-native/scripts/verify-core-integration.cjs",
+      "note": "RN02 gate script, unchanged by RN03",
+      "sha256": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-01-initial-schedule.png",
+      "note": "initial schedule render",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-02-scrolled.png",
+      "note": "scrolled list state",
+      "sha256": "b8b7132cd455065238c74c9129a15e8658989cad4325f60960c33cf382f619fa"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-03-search-lowercase-ionic-filtered.png",
+      "note": "lowercase query ionic → 5 rows",
+      "sha256": "2eba99b78bf562e3df629e268a94406af4515b18e2c2acf8e12c27956da2610a"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-04-search-no-match.png",
+      "note": "query ioniczzz → empty + no-match message",
+      "sha256": "36a178cd3b74fea5fe9d358b17f3ab1b1152677b5558766d5244d922f1a9da2a"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-05-favorites-empty.png",
+      "note": "favorites mode, no favorites",
+      "sha256": "4efc6eb458067e35bdb5c1e6b82803c0175866e513ae151f01833cbc3617230f"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-06-all-sessions-restored.png",
+      "note": "back to all sessions, full list",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-native-observations.txt",
+      "note": "dump-proven observations + IME incident record",
+      "sha256": "32fffcf150cae69940ccca472ed3377e27bb28763d3e11228504b5ae71e8aa35"
+    },
+    {
+      "path": "migration/handoffs/RN03.md",
+      "note": "this handoff",
+      "sha256": "c488bba4409909b41da1413005b510a0edda0fa723738cc473c62a0df6b7daca"
+    },
+    {
+      "path": "migration/handoffs/RN01.md",
+      "note": "packet history",
+      "sha256": "249900698c9d64cbc987e32992893897dbc9b73ca327f2aef109ce0c04ffbb23"
+    },
+    {
+      "path": "migration/handoffs/RN02.md",
+      "note": "packet history",
+      "sha256": "c189e475a41f01e547de174e303888644f816c66b2883f814d56a093b71a0b50"
+    },
+    {
+      "path": "migration/handoffs/RN02-r3-checkpoint.md",
+      "note": "packet history",
+      "sha256": "7e69b03498a4e0553bcaa7898d84ca9a74417640ab0369360088e826821271b4"
+    },
+    {
+      "path": "migration/reviews/RN01-r1.md",
+      "note": "prior verdict, preserved",
+      "sha256": "df0851776fbcf2feac3fb6ec224d55d4225fd479f363c690b6b106adc5eb81e9"
+    },
+    {
+      "path": "migration/reviews/RN01-r2.md",
+      "note": "prior verdict, preserved",
+      "sha256": "e34cf757f8a5e6c80526b12109ce705d2b94258919943a03c94c6a7d4068173e"
+    },
+    {
+      "path": "migration/reviews/RN02-r1.md",
+      "note": "prior verdict, preserved",
+      "sha256": "7fce7ffbd39a938c28ea9dd209aebc215e64976575b6dcd1e7d55e31b85e0517"
+    },
+    {
+      "path": "migration/reviews/RN02-r2.md",
+      "note": "prior verdict, preserved",
+      "sha256": "4f5fc55cf9b3fb81f3fbdfa93b841323961e3ad826eede6df5ac221a98f4b5e6"
+    },
+    {
+      "path": "migration/reviews/RN02-r3.md",
+      "note": "baseline verdict APPROVE, preserved",
+      "sha256": "4af1058f266736268418c680931e03f2ffab848ddf24953f175a4b8bbc0af77f"
+    },
+    {
+      "path": "migration/submissions/RN01-r1.json",
+      "note": "packet history",
+      "sha256": "914c20d620e789ab4884cbdede63bb935cb9197f4a0f4c9bde14aacfb40496ee"
+    },
+    {
+      "path": "migration/submissions/RN01-r2.json",
+      "note": "packet history",
+      "sha256": "bbaef8da4754550040ae36d1d164af142ab052f5f35ebd860637f4a1444828f1"
+    },
+    {
+      "path": "migration/submissions/RN02-r1.json",
+      "note": "packet history",
+      "sha256": "75a16068648e066283c0c29f89a0347ee95aca8a6bcca14cee30b6d6d620d842"
+    },
+    {
+      "path": "migration/submissions/RN02-r2.json",
+      "note": "packet history",
+      "sha256": "33980cf8d5a19131b58183719c687e531734718a2ce2f008c98b05769eabac22"
+    },
+    {
+      "path": "migration/submissions/RN02-r3.json",
+      "note": "baseline submission, preserved",
+      "sha256": "cefb7d9848421a7e085e6816a862599c125075cb9a448bc23de703d45bf6bf0e"
+    },
+    {
+      "path": "migration/work-packages/RN02.md",
+      "note": "packet history",
+      "sha256": "e12142b5fc4c76dac10a76d007e356e580987fff61290a6ffe8fd7043f32972e"
+    },
+    {
+      "path": "migration/work-packages/RN03.md",
+      "note": "this work package, status line updated to READY FOR REVIEW",
+      "sha256": "a866f293b88d6b933ab10477447c0edbe96bb06c67c86cc3c9f78406b9acf5cf"
+    }
+  ]
+}

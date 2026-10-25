@@ -1,0 +1,184 @@
+{
+  "package": "RN04",
+  "revision": 2,
+  "head": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+  "device": {
+    "serial": "emulator-5554",
+    "avd": "RN01_API36",
+    "appId": "dev.translationtest.rn",
+    "metroStatus": "packager-status:running",
+    "reverse": "host-16 tcp:8082 tcp:8082"
+  },
+  "session": {
+    "id": 4,
+    "name": "University of Ionic"
+  },
+  "setupActions": [
+    {
+      "timestamp": "2026-10-25T10:53:01.214Z",
+      "reason": "Setup: initial usable screen was favorited Ionic Pro detail; return via header, not hardware back",
+      "target": {
+        "label": "Navigate up",
+        "field": "content-desc",
+        "bounds": "[0,128][147,275]"
+      },
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "73",
+        "201"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:27.077Z",
+      "reason": "Setup: clear actual search \"Ionic\"",
+      "target": {
+        "label": "Search sessions",
+        "field": "content-desc",
+        "bounds": "[76,468][1004,579]"
+      },
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "540",
+        "523"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:27.148Z",
+      "reason": "Setup: move cursor to End (123 is not Backspace)",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "123"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:27.505Z",
+      "reason": "Setup: 5 Backspaces (67) to clear search",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "67",
+        "67",
+        "67",
+        "67",
+        "67"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:28.489Z",
+      "reason": "Setup: dismiss XML/search-focused keyboard only, not navigation",
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "4"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:42.225Z",
+      "reason": "Setup recovery exception: keyboard-dismiss keyevent 4 unexpectedly reached launcher; app not on usable screen, return through visible launcher icon without force-stop/deep-link",
+      "target": {
+        "label": "Conference Migration RN",
+        "field": "content-desc",
+        "bounds": "[824,1873][997,2068]"
+      },
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "910",
+        "1970"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:51.778Z",
+      "reason": "Setup: inventory all favorites with empty search after launcher recovery; pre-recovery Ionic Pro was observed favorited",
+      "target": {
+        "label": "Favorite sessions",
+        "field": "content-desc",
+        "bounds": "[550,605][1003,717]"
+      },
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "776",
+        "661"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:54:32.494Z",
+      "reason": "Final cleanup only: leave app on schedule with All sessions selected; blocked before frame 01",
+      "target": {
+        "label": "All sessions",
+        "field": "content-desc",
+        "bounds": "[76,605][530,717]"
+      },
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "tap",
+        "303",
+        "661"
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T10:53:53.955Z",
+      "reason": "Observed setup failure, not an app Remove action",
+      "observed": "Preflight Ionic Pro detail toggle selected=true; header back showed Favorite sessions selected with search Ionic and Remove Ionic Pro. After End + five Backspaces + attempted keyboard dismissal, launcher XML appeared. Visible app icon recovery opened empty-search All schedule; Favorite sessions then showed No favorite sessions. without any Remove + confirm commands."
+    }
+  ],
+  "captures": [],
+  "status": "BLOCKED",
+  "startedAt": "2026-10-25T10:52:53.359Z",
+  "completedAt": "2026-10-25T10:55:53.208Z",
+  "finalEnvironment": {
+    "timestamp": "2026-10-25T10:54:35.374Z",
+    "foreground": [
+      "topResumedActivity=ActivityRecord{268224346 u0 dev.translationtest.rn/.MainActivity t29}"
+    ],
+    "imeShown": [
+      "mInputShown=false"
+    ],
+    "reverse": "host-16 tcp:8082 tcp:8082",
+    "metroStatus": "packager-status:running"
+  },
+  "finalScheduleXml": "tools/qwen-supervisor/.runs/sol-rn04-r2-native-20261025/after-input-1792925672541.xml",
+  "unresolved": [
+    "Setup did not satisfy mandatory cleanup of pre-existing favorites through Favorite-sessions Remove + confirm. Ionic Pro was initially favorited; after the attempted keyboard dismissal reached the launcher and permitted launcher-icon recovery, Favorites was empty without a Remove confirmation. No claim is made about why state reset.",
+    "Executor setup/navigation incident: keyevent 4 was intended solely to dismiss the keyboard after dumpsys reported mInputShown=true; subsequent UI XML instead showed the launcher. This must not be represented as compliant header-only navigation.",
+    "None of RN04-R2-01 through RN04-R2-05 was captured. Detail removal, immediate toggle label/selection, absence of alert after detail removal, and propagation to Favorites remain unverified in this revision.",
+    "Pixels are not yet inspected. No PNGs were acquired, and no visual acceptance is claimed.",
+    "Export-inventory reconciliation, final handoff and revision-2 submission remain deferred to a later authorized session."
+  ]
+}

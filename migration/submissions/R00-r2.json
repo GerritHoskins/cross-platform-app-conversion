@@ -1,0 +1,111 @@
+{
+  "package": "R00",
+  "revision": 2,
+  "supersedes": "migration/submissions/R00-r1.json",
+  "revisionReason": "R00-r1 review finding: relocate migration/reviews/.dispatch-log into evidence (done; original deleted)",
+  "repositoryRoot": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "branch": "migration/slice-1",
+  "startingHead": "6edb7eb60b4c2871258bb7d514f6d82e8178ff02",
+  "currentHead": "6edb7eb60b4c2871258bb7d514f6d82e8178ff02",
+  "preExistingChanges": [],
+  "files": [
+    {
+      "path": "migration/work-packages/R00.md",
+      "status": "modified",
+      "sha256": "d2eafe2122b6bbaab9fdbbb1d1f7eced914d6eed88853e08967074b4975c9b71"
+    },
+    {
+      "path": "migration/handoffs/R00.md",
+      "status": "new",
+      "sha256": "8573d3b21a6632f1e42c5d00f8aca3a463f0e0b009189ccff5c55e39000a4f2c"
+    },
+    {
+      "path": "migration/evidence/R00/baseline.txt",
+      "status": "new",
+      "sha256": "dd052bb817c9a065ae2a9731997bef19281c7a8a76195ea0a199e3cd05f983da"
+    },
+    {
+      "path": "migration/evidence/R00/ollama.txt",
+      "status": "new",
+      "sha256": "4cff46afa9e4e3fc49ada07af3b59f77780283d9a5b9a593867c1e3f5dc40e27"
+    },
+    {
+      "path": "migration/evidence/R00/profile.txt",
+      "status": "new",
+      "sha256": "fb14a4eec9ca3dd70863dcc86545bb1694c4802274894b2bdf714903a68cecb5"
+    },
+    {
+      "path": "migration/evidence/R00/runtime.txt",
+      "status": "new",
+      "sha256": "5ee7274d0cfccb36f64b2046fab693cc61a668eb873c3dd6c4f71b0fd72f6c2a"
+    },
+    {
+      "path": "migration/evidence/R00/review-dispatch-r1.txt",
+      "status": "new",
+      "sha256": "6eff816d90bb2272c6a392285bd9528a5605da55521d8278a480f73a21f65e65"
+    },
+    {
+      "path": "migration/reviews/R00-r1.md",
+      "status": "new (r1 review artifact, unchanged since review)",
+      "sha256": "f43892fa9cb6afd9b8d5cbe0b4f999579619a297ad80ed81f0bf935fd86c93c7"
+    },
+    {
+      "path": "migration/submissions/R00-r1.json",
+      "status": "new (r1 review artifact, unchanged since review)",
+      "sha256": "def4186a5f2035c78799e5d092d0d2855923d0e47590ed14f83865ba2c74eef2"
+    }
+  ],
+  "externalFiles": [
+    {
+      "path": "C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration/config.yaml",
+      "status": "new (profile created by R00)",
+      "sha256": "63a70460b9bcfacdd8ab8201c8db9934bfe9d47a06308fcbee165f301f1dc1bc"
+    }
+  ],
+  "globalConfig": {
+    "path": "C:/Users/Gerrit/AppData/Local/hermes/config.yaml",
+    "sha256Before": "58479268fb3e342f221aa798a0a87c0bbebcd22b4d31225313d204f4ef57d906",
+    "sha256After": "58479268fb3e342f221aa798a0a87c0bbebcd22b4d31225313d204f4ef57d906"
+  },
+  "commands": [
+    {
+      "cmd": "curl -s http://127.0.0.1:11434/api/ps",
+      "result": "qwen3.8:27b context_length=65536"
+    },
+    {
+      "cmd": "hermes profile create translation-migration --no-skills --no-alias --description ...",
+      "exit": 0
+    },
+    {
+      "cmd": "hermes -p translation-migration config set <13 keys>",
+      "exit": 0
+    },
+    {
+      "cmd": "hermes -p translation-migration tools disable --platform cli <14 toolsets>",
+      "exit": 0,
+      "note": "deviation: replaces ineffective top-level toolsets key"
+    },
+    {
+      "cmd": "hermes -p translation-migration auth status openai-codex",
+      "result": "logged in"
+    },
+    {
+      "cmd": "hermes -p translation-migration chat (Qwen nonce handshake, user-driven)",
+      "result": "R00_ACK 569a6aac-39ce-4b4c-871b-eddd7cfcdf2f delivered async; see runtime.txt"
+    }
+  ],
+  "evidence": [
+    "migration/evidence/R00/baseline.txt",
+    "migration/evidence/R00/ollama.txt",
+    "migration/evidence/R00/profile.txt",
+    "migration/evidence/R00/runtime.txt",
+    "migration/evidence/R00/review-dispatch-r1.txt"
+  ],
+  "handoff": "migration/handoffs/R00.md",
+  "failures": [],
+  "unverified": [
+    "reviewer read-only enforcement (instruction boundary only)",
+    "child receipt of delegate_task context text (not found in stored child prompt or first message in either delegation)"
+  ],
+  "nextEligiblePackage": "P01"
+}

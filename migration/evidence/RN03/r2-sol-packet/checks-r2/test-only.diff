@@ -1,0 +1,136 @@
+diff --git a/tools/qwen-supervisor/.runs/sol-rn03-r2-fix-prepare-20261024/schedule-screen.original.tsx b/migration/react-native/__tests__/schedule-screen.test.tsx
+index 8923eb3..e45e0ba 100644
+--- a/tools/qwen-supervisor/.runs/sol-rn03-r2-fix-prepare-20261024/schedule-screen.original.tsx
++++ b/migration/react-native/__tests__/schedule-screen.test.tsx
+@@ -1,7 +1,8 @@
+-import { Pressable, Text } from 'react-native';
++import { Pressable, SectionList, Text } from 'react-native';
++import type { Fiber } from 'test-renderer';
+ 
+ import type { Conference } from '@migration/core';
+-import { createInitialSelection, groupSessions, selectSessions } from '@migration/core';
++import expectedCases from '../../reference/expected-cases.json';
+ 
+ import { act, fireEvent, render, screen } from '@testing-library/react-native';
+ 
+@@ -282,21 +283,44 @@ describe('ScheduleScreen behavior (ready state)', () => {
+       return loadConference();
+     };
+ 
+-    // Reads the exact `groups` array ScheduleScreen passes to SectionList (same
+-    // context), so the section/row mapping is asserted independent of how many
+-    // rows the test renderer happens to mount.
+-    let observedGroups: unknown;
+-    function GroupsProbe() {
+-      observedGroups = useConference().groups;
+-      return null;
+-    }
+-
+     const view = await render(
+       <ConferenceProvider loader={loader}>
+         <ScheduleScreen />
+-        <GroupsProbe />
+       </ConferenceProvider>,
+     );
++
++    // RNTL 14 queries host elements only. Its renderer documents unstable_fiber
++    // for the composite tree: inspect the real imported SectionList, not context
++    // or a mocked list. Re-read the current host fiber after every update.
++    function sectionListFibers(fiber: Fiber | null = view.root!.unstable_fiber): Fiber[] {
++      if (fiber === null) return [];
++      const matches = fiber.type === SectionList || fiber.elementType === SectionList ? [fiber] : [];
++      return [...matches, ...sectionListFibers(fiber.child), ...sectionListFibers(fiber.sibling)];
++    }
++
++    function sectionMapping() {
++      const lists = sectionListFibers();
++      expect(lists).toHaveLength(1);
++      const sections = lists[0].memoizedProps.sections as ReadonlyArray<{
++        title: string;
++        key: string;
++        data: ReadonlyArray<{ id: number }>;
++      }>;
++      return sections.map(({ title, key, data }) => ({
++        title,
++        key,
++        sessionIds: data.map(({ id }) => id),
++      }));
++    }
++
++    function expectedMapping(caseId: string) {
++      const referenceCase = expectedCases.cases.find(({ id }) => id === caseId)!;
++      return referenceCase.expected.groups.map(({ groupTime, sessionIds }) => ({
++        title: groupTime,
++        key: groupTime,
++        sessionIds,
++      }));
++    }
+     await screen.findByText('Breakfast');
+ 
+     const search = screen.getByLabelText('Search sessions');
+@@ -304,30 +328,27 @@ describe('ScheduleScreen behavior (ready state)', () => {
+     await screen.findAllByTestId(/session-/);
+     expect(search.props.value).toBe('IOnic');
+ 
+-    // Frozen case "IOnic": compute the expected section/row mapping with the real
+-    // core against the same bundled fixture the provider loads (15 of 20 sessions
+-    // in 6 group-time sections), then assert the screen's full mapping against it.
++    // Compare every title, section key and ordered row ID received by the real
++    // SectionList to the frozen reference case, regardless of mounted viewport.
+     const conference = loadConference();
+-    const expectedGroups = groupSessions(
+-      selectSessions(conference.sessions, { ...createInitialSelection(conference), searchText: 'IOnic' }),
+-    );
+-    const expectedIds = expectedGroups.flatMap((group) => group.sessions.map((session) => session.id));
+-    const expectedGroupTimes = expectedGroups.map((group) => group.groupTime);
++    const expectedSections = expectedMapping('search-case-insensitive');
++    const expectedIds = expectedSections.flatMap(({ sessionIds }) => sessionIds);
++    const expectedGroupTimes = expectedSections.map(({ title }) => title);
+     const nonMatchingIds = conference.sessions
+       .map((session) => session.id)
+       .filter((id) => !expectedIds.includes(id));
+ 
+-    // Frozen expected numbers for this fixture (search is case-insensitive).
+-    expect(expectedGroups).toHaveLength(6);
++    expect(expectedSections).toHaveLength(6);
+     expect(expectedIds).toHaveLength(15);
+     expect(nonMatchingIds).toHaveLength(5);
++    const actualSections = sectionMapping();
++    expect(actualSections).toEqual(expectedSections);
+ 
+-    // Virtualization-independent assertion (RN 0.88's test host mounts only the
+-    // viewport window of a virtualized list, so "all 15 rows are in the DOM" is
+-    // not assertable here): the exact section/row mapping the real SectionList
+-    // receives, read from the same context the screen reads. A screen that drops,
+-    // reorders, or pads the mapping fails.
+-    expect(observedGroups).toEqual(expectedGroups);
++    // Safe negative controls on copied observations only; no rendered props or
++    // product code is mutated. These must fail the same full-equality assertion.
++    for (const incomplete of [actualSections.slice(0, 1), actualSections.slice(0, -1)]) {
++      expect(() => expect(incomplete).toEqual(expectedSections)).toThrow();
++    }
+ 
+     // Rendered window checks: every mounted row is one of the 15 matching rows,
+     // at least one row is mounted, and none of the 5 non-matching sessions
+@@ -362,16 +383,16 @@ describe('ScheduleScreen behavior (ready state)', () => {
+     // queryAll* (synchronous): findAll* throws when zero elements match, which
+     // is exactly the state asserted here.
+     expect(screen.queryAllByTestId(/session-/)).toHaveLength(0);
+-    expect(observedGroups).toEqual([]);
++    expect(sectionListFibers()).toHaveLength(0);
+     expect(screen.queryByRole('list')).toBeNull();
+ 
+     // Clearing restores the full frozen-case mapping (all 20 sessions, 8 sections).
+     await fireEvent.changeText(search, '');
+     await screen.findByTestId('session-1');
+-    const restoredGroups = groupSessions(selectSessions(conference.sessions, createInitialSelection(conference)));
+-    expect(restoredGroups).toHaveLength(8);
+-    expect(restoredGroups.flatMap((group) => group.sessions.map((session) => session.id))).toHaveLength(20);
+-    expect(observedGroups).toEqual(restoredGroups);
++    const restoredSections = expectedMapping('default-all');
++    expect(restoredSections).toHaveLength(8);
++    expect(restoredSections.flatMap(({ sessionIds }) => sessionIds)).toHaveLength(20);
++    expect(sectionMapping()).toEqual(restoredSections);
+     expect(screen.queryByText('No sessions match your search or filters.')).toBeNull();
+     expect(loaderCalls).toBe(1);
+     await view.unmount();

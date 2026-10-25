@@ -1,0 +1,106 @@
+--------- beginning of main
+10-25 14:56:09.544  9433  9433 I nslationtest.rn: Late-enabling -Xcheck:jni
+10-25 14:56:09.655  9433  9433 I nslationtest.rn: Using CollectorTypeCMC GC.
+10-25 14:56:09.691  9433  9433 W nslationtest.rn: Unexpected CPU variant for x86: x86_64.
+10-25 14:56:09.691  9433  9433 W nslationtest.rn: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-25 14:56:09.790  9433  9433 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-25 14:56:09.941  9433  9433 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-25 14:56:09.941  9433  9433 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+10-25 14:56:10.361  9433  9433 D nativeloader: Configuring clns-9 for other apk /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/lib/x86_64:/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.rn
+10-25 14:56:10.378  9433  9433 I nslationtest.rn: AssetManager2(0x7845cea18358) locale list changing from [] to [en-US]
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment: Currently set values for:
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment: dev.translationtest.rn is not listed in per-application setting
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment: dev.translationtest.rn is not listed in ANGLE allowlist or settings, returning default
+10-25 14:56:10.402  9433  9433 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-25 14:56:10.497  9433  9433 W SoLoader: Initializing SoLoader: 0
+10-25 14:56:10.499  9433  9433 W SoLoader: Recording new base apk path: /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk
+10-25 14:56:10.499  9433  9433 W SoLoader: Previously recorded 0 base apk paths.
+10-25 14:56:10.501  9433  9433 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+10-25 14:56:10.501  9433  9433 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+10-25 14:56:10.501  9433  9433 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64]]
+10-25 14:56:10.535  9433  9433 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/lib/x86_64 flags = 0]]
+10-25 14:56:10.535  9433  9433 I SoLoader: init finish: 4 SO sources prepared
+10-25 14:56:10.535  9433  9433 W SoLoader: SoLoader initialized: 8
+10-25 14:56:10.602  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libc++_shared.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.636  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libjsi.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.649  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libfbjni.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.748  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreactnative.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7845233597d0
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7845235b6bb0
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7845235c8810
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x78452367af60
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x78452398dd60
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7845239a0ca0
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x7845239c4460
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x7845239cfcc0
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x784523a4c130
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x784523ba1140
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x784523bb7690
+10-25 14:56:10.749  9433  9433 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x784523bc6b40
+10-25 14:56:10.750  9433  9433 D jni_lib_merge: About to register 12 actual methods.
+10-25 14:56:10.781  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_rngesturehandler_codegen.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.803  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_rnscreens.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7845233597d0
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7845235b6bb0
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7845235c8810
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x78452367af60
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x78452398dd60
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7845239a0ca0
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x7845239c4460
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x7845239cfcc0
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x784523a4c130
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x784523ba1140
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x784523bb7690
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x784523bc6b40
+10-25 14:56:10.803  9433  9433 D jni_lib_merge: About to register 12 actual methods.
+10-25 14:56:10.810  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:10.834  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libappmodules.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:11.039  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libhermesvm.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:11.042  9433  9433 D nativeloader: Load /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!/lib/x86_64/libhermestooling.so using class loader ns clns-9 (caller=/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes8.dex): ok
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x784518864280
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x784518890600
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x7845188923a0
+10-25 14:56:11.042  9433  9433 D jni_lib_merge: About to register 3 actual methods.
+10-25 14:56:11.195  9433  9433 I nslationtest.rn: hiddenapi: Accessing hidden field Ljava/lang/reflect/Field;->accessFlags:I (runtime_flags=0, domain=core-platform, api=unsupported) from Lexpo/modules/devlauncher/helpers/DevLauncherReflectionExtensionsKt; (domain=app) using reflection: allowed
+10-25 14:56:11.522  9433  9433 I Choreographer: Skipped 61 frames!  The application may be doing too much work on its main thread.
+10-25 14:56:11.547  9433  9433 I nslationtest.rn: AssetManager2(0x7845cea1fa18) locale list changing from [] to [en-US]
+--------- beginning of system
+10-25 14:56:11.554  9433  9465 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-25 14:56:11.658  9433  9465 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-25 14:56:11.660  9433  9465 I EGL_emulation: Opening libGLESv2_emulation.so
+10-25 14:56:11.673  9433  9465 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-25 14:56:11.690  9433  9433 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-25 14:56:11.691  9433  9433 I nslationtest.rn: AssetManager2(0x7845cea26a98) locale list changing from [] to [en-US]
+10-25 14:56:11.711  9433  9433 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-25 14:56:11.774  9433  9433 D CompatChangeReporter: Compat change id reported: 377864165; UID 10215; state: ENABLED
+10-25 14:56:11.775  9433  9433 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-25 14:56:11.804  9433  9433 I nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-25 14:56:11.892  9433  9433 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-25 14:56:11.892  9433  9433 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-25 14:56:11.943  9433  9433 W HWUI    : Unknown dataspace 0
+10-25 14:56:12.176  9433  9433 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-25 14:56:12.319  9433  9439 I nslationtest.rn: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-25 14:56:13.087  9433  9433 W HWUI    : Image decoding logging dropped!
+10-25 14:56:13.089  9433  9433 W HWUI    : Image decoding logging dropped!
+10-25 14:56:13.091  9433  9433 W HWUI    : Image decoding logging dropped!
+10-25 14:56:13.856  9433  9433 I nslationtest.rn: hiddenapi: Accessing hidden method Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/compose/ui/platform/AndroidComposeView$Companion; (domain=app) using reflection: allowed
+10-25 14:56:13.860  9433  9446 I HWUI    : Davey! duration=1661ms; Flags=1, FrameTimelineVsyncId=7109504, IntendedVsync=17131704043956, Vsync=17131704043956, InputEventId=0, HandleInputStart=17131706707500, AnimationStart=17131706723000, PerformTraversalsStart=17131706745000, DrawStart=17132986655100, FrameDeadline=17131720710622, FrameStartTime=17131706698000, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=17133009599800, SyncStart=17133009875500, IssueDrawCommandsStart=17133010041700, SwapBuffers=17133296280100, FrameCompleted=17133366158900, DequeueBufferDuration=22200, QueueBufferDuration=226400, GpuCompleted=17133366062300, SwapBuffersCompleted=17133366158900, DisplayPresentTime=0, CommandSubmissionCompleted=17133296280100, 
+10-25 14:56:13.904  9433  9433 I Choreographer: Skipped 93 frames!  The application may be doing too much work on its main thread.
+10-25 14:56:14.017  9433  9480 I HWUI    : Davey! duration=1639ms; Flags=0, FrameTimelineVsyncId=7109528, IntendedVsync=17131870710616, Vsync=17133420710554, InputEventId=0, HandleInputStart=17133432392200, AnimationStart=17133432416800, PerformTraversalsStart=17133458351700, DrawStart=17133463440000, FrameDeadline=17133387377222, FrameStartTime=17133431875800, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=17133464893500, SyncStart=17133465185100, IssueDrawCommandsStart=17133465341000, SwapBuffers=17133478097400, FrameCompleted=17133510646700, DequeueBufferDuration=15700, QueueBufferDuration=196300, GpuCompleted=17133510519600, SwapBuffersCompleted=17133510646700, DisplayPresentTime=0, CommandSubmissionCompleted=17133478097400, 
+10-25 14:56:14.208  9433  9433 D InsetsController: hide(ime(), fromIme=false)
+10-25 14:56:14.210  9433  9433 I ImeTracker: dev.translationtest.rn:ba958168: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-25 14:56:14.410  9433  9433 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@9e1045b
+10-25 14:56:14.411  9433  9433 D ViewRootImpl: Skipping stats log for color mode
+10-25 14:56:16.857  9433  9483 D ProfileInstaller: Installing profile for dev.translationtest.rn
+10-25 14:56:45.672  9433  9433 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSelection()Landroid/view/accessibility/AccessibilityNodeInfo$Selection; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied
+10-25 14:56:45.677  9433  9433 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->setSelection(Landroid/view/accessibility/AccessibilityNodeInfo$Selection;)V (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied
+10-25 14:56:45.677  9433  9433 E nslationtest.rn: hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->setSelection(Landroid/view/accessibility/AccessibilityNodeInfo$Selection;)V (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk!classes7.dex (domain=app) using linking: denied

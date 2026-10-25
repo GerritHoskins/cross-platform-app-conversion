@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "package": "P01",
+  "manifestId": "P01-r4",
+  "revision": 4,
+  "date": "2026-10-19",
+  "branch": "migration/slice-1",
+  "headCommit": "0b1f4690baacfe06b5c7c8584fbebce2e810ae13",
+  "summary": "Revision 4 supersedes revisions 1-3. It resolves the single r3 finding (non-status-line change at migration/work-packages/P01.md purpose line 10) by reverting that line to the committed original, restoring the status-line-only edit scope; all r1/r2 findings remain resolved (re-verified this session). Every prior manifest is retained verbatim and listed below for provenance; none is modified by this package.",
+  "files": [
+    {
+      "path": "migration/reference/contract.md",
+      "sha256": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "role": "P01 deliverable: reference behavior contract (revision 4 header; node_modules-present at :9; all facts, citations, per-case fixture line refs)."
+    },
+    {
+      "path": "migration/reference/derive-expected.mjs",
+      "sha256": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954",
+      "role": "P01 deliverable: deterministic fixture derivation (flat sessionIds from groups.flatMap + invariant assertion loop) with the synthetic dual-track self-check over BOTH allFiltered and favoritesFiltered (kept out of the fixture, labeled supplemental). Dependency-free ESM; runs with exit 0; byte-identical across runs."
+    },
+    {
+      "path": "migration/reference/expected-cases.json",
+      "sha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "role": "P01 deliverable: generated canonical expected output (11 cases over 20 single-track sessions; 8 groups, 13 speakers). Byte-identical across two consecutive runs. Canonical for C01 (do not re-derive)."
+    },
+    {
+      "path": "migration/handoffs/P01.md",
+      "sha256": "880fa6ce96b53ae8b4c217ffb246dc389cee23240e2dec6c9628f067140d72d5",
+      "role": "P01 deliverable: revision-4 handoff (r3 scope resolution + full findings history + C01 hand-off notes; all hashes re-verified to disk)."
+    },
+    {
+      "path": "migration/work-packages/P01.md",
+      "note": "Tracked spec; NOT listed here as a hashed deliverable (it is the package definition). Only its status line is modified in the working tree (line 10 purpose reverted to committed original; see findingsAddressed r3 item). Verify with: git diff HEAD -- migration/work-packages/P01.md  (status line only)."
+    },
+    {
+      "path": "migration/reviews/P01-r1.md",
+      "sha256": "f40a45568bb253a1a83bf70ef3b88ab1277b06bce0da5ba31ec4dbce5b9322ef",
+      "role": "Retained verbatim: round-1 verdict (CHANGES_REQUIRED; 5 findings)."
+    },
+    {
+      "path": "migration/submissions/P01-r1.json",
+      "sha256": "41734df1e1a55c34bc8d0bc9496b51e50ee71e40d8a5ac012fe39ea282cc641f",
+      "role": "Retained verbatim: round-1 manifest."
+    },
+    {
+      "path": "migration/reviews/P01-r2.md",
+      "sha256": "5d11317005685e31f7a1645edf83da2e2731790d6135dfd38ec4cd914b2e1ba7",
+      "role": "Retained verbatim: round-2 verdict (CHANGES_REQUIRED; 2 items)."
+    },
+    {
+      "path": "migration/submissions/P01-r2.json",
+      "sha256": "83dd08ec681ef7733b28622693effe983d4414e324f7c58f1dd2949b85ce642f",
+      "role": "Retained verbatim: round-2 manifest."
+    },
+    {
+      "path": "migration/reviews/P01-r3.md",
+      "sha256": "9c45274ee968e4a5f72d0401fddf4389b6638f43ea939bc569b7d27d6de1e6f0",
+      "role": "Retained verbatim: round-3 verdict (CHANGES_REQUIRED; 1 scope item at purpose line 10; all content PASS)."
+    },
+    {
+      "path": "migration/submissions/P01-r3.json",
+      "sha256": "8c30f851c54b682193a8eea0781576ebf3cdb6dca75e12b34d9eabf118dc64dc",
+      "role": "Retained verbatim: round-3 manifest."
+    }
+  ],
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "role": "Pre-existing, human-authored 1-line project note (89 bytes): 'proof of concept: translating a vue/ionic/capacitor app to react native and nativeScript'. NOT a P01 deliverable. Provenance: mtime 2026-10-19 08:34 (before this P01 work session); never committed (git log --all -- IDEA.md is empty); not created by this package. Retained as-is (not deleted); recorded per reviewer request (r2 item B) and accepted at r3."
+    }
+  ],
+  "reviewsBeingAddressed": [
+    "migration/reviews/P01-r1.md (round 1, CHANGES_REQUIRED: 5 findings)",
+    "migration/reviews/P01-r2.md (round 2, CHANGES_REQUIRED: 2 items — contract revision/hash metadata; IDEA.md scope)",
+    "migration/reviews/P01-r3.md (round 3, CHANGES_REQUIRED: 1 item — non-status-line change at purpose line 10)"
+  ],
+  "findingsAddressed": [
+    {
+      "finding": "r1 #1 flat sessionIds must be derived from groups (not hardcoded, and in group order)",
+      "evidence": "derive-expected.mjs standardCase now builds expected.sessionIds from the grouped output via groups.flatMap(g=>g.sessionIds) and the invariant assertion loop re-derives each case's flat list from its own groups (throws on mismatch). default-all, single-track, search-case-insensitive, search-plus-track now have flat == group-derived order. R1 case descriptions preserved verbatim."
+    },
+    {
+      "finding": "r1 #2 fixture facts (8 groups, 13 speakers) + single-track case (IDs 2,4,5 displayed [4,2,5]; session 3 excluded by track) + node_modules stated present (npm ci) + contract revision/hash metadata",
+      "evidence": "contract.md records 8 groups, 13 speakers, 20 single-track sessions, the [4,2,5] display, session 3 excluded by track (not name), node_modules present (npm ci) at contract.md:9; contract.md:3 'revision 4'; contract.md:6 regenerated fixture hash ab44df1e... (all re-run/re-cited this session; expected-cases.json sha256 ab44df1e... re-confirmed byte-identical across two runs)."
+    },
+    {
+      "finding": "r1 #3 supplemental self-check must test BOTH allFiltered and favoritesFiltered over synthetic dual-track sessions, kept out of the fixture, labeled supplemental",
+      "evidence": "derive-expected.mjs supplemental block checks BOTH allFiltered and favoritesFiltered over synthetic dual-track sessions (IDs 100,200; tracks AlphaTrack,BetaTrack); prints 'supplemental self-check PASSED (synthetic dual-track; not fixture)'; expected-cases.json holds exactly 11 cases; contract.md labels it 'supplemental (not fixture)'."
+    },
+    {
+      "finding": "r1 #4 SessionList.vue:405-410 competing-watcher defect recorded (watcher overwrites selectedSessions even in favorites mode; not branched on mode), framed as getters-level intent, tagged [static], NOT fixed",
+      "evidence": "SessionList.vue:405-410 (watch on allFiltered; unconditional selectedSessions = filtered at 408); contract.md frames the favorites-order expectation as getter-level favoritesFiltered / contract INTENT; tagged [static]; not fixed (out of P01 reference-contract scope)."
+    },
+    {
+      "finding": "r1 #5 citations correct (sessions.ts isFirstLoad line, SessionListFilter.vue icon-map range, per-case fixture line refs)",
+      "evidence": "sessions.ts:42 (isFirstLoad: true); SessionListFilter.vue:114-125 (icon map); contract.md per-case line refs (default-all:6, no-tracks:113, single-track:127, search-case-insensitive:161, search-no-match:248, search-plus-track:273, favorites-empty:317, favorites-some:342, favorites-order:370, add-duplicate:414, remove-absent:466). All re-cited against on-disk text this session."
+    },
+    {
+      "finding": "r2 item A — contract revision/hash metadata was stale",
+      "evidence": "contract.md:3 is now 'revision 4', contract.md:6 records the regenerated fixture hash ab44df1e... (NOT the old a1a4... hash)"
+    },
+    {
+      "finding": "r2 item B — IDEA.md out of scope (record or remove)",
+      "evidence": "IDEA.md provenance recorded: 89-byte human-authored note, mtime 2026-10-19 08:34, git log --all -- IDEA.md empty, sha256 56b5dc0e... (in outOfScopePreExisting + handoffs/P01.md); retained, not deleted; accepted by r3 reviewer."
+    },
+    {
+      "finding": "r3 item — non-status-line change at migration/work-packages/P01.md:10 (purpose line), beyond the status-line-only scope allowed at P01.md:31",
+      "evidence": "Purpose line 10 reverted to the committed original; git diff HEAD -- migration/work-packages/P01.md now shows ONLY the status line changed. The node_modules-present fact remains authoritative at contract.md:9 (allowed path). Scope restored to the package's status-line-only allowance."
+    }
+  ],
+  "notes": [
+    "Determinism: derive-expected.mjs was run twice this session; both runs exit 0 and expected-cases.json is byte-identical across runs (sha256 ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1).",
+    "node_modules is present at the root (npm ci) and was NOT reinstalled, modified, or used to run the Ionic app in this package.",
+    "This package is static-analysis only; no source behavior was changed and the SessionList.vue:405-410 defect is recorded, not fixed.",
+    "Next eligible package: C01. On final independent APPROVE of revision 4, route to C01."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "package": "RN03",
+  "revision": 2,
+  "head": "f78a759741b57ed1a19c7b6630af67640571ff61",
+  "device": {
+    "appId": "dev.translationtest.rn",
+    "avd": "RN01_API36",
+    "serial": "emulator-5554"
+  },
+  "captures": [
+    {
+      "name": "RN03-01-initial-schedule",
+      "image": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.png",
+      "uiXml": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.xml",
+      "query": "",
+      "mode": "All",
+      "focusVerified": true,
+      "tutorialStatus": "unknown",
+      "tutorialEvidence": "Preserved capture from prior session 20261022_080513_ed7256 (coordinator-recorded time 08:10:00 MEST), hash-protected, not modified in this run. Bounded XML re-read this session: app EditText (content-desc 'Search sessions', focused) holds empty text, consistent with empty query/All mode. No node text in the XML mentions tutorial/stylus/handwrit. Pixels were not inspected and XML silence does not establish tutorial absence."
+    },
+    {
+      "name": "RN03-02-search-ionic-top",
+      "image": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.png",
+      "uiXml": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.xml",
+      "query": "IOnic",
+      "mode": "All",
+      "focusVerified": true,
+      "tutorialStatus": "unknown",
+      "tutorialEvidence": "Preserved capture from prior session 20261022_080513_ed7256 (coordinator-recorded time 08:10:25 MEST), hash-protected, not modified in this run. Bounded XML re-read this session: app EditText (content-desc 'Search sessions', focused) holds text 'IOnic', i.e., the query is present in the actual app field, not a tutorial field. No node text in the XML mentions tutorial/stylus/handwrit. Pixels were not inspected and XML silence does not establish tutorial absence."
+    },
+    {
+      "name": "RN03-03-search-ionic-scrolled",
+      "image": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.png",
+      "uiXml": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.xml",
+      "query": "IOnic",
+      "mode": "All",
+      "focusVerified": true,
+      "tutorialStatus": "unknown",
+      "tutorialEvidence": "Newly captured 2026-10-22 08:17:25 to 08:17:29 local (single bounded swipe at 08:17:25; IOnic query verified present in app EditText in the live pre-scroll dump at 08:16:52). Captured XML confirms app EditText (content-desc 'Search sessions', focused) holds text 'IOnic' and the list now starts at later matches ('Ionic Tooling' 9:45 am, 'Migrating to Ionic' 10:00 am, 'The Evolution of Ionicons'). No node text in the XML mentions tutorial/stylus/handwrit. Pixels were not inspected and XML silence does not establish tutorial absence."
+    },
+    {
+      "name": "RN03-04-search-ionic-bottom",
+      "image": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.png",
+      "uiXml": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.xml",
+      "query": "IOnic",
+      "mode": "All",
+      "focusVerified": true,
+      "tutorialStatus": "unknown",
+      "tutorialEvidence": "Newly captured 2026-10-22 08:17:37 to 08:17:42 local (second bounded swipe at 08:17:37, after frame 03; IOnic query maintained). Captured XML confirms app EditText (content-desc 'Search sessions', focused) holds text 'IOnic' and the list shows still later matches ('Ionic Workshop' 11:00 am, 'Navigation in Ionic' 11:30 am, 'Ionic in the Enterprise' 1:00 pm). No node text in the XML mentions tutorial/stylus/handwrit. Pixels were not inspected and XML silence does not establish tutorial absence."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { Module } from 'vuex';
-import { parse as parseDate } from 'date-fns';
+import { compareTimes } from '@/utils/time';
 
 export interface Session {
   id: number;
@@ -175,10 +175,7 @@ const sessionStore: Module<SessionState, {}> = {
     conferenceStart(state) {
       const firstSession = state.sessions
         .concat()
-        .sort((a, b) => (
-          parseDate(a.timeStart, 'HH:mm:ss', new Date()).valueOf() -
-          parseDate(b.timeStart, 'HH:mm:ss', new Date()).valueOf()
-        ))[0];
+        .sort((a, b) => compareTimes(a.timeStart, b.timeStart))[0];
       return firstSession ? firstSession.timeStart : null;
     },
     allTracks(state) {

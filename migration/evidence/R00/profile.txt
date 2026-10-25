@@ -1,0 +1,114 @@
+# R00 profile evidence (2026-10-18T20:48:12Z)
+step 4: profile list before create showed only 'default'; no profiles/ dir existed
+step 5: hermes profile create translation-migration --no-skills --no-alias --description ... -> exit 0
+profile path: C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration
+note: --no-skills still seeded one skill dir (skills/autonomous-ai-agents); skills toolset is disabled for cli
+note: profile .env contains no assignments (comments only)
+
+step 6: config set (13 keys) all exit 0. Resulting config.yaml (secrets redacted):
+model:
+  api_mode: chat_completions
+  base_url: http://127.0.0.1:11434/v1
+  default: qwen3.8:27b
+  provider: ollama-launch
+  context_length: 65536
+providers:
+  ollama-launch:
+    api: http://127.0.0.1:11434/v1
+    default_model: qwen3.8:27b
+    models:
+      qwen3.8:27b:
+        context_length: 65536
+      qwen3.5:27b-q4_K_M: {}
+    name: Ollama
+    base_url: http://127.0.0.1:11434/v1
+    model: qwen3.8:27b
+    discover_models: true
+    context_length: 65536
+_config_version: 50
+delegation:
+  provider: openai-codex
+  model: gpt-6.1-sol
+  reasoning_effort: high
+  fallback_providers: []
+  max_concurrent_children: 1
+  max_iterations: 30
+fallback_providers: []
+toolsets:
+  - terminal
+  - file
+  - delegation
+platform_toolsets:
+  cli:
+    - delegation
+    - file
+    - terminal
+known_plugin_toolsets:
+  cli:
+    - a2a
+known_builtin_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - connections
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - image_gen
+    - kanban
+    - memory
+    - session_search
+    - skills
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
+
+deviation: top-level 'toolsets' did not restrict the CLI (17/27 enabled). Applied: hermes -p translation-migration tools disable --platform cli web browser code_execution vision image_gen tts skills todo memory session_search connections clarify cronjob computer_use
+tools list (cli) enabled after:
+  ✓ enabled  terminal  💻 Terminal & Processes
+  ✓ enabled  file  📁 File Operations
+  ✓ enabled  delegation  👥 Task Delegation
+plugin toolsets: a2a disabled; no MCP servers in profile config
+
+config get delegation (redacted):
+model: gpt-6.1-sol
+provider: openai-codex
+fallback_providers: []
+base_url: ''
+api_key: <redacted>
+api_mode: ''
+request_overrides: {}
+compression_threshold_tokens: 0
+inherit_mcp_toolsets: true
+max_iterations: 30
+max_summary_chars: 24000
+child_timeout_seconds: 0
+reasoning_effort: high
+max_concurrent_children: 1
+independent_completions: false
+max_spawn_depth: 1
+orchestrator_enabled: true
+oneshot_max_children: 2
+subagent_auto_approve: false
+surface_child_process_notifications: false
+
+config check: Required: none missing
+auth status openai-codex: openai-codex: logged in
+
+global config sha256 baseline: 58479268fb3e342f221aa798a0a87c0bbebcd22b4d31225313d204f4ef57d906
+global config sha256 now:      58479268fb3e342f221aa798a0a87c0bbebcd22b4d31225313d204f4ef57d906
+global config UNCHANGED
+
+step 7 nonce: 569a6aac-39ce-4b4c-871b-eddd7cfcdf2f

@@ -1,0 +1,151 @@
+{
+  "package": "C02",
+  "revision": 2,
+  "supersedes": "migration/submissions/C02-r1.json",
+  "revisionReason": "C02-r1 review (migration/reviews/C02-r1.md, CHANGES_REQUIRED) finding: the r1 handoff and r1 manifest identified the starting HEAD as c4ca6fc91d24090d3d166e0485723276e44cbcc5, but the actual repository HEAD (git rev-parse HEAD) is c4ca6fcce7762e2c6e794a06148e9f1e2ffb63be (short form c4ca6fc, matching the assignment text). The r1 value was an unverified identifier I recorded in error. Revision 2 reconciles the baseline identifier to the verified value; NO implementation, test, configuration, dependency, or repository history was changed. Per the reviewer's instruction, the repository history was not modified to match the unverified identifier.",
+  "head": "c4ca6fcce7762e2c6e794a06148e9f1e2ffb63be (verified via `git rev-parse HEAD` on 2026-10-19 during revision 2; commit \"docs(migration): C02 normalization and C03 selection packages\"; the r1-recorded identifier c4ca6fc91d24090d3d166e0485723276e44cbcc5 is superseded and was never the repository HEAD)",
+  "branch": "migration/slice-1",
+  "prerequisite": {
+    "package": "C01",
+    "reviewFile": "migration/reviews/C01-r1.md",
+    "verdictLine": "Verdict: APPROVE",
+    "nextInstructionLine": "Next instruction: CONTINUE C02"
+  },
+  "reviewerModelPreCheck": {
+    "command": "hermes -p translation-migration config get delegation.model (canonical path per qwen.md, run immediately before dispatch)",
+    "valueUsed": "gpt-6.1-sol",
+    "recordedAt": "revision 2 dispatch"
+  },
+  "environment": {
+    "node": "v26.3.0",
+    "npm": "11.1.0",
+    "os": "Windows (git-bash terminal)"
+  },
+  "files": [
+    {
+      "path": "migration/core/src/types.ts",
+      "change": "new",
+      "sha256": "fe3475b890d8c5c6c7ebe94373773288217ba4e5d023a70c666f0f0f33d49a17",
+      "note": "fixed interface types Conference/Session/Speaker/Track; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/core/src/time.ts",
+      "change": "new",
+      "sha256": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "note": "parseTimeToMinutes/compareTimes per reference logic; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/core/src/normalize.ts",
+      "change": "new",
+      "sha256": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+      "note": "normalizeConference + ConferenceDataError with fixed .path; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/core/src/index.ts",
+      "change": "modified",
+      "sha256": "7b1b6ad8cfefbac1a6a25a133b84d61a4f0ac48fec9c6ac394500aa38a573aaf",
+      "note": "added the exact fixed exports only; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/core/test/time.test.ts",
+      "change": "new",
+      "sha256": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+      "note": "time parser/comparator/unit tests; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/core/test/normalize.test.ts",
+      "change": "new",
+      "sha256": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+      "note": "normalization, error path, fixture edge cases, SHA self-check, purity tests; byte-identical to the r1 manifest"
+    },
+    {
+      "path": "migration/work-packages/C02.md",
+      "change": "modified (status line only)",
+      "sha256": "791214cdc9c898a54f32a33a5bca76b08b585bb6178eff0f28fcb642afb8ef46",
+      "note": "status line records revision 2 (r1 value a25a33f6c0cc9eef238a3f32e2e13bff26bf7a33ff7fd8ad896d70047aa0c868 preserved in the handoff revision history)"
+    },
+    {
+      "path": "migration/handoffs/C02.md",
+      "change": "new (revised for r2)",
+      "sha256": "1113d2a2a780775455e71a4cb957f54b5688898551c2e31a30921ff701eb3e6d",
+      "note": "handoff with revision history and r2 verification"
+    },
+    {
+      "path": "migration/reviews/C02-r1.md",
+      "change": "new (r1 review artifact, reviewer-owned, unchanged since review)",
+      "sha256": "85b2d0f816b591554fd0207969217970f8fda54e9a55a049b213f4a91562f573",
+      "note": "r1 verdict CHANGES_REQUIRED / REVISE C02; listed for completeness, not modified"
+    },
+    {
+      "path": "migration/submissions/C02-r1.json",
+      "change": "new (r1 manifest, frozen record, unchanged since review)",
+      "sha256": "5445e26fd6a3925949deaeee686ded6a455dcdd331c4b9dc874a2757f101b411",
+      "note": "preserved as-is; contains the superseded baseline identifier for audit-trail continuity"
+    }
+  ],
+  "outOfScopePreExisting": [
+    {
+      "path": "IDEA.md",
+      "status": "untracked",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "note": "pre-existing human note; not read, not edited; hash unchanged from the P01/C01 records"
+    }
+  ],
+  "unchangedC01Files": {
+    "migration/core/package.json": {
+      "sha256": "1ec048dc37db78075f87768542d2863e939b64d61563f10886b8c4404dcb807a",
+      "note": "verified unchanged in r2 (equals C01-r1 record)"
+    },
+    "migration/core/tsconfig.json": {
+      "sha256": "67e10cfd19709d64d27557d27d44d110a3738f31537900b171e2b41b697609ecd78a",
+      "note": "verified unchanged in r2 (equals C01-r1 record)"
+    },
+    "migration/core/tsconfig.test.json": {
+      "sha256": "1c2b9d7b92a2c03f63c9768b5aabe494e7e1b425390b81a12e374390a51603bd",
+      "note": "verified unchanged in r2 (equals C01-r1 record)"
+    },
+    "migration/core/.gitignore": {
+      "sha256": "48ba754e605b239dd42889e2304a8d3b162c911f4958f232d2d872344ecbfc78",
+      "note": "verified unchanged in r2 (equals C01-r1 record)"
+    },
+    "migration/core/test/smoke.test.ts": {
+      "sha256": "7818ba913cb7f139876001855d49926f731b29c07f91340690b80f888f324e12",
+      "note": "verified unchanged in r2 (equals C01-r1 record)"
+    },
+    "migration/core/package-lock.json": {
+      "sha256": "05fa0a14619a0a581b6153c899e5c58892fdd6869f1956ec8df2d4bcb8d8d87da50bf6a",
+      "note": "verified unchanged in r2 (equals C01-r1 record; no dependency changes)"
+    }
+  },
+  "fixture": {
+    "path": "public/data/data.json",
+    "sha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+    "matchesExpectedCases": true,
+    "reVerifiedAt": "revision 2"
+  },
+  "verification": [
+    "npm --prefix migration/core run typecheck (repo root; r1 2026-10-19) — exit 0",
+    "npm --prefix migration/core test (repo root; r1 run 1) — exit 0, tests 22 / pass 22 / fail 0",
+    "npm --prefix migration/core test (repo root; r1 run 2) — exit 0, tests 22 / pass 22 / fail 0 (identical count to run 1)",
+    "git diff --exit-code -- migration/core/package.json migration/core/package-lock.json (r1) — exit 0 (byte-identical)",
+    "git status --porcelain -uall (r1) — exactly the C02 paths plus pre-existing IDEA.md",
+    "sha256sum over all r1 manifest files (hashes in the r1 manifest)",
+    "hermes -p translation-migration config get delegation.model → gpt-6.1-sol (r1 pre-check)",
+    "R2 (2026-10-19): git rev-parse HEAD → c4ca6fcce7762e2c6e794a06148e9f1e2ffb63be",
+    "R2: npm --prefix migration/core run typecheck (repo root) — exit 0",
+    "R2: npm --prefix migration/core test (repo root) — exit 0, tests 22 / pass 22 / fail 0 (identical to r1; deterministic)",
+    "R2: git status --porcelain -uall — M migration/core/src/index.ts; M migration/work-packages/C02.md; ?? IDEA.md; ?? migration/core/src/{normalize,time,types}.ts; ?? migration/core/test/{normalize,time}.test.ts; ?? migration/handoffs/C02.md; ?? migration/reviews/C02-r1.md; ?? migration/submissions/C02-r1.json",
+    "R2: sha256sum public/data/data.json → da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75 (equals sourceDataSha256 in migration/reference/expected-cases.json; key read via node -e only)",
+    "R2: sha256sum of all C01 deliverables — equal to C01-r1 records (C01 intact)",
+    "R2: sha256sum of the six implementation/test files — equal to the r1 manifest hashes (no implementation drift)",
+    "R2: sha256sum IDEA.md → 56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d (unchanged)"
+  ],
+  "failures": [
+    "None in the implementation: every prescribed command passed on the first attempt in r1 (typecheck, both test runs, the lockfile diff, the git-status inventory) and again in r2.",
+    "r1 submission error (reviewer-identified): unverified full-SHA baseline identifier recorded in the r1 handoff and r1 manifest. Resolved in r2 by recording the verified HEAD from `git rev-parse HEAD`; repository history was not modified (per the reviewer's instruction)."
+  ],
+  "secondOpinions": "None invoked (no advisor needed per qwen.md; no prescribed command failed). No C02-r1-advice.md exists.",
+  "unverified": [],
+  "commitState": "Nothing committed for C02 (pending reviewer verdict per C02 step 8). No repository history modified (r1 reviewer confirmed branch/HEAD as-is). No package.json/package-lock.json changes.",
+  "nextEligiblePackage": "C03"
+}

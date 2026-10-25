@@ -1,0 +1,58 @@
+# R00 runtime evidence (collected 2026-10-18 from Hermes records, not model claims)
+
+Sources (read-only):
+- C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration/logs/agent.log
+- C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration/logs/errors.log
+- C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration/state.db
+  (tables sessions, messages, async_delegations, session_model_usage; opened mode=ro)
+Epoch 1792356800 = 2026-10-18 20:53:20 UTC (22:53:20 local).
+
+## Parent (Qwen)
+- session 20261018_225233_801fb4, source=cli, model=qwen3.8:27b
+- agent.log 22:53:07.288: "provider=custom base_url=http://127.0.0.1:11434/v1 model=qwen3.8:27b"
+  (ollama-launch resolves to Hermes' custom/OpenAI-compatible client)
+- All three parent API calls: model=qwen3.8:27b provider=custom (agent.log lines 231, 245, 252)
+- Context: agent.context_pin warning "pins qwen3.8:27b at 65,536 tokens but the provider
+  advertises 131,072; the pin wins". Ollama /api/ps reports context_length=65536 (see ollama.txt).
+- Startup fixed overhead measured: API call #1 in=7294 tokens (system prompt + 3 toolsets + user prompt).
+
+## delegate_task call (made by Qwen)
+- messages id=2, assistant tool call delegate_task arguments:
+  {"action":"spawn","tasks":[{"context":"Package R00, revision 1. Routing test only; no repository review.",
+   "goal":"Reply with exactly: R00_ACK 569a6aac-39ce-4b4c-871b-eddd7cfcdf2f. Do not use tools."}]}
+- tool result (id=3): status=dispatched, mode=background, delegation_id=deleg_48d88dae
+- agent.log 22:53:20.948: "Dispatched async delegation batch deleg_48d88dae (1 task(s))"
+
+## Child (reviewer route)
+- session 20261018_225320_68031a, source=subagent, parent_session_id=20261018_225233_801fb4
+- sessions.model = gpt-6.1-sol
+- sessions.model_config.reasoning_config = {"enabled": true, "effort": "high"}
+- agent.log 22:53:20.529 and 22:53:20.986: provider=openai-codex
+  base_url=https://chatgpt.com/backend-api/codex model=gpt-6.1-sol
+- One API call: "model=gpt-6.1-sol provider=openai-codex in=4635 out=31", Codex stream attempt=1/2
+- Turn ended: reason=text_response(finish_reason=stop) api_calls=1/30 tool_turns=0
+- session_model_usage: billing_provider=openai-codex, api_call_count=1, reasoning_tokens=0
+- Fallback: profile delegation.fallback_providers=[] and top-level fallback_providers=[];
+  the delegation route is pinned (provider+model), so per tools/delegate_tool_config.py
+  _resolve_child_fallback_chain it never borrows the parent chain. No fallback activation
+  appears in agent.log or errors.log; the only child call succeeded on attempt 1.
+
+## Async delivery ordering
+- dispatched_at          1792356800.941
+- parent turn ended      22:53:23.101 (messages id=6 at 1792356803.093: "Dispatched - handle recorded:
+                         delegation_id deleg_48d88dae ... Awaiting result.")
+- delegation completed   1792356803.116  (after the parent turn ended)
+- delivered_at           1792356803.330, delivery_state=delivered, delivery_attempts=1
+- re-entry message id=7: "[ASYNC DELEGATION BATCH COMPLETE - deleg_48d88dae] ..."
+- parent final reply id=8: "R00_ACK 569a6aac-39ce-4b4c-871b-eddd7cfcdf2f" (matches nonce exactly)
+
+## Observations / limits
+- reasoning_tokens=0 for the child: high effort is configured and recorded in the session's
+  reasoning_config, but this trivial reply consumed no reported reasoning tokens. It shows the
+  setting reached the child, not that high-effort reasoning was exercised.
+- async_delegations.event_json shows "context": null although the tool call carried context;
+  the context field appears not to be copied into the event record. Not a routing issue.
+- errors.log: auxiliary client warned that provider 'Ollama' has no api_key (expected for
+  local Ollama); one MCP discovery retry with no servers configured.
+- The child inherited the parent's tool surface (terminal, file, delegation) by design;
+  read-only review remains an instruction boundary.

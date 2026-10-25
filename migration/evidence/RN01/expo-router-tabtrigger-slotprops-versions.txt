@@ -1,0 +1,17 @@
+expo-router TabTriggerSlotProps (d.ts) across pinned-compatible versions:
+--- expo-router@58.0.13:
+};
+export type TabTriggerSlotProps = PressablePropsWithoutFunctionChildren & React.RefAttributes<View> & {
+    isFocused?: boolean;
+    href?: string;
+};
+/**
+--- expo-router@58.0.24:
+};
+export type TabTriggerSlotProps = PressablePropsWithoutFunctionChildren & React.RefAttributes<View> & {
+    isFocused?: boolean;
+    href?: string;
+};
+/**
+
+CONCLUSION: identical React.RefAttributes<View> slot typing in 58.0.13 AND 58.0.24; target pin is ~58.0.24 (canonical template), so no version drift can explain the failure.

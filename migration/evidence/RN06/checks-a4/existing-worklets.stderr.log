@@ -1,0 +1,66 @@
+FAIL __tests__/session-detail-screen.test.tsx
+  ● Test suite failed to run
+
+    [Reanimated] `setCSSEventHandler` is not available in JSReanimated.
+
+      2 |
+      3 | import 'react-native-gesture-handler/jestSetup';
+    > 4 | import { setUpTests } from 'react-native-reanimated';
+        | ^
+      5 |
+      6 | setUpTests();
+      7 |
+
+      at JSReanimated.setCSSEventHandler (node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts:286:11)
+      at setCSSEventHandler (node_modules/react-native-reanimated/src/css/native/proxy.ts:21:20)
+      at initializeReanimatedModule (node_modules/react-native-reanimated/src/initializers.native.ts:21:21)
+      at Object.<anonymous> (node_modules/react-native-reanimated/src/index.ts:11:27)
+      at Object.require (test-utils/gesture-test-setup.ts:4:1)
+      at Object.require (__tests__/session-detail-screen.test.tsx:1:1)
+
+FAIL __tests__/filter-screen.test.tsx
+  ● Test suite failed to run
+
+    [Reanimated] `setCSSEventHandler` is not available in JSReanimated.
+
+      2 |
+      3 | import 'react-native-gesture-handler/jestSetup';
+    > 4 | import { setUpTests } from 'react-native-reanimated';
+        | ^
+      5 |
+      6 | setUpTests();
+      7 |
+
+      at JSReanimated.setCSSEventHandler (node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts:286:11)
+      at setCSSEventHandler (node_modules/react-native-reanimated/src/css/native/proxy.ts:21:20)
+      at initializeReanimatedModule (node_modules/react-native-reanimated/src/initializers.native.ts:21:21)
+      at Object.<anonymous> (node_modules/react-native-reanimated/src/index.ts:11:27)
+      at Object.require (test-utils/gesture-test-setup.ts:4:1)
+      at Object.require (__tests__/filter-screen.test.tsx:1:1)
+
+FAIL __tests__/schedule-screen.test.tsx
+  ● Test suite failed to run
+
+    [Reanimated] `setCSSEventHandler` is not available in JSReanimated.
+
+      2 |
+      3 | import 'react-native-gesture-handler/jestSetup';
+    > 4 | import { setUpTests } from 'react-native-reanimated';
+        | ^
+      5 |
+      6 | setUpTests();
+      7 |
+
+      at JSReanimated.setCSSEventHandler (node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts:286:11)
+      at setCSSEventHandler (node_modules/react-native-reanimated/src/css/native/proxy.ts:21:20)
+      at initializeReanimatedModule (node_modules/react-native-reanimated/src/initializers.native.ts:21:21)
+      at Object.<anonymous> (node_modules/react-native-reanimated/src/index.ts:11:27)
+      at Object.require (test-utils/gesture-test-setup.ts:4:1)
+      at Object.require (__tests__/schedule-screen.test.tsx:1:1)
+
+Test Suites: 3 failed, 3 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        16.057 s
+Ran all test suites within paths "__tests__/schedule-screen.test.tsx", "__tests__/filter-screen.test.tsx", "__tests__/session-detail-screen.test.tsx".
+Test results written to: ..\evidence\RN06\checks-a4\existing-worklets.json

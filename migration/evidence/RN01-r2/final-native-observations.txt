@@ -1,0 +1,14 @@
+Final RN01 native verification, performed by coordinator after Qwen fixes and final clean-install battery.
+Runtime: Node v24.19.0 (printed by exact executable before launch); JDK 21.0.7.6; CI=1; target cwd migration/react-native; npm run android.
+Build log: final-native-install-launch.log. Observed BUILD SUCCESSFUL in 1m 35s, APK Installing, development-client Opening on RN01_API36, Android Bundled 4337ms / 1431 modules.
+adb devices -l: List of devices attached emulator-5554          device product:sdk_gphone64_x86_64 model:sdk_gphone64_x86_64 device:emu64xa transport_id:2 
+AVD: RN01_API36  OK 
+Boot completed: 1
+Installed package: package:dev.translationtest.rn
+Focused activity:     topResumedActivity=ActivityRecord{38113197 u0 dev.translationtest.rn/.MainActivity t9}
+ADB reverse: host-17 tcp:8082 tcp:8082 
+App PID for logcat capture: 8359; final-app-pid.logcat
+UI capture commands: adb -s emulator-5554 shell uiautomator dump /sdcard/rn01-final-ui.xml; adb pull -> final-ui.xml; adb shell screencap -p /sdcard/rn01-final-ui.png; adb pull -> final-ui.png. All capture/pull exit codes 0.
+Coordinator stopped only verified RN01-owned Metro PID 33300 after successful build/install/launch/UI capture. This intentionally ends the development-server process; its termination is not a build failure. AVD left running.
+App PID logcat scan found no FATAL EXCEPTION, AndroidRuntime or ReactNativeJS Error/Exception matches; startup warnings are retained in the log.
+Native command owner exited after Metro stop (intentional server termination). Log converted losslessly from PowerShell UTF-16 text to UTF-8 after writer exit. All final-native evidence is now frozen. final-validation.sh is the exact Qwen-authored battery executed sequentially by coordinator.

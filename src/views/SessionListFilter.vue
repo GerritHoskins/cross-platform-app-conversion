@@ -136,19 +136,18 @@ const props = defineProps({
 });
 
 const tracks = ref<{ name: string; icon: string; isChecked: boolean }[]>([]);
-const isFirstLoad = store.state.sessions.isFirstLoad;
-
 onMounted(() => {
   const availableTracks = props.allTracks.length ? props.allTracks : [];
   const trackFilters = store.state.sessions.trackFilters;
+  // The store owns isFirstLoad and clears it once session data has initialized
+  // the filters. Until then, show every track checked to match that default.
+  const isFirstLoad = store.state.sessions.isFirstLoad;
 
   tracks.value = availableTracks.map((track: any) => ({
     name: track.name,
     icon: iconMap[track.name] || '',
     isChecked: isFirstLoad ? true : trackFilters.includes(track.name),
   }));
-
-  if(isFirstLoad) store.commit('setFirstLoad', false);
 });
 
 const dismiss = () => modalController.dismiss();

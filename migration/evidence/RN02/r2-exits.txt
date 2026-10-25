@@ -1,0 +1,21 @@
+=== RN02-r2 ordered software gate sequence (fresh, 2026-10-21 16:35-16:41Z) ===
+ts_utc=2026-10-21T16:35Z (battery start)
+host=Windows 11, node=v24.19.0 (C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe), npm=11.16 (C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js)
+branch=migration/slice-1
+head=af44ce10e1c3c6c62f598a8f2c17cfda943872be (unchanged; ancestor of nothing new; no RN02 commit)
+tree_state=same working-tree code files as r1 (hashes invariant); evidence additions only
+
+gate1 core test      exit=0  -> 53/53 PASS   evidence=r2-core-test.log
+gate2 npm ci         exit=0  evidence=r2-npm-ci.log; lockfile before/after sha256:
+                            before=c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb (r2-lockfile-before-ci.txt)
+                            after =c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb (r2-lockfile-after-ci.txt)  IDENTICAL
+gate3 verify         exit=0  -> 22/22 PASS, RESULT: all checks passed; fixture da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75  evidence=r2-verify-core-integration.log
+gate4 typecheck      exit=0  evidence=r2-typecheck.log
+gate5 jest run1      exit=0  -> Tests: 4 passed, 4 total; Snapshots: 0  evidence=r2-test-run1.log
+gate5 jest run2      exit=0  -> Tests: 4 passed, 4 total; Snapshots: 0  evidence=r2-test-run2.log
+gate6 bundle:android exit=0  evidence=r2-android-export.log
+  artifact migration/react-native/dist-android/_expo/static/js/android/entry-7b7c44862269f57b31d4eca64d9436bf.hbc
+  sha256 c9bacb0a68dd61eab33db468148100f7a914939ac0373e7958057f88565f454d, size 2861541 (byte size equal to r1; entry-name identical; bytecode bytes not byte-reproducible across exports — expected Hermes/Expo non-determinism, same class of variance as RN01 observed)
+gate7 native         RESULT=MATCH (fresh session-owned Metro + dedicated AVD boot) — r2-native-observations.txt, r2-metro.log, r2-ui.png, r2-ui.xml, r2-app-pid.logcat; visual pixel inspection: r2-visual-inspection.md (delegated)
+
+ALL GATES GREEN (software) ; native TEXT+BEHAVIOR MATCH; visual inspection delegated.

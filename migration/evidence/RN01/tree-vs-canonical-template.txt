@@ -1,0 +1,23 @@
+RN01 — migration/react-native/ vs canonical expo-template-default@58.0.25
+Method: per-file SHA-256 (first 16 hex) map, both full trees, node_modules/dist/.expo excluded.
+Canonical source: npm-pinned tarball expo-template-default-58.0.25.tgz (51 entries),
+independently cross-checked against a fresh create-expo-app@5.0.0 scaffold
+(46/48 byte-identical; the 2 diffs are create-expo's own renames _vscode->.vscode,
+gitignore->.gitignore, plus its package name/version/slug rewrites).
+
+RESULT (target tree after rebuild):
+  identical to template : 45 files (all other template files, incl. assets, scripts,
+                           .vscode, README.md, LICENSE, tsconfig.json)
+  expected diffs (5)    : package.json      — spec: name/conference-migration-rn, main
+                           expo-router/entry, private, 5 exact scripts, jest preset
+                         app.json          — spec: identity fields, android.package,
+                           template plugins/experiments preserved
+                         src/app/_layout.tsx — spec: minimal Expo Router Stack
+                         src/app/index.tsx   — spec: re-export of shell screen
+                         .gitignore        — template gitignore + dist-android/, coverage/
+                                             (spec: cover all generated dirs)
+  expected deletions(1) : src/app/explore.tsx (spec: only allowed deletion)
+  spec new files (2)    : src/screens/shell-screen.tsx, __tests__/shell-screen.test.tsx
+
+Verification: no other deviations; no App.tsx/index.ts/babel.config.js/jest.config.js/
+react-test-renderer; scripts/reset-project.js preserved (not run).

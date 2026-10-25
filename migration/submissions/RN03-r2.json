@@ -1,0 +1,1733 @@
+{
+  "package": "RN03",
+  "revision": 2,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "f78a759741b57ed1a19c7b6630af67640571ff61",
+  "headTree": "4fa34700ccc50f54d103d89904d7c2d4b2d83be0",
+  "date": "2026-10-24T07:41:26.687Z",
+  "headSource": "Fresh final-branch/head/tree receipts and ancestor receipt under checks-r2",
+  "priorApprovedBaseline": {
+    "commit": "f78a759741b57ed1a19c7b6630af67640571ff61",
+    "package": "RN02",
+    "revision": 3,
+    "verdict": "APPROVE",
+    "review": "migration/reviews/RN02-r3.md",
+    "ancestorReceipt": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.receipt.json"
+  },
+  "priorRevision": {
+    "submission": "migration/submissions/RN03-r1.json",
+    "review": "migration/reviews/RN03-r1.md",
+    "verdict": "CHANGES_REQUIRED",
+    "historicalHandoff": "migration/evidence/RN03/r2-sol-packet/archive/history/RN03-r1-handoff.md",
+    "superseded": "R1 state25/screen7 counts and five-match/wrong-time native claims are incorrect; current reports state24/screen8/shell4 and source15 IOnic matches."
+  },
+  "session": {
+    "executor": "Hermes GPT-6.1 Sol/high replacement executor, translation-migration",
+    "scope": "Coordinator amendment: one existing screen search test only; no app/runtime changes",
+    "runtime": "tools/qwen-supervisor/.runs/sol-rn03-r2-fix-prepare-20261024",
+    "formalReviewDispatched": false,
+    "stop": "READY_FOR_REVIEW; coordinator frozen-packet verification then dedicated dispatcher"
+  },
+  "environment": {
+    "nodeExecutable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "nodeVersion": "v24.19.0",
+    "npmCli": "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "childPath": "Pinned Node directory first",
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "spawn": "spawnSync full args, shell:false",
+    "deviceInteractionThisPreparation": false
+  },
+  "runResults": {
+    "commands": [
+      {
+        "label": "android-export",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "bundle:android"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:39.804Z",
+        "ended": "2026-10-24T07:32:59.942Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.stderr.log"
+      },
+      {
+        "label": "branch",
+        "executable": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.578Z",
+        "ended": "2026-10-24T07:32:34.601Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/branch.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/branch.stderr.log"
+      },
+      {
+        "label": "core-integration",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.660Z",
+        "ended": "2026-10-24T07:32:34.722Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/core-integration.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/core-integration.stderr.log"
+      },
+      {
+        "label": "final-branch",
+        "executable": "git",
+        "args": [
+          "branch",
+          "--show-current"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.539Z",
+        "ended": "2026-10-24T07:41:26.556Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-branch.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-branch.stderr.log"
+      },
+      {
+        "label": "final-head",
+        "executable": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.496Z",
+        "ended": "2026-10-24T07:41:26.517Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-head.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-head.stderr.log"
+      },
+      {
+        "label": "final-index-clean",
+        "executable": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.477Z",
+        "ended": "2026-10-24T07:41:26.495Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-index-clean.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-index-clean.stderr.log"
+      },
+      {
+        "label": "final-status",
+        "executable": "git",
+        "args": [
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.631Z",
+        "ended": "2026-10-24T07:41:26.658Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-status.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-status.stderr.log"
+      },
+      {
+        "label": "final-tree",
+        "executable": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.518Z",
+        "ended": "2026-10-24T07:41:26.538Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-tree.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-tree.stderr.log"
+      },
+      {
+        "label": "final-whitespace",
+        "executable": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:41:26.443Z",
+        "ended": "2026-10-24T07:41:26.475Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-whitespace.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-whitespace.stderr.log"
+      },
+      {
+        "label": "focused-screen",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--runTestsByPath",
+          "__tests__/schedule-screen.test.tsx",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN03\\r2-sol-packet\\checks-r2\\focused-jest.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:06.814Z",
+        "ended": "2026-10-24T07:32:26.727Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-screen.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-screen.stderr.log"
+      },
+      {
+        "label": "focused-typecheck",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:26.730Z",
+        "ended": "2026-10-24T07:32:28.638Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-typecheck.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-typecheck.stderr.log"
+      },
+      {
+        "label": "head",
+        "executable": "git",
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.602Z",
+        "ended": "2026-10-24T07:32:34.624Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/head.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/head.stderr.log"
+      },
+      {
+        "label": "index-clean",
+        "executable": "git",
+        "args": [
+          "diff",
+          "--cached",
+          "--exit-code"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:33:00.008Z",
+        "ended": "2026-10-24T07:33:00.028Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/index-clean.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/index-clean.stderr.log"
+      },
+      {
+        "label": "jest1",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN03\\r2-sol-packet\\checks-r2\\jest1.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:36.346Z",
+        "ended": "2026-10-24T07:32:38.069Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.stderr.log"
+      },
+      {
+        "label": "jest2",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "test",
+          "--",
+          "--json",
+          "--outputFile",
+          "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN03\\r2-sol-packet\\checks-r2\\jest2.json"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:38.070Z",
+        "ended": "2026-10-24T07:32:39.803Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.stderr.log"
+      },
+      {
+        "label": "node-version",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "--version"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.554Z",
+        "ended": "2026-10-24T07:32:34.576Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.stderr.log"
+      },
+      {
+        "label": "protected",
+        "executable": "git",
+        "args": [
+          "diff",
+          "--exit-code",
+          "--",
+          "package.json",
+          "package-lock.json",
+          "src",
+          "public",
+          "android",
+          "ios",
+          "migration/core",
+          "migration/reference",
+          "migration/react-native/package.json",
+          "migration/react-native/package-lock.json",
+          "migration/react-native/tsconfig.json",
+          "migration/react-native/src/data",
+          "migration/react-native/src/screens/shell-screen.tsx",
+          "migration/react-native/__tests__/shell-screen.test.tsx",
+          "migration/react-native/scripts/verify-core-integration.cjs"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:59.988Z",
+        "ended": "2026-10-24T07:33:00.008Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/protected.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/protected.stderr.log"
+      },
+      {
+        "label": "rn02-ancestor",
+        "executable": "git",
+        "args": [
+          "merge-base",
+          "--is-ancestor",
+          "f78a759741b57ed1a19c7b6630af67640571ff61",
+          "HEAD"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.644Z",
+        "ended": "2026-10-24T07:32:34.659Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.stderr.log"
+      },
+      {
+        "label": "status",
+        "executable": "git",
+        "args": [
+          "status",
+          "--porcelain=v1",
+          "--untracked-files=all"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:33:00.029Z",
+        "ended": "2026-10-24T07:33:00.060Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/status.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/status.stderr.log"
+      },
+      {
+        "label": "tree",
+        "executable": "git",
+        "args": [
+          "rev-parse",
+          "HEAD^{tree}"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.625Z",
+        "ended": "2026-10-24T07:32:34.643Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/tree.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/tree.stderr.log"
+      },
+      {
+        "label": "typecheck",
+        "executable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "args": [
+          "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+          "--prefix",
+          "migration/react-native",
+          "run",
+          "typecheck"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:34.723Z",
+        "ended": "2026-10-24T07:32:36.345Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/typecheck.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/typecheck.stderr.log"
+      },
+      {
+        "label": "whitespace",
+        "executable": "git",
+        "args": [
+          "diff",
+          "--check"
+        ],
+        "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+        "started": "2026-10-24T07:32:59.960Z",
+        "ended": "2026-10-24T07:32:59.987Z",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "migration/evidence/RN03/r2-sol-packet/checks-r2/whitespace.stdout.log",
+        "stderr": "migration/evidence/RN03/r2-sol-packet/checks-r2/whitespace.stderr.log"
+      }
+    ],
+    "focused": {
+      "report": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-jest.json",
+      "total": 8,
+      "passed": 8,
+      "success": true
+    },
+    "fullJest": [
+      {
+        "report": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.json",
+        "success": true,
+        "total": 36,
+        "passed": 36,
+        "suites": 3,
+        "results": [
+          {
+            "name": "migration/react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "total": 8,
+            "passed": 8
+          },
+          {
+            "name": "migration/react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "total": 4,
+            "passed": 4
+          },
+          {
+            "name": "migration/react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "total": 24,
+            "passed": 24
+          }
+        ]
+      },
+      {
+        "report": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.json",
+        "success": true,
+        "total": 36,
+        "passed": 36,
+        "suites": 3,
+        "results": [
+          {
+            "name": "migration/react-native/__tests__/schedule-screen.test.tsx",
+            "status": "passed",
+            "total": 8,
+            "passed": 8
+          },
+          {
+            "name": "migration/react-native/__tests__/conference-state.test.ts",
+            "status": "passed",
+            "total": 24,
+            "passed": 24
+          },
+          {
+            "name": "migration/react-native/__tests__/shell-screen.test.tsx",
+            "status": "passed",
+            "total": 4,
+            "passed": 4
+          }
+        ]
+      }
+    ],
+    "androidExport": {
+      "receipt": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.receipt.json",
+      "inventory": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-artifacts.json",
+      "fileCount": 29
+    },
+    "preservation": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-preservation.json"
+  },
+  "r1Findings": {
+    "MAJOR": "Reconciled canonical native observations, real archived timeline and independent supporting pixel PASS; totals distinguished from viewport subsets.",
+    "MODERATE": "Existing search test reads real imported SectionList fiber sections, compares full title/key/data.id to frozen cases, verifies no-match unmount and full clear mapping; two copied truncation negative controls executed.",
+    "MINOR": "Both fresh Jest JSON reports parsed:24 state/8 screen/4 shell,36 total; r1 history immutable."
+  },
+  "pixelProof": {
+    "captureSet": "migration/evidence/RN03/r2-sol-packet/capture-set.json",
+    "sourceReconciliation": "migration/evidence/RN03/r2-sol-packet/source-reconciliation.json",
+    "report": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md",
+    "routing": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-routing.json",
+    "verdict": "PASS (supporting only)",
+    "transport": "Codex native collaboration",
+    "agent": "/root/rn03_pixel_r2",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "directViewImage": true,
+    "executorViewedPixels": false,
+    "packageApproval": false,
+    "chronology": "Recovery05–08 predates corrected01–04; identical01/05/08 pixels do not prove sequence. Archived separate timestamped action/capture logs provide chronology."
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": [],
+    "status": "Required for future Hermes dispatcher; not dispatched or live routing reconfigured in this preparation"
+  },
+  "preExistingChanges": {
+    "record": "migration/evidence/RN03/r2-sol-packet/archive/history/preparation-entry-snapshot.json",
+    "coordinatorSnapshot": "migration/evidence/RN03/r2-sol-packet/archive/history/coordinator-entry-baseline.json",
+    "trackedModified": [
+      "migration/react-native/src/app/_layout.tsx",
+      "migration/react-native/src/app/index.tsx"
+    ],
+    "unrelatedPreserved": [
+      "tools/",
+      "migration/plans/rn07-android-acceptance-checklist.md",
+      "IDEA.md"
+    ]
+  },
+  "protectedBaseline": [
+    {
+      "path": "IDEA.md",
+      "sha256": "56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d",
+      "policy": "hash-only; outside files[]; immutable baseline checked before/after"
+    }
+  ],
+  "hashGate": {
+    "writeCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN03-r2.json",
+      "--write"
+    ],
+    "checkCommand": [
+      "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "migration/tools/manifest-hashes.mjs",
+      "migration/submissions/RN03-r2.json"
+    ],
+    "requiredProblems": 0,
+    "policy": "All hashed text complete before freeze; literal final output/runtime receipts outside packet. No current-manifest self hash or future verdict."
+  },
+  "notRun": [
+    "No formal review dispatch; coordinator independent hash check and human acceptance pending",
+    "No new native actions/soak stability/iOS/Web acceptance",
+    "No install/native build/core rebuild or new core test execution"
+  ],
+  "files": [
+    {
+      "path": "migration/evidence/RN03/RN03-01-initial-schedule.png",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-02-search-ionic-top.png",
+      "sha256": "51bddac8805f8737ee1cbfdfcadcc08f6d9dc19f20722f96c5420632bec0a244",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-03-search-ionic-scrolled.png",
+      "sha256": "2020b10d17b6c857dd904b0361c863d4da355c3b95aaa1c03ade00c4aa81d98e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-04-search-ionic-bottom.png",
+      "sha256": "011bc1d14cf41a7f85618db02c34afab0bc035fbdbb357c570e923f4124529bd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-05-ionic-cleared-restored.png",
+      "sha256": "e9cab6bb4e3868f2384baa999208b1567c7e8873831335d305959849f3777270",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-06-search-no-match.png",
+      "sha256": "a274f558e1f2c163234f0c5cf8e62caec87cfbcee65ae1304f1f21c6adc64860",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-07-favorites-empty.png",
+      "sha256": "4efc6eb458067e35bdb5c1e6b82803c0175866e513ae151f01833cbc3617230f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-08-all-sessions-restored.png",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-native-observations.txt",
+      "sha256": "cc78863dea655dcfc772fc0a1744ecc488776ad49f3ede2aeaf8b9fe442edd72",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/RN03-pixel-inspection-r2.md",
+      "sha256": "cc72d97e2cc46d843c164e541e01e1c7b9f67f04bf197227b0297f9fc5db8eba",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.png",
+      "sha256": "adad61bff8bfc924d741af22d047558ed669a39caf62208794bb621c2dc09692",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recapture/RN03-01-initial-schedule.xml",
+      "sha256": "06db153969fc181237af63d20c3e0d226a53ce3c28ff181a4059e76204c095b2",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.png",
+      "sha256": "4bb41c25d12ea3c6b4450aee29d355b206d45b9bdd221730e6de5de4506bc58f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-01-initial-schedule.xml",
+      "sha256": "58926c3f0e41bced8119daa3a07a2cb6077d18f80f36ae1451f752f2ab1311a4",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.png",
+      "sha256": "0a7fc50afdcc953ef7f7e5b144edb734d7a25d583cb8bc486f67b1758defa75e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-02-search-ionic-top.xml",
+      "sha256": "9e7cb9775d8299d4240ceb294513be25b7ce6570ab075885f5d2da6b64db7d8e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.png",
+      "sha256": "9b399327cc2e8a6de13eb70f59e2fcdf84fe20218a73211e8ffd436c3ad7fc60",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-03-search-ionic-scrolled.xml",
+      "sha256": "3bed8eb8f1990853037937e2d22a1bd613da179c4ed3d6b26d9ca3fbc9fe1a41",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.png",
+      "sha256": "cf2c1dffd4d4bd1f952942e2aa89a38c86d569e782592c1a7089ab681b28ab84",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/RN03-04-search-ionic-bottom.xml",
+      "sha256": "2e705bc81fbdd9d72a5b15cc4e09db164ca008aa38e6dd315ab4a7bea4f3135e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/capture-draft.json",
+      "sha256": "217a7d021cb17c2b037eb02288f8fe9a1384d19aa1dfa9322bb09526d082cbda",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-recovery/capture-notes.md",
+      "sha256": "75d31390cd730fa59bd514421dc82ac5a6817c50997a4f284b004d8d6778aa26",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.png",
+      "sha256": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-01-initial-schedule.xml",
+      "sha256": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.png",
+      "sha256": "59c02e32230ccd0bde15bf089b7660d3fe79ee2804a88bd71e686f51587ecaf1",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-02-search-ionic-top.xml",
+      "sha256": "b4af894517a6b7080a5c5a3bb46117b2cbfc07df223e22dd21c69c58f87e620f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.png",
+      "sha256": "5f9bcce19aeee99e0df09db89b41fa6a8170fe6f27b40ffb012e104649a5f3c0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-03-search-ionic-scrolled.xml",
+      "sha256": "a6d43cb02daf7e9e1f9cdcb2452ddc369ba839e7fede534d51ed0b9704c83b65",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.png",
+      "sha256": "224e0615047265a7a5fff2b780f0a548f83be8f6fd65603d4981ca0315cb6d4d",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/RN03-04-search-ionic-bottom.xml",
+      "sha256": "cbde5e493c3f60593f1126144c5906b36bb855aa5ba1896fdd90f4a018b8f5d5",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/capture-index.json",
+      "sha256": "24f07ce96fc82f9749e9949156e6843795a9715e067c8a122bbd132d07c403ee",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-corrected/capture-notes.md",
+      "sha256": "e0778ef14992417ecff21e3657fefa8420523c99bb7866e1e441d8fb3a183cf0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.png",
+      "sha256": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-05-ionic-cleared-restored.xml",
+      "sha256": "5137bcf7638190794b86ee87fd553b3e0da4bbf1d77d3a30585c0038cddbb0e9",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.png",
+      "sha256": "f788dc48376398c3492de3c8c054f4a60441ce30006ffb987b1105e7f29ccf2f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-06-search-no-match.xml",
+      "sha256": "cc5633a05287addfcb449f494cae8a40ceb559f8c1ac1d1575329ae965dc55f9",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.png",
+      "sha256": "5f5b45591a27b428f881d19c0bf237ac9aeba6fc446228d6d79eefb9078ce97a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-07-favorites-empty.xml",
+      "sha256": "5ab2e2024a58904373210a2d8cec9463f48f8d2759896ba0879e760c9e181057",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.png",
+      "sha256": "7c30a2dae62bca316e5538168b452e30b428494d685378915f13bdf6eee43dac",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/RN03-08-all-sessions-restored.xml",
+      "sha256": "a6106817890e4e5cb143d5f772fae28d7e0a5df2eae6f8e6886ec2480df54a5a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/capture-index.json",
+      "sha256": "22c00dfbb205cd93b1d5d1ab2cbed1024585d074acb0f8a0e421432e229aa5df",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery-r3/capture-notes.md",
+      "sha256": "2acc22c58bebedcce8b96b776ce76557d84c700e70510772184c81c7fd9116da",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery/capture-index.json",
+      "sha256": "8bfcf4da6664a00b38b0f6008f6bdaf69949ff98ad42b88cc9807159a0c60798",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-native-sol-recovery/capture-notes.md",
+      "sha256": "532b8d9d08c7affdf0bc3b918ed57a47884a345a5308d5d3fc8e808e8c18e7fd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/history/RN03-r1-handoff.md",
+      "sha256": "c488bba4409909b41da1413005b510a0edda0fa723738cc473c62a0df6b7daca",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/history/RN03-r1-native-observations.txt",
+      "sha256": "32fffcf150cae69940ccca472ed3377e27bb28763d3e11228504b5ae71e8aa35",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/history/coordinator-entry-baseline.json",
+      "sha256": "2ddcef2ccd4d5d27480764ba898b8683b9f6e8f6fe0cce7ec060353bc425d3dd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/history/preparation-entry-snapshot.json",
+      "sha256": "f5d918c52f06bd8bae56f178e39690b8b8ba67e286889a72d15d88d33ac16a6a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/history/schedule-screen.before-amendment.tsx",
+      "sha256": "018584dafa527353763446ff291ee09781de8515b428a5dbd30a7ec95c85c0a7",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/index.json",
+      "sha256": "038ba06f1b85a57c9af50b88023a12d1e078991098f282f03bf4b0eb9f719d2a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/android-export.receipt.json",
+      "sha256": "9dc284c8376297a0b459a1fd1bff6ec8102e0346268c237ad0a803c8ccee57b0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/android-export.stdout.log",
+      "sha256": "cdb35ebbd16056e2883d790c9e8038a35bdce61964f9096d73bc4fcb18a4cf92",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/core-integration.receipt.json",
+      "sha256": "377bfaef55b5d63d0703c272e7add707d8e81fd74b57855396d46d29b769f0a8",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/core-integration.stdout.log",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/export-inventory.receipt.json",
+      "sha256": "0f943d637a8c52837440032044153fa6aadb474ab45087a8f391e74acce479dd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/export-inventory.stdout.log",
+      "sha256": "4e3136aff11b3af59ab903300a9b2bb205fd4bad2809a61da3a25917a3577abc",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/index-clean.receipt.json",
+      "sha256": "c398511e18baf584a2b5b3bf433c26df6fa9e2941ea31e8a75f677ff0143b21e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-1.receipt.json",
+      "sha256": "4af41ddb84b12d1596271b4a9d515649c484f25b81695f0d8b9b2294463b2261",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-1.stderr.log",
+      "sha256": "fa0e42cbf100ad477e14370bc7f6d5a8c438241e062ad8e40a07ca257117a643",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-1.stdout.log",
+      "sha256": "4f77cb3b65a1ba0ef1d5e496df47763f66c3e568deb02e84291bbafc6e8ce819",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-2.receipt.json",
+      "sha256": "2d8014e1a083dfb7169731dae896593b50adc3a5fa774fe342fae0477cb93e2a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-2.stderr.log",
+      "sha256": "306680e1f14e9562a64e2078b27671a901f5dc812a9019a0b955a623874acad1",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/jest-pass-2.stdout.log",
+      "sha256": "4f77cb3b65a1ba0ef1d5e496df47763f66c3e568deb02e84291bbafc6e8ce819",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/pinned-runtime-and-baseline.receipt.json",
+      "sha256": "16dfa85fb8048c5ab6bbeabf578b7bed28f210fda0781605bb3cf36bdbe1674c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/pinned-runtime-and-baseline.stdout.log",
+      "sha256": "abec8e7243d2ff77a1ae7ffcd4fdc91a869b5e791db4f35e22d3646a5a2a0090",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/protected-baselines.receipt.json",
+      "sha256": "85b55fd1670e3e5f3d9da236578bed22e85ce7ddb1fdeea895611347b286df9a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/typecheck.receipt.json",
+      "sha256": "67c67451b59a524c01291f41cf1e8282b51ee3e6b076d1a5b7c4e25067bfa05e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/typecheck.stdout.log",
+      "sha256": "1534c92794d83007a3f753a6431feaff9d59dcbce33b2ac81237eaf7e27bbfc5",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/prior-software/whitespace.receipt.json",
+      "sha256": "009777742fcad38661fe64f6f1777ce1b0608322f026dd9f3ecc24bc01c25496",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/session-index.json",
+      "sha256": "0e120f2a77dcaff12fd247fa6d28a88adef895ecc8fa1513c02c7728d9753a48",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r2/commands.jsonl",
+      "sha256": "31ac95febbabd087d9cdbbb391fdd09f0870a8a06e82be16b699a3045e4ac6e0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r2/preservation-baseline.json",
+      "sha256": "7175b8fdaca4d9505f374105e2194f19a685d1bb24fa09c302dfeb5ed3193c24",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r2/preservation-check.json",
+      "sha256": "54410c2adeffa60589f87dbcb6989a61d8318d42c14ac30af39c3e73562ae211",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r2/result.json",
+      "sha256": "83b2075f770f162a39c40e598e9d32616c01aa600d6817afae89d8f2af41dcaf",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/boot-result.json",
+      "sha256": "199f1456cc131bd1551998d45efd45f17b03ffd43da4b8e647751d6b4e6ff931",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/capture-verification.json",
+      "sha256": "9dc0057c5f81e9a95be75b0ba5f35b377fca64ba55fe01ac9d86b445d922a15c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/commands.jsonl",
+      "sha256": "90f62ce8af39b84fe813464aaad096968206f15b5405b676530bdedeb5fd77ef",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/emulator-launch.json",
+      "sha256": "7219cead0c5e1b38c54e7d4ad1db232cbbb3556f74225f1d7af56b6e83842a23",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/emulator.stderr.log",
+      "sha256": "cee5f54261ca0a24d71f798fe1f9d2c79a9c9ad4f1a6d1d35a10e15500146e23",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/emulator.stdout.log",
+      "sha256": "8fe209773391ddaed4a88c9eb737823eaa09d09e36c4f0537f773410e5e536ed",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/final-check.json",
+      "sha256": "3d00dcc551690186a45ecf0115d31c943408d792984e19845ef6b117ea3b8115",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/input-ionic-cleared.json",
+      "sha256": "6a59939c0e4f0553912e8a7476c16122462a22bcc3cdd3ecad039575a6d0d816",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/input-ionic-confirmed.json",
+      "sha256": "51ac14a9c1d0fc00231d5239615fff15f8c8a8696f8fb254133f38732c5c2e1b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/input-no-match-cleared.json",
+      "sha256": "ff1aea13b75f6b5f9b32ce2c8d37b773a8c231a012dec0d1f6f296004f2bc4b3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/input-no-match-confirmed.json",
+      "sha256": "a7a996bb14fefc2d21124bba217462dfab871a2f03f26c83f6e02256fc764c76",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/preservation-baseline.json",
+      "sha256": "cf2bc1602f44c7ee3e91083f8666045dac7034d14b97bead3404e5174cba5607",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/preservation-check.json",
+      "sha256": "ae60af5c5fdc005938532295ddeebb69971c4ee923b7293cfc7caac68582568d",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/restart-attempt.json",
+      "sha256": "27a41f19f3dcacb2d7689620b10b4199ec5f03851b866e84f9b37c5eded2a19a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/result.json",
+      "sha256": "5e050dde2c8cdb2456402af3c0556dd5c0d518b491c518c85d416b7df37278e3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-native-20261024-r3/routing.json",
+      "sha256": "26f779eaaf7b2980e66b98aa487f5e6de49603b52a83c9eb69da8f9c5526f3f4",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/bottom-state.json",
+      "sha256": "b872f72f8e3c3d718ae3c2571b8878990041608bfa73f75a49138ca5e814987b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/capture-assertions.json",
+      "sha256": "7276e09e0ad24b824a94b57c56925991a5cf1efb7c9bfb48f7aa6fa35b1ca6be",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/correction-baseline.json",
+      "sha256": "c67b107762494906f5916330bbaf1984bfb6a728aabb7dc5832b533f58f0e6f7",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/correction-commands.jsonl",
+      "sha256": "844f291e5e8bfc30850a83563838d5c7c06128ac915e3657f412e514406b0dc3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/correction-verification.json",
+      "sha256": "946ad81fcd26c923e790c12ed2d330c94c7663f03bca1660e4f14036f88cbfa7",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/current-state.json",
+      "sha256": "fa55020859f46426f7117b5f70853b32bc62106abe8b6ae7c653c03684e28044",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/dismissed-state.json",
+      "sha256": "1a1b1c7fcfa5bffa17678e51754a60c8acb6fb267124e2721ee6c7f382c20404",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/final-verification.json",
+      "sha256": "73b6a754c00ba9870a6cf05d3ab8776bdda2c53e124976fec2d9028b8c020d20",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/focused-state.json",
+      "sha256": "a75b825cb2ab5451c9386caad300cb88ffc4a4d0542e690f41255311bf9e7aaf",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/intermediate-state.json",
+      "sha256": "84cec4c2443f76aea8e701a271e4a20212c18b17a7334903a44f97283e8641dc",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/later-state.json",
+      "sha256": "180bf8fd6726c923cbda8e28fb255fd8ff5adeb316f1883dc6e28d5d5308dc30",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/result.json",
+      "sha256": "fa1958750cf6e3f980c3063954d6e7ba1049e31d1f57709bc4a1b3d7b042ba2f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/routing.json",
+      "sha256": "3bf18fc835f65022b4e934bc85be3efd2fca94afeb0d9f7aa7d46e9c35316c5d",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/archive/sol-pixel-correction-20261024/typed-state.json",
+      "sha256": "dc30b572f4562469d1f799e3c52b1e4f7159d9528293e6e9db740fbde2515b6a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/capture-set.json",
+      "sha256": "2b82fa8489348cfeffde78a64136411992fe9d5500306571b699c18fb219636f",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-artifacts.json",
+      "sha256": "a35f9b978f00a9a96c9920594be26d1e149dac4b38bf935a91520334ef1bd6dd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.receipt.json",
+      "sha256": "e9387eae1a9c466cb5138aecaea2d21a6a583dcd15936ce8100329a9de95dd5e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/android-export.stdout.log",
+      "sha256": "ba0b3295af55e3e4d8825b4ef049c34b24e7ed03db450b1bf8cc796961833ac2",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/baseline.json",
+      "sha256": "2b6c914e32bbca6573eec7099376a2a0432cee268ee6433b56c7862d2aa813e4",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/branch.receipt.json",
+      "sha256": "ec8641bb1ed920200ed4be7599ba4c8b3931294eaddd7fe43c59594edca9893e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/coordinator-preservation.json",
+      "sha256": "c55079c5b76de5036fad1b8403ab5fdcf46bc92f98a6aead9f2c4dced45a462c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/core-integration.receipt.json",
+      "sha256": "d5acb491776f5ad97774be2303df320c05e23c130fec988f9b21a8cca8eb0890",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/core-integration.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/core-integration.stdout.log",
+      "sha256": "b1d1dde4f0cb79212917e014928cfcd84e5c70f9c6892a6607d7615e75882736",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-branch.receipt.json",
+      "sha256": "598e3b893f3d81fd147673816d2aa0fe4b4671a06e40eff80ffc87d50ad883f7",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-head.receipt.json",
+      "sha256": "508f0fa00c8ac9ec21caf6291400c443f74937c26ad0384e946807ca828438b9",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-head.stdout.log",
+      "sha256": "1945d845522b0299b53a067b8e052ef0243cd574923b05ba09a4c57681b3f90e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-index-clean.receipt.json",
+      "sha256": "482cc98b41963c01b03da2224f459e99e2742181297f310b3b87470143f3717d",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-index-clean.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-index-clean.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-preservation.json",
+      "sha256": "4d541cc69d084cae5f15e2e18fc89a22e296649991794090d49863554d34c3e3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-status.receipt.json",
+      "sha256": "e5678e7ceb56cc7b08b02e942c8e9345804961378d651094edaa16478f98265b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-status.stdout.log",
+      "sha256": "7bd15f46ea0836804d00ecc26f1560bc9cc75979cdc836619ab9f48d5c9f4001",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-tree.receipt.json",
+      "sha256": "4e6cedb9b8c1c3e1db429eaa20a14b4c2ba683aa04c111450987f0c16e43e723",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-tree.stdout.log",
+      "sha256": "33a17b0d469507ba855ec3ab971522e4fcec711b9d357c6a26ea6604e0e538c0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-whitespace.receipt.json",
+      "sha256": "689ebf7efad1dc3d64098bec9ecd2939c4e45853b7ee49888e57a672a6003634",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-whitespace.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/final-whitespace.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-jest.json",
+      "sha256": "e3b6c4d4a955c6e94929b91b74d80b9a1f0c78ace503b468807760c34bdb48d3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-screen.receipt.json",
+      "sha256": "08be028adb6885387a351bf136fe47ede52c2d84efd33ca7ca69f17540de20e6",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-screen.stderr.log",
+      "sha256": "955f57b6ab1a9f5b2e987cd95c3d849a72b1337ca9dea9f19f26b0b1e86a818b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-screen.stdout.log",
+      "sha256": "7fbb09aba154782b051ca72eb3ffcc1703917b92c3253abc4d5976e4cb92e0b9",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-typecheck.receipt.json",
+      "sha256": "792e810c8e550007810ba74784ec3094a9774d769df0d30d73f9880810ce0118",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/focused-typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/head.receipt.json",
+      "sha256": "53edeb0264e0cac98d65be435fa68c8c57bee976c498ba2032b3342aca48fde2",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/head.stdout.log",
+      "sha256": "1945d845522b0299b53a067b8e052ef0243cd574923b05ba09a4c57681b3f90e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/index-clean.receipt.json",
+      "sha256": "2f17e765af0095ebe52b3977db600d73da3710b6125e11a1a2783d28357d3d73",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/index-clean.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/index-clean.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.json",
+      "sha256": "31fe1ae345e81281301cce355de4e48c008f767a4d1d0a7fc40b8dc84ae7c829",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.receipt.json",
+      "sha256": "9d84db086a5fac39cc2854e6583eca4edb3a113ac30d8eb0d4cc28ad7a016989",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.stderr.log",
+      "sha256": "176f64de1af17e803282f96072f8685be8cf7495ca4eae13fb7d84ab40dec767",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest1.stdout.log",
+      "sha256": "ea33459385adf7df09d7e8fe01fc228a919aeabd684371db726fc4703ccca4e3",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.json",
+      "sha256": "d1272ae9c735b6b1b47723c44f1636f6e4e693cf6aa6c37817168a85edec9f90",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.receipt.json",
+      "sha256": "bb2d62e0375481b0e93dea475e13e5f09edac62f289d062f90904a7c6680f284",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.stderr.log",
+      "sha256": "3855a1eecb9625c4557229ae9cc5ac9e862a5e82418785aa0103fcfd8b244260",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/jest2.stdout.log",
+      "sha256": "7ce9aa6a440cf800c7d72e9c2872f5c742baa7f8696cdb806313ed09eb63fe57",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/native-action-timeline.json",
+      "sha256": "808fab28349af96be12a5584be14ee34d259e4c27b055b27abb2f354b9b12cfb",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.receipt.json",
+      "sha256": "17c8829a3e945f77ac0a3ddf2c104241cf1be8d41097dfe0f630181cf2d99863",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/node-version.stdout.log",
+      "sha256": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/post-test-preservation.json",
+      "sha256": "0a03cc199f3bca5017a6ee3138f969a8c256c963876f3125892fa8c4c5e8c3f0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/protected.receipt.json",
+      "sha256": "1e0acdd6f87df540b9b4634aba8c7711e2bf857ef8fe9a78e6ef34a9d6130a2b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/protected.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/protected.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.receipt.json",
+      "sha256": "a1bed7cdb023465a594990227ae0cb618d97bc0930c191974fd53b47f9959167",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/rn02-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/status.receipt.json",
+      "sha256": "e4a621d0ac2a199a2bf6d01d244a6064fbbdaf69d69b1b5cc57d3b15d8bf7585",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/status.stdout.log",
+      "sha256": "dc5c136f2e5b7df9e6cd661370f0e36d07a6e605fd5226cb654939aee335f144",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/test-only.diff",
+      "sha256": "d07f1898d2bcc1f64ff1ec28717dc88301d618185be4874182fe8971a499bf80",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/test-summary.json",
+      "sha256": "f491378fcf06b382b8346da826c810847762303bff9e8fcea418dbdc98eb4db5",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/tree.receipt.json",
+      "sha256": "3ccead98bb92b8eda416cac53caa2a98c3bee7dc796acec7b543892bd491df38",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/tree.stdout.log",
+      "sha256": "33a17b0d469507ba855ec3ab971522e4fcec711b9d357c6a26ea6604e0e538c0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/typecheck.receipt.json",
+      "sha256": "24dd25d3a0a399114c5cabd81652d38be8f1a0fafefcaec7c4c154f12a63c619",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/whitespace.receipt.json",
+      "sha256": "3fafe7b1f971b39685652d74c9924924a8817bdebdd3d2de378658bcdb59729c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/whitespace.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks-r2/whitespace.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.receipt.json",
+      "sha256": "c138550cbf6f812d39b54e0b72896c0029d3f060f1bf472a973e05b55c8c7d52",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-branch.stdout.log",
+      "sha256": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-head.receipt.json",
+      "sha256": "a851977d7ca394faf400d97f27a3dbd86cebd0738541f76a9f23fcb62323977c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-head.stdout.log",
+      "sha256": "1945d845522b0299b53a067b8e052ef0243cd574923b05ba09a4c57681b3f90e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-index-clean.receipt.json",
+      "sha256": "da302e88b534d4c1ec9fafcef1706e9b198f702da044fdf6e899d5757ee0edb0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-index-clean.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-index-clean.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.receipt.json",
+      "sha256": "2825785f06970b0d99d32ad402a812ed6a9e070464cfa6519c720ba9758bb5fd",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-node-version.stdout.log",
+      "sha256": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-protected.receipt.json",
+      "sha256": "a7587d1dc959e707cb16ab629241df5cfbcc79407ba85562e0d2a557ae4c3964",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-protected.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-protected.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.receipt.json",
+      "sha256": "7cbb500e5a654b98b87771dac5cde3f0a7bb3dee559f36c836f7c84be3339722",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-rn02-ancestor.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-search-coverage.json",
+      "sha256": "26ca56b9db37b6fd3c0c907f7c0cff8301c4f3782cd33d150af0fcb96ebcf44b",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-status.receipt.json",
+      "sha256": "16112b2e5eb90b29837e798389f194407599b5710f6646940bfc071081ab38dc",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-status.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-status.stdout.log",
+      "sha256": "e3e3e50e33810798073e6c8e213c90d884eef888d0b267cc948e39e774051867",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.receipt.json",
+      "sha256": "aec3a6834286654c2c404c2d14f58b1f96997519c44cecf6d0f6406bf4d7dec9",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-tree.stdout.log",
+      "sha256": "33a17b0d469507ba855ec3ab971522e4fcec711b9d357c6a26ea6604e0e538c0",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-whitespace.receipt.json",
+      "sha256": "9eb0f1d8104da93c4901c0ad3c293e29a5726534334f9ae988dd1266c4623717",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-whitespace.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/checks/blocked-whitespace.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/pixel-initial-assessment.md",
+      "sha256": "5e2594ca828c6b182fb4c2135033f44aa3a4b0bd5364a31fc7801f3f56b848ab",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-routing.json",
+      "sha256": "c30f5809a75321c182e7c908af45ab71ec366ea9030905dcfc5462e8aae72f23",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md",
+      "sha256": "e7dbe534a4da0ed2c9974a47b719da1f45224cb23ba944f4a66f4b63e4baaae8",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/pixel-inspection.json",
+      "sha256": "04aaa855dd6ccc5b00b06f6e668194cdc9e6146f9eb30425ad08f7f7a61a4534",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/evidence/RN03/r2-sol-packet/source-reconciliation.json",
+      "sha256": "3a069ea4ba54a582ddc7dff858769790fe2852d8138711b839d0edc653b41dad",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03-checkpoint.md",
+      "sha256": "7054e3239776763ec849ba737c08b73e18eaada8796d533833f518360d15f13c",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03-sol-corrected-checkpoint.md",
+      "sha256": "21a7dfe97a36a29b3032a6011e0ab3413302a15de33b65c469c915b0b780e3c2",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03-sol-native-checkpoint-r3.md",
+      "sha256": "c762fc65296ec0465ddd45dee519ba9cf24478ec1c24add0c3a0078f6adce032",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03-sol-native-checkpoint.md",
+      "sha256": "3c84e795ce751c644887000540db2a71425cd4d825141162a2e1199dd2902b90",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03-supervisor-software-checkpoint.md",
+      "sha256": "83e88744899ef6e91dc9c646870c9000bd70dca3b1657bb3260cbfb396d14ede",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/handoffs/RN03.md",
+      "sha256": "a2d21606b17bc2106b36cf56d96cf74fa4cfd7c5ff901e0c88bbbe7c61b1288e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "sha256": "bfda3527139fcb5ac3979a78d4246ddd3febb13b4ad55a1939845b570c31abfa",
+      "note": "Carry-over RN03 implementation; unchanged this preparation"
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "sha256": "5dcc5aad9607034f4ed39a3e86875fc9384cb16489068dd2437b36827842d6ae",
+      "note": "Sole amended test; all existing screen tests retained"
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "sha256": "85067cccd2c76ecf3fdadb12108773b7fdab3350162e7b27e36fe3c5b52a0fe3",
+      "note": "Carry-over RN03 implementation; unchanged this preparation"
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "sha256": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "note": "Carry-over RN03 implementation; unchanged this preparation"
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "sha256": "484f378fe612ddf08108bbf07b0d877a7422ec6c1d7b0ac6ce3d03bf71ad66b9",
+      "note": "Carry-over RN03 implementation; unchanged this preparation"
+    },
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "sha256": "a741e5cbaf5345f36556cd1b7c6cca29182472cc7c98e7564b412d0f97dc1008",
+      "note": "Carry-over RN03 implementation; unchanged this preparation"
+    },
+    {
+      "path": "migration/reviews/RN03-r1.md",
+      "sha256": "771662c808650a25062c569de8cf03e2e306979b09783432c2888840493fa54a",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/submissions/RN03-r1.json",
+      "sha256": "9d87167a556f2384124b7dbe760e616ab28c84dad7c9baf4d950f33ca8ece54d",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    },
+    {
+      "path": "migration/work-packages/RN03.md",
+      "sha256": "45f02c6bbf59a3b5d95c1a581c8e54c40a8e7e88573f331457f7aca109014b3e",
+      "note": "Current RN03 packet/history/evidence; historical records remain historical"
+    }
+  ]
+}

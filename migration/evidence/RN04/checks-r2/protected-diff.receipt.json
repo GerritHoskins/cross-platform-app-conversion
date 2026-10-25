@@ -1,0 +1,33 @@
+{
+  "command": "git",
+  "args": [
+    "diff",
+    "--exit-code",
+    "--",
+    "package.json",
+    "package-lock.json",
+    "src",
+    "public",
+    "android",
+    "ios",
+    "migration/core",
+    "migration/reference",
+    "migration/react-native/package.json",
+    "migration/react-native/package-lock.json",
+    "migration/react-native/tsconfig.json",
+    "migration/react-native/app.json",
+    "migration/react-native/src/data",
+    "migration/react-native/src/app/index.tsx",
+    "migration/react-native/src/screens/shell-screen.tsx",
+    "migration/react-native/__tests__/shell-screen.test.tsx",
+    "migration/react-native/scripts/verify-core-integration.cjs"
+  ],
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-25T11:13:16.370Z",
+  "durationMs": 39,
+  "signal": null,
+  "error": null,
+  "stdout": "migration/evidence/RN04/checks-r2/protected-diff.stdout.log",
+  "stderr": "migration/evidence/RN04/checks-r2/protected-diff.stderr.log"
+}
