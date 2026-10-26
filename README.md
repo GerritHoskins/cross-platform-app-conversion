@@ -1,6 +1,6 @@
 # Cross-platform app conversion
 
-A proof of concept for translating an Ionic/Capacitor/Vue app into other cross-platform stacks. The source is the Ionic Conference App (Vue). The first target is React Native (Expo); NativeScript follows.
+A proof of concept for translating an Ionic/Capacitor/Vue app into other cross-platform stacks. The source is the Ionic Conference App (Vue). The first target is React Native (Expo); the second is NativeScript-Vue.
 
 The migration runs as small, reviewed work packages. An AI executor implements each package, and an independent AI reviewer checks it against hashed evidence before a human accepts and commits it.
 
@@ -12,6 +12,7 @@ The migration runs as small, reviewed work packages. An AI executor implements e
 | `migration/core/` | Framework-free TypeScript core shared by all targets: session selection, grouping, track sorting, favorites |
 | `migration/reference/` | Behavior contract and frozen expected cases derived from the source app |
 | `migration/react-native/` | React Native target (Expo SDK 58, Expo Router, React Native 0.88) |
+| `migration/nativescript/` | NativeScript target (NativeScript-Vue 3, NativeScript 9, TypeScript) |
 | `migration/plans/` | Migration strategy, work-package plan, Android acceptance checklist |
 | `migration/work-packages/` | One specification per package (RN01–RN07, then NS01+) |
 | `migration/submissions/`, `migration/reviews/` | Hashed manifests per revision and the reviewer verdicts |
@@ -21,9 +22,8 @@ The migration runs as small, reviewed work packages. An AI executor implements e
 
 ## Status
 
-- **Done:** RN01–RN06. Expo shell and Android development build, core integration, schedule browsing, session detail and favorites, track filter modal, swipe actions on rows.
-- **In progress:** RN07, Android acceptance on an emulator (device behavior, keyboard, accessibility, font and display scaling, dark mode).
-- **Not started:** NativeScript (NS01+).
+- **React Native, done:** RN01–RN07. Expo shell and Android development build, core integration, schedule browsing, session detail and favorites, track filter modal, swipe actions on rows, and Android acceptance on an emulator. Known limits (native cold-start links, diagonal swipe, TalkBack traversal, keyboard insets) are listed in `migration/handoffs/RN07.md`.
+- **NativeScript, in progress:** NS01 (shell and Android launch) is done; NS02–NS07 follow.
 
 ## Running
 
@@ -51,10 +51,19 @@ npm --prefix migration/react-native run typecheck
 
 Metro runs on port 8082. For an emulator, forward it with `adb reverse tcp:8082 tcp:8082`.
 
+NativeScript target (uses the project-pinned CLI through npx):
+
+```bash
+npm --prefix migration/nativescript install
+npm --prefix migration/nativescript run typecheck
+npm --prefix migration/nativescript test
+npm --prefix migration/nativescript run build:android
+```
+
 Check a submission manifest:
 
 ```bash
-node migration/tools/manifest-hashes.mjs migration/submissions/RN06-r1.json
+node migration/tools/manifest-hashes.mjs migration/submissions/NS01-r1.json
 ```
 
 ## Workflow

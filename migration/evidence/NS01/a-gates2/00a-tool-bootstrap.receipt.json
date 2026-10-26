@@ -1,0 +1,13 @@
+{
+  "command": "terminal",
+  "args": [
+    "git branch --show-current; git rev-parse HEAD; git merge-base --is-ancestor c02ae32 HEAD; printf 'ancestor_exit=%s\\n' \"$?\"; git diff --cached --exit-code; printf 'index_exit=%s\\n' \"$?\"; git status --porcelain=v1 --untracked-files=normal; git config --get core.hooksPath; if test -e migration/nativescript; then printf 'TARGET_EXISTS\\n'; else printf 'TARGET_ABSENT\\n'; fi"
+  ],
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+  "stdout": "00a-tool-bootstrap.stdout.log",
+  "stderr": "00a-tool-bootstrap.stderr.log"
+}

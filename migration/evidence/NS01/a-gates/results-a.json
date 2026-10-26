@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "phase": "A",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "step-1-preflight",
+      "status": "BLOCKED",
+      "evidence": [
+        "00-terminal-prelude.receipt.json",
+        "baseline-recording-correction.json",
+        "preservation-entry.json",
+        "environment.json",
+        "08-node-version.receipt.json",
+        "09-npm-version.receipt.json",
+        "10-java-version.receipt.json",
+        "11-avds.receipt.json",
+        "12-adb-devices-interrupted.receipt.json",
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-2-scaffold",
+      "status": "NOT RUN",
+      "evidence": [
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-3-install",
+      "status": "NOT RUN",
+      "evidence": [
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-4-shell",
+      "status": "NOT RUN",
+      "evidence": [
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-5-scripts",
+      "status": "NOT RUN",
+      "evidence": [
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-6-static-gates",
+      "status": "NOT RUN",
+      "evidence": [
+        "12b-adb-devices.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-7-final-preservation-index-class-audit",
+      "status": "PASS",
+      "evidence": [
+        "preservation-entry.json",
+        "preservation-exit.json",
+        "completion-audit.json",
+        "94-completion-index.receipt.json",
+        "95-completion-status.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    }
+  ],
+  "versions": {
+    "node": "v24.19.0",
+    "npm": "11.16.0",
+    "java": "openjdk version \"21.0.7\" 2025-04-15 LTS\nOpenJDK Runtime Environment Temurin-21.0.7+6 (build 21.0.7+6-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.7+6 (build 21.0.7+6-LTS, mixed mode, sharing)",
+    "cli": null,
+    "template": null,
+    "nativescriptVue": null,
+    "core": null,
+    "androidRuntime": null,
+    "webpack": null,
+    "typescript": null,
+    "vueTsc": null,
+    "vitest": null,
+    "requestedNotResolved": {
+      "cli": "9.1.2",
+      "template": "3.1.2",
+      "vueTsc": "3.3.13",
+      "vitest": "5.0.5"
+    }
+  },
+  "testCounts": {
+    "first": null,
+    "second": null
+  },
+  "apk": null,
+  "unresolved": [
+    "Preflight adb devices did not complete; independent 60-second attempt timed out with exitCode -1 (outer helper exit 127). No device inventory verified.",
+    "Original environment invocation interrupted by terminal timeout after 420.0s; original child completion receipt unavailable. Prelude/wrapper observation timings are null because the tool did not expose them.",
+    "Receipt helper repeated baseline after writing its own evidence, causing a self-induced failure; initial exact baseline and correction are retained, not overwritten.",
+    "NativeScript create --help and generation were not reached; project, install, shell, scripts, npm ci, typecheck, two tests and build remain NOT RUN.",
+    "Phase B and Phase C were not authorized in this session and remain NOT RUN."
+  ]
+}

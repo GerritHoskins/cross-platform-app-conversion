@@ -1,0 +1,27 @@
+{
+  "buildDrivenSideEffects": [
+    {
+      "kind": "Android SDK platform installation",
+      "package": "platforms;android-36",
+      "apiLevel": 36,
+      "revision": 2,
+      "path": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platforms/android-36",
+      "requiredBy": "migration/nativescript/App_Resources/Android/app.gradle:7 (compileSdkVersion 36); :13 (targetSdkVersion 36)",
+      "licenseEvidence": "Build stdout: Checking the license for package Android SDK Platform 36 ...; License for package Android SDK Platform 36 accepted.",
+      "installationEvidence": "10-build-android.stdout.log reports preparing, installing and completing Android SDK Platform 36 (revision 2). Installed source.properties independently read: Pkg.Revision=2; AndroidVersion.ApiLevel=36.",
+      "authorizationContext": "NS01 step 8 permits a demonstrably required missing SDK platform with version/license recording. A4 also narrowly limits writes; disclose this automatic build side effect outside the target, rather than claiming all writes stayed inside the repo allowlist.",
+      "manualSdkCommandRun": false
+    },
+    {
+      "kind": "Gradle wrapper download/cache",
+      "version": "8.14.3",
+      "url": "https://services.gradle.org/distributions/gradle-8.14.3-bin.zip",
+      "path": "C:/Users/Gerrit/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66",
+      "evidence": "10-build-android.stdout.log reports download and unzip by Gradle wrapper.",
+      "manualGlobalInstallRun": false
+    }
+  ],
+  "persistentEnvironmentChanged": false,
+  "projectOrDependencySourceEditsByExecutor": false,
+  "limits": "No external cache/SDK cleanup attempted; no device commands. External cache/SDK trees were not comprehensively snapshotted."
+}

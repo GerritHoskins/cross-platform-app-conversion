@@ -24,3 +24,8 @@ migration/evidence/RN07/a-gates2/a01-node-version.stdout.log -text
 migration/evidence/RN07/a-gates2/a01-rn06-head-blob-batch.stdout.log -text
 migration/evidence/RN07/c-freeze/node-version.stdout.log -text
 migration/evidence/RN07/c-freeze/rn06-head-blobs.stdout.log -text
+# NS01 frozen evidence: raw CRLF device and node-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS01/b-device/** -text
+migration/evidence/NS01/b-device2/** -text
+migration/evidence/NS01/a-gates3/06-node-version.stdout.log -text
+migration/evidence/NS01/c-freeze/node-version.stdout.log -text

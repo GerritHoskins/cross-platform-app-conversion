@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "report": "migration/evidence/NS01/pixel-inspection-coordinator.md",
+  "reportSha256": "525b4562c635cf88e645eb1a2f295e5c643d7209555aef0a9b99eb41d20f89fd",
+  "capturedPngs": 3,
+  "reportCoversEveryPng": true,
+  "captures": [
+    {
+      "id": "B-launch",
+      "png": "migration/evidence/NS01/b-device2/B-launch.png",
+      "pngSha256": "e3e7cbcf99db94150a14eb5e7462fbe29e40a8bf46818d4e60b0d50832766377",
+      "xml": null,
+      "xmlCaptureStatus": "BLOCKED",
+      "coordinatorPixelStatus": "PASS",
+      "coordinatorPrivacyStatus": "PASS"
+    },
+    {
+      "id": "B-launch-diagnostic",
+      "png": "migration/evidence/NS01/b-device2/B-launch-diagnostic.png",
+      "pngSha256": "605db90cecb227d2c4e1c067120f2356603216ff0e287e7a156dc22379779ac0",
+      "xml": null,
+      "xmlCaptureStatus": "BLOCKED",
+      "coordinatorPixelStatus": "PASS",
+      "coordinatorPrivacyStatus": "PASS"
+    },
+    {
+      "id": "B-relaunch",
+      "png": "migration/evidence/NS01/b-device2/B-relaunch.png",
+      "pngSha256": "60e39477a14379af4f939ae1439f083bec9c8d42cf3041ce760f38864ff98d2c",
+      "xml": "migration/evidence/NS01/b-device2/B-relaunch.xml",
+      "xmlCaptureStatus": "PASS",
+      "coordinatorPixelStatus": "PASS",
+      "coordinatorPrivacyStatus": "PASS"
+    }
+  ],
+  "authority": "Coordinator direct pixel inspection; no image inspection performed by phase C executor",
+  "firstLaunchXmlMissing": true,
+  "finalBLaunchStatus": "PASS",
+  "finalBLaunchBasis": "Coordinator pixels; not XML, not proof of a <=20-second launch"
+}

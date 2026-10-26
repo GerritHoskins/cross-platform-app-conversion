@@ -1,0 +1,61 @@
+{
+  "stage": "blocked-exit",
+  "status": "PASS",
+  "result": {
+    "phaseStatus": "BLOCKED",
+    "after": {
+      "avd": {
+        "status": "READ",
+        "value": "RN01_API36\r\r\nOK"
+      },
+      "model": {
+        "status": "READ",
+        "value": "sdk_gphone64_x86_64"
+      },
+      "sdk": {
+        "status": "READ",
+        "value": "36"
+      },
+      "densityProperty": {
+        "status": "READ",
+        "value": ""
+      },
+      "density": {
+        "status": "UNAVAILABLE",
+        "error": "90-after-density: exit 20; cmd: Can't find service: window\r\n"
+      },
+      "fontScale": {
+        "status": "UNAVAILABLE",
+        "error": "90-after-fontScale: exit 20; cmd: Can't find service: settings\r\n"
+      },
+      "night": {
+        "status": "UNAVAILABLE",
+        "error": "90-after-night: exit 20; cmd: Can't find service: uimode\r\n"
+      },
+      "accessibility": {
+        "status": "UNAVAILABLE",
+        "error": "90-after-accessibility: exit 20; cmd: Can't find service: settings\r\n"
+      },
+      "rnPath": {
+        "status": "UNAVAILABLE",
+        "error": "90-after-rnPath: exit 20; cmd: Can't find service: package\r\n"
+      }
+    },
+    "integrity": {
+      "branch": "migration/slice-1",
+      "head": "0a4b39b193e9f92411020f14d8c4268ede3ef932",
+      "index": "",
+      "targetFiles": 71,
+      "expectedTargetFiles": 71,
+      "protectedFiles": 261,
+      "ideaHashMatches": true,
+      "apk": {
+        "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+        "bytes": 117561814,
+        "sha256": "6f1e624bad3943b1c76774afc39d01748b1a1d845e6cf555bb8746af596d8f24"
+      },
+      "mismatches": []
+    },
+    "noInstallOrLaunchAttempted": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@nativescript-vue/template-blank",
+  "version": "3.1.2",
+  "tarball": "https://registry.npmjs.org/@nativescript-vue/template-blank/-/template-blank-3.1.2.tgz",
+  "integrity": "sha512-RjET9xuOTbB/z+7Z0JqCU1hvu50blGDrqWw3f5Z4N+JPcXobtT+nuTeOrzPHPJQp7oe8QeNMvHkzlVMOD9t7uA==",
+  "files": [
+    "package/hooks/after-createProject/after-createProject.js",
+    "package/package.json",
+    "package/src/app.css",
+    "package/src/app.ts",
+    "package/src/components/Details.vue",
+    "package/src/components/Home.vue",
+    "package/tools/dot.gitignore",
+    "package/tools/vscode.extensions.json",
+    "package/tsconfig.json",
+    "package/types/references.d.ts",
+    "package/types/shims.vue.d.ts"
+  ],
+  "hooks": {
+    "package/hooks/after-createProject/after-createProject.js": "const fs = require('fs');\nconst path = require('path');\nconst { execSync } = require('child_process');\n\nmodule.exports = function (hookArgs) {\n  const appRootFolder = hookArgs.projectDir;\n  const toolsDir = path.join(appRootFolder, 'tools');\n  const vscodeDir = path.join(appRootFolder, '.vscode');\n  const srcGitignore = path.join(toolsDir, 'dot.gitignore');\n  const destGitignore = path.join(appRootFolder, '.gitignore');\n  const srcVscodeExtensions = path.join(toolsDir, 'vscode.extensions.json');\n  const destVscodeExtensions = path.join(vscodeDir, 'extensions.json');\n\n  try {\n    fs.mkdirSync(vscodeDir);\n    fs.copyFileSync(srcVscodeExtensions, destVscodeExtensions);\n    fs.copyFileSync(srcGitignore, destGitignore);\n    initWebpackConfig(appRootFolder);\n  } catch (error) {\n    console.log(error);\n  }\n  try {\n    deleteFolderSync(toolsDir);\n\n    const readme = path.join(appRootFolder, 'README.md');\n    if (fs.existsSync(readme)) {\n      fs.unlinkSync(readme);\n    }\n\n    deleteFolderSync(__dirname);\n  } catch (error) {\n    console.log(error);\n  }\n\n  function deleteFolderSync(folderPath) {\n    if (fs.statSync(folderPath).isDirectory()) {\n      fs.readdirSync(folderPath).forEach((file) => {\n        const content = path.join(folderPath, file);\n        const contentDirs = fs.statSync(content).isDirectory();\n\n        if (contentDirs) {\n          deleteFolderSync(content);\n        } else {\n          fs.unlinkSync(content);\n        }\n      });\n\n      fs.rmdirSync(folderPath);\n    }\n  }\n\n  function initWebpackConfig(appRootFolder) {\n    const binPath = path.resolve(\n      require\n        .resolve('@nativescript/webpack/package.json', {\n          paths: [appRootFolder],\n        })\n        .replace('package.json', 'dist/bin/index.js'),\n    );\n\n    // init webpack config\n    execSync(`node \"${binPath}\" init`, {\n      cwd: appRootFolder,\n      stdio: 'inherit',\n    });\n  }\n};\n"
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "revision": 1,
+  "phase": "C",
+  "status": "READY_FOR_REVIEW",
+  "date": "2026-10-26T12:58:21.364Z",
+  "head": "0a4b39b193e9f92411020f14d8c4268ede3ef932",
+  "cases": [
+    {
+      "id": "preflight",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Exact baseline gate passed; adb devices exit 0 in 26 ms, 30-second timeout applied; only read-only listing.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/baseline-gate.json",
+        "migration/evidence/NS01/a-gates2/environment.json",
+        "migration/evidence/NS01/a-gates2/preservation-entry.json",
+        "migration/evidence/NS01/a-gates2/12-adb-devices.receipt.json"
+      ]
+    },
+    {
+      "id": "scaffold",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Pinned CLI/template; help-confirmed flags. CLI appended the app name to --path; generated entries moved up within the allowed target. Hook provenance and before/after lists recorded; no nested Git or outside writes.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/13-create-help.receipt.json",
+        "migration/evidence/NS01/a-gates2/template-before.json",
+        "migration/evidence/NS01/a-gates2/target-before.json",
+        "migration/evidence/NS01/a-gates2/target-after-create.json",
+        "migration/evidence/NS01/a-gates2/scaffold-layout-correction.json",
+        "migration/evidence/NS01/a-gates2/scaffold-outside-compare.json"
+      ]
+    },
+    {
+      "id": "install",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Template dependencies retained; D2/D3 exact dev pins plus Android runtime 9.1.1 exact. Build/dependency output ignored.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/18-npm-install.receipt.json",
+        "migration/evidence/NS01/a-gates2/19-exact-dev-pins.receipt.json",
+        "migration/evidence/NS01/a-gates2/20-npm-ls.stdout.log",
+        "migration/evidence/NS01/a-gates2/install-policy.json",
+        "migration/evidence/NS01/a-gates2/22-ignored-output.receipt.json"
+      ]
+    },
+    {
+      "id": "shell",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Static Frame > Page shell, required ActionBar and Label strings from pure TypeScript, Details removed. Theme readability is static design, not observed pixels.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/shell-and-scripts.json"
+      ]
+    },
+    {
+      "id": "scripts",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "vue-tsc --noEmit; vitest run; pinned npx CLI run/build scripts. Android run script was not executed.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/shell-and-scripts.json"
+      ]
+    },
+    {
+      "id": "npm-ci",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Final C npm ci exit 0; lockfile and all 71 target hashes unchanged against authorized A3 snapshot.",
+      "evidence": [
+        "migration/evidence/NS01/c-freeze/npm-ci.receipt.json",
+        "migration/evidence/NS01/c-freeze/after-npm-ci.json"
+      ]
+    },
+    {
+      "id": "typecheck",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Final C vue-tsc --noEmit exit 0.",
+      "evidence": [
+        "migration/evidence/NS01/c-freeze/typecheck.receipt.json"
+      ]
+    },
+    {
+      "id": "tests",
+      "status": "PASS",
+      "evidenceCategory": "automated/static executor",
+      "summary": "Final C two terminating Vitest runs each passed 1 suite / 1 test; identical counts.",
+      "evidence": [
+        "migration/evidence/NS01/c-freeze/tests-first.receipt.json",
+        "migration/evidence/NS01/c-freeze/tests-second.receipt.json",
+        "migration/evidence/NS01/c-freeze/test-counts.json"
+      ]
+    },
+    {
+      "id": "build",
+      "status": "PASS",
+      "evidenceCategory": "automated Android build executor (historical A4)",
+      "summary": "A4 npm run build:android exit 0; exact APK reconciled offline in C, not rebuilt.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates4/10-build-android.receipt.json",
+        "migration/evidence/NS01/c-freeze/apk-reconciliation.json"
+      ]
+    },
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "evidenceCategory": "historical device executor",
+      "summary": "Exact A4 APK installed successfully; installed base.apk SHA-256 matches A4.",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/install.receipt.json",
+        "migration/evidence/NS01/b-device2/install.stdout.log",
+        "migration/evidence/NS01/b-device2/ns-path-installed.stdout.log",
+        "migration/evidence/NS01/b-device2/installed-apk-sha256.stdout.log",
+        "migration/evidence/NS01/b-device2/install-verification.json"
+      ]
+    },
+    {
+      "id": "B-launch",
+      "status": "PASS",
+      "evidenceCategory": "coordinator pixels + historical device executor",
+      "summary": "B2 first-launch XML proof is missing and its 20942 ms polling exceeded the 20000 ms observation window. Coordinator pixels show the required shell on both cold launches; the second has XML plus pixels. Final B-launch PASS (coordinator pixels); observed Android launch satisfied. No XML or timing proof is invented, and B2 history remains BLOCKED.",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-launch-assertions.json",
+        "migration/evidence/NS01/b-device2/B-launch.png",
+        "migration/evidence/NS01/b-device2/B-launch-xml.receipt.json",
+        "migration/evidence/NS01/b-device2/B-launch-xml.stdout.log",
+        "migration/evidence/NS01/b-device2/B-launch-poll-1.stderr.log",
+        "migration/evidence/NS01/b-device2/B-launch-poll-2.stderr.log",
+        "migration/evidence/NS01/b-device2/driver-launch.receipt.json",
+        "migration/evidence/NS01/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "B-relaunch",
+      "status": "PASS",
+      "evidenceCategory": "historical device executor XML + coordinator pixels",
+      "summary": "Second cold launch PASS: required shell in XML and coordinator-inspected pixels; not rerun in C.",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-relaunch-assertions.json",
+        "migration/evidence/NS01/b-device2/B-relaunch.png",
+        "migration/evidence/NS01/b-device2/B-relaunch.xml",
+        "migration/evidence/NS01/b-device2/B-relaunch-pid.stdout.log",
+        "migration/evidence/NS01/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "evidenceCategory": "historical device executor",
+      "summary": "Both requested bounded PID logs recorded without suppression; warnings and ashmem deprecation error retained verbatim. No matched fatal-crash pattern in these bounded logs; not a claim of error-free logs.",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-launch-logcat.stdout.log",
+        "migration/evidence/NS01/b-device2/B-relaunch-logcat.stdout.log",
+        "migration/evidence/NS01/b-device2/logcat-summary.json",
+        "migration/evidence/NS01/b-device2/warnings-errors-verbatim.txt"
+      ]
+    },
+    {
+      "id": "pixel-inspection",
+      "status": "PASS",
+      "evidenceCategory": "coordinator pixels",
+      "summary": "Claude Code directly inspected all 3 distinct PNGs; required shell on both cold launches, no clipboard or personal content; supporting evidence, not formal review.",
+      "evidence": [
+        "migration/evidence/NS01/pixel-inspection-coordinator.md",
+        "migration/evidence/NS01/c-freeze/pixel-reconciliation.json"
+      ]
+    }
+  ],
+  "counts": {
+    "total": 14,
+    "PASS": 14,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT RUN": 0
+  },
+  "testCounts": {
+    "first": {
+      "id": "tests-first",
+      "suites": 1,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "terminating": true
+    },
+    "second": {
+      "id": "tests-second",
+      "suites": 1,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "terminating": true
+    },
+    "same": true
+  },
+  "versions": {
+    "node": "v24.19.0",
+    "npm": "11.16.0",
+    "java": "openjdk version \"21.0.7\" 2025-04-15 LTS\r\nOpenJDK Runtime Environment Temurin-21.0.7+6 (build 21.0.7+6-LTS)\r\nOpenJDK 64-Bit Server VM Temurin-21.0.7+6 (build 21.0.7+6-LTS, mixed mode, sharing)",
+    "cli": "9.1.2 (pinned npx command)",
+    "template": "3.1.2",
+    "@nativescript/android": "9.1.1",
+    "@nativescript/core": "9.1.3",
+    "@nativescript/tailwind": "4.0.10",
+    "@nativescript/types": "9.1.4",
+    "@nativescript/webpack": "5.0.39",
+    "@types/node": "26.5.1",
+    "nativescript-vue": "3.1.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5",
+    "vue-tsc": "3.3.13"
+  },
+  "androidBuild": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117561814,
+    "sha256": "6f1e624bad3943b1c76774afc39d01748b1a1d845e6cf555bb8746af596d8f24"
+  },
+  "coordinatorDispositions": [
+    {
+      "id": "C1",
+      "summary": "Human-authorized adb server restart before A2 resolved the blocked A1 read-only inventory; no restart in phase C.",
+      "evidence": [
+        "migration/handoffs/NS01-checkpoint-a.md",
+        "migration/evidence/NS01/a-gates2/12-adb-devices.receipt.json"
+      ],
+      "authority": "Coordinator dispositions supplied in phase C assignment"
+    },
+    {
+      "id": "C2",
+      "summary": "Claude Code session variable NoDefaultCurrentDirectoryInExePath=1 broke gradlew.bat resolution in A2. A4 built with the variable removed process-locally and pinned Node first on PATH; no persistent environment or target edit.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/27-build-android.receipt.json",
+        "migration/evidence/NS01/a-gates4/build-environment.json",
+        "migration/evidence/NS01/a-gates4/10-build-android.receipt.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "summary": "A3 stopped at the coordinator's over-strict provenance gate because A2 lacked final target hashes. A4 used the A3 supervisor snapshot as expressly authorized; 71 target hashes match again in C.",
+      "evidence": [
+        "migration/handoffs/NS01-checkpoint-a3.md",
+        "migration/evidence/NS01/a-gates4/entry-gate.json",
+        "migration/evidence/NS01/c-freeze/after-static-gates.json"
+      ],
+      "comparisonSource": "tools/qwen-supervisor/.runs/sol-ns01-r1-a3-20261026/baseline.json"
+    },
+    {
+      "id": "C4",
+      "summary": "A4 automatically installed Android SDK Platform 36 revision 2 (build-reported license accepted) and downloaded Gradle 8.14.3 wrapper cache. Coordinator accepts these environment additions under NS01 step 8; no rebuild or SDK work in C.",
+      "evidence": [
+        "migration/evidence/NS01/a-gates4/build-side-effects.json",
+        "migration/evidence/NS01/a-gates4/10-build-android.stdout.log"
+      ]
+    },
+    {
+      "id": "C5",
+      "summary": "First phase B attempt was BLOCKED while emulator system_server was down and framework services were unavailable. Human authorized adb reboot before B2. This recovery is not a product fix; no device interaction in C.",
+      "evidence": [
+        "migration/evidence/NS01/b-device/results-b.json",
+        "migration/evidence/NS01/b-device2/gate-pass.json"
+      ],
+      "authority": "Coordinator dispositions supplied in phase C assignment"
+    },
+    {
+      "id": "C6",
+      "summary": "B2 first-launch XML proof is missing and its 20942 ms polling exceeded the 20000 ms observation window. Coordinator pixels show the required shell on both cold launches; the second has XML plus pixels. Final B-launch PASS (coordinator pixels); observed Android launch satisfied. No XML or timing proof is invented, and B2 history remains BLOCKED.",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/results-b2.json",
+        "migration/evidence/NS01/b-device2/B-launch-assertions.json",
+        "migration/evidence/NS01/pixel-inspection-coordinator.md",
+        "migration/evidence/NS01/c-freeze/pixel-reconciliation.json"
+      ]
+    }
+  ],
+  "warnings": [
+    "NativeScript-Vue build warning: installed vue 3.5.43 versus @vue/runtime-core 3.5.44; no dependency alignment in C.",
+    "npm audit reports 6 findings: 5 moderate, 1 high; no audit fix or forced install.",
+    "npm ci retains transitive deprecations and three pending install-script approvals; no approval changes.",
+    "B2 bounded PID logs retain startup jank/skipped frames, HWUI/emulator warnings and ashmem deprecation; no matched fatal pattern, not an error-free/exhaustive log claim.",
+    "Historical CLI shell-args Node DEP0190 and Java deprecated-API notes remain disclosed."
+  ],
+  "historicalRecordsImmutable": true,
+  "historicalResultSources": [
+    "migration/evidence/NS01/a-gates/results-a.json",
+    "migration/evidence/NS01/a-gates2/results-a2.json",
+    "migration/evidence/NS01/b-device/results-b.json",
+    "migration/evidence/NS01/b-device2/results-b2.json"
+  ],
+  "historicalCorrections": [
+    "A2 step-6 summary says build exit 1, but exact command receipt and A2 checkpoint record outer npm build exit 127; use receipt exit 127. Neither historical source edited.",
+    "B2 BLOCKED overall/launch disposition remains immutable; final aggregate applies coordinator pixel disposition explicitly."
+  ],
+  "limits": [
+    "Dark theme not exercised under D4; default light theme observed only.",
+    "Vitest pure TypeScript smoke test is not native rendering proof.",
+    "Single Android emulator/debug APK only; no physical device, iOS, release, landscape, accessibility conformance or performance acceptance.",
+    "First-launch and diagnostic XML remain missing; no <=20-second launch timing claim.",
+    "No shared core, conference data, store or navigation work; NS02 requires a separate human assignment.",
+    "Historical bootstrap/interrupted receipts retain null timing/completion fields; not retroactively repaired.",
+    "No device/emulator interaction, rebuild, product/test/config edit, review dispatch, staging, commit or push in C."
+  ],
+  "unresolved": [
+    "Independent review pending; coordinator owns routing verification and dispatch."
+  ],
+  "next": "Next: none; STOP — NS02 requires a separate human assignment"
+}

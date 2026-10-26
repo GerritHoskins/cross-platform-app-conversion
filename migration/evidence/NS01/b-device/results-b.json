@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "phase": "B",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "serial": "emulator-5554",
+  "avd": "RN01_API36",
+  "appId": "dev.translationtest.ns",
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 117561814,
+    "sha256": "6f1e624bad3943b1c76774afc39d01748b1a1d845e6cf555bb8746af596d8f24"
+  },
+  "cases": [
+    {
+      "id": "B-install",
+      "status": "BLOCKED",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Repository/APK gate passed, but emulator framework services are unavailable. pm path dev.translationtest.rn fails with exit 20: cmd: Can't find service: package. Install was not attempted; installed NS APK path/hash cannot be verified.",
+      "evidence": ["migration/evidence/NS01/b-device/01-entry-integrity.json", "migration/evidence/NS01/b-device/readiness.json", "migration/evidence/NS01/b-device/03-readiness-rn-path.receipt.json", "migration/evidence/NS01/b-device/90-after-rnPath.receipt.json"]
+    },
+    {
+      "id": "B-launch",
+      "status": "BLOCKED",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Install prerequisite blocked. No launch, polling, assertion frame, screenshot or UI XML attempted. Required title/body/error-dialog and foreground assertions remain unverified.",
+      "evidence": ["migration/evidence/NS01/b-device/03-before-density.receipt.json", "migration/evidence/NS01/b-device/environment-after-blocked.json", "migration/evidence/NS01/b-device/capture-index.json"]
+    },
+    {
+      "id": "B-relaunch",
+      "status": "BLOCKED",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Install/first-launch prerequisites blocked. No force-stop, relaunch or PID query attempted; leaving the NS app running in the foreground could not be achieved.",
+      "evidence": ["migration/evidence/NS01/b-device/readiness.json", "migration/evidence/NS01/b-device/capture-notes.md", "migration/evidence/NS01/b-device/commands.jsonl"]
+    },
+    {
+      "id": "B-logcat",
+      "status": "BLOCKED",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "No launch/PID available. No logcat command was issued; no app-log health claim is made.",
+      "evidence": ["migration/evidence/NS01/b-device/commands.jsonl", "migration/evidence/NS01/b-device/findings.md"]
+    }
+  ],
+  "preservation": {
+    "status": "PASS",
+    "evidence": ["migration/evidence/NS01/b-device/01-entry-integrity.json", "migration/evidence/NS01/b-device/91-exit-integrity.json", "migration/evidence/NS01/b-device/outside-entry.json", "migration/evidence/NS01/b-device/outside-exit.json"]
+  },
+  "unresolved": [
+    "Emulator framework services unavailable: window, settings, uimode, package; no restart, recovery or fix authorized/performed.",
+    "Density getprop ro.sf.lcd_density is empty; wm density fails. Font scale, night mode, accessibility services and RN installed path could not be read before or after.",
+    "NS install and device APK hash, both cold launches, PID-scoped logcat and foreground end state remain unverified.",
+    "No frames exist for coordinator pixel inspection. Phase C/freeze/review and NS02 remain unauthorized."
+  ]
+}

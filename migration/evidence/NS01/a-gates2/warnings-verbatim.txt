@@ -1,0 +1,52 @@
+15-create.stderr.log
+(node:26680) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+18-npm-install.stdout.log
+
+up to date, audited 417 packages in 1s
+
+139 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (5 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+18-npm-install.stderr.log
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   @nativescript/core@9.1.3 (install: (install scripts present))
+npm warn allow-scripts   @parcel/watcher@2.6.0 (install: node-gyp rebuild)
+npm warn allow-scripts   core-js-pure@3.51.0 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+19-exact-dev-pins.stderr.log
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   @nativescript/core@9.1.3 (install: (install scripts present))
+npm warn allow-scripts   @parcel/watcher@2.6.0 (install: node-gyp rebuild)
+npm warn allow-scripts   core-js-pure@3.51.0 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+23-npm-ci.stderr.log
+npm warn deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+npm warn deprecated webpack-chain@6.5.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   @nativescript/core@9.1.3 (postinstall: node cli-hooks/postinstall.mjs)
+npm warn allow-scripts   @parcel/watcher@2.6.0 (install: node scripts/build-from-source.js)
+npm warn allow-scripts   core-js-pure@3.51.0 (postinstall: node -e "try{require('./postinstall')}catch(e){}")
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+27-build-android.stderr.log
+(node:47940) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[nativescript-vue] vue@3.5.43 is installed in this project but nativescript-vue uses @vue/runtime-core@3.5.44. Templates are compiled with the installed vue's compiler, so keep both on the same version.
+Der Befehl "gradlew.bat" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+Failed to build plugin @nativescript/core : 
+Error: Command gradlew.bat failed with exit code 1
