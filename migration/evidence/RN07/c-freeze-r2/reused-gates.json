@@ -1,0 +1,276 @@
+{
+  "policy": "Software gates from c-freeze/ reused, NOT rerun in revision 2; all 35 candidate-2 product/test hashes match; historical c-freeze/ receipts match r1 manifest. No device/emulator/Metro/network interaction.",
+  "candidateHashRecord": "migration/evidence/RN07/f-fixes1/candidate2.json",
+  "candidateFiles": 35,
+  "candidateMismatches": [],
+  "receipts": [
+    {
+      "id": "node-version",
+      "path": "migration/evidence/RN07/c-freeze/node-version.receipt.json",
+      "sha256": "c7e9da961c68a7ed9d5ae1eaecc9318033739886198440f88f3d64dab9de4b45",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "--version"
+      ],
+      "startedAt": "2026-10-26T07:07:24.448Z",
+      "durationMs": 19
+    },
+    {
+      "id": "npm-version",
+      "path": "migration/evidence/RN07/c-freeze/npm-version.receipt.json",
+      "sha256": "f4e072087cb43909188e082da86c3758ae8a1b42dc4dd9487f2eccea9fd52444",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--version"
+      ],
+      "startedAt": "2026-10-26T07:07:24.468Z",
+      "durationMs": 856
+    },
+    {
+      "id": "integration-before-core",
+      "path": "migration/evidence/RN07/c-freeze/integration-before-core.receipt.json",
+      "sha256": "d764e0aca75e4cf8c66f061930444a054fadebdceb796843efa8487a497f9195",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "startedAt": "2026-10-26T07:07:25.381Z",
+      "durationMs": 162
+    },
+    {
+      "id": "core-tests",
+      "path": "migration/evidence/RN07/c-freeze/core-tests.receipt.json",
+      "sha256": "a56abd87dac5a30c5eaa3c9d3a563e904a032502ae069571b3873a8eb7a3d5d9",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/core",
+        "test"
+      ],
+      "startedAt": "2026-10-26T07:07:25.544Z",
+      "durationMs": 6559
+    },
+    {
+      "id": "integration-after-core",
+      "path": "migration/evidence/RN07/c-freeze/integration-after-core.receipt.json",
+      "sha256": "91f30761987c37fb4078571f28da5f3466692acb9f81e93fdefb799da3028033",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "migration/react-native/scripts/verify-core-integration.cjs"
+      ],
+      "startedAt": "2026-10-26T07:07:32.105Z",
+      "durationMs": 62
+    },
+    {
+      "id": "typecheck",
+      "path": "migration/evidence/RN07/c-freeze/typecheck.receipt.json",
+      "sha256": "18077f902957621db465c1fec22c2bd4d60b1e2cfdf3dfa047f1ee957db34ee9",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "typecheck"
+      ],
+      "startedAt": "2026-10-26T07:07:32.200Z",
+      "durationMs": 11329
+    },
+    {
+      "id": "jest1",
+      "path": "migration/evidence/RN07/c-freeze/jest1.receipt.json",
+      "sha256": "f6a1b2aa11cf057e39d2d8a83d06fc693803f1b9c1455b009e0540ad9865c912",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--json",
+        "--outputFile",
+        "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN07\\c-freeze\\jest1.json"
+      ],
+      "startedAt": "2026-10-26T07:07:43.532Z",
+      "durationMs": 38717
+    },
+    {
+      "id": "jest2",
+      "path": "migration/evidence/RN07/c-freeze/jest2.receipt.json",
+      "sha256": "5fb1e1a8b638fb9a48a2692e8ad06a908eea7f863a8555238b45e1730f48cab5",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "test",
+        "--",
+        "--json",
+        "--outputFile",
+        "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\RN07\\c-freeze\\jest2.json"
+      ],
+      "startedAt": "2026-10-26T07:08:22.251Z",
+      "durationMs": 9614
+    },
+    {
+      "id": "bundle-android",
+      "path": "migration/evidence/RN07/c-freeze/bundle-android.receipt.json",
+      "sha256": "810eb9bf959139f6d9cc61f3068c653943f9b5b5937f47dd7984566bebb44974",
+      "exitCode": 0,
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+        "--prefix",
+        "migration/react-native",
+        "run",
+        "bundle:android"
+      ],
+      "startedAt": "2026-10-26T07:08:31.868Z",
+      "durationMs": 24272
+    },
+    {
+      "id": "android-inventory",
+      "path": "migration/evidence/RN07/c-freeze/android-inventory.receipt.json",
+      "sha256": "efdd1b21f1b320022cfad70710312527ee95f023e00909734497ed4baad2e057",
+      "exitCode": 0,
+      "command": "node helper operation",
+      "args": [
+        "android-inventory"
+      ],
+      "startedAt": "2026-10-26T07:08:56.142Z",
+      "durationMs": 9
+    },
+    {
+      "id": "diff-check",
+      "path": "migration/evidence/RN07/c-freeze/diff-check.receipt.json",
+      "sha256": "334f2d2cc6b17113cbecfd44d754520a55ff771fb495b4336c1deb85018fa436",
+      "exitCode": 0,
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-10-26T07:08:56.152Z",
+      "durationMs": 44
+    },
+    {
+      "id": "protected-diff",
+      "path": "migration/evidence/RN07/c-freeze/protected-diff.receipt.json",
+      "sha256": "94cbc9e4aaaf31b5b59f80cd0a207f2f4da53e4e6107aa213c1e9813bd8c5b29",
+      "exitCode": 0,
+      "command": "git",
+      "args": [
+        "diff",
+        "--exit-code",
+        "--",
+        "package.json",
+        "package-lock.json",
+        "src",
+        "public",
+        "android",
+        "ios",
+        "migration/core/src",
+        "migration/reference",
+        "migration/react-native/package.json",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/tsconfig.json",
+        "migration/react-native/app.json",
+        "migration/react-native/src/data"
+      ],
+      "startedAt": "2026-10-26T07:08:56.197Z",
+      "durationMs": 28
+    },
+    {
+      "id": "index-empty",
+      "path": "migration/evidence/RN07/c-freeze/index-empty.receipt.json",
+      "sha256": "db1c2aeeeb4f2bd4bb942d4d7fb93bb4c98ec3046ddbd58cf78426a7dc2ff47c",
+      "exitCode": 0,
+      "command": "git",
+      "args": [
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "startedAt": "2026-10-26T07:08:56.226Z",
+      "durationMs": 25
+    },
+    {
+      "id": "core-tracked-unchanged",
+      "path": "migration/evidence/RN07/c-freeze/core-tracked-unchanged.receipt.json",
+      "sha256": "37a88a6f798d09e35457a275cb30a7938fdb4958c1db9517c3d3ecbc9af91cbe",
+      "exitCode": 0,
+      "command": "node helper operation",
+      "args": [
+        "core-tracked-unchanged"
+      ],
+      "startedAt": "2026-10-26T07:07:32.199Z",
+      "durationMs": 0
+    },
+    {
+      "id": "rn06-head-baseline",
+      "path": "migration/evidence/RN07/c-freeze/rn06-head-baseline.receipt.json",
+      "sha256": "773406cb1e199f32ee1d701b88ad16aeee3a784068ec1d8f233a0541c088793b",
+      "exitCode": 0,
+      "command": "node helper operation",
+      "args": [
+        "rn06-head-baseline"
+      ],
+      "startedAt": "2026-10-26T07:07:24.288Z",
+      "durationMs": 19
+    }
+  ],
+  "jest": [
+    {
+      "id": "jest1",
+      "success": true,
+      "suites": 7,
+      "tests": 99,
+      "passed": 99,
+      "failed": 0
+    },
+    {
+      "id": "jest2",
+      "success": true,
+      "suites": 7,
+      "tests": 99,
+      "passed": 99,
+      "failed": 0
+    }
+  ],
+  "core": {
+    "tests": 53,
+    "pass": 53,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "androidExport": {
+    "scope": "Android JS export only; A04 native build NOT RUN D1, installed development client reused",
+    "candidate": 2,
+    "softwareGateEvidence": "migration/evidence/RN07/c-freeze/",
+    "receipt": "migration/evidence/RN07/c-freeze/bundle-android.receipt.json",
+    "exitCode": 0,
+    "inventory": "migration/evidence/RN07/c-freeze/android-artifacts.json",
+    "inventoryReceipt": "migration/evidence/RN07/c-freeze/android-inventory.receipt.json",
+    "sameRunImmediateInventory": true,
+    "artifactCount": 29,
+    "representativeArtifact": {
+      "artifactPath": "migration/react-native/dist-android/_expo/static/js/android/entry-70dbf735a09df83f4fb7f2ab58b390f5.hbc",
+      "size": 4116492,
+      "recordedSha256": "19ea71edf10c0726430af229884547e87a81eee8b3e87864a3e49b403f186421"
+    },
+    "c2Verification": "migration/evidence/RN07/c-freeze2/export-reuse-verification.json",
+    "c2ExportRerun": false
+  }
+}

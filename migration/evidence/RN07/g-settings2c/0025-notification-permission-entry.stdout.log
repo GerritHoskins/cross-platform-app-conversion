@@ -1,0 +1,354 @@
+Activity Resolver Table:
+  Full MIME Types:
+      text/plain:
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 9a71da
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 90f160b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+
+  Base MIME Types:
+      text:
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 9a71da
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 90f160b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        1a1cf91 com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.GestureChangeNotificationActivity filter a49bef6
+          Action: "android.intent.action.MAIN"
+        1d972f7 com.google.android.marvin.talkback/com.google.android.accessibility.talkback.NotificationActivity filter ca76564
+          Action: "android.intent.action.MAIN"
+        382d3cd com.google.android.marvin.talkback/com.google.android.accessibility.talkback.keyboard.TalkBackKeymapChangesActivity filter 8cad482
+          Action: "android.intent.action.MAIN"
+        9a84793 com.google.android.marvin.talkback/com.google.android.accessibility.accessibilitymenu.activity.A11yMenuSettingsActivity filter 12773d0
+          Action: "android.intent.action.MAIN"
+          Category: "android.accessibilityservice.SERVICE_SETTINGS"
+        d85c9ef com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.activities.SelectToSpeakPreferencesActivity filter 357fcfc
+          Action: "android.intent.action.MAIN"
+          Category: "android.accessibilityservice.SERVICE_SETTINGS"
+      com.google.android.accessibility.talkback.preference.search.customize.reading.control.punctuation.ACTION:
+        a2dd715 com.google.android.marvin.talkback/com.android.talkback.TalkBackPreferencesActivity filter c4b2a2a
+          Action: "com.google.android.accessibility.talkback.preference.search.customize.reading.control.punctuation.ACTION"
+          Action: "com.google.android.accessibility.talkback.preference.search.verbosity.punctuation.ACTION"
+          Category: "android.accessibilityservice.SERVICE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.accessibility.talkback.training.START:
+        955f01b com.google.android.marvin.talkback/com.google.android.accessibility.talkback.trainingcommon.TrainingActivity filter 8a1a5b8
+          Action: "com.google.android.accessibility.talkback.training.START"
+          Category: "android.intent.category.DEFAULT"
+      .BrailleGradeActivity:
+        5f5dfc9 com.google.android.marvin.talkback/com.google.android.accessibility.braille.brailledisplay.settings.BrailleGradeActivity filter 255b6ce
+          Action: ".BrailleGradeActivity"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.accessibility.talkback.preference.search.verbosity.punctuation.ACTION:
+        a2dd715 com.google.android.marvin.talkback/com.android.talkback.TalkBackPreferencesActivity filter c4b2a2a
+          Action: "com.google.android.accessibility.talkback.preference.search.customize.reading.control.punctuation.ACTION"
+          Action: "com.google.android.accessibility.talkback.preference.search.verbosity.punctuation.ACTION"
+          Category: "android.accessibilityservice.SERVICE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+
+  MIME Typed Actions:
+      android.intent.action.SEND:
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 90f160b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      android.intent.action.PROCESS_TEXT:
+        273af85 com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.popup.SelectToSpeakPopupActivity filter 9a71da
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      android.accounts.action.ACCOUNT_REMOVED:
+        63dd1a6 com.google.android.marvin.talkback/com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver filter a9707e7
+          Action: "android.accounts.action.ACCOUNT_REMOVED"
+      android.intent.action.BATTERY_OKAY:
+        3277100 com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 2394d39
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.ACTION_POWER_DISCONNECTED:
+        9656232 com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter 8c23b83
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+      android.intent.action.DEVICE_STORAGE_LOW:
+        b036f7e com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 5e30cdf
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        3129d2c com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy filter 6d883f5
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.DEVICE_STORAGE_OK:
+        b036f7e com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 5e30cdf
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.intent.action.BATTERY_LOW:
+        3277100 com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 2394d39
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.TIMEZONE_CHANGED:
+        6e3058a com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.RescheduleReceiver filter d1597fb
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.TIME_SET:
+        6e3058a com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.RescheduleReceiver filter d1597fb
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.BOOT_COMPLETED:
+        6e3058a com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.RescheduleReceiver filter d1597fb
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.ACTION_POWER_CONNECTED:
+        9656232 com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter 8c23b83
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+      androidx.work.diagnostics.REQUEST_DIAGNOSTICS:
+        873f056 com.google.android.marvin.talkback/androidx.work.impl.diagnostics.DiagnosticsReceiver filter 51bb8d7
+          Action: "androidx.work.diagnostics.REQUEST_DIAGNOSTICS"
+      android.intent.action.MY_PACKAGE_REPLACED:
+        ba5ece8 com.google.android.marvin.talkback/com.google.android.accessibility.brailleime.MyPackageReplacedReceiver filter 744bf01
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      androidx.work.impl.background.systemalarm.UpdateProxies:
+        da26018 com.google.android.marvin.talkback/androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver filter 1fa6a71
+          Action: "androidx.work.impl.background.systemalarm.UpdateProxies"
+      com.google.android.gms.phenotype.UPDATE:
+        a60ef94 com.google.android.marvin.talkback/com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver filter 4bd4a3d
+          Action: "com.google.android.gms.phenotype.UPDATE"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.google.android.build.data.Properties:
+        2f9ff48 com.google.android.marvin.talkback/com.google.android.build.data.PropertiesServiceHolder filter 9e9d1e1
+          Action: "com.google.android.build.data.Properties"
+      android.view.InputMethod:
+        6a8b42e com.google.android.marvin.talkback/com.google.android.accessibility.brailleime.BrailleIme filter 64eebcf permission android.permission.BIND_INPUT_METHOD
+          Action: "android.view.InputMethod"
+      android.accessibilityservice.AccessibilityService:
+        56bbe2 com.google.android.marvin.talkback/.TalkBackService filter 4f90b73 permission android.permission.BIND_ACCESSIBILITY_SERVICE
+          Action: "android.accessibilityservice.AccessibilityService"
+          Category: "android.accessibilityservice.category.FEEDBACK_AUDIBLE"
+          Category: "android.accessibilityservice.category.FEEDBACK_HAPTIC"
+          Category: "android.accessibilityservice.category.FEEDBACK_SPOKEN"
+        d791a30 com.google.android.marvin.talkback/com.google.android.accessibility.accessibilitymenu.AccessibilityMenuService filter 3aaf6a9 permission android.permission.BIND_ACCESSIBILITY_SERVICE
+          Action: "android.accessibilityservice.AccessibilityService"
+        c8da95c com.google.android.marvin.talkback/com.google.android.accessibility.selecttospeak.SelectToSpeakService filter b135465 permission android.permission.BIND_ACCESSIBILITY_SERVICE
+          Action: "android.accessibilityservice.AccessibilityService"
+          Category: "android.accessibilityservice.category.FEEDBACK_GENERIC"
+      com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService:
+        60fe53a com.google.android.marvin.talkback/com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService filter 17875eb
+          Action: "com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        c6965c4 com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider filter f7a3cad
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Domain verification status:
+
+Permissions:
+  Permission [com.google.android.marvin.talkback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (a26067c):
+    sourcePackage=com.google.android.marvin.talkback
+    uid=10171 gids=[] type=0 prot=signature
+    perm=PermissionInfo{200039d com.google.android.marvin.talkback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.marvin.talkback.permission.ACCESS_AAS_SWITCH_ACCESS_MIGRATION] (812bb05):
+    sourcePackage=com.google.android.marvin.talkback
+    uid=10171 gids=[] type=0 prot=normal
+    perm=PermissionInfo{b6403e3 com.google.android.marvin.talkback.permission.ACCESS_AAS_SWITCH_ACCESS_MIGRATION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider:
+    Provider{c6965c4 com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider}
+  com.google.android.marvin.talkback/androidx.core.content.FileProvider:
+    Provider{75701e0 com.google.android.marvin.talkback/androidx.core.content.FileProvider}
+  com.google.android.marvin.talkback/com.google.mlkit.common.internal.MlKitInitProvider:
+    Provider{5de3c99 com.google.android.marvin.talkback/com.google.mlkit.common.internal.MlKitInitProvider}
+  com.google.android.marvin.talkback/com.google.android.accessibility.switchaccesslegacy.migration.MigrationProvider:
+    Provider{d6c9b5e com.google.android.marvin.talkback/com.google.android.accessibility.switchaccesslegacy.migration.MigrationProvider}
+  com.google.android.marvin.talkback/com.google.android.accessibility.talkback.labeling.LabelProvider:
+    Provider{748fb3f com.google.android.marvin.talkback/com.google.android.accessibility.talkback.labeling.LabelProvider}
+  com.google.android.marvin.talkback/androidx.startup.InitializationProvider:
+    Provider{85a5c0c com.google.android.marvin.talkback/androidx.startup.InitializationProvider}
+
+ContentProvider Authorities:
+  [com.google.android.marvin.talkback.mlkitinitprovider]:
+    Provider{5de3c99 com.google.android.marvin.talkback/com.google.mlkit.common.internal.MlKitInitProvider}
+      applicationInfo=ApplicationInfo{fd3575a com.google.android.marvin.talkback}
+  [com.google.android.marvin.talkback.providers.LabelProvider]:
+    Provider{748fb3f com.google.android.marvin.talkback/com.google.android.accessibility.talkback.labeling.LabelProvider}
+      applicationInfo=ApplicationInfo{b35cd8b com.google.android.marvin.talkback}
+  [com.google.android.marvin.talkback.androidx-startup]:
+    Provider{85a5c0c com.google.android.marvin.talkback/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{f0b0e68 com.google.android.marvin.talkback}
+  [com.google.android.marvin.talkback.preference.search.TalkBackSearchIndexablesProvider]:
+    Provider{c6965c4 com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider}
+      applicationInfo=ApplicationInfo{2890281 com.google.android.marvin.talkback}
+  [com.google.android.marvin.talkback.providers.FileProvider]:
+    Provider{75701e0 com.google.android.marvin.talkback/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{3df8f26 com.google.android.marvin.talkback}
+  [com.google.android.marvin.talkback.providers.MigrationProvider]:
+    Provider{d6c9b5e com.google.android.marvin.talkback/com.google.android.accessibility.switchaccesslegacy.migration.MigrationProvider}
+      applicationInfo=ApplicationInfo{131b767 com.google.android.marvin.talkback}
+
+Key Set Manager:
+  [com.google.android.marvin.talkback]
+      Signing KeySets: 36
+
+Packages:
+  Package [com.google.android.marvin.talkback] (8b6a914):
+    appId=10171
+    pkg=Package{14e20a4 com.google.android.marvin.talkback}
+    codePath=/product/app/talkback
+    resourcePath=/product/app/talkback
+    legacyNativeLibraryDir=/product/app/talkback/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=60149353 minSdk=26 targetSdk=36
+    minExtensionVersions=[]
+    versionName=16.0.0.738667889
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=3
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PARTIALLY_DIRECT_BOOT_AWARE PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=true
+    pageSizeCompat=0
+    queriesIntents=[Intent { act=android.intent.action.TTS_SERVICE }, Intent { act=android.speech.RecognitionService }]
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2009-01-01 00:00:00
+    lastUpdateTime=2026-10-21 05:49:34
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=null
+    originatingPackageName=null
+    packageSource=0
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{f0e0e0d version:3, signatures:[49ba355b], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PARTIALLY_DIRECT_BOOT_AWARE PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.google.android.marvin.talkback.permission.ACCESS_AAS_SWITCH_ACCESS_MIGRATION: prot=normal
+      com.google.android.marvin.talkback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      android.permission.WRITE_SETTINGS
+      android.permission.POST_NOTIFICATIONS
+      com.google.android.marvin.talkback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      android.permission.MODIFY_AUDIO_SETTINGS
+      com.google.android.providers.gsf.permission.READ_GSERVICES
+      android.permission.FOREGROUND_SERVICE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.BLUETOOTH_CONNECT
+      android.permission.INTERNET
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.READ_PHONE_STATE
+      com.google.android.apps.aicore.service.BIND_SERVICE
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.USE_FINGERPRINT
+      android.permission.VIBRATE
+      android.permission.QUERY_ALL_PACKAGES
+      android.permission.RECORD_AUDIO
+      android.permission.WAKE_LOCK
+      android.permission.BLUETOOTH_SCAN
+    install permissions:
+      android.permission.WRITE_SETTINGS: granted=true
+      com.google.android.marvin.talkback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      com.google.android.providers.gsf.permission.READ_GSERVICES: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.QUERY_ALL_PACKAGES: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=549055 deDataInode=393474 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/com.google.android.marvin.talkback
+      firstInstallTime=2026-10-21 05:49:34
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+        /vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk
+      legacy overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+        /vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk
+      gids=[3003]
+      runtime permissions:
+        android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED]
+        android.permission.BLUETOOTH_CONNECT: granted=true, flags=[ GRANTED_BY_DEFAULT]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT]
+        android.permission.RECORD_AUDIO: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED]
+        android.permission.BLUETOOTH_SCAN: granted=true, flags=[ GRANTED_BY_DEFAULT]
+      disabledComponents:
+        com.google.android.accessibility.accessibilitymenu.AccessibilityMenuService
+      enabledComponents:
+        com.google.android.accessibility.brailleime.BrailleIme
+        androidx.work.impl.background.systemjob.SystemJobService
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  forceQueryable:
+    com.google.android.marvin.talkback
+  queries via package name:
+  queries via component:
+  queryable via interaction:
+    User 0:
+      [com.android.emulator.multidisplay,com.android.DeviceAsWebcam,com.android.inputdevices,android,com.android.dynsystem,com.android.providers.settings,com.android.server.telecom,com.android.location.fused,com.android.localtransport,com.android.settings,com.android.keychain]:
+        com.google.android.marvin.talkback
+      com.android.vending:
+        com.google.android.marvin.talkback
+      com.google.android.gms:
+        com.google.android.marvin.talkback
+      com.google.android.googlequicksearchbox:
+        com.google.android.marvin.talkback
+      com.google.android.marvin.talkback:
+        [com.android.emulator.multidisplay,com.android.DeviceAsWebcam,com.android.inputdevices,android,com.android.dynsystem,com.android.providers.settings,com.android.server.telecom,com.android.location.fused,com.android.localtransport,com.android.settings,com.android.keychain]
+        com.google.android.settings.intelligence
+      com.google.android.permissioncontroller:
+        com.google.android.marvin.talkback
+  queryable via uses-library:
+
+Dexopt state:
+  [com.google.android.marvin.talkback]
+    path: /product/app/talkback/talkback.apk
+      x86_64: [status=verify] [reason=prebuilt] [primary-abi]
+        [location is /product/app/talkback/oat/x86_64/talkback.odex]
+
+Compiler stats:
+  [com.google.android.marvin.talkback]
+    (No recorded stats)

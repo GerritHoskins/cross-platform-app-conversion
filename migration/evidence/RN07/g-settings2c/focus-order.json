@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-10-25T21:02:03.765Z",
+  "speech": "not captured",
+  "pixels": "not yet inspected",
+  "basis": "Actual input attempts and tree; green-color diagnostic only; not successful TalkBack traversal",
+  "rows": [
+    {
+      "surface": "Permission prompt",
+      "attempt": "Single tap Don’t allow (540,1469)",
+      "observed": "Green-dominant bounds [133,1239,947,1386] match Allow, not intended deny target; no Allow coordinates injected. Subsequent double at deny coordinates did not clear prompt.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus.png",
+        "migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus.xml"
+      ]
+    },
+    {
+      "surface": "Schedule",
+      "attempt": "Single tap Search sessions (540,523)",
+      "observed": "Input focused=true and QWERTY displayed; no machine-detected green rectangle.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G03-search-focus.png",
+        "migration/evidence/RN07/g-settings2c/G03-search-focus.xml"
+      ]
+    },
+    {
+      "surface": "Schedule",
+      "attempt": "Right swipe (300,550)->(800,550),150ms",
+      "observed": "Search input remains focused; no established next accessibility stop.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G03-next-from-search.png",
+        "migration/evidence/RN07/g-settings2c/G03-next-from-search.xml"
+      ]
+    },
+    {
+      "surface": "Schedule",
+      "attempt": "Single tap Favorite sessions; then double at same point",
+      "observed": "Mode selected=true already after single tap; no established accessibility-focus rectangle after either.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.png",
+        "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.xml"
+      ]
+    },
+    {
+      "surface": "Schedule",
+      "attempt": "Single tap All sessions",
+      "observed": "Mode immediately selected=true; no established accessibility focus.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.png",
+        "migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.xml"
+      ]
+    },
+    {
+      "surface": "Filter",
+      "attempt": "Single tap Filter sessions",
+      "observed": "Modal opened, instead of focus-only. XML has labeled header/controls/checkboxes; no established focus.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png",
+        "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml"
+      ]
+    },
+    {
+      "surface": "Filter",
+      "attempt": "Right swipe (300,800)->(800,800),150ms",
+      "observed": "Design checkbox checked true->false; no green rectangle / next stop established.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+        "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml"
+      ]
+    },
+    {
+      "surface": "Filter",
+      "attempt": "Left swipe (800,800)->(300,800),150ms",
+      "observed": "Design checkbox false->true; no green rectangle / previous stop established.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png",
+        "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml"
+      ]
+    },
+    {
+      "surface": "Detail4 / alerts / revealed action",
+      "attempt": "Not attempted",
+      "observed": "Blocked by input-path prerequisite; no focus-order, duplicate/trap, containment or return conclusion.",
+      "evidence": [
+        "migration/evidence/RN07/g-settings2c/talkback-restored.png",
+        "migration/evidence/RN07/g-settings2c/talkback-restored.xml"
+      ]
+    }
+  ]
+}

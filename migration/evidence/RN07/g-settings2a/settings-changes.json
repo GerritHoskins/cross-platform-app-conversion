@@ -1,0 +1,60 @@
+[
+  {
+    "setting": "D6 keyboard",
+    "key": "hardKeyboard",
+    "before": "0\r\n",
+    "requested": "1",
+    "changed": "1\r\n",
+    "changedAt": "2026-10-25T19:49:02.203Z",
+    "testedFrames": [
+      "G01-preback-keyboard",
+      "G02-row-full",
+      "G02-mode-full",
+      "G02-filter-full",
+      "G02-favorite-full",
+      "G08-keyboard-full"
+    ],
+    "restored": "0\r\n",
+    "restoredAt": "2026-10-25T20:08:48.369Z",
+    "restoredExactly": true,
+    "enableRecord": "migration/evidence/RN07/g-settings2a/D6-keyboard-enable-change.json",
+    "restoreRecord": "migration/evidence/RN07/g-settings2a/D6-keyboard-restore-change.json"
+  },
+  {
+    "setting": "G05 font",
+    "key": "font",
+    "before": "1.0\r\n",
+    "requested": "2.0",
+    "changed": "2.0\r\n",
+    "changedAt": "2026-10-25T19:50:56.986Z",
+    "testedFrames": [
+      "G05-empty-candidate-proof",
+      "G05-Ionic"
+    ],
+    "restored": "1.0\r\n",
+    "restoredAt": "2026-10-25T19:52:25.474Z",
+    "restoredExactly": true,
+    "enableRecord": "migration/evidence/RN07/g-settings2a/G05-font-enable-change.json",
+    "restoreRecord": "migration/evidence/RN07/g-settings2a/G05-font-restore-change.json"
+  },
+  {
+    "setting": "G07 dark",
+    "key": "night",
+    "before": "Night mode: no\r\n",
+    "requested": "yes",
+    "changed": "Night mode: yes\r\n",
+    "changedAt": "2026-10-25T20:07:44.048Z",
+    "testedFrames": [
+      "G07-dark-schedule",
+      "G07-dark-detail4",
+      "G07-dark-filter",
+      "G07-dark-favorite",
+      "G07-live-light-schedule"
+    ],
+    "restored": "Night mode: no\r\n",
+    "restoredAt": "2026-10-25T20:08:37.003Z",
+    "restoredExactly": true,
+    "enableRecord": "migration/evidence/RN07/g-settings2a/G07-dark-enable-change.json",
+    "restoreRecord": "migration/evidence/RN07/g-settings2a/G07-light-restore-change.json"
+  }
+]

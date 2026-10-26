@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-25T21:05:28.737Z",
+  "candidate": {
+    "ok": true,
+    "files": 35,
+    "scope": 17266
+  },
+  "settingsRestored": true,
+  "resultEntries": 19,
+  "frames": 40,
+  "authoredFilesChecked": 365,
+  "lf": true,
+  "receiptsChecked": 235,
+  "allReferencedEvidenceExists": true,
+  "pixels": "not yet inspected",
+  "limitations": {
+    "timestamp": "2026-10-25T21:02:03.768Z",
+    "initialDiscovery": "Exact output and command archived with null unavailable timing; measured gate repeated.",
+    "directOrchestration": [
+      "execute init",
+      "execute frame baseline-launcher-ready",
+      "execute tap baseline-connect",
+      "baseline",
+      "execute enable",
+      "execute activate D8-deny-notifications"
+    ],
+    "note": "All actual adb/git/curl child commands have measured receipts plus stdout/stderr. Early outer node orchestration invocations have tool-visible output but lack separate saved timing/stream receipts. Later invoke helper receipts archive child script invocation, not its own outer launcher. No fabricated receipt output or timing."
+  }
+}

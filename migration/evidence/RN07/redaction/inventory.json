@@ -1,0 +1,772 @@
+{
+  "version": 1,
+  "package": "RN07",
+  "decision": "D13",
+  "gates": {
+    "branch": "migration/slice-1",
+    "head": "6e4bf9682285391ab00dca3b0a7dc2b01b61832a",
+    "committedDelta": [
+      ".gitignore"
+    ],
+    "indexEmpty": true,
+    "ignored": [
+      "IDEA.md",
+      "tools/"
+    ],
+    "candidateFiles": 35,
+    "candidateMismatches": []
+  },
+  "scopeFilesBefore": 19296,
+  "files": [
+    {
+      "path": "migration/evidence/RN07/a-gates2/a01-rn06-head-blob-batch.stdout.log",
+      "kind": "text",
+      "bytesBefore": 29579008,
+      "sha256Before": "c9cf5aeb8cda5a856346d5cc435567ada810f966ed4d395fd19424d901b75a06",
+      "encoding": "latin1",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0042-B-start-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 849991,
+      "sha256Before": "6e7c25e01208b0e3ed4fcc967506db1361618b8b4a4486ddadec92f2a351daa4",
+      "encoding": "utf8",
+      "clipItemEntries": 2
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0136-B-search-window-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855427,
+      "sha256Before": "722542919cd6c7bc86f8dc8992e7aa6d867ffe558850aeaa4f77b609f07976db",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0245-B-end-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 856018,
+      "sha256Before": "1fa90587e16593d3ccdf7bc7068339b779c27d7d2ee8099230852cb6f892a09a",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0277-C-start-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854713,
+      "sha256Before": "f64896d69945940e1a240c020c616efcd4d92a2e10ee1283caa0ddbd01f9e1e3",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0421-C-mid-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 857169,
+      "sha256Before": "01c1b1805ee00223bb9360be0b840a2a9a1670f61d008fae55e34550dd747868",
+      "encoding": "utf8",
+      "clipItemEntries": 6
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0518-C-before-background-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 857199,
+      "sha256Before": "c65a151feae9dca62e58c249dd685fb543dca59007262458253f50cdaab973dc",
+      "encoding": "utf8",
+      "clipItemEntries": 6
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0532-C-after-resume-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 856891,
+      "sha256Before": "e9092fb7ea299550823758ee8d320b9b1b727a65e1ebdf2bc98adb08471c1b68",
+      "encoding": "utf8",
+      "clipItemEntries": 5
+    },
+    {
+      "path": "migration/evidence/RN07/b-device1/0563-C-end-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854604,
+      "sha256Before": "bc63f3509a10b8cabf4561ffa3001348633c027f20ce8521b4c027e13bd0033f",
+      "encoding": "utf8",
+      "clipItemEntries": 2
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0033-D-window-start-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854732,
+      "sha256Before": "7bd9b94b2b1c9627929494d232013d8759e1a8b2342d35e075b5089dd23274b5",
+      "encoding": "utf8",
+      "clipItemEntries": 2
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0111-D02-keyboard-actual.stdout.log",
+      "kind": "text",
+      "bytesBefore": 860676,
+      "sha256Before": "ba88e463b5ad036a4c58ce146a3ae6731dd9dc3f68c4c8da16cea3865390e9bc",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0120-D02-keyboard-after-list-tap.stdout.log",
+      "kind": "text",
+      "bytesBefore": 856075,
+      "sha256Before": "5bd7feb0571829d3c06a63e3ea19de7c635bbc09c48f9b52c9989caa05e23a32",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0134-D02-system-return-ime-before.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854984,
+      "sha256Before": "1ce330f0f55749f4351283e29e2aa5ea1eba22d4a4a4df7197271fc88c19839d",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0137-D02-system-return-ime-after.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854835,
+      "sha256Before": "0b69aa1cab9c3d421ecb18bb14f302299918eebca2ba3b48cc149249e68d6712",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0160-D05-detail-system-back-ime-before.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854805,
+      "sha256Before": "53be04969fd73f0e0268593613788014137ba454e3c4079dfca2e1fd450aa278",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0163-D05-detail-system-back-ime-after.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854833,
+      "sha256Before": "d63002a51772b2cfcc7f8243ea97e92150615005eb4cc640e406347d289fd587",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0166-D05-root-system-back-ime-before.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854832,
+      "sha256Before": "e52705820cb6662c88eb6a9d66a55595a31b9769efd1acc3d04cc62c770cbc63",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0169-D05-root-system-back-ime-after.stdout.log",
+      "kind": "text",
+      "bytesBefore": 853910,
+      "sha256Before": "4ad3304d189e74674a705096011efde0156c181f7c341839e0479c7178f28d08",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0174-D-window-end-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 853910,
+      "sha256Before": "73c1ade9305e530bb86fa8e665a961de304848c0843f27223fcf626ab19fb6fd",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0187-E-window-start-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 853930,
+      "sha256Before": "4483ec330a0367f50a8a1789cbf096ca94db4c38cb5243a2a053fba89cafa3b7",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0240-E03-keyboard-after-tap.stdout.log",
+      "kind": "text",
+      "bytesBefore": 856137,
+      "sha256Before": "8fc238f3f16529c152e59b160dd2446d6ab7354ae96091d73fb40f47a1a8e595",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0346-E07-system-close-ime-before.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855913,
+      "sha256Before": "74b50106c828a142ebd94475b99cff1ae7e277b13b426b01618fff6e3a0060f5",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0349-E07-system-close-ime-after.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855607,
+      "sha256Before": "2ca9f93064805bbaa0027a87abdbf003c2a1cb8176c1969a58227ca1c69e46bc",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0388-E07-repeat-system-close-ime-before.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855645,
+      "sha256Before": "af627ecd011113a287ed82f05f31ef82ab4b2a9df8e28fedf4411c228add5f24",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0391-E07-repeat-system-close-ime-after.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855601,
+      "sha256Before": "3d68b031d489e4f7aa5eb889fece4f292c638f17618b2cc013b99707f063a3c1",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0448-E-window-end-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855592,
+      "sha256Before": "425c6265b25380cc2dd51e75c53053134780142d6c833b28f4a58a0389bfac6e",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0461-F-window-start-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854736,
+      "sha256Before": "34bc370a4e294a295db45fe0958bf485a240840cb5d2526f3c906256f269d830",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/b-device2/0805-F-window-end-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854905,
+      "sha256Before": "951f1bbeb718c30d27393ae712014376156a3d0c732eb883bf938e2c5603b648",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/c-freeze/rn06-head-blobs.stdout.log",
+      "kind": "text",
+      "bytesBefore": 31084236,
+      "sha256Before": "8a07e7de828da399e95d8ab6a61bdff8c7c04dbc96b84b69d210422eb340e20a",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0068-G01-keyboard-confirm-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 861121,
+      "sha256Before": "4ac0ff19b7f0d517408ed7b65b47b4d609260511e086e5d2881b174788ac194b",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0069-G01-keyboard-back-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 861120,
+      "sha256Before": "0ca411b968b2fe5714ef427d92a03935eedba4d7f7d557bfe6f874e74b918ea0",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0074-G01-keyboard-back-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854421,
+      "sha256Before": "5b8956c5cb70984992e8202fb0dc9dbc3839a17a0b052262c6980767137ff8da",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0075-G01-keyboard-final-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854462,
+      "sha256Before": "178d07552d42e7b8e42d550a622b3c6304a7c2f0610bc8cad2bd2d65bae82bbd",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0113-G02-row-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 862460,
+      "sha256Before": "cae19e642be1312d5063add2be0f5479dd1f7e436dac5c1f849054afb81a5400",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0118-G02-row-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 857899,
+      "sha256Before": "de7bce7e7043be8ac1ecbac5ce3037000dd3d03da49355e3cd13343c9cb0c45e",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0123-G02-mode-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 865267,
+      "sha256Before": "1ab5da02547a429787d9c4100969e62d3faeb30aa8b3f4a24ede8638e8285a50",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0128-G02-mode-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 862272,
+      "sha256Before": "0748846fece84269056ddea0a0bcd3a5c3b994e39249845c8ad2513704834736",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0137-G02-filter-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 862285,
+      "sha256Before": "d255f09391f6da142f8fe2902298c5d08a24a6a537d2997c3a97702fc692d33c",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0142-G02-filter-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 856831,
+      "sha256Before": "209b2e165783806e2ac98ef57e5c15fd70536f4ebd556a5b52b322b8396960da",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0151-G02-favorite-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 868690,
+      "sha256Before": "ac51ccccd6616cacaa3c99e600213554b24342df88dc060c515bcfcda1388a9a",
+      "encoding": "utf8",
+      "clipItemEntries": 3
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0156-G02-favorite-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 859536,
+      "sha256Before": "672b88bca428eb264c1627bf9f39ba1a81cd3e52e4ac7bb90547dc261544987e",
+      "encoding": "utf8",
+      "clipItemEntries": 3
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0239-G05.default-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 855987,
+      "sha256Before": "b2e53d4f8377a5ba068ac11578c0b031725f98a87544e7d2bc11ea99ed4769da",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0278-G05.default-search-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 861691,
+      "sha256Before": "9781e4753e99dce8759c3fc72acc1aa3a4e047ff6f4034e74acf83af1cc2de9b",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0386-G05.font1-3-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854165,
+      "sha256Before": "6113cd5271aa8fe893a8ef8a4ed40f369b5baf62b65642ae8cd54eef382ba624",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0429-G05.font1-3-search-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 864683,
+      "sha256Before": "b6bbe5f25a124222dc2d69140ffee0538021a21d99e5ffb793c9f14534c1b95a",
+      "encoding": "utf8",
+      "clipItemEntries": 3
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0546-G05.font2-0-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 858073,
+      "sha256Before": "77f08ca16c04024bd7bf4e1145c2e4d99148a49569c9ccebe86ea90b0bceb3e4",
+      "encoding": "utf8",
+      "clipItemEntries": 2
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0593-G05.font2-0-search-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 862770,
+      "sha256Before": "587ef43ccdb7f16b698328161b6656c2aa3f8af592a5c9ad226074831018c374",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0710-G06.density480-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 854682,
+      "sha256Before": "1645cff323f24a74d3afbdf234424f7a107675fc3ab372da2c4a97399fdb1c89",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0753-G06.density480-search-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 866640,
+      "sha256Before": "d62cae82fe708eafbd47de92876702b9d20502091c0ce647089d6d15892e7f8f",
+      "encoding": "utf8",
+      "clipItemEntries": 2
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0872-G07.dark-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 858382,
+      "sha256Before": "cc9b5cef11daeca494e94797dcbf82a836ca0d9a49269f53c2c60beba29bc728",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0911-G07.dark-search-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 869683,
+      "sha256Before": "06a16e9901a0dfa13b36abfec305f52d84713bc781859013ff2a24bf4cec722e",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0970-G08-keyboard-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 869766,
+      "sha256Before": "54a30610cd8463832c576f0edd29b4aa5edb7f48f31d1d9d9228b5943fca5f8f",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/0975-G08-keyboard-dismissed-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 865029,
+      "sha256Before": "bf1abb39fbcbfca3b42f53c51d19820ae104256eeddaba0f4f9e73dfad28ae38",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1048-G08-filter-bottom-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 864981,
+      "sha256Before": "5db98f9267f5f70bfdbc111a3c20adc3d47227159ea49ec519f4f32a3fe7f5ec",
+      "encoding": "utf8",
+      "clipItemEntries": 1
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1165-G09-before-background-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 869286,
+      "sha256Before": "5e46fdb01f7e3ec6a6270130812201685263b97e1ff9a577a6a714ef56effb5f",
+      "encoding": "utf8",
+      "clipItemEntries": 8
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1169-G09.schedule-home-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 869253,
+      "sha256Before": "ccfa04df5473f36594e64cf95421a94ebcbc1de95fcb4d1386736e6b5f6da47b",
+      "encoding": "utf8",
+      "clipItemEntries": 8
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1174-G09.schedule-home-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 867209,
+      "sha256Before": "5f61ab81968c2a5644e4a418afe00f23533f4d629db34ade806e36c44ac5d346",
+      "encoding": "utf8",
+      "clipItemEntries": 8
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1199-G09.modal-home-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 865288,
+      "sha256Before": "5938cfb886244ff08db5e73fe449c008f0ddba149f29b365eb4aa9356fead53e",
+      "encoding": "utf8",
+      "clipItemEntries": 4
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1204-G09.modal-home-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 865097,
+      "sha256Before": "9bd043e2307be225a7a19d5cec611ffcd9baf35c75e0176d86b3e184ab107353",
+      "encoding": "utf8",
+      "clipItemEntries": 4
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1229-G09.detail-home-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 864965,
+      "sha256Before": "ec948cf2a566f4d84cba6351c4e9c47c6a110d3d231608a819fd082507b6fab1",
+      "encoding": "utf8",
+      "clipItemEntries": 4
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/1234-G09.detail-home-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 865055,
+      "sha256Before": "e8271bcaa1c7d50153f124a0a4d8825cf05bf64e71179f3f3bac4c8767b297aa",
+      "encoding": "utf8",
+      "clipItemEntries": 4
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G02-focus-favorite.png",
+      "kind": "png",
+      "bytesBefore": 190039,
+      "sha256Before": "307f93ddf38d139d45a6786f408b7946b7d9c23942cb727ee44ff93d9805cdcf"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G02-focus-mode.png",
+      "kind": "png",
+      "bytesBefore": 183718,
+      "sha256Before": "10d227942a61bf69e11cf3ceb8e539ecf4433b07ece0435fd45c84ea3d4a5446"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G02-type-row.png",
+      "kind": "png",
+      "bytesBefore": 178095,
+      "sha256Before": "d6f8cb0d7e8c5ceefa871c0a460abedd0635e82408de2d8d2e511f0e09334384"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G05.default-search-focus.png",
+      "kind": "png",
+      "bytesBefore": 178339,
+      "sha256Before": "a69971b035e565d0fcee2eb0a1a576891e7ec46be2ce566f049f78584f6327fe"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G05.font1-3-search-focus.png",
+      "kind": "png",
+      "bytesBefore": 206108,
+      "sha256Before": "cae657f17359e924a9620ae4950b5305e77079b4afa9127d84a0ab287edaa58e"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G06.density480-search-focus.png",
+      "kind": "png",
+      "bytesBefore": 191455,
+      "sha256Before": "c9d4ede12b982e4435c55f249f1eb5e71889c50e8d442ab587d56ae68262b4ed"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G07.dark-search-focus.png",
+      "kind": "png",
+      "bytesBefore": 171433,
+      "sha256Before": "a1ba2a0f49c7346073259df5dd8d22efc4c3c4e9da3a0a53394ba694d02da249"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G08-search-focus.png",
+      "kind": "png",
+      "bytesBefore": 181568,
+      "sha256Before": "31ee7774355aadfe76a1d7e5ec0bc0c51c3116f327ebced48c33b50b57f8787d"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings1b/G09-query-Ionic.png",
+      "kind": "png",
+      "bytesBefore": 211893,
+      "sha256Before": "25df14e90ff27f1e6109875c3708638d77cec4bb88720866b45ddeaba47ec0b0"
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0065-G05-full-keyboard-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 870001,
+      "sha256Before": "eeb4f4b0bb3623c0bd177312d1135870e49055b7e104e4b9726ffe30b198c082",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0094-G01-full-keyboard-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906800,
+      "sha256Before": "78e21b9bd4e18b967afa193e5815ba8933184123da8d20a71953ce7dd6786325",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0098-G01-full-keyboard-confirmed-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906762,
+      "sha256Before": "99e99594062d12f6f0b33a354d6795126b5a7312955e7e6f6e07611eefa94340",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0110-G01-preback-keyboard-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 904610,
+      "sha256Before": "d5ea628a9ec44b6246a78fb874ffb84405b68fe70acf288719e42a7e9cec3258",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0113-G01-one-back-before-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 904604,
+      "sha256Before": "db68b506bde4d9fdb38ddff36cff04f551416acdda1eb6570941083313637958",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0118-G01-after-back-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 871325,
+      "sha256Before": "ac33ae9cd298212b8b46088bd7c09890e827d9bb54c2a2d4064a0a5abcae66fb",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0167-G02-row-full-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906900,
+      "sha256Before": "014283bbaaf0d20fdc81bba757fa3fd39d6b35c14e810211731b6b0a541ee035",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0173-G02-row-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 868372,
+      "sha256Before": "07d9385da10dcae4930c2e8f25af4651e21266f2fbc38b88e9f7c91f362f6dce",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0195-G02-mode-full-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906939,
+      "sha256Before": "73cfb36c3ed8e18a840cc241a0d75d1e2493af2d6c501dfea8f66b586785d193",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0201-G02-mode-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906853,
+      "sha256Before": "47ea744e50059b46e455789b11d19b49f2c8a75a4b940fa0673c5c40c4ac88f5",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0215-G02-filter-full-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906762,
+      "sha256Before": "a1ea5deedc533fb43b1a8a92b7b1d02d09aa2c703dc6abe0a00a615a969d10b6",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0221-G02-filter-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 868349,
+      "sha256Before": "32a3429acf4c8bcb4fad8afc1505f3b7b27d02cadd5f871f0367714b6094b9c6",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0243-G02-favorite-full-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906811,
+      "sha256Before": "24d4a16e8670c4555c761d16ee71c9bbf4485512bb1daad615a00bb565e91c0f",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0249-G02-favorite-after-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 906886,
+      "sha256Before": "c3fbbf141503abb444b17b133d546ab69921caa8b7cc0cbe4ac7ab817e0cb6ba",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0298-G08-keyboard-full-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 907256,
+      "sha256Before": "703d3dd8aadf392b466ebe5cf554ff37c18957d54bc7008dee274878525a1da8",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0304-G08-after-scroll-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 907256,
+      "sha256Before": "c976a59df28f8483afca3ed1996e75fcd4d043590400261edef4122999c3dd40",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0491-G07-dark-status-window-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 866834,
+      "sha256Before": "5075d3bc6f0ef49dd32e5d1bf373e8300c39367ee2b8820eac9fd4ee7aa988c7",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/0523-G07-light-status-window-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 866069,
+      "sha256Before": "e7a626c5867337c61117798e53f1c9f2583c0745153cd9b16a5faf8ab1a9219b",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2a/1057-teardown-keyboard-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 864231,
+      "sha256Before": "221075ad41844242f9f4760a328aaa34e051a2c9043dbf5c0296db5cefdc3a81",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings2c/0156-G03-G04-ime-proof.stdout.log",
+      "kind": "text",
+      "bytesBefore": 904208,
+      "sha256Before": "ea4bce44a0111c385aaf5be519e96efafc00fbabcf72dc058637a4a4f94919cc",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings3/0333-G08-entry-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 880455,
+      "sha256Before": "ce31e195dbe8e048faf62668f37c54d210a4eecf9561bd7b8a34ac3f65ba8d64",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings3/0349-G08-floating-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 915810,
+      "sha256Before": "d18ee71a9bfc5fe20a33cb47206db7da0b1af85b990bf7b0d599459fff9fc242",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings3/0374-G08-dock-attempt-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 916478,
+      "sha256Before": "b64de67553e66c54781a52906bc087ab8aeacd23d45e7e1a4590e40c972b94dc",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings3/0387-G08-unexpected-modal-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 877623,
+      "sha256Before": "b59e1b8ac81b1e5e6ae51c3d164fcddea907ada50b48ba431040587a2c00848e",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    },
+    {
+      "path": "migration/evidence/RN07/g-settings3/0426-G08-final-floating-ime.stdout.log",
+      "kind": "text",
+      "bytesBefore": 881175,
+      "sha256Before": "6e5150b55c3fb79c180106ab94c029d2689506f19841c6a18ac7f3a8f5a54241",
+      "encoding": "utf8",
+      "clipItemEntries": 0
+    }
+  ],
+  "counts": {
+    "textMarkerFiles": 86,
+    "png": 9,
+    "xml": 0,
+    "json": 0,
+    "total": 95
+  },
+  "clipboardValuesStored": false
+}

@@ -1,0 +1,50 @@
+RN07 G2c capture notes — 2026-10-25T21:02:03.767Z
+Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator
+
+LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.
+TalkBack speech not captured. No claimed announcements. XML focused=true is input focus, not accessibility focus. Green-color diagnostics are machine-only, never coordinator inspection. Frames without the requested green rectangle are explicitly limited, not successful assertion frames.
+D8: intended deny-target single+double sequence sent once; notification permission readback denied USER_SET|USER_FIXED. Prompt persisted across captures; existing app foregrounded in same PID. No Allow coordinates injected, no further denial sequence. Exact callback count cannot be inferred. Denial is persistent and not restored.
+Search single tap unexpectedly opened full QWERTY despite hardKeyboard remaining0; IME settings not changed. Right/left filter swipes toggled Design false/true. No further case flows attempted after input-path blocker. TalkBack restored before modal teardown.
+Raw CRLF captures disclosed in log-format.json; authored text and extracted XML LF. Only bounded PID logcat -t400 around attempted case window; no clean-console claim. No software suite/build rerun in device-only session.
+
+Timestamped frame ledger (pixels not yet inspected):
+2026-10-25T20:54:14.968Z | baseline-launcher | migration/evidence/RN07/g-settings2c/baseline-launcher.png | migration/evidence/RN07/g-settings2c/baseline-launcher.xml | pixels not yet inspected
+2026-10-25T20:54:22.472Z | baseline-launcher-ready | migration/evidence/RN07/g-settings2c/baseline-launcher-ready.png | migration/evidence/RN07/g-settings2c/baseline-launcher-ready.xml | pixels not yet inspected
+2026-10-25T20:54:29.696Z | baseline-connect-before | migration/evidence/RN07/g-settings2c/baseline-connect-before.png | migration/evidence/RN07/g-settings2c/baseline-connect-before.xml | pixels not yet inspected
+2026-10-25T20:54:35.969Z | baseline-connect | migration/evidence/RN07/g-settings2c/baseline-connect.png | migration/evidence/RN07/g-settings2c/baseline-connect.xml | pixels not yet inspected
+2026-10-25T20:54:53.941Z | baseline-ready | migration/evidence/RN07/g-settings2c/baseline-ready.png | migration/evidence/RN07/g-settings2c/baseline-ready.xml | pixels not yet inspected
+2026-10-25T20:54:56.213Z | baseline-empty-favorites-before | migration/evidence/RN07/g-settings2c/baseline-empty-favorites-before.png | migration/evidence/RN07/g-settings2c/baseline-empty-favorites-before.xml | pixels not yet inspected
+2026-10-25T20:55:02.001Z | baseline-empty-favorites | migration/evidence/RN07/g-settings2c/baseline-empty-favorites.png | migration/evidence/RN07/g-settings2c/baseline-empty-favorites.xml | pixels not yet inspected
+2026-10-25T20:55:04.214Z | baseline-all-before | migration/evidence/RN07/g-settings2c/baseline-all-before.png | migration/evidence/RN07/g-settings2c/baseline-all-before.xml | pixels not yet inspected
+2026-10-25T20:55:10.219Z | baseline-all | migration/evidence/RN07/g-settings2c/baseline-all.png | migration/evidence/RN07/g-settings2c/baseline-all.xml | pixels not yet inspected
+2026-10-25T20:55:12.561Z | baseline-tracks-before | migration/evidence/RN07/g-settings2c/baseline-tracks-before.png | migration/evidence/RN07/g-settings2c/baseline-tracks-before.xml | pixels not yet inspected
+2026-10-25T20:55:18.430Z | baseline-tracks | migration/evidence/RN07/g-settings2c/baseline-tracks.png | migration/evidence/RN07/g-settings2c/baseline-tracks.xml | pixels not yet inspected
+2026-10-25T20:55:20.683Z | baseline-close-before | migration/evidence/RN07/g-settings2c/baseline-close-before.png | migration/evidence/RN07/g-settings2c/baseline-close-before.xml | pixels not yet inspected
+2026-10-25T20:55:26.587Z | baseline-close | migration/evidence/RN07/g-settings2c/baseline-close.png | migration/evidence/RN07/g-settings2c/baseline-close.xml | pixels not yet inspected
+2026-10-25T20:55:28.995Z | baseline-confirmed | migration/evidence/RN07/g-settings2c/baseline-confirmed.png | migration/evidence/RN07/g-settings2c/baseline-confirmed.xml | pixels not yet inspected
+2026-10-25T20:55:39.610Z | talkback-entry | migration/evidence/RN07/g-settings2c/talkback-entry.png | migration/evidence/RN07/g-settings2c/talkback-entry.xml | pixels not yet inspected
+2026-10-25T20:55:48.825Z | D8-deny-notifications-focus-before | migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus-before.png | migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus-before.xml | pixels not yet inspected
+2026-10-25T20:55:54.930Z | D8-deny-notifications-focus | migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus.png | migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus.xml | pixels not yet inspected
+2026-10-25T20:55:57.215Z | D8-deny-notifications-activate-before | migration/evidence/RN07/g-settings2c/D8-deny-notifications-activate-before.png | migration/evidence/RN07/g-settings2c/D8-deny-notifications-activate-before.xml | pixels not yet inspected
+2026-10-25T20:56:03.287Z | D8-deny-notifications-activate | migration/evidence/RN07/g-settings2c/D8-deny-notifications-activate.png | migration/evidence/RN07/g-settings2c/D8-deny-notifications-activate.xml | pixels not yet inspected
+2026-10-25T20:56:55.593Z | D8-current | migration/evidence/RN07/g-settings2c/D8-current.png | migration/evidence/RN07/g-settings2c/D8-current.xml | pixels not yet inspected
+2026-10-25T20:57:43.412Z | talkback-app-return | migration/evidence/RN07/g-settings2c/talkback-app-return.png | migration/evidence/RN07/g-settings2c/talkback-app-return.xml | pixels not yet inspected
+2026-10-25T20:57:50.874Z | G03-search-focus-before | migration/evidence/RN07/g-settings2c/G03-search-focus-before.png | migration/evidence/RN07/g-settings2c/G03-search-focus-before.xml | pixels not yet inspected
+2026-10-25T20:57:58.441Z | G03-search-focus | migration/evidence/RN07/g-settings2c/G03-search-focus.png | migration/evidence/RN07/g-settings2c/G03-search-focus.xml | pixels not yet inspected
+2026-10-25T20:58:13.830Z | G03-next-from-search-before | migration/evidence/RN07/g-settings2c/G03-next-from-search-before.png | migration/evidence/RN07/g-settings2c/G03-next-from-search-before.xml | pixels not yet inspected
+2026-10-25T20:58:20.636Z | G03-next-from-search | migration/evidence/RN07/g-settings2c/G03-next-from-search.png | migration/evidence/RN07/g-settings2c/G03-next-from-search.xml | pixels not yet inspected
+2026-10-25T20:58:57.194Z | G03-favorites-focus-attempt-before | migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt-before.png | migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:03.561Z | G03-favorites-focus-attempt | migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.png | migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.xml | pixels not yet inspected
+2026-10-25T20:59:05.998Z | G03-favorites-double-attempt-before | migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt-before.png | migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:12.174Z | G03-favorites-double-attempt | migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt.png | migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt.xml | pixels not yet inspected
+2026-10-25T20:59:14.555Z | G03-all-focus-attempt-before | migration/evidence/RN07/g-settings2c/G03-all-focus-attempt-before.png | migration/evidence/RN07/g-settings2c/G03-all-focus-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:20.773Z | G03-all-focus-attempt | migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.png | migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.xml | pixels not yet inspected
+2026-10-25T20:59:23.669Z | G04-filter-focus-attempt-before | migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt-before.png | migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:29.604Z | G04-filter-focus-attempt | migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png | migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml | pixels not yet inspected
+2026-10-25T20:59:31.962Z | G04-filter-next-attempt-before | migration/evidence/RN07/g-settings2c/G04-filter-next-attempt-before.png | migration/evidence/RN07/g-settings2c/G04-filter-next-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:38.516Z | G04-filter-next-attempt | migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png | migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml | pixels not yet inspected
+2026-10-25T20:59:41.325Z | G04-filter-previous-attempt-before | migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt-before.png | migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt-before.xml | pixels not yet inspected
+2026-10-25T20:59:47.266Z | G04-filter-previous-attempt | migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png | migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml | pixels not yet inspected
+2026-10-25T21:00:02.038Z | talkback-restored | migration/evidence/RN07/g-settings2c/talkback-restored.png | migration/evidence/RN07/g-settings2c/talkback-restored.xml | pixels not yet inspected
+2026-10-25T21:00:12.153Z | teardown-filter-discard-before | migration/evidence/RN07/g-settings2c/teardown-filter-discard-before.png | migration/evidence/RN07/g-settings2c/teardown-filter-discard-before.xml | pixels not yet inspected
+2026-10-25T21:00:18.169Z | teardown-filter-discard | migration/evidence/RN07/g-settings2c/teardown-filter-discard.png | migration/evidence/RN07/g-settings2c/teardown-filter-discard.xml | pixels not yet inspected

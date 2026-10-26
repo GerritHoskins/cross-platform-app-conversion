@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-10-25T20:33:08.268Z",
+  "attempts": [
+    {
+      "attempt": "Initial G01 launcher capture",
+      "exit": 1,
+      "observed": "adb dump exit0 but ERROR null root node. No assertion XML/PNG created. Launcher retry succeeded.",
+      "evidence": "0029-G01-launcher-xml.stdout.log"
+    },
+    {
+      "attempt": "G05 full-keyboard proof",
+      "exit": 1,
+      "observed": "Default uiautomator dump omitted IME windows; mInputShowntrue but zero IME nodes. Subsequent --windows diagnostic proved handwriting toolbar, not full QWERTY. G05 typing captured with toolbar; not credited as keyboard case."
+    },
+    {
+      "attempt": "G01 first full-keyboard proof",
+      "exit": 1,
+      "observed": "Full QWERTY present but key labels uppercase; case-sensitive checker rejected. Changed helper checker to case-insensitive; next full-keyboard proof confirms26 letters without device setting change."
+    },
+    {
+      "attempt": "F03 first action",
+      "exit": 1,
+      "observed": "First generic Favorite node was hidden row1 action, not revealed row4; tap opened Breakfast detail. OK missing, no OK input sent. Invalid-target evidence preserved; fresh F03b exact row4-panel target passed."
+    },
+    {
+      "attempt": "F04 original return",
+      "exit": 1,
+      "observed": "Five reverse swipes began y900 above listtop916: no scroll. Favorite Breakfast target absent, no tap sent. Continued with in-list reverse swipe5401100->5402100/400, returned to top and passed identity check."
+    }
+  ],
+  "outerHelperInvocations": "Terminal launcher invocations before invoke.mjs were observed in tool transcript; their wrapper-level timing/stdout were not captured separately. Every spawned git/curl/adb command has its own actual timed receipt and raw stdout/stderr in commands.jsonl. No invented wrapper timing or stdout."
+}

@@ -1,0 +1,639 @@
+[
+  {
+    "case": "A01",
+    "status": "PASS",
+    "run": "a-gates3 (carried from a-gates2)",
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes.",
+    "preconditions": "Human assignment and D1-D4 read in full RN07.md; isolated new a-gates2; RN06 baseline committed.",
+    "steps": [
+      "Live branch/HEAD/tree/review commit/ancestor/status/index commands",
+      "Read review at commit; compare 718 HEAD blob hashes via stdin batch; run working-tree manifest hash gate",
+      "Pinned Node/npm versions, installed Expo/RN versions, IDEA hash only and starting preservation hashes"
+    ],
+    "expected": "Exact migration/slice-1 RN06 candidate; APPROVE; empty index; all HEAD and working-tree hashes match; authorized status paths only.",
+    "observed": {
+      "branch": "migration/slice-1",
+      "head": "f5a1d836156ad3225b8d050951ae5cc073e3c5f7",
+      "tree": "d00abfe80a737544631559d9c285c4ba5b72b4bf",
+      "rn06Commit": "f5a1d836156ad3225b8d050951ae5cc073e3c5f7",
+      "headFiles": 718,
+      "headMismatches": 0,
+      "workingTreeGate": "719 hash entries, 0 problem(s)",
+      "versions": {
+        "node": "v24.19.0",
+        "npm": "11.16.0",
+        "expo": "58.0.16",
+        "reactNative": "0.88.0"
+      }
+    },
+    "evidence": [
+      "migration/evidence/RN07/a-gates2/candidate.json",
+      "migration/evidence/RN07/a-gates2/rn06-at-head.json",
+      "migration/evidence/RN07/a-gates2/scope-entry.json",
+      "migration/evidence/RN07/a-gates2/preservation-entry.json",
+      "migration/evidence/RN07/a-gates2/a01-head-baseline.receipt.json",
+      "migration/evidence/RN07/a-gates2/a01-working-tree-baseline.receipt.json",
+      "migration/evidence/RN07/a-gates3/entry-preservation.json",
+      "migration/evidence/RN07/a-gates3/phase-entry.receipt.json"
+    ],
+    "defectOrDecision": null,
+    "carriedFrom": "migration/evidence/RN07/a-gates2/results-a.json",
+    "carryForwardGate": "migration/evidence/RN07/a-gates3/phase-entry.receipt.json"
+  },
+  {
+    "case": "A02",
+    "status": "PASS",
+    "run": "a-gates3 (carried from a-gates2)",
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes.",
+    "preconditions": "A01 passed; pinned Node v24.19.0.",
+    "steps": [
+      "Run verify-core-integration.cjs before core rebuild"
+    ],
+    "expected": "Compiled public shared core consumed; frozen/source/bundled raw fixture SHA-256 agree; normalized count 20.",
+    "observed": "All checks passed; linked sibling migration/core/dist/index.js, not an independent installed copy; 14/14 dist files identical; normalized 20 === 20.",
+    "evidence": [
+      "migration/evidence/RN07/a-gates2/a02-integration.receipt.json",
+      "migration/evidence/RN07/a-gates2/a02-integration.stdout.log",
+      "migration/evidence/RN07/a-gates3/entry-preservation.json",
+      "migration/evidence/RN07/a-gates3/phase-entry.receipt.json"
+    ],
+    "defectOrDecision": null,
+    "carriedFrom": "migration/evidence/RN07/a-gates2/results-a.json",
+    "carryForwardGate": "migration/evidence/RN07/a-gates3/phase-entry.receipt.json"
+  },
+  {
+    "case": "A03",
+    "status": "PASS",
+    "scope": "Re-evaluation against checklist A03:49; no core/typecheck/target reruns.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Re-evaluation against checklist A03:49; no core/typecheck/target reruns.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": {
+      "core": {
+        "tests": {
+          "value": 53,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 66,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ tests 53"
+          }
+        },
+        "pass": {
+          "value": 53,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 68,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ pass 53"
+          }
+        },
+        "fail": {
+          "value": 0,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 69,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ fail 0"
+          }
+        },
+        "cancelled": {
+          "value": 0,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 70,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ cancelled 0"
+          }
+        },
+        "skipped": {
+          "value": 0,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 71,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ skipped 0"
+          }
+        },
+        "todo": {
+          "value": 0,
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 72,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "ℹ todo 0"
+          }
+        }
+      },
+      "targetRuns": [
+        {
+          "run": "jest1",
+          "suites": 6,
+          "tests": 95,
+          "passed": 95,
+          "cases": [
+            {
+              "case": "default-all",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: default-all",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/24",
+                "fullNameByteOffset": 42713
+              }
+            },
+            {
+              "case": "no-tracks",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: no-tracks",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/25",
+                "fullNameByteOffset": 43124
+              }
+            },
+            {
+              "case": "single-track",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: single-track",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/26",
+                "fullNameByteOffset": 43531
+              }
+            },
+            {
+              "case": "search-case-insensitive",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-case-insensitive",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/27",
+                "fullNameByteOffset": 43944
+              }
+            },
+            {
+              "case": "search-no-match",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-no-match",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/28",
+                "fullNameByteOffset": 44379
+              }
+            },
+            {
+              "case": "search-plus-track",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-plus-track",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/29",
+                "fullNameByteOffset": 44798
+              }
+            },
+            {
+              "case": "favorites-empty",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-empty",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/30",
+                "fullNameByteOffset": 45221
+              }
+            },
+            {
+              "case": "favorites-some",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-some",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/31",
+                "fullNameByteOffset": 45640
+              }
+            },
+            {
+              "case": "favorites-order",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-order",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/32",
+                "fullNameByteOffset": 46057
+              }
+            },
+            {
+              "case": "add-duplicate",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/33",
+                "fullNameByteOffset": 46476
+              }
+            },
+            {
+              "case": "remove-absent",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest1.json",
+                "line": 1,
+                "sha256": "f5c86e74aa49ad931c12c5b066b6288a3cea9f415d243dfdc7374c551d6dfcd3",
+                "jsonPointer": "/testResults/5/assertionResults/34",
+                "fullNameByteOffset": 46892
+              }
+            }
+          ],
+          "perSuite": [
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+              "status": "passed",
+              "tests": 12
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\filter-screen.test.tsx",
+              "status": "passed",
+              "tests": 12
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\session-detail-screen.test.tsx",
+              "status": "passed",
+              "tests": 15
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-swipe.test.tsx",
+              "status": "passed",
+              "tests": 17
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\shell-screen.test.tsx",
+              "status": "passed",
+              "tests": 4
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "status": "passed",
+              "tests": 35
+            }
+          ],
+          "receipt": "migration/evidence/RN07/a-gates2/a03-jest1.receipt.json"
+        },
+        {
+          "run": "jest2",
+          "suites": 6,
+          "tests": 95,
+          "passed": 95,
+          "cases": [
+            {
+              "case": "default-all",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: default-all",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/24",
+                "fullNameByteOffset": 40701
+              }
+            },
+            {
+              "case": "no-tracks",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: no-tracks",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/25",
+                "fullNameByteOffset": 41112
+              }
+            },
+            {
+              "case": "single-track",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: single-track",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/26",
+                "fullNameByteOffset": 41519
+              }
+            },
+            {
+              "case": "search-case-insensitive",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-case-insensitive",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/27",
+                "fullNameByteOffset": 41932
+              }
+            },
+            {
+              "case": "search-no-match",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-no-match",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/28",
+                "fullNameByteOffset": 42367
+              }
+            },
+            {
+              "case": "search-plus-track",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: search-plus-track",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/29",
+                "fullNameByteOffset": 42786
+              }
+            },
+            {
+              "case": "favorites-empty",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-empty",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/30",
+                "fullNameByteOffset": 43209
+              }
+            },
+            {
+              "case": "favorites-some",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-some",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/31",
+                "fullNameByteOffset": 43628
+              }
+            },
+            {
+              "case": "favorites-order",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-order",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/32",
+                "fullNameByteOffset": 44045
+              }
+            },
+            {
+              "case": "add-duplicate",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/33",
+                "fullNameByteOffset": 44464
+              }
+            },
+            {
+              "case": "remove-absent",
+              "status": "PASS",
+              "testName": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+              "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "citation": {
+                "file": "migration/evidence/RN07/a-gates2/jest2.json",
+                "line": 1,
+                "sha256": "2553c8cb85ef839dd8d6e948d46b83550375feb093d396a33f1b7683df2d806a",
+                "jsonPointer": "/testResults/4/assertionResults/34",
+                "fullNameByteOffset": 44880
+              }
+            }
+          ],
+          "perSuite": [
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+              "status": "passed",
+              "tests": 12
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\filter-screen.test.tsx",
+              "status": "passed",
+              "tests": 12
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\session-detail-screen.test.tsx",
+              "status": "passed",
+              "tests": 15
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-swipe.test.tsx",
+              "status": "passed",
+              "tests": 17
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+              "status": "passed",
+              "tests": 35
+            },
+            {
+              "name": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\shell-screen.test.tsx",
+              "status": "passed",
+              "tests": 4
+            }
+          ],
+          "receipt": "migration/evidence/RN07/a-gates2/a03-jest2.receipt.json"
+        }
+      ],
+      "synthetic": [
+        {
+          "label": "Supplemental synthetic shared-core test; NOT a frozen fixture or device case",
+          "testName": "all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected",
+          "status": "PASS",
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 13,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "✔ all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected (1.6657ms)"
+          }
+        },
+        {
+          "label": "Supplemental synthetic shared-core test; NOT a frozen fixture or device case",
+          "testName": "all-tracks rule holds in favorites mode too",
+          "status": "PASS",
+          "citation": {
+            "file": "migration/evidence/RN07/a-gates2/a03-core.stdout.log",
+            "line": 14,
+            "sha256": "bffccb28a8c163b0a6193db5b8510bc56e771abfdc4ef891ce0c220938bf0248",
+            "verbatim": "✔ all-tracks rule holds in favorites mode too (0.1621ms)"
+          }
+        }
+      ],
+      "correction": "The a-gates2 A03 FAIL is superseded by this PASS re-evaluation. Its extra requirement that supplemental synthetic test names occur in TARGET Jest JSON was not in checklist A03. The checklist requires automated evidence, satisfied by the passing shared-core synthetic tests plus all 11 frozen cases named and passed in each target JSON. Historical exit 1 is retained unchanged; no product failure or new test execution is inferred."
+    },
+    "evidence": [
+      "migration/evidence/RN07/a-gates3/a03-reevaluation.json",
+      "migration/evidence/RN07/a-gates3/a03-reevaluation.receipt.json",
+      "migration/evidence/RN07/a-gates2/a03-core.receipt.json",
+      "migration/evidence/RN07/a-gates2/a03-typecheck.receipt.json",
+      "migration/evidence/RN07/a-gates2/a03-jest1.receipt.json",
+      "migration/evidence/RN07/a-gates2/a03-jest2.receipt.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "a-gates2 A03 FAIL superseded only as a criterion evaluation; historical exit 1 retained unchanged.",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A04",
+    "status": "PASS",
+    "scope": "JS export part ONLY; not full native-build/launch acceptance.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "JS export part ONLY; not full native-build/launch acceptance.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": {
+      "exportExitCode": 0,
+      "artifacts": 29,
+      "inventory": "migration/evidence/RN07/a-gates3/android-artifacts.json",
+      "nativeBuild": "NOT RUN",
+      "reusedClient": "To be recorded in phase B"
+    },
+    "evidence": [
+      "migration/evidence/RN07/a-gates3/a04-export.receipt.json",
+      "migration/evidence/RN07/a-gates3/phase-export.receipt.json",
+      "migration/evidence/RN07/a-gates3/android-artifacts.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "D1: reuse installed development client; no native build or new-build claim.",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A04-native-build",
+    "status": "NOT RUN",
+    "scope": "Native build excluded by decision D1.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Native build excluded by decision D1.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": "No native build; phase B records reused client/APK.",
+    "evidence": [],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "Human decision D1",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A05",
+    "status": "NOT RUN",
+    "scope": "Phase B only.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Phase B only.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": "No install, launch or device query.",
+    "evidence": [],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "D1 reused-client evidence deferred to B",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A06-software",
+    "status": "PASS",
+    "scope": "Software warning collection only.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Software warning collection only.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": "Scanned carried typecheck/Jest logs and current export logs; warnings.md contains exact citations and bounded observations. No global absence claim.",
+    "evidence": [
+      "migration/evidence/RN07/a-gates3/warnings.md",
+      "migration/evidence/RN07/a-gates3/warning-scan.json",
+      "migration/evidence/RN07/a-gates3/a06-software.receipt.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": null,
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A06",
+    "status": "NOT RUN",
+    "scope": "Device/app/Metro interaction acceptance is deferred to phase B.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Device/app/Metro interaction acceptance is deferred to phase B.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": "Software collection complete; device window unattempted.",
+    "evidence": [
+      "migration/evidence/RN07/a-gates3/warnings.md"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "No device acceptance inferred from export/test success",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  },
+  {
+    "case": "A06-device",
+    "status": "NOT RUN",
+    "scope": "Phase B representative interaction windows.",
+    "run": "a-gates3",
+    "preconditions": "Entry candidate, empty-index, scope and all a-gates2 preservation hashes passed; prior software logs reused read-only.",
+    "steps": "Phase B representative interaction windows.",
+    "expected": "Only the stated software subcase is accepted; native/device observations remain separate.",
+    "observed": "No device/app/Metro interaction observation.",
+    "evidence": [],
+    "observer": "Hermes GPT-6.1 Sol high (software; human-chosen); coordinator Claude Code",
+    "defectOrDecision": "Deferred to B",
+    "teardown": "No device/emulator interaction or existing Metro server interaction; authorized JS export used its own transient bundler. No background task started. Earlier attempts unchanged. No product/test/config edits or fixes."
+  }
+]

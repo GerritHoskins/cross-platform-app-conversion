@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-25T17:50:42.152Z",
+  "attempts": [
+    {
+      "kind": "unexported shell variables",
+      "effect": "No command/device input executed; explicit export corrected",
+      "receipt": "migration/evidence/RN07/b-device2/history-shell-unexported-variable-failure.receipt.json"
+    },
+    {
+      "kind": "diagnostic argument typo",
+      "effect": "adb shell shell dumpsys exited127; no input/settings effect",
+      "receipt": [
+        "migration/evidence/RN07/b-device2/0110-D02-keyboard-pre.receipt.json"
+      ]
+    }
+  ],
+  "initialDiscovery": "Retrospectively logged with unknown timing; timed branch/HEAD/index/status commands repeated before device input."
+}

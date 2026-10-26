@@ -1,0 +1,85 @@
+FAIL __tests__/root-layout.test.tsx (17.781 s)
+  ● F-4 follows dark and light schemes for native headers, content and the automatic status bar
+
+    expect(jest.fn()).toHaveBeenLastCalledWith(...expected)
+
+    Expected: ObjectContaining {"screenOptions": {"contentStyle": {"backgroundColor": "#101014"}, "headerStyle": {"backgroundColor": "#1c1c22"}, "headerTintColor": "#f2f2f5", "headerTitleStyle": {"color": "#f2f2f5"}}}, undefined
+    Received: {"children": [<Screen name="index" options={{"title": "Conference"}} />, <Screen name="session/[sessionId]" options={{"title": "Session"}} />, <Screen name="filter" options={{"presentation": "modal", "title": "Filter Sessions"}} />]}, undefined
+
+    Number of calls: 1
+
+      23 |   const scheme = jest.spyOn(ReactNative, 'useColorScheme').mockReturnValue('dark');
+      24 |   const view = await render(<RootLayout />);
+    > 25 |   expect(Stack).toHaveBeenLastCalledWith(expect.objectContaining({
+         |                 ^
+      26 |     screenOptions: {
+      27 |       headerStyle: { backgroundColor: '#1c1c22' },
+      28 |       headerTintColor: '#f2f2f5',
+
+      at Object.toHaveBeenLastCalledWith (__tests__/root-layout.test.tsx:25:17)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+FAIL __tests__/schedule-screen.test.tsx (11.959 s)
+  ● ScheduleScreen RN07 regressions › F-1 keeps handled row and favorite taps available with the keyboard open
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "handled"
+    Received: undefined
+
+      391 |     const view = await render(<ConferenceProvider><ScheduleScreen /></ConferenceProvider>);
+      392 |     await screen.findByTestId('session-1');
+    > 393 |     expect(sectionList().memoizedProps.keyboardShouldPersistTaps).toBe('handled');
+          |                                                                   ^
+      394 |     await view.unmount();
+      395 |   });
+      396 |
+
+      at Object.toBe (__tests__/schedule-screen.test.tsx:393:67)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● ScheduleScreen RN07 regressions › F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list
+
+    expect(jest.fn()).toHaveBeenCalledTimes(expected)
+
+    Expected number of calls: 1
+    Received number of calls: 0
+
+      410 |
+      411 |     await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: ['Ionic'] }); });
+    > 412 |     expect(scroll).toHaveBeenCalledTimes(1);
+          |                    ^
+      413 |     expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
+      414 |     expect(sectionList().stateNode).toBe(instance);
+      415 |     scroll.mockClear();
+
+      at Object.toHaveBeenCalledTimes (__tests__/schedule-screen.test.tsx:412:20)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● ScheduleScreen RN07 regressions › F-3 lets the search field grow with font scale instead of fixing its height
+
+    expect(received).toBeUndefined()
+
+    Received: 42
+
+      441 |     await screen.findByTestId('session-1');
+      442 |     const style = StyleSheet.flatten(screen.getByLabelText('Search sessions').props.style);
+    > 443 |     expect(style.height).toBeUndefined();
+          |                          ^
+      444 |     expect(style.minHeight).toBe(42);
+      445 |     expect(style.paddingVertical).toBeGreaterThan(0);
+      446 |     await view.unmount();
+
+      at Object.toBeUndefined (__tests__/schedule-screen.test.tsx:443:26)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+Test Suites: 2 failed, 2 total
+Tests:       4 failed, 12 skipped, 16 total
+Snapshots:   0 total
+Time:        30.475 s
+Ran all test suites within paths "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\__tests__\schedule-screen.test.tsx", "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\__tests__\root-layout.test.tsx".
+Test results written to: ..\evidence\RN07\f-fixes1\focused-red2.json

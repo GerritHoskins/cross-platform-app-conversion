@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-25T21:02:03.764Z",
+  "authority": "RN07 D8",
+  "excludedFromSettingsComparison": true,
+  "records": [
+    {
+      "receipt": "migration/evidence/RN07/g-settings2c/0025-notification-permission-entry.stdout.log",
+      "lines": [
+        "      android.permission.POST_NOTIFICATIONS\r",
+        "        android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED]\r"
+      ]
+    },
+    {
+      "receipt": "migration/evidence/RN07/g-settings2c/0101-D8-permission-diagnostic.stdout.log",
+      "lines": [
+        "      android.permission.POST_NOTIFICATIONS\r",
+        "        android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SET|USER_FIXED|USER_SENSITIVE_WHEN_GRANTED]\r"
+      ]
+    },
+    {
+      "receipt": "migration/evidence/RN07/g-settings2c/0181-notification-permission-final.stdout.log",
+      "lines": [
+        "      android.permission.POST_NOTIFICATIONS\r",
+        "        android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SET|USER_FIXED|USER_SENSITIVE_WHEN_GRANTED]\r"
+      ]
+    }
+  ],
+  "actions": [
+    "migration/evidence/RN07/g-settings2c/D8-deny-notifications-focus-action.json",
+    "migration/evidence/RN07/g-settings2c/D8-deny-notifications-activate-action.json"
+  ],
+  "observation": "One prescribed sequence: single input tap at (540,1469), followed by two input taps at the same point with helper sleep120ms. XML target Don’t allow. Prompt persisted; deny resource changed across captures. Readback granted=false USER_SET|USER_FIXED. No Allow coordinates were tapped. Intended focus-only single tap was not established; do not assert exactly one permission callback. No further permission input attempted. Existing app foregrounded in same PID.",
+  "persistentState": "Denied notification permission, not restored (D8)."
+}

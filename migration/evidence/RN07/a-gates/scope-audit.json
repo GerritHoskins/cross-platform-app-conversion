@@ -1,0 +1,545 @@
+{
+  "initialRaw": "?? IDEA.md\n?? migration/evidence/RN07/a-gates/a01-branch.receipt.json\n?? migration/evidence/RN07/a-gates/a01-branch.stderr.log\n?? migration/evidence/RN07/a-gates/a01-branch.stdout.log\n?? migration/evidence/RN07/a-gates/a01-head.receipt.json\n?? migration/evidence/RN07/a-gates/a01-head.stderr.log\n?? migration/evidence/RN07/a-gates/a01-head.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log\n?? migration/evidence/RN07/a-gates/a01-tree.receipt.json\n?? migration/evidence/RN07/a-gates/a01-tree.stderr.log\n?? migration/evidence/RN07/a-gates/a01-tree.stdout.log\n?? migration/evidence/RN07/a-gates/commands.jsonl\n?? migration/plans/rn07-android-acceptance-checklist.md\n?? migration/work-packages/RN07.md\n?? tools/qwen-supervisor/.gitignore\n?? tools/qwen-supervisor/README.md\n?? tools/qwen-supervisor/capture-validator.mjs\n?? tools/qwen-supervisor/config.example.json\n?? tools/qwen-supervisor/progress.mjs\n?? tools/qwen-supervisor/rn03-native-recovery.md\n?? tools/qwen-supervisor/rn03-r2-native-flow.md\n?? tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery-retry.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery.json\n?? tools/qwen-supervisor/rn03-r2-native.json\n?? tools/qwen-supervisor/rn03-r2-next.json\n?? tools/qwen-supervisor/rn03-r2-packet.json\n?? tools/qwen-supervisor/rn03-r2-recovery-packet.json\n?? tools/qwen-supervisor/supervisor.mjs\n?? tools/qwen-supervisor/test/capture-validator.test.mjs\n?? tools/qwen-supervisor/test/fake-hermes.mjs\n?? tools/qwen-supervisor/test/supervisor.test.mjs\n",
+  "initialStatus": [
+    {
+      "raw": "?? IDEA.md",
+      "status": "??",
+      "path": "IDEA.md"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/commands.jsonl",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/commands.jsonl"
+    },
+    {
+      "raw": "?? migration/plans/rn07-android-acceptance-checklist.md",
+      "status": "??",
+      "path": "migration/plans/rn07-android-acceptance-checklist.md"
+    },
+    {
+      "raw": "?? migration/work-packages/RN07.md",
+      "status": "??",
+      "path": "migration/work-packages/RN07.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/.gitignore",
+      "status": "??",
+      "path": "tools/qwen-supervisor/.gitignore"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/README.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/README.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/capture-validator.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/capture-validator.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/config.example.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/config.example.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/progress.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/progress.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-native-recovery.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-native-recovery.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-flow.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-flow.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery-retry.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery-retry.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-next.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-next.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-packet.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-packet.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-recovery-packet.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-recovery-packet.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/supervisor.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/supervisor.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/capture-validator.test.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/capture-validator.test.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/fake-hermes.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/fake-hermes.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/supervisor.test.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/supervisor.test.mjs"
+    }
+  ],
+  "finalRaw": "?? IDEA.md\n?? migration/evidence/RN07/a-gates/a01-branch.receipt.json\n?? migration/evidence/RN07/a-gates/a01-branch.stderr.log\n?? migration/evidence/RN07/a-gates/a01-branch.stdout.log\n?? migration/evidence/RN07/a-gates/a01-candidate.receipt.json\n?? migration/evidence/RN07/a-gates/a01-candidate.stderr.log\n?? migration/evidence/RN07/a-gates/a01-candidate.stdout.log\n?? migration/evidence/RN07/a-gates/a01-head.receipt.json\n?? migration/evidence/RN07/a-gates/a01-head.stderr.log\n?? migration/evidence/RN07/a-gates/a01-head.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log\n?? migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json\n?? migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log\n?? migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log\n?? migration/evidence/RN07/a-gates/a01-status.receipt.json\n?? migration/evidence/RN07/a-gates/a01-status.stderr.log\n?? migration/evidence/RN07/a-gates/a01-status.stdout.log\n?? migration/evidence/RN07/a-gates/a01-tree.receipt.json\n?? migration/evidence/RN07/a-gates/a01-tree.stderr.log\n?? migration/evidence/RN07/a-gates/a01-tree.stdout.log\n?? migration/evidence/RN07/a-gates/candidate.json\n?? migration/evidence/RN07/a-gates/commands.jsonl\n?? migration/evidence/RN07/a-gates/final-branch.receipt.json\n?? migration/evidence/RN07/a-gates/final-branch.stderr.log\n?? migration/evidence/RN07/a-gates/final-branch.stdout.log\n?? migration/evidence/RN07/a-gates/final-cached-diff.receipt.json\n?? migration/evidence/RN07/a-gates/final-cached-diff.stderr.log\n?? migration/evidence/RN07/a-gates/final-cached-diff.stdout.log\n?? migration/evidence/RN07/a-gates/final-diff-check.receipt.json\n?? migration/evidence/RN07/a-gates/final-diff-check.stderr.log\n?? migration/evidence/RN07/a-gates/final-diff-check.stdout.log\n?? migration/evidence/RN07/a-gates/final-head.receipt.json\n?? migration/evidence/RN07/a-gates/final-head.stderr.log\n?? migration/evidence/RN07/a-gates/final-head.stdout.log\n?? migration/evidence/RN07/a-gates/final-protected-diff.receipt.json\n?? migration/evidence/RN07/a-gates/final-protected-diff.stderr.log\n?? migration/evidence/RN07/a-gates/final-protected-diff.stdout.log\n?? migration/evidence/RN07/a-gates/final-tree.receipt.json\n?? migration/evidence/RN07/a-gates/final-tree.stderr.log\n?? migration/evidence/RN07/a-gates/final-tree.stdout.log\n?? migration/plans/rn07-android-acceptance-checklist.md\n?? migration/work-packages/RN07.md\n?? tools/qwen-supervisor/.gitignore\n?? tools/qwen-supervisor/README.md\n?? tools/qwen-supervisor/capture-validator.mjs\n?? tools/qwen-supervisor/config.example.json\n?? tools/qwen-supervisor/progress.mjs\n?? tools/qwen-supervisor/rn03-native-recovery.md\n?? tools/qwen-supervisor/rn03-r2-native-flow.md\n?? tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery-retry.json\n?? tools/qwen-supervisor/rn03-r2-native-recovery.json\n?? tools/qwen-supervisor/rn03-r2-native.json\n?? tools/qwen-supervisor/rn03-r2-next.json\n?? tools/qwen-supervisor/rn03-r2-packet.json\n?? tools/qwen-supervisor/rn03-r2-recovery-packet.json\n?? tools/qwen-supervisor/supervisor.mjs\n?? tools/qwen-supervisor/test/capture-validator.test.mjs\n?? tools/qwen-supervisor/test/fake-hermes.mjs\n?? tools/qwen-supervisor/test/supervisor.test.mjs\n",
+  "finalStatus": [
+    {
+      "raw": "?? IDEA.md",
+      "status": "??",
+      "path": "IDEA.md"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-branch.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-branch.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-candidate.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-candidate.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-candidate.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-candidate.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-candidate.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-candidate.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-head.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-head.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-ancestor.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-commit.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-rn06-full.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-status.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-status.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-status.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-status.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-status.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-status.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/a01-tree.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/a01-tree.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/candidate.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/candidate.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/commands.jsonl",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/commands.jsonl"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-branch.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-branch.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-branch.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-branch.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-branch.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-branch.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-cached-diff.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-cached-diff.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-cached-diff.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-cached-diff.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-cached-diff.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-cached-diff.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-diff-check.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-diff-check.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-diff-check.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-diff-check.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-diff-check.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-diff-check.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-head.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-head.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-head.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-head.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-head.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-head.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-protected-diff.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-protected-diff.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-protected-diff.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-protected-diff.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-protected-diff.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-protected-diff.stdout.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-tree.receipt.json",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-tree.receipt.json"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-tree.stderr.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-tree.stderr.log"
+    },
+    {
+      "raw": "?? migration/evidence/RN07/a-gates/final-tree.stdout.log",
+      "status": "??",
+      "path": "migration/evidence/RN07/a-gates/final-tree.stdout.log"
+    },
+    {
+      "raw": "?? migration/plans/rn07-android-acceptance-checklist.md",
+      "status": "??",
+      "path": "migration/plans/rn07-android-acceptance-checklist.md"
+    },
+    {
+      "raw": "?? migration/work-packages/RN07.md",
+      "status": "??",
+      "path": "migration/work-packages/RN07.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/.gitignore",
+      "status": "??",
+      "path": "tools/qwen-supervisor/.gitignore"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/README.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/README.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/capture-validator.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/capture-validator.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/config.example.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/config.example.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/progress.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/progress.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-native-recovery.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-native-recovery.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-flow.md",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-flow.md"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery-continuation.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery-retry.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery-retry.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native-recovery.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native-recovery.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-native.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-native.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-next.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-next.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-packet.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-packet.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/rn03-r2-recovery-packet.json",
+      "status": "??",
+      "path": "tools/qwen-supervisor/rn03-r2-recovery-packet.json"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/supervisor.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/supervisor.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/capture-validator.test.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/capture-validator.test.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/fake-hermes.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/fake-hermes.mjs"
+    },
+    {
+      "raw": "?? tools/qwen-supervisor/test/supervisor.test.mjs",
+      "status": "??",
+      "path": "tools/qwen-supervisor/test/supervisor.test.mjs"
+    }
+  ],
+  "allowed": [
+    "IDEA.md (hash only)",
+    "tools/**",
+    "migration/plans/rn07-android-acceptance-checklist.md",
+    "migration/work-packages/RN07.md",
+    "migration/evidence/RN07/a-gates/** (session output)",
+    "migration/handoffs/RN07-checkpoint-a.md (session output)"
+  ],
+  "violations": [],
+  "unchangedCandidate": true,
+  "closingFailures": [],
+  "note": "Closing audit only; does not replace or retry the failed A01 gate."
+}

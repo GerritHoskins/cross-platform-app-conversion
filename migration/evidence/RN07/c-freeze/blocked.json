@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "package": "RN07",
+  "phase": "C",
+  "status": "BLOCKED",
+  "failedCommandReceipt": "tools/qwen-supervisor/.runs/sol-rn07-r1-c-20261026/prepare.receipt.json",
+  "failedCommandExit": 1,
+  "failure": "Expected D1-D12 answers",
+  "diagnosis": "The decision extractor matched prerequisite D1-D4 bullets as well as the recorded D1-D12 answers. Its strict count assertion stopped preparation before any final artifact writes.",
+  "matches": [
+    {
+      "id": "D1",
+      "text": "- **D1 — native candidate.** Recommended: **reuse the installed development client** (`dev.translationtest.rn`, installed 2026-10-21 by RN02's native run). `git diff --stat f78a759 HEAD -- migration/react-native/package.json migration/react-native/package-lock.json migration/react-native/app.json` is empty at preparation, so no native input changed since that build. Record it as a reused client (checklist A05) with the APK path/hash read from the device, and make no \"new native build\" claim. Alternative (gated): a fresh `npm run android` (`expo run:android --port 8082`), which requires RN01's Windows Gradle workaround (`migration/evidence/RN01-r2/native-build-workaround.gradle`, short staging paths) and can hit Metro heap limits (RN02)."
+    },
+    {
+      "id": "D2",
+      "text": "- **D2 — device settings authority (needed for G03–G07).** Proposed: authorize reversible changes on the RN01_API36 emulator only, each recorded before and after and restored at teardown:"
+    },
+    {
+      "id": "D3",
+      "text": "- **D3 — cold deep-link entry (D03/D04).** The development client cannot route a cold `VIEW` intent; RN04 recorded that the launcher opened instead. Recommended: record D03/D04 as **BLOCKED (development-client limitation)** with RN04's automated cold-entry and unknown-ID tests as supporting automated evidence, and ask the human for a scope decision. Alternative (gated, larger): authorize a standalone/preview build that bundles JS, to exercise cold links natively."
+    },
+    {
+      "id": "D4",
+      "text": "- **D4 — fix policy confirmation.** See \"Fix policy\". It includes one fix already expected from RN06's evidence (G02)."
+    },
+    {
+      "id": "D1",
+      "text": "- **D1:** reuse the installed development client; record it as reused (A05); no native rebuild."
+    },
+    {
+      "id": "D2",
+      "text": "- **D2:** the listed reversible emulator settings (TalkBack, font scale 1.3 and largest ≥ 1.5, display size, dark mode) are authorized for phase G only, each recorded before, changed, tested and restored."
+    },
+    {
+      "id": "D3",
+      "text": "- **D3:** D03/D04 are recorded as BLOCKED (development-client limitation), with RN04's automated cold-entry and unknown-ID tests as supporting automated evidence; a scope decision is requested in the handoff."
+    },
+    {
+      "id": "D4",
+      "text": "- **D4:** the fix policy below is confirmed, including pre-identified F-1, applied only if G02 FAILs."
+    },
+    {
+      "id": "D5",
+      "text": "- **D5 (after B2, 2026-10-25):** F02 diagonal-left (`input swipe 800 1700 300 1100 400` revealed row 5's action without scrolling; no favorite change, no navigation) stays recorded as FAIL with the adjudication \"known gesture-ambiguity limitation\"; no product change, since ReanimatedSwipeable exposes no vertical-fail threshold and a deeper fix would exceed the fix policy. It is carried to the handoff as a known issue. E06.apply-after-bottom-scroll (blank schedule after applying a filter while scrolled to the bottom) is fixed under the fix policy as F-2 (`schedule-screen.tsx` only), with a focused test and device reruns."
+    },
+    {
+      "id": "D6",
+      "text": "- **D6 (after G1b, 2026-10-25):** G1b's G01 is recorded BLOCKED (environment): the AVD has a host keyboard attached (\"AT Translated Set 2 keyboard\") with `show_ime_with_hard_keyboard=0`, so Gboard showed only its floating toolbar, which does not consume Back. D2 is amended for phase G2 only: `settings put secure show_ime_with_hard_keyboard 1`, recorded before, tested and restored to the recorded value, so the full on-screen keyboard appears. G2 reruns G01 and G02 with that keyboard, alongside TalkBack G03/G04."
+    },
+    {
+      "id": "D7",
+      "text": "- **D7 (after G1b, 2026-10-25):** G09 modal lifecycle is approved as observed: backgrounding and resuming keeps the open filter modal and its unapplied draft; only Done applies the draft and closing discards it. No product change."
+    },
+    {
+      "id": "D8",
+      "text": "- **D8 (after G2b, 2026-10-25):** D2 is amended for a G2c TalkBack rerun: when the first TalkBack enable shows the one-time \"Allow Android Accessibility Suite to send you notifications?\" prompt, the executor taps \"Don't allow\" once and records it. The denied notification permission is a persistent emulator state, not restored. G2b's G03/G04 stay BLOCKED (environment prompt) as history."
+    },
+    {
+      "id": "D9",
+      "text": "- **D9 (after G2a, 2026-10-25):** the development-build LogBox errors after a font-scale change in a running process (\"configured linking in multiple places\", \"multiple navigation containers\"; Android recreates the activity) are recorded as a known issue for a later package. No fix in RN07, since a fix needs native/app.json configuration outside the fix policy."
+    },
+    {
+      "id": "D10",
+      "text": "- **D10 (after G2c, 2026-10-26):** TalkBack focus traversal cannot be driven with `adb input` on this setup (injected taps and swipes reach the app instead of moving accessibility focus). G03 is closed by an offline audit of the accessibility tree already captured in RN07's UI XML dumps (labels, roles, checkable/checked, selected, clickable, unlabeled controls; no device use) and graded LIMITED. G04 (focus containment and return) stays BLOCKED (automation limit). A manual TalkBack walkthrough is listed in the handoff as follow-up."
+    },
+    {
+      "id": "D11",
+      "text": "- **D11 (before phase C, 2026-10-26):** rerun the two remaining environment-limited checks instead of accepting them. (a) A06 Metro console: the coordinator restarts its own Metro (same command, `npm run start` in `migration/react-native` with the pinned Node, port 8082) with stdout and stderr written to `migration/evidence/RN07/metro-console/metro.log`, and a G3 device session records every error and warning in it, verbatim, during a fresh load and representative flows. (b) G08 keyboard insets: G3 may again set `show_ime_with_hard_keyboard 1` (D6) and switch Gboard from its floating keyboard to the docked keyboard through Gboard's own keyboard UI, then restore both (floating mode and the recorded setting value) at the end. No other settings."
+    },
+    {
+      "id": "D12",
+      "text": "- **D12 (after G3, 2026-10-26):** G08 keyboard insets stay BLOCKED (environment: this AVD offers only Gboard's floating keyboard, which Android does not inset, and Gboard could not be docked through its own UI); accepted as out of RN07 scope and listed in the handoff. The unexplained state change in G3 at about 06:50Z (filter modal opened with all tracks unchecked, no executor input) was a human interaction with the emulator, confirmed by the human; it is not an app behavior."
+    }
+  ],
+  "softwareGates": "All final candidate-2 software checks passed; this is an executor aggregation-helper failure, not a product/software-test failure.",
+  "noRetry": true,
+  "scope": "No helper repair, no rerun, no freeze. Existing RN07 history remains unchanged."
+}

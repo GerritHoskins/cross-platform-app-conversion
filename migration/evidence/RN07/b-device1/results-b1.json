@@ -1,0 +1,2050 @@
+[
+  {
+    "case": "A05",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Read pm path, sha256sum and package version/install times.",
+      "Force-stop, start MainActivity, then connect through launcher http://127.0.0.1:8082; wait for current schedule."
+    ],
+    "expected": {
+      "applicationId": "dev.translationtest.rn",
+      "nativeCandidate": "D1 reused installed client; no RN07 build/install",
+      "bundle": "Current Metro JS schedule rendered"
+    },
+    "observed": {
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "firstInstallTime": "2026-10-21 07:01:33",
+      "lastUpdateTime": "2026-10-21 17:29:42",
+      "apkPath": "/data/app/~~QzUU8DX5y-aUh0kTs-j6DA==/dev.translationtest.rn-pWLduZNiKP3fU-IyrH-F3Q==/base.apk",
+      "apkSha256": "3a6c19f6f25e2148ae6afc1572fa847f501d7a6a5102dbadb05e6ca53528f092",
+      "coldPid": 13165,
+      "baselineConfirmed": true,
+      "buildOrInstallOccurred": false
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B-baseline-launcher-retry.png",
+      "migration/evidence/RN07/b-device1/B-baseline-launcher-retry.xml",
+      "migration/evidence/RN07/b-device1/B01-baseline.png",
+      "migration/evidence/RN07/b-device1/B01-baseline.xml",
+      "migration/evidence/RN07/b-device1/B-baseline-tracks.png",
+      "migration/evidence/RN07/b-device1/B-baseline-tracks.xml",
+      "migration/evidence/RN07/b-device1/B-baseline-tracks-close2.png",
+      "migration/evidence/RN07/b-device1/B-baseline-tracks-close2.xml",
+      "migration/evidence/RN07/b-device1/B-baseline-empty-favorites.png",
+      "migration/evidence/RN07/b-device1/B-baseline-empty-favorites.xml",
+      "migration/evidence/RN07/b-device1/0019-env-package.stdout.log",
+      "migration/evidence/RN07/b-device1/0021-apk-path.stdout.log",
+      "migration/evidence/RN07/b-device1/0022-apk-sha256.stdout.log",
+      "migration/evidence/RN07/b-device1/0039-B-start-logcat.stdout.log"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "D1 reused client; A04 native build NOT RUN. Loading transition frames are not schedule assertions.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "A06.device-B",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Collect adb logcat -d -t 400 --pid=<live pid> in representative B windows; /status, activity, IME and pid reads."
+    ],
+    "expected": {
+      "fatalCrashes": 0,
+      "unhandledJSErrors": 0,
+      "metroFailure": false
+    },
+    "observed": {
+      "boundedFatalMatches": 0,
+      "boundedUnhandledJSErrorMatches": 0,
+      "statusEndpoint": "packager-status:running",
+      "warnings": "Native Unhandled SoftException / ReactNoCrashSoftException at context startup; initialRouteName deprecation; other native W/E records retained verbatim. No behavioral interruption observed in XML/actions; pixels pending.",
+      "metroConsole": "Not readable. No zero-exceptions or continuous-log claim."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/logcat-analysis.json",
+      "migration/evidence/RN07/b-device1/warnings-verbatim.json",
+      "migration/evidence/RN07/b-device1/0038-B-start-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0039-B-start-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0040-B-start-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0041-B-start-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0132-B-search-window-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0133-B-search-window-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0134-B-search-window-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0135-B-search-window-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0241-B-end-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0242-B-end-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0243-B-end-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0244-B-end-activity.stdout.log"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Soft native startup exceptions disclosed, not categorized as unhandled JS exceptions.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "A06.device-C",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Collect adb logcat -d -t 400 --pid=<live pid> in representative C windows; /status, activity, IME and pid reads."
+    ],
+    "expected": {
+      "fatalCrashes": 0,
+      "unhandledJSErrors": 0,
+      "metroFailure": false
+    },
+    "observed": {
+      "boundedFatalMatches": 0,
+      "boundedUnhandledJSErrorMatches": 0,
+      "statusEndpoint": "packager-status:running",
+      "warnings": "Native Unhandled SoftException / ReactNoCrashSoftException at context startup; initialRouteName deprecation; other native W/E records retained verbatim. No behavioral interruption observed in XML/actions; pixels pending.",
+      "metroConsole": "Not readable. No zero-exceptions or continuous-log claim."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/logcat-analysis.json",
+      "migration/evidence/RN07/b-device1/warnings-verbatim.json",
+      "migration/evidence/RN07/b-device1/0273-C-start-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0274-C-start-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0275-C-start-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0276-C-start-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0417-C-mid-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0418-C-mid-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0419-C-mid-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0420-C-mid-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0514-C-before-background-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0515-C-before-background-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0516-C-before-background-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0517-C-before-background-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0528-C-after-resume-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0529-C-after-resume-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0530-C-after-resume-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0531-C-after-resume-activity.stdout.log",
+      "migration/evidence/RN07/b-device1/0559-C-end-pid.stdout.log",
+      "migration/evidence/RN07/b-device1/0560-C-end-logcat.stdout.log",
+      "migration/evidence/RN07/b-device1/0561-C-end-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0562-C-end-activity.stdout.log"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Soft native startup exceptions disclosed, not categorized as unhandled JS exceptions.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "A06.metro-console",
+    "status": "BLOCKED",
+    "run": "b-device1",
+    "preconditions": "Coordinator-owned Metro process",
+    "steps": [
+      "Read HTTP /status; do not stop/restart Metro."
+    ],
+    "expected": "Direct console observation or an explicitly disclosed limitation.",
+    "observed": "The executor cannot read the coordinator Metro console window. All acquired /status responses report running. Device logcat and successful current-bundle loading are separate evidence.",
+    "evidence": [
+      "migration/evidence/RN07/b-device1/0024-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0040-B-start-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0134-B-search-window-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0243-B-end-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0275-C-start-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0419-C-mid-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0516-C-before-background-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0530-C-after-resume-metro-status.stdout.log",
+      "migration/evidence/RN07/b-device1/0561-C-end-metro-status.stdout.log"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Console visibility limitation; no claim about unobserved Metro output.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "server status / limitation",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B01",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Cold B baseline. Capture initial viewport then every prescribed forward swipe through end.",
+      "Use positive-area row/viewport intersection and suffix-prefix overlap, not all mounted nodes."
+    ],
+    "expected": {
+      "sessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "groups": [
+        {
+          "groupTime": "8:00 am",
+          "sessionIds": [
+            1
+          ]
+        },
+        {
+          "groupTime": "9:15 am",
+          "sessionIds": [
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "groupTime": "10:00 am",
+          "sessionIds": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "groupTime": "11:00 am",
+          "sessionIds": [
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "groupTime": "12:00 pm",
+          "sessionIds": [
+            12
+          ]
+        },
+        {
+          "groupTime": "1:00 pm",
+          "sessionIds": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "groupTime": "2:00 pm",
+          "sessionIds": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "groupTime": "3:00 pm",
+          "sessionIds": [
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    "observed": {
+      "case": "B01",
+      "frames": [
+        "B01-viewport-0",
+        "B01-forward-1",
+        "B01-forward-2",
+        "B01-forward-3",
+        "B01-forward-4",
+        "B01-forward-5",
+        "B01-forward-6",
+        "B01-forward-7",
+        "B01-forward-8",
+        "B01-forward-9"
+      ],
+      "positiveAreaViewportRows": true,
+      "merge": "Longest suffix-prefix overlap; newly appended IDs must not repeat earlier IDs",
+      "sessionIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "headings": [
+        "8:00 am",
+        "9:15 am",
+        "10:00 am",
+        "11:00 am",
+        "12:00 pm",
+        "1:00 pm",
+        "2:00 pm",
+        "3:00 pm"
+      ],
+      "expected": {
+        "sessionIds": [
+          1,
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "groups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ]
+      },
+      "metadata": "Every session has complete exact metadata in at least one viewport XML; actual pixel readability remains pending."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B01-viewport-0.png",
+      "migration/evidence/RN07/b-device1/B01-viewport-0.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-1.png",
+      "migration/evidence/RN07/b-device1/B01-forward-1.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-2.png",
+      "migration/evidence/RN07/b-device1/B01-forward-2.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-3.png",
+      "migration/evidence/RN07/b-device1/B01-forward-3.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-4.png",
+      "migration/evidence/RN07/b-device1/B01-forward-4.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-5.png",
+      "migration/evidence/RN07/b-device1/B01-forward-5.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-6.png",
+      "migration/evidence/RN07/b-device1/B01-forward-6.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-7.png",
+      "migration/evidence/RN07/b-device1/B01-forward-7.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-8.png",
+      "migration/evidence/RN07/b-device1/B01-forward-8.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-9.png",
+      "migration/evidence/RN07/b-device1/B01-forward-9.xml",
+      "migration/evidence/RN07/b-device1/verification.json",
+      "migration/evidence/RN07/b-device1/viewport-sequence-verification.json",
+      "migration/evidence/RN07/b-device1/B01-metadata-verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "PASS here covers device/XML content and sequence; not a pixel-readability verdict.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B01.pixel-readability",
+    "status": "NOT RUN",
+    "run": "b-device1",
+    "preconditions": "All B01 PNG/XML pairs acquired",
+    "steps": [
+      "Coordinator to inspect every frame after checkpoint."
+    ],
+    "expected": "Names, times, locations and tracks readable in pixels.",
+    "observed": "No pixel inspection performed by executor.",
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B01-viewport-0.png",
+      "migration/evidence/RN07/b-device1/B01-viewport-0.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-1.png",
+      "migration/evidence/RN07/b-device1/B01-forward-1.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-2.png",
+      "migration/evidence/RN07/b-device1/B01-forward-2.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-3.png",
+      "migration/evidence/RN07/b-device1/B01-forward-3.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-4.png",
+      "migration/evidence/RN07/b-device1/B01-forward-4.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-5.png",
+      "migration/evidence/RN07/b-device1/B01-forward-5.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-6.png",
+      "migration/evidence/RN07/b-device1/B01-forward-6.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-7.png",
+      "migration/evidence/RN07/b-device1/B01-forward-7.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-8.png",
+      "migration/evidence/RN07/b-device1/B01-forward-8.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-9.png",
+      "migration/evidence/RN07/b-device1/B01-forward-9.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Pending coordinator, not a product failure.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "pixel inspection pending",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B02",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Inspect same-start rows 6/7 and 10/11 during B01 forward traversal and subsequent C setup traversals.",
+      "Record six prescribed reverse swipes; they did not move because y=900 is above list viewport y=918."
+    ],
+    "expected": {
+      "pairs": [
+        [
+          6,
+          7
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "stable": true,
+      "duplicatesOrMissing": false
+    },
+    "observed": {
+      "pairs": [
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "frames": [
+            {
+              "frame": "B01-forward-2",
+              "ids": [
+                6,
+                7,
+                8,
+                9
+              ],
+              "stable": true
+            },
+            {
+              "frame": "C02-find12-2",
+              "ids": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "stable": true
+            },
+            {
+              "frame": "C03-find20-2",
+              "ids": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "stable": true
+            }
+          ]
+        },
+        {
+          "pair": [
+            10,
+            11
+          ],
+          "frames": [
+            {
+              "frame": "B01-forward-3",
+              "ids": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "stable": true
+            },
+            {
+              "frame": "C02-find12-3",
+              "ids": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "stable": true
+            },
+            {
+              "frame": "C03-find20-3",
+              "ids": [
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "stable": true
+            }
+          ]
+        }
+      ],
+      "noDuplicatesOrMissing": "Exact B01 sequence verified; repeated forward traversals corroborate order.",
+      "reverse": "No reverse recycling coverage claimed; all six reverse gestures non-moving."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B01-forward-1.png",
+      "migration/evidence/RN07/b-device1/B01-forward-1.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-2.png",
+      "migration/evidence/RN07/b-device1/B01-forward-2.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-3.png",
+      "migration/evidence/RN07/b-device1/B01-forward-3.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-4.png",
+      "migration/evidence/RN07/b-device1/B01-forward-4.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-5.png",
+      "migration/evidence/RN07/b-device1/B01-forward-5.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-6.png",
+      "migration/evidence/RN07/b-device1/B01-forward-6.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-7.png",
+      "migration/evidence/RN07/b-device1/B01-forward-7.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-8.png",
+      "migration/evidence/RN07/b-device1/B01-forward-8.xml",
+      "migration/evidence/RN07/b-device1/B01-forward-9.png",
+      "migration/evidence/RN07/b-device1/B01-forward-9.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-1.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-1.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-2.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-2.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-3.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-3.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-4.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-4.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-5.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-5.xml",
+      "migration/evidence/RN07/b-device1/B02-reverse-6.png",
+      "migration/evidence/RN07/b-device1/B02-reverse-6.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-1.png",
+      "migration/evidence/RN07/b-device1/C02-find12-1.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-2.png",
+      "migration/evidence/RN07/b-device1/C02-find12-2.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-3.png",
+      "migration/evidence/RN07/b-device1/C02-find12-3.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-1.png",
+      "migration/evidence/RN07/b-device1/C03-find20-1.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-2.png",
+      "migration/evidence/RN07/b-device1/C03-find20-2.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-3.png",
+      "migration/evidence/RN07/b-device1/C03-find20-3.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-4.png",
+      "migration/evidence/RN07/b-device1/C03-find20-4.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-5.png",
+      "migration/evidence/RN07/b-device1/C03-find20-5.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-6.png",
+      "migration/evidence/RN07/b-device1/C03-find20-6.xml",
+      "migration/evidence/RN07/b-device1/B02-equal-start-verification.json",
+      "migration/evidence/RN07/b-device1/verification.json",
+      "migration/evidence/RN07/b-device1/viewport-sequence-verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B03",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "Focus search; adb shell input text IOnic.",
+      "After initial bottom-retained search, use no-match/clear transition to restore top; re-enter IOnic and scroll every viewport to end."
+    ],
+    "expected": {
+      "sessionIds": [
+        4,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "groups": [
+        {
+          "groupTime": "9:15 am",
+          "sessionIds": [
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "groupTime": "10:00 am",
+          "sessionIds": [
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "groupTime": "11:00 am",
+          "sessionIds": [
+            9,
+            11
+          ]
+        },
+        {
+          "groupTime": "1:00 pm",
+          "sessionIds": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "groupTime": "2:00 pm",
+          "sessionIds": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "groupTime": "3:00 pm",
+          "sessionIds": [
+            19
+          ]
+        }
+      ]
+    },
+    "observed": {
+      "case": "B03",
+      "frames": [
+        "B03-reenter",
+        "B03-forward-1",
+        "B03-forward-2",
+        "B03-forward-3",
+        "B03-forward-4",
+        "B03-forward-5",
+        "B03-forward-6"
+      ],
+      "positiveAreaViewportRows": true,
+      "merge": "Longest suffix-prefix overlap; newly appended IDs must not repeat earlier IDs",
+      "sessionIds": [
+        4,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "headings": [
+        "9:15 am",
+        "10:00 am",
+        "11:00 am",
+        "1:00 pm",
+        "2:00 pm",
+        "3:00 pm"
+      ],
+      "expected": {
+        "sessionIds": [
+          4,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "groups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              11
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19
+            ]
+          }
+        ]
+      }
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B03-reenter.png",
+      "migration/evidence/RN07/b-device1/B03-reenter.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-1.png",
+      "migration/evidence/RN07/b-device1/B03-forward-1.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-2.png",
+      "migration/evidence/RN07/b-device1/B03-forward-2.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-3.png",
+      "migration/evidence/RN07/b-device1/B03-forward-3.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-4.png",
+      "migration/evidence/RN07/b-device1/B03-forward-4.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-5.png",
+      "migration/evidence/RN07/b-device1/B03-forward-5.xml",
+      "migration/evidence/RN07/b-device1/B03-forward-6.png",
+      "migration/evidence/RN07/b-device1/B03-forward-6.xml",
+      "migration/evidence/RN07/b-device1/verification.json",
+      "migration/evidence/RN07/b-device1/viewport-sequence-verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "B03-dismiss-keyboard was only a noninteractive heading tap attempt. Subsequent dumpsys mInputShown=true: it did not establish dismissal; no product action claimed for that tap.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B04",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "B group; All tracks/All mode",
+    "steps": [
+      "Clear IOnic with repeated keyevent 67; input zzz-no-such-session; capture; clear with keyevent 67."
+    ],
+    "expected": {
+      "noMatch": {
+        "sessionIds": [],
+        "groups": []
+      },
+      "clearRestores": "All sessions/all tracks"
+    },
+    "observed": {
+      "message": "No sessions match your search or filters.",
+      "noRowsOrHeadings": true,
+      "clearedFieldXML": "text=\"Search sessions\" (placeholder; no query)",
+      "restoredInitialViewport": [
+        1,
+        4,
+        2,
+        3
+      ]
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B04-no-match.png",
+      "migration/evidence/RN07/b-device1/B04-no-match.xml",
+      "migration/evidence/RN07/b-device1/B04-cleared.png",
+      "migration/evidence/RN07/b-device1/B04-cleared.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B05",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "All tracks/All mode; empty favorites",
+    "steps": [
+      "Derive space-query expectation from shared core without rebuilding/mutating core.",
+      "Focus/clear; no-match/clear resets scroll; input text %s; scroll all result viewports."
+    ],
+    "expected": {
+      "source": "Shared core selector supplemental, not a frozen fixture case",
+      "selection": {
+        "searchText": " ",
+        "selectedTracks": [
+          "Food",
+          "Ionic",
+          "Tooling",
+          "Vue",
+          "Design",
+          "Services",
+          "Workshop",
+          "Communication",
+          "Navigation",
+          "Documentation"
+        ],
+        "favoriteIds": [],
+        "mode": "all"
+      },
+      "sessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "groups": [
+        {
+          "groupTime": "9:15 am",
+          "sessionIds": [
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "groupTime": "10:00 am",
+          "sessionIds": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "groupTime": "11:00 am",
+          "sessionIds": [
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "groupTime": "1:00 pm",
+          "sessionIds": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "groupTime": "2:00 pm",
+          "sessionIds": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "groupTime": "3:00 pm",
+          "sessionIds": [
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    "observed": {
+      "case": "B05",
+      "frames": [
+        "B05-single-space",
+        "B05-forward-1",
+        "B05-forward-2",
+        "B05-forward-3",
+        "B05-forward-4",
+        "B05-forward-5",
+        "B05-forward-6"
+      ],
+      "positiveAreaViewportRows": true,
+      "merge": "Longest suffix-prefix overlap; newly appended IDs must not repeat earlier IDs",
+      "sessionIds": [
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "headings": [
+        "9:15 am",
+        "10:00 am",
+        "11:00 am",
+        "1:00 pm",
+        "2:00 pm",
+        "3:00 pm"
+      ],
+      "expected": {
+        "source": "Shared core selector supplemental, not a frozen fixture case",
+        "selection": {
+          "searchText": " ",
+          "selectedTracks": [
+            "Food",
+            "Ionic",
+            "Tooling",
+            "Vue",
+            "Design",
+            "Services",
+            "Workshop",
+            "Communication",
+            "Navigation",
+            "Documentation"
+          ],
+          "favoriteIds": [],
+          "mode": "all"
+        },
+        "sessionIds": [
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "groups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B05-single-space.png",
+      "migration/evidence/RN07/b-device1/B05-single-space.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-1.png",
+      "migration/evidence/RN07/b-device1/B05-forward-1.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-2.png",
+      "migration/evidence/RN07/b-device1/B05-forward-2.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-3.png",
+      "migration/evidence/RN07/b-device1/B05-forward-3.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-4.png",
+      "migration/evidence/RN07/b-device1/B05-forward-4.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-5.png",
+      "migration/evidence/RN07/b-device1/B05-forward-5.xml",
+      "migration/evidence/RN07/b-device1/B05-forward-6.png",
+      "migration/evidence/RN07/b-device1/B05-forward-6.xml",
+      "migration/evidence/RN07/b-device1/B05-derived-expected.json",
+      "migration/evidence/RN07/b-device1/verification.json",
+      "migration/evidence/RN07/b-device1/viewport-sequence-verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Supplemental runtime selector derivation, not a frozen case.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B06",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "B05 single-space query active; all ten tracks; no favorites",
+    "steps": [
+      "Switch Favorite sessions then All sessions; open filter to inspect retained selection; close via Navigate up."
+    ],
+    "expected": {
+      "searchText": " ",
+      "tracks": "All ten remain selected",
+      "favoritesIds": [],
+      "allIds": [
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    "observed": {
+      "searchPreserved": " ",
+      "favorites": "No favorite sessions.; zero rows/headings",
+      "allReturnedViewport": [
+        4,
+        2,
+        3,
+        5
+      ],
+      "tracks": "All ten checked; no track changes applied"
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/B06-favorites.png",
+      "migration/evidence/RN07/b-device1/B06-favorites.xml",
+      "migration/evidence/RN07/b-device1/B06-all-return.png",
+      "migration/evidence/RN07/b-device1/B06-all-return.xml",
+      "migration/evidence/RN07/b-device1/B06-retained-tracks.png",
+      "migration/evidence/RN07/b-device1/B06-retained-tracks.xml",
+      "migration/evidence/RN07/b-device1/B06-tracks-close.png",
+      "migration/evidence/RN07/b-device1/B06-tracks-close.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Full space-query sequence acquired in B05; B06 shows state retention and correct returning viewport, not a second full traversal.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "B07",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Phase A target Jest JSON retained; test files unchanged",
+    "steps": [
+      "Read RN03 controlled loader tests in schedule-screen.test.tsx:94-232; inspect existing target Jest results."
+    ],
+    "expected": "Pending/loading distinct from empty/error; sync throw and rejection retry clears errors; stale completion ignored.",
+    "observed": [
+      {
+        "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+        "name": "ScheduleScreen lifecycle (provider-driven) pending loader shows loading, controls disabled; resolution shows the ready schedule",
+        "status": "passed"
+      },
+      {
+        "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+        "name": "ScheduleScreen lifecycle (provider-driven) a synchronously throwing loader shows the error UI and retry recovers",
+        "status": "passed"
+      },
+      {
+        "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+        "name": "ScheduleScreen lifecycle (provider-driven) a rejected loader promise shows the error UI and retry recovers",
+        "status": "passed"
+      },
+      {
+        "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\schedule-screen.test.tsx",
+        "name": "ScheduleScreen lifecycle (provider-driven) a stale first completion never overwrites a later retry result",
+        "status": "passed"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/RN07/b-device1/automated-only-record.json",
+      "migration/evidence/RN07/a-gates2/jest1.json",
+      "migration/react-native/__tests__/schedule-screen.test.tsx"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Automated-only permitted by checklist; no native loader simulation.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "automated only",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C01",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Default RN01_API36; committed HEAD f5a1d836156ad3225b8d050951ae5cc073e3c5f7; reused development client; separate B/C cold processes, fixture loaded, empty search, All sessions, all tracks, empty favorites.",
+    "steps": [
+      "New C process baseline; inspect ten tracks; switch Favorite sessions."
+    ],
+    "expected": {
+      "sessionIds": [],
+      "groups": []
+    },
+    "observed": {
+      "message": "No favorite sessions.",
+      "ids": [],
+      "headings": []
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C-baseline-launcher-retry.png",
+      "migration/evidence/RN07/b-device1/C-baseline-launcher-retry.xml",
+      "migration/evidence/RN07/b-device1/C-baseline-connect.png",
+      "migration/evidence/RN07/b-device1/C-baseline-connect.xml",
+      "migration/evidence/RN07/b-device1/C-baseline-ready.png",
+      "migration/evidence/RN07/b-device1/C-baseline-ready.xml",
+      "migration/evidence/RN07/b-device1/C-baseline-tracks.png",
+      "migration/evidence/RN07/b-device1/C-baseline-tracks.xml",
+      "migration/evidence/RN07/b-device1/C-baseline-tracks-close.png",
+      "migration/evidence/RN07/b-device1/C-baseline-tracks-close.xml",
+      "migration/evidence/RN07/b-device1/C01-empty.png",
+      "migration/evidence/RN07/b-device1/C01-empty.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C02",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "C baseline; no favorites; All mode",
+    "steps": [
+      "Scroll to 12; tap accessible Favorite Lunch button; capture Favorite Added; tap OK once; switch Favorites."
+    ],
+    "expected": {
+      "ids": [
+        12
+      ],
+      "added": "Immediate once; OK informational"
+    },
+    "observed": {
+      "alert": "Favorite Added",
+      "ids": [
+        12
+      ],
+      "immediateTiming": "Device alert XML cannot expose underlying membership; existing passing controlled test and dispatch-before-alert source corroborate immediate addition."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C02-all.png",
+      "migration/evidence/RN07/b-device1/C02-all.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-1.png",
+      "migration/evidence/RN07/b-device1/C02-find12-1.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-2.png",
+      "migration/evidence/RN07/b-device1/C02-find12-2.xml",
+      "migration/evidence/RN07/b-device1/C02-find12-3.png",
+      "migration/evidence/RN07/b-device1/C02-find12-3.xml",
+      "migration/evidence/RN07/b-device1/C02-added-alert.png",
+      "migration/evidence/RN07/b-device1/C02-added-alert.xml",
+      "migration/evidence/RN07/b-device1/C02-acknowledged.png",
+      "migration/evidence/RN07/b-device1/C02-acknowledged.xml",
+      "migration/evidence/RN07/b-device1/C02-favorites12.png",
+      "migration/evidence/RN07/b-device1/C02-favorites12.xml",
+      "migration/evidence/RN07/b-device1/C02-immediate-add-automated-support.json",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "No claim that native alert XML directly proves pre-OK state.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C03",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Remove setup favorite 12 with ordinary confirmed Remove; empty Favorites before adding 20.",
+    "steps": [
+      "All: scroll to20, tap Favorite Mobile States, OK.",
+      "Favorites shows [20]; return All, add1 via Favorite Breakfast, OK; Favorites."
+    ],
+    "expected": {
+      "sessionIds": [
+        1,
+        20
+      ],
+      "groups": [
+        {
+          "groupTime": "8:00 am",
+          "sessionIds": [
+            1
+          ]
+        },
+        {
+          "groupTime": "3:00 pm",
+          "sessionIds": [
+            20
+          ]
+        }
+      ]
+    },
+    "observed": {
+      "ids": [
+        1,
+        20
+      ],
+      "headings": [
+        "8:00 am",
+        "3:00 pm"
+      ],
+      "additionOrder": [
+        20,
+        1
+      ]
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C03-setup-remove12-alert.png",
+      "migration/evidence/RN07/b-device1/C03-setup-remove12-alert.xml",
+      "migration/evidence/RN07/b-device1/C03-setup-alert-labels.png",
+      "migration/evidence/RN07/b-device1/C03-setup-alert-labels.xml",
+      "migration/evidence/RN07/b-device1/C03-setup-remove12-confirm2.png",
+      "migration/evidence/RN07/b-device1/C03-setup-remove12-confirm2.xml",
+      "migration/evidence/RN07/b-device1/C03-all-find20.png",
+      "migration/evidence/RN07/b-device1/C03-all-find20.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-1.png",
+      "migration/evidence/RN07/b-device1/C03-find20-1.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-2.png",
+      "migration/evidence/RN07/b-device1/C03-find20-2.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-3.png",
+      "migration/evidence/RN07/b-device1/C03-find20-3.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-4.png",
+      "migration/evidence/RN07/b-device1/C03-find20-4.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-5.png",
+      "migration/evidence/RN07/b-device1/C03-find20-5.xml",
+      "migration/evidence/RN07/b-device1/C03-find20-6.png",
+      "migration/evidence/RN07/b-device1/C03-find20-6.xml",
+      "migration/evidence/RN07/b-device1/C03-add20-alert.png",
+      "migration/evidence/RN07/b-device1/C03-add20-alert.xml",
+      "migration/evidence/RN07/b-device1/C03-add20-OK.png",
+      "migration/evidence/RN07/b-device1/C03-add20-OK.xml",
+      "migration/evidence/RN07/b-device1/C03-interim20.png",
+      "migration/evidence/RN07/b-device1/C03-interim20.xml",
+      "migration/evidence/RN07/b-device1/C03-all-find1.png",
+      "migration/evidence/RN07/b-device1/C03-all-find1.xml",
+      "migration/evidence/RN07/b-device1/C03-add1-alert.png",
+      "migration/evidence/RN07/b-device1/C03-add1-alert.xml",
+      "migration/evidence/RN07/b-device1/C03-add1-OK.png",
+      "migration/evidence/RN07/b-device1/C03-add1-OK.xml",
+      "migration/evidence/RN07/b-device1/C03-order1-20.png",
+      "migration/evidence/RN07/b-device1/C03-order1-20.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C04",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "C03 favorites [1,20]; All mode",
+    "steps": [
+      "Favorite Breakfast again; capture duplicate alert; CANCEL. Verify Favorites [1,20].",
+      "Return All; invoke again separately; REMOVE. Verify Favorites [20]."
+    ],
+    "expected": {
+      "title": "Favorite already added",
+      "cancelKeeps": [
+        1,
+        20
+      ],
+      "confirmRemoves1": [
+        20
+      ]
+    },
+    "observed": {
+      "title": "Favorite already added",
+      "buttonsXML": [
+        "CANCEL",
+        "REMOVE"
+      ],
+      "afterCancel": [
+        1,
+        20
+      ],
+      "afterRemove": [
+        20
+      ],
+      "duplicateIDs": false
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C04-all.png",
+      "migration/evidence/RN07/b-device1/C04-all.xml",
+      "migration/evidence/RN07/b-device1/C04-duplicate-cancel-alert.png",
+      "migration/evidence/RN07/b-device1/C04-duplicate-cancel-alert.xml",
+      "migration/evidence/RN07/b-device1/C04-cancel.png",
+      "migration/evidence/RN07/b-device1/C04-cancel.xml",
+      "migration/evidence/RN07/b-device1/C04-cancel-retains1-20.png",
+      "migration/evidence/RN07/b-device1/C04-cancel-retains1-20.xml",
+      "migration/evidence/RN07/b-device1/C04-all-second-attempt.png",
+      "migration/evidence/RN07/b-device1/C04-all-second-attempt.xml",
+      "migration/evidence/RN07/b-device1/C04-duplicate-remove-alert.png",
+      "migration/evidence/RN07/b-device1/C04-duplicate-remove-alert.xml",
+      "migration/evidence/RN07/b-device1/C04-remove.png",
+      "migration/evidence/RN07/b-device1/C04-remove.xml",
+      "migration/evidence/RN07/b-device1/C04-only20.png",
+      "migration/evidence/RN07/b-device1/C04-only20.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C04.cancel",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Already-favorited 1 in All",
+    "steps": [
+      "Invoke Favorite Breakfast; CANCEL; Favorites."
+    ],
+    "expected": [
+      1,
+      20
+    ],
+    "observed": [
+      1,
+      20
+    ],
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C04-duplicate-cancel-alert.png",
+      "migration/evidence/RN07/b-device1/C04-duplicate-cancel-alert.xml",
+      "migration/evidence/RN07/b-device1/C04-cancel.png",
+      "migration/evidence/RN07/b-device1/C04-cancel.xml",
+      "migration/evidence/RN07/b-device1/C04-cancel-retains1-20.png",
+      "migration/evidence/RN07/b-device1/C04-cancel-retains1-20.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C04.remove",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Separate already-favorited attempt after Cancel",
+    "steps": [
+      "Return All; Favorite Breakfast; REMOVE; Favorites."
+    ],
+    "expected": [
+      20
+    ],
+    "observed": [
+      20
+    ],
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C04-all-second-attempt.png",
+      "migration/evidence/RN07/b-device1/C04-all-second-attempt.xml",
+      "migration/evidence/RN07/b-device1/C04-duplicate-remove-alert.png",
+      "migration/evidence/RN07/b-device1/C04-duplicate-remove-alert.xml",
+      "migration/evidence/RN07/b-device1/C04-remove.png",
+      "migration/evidence/RN07/b-device1/C04-remove.xml",
+      "migration/evidence/RN07/b-device1/C04-only20.png",
+      "migration/evidence/RN07/b-device1/C04-only20.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C05",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Favorites contains only20",
+    "steps": [
+      "Accessible Remove Mobile States; CANCEL; repeat Remove Mobile States; REMOVE."
+    ],
+    "expected": {
+      "cancel": [
+        20
+      ],
+      "confirm": [],
+      "message": "No favorite sessions."
+    },
+    "observed": {
+      "afterCancel": [
+        20
+      ],
+      "afterConfirm": [],
+      "headingsAfterConfirm": [],
+      "message": "No favorite sessions.",
+      "rowPresentation": "Accessible button path, no swipe reveal used; closed row geometry retained on Cancel."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C05-remove-cancel-alert.png",
+      "migration/evidence/RN07/b-device1/C05-remove-cancel-alert.xml",
+      "migration/evidence/RN07/b-device1/C05-cancel-retains20.png",
+      "migration/evidence/RN07/b-device1/C05-cancel-retains20.xml",
+      "migration/evidence/RN07/b-device1/C05-remove-confirm-alert.png",
+      "migration/evidence/RN07/b-device1/C05-remove-confirm-alert.xml",
+      "migration/evidence/RN07/b-device1/C05-removed-empty.png",
+      "migration/evidence/RN07/b-device1/C05-removed-empty.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Swipe-action closure/reveal behavior belongs to later F, not claimed from closed-row button path.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C05.cancel",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Favorites [20]",
+    "steps": [
+      "Remove Mobile States; CANCEL."
+    ],
+    "expected": [
+      20
+    ],
+    "observed": [
+      20
+    ],
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C05-remove-cancel-alert.png",
+      "migration/evidence/RN07/b-device1/C05-remove-cancel-alert.xml",
+      "migration/evidence/RN07/b-device1/C05-cancel-retains20.png",
+      "migration/evidence/RN07/b-device1/C05-cancel-retains20.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C05.confirm",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Separate second attempt, Favorites [20]",
+    "steps": [
+      "Remove Mobile States; REMOVE."
+    ],
+    "expected": {
+      "ids": [],
+      "headings": []
+    },
+    "observed": {
+      "ids": [],
+      "headings": [],
+      "message": "No favorite sessions."
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C05-remove-confirm-alert.png",
+      "migration/evidence/RN07/b-device1/C05-remove-confirm-alert.xml",
+      "migration/evidence/RN07/b-device1/C05-removed-empty.png",
+      "migration/evidence/RN07/b-device1/C05-removed-empty.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C06",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Favorites empty; known session1 Breakfast",
+    "steps": [
+      "All; open Breakfast; detail Add to favorites; header Navigate up.",
+      "Favorites shows [1]; reopen detail; Remove from favorites; header Navigate up."
+    ],
+    "expected": {
+      "on": [
+        1
+      ],
+      "off": [],
+      "alerts": false
+    },
+    "observed": {
+      "onButton": "★ Remove from favorites; selected=true",
+      "afterOnList": [
+        1
+      ],
+      "offButton": "☆ Add to favorites; selected=false",
+      "afterOffList": [],
+      "confirmationAlerts": false,
+      "hardwareBackUsed": false
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C06-all.png",
+      "migration/evidence/RN07/b-device1/C06-all.xml",
+      "migration/evidence/RN07/b-device1/C06-detail-before.png",
+      "migration/evidence/RN07/b-device1/C06-detail-before.xml",
+      "migration/evidence/RN07/b-device1/C06-star-on.png",
+      "migration/evidence/RN07/b-device1/C06-star-on.xml",
+      "migration/evidence/RN07/b-device1/C06-header-back-on.png",
+      "migration/evidence/RN07/b-device1/C06-header-back-on.xml",
+      "migration/evidence/RN07/b-device1/C06-list-on.png",
+      "migration/evidence/RN07/b-device1/C06-list-on.xml",
+      "migration/evidence/RN07/b-device1/C06-detail-on.png",
+      "migration/evidence/RN07/b-device1/C06-detail-on.xml",
+      "migration/evidence/RN07/b-device1/C06-star-off.png",
+      "migration/evidence/RN07/b-device1/C06-star-off.xml",
+      "migration/evidence/RN07/b-device1/C06-header-back-off.png",
+      "migration/evidence/RN07/b-device1/C06-header-back-off.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C06.on",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Known detail1, not favorite",
+    "steps": [
+      "Tap Add to favorites; header back; Favorites."
+    ],
+    "expected": {
+      "selected": true,
+      "ids": [
+        1
+      ]
+    },
+    "observed": {
+      "selected": true,
+      "ids": [
+        1
+      ],
+      "alert": false
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C06-detail-before.png",
+      "migration/evidence/RN07/b-device1/C06-detail-before.xml",
+      "migration/evidence/RN07/b-device1/C06-star-on.png",
+      "migration/evidence/RN07/b-device1/C06-star-on.xml",
+      "migration/evidence/RN07/b-device1/C06-header-back-on.png",
+      "migration/evidence/RN07/b-device1/C06-header-back-on.xml",
+      "migration/evidence/RN07/b-device1/C06-list-on.png",
+      "migration/evidence/RN07/b-device1/C06-list-on.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C06.off",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Detail1, favorite",
+    "steps": [
+      "Tap Remove from favorites; header back."
+    ],
+    "expected": {
+      "selected": false,
+      "ids": []
+    },
+    "observed": {
+      "selected": false,
+      "ids": [],
+      "alert": false
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C06-detail-on.png",
+      "migration/evidence/RN07/b-device1/C06-detail-on.xml",
+      "migration/evidence/RN07/b-device1/C06-star-off.png",
+      "migration/evidence/RN07/b-device1/C06-star-off.xml",
+      "migration/evidence/RN07/b-device1/C06-header-back-off.png",
+      "migration/evidence/RN07/b-device1/C06-header-back-off.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C07",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "No favorites after C06; All tracks/no search",
+    "steps": [
+      "Favorite3 and12 via accessible buttons/OK; verify unfiltered Favorites [3,12].",
+      "Return All; filter Deselect All, select Food, Done; Favorites."
+    ],
+    "expected": {
+      "sessionIds": [
+        12
+      ],
+      "groups": [
+        {
+          "groupTime": "12:00 pm",
+          "sessionIds": [
+            12
+          ]
+        }
+      ]
+    },
+    "observed": {
+      "onlyCheckedTrack": "Food",
+      "unfilteredFavorites": [
+        3,
+        12
+      ],
+      "filteredFavorites": [
+        12
+      ],
+      "heading": "12:00 pm"
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C07-all.png",
+      "migration/evidence/RN07/b-device1/C07-all.xml",
+      "migration/evidence/RN07/b-device1/C07-find3.png",
+      "migration/evidence/RN07/b-device1/C07-find3.xml",
+      "migration/evidence/RN07/b-device1/C07-add3-alert.png",
+      "migration/evidence/RN07/b-device1/C07-add3-alert.xml",
+      "migration/evidence/RN07/b-device1/C07-add3-OK.png",
+      "migration/evidence/RN07/b-device1/C07-add3-OK.xml",
+      "migration/evidence/RN07/b-device1/C07-find12-1.png",
+      "migration/evidence/RN07/b-device1/C07-find12-1.xml",
+      "migration/evidence/RN07/b-device1/C07-find12-2.png",
+      "migration/evidence/RN07/b-device1/C07-find12-2.xml",
+      "migration/evidence/RN07/b-device1/C07-add12-alert.png",
+      "migration/evidence/RN07/b-device1/C07-add12-alert.xml",
+      "migration/evidence/RN07/b-device1/C07-add12-OK.png",
+      "migration/evidence/RN07/b-device1/C07-add12-OK.xml",
+      "migration/evidence/RN07/b-device1/C07-unfiltered-favorites.png",
+      "migration/evidence/RN07/b-device1/C07-unfiltered-favorites.xml",
+      "migration/evidence/RN07/b-device1/C07-all-before-filter.png",
+      "migration/evidence/RN07/b-device1/C07-all-before-filter.xml",
+      "migration/evidence/RN07/b-device1/C07-filter-before.png",
+      "migration/evidence/RN07/b-device1/C07-filter-before.xml",
+      "migration/evidence/RN07/b-device1/C07-filter-none.png",
+      "migration/evidence/RN07/b-device1/C07-filter-none.xml",
+      "migration/evidence/RN07/b-device1/C07-filter-food.png",
+      "migration/evidence/RN07/b-device1/C07-filter-food.xml",
+      "migration/evidence/RN07/b-device1/C07-filter-applied.png",
+      "migration/evidence/RN07/b-device1/C07-filter-applied.xml",
+      "migration/evidence/RN07/b-device1/C07-only12.png",
+      "migration/evidence/RN07/b-device1/C07-only12.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C08",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "C07 favorites [3,12], Food applied, Favorites shows12",
+    "steps": [
+      "Record pid15367; HOME keyevent3; pid while background; am start MainActivity without force-stop; record pid and retained12.",
+      "Separately force-stop/start; connect launcher127.0.0.1:8082; pid18170; verify all tracks, empty search, All then empty Favorites."
+    ],
+    "expected": {
+      "sameProcessRetainsFavorites": true,
+      "newProcessFavorites": []
+    },
+    "observed": {
+      "pidBefore": 15367,
+      "pidBackground": 15367,
+      "pidResumed": 15367,
+      "resumedVisibleIds": [
+        12
+      ],
+      "resumedMode": "favorites",
+      "resumedFilter": "Food",
+      "newPid": 18170,
+      "newProcessFavorites": [],
+      "finalMode": "all",
+      "finalSearch": "",
+      "finalTracks": "all ten"
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C08-home.png",
+      "migration/evidence/RN07/b-device1/C08-home.xml",
+      "migration/evidence/RN07/b-device1/C08-resumed.png",
+      "migration/evidence/RN07/b-device1/C08-resumed.xml",
+      "migration/evidence/RN07/b-device1/C08-new-process-launcher.png",
+      "migration/evidence/RN07/b-device1/C08-new-process-launcher.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-connect.png",
+      "migration/evidence/RN07/b-device1/C08-cold-connect.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-ready.png",
+      "migration/evidence/RN07/b-device1/C08-cold-ready.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks.png",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks-close.png",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks-close.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-empty-favorites.png",
+      "migration/evidence/RN07/b-device1/C08-cold-empty-favorites.xml",
+      "migration/evidence/RN07/b-device1/C08-final-all.png",
+      "migration/evidence/RN07/b-device1/C08-final-all.xml",
+      "migration/evidence/RN07/b-device1/verification.json",
+      "migration/evidence/RN07/b-device1/settings-baseline-and-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C08.live-process",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Favorites populated, Food filter",
+    "steps": [
+      "HOME; pidof; resume am start without force-stop; pidof; capture."
+    ],
+    "expected": {
+      "pidSurvives": true,
+      "visibleIds": [
+        12
+      ]
+    },
+    "observed": {
+      "pid": 15367,
+      "visibleIds": [
+        12
+      ]
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C07-only12.png",
+      "migration/evidence/RN07/b-device1/C07-only12.xml",
+      "migration/evidence/RN07/b-device1/C08-home.png",
+      "migration/evidence/RN07/b-device1/C08-home.xml",
+      "migration/evidence/RN07/b-device1/C08-resumed.png",
+      "migration/evidence/RN07/b-device1/C08-resumed.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C08.new-process",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Separately after successful live resume",
+    "steps": [
+      "Force-stop, am start, launcher connect, baseline inspection; Favorites."
+    ],
+    "expected": {
+      "newProcess": true,
+      "favorites": []
+    },
+    "observed": {
+      "newPid": 18170,
+      "favorites": [],
+      "allTracks": true,
+      "searchEmpty": true
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/C08-new-process-launcher.png",
+      "migration/evidence/RN07/b-device1/C08-new-process-launcher.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-connect.png",
+      "migration/evidence/RN07/b-device1/C08-cold-connect.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-ready.png",
+      "migration/evidence/RN07/b-device1/C08-cold-ready.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks.png",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks-close.png",
+      "migration/evidence/RN07/b-device1/C08-cold-tracks-close.xml",
+      "migration/evidence/RN07/b-device1/C08-cold-empty-favorites.png",
+      "migration/evidence/RN07/b-device1/C08-cold-empty-favorites.xml",
+      "migration/evidence/RN07/b-device1/C08-final-all.png",
+      "migration/evidence/RN07/b-device1/C08-final-all.xml",
+      "migration/evidence/RN07/b-device1/verification.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": null,
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "device/XML",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  },
+  {
+    "case": "C09",
+    "status": "PASS",
+    "run": "b-device1",
+    "preconditions": "Phase A target Jest JSON unchanged",
+    "steps": [
+      "Inspect add-duplicate and remove-absent results; inspect frozen reference inputs/expected."
+    ],
+    "expected": {
+      "cases": [
+        {
+          "id": "add-duplicate",
+          "expected": {
+            "favoriteIds": [
+              1,
+              12
+            ],
+            "sessionIds": [
+              1,
+              12
+            ],
+            "groups": [
+              {
+                "groupTime": "8:00 am",
+                "sessionIds": [
+                  1
+                ]
+              },
+              {
+                "groupTime": "12:00 pm",
+                "sessionIds": [
+                  12
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "remove-absent",
+          "expected": {
+            "favoriteIds": [
+              1,
+              12
+            ],
+            "sessionIds": [
+              1,
+              12
+            ],
+            "groups": [
+              {
+                "groupTime": "8:00 am",
+                "sessionIds": [
+                  1
+                ]
+              },
+              {
+                "groupTime": "12:00 pm",
+                "sessionIds": [
+                  12
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observed": {
+      "tests": [
+        {
+          "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+          "status": "passed"
+        },
+        {
+          "suite": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\react-native\\__tests__\\conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+          "status": "passed"
+        }
+      ],
+      "favoriteIds": [
+        1,
+        12
+      ],
+      "displayedIds": [
+        1,
+        12
+      ]
+    },
+    "evidence": [
+      "migration/evidence/RN07/b-device1/automated-only-record.json",
+      "migration/evidence/RN07/a-gates2/jest1.json",
+      "migration/react-native/__tests__/conference-state.test.ts",
+      "migration/reference/expected-cases.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Automated-only; no impossible absent-ID device gesture.",
+    "teardown": "No system settings changes. Final schedule: empty search, All sessions, all ten tracks, empty favorites. Metro/emulator left running; no hardware Back used.",
+    "evidenceKind": "automated only",
+    "pixelStatus": "NOT RUN: coordinator inspection pending; no visual acceptance claimed"
+  }
+]

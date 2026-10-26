@@ -1,0 +1,513 @@
+{
+  "policy": "Read-only reconciliation of c-freeze gate outputs; no test/integration/typecheck/export rerun in C2.",
+  "runs": [
+    {
+      "id": "jest1",
+      "source": "migration/evidence/RN07/c-freeze/jest1.json",
+      "suites": 7,
+      "tests": 99,
+      "passed": 99,
+      "perSuite": [
+        {
+          "path": "react-native/__tests__/filter-screen.test.tsx",
+          "tests": 12,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/session-detail-screen.test.tsx",
+          "tests": 15,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/schedule-screen.test.tsx",
+          "tests": 15,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/schedule-swipe.test.tsx",
+          "tests": 17,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/root-layout.test.tsx",
+          "tests": 1,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/shell-screen.test.tsx",
+          "tests": 4,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/conference-state.test.ts",
+          "tests": 35,
+          "status": "passed"
+        }
+      ],
+      "referenceCases": [
+        {
+          "id": "default-all",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: default-all",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "no-tracks",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: no-tracks",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "single-track",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: single-track",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-case-insensitive",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-case-insensitive",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-no-match",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-no-match",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-plus-track",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-plus-track",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-empty",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-empty",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-some",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-some",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-order",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-order",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "add-duplicate",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "remove-absent",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+              "status": "passed"
+            }
+          ]
+        }
+      ],
+      "regressions": [
+        {
+          "id": "F-1",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-2",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-3",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-4",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/root-layout.test.tsx",
+              "name": "F-4 follows dark and light schemes for native headers, content and the automatic status bar",
+              "status": "passed"
+            }
+          ]
+        }
+      ],
+      "loaderAssertions": [
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) pending loader shows loading, controls disabled; resolution shows the ready schedule",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a synchronously throwing loader shows the error UI and retry recovers",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a rejected loader promise shows the error UI and retry recovers",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a stale first completion never overwrites a later retry result",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) replaying the load effect supersedes the previous request",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) resolving a pending loader after unmount does not leak work or errors",
+          "status": "passed"
+        }
+      ],
+      "favoriteReferenceAssertions": [
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "jest2",
+      "source": "migration/evidence/RN07/c-freeze/jest2.json",
+      "suites": 7,
+      "tests": 99,
+      "passed": 99,
+      "perSuite": [
+        {
+          "path": "react-native/__tests__/filter-screen.test.tsx",
+          "tests": 12,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/session-detail-screen.test.tsx",
+          "tests": 15,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/schedule-swipe.test.tsx",
+          "tests": 17,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/schedule-screen.test.tsx",
+          "tests": 15,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/root-layout.test.tsx",
+          "tests": 1,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/shell-screen.test.tsx",
+          "tests": 4,
+          "status": "passed"
+        },
+        {
+          "path": "react-native/__tests__/conference-state.test.ts",
+          "tests": 35,
+          "status": "passed"
+        }
+      ],
+      "referenceCases": [
+        {
+          "id": "default-all",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: default-all",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "no-tracks",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: no-tracks",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "single-track",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: single-track",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-case-insensitive",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-case-insensitive",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-no-match",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-no-match",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "search-plus-track",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-plus-track",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-empty",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-empty",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-some",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-some",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "favorites-order",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-order",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "add-duplicate",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "remove-absent",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+              "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+              "status": "passed"
+            }
+          ]
+        }
+      ],
+      "regressions": [
+        {
+          "id": "F-1",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-2",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-3",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+              "name": "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height",
+              "status": "passed"
+            }
+          ]
+        },
+        {
+          "id": "F-4",
+          "assertions": [
+            {
+              "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/root-layout.test.tsx",
+              "name": "F-4 follows dark and light schemes for native headers, content and the automatic status bar",
+              "status": "passed"
+            }
+          ]
+        }
+      ],
+      "loaderAssertions": [
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) pending loader shows loading, controls disabled; resolution shows the ready schedule",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a synchronously throwing loader shows the error UI and retry recovers",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a rejected loader promise shows the error UI and retry recovers",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) a stale first completion never overwrites a later retry result",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) replaying the load effect supersedes the previous request",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/schedule-screen.test.tsx",
+          "name": "ScheduleScreen lifecycle (provider-driven) resolving a pending loader after unmount does not leak work or errors",
+          "status": "passed"
+        }
+      ],
+      "favoriteReferenceAssertions": [
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+          "status": "passed"
+        },
+        {
+          "suite": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/react-native/__tests__/conference-state.test.ts",
+          "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "core": {
+    "source": "migration/evidence/RN07/c-freeze/core-tests.stdout.log",
+    "counts": {
+      "tests": 53,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "synthetic": [
+      {
+        "line": 13,
+        "text": "✔ all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected (1.862ms)"
+      },
+      {
+        "line": 14,
+        "text": "✔ all-tracks rule holds in favorites mode too (0.1093ms)"
+      }
+    ],
+    "label": "Synthetic shared-core multi-track tests, NOT fixture/device data"
+  },
+  "integrationBefore": "migration/evidence/RN07/c-freeze/integration-before-core.receipt.json",
+  "integrationAfter": "migration/evidence/RN07/c-freeze/integration-after-core.receipt.json"
+}

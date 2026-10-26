@@ -1,0 +1,11 @@
+# RN07 coordinator adjudication of audit findings A11Y-002 and A11Y-009
+
+Coordinator: Claude Code (claude-opus-5-5), 2026-10-26T06:28:35.5207295Z. Supporting evidence, not Hermes and not approval. Candidate 2 (working tree unchanged since f-fixes1/candidate2.json), default settings, TalkBack off, schedule screen (All sessions, empty search) left by G2c teardown.
+
+The offline audit (a11y-audit/) graded G03.roles (A11Y-002) and G03.hidden-swipe-actions (A11Y-009) FAIL because the hidden swipe-action panels appear in the UI XML as clickable, focusable nodes. Those XML files come from a plain `uiautomator dump`, which lists every view, including views that are not important for accessibility, and its XML has no attribute showing that flag. The panel is rendered with `accessibilityElementsHidden` and `importantForAccessibility="no-hide-descendants"` (schedule-screen.tsx, renderRightActions), so TalkBack never reaches it.
+
+Read-only commands run by the coordinator (no input, no settings change):
+- `adb exec-out uiautomator dump /dev/tty` → schedule-full.xml (sha256 0556a5d1305aca4c992599bf941ce0b7a043b3dab59fff318104ebe3611d8423): 99 nodes; swipe panels present as `content-desc="Favorite"` clickable/focusable at x 786–1038 (4 nodes).
+- `adb exec-out uiautomator dump --compressed /dev/tty` → schedule-compressed.xml (sha256 49292808d9a3aa04dea59d07c7f1e4ec7b591cb9bbc674266a5806aade6290d3): 45 nodes (accessibility-relevant only); swipe panels absent (0 nodes); each row keeps its labeled button `content-desc="Favorite <session name>"` (4 incl. "Favorite sessions").
+
+Adjudication: A11Y-009 is a dump artifact; closed (and open) swipe panels are not exposed to accessibility services. A11Y-002 follows from it: the panel buttons are not in the accessibility tree, so their missing role is not announced; the accessible path is the visible row button with role button and a session-specific label. G03.roles and G03.hidden-swipe-actions are re-graded PASS (tree), and G03 overall is LIMITED (tree audit, no TalkBack traversal) per D10. The executor's audit files are unchanged history.

@@ -1,0 +1,378 @@
+[
+  {
+    "case": "G03",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Enable TalkBack",
+      "Execute prescribed D8 sequence",
+      "Foreground existing app",
+      "Attempt search/modes/Filter focus and right/left traversal"
+    ],
+    "expected": "Understandable labels/roles/states, usable focus order and required controls.",
+    "observed": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/focus-order.json",
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/notification-permission.json",
+      "migration/evidence/RN07/g-settings2c/G03-search-focus.png",
+      "migration/evidence/RN07/g-settings2c/G03-search-focus.xml",
+      "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.search",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Single tap Search sessions",
+      "Right swipe next"
+    ],
+    "expected": "EditText label and proper accessibility focus traversal.",
+    "observed": "Tree text/content-desc Search sessions, EditText clickable/focusable=true. Single tap opened full keyboard, focused=true. No machine-detected green rectangle; this is input focus, not evidence of accessibility focus.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/G03-search-focus.png",
+      "migration/evidence/RN07/g-settings2c/G03-search-focus.xml",
+      "migration/evidence/RN07/g-settings2c/G03-next-from-search.png",
+      "migration/evidence/RN07/g-settings2c/G03-next-from-search.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.modes",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Single tap Favorite sessions",
+      "Double at same point, sleep120ms",
+      "Single tap All sessions"
+    ],
+    "expected": "Named buttons with selected mode exposed and usable focus/activation.",
+    "observed": "XML Button labels present, selected switches Favorites then All. Single tap already changed mode, so no valid focus-only/double-activation claim.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G03-favorites-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G03-favorites-double-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G03-all-focus-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.filter-controls",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Single tap Filter sessions",
+      "Attempt right/left focus traversal"
+    ],
+    "expected": "Filter, Navigate up, Done, Reset, Deselect All, Select All labeled and reachable in focus order.",
+    "observed": "XML exposes Filter sessions Button; modal Navigate up ImageButton and named four buttons, clickable/focusable=true. Modal opened on single tap. Focus order/activation unverified.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.filter-checkboxes",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Attempt right/left navigation over Design checkbox at y800"
+    ],
+    "expected": "Named CheckBox checked state changes via valid TalkBack activation.",
+    "observed": "All ten XML checkboxes named/checkable=true/checked=true initially. Right swipe changed Design to false, reverse changed it true, without established green accessibility focus; no proper TalkBack state-announcement claim.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.row-context-and-detail-entry",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Explore row context distinguishing University of Ionic4 and enter detail using TalkBack.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.row-favorite",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Focus/activate Favorite University of Ionic with TalkBack.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.detail-star",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Explore detail4 star/Add to favorites; toggle and observe accessible state.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.filter-bulk-and-done",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Focus/activate Reset, Deselect All, Select All and Done using TalkBack.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.revealed-swipe-action",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Reveal and explore row action if reachable; check hidden-action accessibility hiding.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.alert-buttons",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Explore Favorite Added OK and duplicate/removal Cancel/Remove.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G03.duplicates-and-traps",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Establish actual focus order and determine duplicate stops, traps and unlabeled required controls.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Open Filter attempt",
+      "Attempt next/previous focus navigation"
+    ],
+    "expected": "Active-surface containment and sensible return after Navigate up/Done/alert/detail dismissal.",
+    "observed": "Filter opened but no valid TalkBack focus established. All focus containment/return criteria unverified; no background-reachability conclusion.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/focus-order.json",
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.filter-containment",
+    "status": "BLOCKED",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [
+      "Single tap Filter sessions",
+      "Right and left swipe traversal attempts"
+    ],
+    "expected": "Focus stays within filter; background controls not actionable through accessibility traversal.",
+    "observed": "Modal XML contains no schedule search/modes/rows, but absence from dump is not native focus-containment proof. Swipes changed Design checkbox instead of establishing focus order. No background-control activation test valid.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-focus-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-next-attempt.xml",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.png",
+      "migration/evidence/RN07/g-settings2c/G04-filter-previous-attempt.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.filter-close-return",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Dismiss with Navigate up while TalkBack on and identify landing focus.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.filter-done-return",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Dismiss with Done while TalkBack on and identify landing focus.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.alert-containment-and-ok",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Open Favorite Added, test containment/background reachability, dismiss OK and identify landing focus.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.alert-cancel-remove",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Open duplicate/removal alert; test Cancel and Remove and landing focus.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  },
+  {
+    "case": "G04.detail-back-return",
+    "status": "NOT RUN",
+    "run": "g-settings2c",
+    "candidate": "2",
+    "preconditions": "Fresh connected candidate2 process before TalkBack; defaults recorded; TalkBack service enabled under D2. D8 denial attempted, existing app foregrounded same PID.",
+    "steps": [],
+    "expected": "Return from detail4 via Navigate up and identify landing focus.",
+    "observed": "Not attempted because valid accessibility-focus interaction prerequisite was blocked.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings2c/input-probe-analysis.json",
+      "migration/evidence/RN07/g-settings2c/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "LIMITED/BLOCKED input path: TalkBack is bound with touchExplorationEnabled=true, but prescribed ADB single taps activate controls and swipes toggle checkboxes rather than establishing green accessibility-focus traversal. No product FAIL inferred.",
+    "teardown": "TalkBack services restored to null (settings delete), accessibility_enabled0; nine raw settings equal entry. Notification denial persists under D8; excluded from comparison. Filter closed with Navigate up only after restoration; not G04 evidence."
+  }
+]
