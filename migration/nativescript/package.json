@@ -7,9 +7,11 @@
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
     "android": "npx --yes nativescript@9.1.2 run android --no-hmr",
-    "build:android": "npx --yes nativescript@9.1.2 build android"
+    "build:android": "npx --yes nativescript@9.1.2 build android",
+    "verify:core": "node scripts/verify-core-integration.cjs"
   },
   "dependencies": {
+    "@migration/core": "file:../core",
     "@nativescript/core": "~9.1.1",
     "nativescript-vue": "3.1.2"
   },

@@ -1,0 +1,100 @@
+{
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "21-core-test-gate",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json"
+      ]
+    },
+    {
+      "id": "22-target-ci",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/22-target-ci.receipt.json"
+      ]
+    },
+    {
+      "id": "23-verify-core",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/23-verify-core.receipt.json"
+      ]
+    },
+    {
+      "id": "24-target-typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json"
+      ]
+    },
+    {
+      "id": "25-target-tests-first",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json"
+      ]
+    },
+    {
+      "id": "26-target-tests-second",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json"
+      ]
+    },
+    {
+      "id": "27-build-android",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": [
+        "migration/evidence/NS02/a-gates/27-build-android.receipt.json"
+      ]
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "initial": 53,
+      "gate": 53,
+      "expected": 53,
+      "changed": false
+    },
+    "25-target-tests-first": {
+      "filesPassed": 2,
+      "filesTotal": 2,
+      "testsPassed": 4,
+      "testsTotal": 4
+    },
+    "26-target-tests-second": {
+      "filesPassed": 2,
+      "filesTotal": 2,
+      "testsPassed": 4,
+      "testsTotal": 4
+    }
+  },
+  "lockfileCi": {
+    "before": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5",
+    "after": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5",
+    "unchanged": true
+  },
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117584840,
+    "sha256": "b86e65ac73aa0cda512952234a2aaea01dbcd8621dbcf2655e183222348563db"
+  },
+  "bundle": {
+    "defaultWebpack": true,
+    "buildSucceeded": true,
+    "listing": "migration/evidence/NS02/a-gates/bundle-listing.txt",
+    "coreModuleListed": true,
+    "jsonModuleListed": false,
+    "claim": "Successful Android webpack bundle consumed the application import chain to the linked compiled public core and bundled JSON; no device execution."
+  },
+  "stoppedAt": null
+}

@@ -1,0 +1,38 @@
+--------- beginning of main
+10-26 15:48:19.048  5616  5616 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-26 15:48:19.088  5616  5616 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-26 15:48:19.089  5616  5616 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-26 15:48:19.089  5616  5616 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-26 15:48:19.129  5616  5616 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-26 15:48:19.500  5616  5616 D nativeloader: Configuring clns-9 for other apk /data/app/~~Av7bUaubH-lbgG8ZbCk_sg==/dev.translationtest.ns-nmf5949O1VSvs1M1masnow==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Av7bUaubH-lbgG8ZbCk_sg==/dev.translationtest.ns-nmf5949O1VSvs1M1masnow==/lib/x86_64:/data/app/~~Av7bUaubH-lbgG8ZbCk_sg==/dev.translationtest.ns-nmf5949O1VSvs1M1masnow==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-26 15:48:19.526  5616  5616 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-26 15:48:19.609  5616  5616 V GraphicsEnvironment: Currently set values for:
+10-26 15:48:19.609  5616  5616 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-26 15:48:19.609  5616  5616 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-26 15:48:19.609  5616  5616 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-26 15:48:19.612  5616  5616 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-26 15:48:19.614  5616  5616 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-26 15:48:19.614  5616  5616 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-26 15:48:19.944  5616  5616 D nativeloader: Load /data/app/~~Av7bUaubH-lbgG8ZbCk_sg==/dev.translationtest.ns-nmf5949O1VSvs1M1masnow==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~Av7bUaubH-lbgG8ZbCk_sg==/dev.translationtest.ns-nmf5949O1VSvs1M1masnow==/base.apk!classes5.dex): ok
+10-26 15:48:19.944  5616  5616 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-26 15:48:20.246  5616  5616 D TNS.Runtime: V8 version 14.9.207.39
+10-26 15:48:20.961  5616  5616 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-26 15:48:21.178  5616  5616 I Choreographer: Skipped 84 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-26 15:48:21.184  5616  5652 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-26 15:48:21.192  5616  5616 I nslationtest.ns: AssetManager2(0x738ba9013138) locale list changing from [] to [en-US]
+10-26 15:48:21.353  5616  5652 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-26 15:48:21.356  5616  5652 I EGL_emulation: Opening libGLESv2_emulation.so
+10-26 15:48:21.362  5616  5652 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-26 15:48:21.374  5616  5616 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-26 15:48:21.375  5616  5616 I nslationtest.ns: AssetManager2(0x738ba900d378) locale list changing from [] to [en-US]
+10-26 15:48:21.385  5616  5616 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-26 15:48:21.473  5616  5616 W HWUI    : Image decoding logging dropped!
+10-26 15:48:21.476  5616  5616 W HWUI    : Image decoding logging dropped!
+10-26 15:48:21.547  5616  5616 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-26 15:48:21.548  5616  5616 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-26 15:48:21.643  5616  5616 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-26 15:48:22.002  5616  5616 W HWUI    : Unknown dataspace 0
+10-26 15:48:22.374  5616  5616 D InsetsController: hide(ime(), fromIme=false)
+10-26 15:48:22.375  5616  5616 I ImeTracker: dev.translationtest.ns:93411123: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-26 15:48:22.504  5616  5622 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()

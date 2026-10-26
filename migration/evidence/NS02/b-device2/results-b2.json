@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "package": "NS02",
+  "phase": "B",
+  "run": "sol-ns02-r1-b2-20261026",
+  "status": "PASS",
+  "checkpointStatus": "CHECKPOINTED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "head": "f2f51ea460d405f4d454f0f8a1a0080a913694d7",
+  "device": {"serial": "emulator-5554", "avd": "RN01_API36", "appId": "dev.translationtest.ns"},
+  "cases": [
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "detail": "Package service found; adb install -r reported Success; pm path returned one base.apk; installed SHA-256 exactly matches Phase A. Entry/final branch, full HEAD, empty index, merge-tree equality, APK size/hash and eight target hashes passed.",
+      "evidence": [
+        "migration/evidence/NS02/b-device2/entry-gate.json",
+        "migration/evidence/NS02/b-device2/install-package-service.stdout.log",
+        "migration/evidence/NS02/b-device2/B-install.receipt.json",
+        "migration/evidence/NS02/b-device2/B-install.stdout.log",
+        "migration/evidence/NS02/b-device2/installed-path.stdout.log",
+        "migration/evidence/NS02/b-device2/installed-sha256.stdout.log",
+        "migration/evidence/NS02/b-device2/install-verification.json",
+        "migration/evidence/NS02/b-device2/final-gate.json"
+      ]
+    },
+    {
+      "id": "B-launch",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "detail": "Cold launch PID 5495. Required strings, including U+2014, occur in XML with no detected error-dialog nodes. First dump returned null root; retry 2 contains the required text at 17505 ms including monkey (approximately 9256 ms after monkey). All XML polling after monkey took approximately 13676 ms, below 20000 ms. Final poll-3 XML is paired with PNG. The original helper mistakenly required separate text nodes for the two-line Label and counted monkey time as polling; original BLOCKED records are preserved and superseded only by the explicit evidence-based disposition. No additional launch was used.",
+      "evidence": [
+        "migration/evidence/NS02/b-device2/B-launch-disposition.json",
+        "migration/evidence/NS02/b-device2/B-launch-observation.json",
+        "migration/evidence/NS02/b-device2/B-launch-reassessment.json",
+        "migration/evidence/NS02/b-device2/B-launch-monkey.receipt.json",
+        "migration/evidence/NS02/b-device2/B-launch-dump-1.stderr.log",
+        "migration/evidence/NS02/b-device2/B-launch-poll-2.xml",
+        "migration/evidence/NS02/b-device2/B-launch-poll-3.xml",
+        "migration/evidence/NS02/b-device2/B-launch.xml",
+        "migration/evidence/NS02/b-device2/B-launch.png",
+        "migration/evidence/NS02/b-device2/B-launch-pid.stdout.log"
+      ]
+    },
+    {
+      "id": "B-relaunch",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "detail": "Second cold launch PID 5616. First dump returned null root; retry 2 contains Conference, Sessions: 20 and First session: 1 — Breakfast, with no detected error-dialog nodes. Polling including monkey took 7379 ms. PNG and XML paired. Final resumed activity and unchanged PID confirm the app was left in foreground.",
+      "evidence": [
+        "migration/evidence/NS02/b-device2/B-relaunch-observation.json",
+        "migration/evidence/NS02/b-device2/B-relaunch-dump-1.stderr.log",
+        "migration/evidence/NS02/b-device2/B-relaunch.xml",
+        "migration/evidence/NS02/b-device2/B-relaunch.png",
+        "migration/evidence/NS02/b-device2/B-relaunch-pid.stdout.log",
+        "migration/evidence/NS02/b-device2/foreground-verification.json"
+      ]
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "detail": "Both PID-scoped logcat -d -t 400 --pid captures exited 0. No fatal exception/signal/uncaught-exception pattern found. Each capture contains seven W/E lines, including CPU-variant/HWUI warnings and the ashmem deprecation error; full logs and extracted warning/error lines retained verbatim. Startup frame skips are also retained in full logs. PASS is bounded capture/no detected fatal pattern, not error-free or exhaustive logging.",
+      "evidence": [
+        "migration/evidence/NS02/b-device2/B-launch-logcat.receipt.json",
+        "migration/evidence/NS02/b-device2/B-launch-logcat.stdout.log",
+        "migration/evidence/NS02/b-device2/B-launch-logcat.stderr.log",
+        "migration/evidence/NS02/b-device2/B-launch-warnings-errors-verbatim.txt",
+        "migration/evidence/NS02/b-device2/B-relaunch-logcat.receipt.json",
+        "migration/evidence/NS02/b-device2/B-relaunch-logcat.stdout.log",
+        "migration/evidence/NS02/b-device2/B-relaunch-logcat.stderr.log",
+        "migration/evidence/NS02/b-device2/B-relaunch-warnings-errors-verbatim.txt"
+      ]
+    }
+  ],
+  "preservationEvidence": [
+    "migration/evidence/NS02/b-device2/environment-before.json",
+    "migration/evidence/NS02/b-device2/environment-after.json",
+    "migration/evidence/NS02/b-device2/environment-comparison.json",
+    "migration/evidence/NS02/b-device2/baseline-preservation.json",
+    "migration/evidence/NS02/b-device2/commands.jsonl"
+  ],
+  "limits": [
+    "Coordinator must inspect both PNGs, including privacy; no executor visual/pixel assertion.",
+    "Original first-launch helper BLOCKED records remain immutable; B-launch-disposition.json documents the text-node and timing correction. Coordinator should inspect this disposition.",
+    "No product/test/config changes, fixes, settings changes, Back/Home keys, taps, text input, input_method dumps, RN app changes, delegation, review dispatch, formal handoff/submission/freeze, staging, commit or push.",
+    "Stopped at Phase B checkpoint; Phase C and NS03 not performed."
+  ]
+}

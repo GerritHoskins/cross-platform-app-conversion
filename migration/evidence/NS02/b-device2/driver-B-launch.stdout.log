@@ -1,0 +1,12 @@
+B-launch-force-stop: exit 0, 169 ms
+B-launch-stopped-pid: exit 1, 75 ms
+B-launch-monkey: exit 0, 8249 ms
+B-launch-dump-1: exit 0, 3735 ms
+B-launch-dump-2: exit 0, 3414 ms
+B-launch-xml-2: exit 0, 69 ms
+B-launch-dump-3: exit 0, 2375 ms
+B-launch-xml-3: exit 0, 38 ms
+B-launch-png: exit 0, 299 ms
+B-launch-pid: exit 0, 44 ms
+B-launch-logcat: exit 0, 89 ms
+{"id": "B-launch", "status": "BLOCKED", "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator", "pollElapsedMsIncludingMonkey": 21925, "pollLimitMs": 20000, "maxDumpAttempts": 5, "retryWaitMs": 2000, "attempts": [{"attempt": 1, "dumpExit": 0, "elapsedMs": 12006}, {"attempt": 2, "dumpExit": 0, "assertions": {"expectedTexts": ["Conference", "Sessions: 20", "First session: 1 — Breakfast"], "exactTextsPresent": {"Conference": true, "Sessions: 20": false, "First session: 1 — Breakfast": false}, "appPackagePresent": true, "errorDialogNodes": [], "passed": false}, "elapsedMs": 17505}, {"attempt": 3, "dumpExit": 0, "assertions": {"expectedTexts": ["Conference", "Sessions: 20", "First session: 1 — Breakfast"], "exactTextsPresent": {"Conference": true, "Sessions: 20": false, "First session: 1 — Breakfast": false}, "appPackagePresent": true, "errorDialogNodes": [], "passed": false}, "elapsedMs": 21925}], "assertions": {"expectedTexts": ["Conference", "Sessions: 20", "First session: 1 — Breakfast"], "exactTextsPresent": {"Conference": true, "Sessions: 20": false, "First session: 1 — Breakfast": false}, "appPackagePresent": true, "errorDialogNodes": [], "passed": false}, "pid": "5495", "png": {"width": 1080, "height": 2400, "bytes": 44552, "sha256": "17d8eaefc60d5d07fb8538db212c1ad1b8300f568897baa992fb956f13f1fbcf", "crcValid": true, "decompressedBytes": 10370400}, "xml": null, "logcat": {"status": "PASS", "exitCode": 0, "fatalPatterns": [], "warningErrorLines": 7, "scope": "PID-scoped last 400 logcat lines only; warnings/errors retained verbatim; not an assertion of error-free logs"}}

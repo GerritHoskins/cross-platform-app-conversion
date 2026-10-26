@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "baseline": "HEAD:migration/nativescript/package-lock.json",
+  "delta": [
+    {
+      "path": [
+        "packages",
+        "",
+        "dependencies",
+        "@migration/core"
+      ],
+      "after": "file:../core"
+    },
+    {
+      "path": [
+        "packages",
+        "../core"
+      ],
+      "after": {
+        "name": "@migration/core",
+        "version": "0.1.0",
+        "devDependencies": {
+          "@types/node": "26.6.5",
+          "typescript": "5.9.3"
+        }
+      }
+    },
+    {
+      "path": [
+        "packages",
+        "node_modules/@migration/core"
+      ],
+      "after": {
+        "resolved": "../core",
+        "link": true
+      }
+    }
+  ],
+  "entryCount": 3,
+  "unexpected": [],
+  "sha256": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5"
+}

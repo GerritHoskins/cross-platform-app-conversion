@@ -1,0 +1,10 @@
+B-relaunch-force-stop: exit 0, 253 ms
+B-relaunch-stopped-pid: exit 1, 72 ms
+B-relaunch-monkey: exit 0, 724 ms
+B-relaunch-dump-1: exit 0, 2315 ms
+B-relaunch-dump-2: exit 0, 2279 ms
+B-relaunch-xml-2: exit 0, 41 ms
+B-relaunch-png: exit 0, 218 ms
+B-relaunch-pid: exit 0, 50 ms
+B-relaunch-logcat: exit 0, 60 ms
+{"id": "B-relaunch", "status": "PASS", "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator", "pollElapsedMsIncludingMonkey": 7379, "pollLimitMs": 20000, "maxDumpAttempts": 5, "retryWaitMs": 2000, "attempts": [{"attempt": 1, "dumpExit": 0, "elapsedMs": 3049}, {"attempt": 2, "dumpExit": 0, "assertions": {"expectedTexts": ["Conference", "Sessions: 20", "First session: 1 — Breakfast"], "expectedStringsPresent": {"Conference": true, "Sessions: 20": true, "First session: 1 — Breakfast": true}, "nonemptyNodeTexts": ["Conference", "Sessions: 20\nFirst session: 1 — Breakfast"], "appPackagePresent": true, "errorDialogNodes": [], "passed": true}, "elapsedMs": 7379}], "assertions": {"expectedTexts": ["Conference", "Sessions: 20", "First session: 1 — Breakfast"], "expectedStringsPresent": {"Conference": true, "Sessions: 20": true, "First session: 1 — Breakfast": true}, "nonemptyNodeTexts": ["Conference", "Sessions: 20\nFirst session: 1 — Breakfast"], "appPackagePresent": true, "errorDialogNodes": [], "passed": true}, "pid": "5616", "png": {"width": 1080, "height": 2400, "bytes": 44825, "sha256": "ca6b801a74342803b015fbb3851931e546aa61c3cab9771a755d2bab2f5760f5", "crcValid": true, "decompressedBytes": 10370400}, "xml": "migration/evidence/NS02/b-device2/B-relaunch.xml", "logcat": {"status": "PASS", "exitCode": 0, "fatalPatterns": [], "warningErrorLines": 7, "scope": "PID-scoped last 400 logcat lines only; warnings/errors retained verbatim; not an assertion of error-free logs"}}

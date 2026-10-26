@@ -1,0 +1,88 @@
+{
+  "id": "B-launch",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "pollElapsedMsIncludingMonkey": 21925,
+  "pollLimitMs": 20000,
+  "maxDumpAttempts": 5,
+  "retryWaitMs": 2000,
+  "attempts": [
+    {
+      "attempt": 1,
+      "dumpExit": 0,
+      "elapsedMs": 12006
+    },
+    {
+      "attempt": 2,
+      "dumpExit": 0,
+      "assertions": {
+        "expectedTexts": [
+          "Conference",
+          "Sessions: 20",
+          "First session: 1 — Breakfast"
+        ],
+        "exactTextsPresent": {
+          "Conference": true,
+          "Sessions: 20": false,
+          "First session: 1 — Breakfast": false
+        },
+        "appPackagePresent": true,
+        "errorDialogNodes": [],
+        "passed": false
+      },
+      "elapsedMs": 17505
+    },
+    {
+      "attempt": 3,
+      "dumpExit": 0,
+      "assertions": {
+        "expectedTexts": [
+          "Conference",
+          "Sessions: 20",
+          "First session: 1 — Breakfast"
+        ],
+        "exactTextsPresent": {
+          "Conference": true,
+          "Sessions: 20": false,
+          "First session: 1 — Breakfast": false
+        },
+        "appPackagePresent": true,
+        "errorDialogNodes": [],
+        "passed": false
+      },
+      "elapsedMs": 21925
+    }
+  ],
+  "assertions": {
+    "expectedTexts": [
+      "Conference",
+      "Sessions: 20",
+      "First session: 1 — Breakfast"
+    ],
+    "exactTextsPresent": {
+      "Conference": true,
+      "Sessions: 20": false,
+      "First session: 1 — Breakfast": false
+    },
+    "appPackagePresent": true,
+    "errorDialogNodes": [],
+    "passed": false
+  },
+  "pid": "5495",
+  "png": {
+    "width": 1080,
+    "height": 2400,
+    "bytes": 44552,
+    "sha256": "17d8eaefc60d5d07fb8538db212c1ad1b8300f568897baa992fb956f13f1fbcf",
+    "crcValid": true,
+    "decompressedBytes": 10370400
+  },
+  "xml": null,
+  "logcat": {
+    "status": "PASS",
+    "exitCode": 0,
+    "fatalPatterns": [],
+    "warningErrorLines": 7,
+    "scope": "PID-scoped last 400 logcat lines only; warnings/errors retained verbatim; not an assertion of error-free logs"
+  }
+}

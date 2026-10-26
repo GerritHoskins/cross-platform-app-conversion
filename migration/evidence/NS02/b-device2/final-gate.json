@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "branch": "migration/slice-1",
+  "head": "f2f51ea460d405f4d454f0f8a1a0080a913694d7",
+  "indexEmpty": true,
+  "mergeTree": "5135a889c931f7df485d164ff6df2b77655944b4",
+  "phaseATree": "5135a889c931f7df485d164ff6df2b77655944b4",
+  "treesEqual": true,
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117584840,
+    "sha256": "b86e65ac73aa0cda512952234a2aaea01dbcd8621dbcf2655e183222348563db"
+  },
+  "targetHashes": [
+    {
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "expectedSha256": "435957531a1ac1eeef237c94046bfa1247ed776f8c4266e35cc99fa7734c5987",
+      "actualSha256": "435957531a1ac1eeef237c94046bfa1247ed776f8c4266e35cc99fa7734c5987",
+      "source": "a-gates/preservation-final.json"
+    },
+    {
+      "path": "migration/nativescript/package-lock.json",
+      "expectedSha256": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5",
+      "actualSha256": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5",
+      "source": "a-gates/preservation-final.json"
+    },
+    {
+      "path": "migration/nativescript/package.json",
+      "expectedSha256": "fd41a187b57f170a321351db91bae55b36b3402823d47dc43b6382135683d53b",
+      "actualSha256": "fd41a187b57f170a321351db91bae55b36b3402823d47dc43b6382135683d53b",
+      "source": "a-gates/preservation-final.json"
+    },
+    {
+      "path": "migration/nativescript/src/shell/shell-content.ts",
+      "expectedSha256": "73ebff26c4dcdb1f8aa09d4315805bd72e962279131aa3b2efbce6e5fb1d7f12",
+      "actualSha256": "73ebff26c4dcdb1f8aa09d4315805bd72e962279131aa3b2efbce6e5fb1d7f12",
+      "source": "a-gates/preservation-final.json"
+    },
+    {
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "expectedSha256": "1e6edd78f49556b77e2522bf7eb80de0108e80f896d4ac485029567e962c9df1",
+      "actualSha256": "1e6edd78f49556b77e2522bf7eb80de0108e80f896d4ac485029567e962c9df1",
+      "source": "supervisor baseline.json (coordinator-authorized fallback: new Phase A file absent from final hash map)"
+    },
+    {
+      "path": "migration/nativescript/scripts/verify-core-integration.cjs",
+      "expectedSha256": "212c1a4df5a9636da370393538f3ebc93f26b95d532caffb50b7c70a5bd06e47",
+      "actualSha256": "212c1a4df5a9636da370393538f3ebc93f26b95d532caffb50b7c70a5bd06e47",
+      "source": "supervisor baseline.json (coordinator-authorized fallback: new Phase A file absent from final hash map)"
+    },
+    {
+      "path": "migration/nativescript/src/data/conference.json",
+      "expectedSha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "actualSha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "source": "supervisor baseline.json (coordinator-authorized fallback: new Phase A file absent from final hash map)"
+    },
+    {
+      "path": "migration/nativescript/src/data/load-conference.ts",
+      "expectedSha256": "ed3234b4496bab88e49bc13ebb53408273d8b783b543ee66b0a44fe8d23a96e5",
+      "actualSha256": "ed3234b4496bab88e49bc13ebb53408273d8b783b543ee66b0a44fe8d23a96e5",
+      "source": "supervisor baseline.json (coordinator-authorized fallback: new Phase A file absent from final hash map)"
+    }
+  ]
+}

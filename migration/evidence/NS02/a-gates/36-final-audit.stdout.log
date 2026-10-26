@@ -1,0 +1,97 @@
+29-final-head: exit 0 (37 ms)
+30-final-branch: exit 0 (26 ms)
+31-final-index: exit 0 (35 ms)
+32-diff-check: exit 0 (63 ms)
+33-protected-diff: exit 0 (35 ms)
+34-final-porcelain: exit 0 (63 ms)
+{
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "head": "52ae6deaee453e105217014983e3e011df757bb2",
+  "branch": "migration/slice-1",
+  "protectedCount": 261,
+  "ns01TrackedCount": 71,
+  "protectedChanges": [],
+  "ns01TrackedChanges": [
+    "migration/nativescript/__tests__/shell-content.test.ts",
+    "migration/nativescript/package-lock.json",
+    "migration/nativescript/package.json",
+    "migration/nativescript/src/shell/shell-content.ts"
+  ],
+  "unexpectedTargetChanges": [],
+  "ideaUnchanged": true,
+  "packageUnchanged": true,
+  "classes": [
+    {
+      "raw": " M migration/nativescript/__tests__/shell-content.test.ts",
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package-lock.json",
+      "path": "migration/nativescript/package-lock.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package.json",
+      "path": "migration/nativescript/package.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/src/shell/shell-content.ts",
+      "path": "migration/nativescript/src/shell/shell-content.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/__tests__/load-conference.test.ts",
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/scripts/verify-core-integration.cjs",
+      "path": "migration/nativescript/scripts/verify-core-integration.cjs",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/conference.json",
+      "path": "migration/nativescript/src/data/conference.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/load-conference.ts",
+      "path": "migration/nativescript/src/data/load-conference.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/work-packages/NS02.md",
+      "path": "migration/work-packages/NS02.md",
+      "category": "pre-existing coordinator-owned package"
+    }
+  ],
+  "whitespaceFailures": []
+}
+{
+  "defaultWebpack": true,
+  "buildSucceeded": true,
+  "listing": "migration/evidence/NS02/a-gates/bundle-listing.txt",
+  "coreModuleListed": true,
+  "jsonModuleListed": false,
+  "claim": "Successful Android webpack bundle consumed the application import chain to the linked compiled public core and bundled JSON; no device execution.",
+  "dataModulesListed": true,
+  "sourceMapEvidence": {
+    "path": "migration/nativescript/platforms/android/app/src/main/assets/app/bundle.mjs.map",
+    "exists": true,
+    "sources": [
+      "webpack://nativescript/../core/dist/favorites.js",
+      "webpack://nativescript/../core/dist/grouping.js",
+      "webpack://nativescript/../core/dist/index.js",
+      "webpack://nativescript/../core/dist/normalize.js",
+      "webpack://nativescript/../core/dist/selection.js",
+      "webpack://nativescript/../core/dist/time.js",
+      "webpack://nativescript/./src/data/load-conference.ts"
+    ]
+  },
+  "jsonModuleListedIndividually": false,
+  "note": "Default webpack listing groups src/data into 2 modules rather than naming conference.json individually. Successful static JSON import/build is recorded; no bundle content is dumped."
+}
+35-target-diff: exit 0 (48 ms)

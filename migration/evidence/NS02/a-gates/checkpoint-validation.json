@@ -1,0 +1,765 @@
+{
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "commandReceiptsChecked": 43,
+  "classes": [
+    {
+      "raw": " M migration/nativescript/__tests__/shell-content.test.ts",
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package-lock.json",
+      "path": "migration/nativescript/package-lock.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package.json",
+      "path": "migration/nativescript/package.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/src/shell/shell-content.ts",
+      "path": "migration/nativescript/src/shell/shell-content.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/01-branch.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/01-branch.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/01-branch.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/02-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/02-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/02-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/06-index.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/06-index.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/06-index.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/34-final-porcelain.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/34-final-porcelain.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/34-final-porcelain.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/34-final-porcelain.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/34-final-porcelain.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/34-final-porcelain.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/35-target-diff.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/35-target-diff.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/35-target-diff.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/35-target-diff.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/35-target-diff.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/35-target-diff.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/36-final-audit.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/36-final-audit.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/36-final-audit.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/36-final-audit.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/36-final-audit.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/36-final-audit.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/38-checkpoint-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/38-checkpoint-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/38-checkpoint-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/38-checkpoint-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/38-checkpoint-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/38-checkpoint-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/39-checkpoint-branch.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/39-checkpoint-branch.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/39-checkpoint-branch.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/39-checkpoint-branch.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/39-checkpoint-branch.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/39-checkpoint-branch.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/40-checkpoint-index.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/40-checkpoint-index.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/40-checkpoint-index.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/40-checkpoint-index.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/40-checkpoint-index.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/40-checkpoint-index.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/apk.json",
+      "path": "migration/evidence/NS02/a-gates/apk.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/bundle-listing.txt",
+      "path": "migration/evidence/NS02/a-gates/bundle-listing.txt",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/bundle-proof.json",
+      "path": "migration/evidence/NS02/a-gates/bundle-proof.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/commands.jsonl",
+      "path": "migration/evidence/NS02/a-gates/commands.jsonl",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/entry-gate.json",
+      "path": "migration/evidence/NS02/a-gates/entry-gate.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/fixture-copy.json",
+      "path": "migration/evidence/NS02/a-gates/fixture-copy.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/gate-progress.json",
+      "path": "migration/evidence/NS02/a-gates/gate-progress.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/lockfile-scope.json",
+      "path": "migration/evidence/NS02/a-gates/lockfile-scope.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/npm-ci-lockfile.json",
+      "path": "migration/evidence/NS02/a-gates/npm-ci-lockfile.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/preservation-entry.json",
+      "path": "migration/evidence/NS02/a-gates/preservation-entry.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/preservation-final.json",
+      "path": "migration/evidence/NS02/a-gates/preservation-final.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/results-a.json",
+      "path": "migration/evidence/NS02/a-gates/results-a.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/handoffs/NS02-checkpoint-a.md",
+      "path": "migration/handoffs/NS02-checkpoint-a.md",
+      "category": "Phase A checkpoint"
+    },
+    {
+      "raw": "?? migration/nativescript/__tests__/load-conference.test.ts",
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/scripts/verify-core-integration.cjs",
+      "path": "migration/nativescript/scripts/verify-core-integration.cjs",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/conference.json",
+      "path": "migration/nativescript/src/data/conference.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/load-conference.ts",
+      "path": "migration/nativescript/src/data/load-conference.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/work-packages/NS02.md",
+      "path": "migration/work-packages/NS02.md",
+      "category": "pre-existing coordinator-owned package (unchanged)"
+    }
+  ],
+  "rawPorcelain": " M migration/nativescript/__tests__/shell-content.test.ts\n M migration/nativescript/package-lock.json\n M migration/nativescript/package.json\n M migration/nativescript/src/shell/shell-content.ts\n?? migration/evidence/NS02/a-gates/01-branch.receipt.json\n?? migration/evidence/NS02/a-gates/01-branch.stderr.log\n?? migration/evidence/NS02/a-gates/01-branch.stdout.log\n?? migration/evidence/NS02/a-gates/02-head.receipt.json\n?? migration/evidence/NS02/a-gates/02-head.stderr.log\n?? migration/evidence/NS02/a-gates/02-head.stdout.log\n?? migration/evidence/NS02/a-gates/03-expected-head.receipt.json\n?? migration/evidence/NS02/a-gates/03-expected-head.stderr.log\n?? migration/evidence/NS02/a-gates/03-expected-head.stdout.log\n?? migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json\n?? migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log\n?? migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log\n?? migration/evidence/NS02/a-gates/05-ancestor.receipt.json\n?? migration/evidence/NS02/a-gates/05-ancestor.stderr.log\n?? migration/evidence/NS02/a-gates/05-ancestor.stdout.log\n?? migration/evidence/NS02/a-gates/06-index.receipt.json\n?? migration/evidence/NS02/a-gates/06-index.stderr.log\n?? migration/evidence/NS02/a-gates/06-index.stdout.log\n?? migration/evidence/NS02/a-gates/07-status-entry.receipt.json\n?? migration/evidence/NS02/a-gates/07-status-entry.stderr.log\n?? migration/evidence/NS02/a-gates/07-status-entry.stdout.log\n?? migration/evidence/NS02/a-gates/08-hooks.receipt.json\n?? migration/evidence/NS02/a-gates/08-hooks.stderr.log\n?? migration/evidence/NS02/a-gates/08-hooks.stdout.log\n?? migration/evidence/NS02/a-gates/09-node-version.receipt.json\n?? migration/evidence/NS02/a-gates/09-node-version.stderr.log\n?? migration/evidence/NS02/a-gates/09-node-version.stdout.log\n?? migration/evidence/NS02/a-gates/10-npm-version.receipt.json\n?? migration/evidence/NS02/a-gates/10-npm-version.stderr.log\n?? migration/evidence/NS02/a-gates/10-npm-version.stdout.log\n?? migration/evidence/NS02/a-gates/11-java-version.receipt.json\n?? migration/evidence/NS02/a-gates/11-java-version.stderr.log\n?? migration/evidence/NS02/a-gates/11-java-version.stdout.log\n?? migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json\n?? migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log\n?? migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log\n?? migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json\n?? migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log\n?? migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log\n?? migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json\n?? migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log\n?? migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log\n?? migration/evidence/NS02/a-gates/16-core-status.receipt.json\n?? migration/evidence/NS02/a-gates/16-core-status.stderr.log\n?? migration/evidence/NS02/a-gates/16-core-status.stdout.log\n?? migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json\n?? migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log\n?? migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log\n?? migration/evidence/NS02/a-gates/17-target-install.receipt.json\n?? migration/evidence/NS02/a-gates/17-target-install.stderr.log\n?? migration/evidence/NS02/a-gates/17-target-install.stdout.log\n?? migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json\n?? migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log\n?? migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log\n?? migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json\n?? migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log\n?? migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log\n?? migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json\n?? migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log\n?? migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log\n?? migration/evidence/NS02/a-gates/22-target-ci.receipt.json\n?? migration/evidence/NS02/a-gates/22-target-ci.stderr.log\n?? migration/evidence/NS02/a-gates/22-target-ci.stdout.log\n?? migration/evidence/NS02/a-gates/23-verify-core.receipt.json\n?? migration/evidence/NS02/a-gates/23-verify-core.stderr.log\n?? migration/evidence/NS02/a-gates/23-verify-core.stdout.log\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log\n?? migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json\n?? migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log\n?? migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log\n?? migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json\n?? migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log\n?? migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log\n?? migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json\n?? migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log\n?? migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log\n?? migration/evidence/NS02/a-gates/27-build-android.receipt.json\n?? migration/evidence/NS02/a-gates/27-build-android.stderr.log\n?? migration/evidence/NS02/a-gates/27-build-android.stdout.log\n?? migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json\n?? migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log\n?? migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log\n?? migration/evidence/NS02/a-gates/29-final-head.receipt.json\n?? migration/evidence/NS02/a-gates/29-final-head.stderr.log\n?? migration/evidence/NS02/a-gates/29-final-head.stdout.log\n?? migration/evidence/NS02/a-gates/30-final-branch.receipt.json\n?? migration/evidence/NS02/a-gates/30-final-branch.stderr.log\n?? migration/evidence/NS02/a-gates/30-final-branch.stdout.log\n?? migration/evidence/NS02/a-gates/31-final-index.receipt.json\n?? migration/evidence/NS02/a-gates/31-final-index.stderr.log\n?? migration/evidence/NS02/a-gates/31-final-index.stdout.log\n?? migration/evidence/NS02/a-gates/32-diff-check.receipt.json\n?? migration/evidence/NS02/a-gates/32-diff-check.stderr.log\n?? migration/evidence/NS02/a-gates/32-diff-check.stdout.log\n?? migration/evidence/NS02/a-gates/33-protected-diff.receipt.json\n?? migration/evidence/NS02/a-gates/33-protected-diff.stderr.log\n?? migration/evidence/NS02/a-gates/33-protected-diff.stdout.log\n?? migration/evidence/NS02/a-gates/34-final-porcelain.receipt.json\n?? migration/evidence/NS02/a-gates/34-final-porcelain.stderr.log\n?? migration/evidence/NS02/a-gates/34-final-porcelain.stdout.log\n?? migration/evidence/NS02/a-gates/35-target-diff.receipt.json\n?? migration/evidence/NS02/a-gates/35-target-diff.stderr.log\n?? migration/evidence/NS02/a-gates/35-target-diff.stdout.log\n?? migration/evidence/NS02/a-gates/36-final-audit.receipt.json\n?? migration/evidence/NS02/a-gates/36-final-audit.stderr.log\n?? migration/evidence/NS02/a-gates/36-final-audit.stdout.log\n?? migration/evidence/NS02/a-gates/38-checkpoint-head.receipt.json\n?? migration/evidence/NS02/a-gates/38-checkpoint-head.stderr.log\n?? migration/evidence/NS02/a-gates/38-checkpoint-head.stdout.log\n?? migration/evidence/NS02/a-gates/39-checkpoint-branch.receipt.json\n?? migration/evidence/NS02/a-gates/39-checkpoint-branch.stderr.log\n?? migration/evidence/NS02/a-gates/39-checkpoint-branch.stdout.log\n?? migration/evidence/NS02/a-gates/40-checkpoint-index.receipt.json\n?? migration/evidence/NS02/a-gates/40-checkpoint-index.stderr.log\n?? migration/evidence/NS02/a-gates/40-checkpoint-index.stdout.log\n?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.receipt.json\n?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stderr.log\n?? migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stdout.log\n?? migration/evidence/NS02/a-gates/apk.json\n?? migration/evidence/NS02/a-gates/bundle-listing.txt\n?? migration/evidence/NS02/a-gates/bundle-proof.json\n?? migration/evidence/NS02/a-gates/commands.jsonl\n?? migration/evidence/NS02/a-gates/entry-gate.json\n?? migration/evidence/NS02/a-gates/fixture-copy.json\n?? migration/evidence/NS02/a-gates/gate-progress.json\n?? migration/evidence/NS02/a-gates/lockfile-scope.json\n?? migration/evidence/NS02/a-gates/npm-ci-lockfile.json\n?? migration/evidence/NS02/a-gates/preservation-entry.json\n?? migration/evidence/NS02/a-gates/preservation-final.json\n?? migration/evidence/NS02/a-gates/results-a.json\n?? migration/handoffs/NS02-checkpoint-a.md\n?? migration/nativescript/__tests__/load-conference.test.ts\n?? migration/nativescript/scripts/verify-core-integration.cjs\n?? migration/nativescript/src/data/conference.json\n?? migration/nativescript/src/data/load-conference.ts\n?? migration/work-packages/NS02.md\n",
+  "targetFiles": [
+    "migration/nativescript/__tests__/shell-content.test.ts",
+    "migration/nativescript/package-lock.json",
+    "migration/nativescript/package.json",
+    "migration/nativescript/src/shell/shell-content.ts",
+    "migration/nativescript/__tests__/load-conference.test.ts",
+    "migration/nativescript/scripts/verify-core-integration.cjs",
+    "migration/nativescript/src/data/conference.json",
+    "migration/nativescript/src/data/load-conference.ts"
+  ],
+  "protectedCount": 261,
+  "ns01TrackedCount": 71,
+  "apkRehashed": true,
+  "indexEmpty": true,
+  "packageUnchanged": true,
+  "ideaHashUnchanged": true,
+  "sourceMapAndBundleContentsNotDumped": true
+}

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "prefreeze-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.468Z",
+    "finishedAt": "2026-10-26T15:58:19.502Z",
+    "durationMs": 34,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-branch.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-branch.receipt.json"
+  },
+  {
+    "id": "prefreeze-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.502Z",
+    "finishedAt": "2026-10-26T15:58:19.524Z",
+    "durationMs": 22,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-head.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-head.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-head.receipt.json"
+  },
+  {
+    "id": "prefreeze-merge-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "f2f51ea^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.525Z",
+    "finishedAt": "2026-10-26T15:58:19.556Z",
+    "durationMs": 31,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-merge-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-merge-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-merge-tree.receipt.json"
+  },
+  {
+    "id": "prefreeze-phase-a-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "52ae6de^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.556Z",
+    "finishedAt": "2026-10-26T15:58:19.583Z",
+    "durationMs": 27,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-phase-a-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-phase-a-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-phase-a-tree.receipt.json"
+  },
+  {
+    "id": "prefreeze-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.584Z",
+    "finishedAt": "2026-10-26T15:58:19.613Z",
+    "durationMs": 29,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-index.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-index.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-index.receipt.json"
+  },
+  {
+    "id": "prefreeze-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.613Z",
+    "finishedAt": "2026-10-26T15:58:19.658Z",
+    "durationMs": 45,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-status.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-status.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-status.receipt.json"
+  },
+  {
+    "id": "prefreeze-target-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--name-only",
+      "HEAD",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.762Z",
+    "finishedAt": "2026-10-26T15:58:19.796Z",
+    "durationMs": 34,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-target-diff.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-target-diff.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-target-diff.receipt.json"
+  },
+  {
+    "id": "prefreeze-target-new",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:58:19.796Z",
+    "finishedAt": "2026-10-26T15:58:19.823Z",
+    "durationMs": 27,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/prefreeze-target-new.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/prefreeze-target-new.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/prefreeze-target-new.receipt.json"
+  }
+]
