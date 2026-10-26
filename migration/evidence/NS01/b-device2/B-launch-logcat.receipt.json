@@ -1,0 +1,26 @@
+{
+  "id": "B-launch-logcat",
+  "command": [
+    "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "-s",
+    "emulator-5554",
+    "logcat",
+    "-d",
+    "-t",
+    "400",
+    "--pid=4161"
+  ],
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "startedAt": "2026-10-26T12:46:16.934Z",
+  "endedAt": "2026-10-26T12:46:17.055Z",
+  "durationMs": 121,
+  "timeoutMs": 30000,
+  "timedOut": false,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "migration/evidence/NS01/b-device2/B-launch-logcat.stdout.log",
+  "stderr": "migration/evidence/NS01/b-device2/B-launch-logcat.stderr.log",
+  "stdoutBytes": 5918,
+  "stderrBytes": 0
+}

@@ -1,0 +1,13 @@
+{
+  "command": "terminal",
+  "args": [
+    "test ! -e migration/evidence/NS01/a-gates2 && test ! -e migration/handoffs/NS01-checkpoint-a2.md && test ! -e tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026; printf 'fresh_paths_exit=%s\\n' \"$?\"; \"C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe\" --version"
+  ],
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+  "stdout": "00b-tool-bootstrap.stdout.log",
+  "stderr": "00b-tool-bootstrap.stderr.log"
+}

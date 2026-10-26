@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "phase": "B",
+  "run": "sol-ns01-r1-b2-20261026",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "captures": [
+    {
+      "id": "B-launch",
+      "png": "migration/evidence/NS01/b-device2/B-launch.png",
+      "pngSha256": "e3e7cbcf99db94150a14eb5e7462fbe29e40a8bf46818d4e60b0d50832766377",
+      "pngBytes": 37973,
+      "width": 1080,
+      "height": 2400,
+      "xml": null,
+      "xmlSha256": null,
+      "xmlCaptureStatus": "BLOCKED",
+      "role": "assertion frame",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "pixelInspection": "pending coordinator",
+      "privacyInspection": "pending coordinator",
+      "note": "No XML returned. Raw dump receipts retained; no XML fabricated or borrowed from second launch."
+    },
+    {
+      "id": "B-launch-diagnostic",
+      "png": "migration/evidence/NS01/b-device2/B-launch-diagnostic.png",
+      "pngSha256": "605db90cecb227d2c4e1c067120f2356603216ff0e287e7a156dc22379779ac0",
+      "pngBytes": 37631,
+      "width": 1080,
+      "height": 2400,
+      "xml": null,
+      "xmlSha256": null,
+      "xmlCaptureStatus": "BLOCKED",
+      "role": "late diagnostic; no acceptance assertion",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "pixelInspection": "pending coordinator",
+      "privacyInspection": "pending coordinator",
+      "note": "No XML returned. Raw dump receipts retained; no XML fabricated or borrowed from second launch."
+    },
+    {
+      "id": "B-relaunch",
+      "png": "migration/evidence/NS01/b-device2/B-relaunch.png",
+      "pngSha256": "60e39477a14379af4f939ae1439f083bec9c8d42cf3041ce760f38864ff98d2c",
+      "pngBytes": 38004,
+      "width": 1080,
+      "height": 2400,
+      "xml": "migration/evidence/NS01/b-device2/B-relaunch.xml",
+      "xmlSha256": "2ab084a951a3178be649195f9d3d8dc50bfb023d39dde5db397a1792bcdd6339",
+      "xmlCaptureStatus": "PASS",
+      "role": "assertion frame",
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "pixelInspection": "pending coordinator",
+      "privacyInspection": "pending coordinator",
+      "note": "Forced remote PTY (-tt) returned XML; title/body present and no detected error dialog."
+    }
+  ],
+  "incompletePairs": [
+    "B-launch",
+    "B-launch-diagnostic"
+  ]
+}

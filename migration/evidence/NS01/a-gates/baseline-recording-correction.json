@@ -1,0 +1,27 @@
+{
+  "initialRawPorcelain": " M README.md\n?? migration/work-packages/NS01.md\n",
+  "initialGatePassed": true,
+  "note": "The first terminal command verified the exact baseline before any writes, and file discovery confirmed the target absent. Receipt helper incorrectly wrote its own evidence before repeating porcelain; 05 records only that self-induced instrumentation mismatch, not an incoming repository mismatch. 05b checks that all additional paths are the exact receipts this helper just created. No scaffold or install attempted before this correction.",
+  "selfCreatedPaths": [
+    "migration/evidence/NS01/a-gates/01-branch.receipt.json",
+    "migration/evidence/NS01/a-gates/01-branch.stderr.log",
+    "migration/evidence/NS01/a-gates/01-branch.stdout.log",
+    "migration/evidence/NS01/a-gates/02-head.receipt.json",
+    "migration/evidence/NS01/a-gates/02-head.stderr.log",
+    "migration/evidence/NS01/a-gates/02-head.stdout.log",
+    "migration/evidence/NS01/a-gates/03-ancestor.receipt.json",
+    "migration/evidence/NS01/a-gates/03-ancestor.stderr.log",
+    "migration/evidence/NS01/a-gates/03-ancestor.stdout.log",
+    "migration/evidence/NS01/a-gates/04-index.receipt.json",
+    "migration/evidence/NS01/a-gates/04-index.stderr.log",
+    "migration/evidence/NS01/a-gates/04-index.stdout.log",
+    "migration/evidence/NS01/a-gates/05-porcelain.receipt.json",
+    "migration/evidence/NS01/a-gates/05-porcelain.stderr.log",
+    "migration/evidence/NS01/a-gates/05-porcelain.stdout.log",
+    "migration/evidence/NS01/a-gates/05b-instrumentation-audit.receipt.json",
+    "migration/evidence/NS01/a-gates/05b-instrumentation-audit.stderr.log",
+    "migration/evidence/NS01/a-gates/05b-instrumentation-audit.stdout.log",
+    "migration/evidence/NS01/a-gates/baseline-gate.json",
+    "migration/evidence/NS01/a-gates/commands.jsonl"
+  ]
+}

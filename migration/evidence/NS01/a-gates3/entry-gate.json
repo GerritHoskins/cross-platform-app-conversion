@@ -1,0 +1,54 @@
+{
+  "pass": false,
+  "status": "BLOCKED",
+  "branch": "migration/slice-1",
+  "head": "0a4b39b193e9f92411020f14d8c4268ede3ef932",
+  "indexExitCode": 0,
+  "node": "v24.19.0",
+  "protectedPass": true,
+  "protectedFileCount": 261,
+  "targetFileCount": 71,
+  "targetVsA3BaselinePass": true,
+  "targetVsA2FinalListPass": false,
+  "a2FinalHashRecordFound": false,
+  "otherEntryGatesPass": false,
+  "reason": "Mandatory A2 final target-file SHA-256 record is unavailable: A2 final evidence and supervisor verification have target path lists but no target hashes. A3 supervisor baseline has target hashes but cannot establish equality to an absent A2 final hash record without coordinator authorization.",
+  "buildRun": false,
+  "checks": [
+    {
+      "id": "01-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/01-branch.receipt.json"
+    },
+    {
+      "id": "02-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/02-head.receipt.json"
+    },
+    {
+      "id": "03-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/03-index.receipt.json"
+    },
+    {
+      "id": "04-files",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/04-files.receipt.json"
+    },
+    {
+      "id": "05-target-files",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/05-target-files.receipt.json"
+    },
+    {
+      "id": "06-node-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/06-node-version.receipt.json"
+    },
+    {
+      "id": "07-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS01/a-gates3/07-status.receipt.json"
+    }
+  ]
+}

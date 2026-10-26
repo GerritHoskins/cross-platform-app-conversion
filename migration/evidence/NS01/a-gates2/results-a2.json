@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "phase": "A",
+  "attempt": "A2",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "versions": {
+    "node": "v24.19.0",
+    "npm": "11.16.0",
+    "java": "openjdk version \"21.0.7\" 2025-04-15 LTS\r\nOpenJDK Runtime Environment Temurin-21.0.7+6 (build 21.0.7+6-LTS)\r\nOpenJDK 64-Bit Server VM Temurin-21.0.7+6 (build 21.0.7+6-LTS, mixed mode, sharing)",
+    "cli": "9.1.2 (pinned npx command)",
+    "template": "3.1.2",
+    "@nativescript/android": "9.1.1",
+    "@nativescript/core": "9.1.3",
+    "@nativescript/tailwind": "4.0.10",
+    "@nativescript/types": "9.1.4",
+    "@nativescript/webpack": "5.0.39",
+    "@types/node": "26.5.1",
+    "nativescript-vue": "3.1.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5",
+    "vue-tsc": "3.3.13"
+  },
+  "cases": [
+    {
+      "id": "step-1-preflight",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/baseline-gate.json",
+        "migration/evidence/NS01/a-gates2/environment.json",
+        "migration/evidence/NS01/a-gates2/preservation-entry.json",
+        "migration/evidence/NS01/a-gates2/12-adb-devices.receipt.json"
+      ],
+      "summary": "Exact baseline gate passed; adb devices exit 0 in 26 ms, 30-second timeout applied; only read-only listing.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-2-scaffold",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/13-create-help.receipt.json",
+        "migration/evidence/NS01/a-gates2/template-before.json",
+        "migration/evidence/NS01/a-gates2/target-before.json",
+        "migration/evidence/NS01/a-gates2/target-after-create.json",
+        "migration/evidence/NS01/a-gates2/scaffold-layout-correction.json",
+        "migration/evidence/NS01/a-gates2/scaffold-outside-compare.json"
+      ],
+      "summary": "Pinned CLI/template; help-confirmed flags. CLI appended the app name to --path; generated entries moved up within the allowed target. Hook provenance and before/after lists recorded; no nested Git or outside writes.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-3-install",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/18-npm-install.receipt.json",
+        "migration/evidence/NS01/a-gates2/19-exact-dev-pins.receipt.json",
+        "migration/evidence/NS01/a-gates2/20-npm-ls.stdout.log",
+        "migration/evidence/NS01/a-gates2/install-policy.json",
+        "migration/evidence/NS01/a-gates2/22-ignored-output.receipt.json"
+      ],
+      "summary": "Template dependencies retained; D2/D3 exact dev pins plus Android runtime 9.1.1 exact. Build/dependency output ignored.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-4-shell",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/shell-and-scripts.json"
+      ],
+      "summary": "Static Frame > Page shell, required ActionBar and Label strings from pure TypeScript, Details removed. Theme readability is static design, not observed pixels.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-5-scripts",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/shell-and-scripts.json"
+      ],
+      "summary": "vue-tsc --noEmit; vitest run; pinned npx CLI run/build scripts. Android run script was not executed.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-6-static-gates",
+      "status": "FAIL",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/23-npm-ci.receipt.json",
+        "migration/evidence/NS01/a-gates2/lockfile-before-ci.json",
+        "migration/evidence/NS01/a-gates2/lockfile-after-ci.json",
+        "migration/evidence/NS01/a-gates2/24-typecheck.receipt.json",
+        "migration/evidence/NS01/a-gates2/25-test-first-counts.json",
+        "migration/evidence/NS01/a-gates2/26-test-second-counts.json",
+        "migration/evidence/NS01/a-gates2/27-build-android.receipt.json",
+        "migration/evidence/NS01/a-gates2/27-build-android.stderr.log"
+      ],
+      "summary": "ci and typecheck exit 0; both test runs exit 0 with 1 suite / 1 test; build exit 1 after webpack success. No APK; stopped without retry.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "step-7-integrity",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/preservation-exit.json",
+        "migration/evidence/NS01/a-gates2/final-audit.json",
+        "migration/evidence/NS01/a-gates2/91-final-index.receipt.json"
+      ],
+      "summary": "Protected paths including IDEA hash match; outside snapshot equal (including A1 history, README and NS01); index empty; class audit passed.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "receipt-completeness",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS01/a-gates2/receipt-limitations.json",
+        "migration/evidence/NS01/a-gates2/00a-tool-bootstrap.receipt.json",
+        "migration/evidence/NS01/a-gates2/00b-tool-bootstrap.receipt.json",
+        "migration/evidence/NS01/a-gates2/00c-tool-bootstrap.receipt.json"
+      ],
+      "summary": "Bootstrap terminal metadata unavailable; null timestamps/durations disclosed, not fabricated. All subsequent child receipts measured.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "phase-B",
+      "status": "NOT RUN",
+      "evidence": [],
+      "summary": "Separate authorized session required; no deployment or device interaction beyond required preflight adb devices.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "phase-C",
+      "status": "NOT RUN",
+      "evidence": [],
+      "summary": "No handoff/submission/freeze/review dispatch/staging/commit/push.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    }
+  ],
+  "testCounts": {
+    "first": {
+      "suites": 1,
+      "tests": 1,
+      "terminating": true
+    },
+    "second": {
+      "suites": 1,
+      "tests": 1,
+      "terminating": true
+    },
+    "same": true
+  },
+  "apk": null,
+  "unresolved": [
+    "Android native build failed: gradlew.bat was not found while building @nativescript/core; no APK exists. No fix or second attempt after the failed gate.",
+    "NativeScript-Vue warning: installed vue@3.5.43 differs from @vue/runtime-core@3.5.44; dependencies were not altered after the failing gate.",
+    "npm reports 6 vulnerabilities (5 moderate, 1 high), deprecated transitive packages, and pending install-script approvals. No audit fix or global change was performed.",
+    "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+    "Phase B launch, rendering, app logs and coordinator pixel inspection remain NOT RUN; phase C handoff/freeze/review remain NOT RUN and unauthorized in this session."
+  ]
+}

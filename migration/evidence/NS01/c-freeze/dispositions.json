@@ -1,0 +1,57 @@
+[
+  {
+    "id": "C1",
+    "summary": "Human-authorized adb server restart before A2 resolved the blocked A1 read-only inventory; no restart in phase C.",
+    "evidence": [
+      "migration/handoffs/NS01-checkpoint-a.md",
+      "migration/evidence/NS01/a-gates2/12-adb-devices.receipt.json"
+    ],
+    "authority": "Coordinator dispositions supplied in phase C assignment"
+  },
+  {
+    "id": "C2",
+    "summary": "Claude Code session variable NoDefaultCurrentDirectoryInExePath=1 broke gradlew.bat resolution in A2. A4 built with the variable removed process-locally and pinned Node first on PATH; no persistent environment or target edit.",
+    "evidence": [
+      "migration/evidence/NS01/a-gates2/27-build-android.receipt.json",
+      "migration/evidence/NS01/a-gates4/build-environment.json",
+      "migration/evidence/NS01/a-gates4/10-build-android.receipt.json"
+    ]
+  },
+  {
+    "id": "C3",
+    "summary": "A3 stopped at the coordinator's over-strict provenance gate because A2 lacked final target hashes. A4 used the A3 supervisor snapshot as expressly authorized; 71 target hashes match again in C.",
+    "evidence": [
+      "migration/handoffs/NS01-checkpoint-a3.md",
+      "migration/evidence/NS01/a-gates4/entry-gate.json",
+      "migration/evidence/NS01/c-freeze/after-static-gates.json"
+    ],
+    "comparisonSource": "tools/qwen-supervisor/.runs/sol-ns01-r1-a3-20261026/baseline.json"
+  },
+  {
+    "id": "C4",
+    "summary": "A4 automatically installed Android SDK Platform 36 revision 2 (build-reported license accepted) and downloaded Gradle 8.14.3 wrapper cache. Coordinator accepts these environment additions under NS01 step 8; no rebuild or SDK work in C.",
+    "evidence": [
+      "migration/evidence/NS01/a-gates4/build-side-effects.json",
+      "migration/evidence/NS01/a-gates4/10-build-android.stdout.log"
+    ]
+  },
+  {
+    "id": "C5",
+    "summary": "First phase B attempt was BLOCKED while emulator system_server was down and framework services were unavailable. Human authorized adb reboot before B2. This recovery is not a product fix; no device interaction in C.",
+    "evidence": [
+      "migration/evidence/NS01/b-device/results-b.json",
+      "migration/evidence/NS01/b-device2/gate-pass.json"
+    ],
+    "authority": "Coordinator dispositions supplied in phase C assignment"
+  },
+  {
+    "id": "C6",
+    "summary": "B2 first-launch XML proof is missing and its 20942 ms polling exceeded the 20000 ms observation window. Coordinator pixels show the required shell on both cold launches; the second has XML plus pixels. Final B-launch PASS (coordinator pixels); observed Android launch satisfied. No XML or timing proof is invented, and B2 history remains BLOCKED.",
+    "evidence": [
+      "migration/evidence/NS01/b-device2/results-b2.json",
+      "migration/evidence/NS01/b-device2/B-launch-assertions.json",
+      "migration/evidence/NS01/pixel-inspection-coordinator.md",
+      "migration/evidence/NS01/c-freeze/pixel-reconciliation.json"
+    ]
+  }
+]

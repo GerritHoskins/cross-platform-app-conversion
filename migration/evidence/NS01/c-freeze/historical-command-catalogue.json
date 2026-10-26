@@ -1,0 +1,4919 @@
+[
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/00-terminal-prelude.receipt.json",
+    "command": "git branch --show-current && git rev-parse HEAD && git merge-base --is-ancestor c02ae32 HEAD && git diff --cached --exit-code && git status --porcelain=v1 --untracked-files=all && git config --get core.hooksPath",
+    "args": [],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": null,
+    "durationMs": null,
+    "observer": "Hermes GPT-6.1 Sol high (software)",
+    "note": "Actual first terminal invocation before writes. Terminal tool did not expose start time or duration. Compound command was run by the terminal tool, not by a helper. No metadata fabricated.",
+    "stdout": "00-terminal-prelude.stdout.log",
+    "stderr": "00-terminal-prelude.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/00b-blocked-inline-probe.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "-e",
+      "const fs=require(\"fs\");const cp=require(\"child_process\");const r=cp.spawnSync(\"git\",[\"status\",\"--porcelain=v1\",\"--untracked-files=all\"],{encoding:\"utf8\"});const lines=r.stdout.replace(/\\r\\n/g,\"\\n\").split(\"\\n\").filter(x=>x.length);console.log(JSON.stringify({rawPorcelain:r.stdout,paths:lines.map(x=>x.slice(3)),targetExists:fs.existsSync(\"migration/nativescript\"),evidenceExists:fs.existsSync(\"migration/evidence/NS01/a-gates\"),checkpointExists:fs.existsSync(\"migration/handoffs/NS01-checkpoint-a.md\"),runExists:fs.existsSync(\"tools/qwen-supervisor/.runs/sol-ns01-r1-a-20261026\")},null,2));if(r.status!==0||JSON.stringify(lines)!==JSON.stringify([\" M README.md\",\"?? migration/work-packages/NS01.md\"])||fs.existsSync(\"migration/nativescript\"))process.exit(2)"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": -1,
+    "startedAt": null,
+    "durationMs": null,
+    "observer": "Hermes GPT-6.1 Sol high (software)",
+    "note": "Tool rejected this probe before execution. Arguments here identify the failed probe but do not pretend to reproduce its full source. It was replaced by on-disk .mjs helpers; no approval setting was changed.",
+    "stdout": "00b-blocked-inline-probe.stdout.log",
+    "stderr": "00b-blocked-inline-probe.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/00c-preflight-wrapper.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "tools/qwen-supervisor/.runs/sol-ns01-r1-a-20261026/ns01-a.mjs",
+      "preflight"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 1,
+    "startedAt": null,
+    "durationMs": null,
+    "observer": "Hermes GPT-6.1 Sol high (software)",
+    "note": "Terminal helper exited 1 because its own receipt writes preceded its repeated status check. Individual child-command receipts are 01 through 05; correction is preserved separately. Wrapper timing unavailable.",
+    "stdout": "00c-preflight-wrapper.stdout.log",
+    "stderr": "00c-preflight-wrapper.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/01-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:02.083Z",
+    "durationMs": 46,
+    "signal": null,
+    "stdout": "01-branch.stdout.log",
+    "stderr": "01-branch.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/02-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:02.132Z",
+    "durationMs": 27,
+    "signal": null,
+    "stdout": "02-head.stdout.log",
+    "stderr": "02-head.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/03-ancestor.receipt.json",
+    "command": "git",
+    "args": [
+      "merge-base",
+      "--is-ancestor",
+      "c02ae32",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:02.160Z",
+    "durationMs": 28,
+    "signal": null,
+    "stdout": "03-ancestor.stdout.log",
+    "stderr": "03-ancestor.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/04-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:02.189Z",
+    "durationMs": 33,
+    "signal": null,
+    "stdout": "04-index.stdout.log",
+    "stderr": "04-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/05-porcelain.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:02.223Z",
+    "durationMs": 49,
+    "signal": null,
+    "stdout": "05-porcelain.stdout.log",
+    "stderr": "05-porcelain.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/05b-instrumentation-audit.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:41.854Z",
+    "durationMs": 67,
+    "signal": null,
+    "stdout": "05b-instrumentation-audit.stdout.log",
+    "stderr": "05b-instrumentation-audit.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/06-hooks-path.receipt.json",
+    "command": "git",
+    "args": [
+      "config",
+      "--get",
+      "core.hooksPath"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:41.924Z",
+    "durationMs": 32,
+    "signal": null,
+    "stdout": "06-hooks-path.stdout.log",
+    "stderr": "06-hooks-path.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/07-entry-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--cached",
+      "--others",
+      "--exclude-standard",
+      "-z"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:41.957Z",
+    "durationMs": 90,
+    "signal": null,
+    "stdout": "07-entry-files.stdout.log",
+    "stderr": "07-entry-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/08-node-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:44.151Z",
+    "durationMs": 33,
+    "signal": null,
+    "stdout": "08-node-version.stdout.log",
+    "stderr": "08-node-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/09-npm-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:44.185Z",
+    "durationMs": 101,
+    "signal": null,
+    "stdout": "09-npm-version.stdout.log",
+    "stderr": "09-npm-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/10-java-version.receipt.json",
+    "command": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.7.6-hotspot/bin/java.exe",
+    "args": [
+      "-version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:44.288Z",
+    "durationMs": 183,
+    "signal": null,
+    "stdout": "10-java-version.stdout.log",
+    "stderr": "10-java-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/11-avds.receipt.json",
+    "command": "C:\\Users\\Gerrit\\AppData\\Local\\Android\\Sdk/emulator/emulator.exe",
+    "args": [
+      "-list-avds"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:44:44.473Z",
+    "durationMs": 76,
+    "signal": null,
+    "stdout": "11-avds.stdout.log",
+    "stderr": "11-avds.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/12-adb-devices-interrupted.receipt.json",
+    "command": "C:\\Users\\Gerrit\\AppData\\Local\\Android\\Sdk/platform-tools/adb.exe",
+    "args": [
+      "devices"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": null,
+    "startedAt": null,
+    "durationMs": null,
+    "observer": "Hermes GPT-6.1 Sol high (software)",
+    "note": "The environment wrapper was interrupted at the tool boundary while this child was pending. This is tool stderr, not adb stderr. Child exit/timing and original child stdout are unavailable. The independent timed attempt is 12b. No claim that the interrupted process completed.",
+    "stdout": "12-adb-devices-interrupted.stdout.log",
+    "stderr": "12-adb-devices-interrupted.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/12b-adb-devices.receipt.json",
+    "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "args": [
+      "devices"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": -1,
+    "startedAt": "2026-10-26T11:52:24.427Z",
+    "durationMs": 60007,
+    "signal": "SIGTERM",
+    "stdout": "12b-adb-devices.stdout.log",
+    "stderr": "12b-adb-devices.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/90-final-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--cached",
+      "--others",
+      "--exclude-standard",
+      "-z"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:54:44.484Z",
+    "durationMs": 93,
+    "signal": null,
+    "stdout": "90-final-files.stdout.log",
+    "stderr": "90-final-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/91-final-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:54:47.803Z",
+    "durationMs": 43,
+    "signal": null,
+    "stdout": "91-final-index.stdout.log",
+    "stderr": "91-final-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/92-final-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:54:47.849Z",
+    "durationMs": 54,
+    "signal": null,
+    "stdout": "92-final-status.stdout.log",
+    "stderr": "92-final-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/93-completion-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--cached",
+      "--others",
+      "--exclude-standard",
+      "-z"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:57:28.306Z",
+    "durationMs": 88,
+    "signal": null,
+    "stdout": "93-completion-files.stdout.log",
+    "stderr": "93-completion-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/94-completion-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:57:30.437Z",
+    "durationMs": 42,
+    "signal": null,
+    "stdout": "94-completion-index.stdout.log",
+    "stderr": "94-completion-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/95-completion-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:57:30.481Z",
+    "durationMs": 60,
+    "signal": null,
+    "stdout": "95-completion-status.stdout.log",
+    "stderr": "95-completion-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates/diag-processes.receipt.json",
+    "command": "C:/Windows/System32/tasklist.exe",
+    "args": [
+      "/FI",
+      "IMAGENAME eq node.exe",
+      "/FO",
+      "CSV"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T11:52:23.514Z",
+    "durationMs": 171,
+    "signal": null,
+    "stdout": "diag-processes.stdout.log",
+    "stderr": "diag-processes.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/00a-tool-bootstrap.receipt.json",
+    "command": "terminal",
+    "args": [
+      "git branch --show-current; git rev-parse HEAD; git merge-base --is-ancestor c02ae32 HEAD; printf 'ancestor_exit=%s\\n' \"$?\"; git diff --cached --exit-code; printf 'index_exit=%s\\n' \"$?\"; git status --porcelain=v1 --untracked-files=normal; git config --get core.hooksPath; if test -e migration/nativescript; then printf 'TARGET_EXISTS\\n'; else printf 'TARGET_ABSENT\\n'; fi"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": null,
+    "durationMs": null,
+    "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+    "stdout": "00a-tool-bootstrap.stdout.log",
+    "stderr": "00a-tool-bootstrap.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/00b-tool-bootstrap.receipt.json",
+    "command": "terminal",
+    "args": [
+      "test ! -e migration/evidence/NS01/a-gates2 && test ! -e migration/handoffs/NS01-checkpoint-a2.md && test ! -e tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026; printf 'fresh_paths_exit=%s\\n' \"$?\"; \"C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe\" --version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": null,
+    "durationMs": null,
+    "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+    "stdout": "00b-tool-bootstrap.stdout.log",
+    "stderr": "00b-tool-bootstrap.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/00c-tool-bootstrap.receipt.json",
+    "command": "terminal",
+    "args": [
+      "for p in migration/evidence/NS01/a-gates2 migration/handoffs/NS01-checkpoint-a2.md tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026; do if test -e \"$p\"; then printf 'EXISTS %s\\n' \"$p\"; else printf 'ABSENT %s\\n' \"$p\"; fi; done"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": null,
+    "durationMs": null,
+    "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+    "stdout": "00c-tool-bootstrap.stdout.log",
+    "stderr": "00c-tool-bootstrap.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/01-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.305Z",
+    "durationMs": 33,
+    "signal": null,
+    "error": null,
+    "stdout": "01-branch.stdout.log",
+    "stderr": "01-branch.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/02-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.342Z",
+    "durationMs": 26,
+    "signal": null,
+    "error": null,
+    "stdout": "02-head.stdout.log",
+    "stderr": "02-head.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/03-ancestor.receipt.json",
+    "command": "git",
+    "args": [
+      "merge-base",
+      "--is-ancestor",
+      "c02ae32",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.370Z",
+    "durationMs": 34,
+    "signal": null,
+    "error": null,
+    "stdout": "03-ancestor.stdout.log",
+    "stderr": "03-ancestor.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/04-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.405Z",
+    "durationMs": 36,
+    "signal": null,
+    "error": null,
+    "stdout": "04-index.stdout.log",
+    "stderr": "04-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/05-porcelain.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=normal"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.442Z",
+    "durationMs": 57,
+    "signal": null,
+    "error": null,
+    "stdout": "05-porcelain.stdout.log",
+    "stderr": "05-porcelain.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/06-hooks.receipt.json",
+    "command": "git",
+    "args": [
+      "config",
+      "--get",
+      "core.hooksPath"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.501Z",
+    "durationMs": 30,
+    "signal": null,
+    "error": null,
+    "stdout": "06-hooks.stdout.log",
+    "stderr": "06-hooks.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/07-entry-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:18.532Z",
+    "durationMs": 94,
+    "signal": null,
+    "error": null,
+    "stdout": "07-entry-files.stdout.log",
+    "stderr": "07-entry-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/08-node-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:20.875Z",
+    "durationMs": 27,
+    "signal": null,
+    "error": null,
+    "stdout": "08-node-version.stdout.log",
+    "stderr": "08-node-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/09-npm-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:20.905Z",
+    "durationMs": 131,
+    "signal": null,
+    "error": null,
+    "stdout": "09-npm-version.stdout.log",
+    "stderr": "09-npm-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/10-java-version.receipt.json",
+    "command": "C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot/bin/java.exe",
+    "args": [
+      "-version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:21.038Z",
+    "durationMs": 102,
+    "signal": null,
+    "error": null,
+    "stdout": "10-java-version.stdout.log",
+    "stderr": "10-java-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/11-avds.receipt.json",
+    "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/emulator/emulator.exe",
+    "args": [
+      "-list-avds"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:21.141Z",
+    "durationMs": 47,
+    "signal": null,
+    "error": null,
+    "stdout": "11-avds.stdout.log",
+    "stderr": "11-avds.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/12-adb-devices.receipt.json",
+    "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "args": [
+      "devices"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:21.189Z",
+    "durationMs": 26,
+    "signal": null,
+    "error": null,
+    "stdout": "12-adb-devices.stdout.log",
+    "stderr": "12-adb-devices.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/13-create-help.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npx-cli.js",
+      "--yes",
+      "nativescript@9.1.2",
+      "create",
+      "--help"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:02:36.749Z",
+    "durationMs": 22217,
+    "signal": null,
+    "error": null,
+    "stdout": "13-create-help.stdout.log",
+    "stderr": "13-create-help.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/14-template-inspect.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026/a2-template-inspect.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:03:48.041Z",
+    "durationMs": 4285,
+    "signal": null,
+    "error": null,
+    "stdout": "14-template-inspect.stdout.log",
+    "stderr": "14-template-inspect.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/15-create.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npx-cli.js",
+      "--yes",
+      "nativescript@9.1.2",
+      "create",
+      "nativescript",
+      "--path",
+      "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+      "--template",
+      "@nativescript-vue/template-blank@3.1.2",
+      "--appid",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:03:52.331Z",
+    "durationMs": 29185,
+    "signal": null,
+    "error": null,
+    "stdout": "15-create.stdout.log",
+    "stderr": "15-create.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/16-after-create-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:04:21.533Z",
+    "durationMs": 88,
+    "signal": null,
+    "error": null,
+    "stdout": "16-after-create-files.stdout.log",
+    "stderr": "16-after-create-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/17-layout-correction.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026/a2-layout.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:05:08.444Z",
+    "durationMs": 104,
+    "signal": null,
+    "error": null,
+    "stdout": "17-layout-correction.stdout.log",
+    "stderr": "17-layout-correction.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/18-npm-install.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "install"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:05:43.442Z",
+    "durationMs": 1226,
+    "signal": null,
+    "error": null,
+    "stdout": "18-npm-install.stdout.log",
+    "stderr": "18-npm-install.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/19-exact-dev-pins.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "install",
+      "--save-dev",
+      "--save-exact",
+      "vue-tsc@3.3.13",
+      "vitest@5.0.5",
+      "@nativescript/android@9.1.1"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:05:44.676Z",
+    "durationMs": 7201,
+    "signal": null,
+    "error": null,
+    "stdout": "19-exact-dev-pins.stdout.log",
+    "stderr": "19-exact-dev-pins.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/20-npm-ls.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "ls",
+      "--depth=0"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:05:51.878Z",
+    "durationMs": 562,
+    "signal": null,
+    "error": null,
+    "stdout": "20-npm-ls.stdout.log",
+    "stderr": "20-npm-ls.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/21-shell-audit.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026/a2-shell-audit.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:07:38.165Z",
+    "durationMs": 69,
+    "signal": null,
+    "error": null,
+    "stdout": "21-shell-audit.stdout.log",
+    "stderr": "21-shell-audit.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/22-ignored-output.receipt.json",
+    "command": "git",
+    "args": [
+      "check-ignore",
+      "migration/nativescript/node_modules/",
+      "migration/nativescript/platforms/",
+      "migration/nativescript/hooks/",
+      "migration/nativescript/.ns-build/",
+      "migration/nativescript/build/",
+      "migration/nativescript/dist/",
+      "migration/nativescript/coverage/",
+      "migration/nativescript/test.apk"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:07:38.236Z",
+    "durationMs": 39,
+    "signal": null,
+    "error": null,
+    "stdout": "22-ignored-output.stdout.log",
+    "stderr": "22-ignored-output.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/23-npm-ci.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "ci"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:07:38.277Z",
+    "durationMs": 20955,
+    "signal": null,
+    "error": null,
+    "stdout": "23-npm-ci.stdout.log",
+    "stderr": "23-npm-ci.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/24-typecheck.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "typecheck"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:07:59.235Z",
+    "durationMs": 2773,
+    "signal": null,
+    "error": null,
+    "stdout": "24-typecheck.stdout.log",
+    "stderr": "24-typecheck.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/25-test-first.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:08:02.011Z",
+    "durationMs": 674,
+    "signal": null,
+    "error": null,
+    "stdout": "25-test-first.stdout.log",
+    "stderr": "25-test-first.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/26-test-second.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:08:02.686Z",
+    "durationMs": 581,
+    "signal": null,
+    "error": null,
+    "stdout": "26-test-second.stdout.log",
+    "stderr": "26-test-second.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/27-build-android.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "build:android"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 127,
+    "startedAt": "2026-10-26T12:08:03.269Z",
+    "durationMs": 20076,
+    "signal": null,
+    "error": null,
+    "stdout": "27-build-android.stdout.log",
+    "stderr": "27-build-android.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/89-integrity-audit.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026/a2-audit.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:47.275Z",
+    "durationMs": 3441,
+    "signal": null,
+    "error": null,
+    "stdout": "89-integrity-audit.stdout.log",
+    "stderr": "89-integrity-audit.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/90-final-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:47.369Z",
+    "durationMs": 120,
+    "signal": null,
+    "error": null,
+    "stdout": "90-final-files.stdout.log",
+    "stderr": "90-final-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/91-final-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:50.552Z",
+    "durationMs": 38,
+    "signal": null,
+    "error": null,
+    "stdout": "91-final-index.stdout.log",
+    "stderr": "91-final-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/92-final-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:50.593Z",
+    "durationMs": 53,
+    "signal": null,
+    "error": null,
+    "stdout": "92-final-status.stdout.log",
+    "stderr": "92-final-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/93-final-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:50.652Z",
+    "durationMs": 28,
+    "signal": null,
+    "error": null,
+    "stdout": "93-final-head.stdout.log",
+    "stderr": "93-final-head.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/94-final-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:09:50.681Z",
+    "durationMs": 27,
+    "signal": null,
+    "error": null,
+    "stdout": "94-final-branch.stdout.log",
+    "stderr": "94-final-branch.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/95-completion-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:12:27.526Z",
+    "durationMs": 32,
+    "signal": null,
+    "error": null,
+    "stdout": "95-completion-index.stdout.log",
+    "stderr": "95-completion-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates2; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates2/96-completion-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=normal"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:12:27.561Z",
+    "durationMs": 59,
+    "signal": null,
+    "error": null,
+    "stdout": "96-completion-status.stdout.log",
+    "stderr": "96-completion-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/01-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.656Z",
+    "durationMs": 30,
+    "signal": null,
+    "error": null,
+    "stdout": "01-branch.stdout.log",
+    "stderr": "01-branch.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/02-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.688Z",
+    "durationMs": 29,
+    "signal": null,
+    "error": null,
+    "stdout": "02-head.stdout.log",
+    "stderr": "02-head.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/03-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.719Z",
+    "durationMs": 30,
+    "signal": null,
+    "error": null,
+    "stdout": "03-index.stdout.log",
+    "stderr": "03-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/04-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.749Z",
+    "durationMs": 75,
+    "signal": null,
+    "error": null,
+    "stdout": "04-files.stdout.log",
+    "stderr": "04-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/05-target-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.828Z",
+    "durationMs": 47,
+    "signal": null,
+    "error": null,
+    "stdout": "05-target-files.stdout.log",
+    "stderr": "05-target-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/06-node-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.875Z",
+    "durationMs": 30,
+    "signal": null,
+    "error": null,
+    "stdout": "06-node-version.stdout.log",
+    "stderr": "06-node-version.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/07-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:16:43.907Z",
+    "durationMs": 56,
+    "signal": null,
+    "error": null,
+    "stdout": "07-status.stdout.log",
+    "stderr": "07-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/90-final-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.320Z",
+    "durationMs": 76,
+    "signal": null,
+    "error": null,
+    "stdout": "90-final-files.stdout.log",
+    "stderr": "90-final-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/91-final-target-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.401Z",
+    "durationMs": 44,
+    "signal": null,
+    "error": null,
+    "stdout": "91-final-target-files.stdout.log",
+    "stderr": "91-final-target-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/92-final-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.447Z",
+    "durationMs": 39,
+    "signal": null,
+    "error": null,
+    "stdout": "92-final-index.stdout.log",
+    "stderr": "92-final-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/93-final-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.487Z",
+    "durationMs": 38,
+    "signal": null,
+    "error": null,
+    "stdout": "93-final-head.stdout.log",
+    "stderr": "93-final-head.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/94-final-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.527Z",
+    "durationMs": 33,
+    "signal": null,
+    "error": null,
+    "stdout": "94-final-branch.stdout.log",
+    "stderr": "94-final-branch.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/95-final-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:17:53.563Z",
+    "durationMs": 58,
+    "signal": null,
+    "error": null,
+    "stdout": "95-final-status.stdout.log",
+    "stderr": "95-final-status.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/96-completion-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:19:14.014Z",
+    "durationMs": 36,
+    "signal": null,
+    "error": null,
+    "stdout": "96-completion-index.stdout.log",
+    "stderr": "96-completion-index.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates3; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates3/97-completion-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:19:14.053Z",
+    "durationMs": 76,
+    "signal": null,
+    "error": null,
+    "stdout": "97-completion-files.stdout.log",
+    "stderr": "97-completion-files.stderr.log"
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/01-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:02.825Z",
+    "finishedAt": "2026-10-26T12:22:02.867Z",
+    "durationMs": 42,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "01-branch.stdout.log",
+    "stderr": "01-branch.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 18,
+        "originalLines": 2,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/02-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:02.869Z",
+    "finishedAt": "2026-10-26T12:22:02.912Z",
+    "durationMs": 43,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "02-head.stdout.log",
+    "stderr": "02-head.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 41,
+        "originalLines": 2,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/03-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:02.914Z",
+    "finishedAt": "2026-10-26T12:22:02.957Z",
+    "durationMs": 43,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "03-index.stdout.log",
+    "stderr": "03-index.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/04-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:02.958Z",
+    "finishedAt": "2026-10-26T12:22:03.049Z",
+    "durationMs": 91,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "04-files.stdout.log",
+    "stderr": "04-files.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 1570118,
+        "originalLines": 1,
+        "truncated": true
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/05-target-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:03.052Z",
+    "finishedAt": "2026-10-26T12:22:03.094Z",
+    "durationMs": 42,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "05-target-files.stdout.log",
+    "stderr": "05-target-files.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 5630,
+        "originalLines": 1,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/06-node-version.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:03.097Z",
+    "finishedAt": "2026-10-26T12:22:03.137Z",
+    "durationMs": 40,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "06-node-version.stdout.log",
+    "stderr": "06-node-version.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 10,
+        "originalLines": 2,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/07-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:03.139Z",
+    "finishedAt": "2026-10-26T12:22:03.212Z",
+    "durationMs": 73,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "07-status.stdout.log",
+    "stderr": "07-status.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 24026,
+        "originalLines": 369,
+        "truncated": true
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/08-ignored-output.receipt.json",
+    "command": "git",
+    "args": [
+      "check-ignore",
+      "migration/nativescript/platforms/",
+      "migration/nativescript/hooks/",
+      "migration/nativescript/node_modules/"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:03.214Z",
+    "finishedAt": "2026-10-26T12:22:03.258Z",
+    "durationMs": 44,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "08-ignored-output.stdout.log",
+    "stderr": "08-ignored-output.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 101,
+        "originalLines": 4,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/09-entry-integrity.receipt.json",
+    "command": "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-a4-20261026\\a4-gate.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:02.823Z",
+    "finishedAt": "2026-10-26T12:22:06.319Z",
+    "durationMs": 3495,
+    "signal": null,
+    "error": null,
+    "stdout": "09-entry-integrity.stdout.log",
+    "stderr": "09-entry-integrity.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 1717,
+        "originalLines": 58,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/10-build-android.receipt.json",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "build:android"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:22:34.335Z",
+    "finishedAt": "2026-10-26T12:24:31.059Z",
+    "durationMs": 116723,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "10-build-android.stdout.log",
+    "stderr": "10-build-android.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 11941,
+        "originalLines": 56,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 640,
+        "originalLines": 6,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/90-final-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:18.859Z",
+    "finishedAt": "2026-10-26T12:26:18.939Z",
+    "durationMs": 80,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "90-final-files.stdout.log",
+    "stderr": "90-final-files.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 1571786,
+        "originalLines": 1,
+        "truncated": true
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/91-final-target-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:18.941Z",
+    "finishedAt": "2026-10-26T12:26:18.984Z",
+    "durationMs": 43,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "91-final-target-files.stdout.log",
+    "stderr": "91-final-target-files.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 5630,
+        "originalLines": 1,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/92-final-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:18.986Z",
+    "finishedAt": "2026-10-26T12:26:19.017Z",
+    "durationMs": 31,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "92-final-index.stdout.log",
+    "stderr": "92-final-index.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/93-final-head.receipt.json",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:19.018Z",
+    "finishedAt": "2026-10-26T12:26:19.046Z",
+    "durationMs": 28,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "93-final-head.stdout.log",
+    "stderr": "93-final-head.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 41,
+        "originalLines": 2,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/94-final-branch.receipt.json",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:19.050Z",
+    "finishedAt": "2026-10-26T12:26:19.092Z",
+    "durationMs": 43,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "94-final-branch.stdout.log",
+    "stderr": "94-final-branch.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 18,
+        "originalLines": 2,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/95-final-status.receipt.json",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:19.094Z",
+    "finishedAt": "2026-10-26T12:26:19.160Z",
+    "durationMs": 66,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "95-final-status.stdout.log",
+    "stderr": "95-final-status.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 26190,
+        "originalLines": 404,
+        "truncated": true
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/96-final-integrity.receipt.json",
+    "command": "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-a4-20261026\\a4-final-audit.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:26:18.857Z",
+    "finishedAt": "2026-10-26T12:26:22.621Z",
+    "durationMs": 3763,
+    "signal": null,
+    "error": null,
+    "stdout": "96-final-integrity.stdout.log",
+    "stderr": "96-final-integrity.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 1713,
+        "originalLines": 53,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/97-completion-index.receipt.json",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:27:53.297Z",
+    "finishedAt": "2026-10-26T12:27:53.330Z",
+    "durationMs": 33,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "97-completion-index.stdout.log",
+    "stderr": "97-completion-index.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/98-completion-files.receipt.json",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:27:53.331Z",
+    "finishedAt": "2026-10-26T12:27:53.420Z",
+    "durationMs": 88,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": true
+    },
+    "stdout": "98-completion-files.stdout.log",
+    "stderr": "98-completion-files.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 1573517,
+        "originalLines": 1,
+        "truncated": true
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical a-gates4; not rerun in C",
+    "receipt": "migration/evidence/NS01/a-gates4/99-completion-integrity.receipt.json",
+    "command": "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-a4-20261026\\a4-complete.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T12:27:53.295Z",
+    "finishedAt": "2026-10-26T12:27:56.451Z",
+    "durationMs": 3155,
+    "signal": null,
+    "error": null,
+    "stdout": "99-completion-integrity.stdout.log",
+    "stderr": "99-completion-integrity.stderr.log",
+    "logPolicy": {
+      "maxTailLines": 180,
+      "maxTailCharacters": 65536,
+      "stdout": {
+        "originalBytes": 526,
+        "originalLines": 18,
+        "truncated": false
+      },
+      "stderr": {
+        "originalBytes": 0,
+        "originalLines": 1,
+        "truncated": false
+      }
+    }
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/01-entry-branch.receipt.json",
+    "id": "01-entry-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.315Z",
+    "endedAt": "2026-10-26T12:30:59.346Z",
+    "durationMs": 31,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/01-entry-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/01-entry-branch.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/01-entry-files.receipt.json",
+    "id": "01-entry-files",
+    "command": [
+      "git",
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.464Z",
+    "endedAt": "2026-10-26T12:30:59.549Z",
+    "durationMs": 85,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/01-entry-files.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/01-entry-files.stderr.log",
+    "stdoutBytes": 1574746,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/01-entry-head.receipt.json",
+    "id": "01-entry-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.347Z",
+    "endedAt": "2026-10-26T12:30:59.377Z",
+    "durationMs": 29,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/01-entry-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/01-entry-head.stderr.log",
+    "stdoutBytes": 41,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/01-entry-index.receipt.json",
+    "id": "01-entry-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.379Z",
+    "endedAt": "2026-10-26T12:30:59.415Z",
+    "durationMs": 36,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/01-entry-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/01-entry-index.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/01-entry-status.receipt.json",
+    "id": "01-entry-status",
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=normal"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.416Z",
+    "endedAt": "2026-10-26T12:30:59.463Z",
+    "durationMs": 47,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/01-entry-status.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/01-entry-status.stderr.log",
+    "stdoutBytes": 278,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/02-java.receipt.json",
+    "id": "02-java",
+    "command": [
+      "C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot/bin/java.exe",
+      "-version"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.778Z",
+    "endedAt": "2026-10-26T12:31:05.848Z",
+    "durationMs": 70,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/02-java.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/02-java.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 193
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/02-node.receipt.json",
+    "id": "02-node",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.745Z",
+    "endedAt": "2026-10-26T12:31:05.777Z",
+    "durationMs": 32,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/02-node.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/02-node.stderr.log",
+    "stdoutBytes": 10,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-avd.receipt.json",
+    "id": "03-before-avd",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "emu",
+      "avd",
+      "name"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.848Z",
+    "endedAt": "2026-10-26T12:31:05.892Z",
+    "durationMs": 43,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-avd.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-avd.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-density.receipt.json",
+    "id": "03-before-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "wm",
+      "density"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:11.596Z",
+    "endedAt": "2026-10-26T12:31:15.019Z",
+    "durationMs": 3422,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-density.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 33
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-densityProperty.receipt.json",
+    "id": "03-before-densityProperty",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.sf.lcd_density"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:09.506Z",
+    "endedAt": "2026-10-26T12:31:11.595Z",
+    "durationMs": 2089,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-densityProperty.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-densityProperty.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-model.receipt.json",
+    "id": "03-before-model",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.product.model"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.921Z",
+    "endedAt": "2026-10-26T12:31:07.191Z",
+    "durationMs": 1269,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-model.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-model.stderr.log",
+    "stdoutBytes": 21,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-sdk.receipt.json",
+    "id": "03-before-sdk",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:07.192Z",
+    "endedAt": "2026-10-26T12:31:09.505Z",
+    "durationMs": 2313,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-sdk.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-sdk.stderr.log",
+    "stdoutBytes": 4,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-before-state.receipt.json",
+    "id": "03-before-state",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "get-state"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.893Z",
+    "endedAt": "2026-10-26T12:31:05.920Z",
+    "durationMs": 27,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-before-state.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-before-state.stderr.log",
+    "stdoutBytes": 8,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-accessibility.receipt.json",
+    "id": "03-readiness-accessibility",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "enabled_accessibility_services"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:04.655Z",
+    "endedAt": "2026-10-26T12:32:07.680Z",
+    "durationMs": 3025,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-accessibility.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-accessibility.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-boot-animation.receipt.json",
+    "id": "03-readiness-boot-animation",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "init.svc.bootanim"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:58.015Z",
+    "endedAt": "2026-10-26T12:32:00.469Z",
+    "durationMs": 2454,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-boot-animation.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-boot-animation.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-boot-completed.receipt.json",
+    "id": "03-readiness-boot-completed",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "sys.boot_completed"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:55.262Z",
+    "endedAt": "2026-10-26T12:31:58.014Z",
+    "durationMs": 2751,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-boot-completed.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-boot-completed.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-font-scale.receipt.json",
+    "id": "03-readiness-font-scale",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "system",
+      "font_scale"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:00.469Z",
+    "endedAt": "2026-10-26T12:32:02.085Z",
+    "durationMs": 1616,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-font-scale.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-font-scale.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-night.receipt.json",
+    "id": "03-readiness-night",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "cmd",
+      "uimode",
+      "night"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:02.086Z",
+    "endedAt": "2026-10-26T12:32:04.654Z",
+    "durationMs": 2568,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-night.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-night.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/03-readiness-rn-path.receipt.json",
+    "id": "03-readiness-rn-path",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pm",
+      "path",
+      "dev.translationtest.rn"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:07.681Z",
+    "endedAt": "2026-10-26T12:32:15.366Z",
+    "durationMs": 7686,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/03-readiness-rn-path.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/03-readiness-rn-path.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-accessibility.receipt.json",
+    "id": "90-after-accessibility",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "enabled_accessibility_services"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:07.263Z",
+    "endedAt": "2026-10-26T12:33:09.812Z",
+    "durationMs": 2549,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-accessibility.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-accessibility.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 35
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-avd.receipt.json",
+    "id": "90-after-avd",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "emu",
+      "avd",
+      "name"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:50.737Z",
+    "endedAt": "2026-10-26T12:32:50.765Z",
+    "durationMs": 28,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-avd.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-avd.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-density.receipt.json",
+    "id": "90-after-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "wm",
+      "density"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:55.858Z",
+    "endedAt": "2026-10-26T12:32:58.553Z",
+    "durationMs": 2694,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-density.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 33
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-densityProperty.receipt.json",
+    "id": "90-after-densityProperty",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.sf.lcd_density"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:53.881Z",
+    "endedAt": "2026-10-26T12:32:55.857Z",
+    "durationMs": 1975,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-densityProperty.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-densityProperty.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-fontScale.receipt.json",
+    "id": "90-after-fontScale",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "system",
+      "font_scale"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:58.554Z",
+    "endedAt": "2026-10-26T12:33:02.708Z",
+    "durationMs": 4153,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-fontScale.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-fontScale.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 35
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-model.receipt.json",
+    "id": "90-after-model",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.product.model"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:50.766Z",
+    "endedAt": "2026-10-26T12:32:52.907Z",
+    "durationMs": 2141,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-model.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-model.stderr.log",
+    "stdoutBytes": 21,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-night.receipt.json",
+    "id": "90-after-night",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "cmd",
+      "uimode",
+      "night"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:02.709Z",
+    "endedAt": "2026-10-26T12:33:07.262Z",
+    "durationMs": 4553,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-night.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-night.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 33
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-rnPath.receipt.json",
+    "id": "90-after-rnPath",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pm",
+      "path",
+      "dev.translationtest.rn"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:09.813Z",
+    "endedAt": "2026-10-26T12:33:14.384Z",
+    "durationMs": 4570,
+    "exitCode": 20,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-rnPath.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-rnPath.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 34
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/90-after-sdk.receipt.json",
+    "id": "90-after-sdk",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:52.908Z",
+    "endedAt": "2026-10-26T12:32:53.880Z",
+    "durationMs": 971,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/90-after-sdk.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/90-after-sdk.stderr.log",
+    "stdoutBytes": 4,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/91-exit-branch.receipt.json",
+    "id": "91-exit-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:14.385Z",
+    "endedAt": "2026-10-26T12:33:14.419Z",
+    "durationMs": 33,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/91-exit-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/91-exit-branch.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/91-exit-files.receipt.json",
+    "id": "91-exit-files",
+    "command": [
+      "git",
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:14.553Z",
+    "endedAt": "2026-10-26T12:33:14.635Z",
+    "durationMs": 81,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/91-exit-files.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/91-exit-files.stderr.log",
+    "stdoutBytes": 1580679,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/91-exit-head.receipt.json",
+    "id": "91-exit-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:14.419Z",
+    "endedAt": "2026-10-26T12:33:14.457Z",
+    "durationMs": 37,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/91-exit-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/91-exit-head.stderr.log",
+    "stdoutBytes": 41,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/91-exit-index.receipt.json",
+    "id": "91-exit-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:14.458Z",
+    "endedAt": "2026-10-26T12:33:14.492Z",
+    "durationMs": 34,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/91-exit-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/91-exit-index.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/91-exit-status.receipt.json",
+    "id": "91-exit-status",
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=normal"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:33:14.493Z",
+    "endedAt": "2026-10-26T12:33:14.553Z",
+    "durationMs": 59,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/91-exit-status.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/91-exit-status.stderr.log",
+    "stdoutBytes": 278,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/99-branch.receipt.json",
+    "id": "99-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:35:30.913Z",
+    "endedAt": "2026-10-26T12:35:30.947Z",
+    "durationMs": 34,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/99-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/99-branch.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/99-files.receipt.json",
+    "id": "99-files",
+    "command": [
+      "git",
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:35:31.016Z",
+    "endedAt": "2026-10-26T12:35:31.131Z",
+    "durationMs": 115,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/99-files.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/99-files.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/99-head.receipt.json",
+    "id": "99-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:35:30.948Z",
+    "endedAt": "2026-10-26T12:35:30.981Z",
+    "durationMs": 34,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/99-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/99-head.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/99-index.receipt.json",
+    "id": "99-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:35:30.982Z",
+    "endedAt": "2026-10-26T12:35:31.015Z",
+    "durationMs": 33,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": 120000,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/99-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/99-index.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/driver-blocked-exit.receipt.json",
+    "id": "driver-blocked-exit",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b-20261026\\b-runner.mjs",
+      "blocked-exit"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:32:50.735Z",
+    "endedAt": "2026-10-26T12:33:16.753Z",
+    "durationMs": 26016,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": null,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/driver-blocked-exit.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/driver-blocked-exit.stderr.log",
+    "stdoutBytes": 1742,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/driver-environment.receipt.json",
+    "id": "driver-environment",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b-20261026\\b-runner.mjs",
+      "environment"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:31:05.743Z",
+    "endedAt": "2026-10-26T12:31:15.020Z",
+    "durationMs": 9275,
+    "exitCode": 1,
+    "signal": null,
+    "error": {
+      "message": "03-before-density: exit 20; cmd: Can't find service: window\r\n"
+    },
+    "timeoutMs": null,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/driver-environment.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/driver-environment.stderr.log",
+    "stdoutBytes": 130,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/driver-finalize.receipt.json",
+    "id": "driver-finalize",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b-20261026\\b-finalize.mjs"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:35:30.910Z",
+    "endedAt": "2026-10-26T12:35:33.289Z",
+    "durationMs": 2376,
+    "exitCode": 0,
+    "stdout": "migration/evidence/NS01/b-device/driver-finalize.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/driver-finalize.stderr.log"
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/driver-gate.receipt.json",
+    "id": "driver-gate",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b-20261026\\b-runner.mjs",
+      "gate"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:30:59.313Z",
+    "endedAt": "2026-10-26T12:31:01.612Z",
+    "durationMs": 2297,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "timeoutMs": null,
+    "timedOut": false,
+    "stdout": "migration/evidence/NS01/b-device/driver-gate.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device/driver-gate.stderr.log",
+    "stdoutBytes": 529,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device/driver-readiness.receipt.json",
+    "id": "driver-readiness",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b-20261026\\b-readiness.mjs"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "measurement": "child timings recorded individually",
+    "stdout": "migration/evidence/NS01/b-device/readiness.json"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-diagnostic-png.receipt.json",
+    "id": "B-launch-diagnostic-png",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:47:55.034Z",
+    "endedAt": "2026-10-26T12:47:55.247Z",
+    "durationMs": 213,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-diagnostic.png",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-diagnostic-png.stderr.log",
+    "stdoutBytes": 37631,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-diagnostic-xml.receipt.json",
+    "id": "B-launch-diagnostic-xml",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "-t",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:47:55.251Z",
+    "endedAt": "2026-10-26T12:47:57.301Z",
+    "durationMs": 2050,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-diagnostic-xml.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-diagnostic-xml.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 124
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-force-stop.receipt.json",
+    "id": "B-launch-force-stop",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "am",
+      "force-stop",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:44.582Z",
+    "endedAt": "2026-10-26T12:45:45.237Z",
+    "durationMs": 655,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-force-stop.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-force-stop.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-logcat.receipt.json",
+    "id": "B-launch-logcat",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "logcat",
+      "-d",
+      "-t",
+      "400",
+      "--pid=4161"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:16.934Z",
+    "endedAt": "2026-10-26T12:46:17.055Z",
+    "durationMs": 121,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-logcat.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-logcat.stderr.log",
+    "stdoutBytes": 5918,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-pid.receipt.json",
+    "id": "B-launch-pid",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pidof",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:16.870Z",
+    "endedAt": "2026-10-26T12:46:16.933Z",
+    "durationMs": 63,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-pid.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-pid.stderr.log",
+    "stdoutBytes": 6,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-png.receipt.json",
+    "id": "B-launch-png",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:14.370Z",
+    "endedAt": "2026-10-26T12:46:14.730Z",
+    "durationMs": 360,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch.png",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-png.stderr.log",
+    "stdoutBytes": 37973,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-1.receipt.json",
+    "id": "B-launch-poll-1",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:53.428Z",
+    "endedAt": "2026-10-26T12:45:57.613Z",
+    "durationMs": 4185,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-1.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-1.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 59
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-2.receipt.json",
+    "id": "B-launch-poll-2",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:58.117Z",
+    "endedAt": "2026-10-26T12:46:01.138Z",
+    "durationMs": 3021,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-2.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-2.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 59
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-3.receipt.json",
+    "id": "B-launch-poll-3",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:01.646Z",
+    "endedAt": "2026-10-26T12:46:05.482Z",
+    "durationMs": 3837,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-3.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-3.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-4.receipt.json",
+    "id": "B-launch-poll-4",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:05.989Z",
+    "endedAt": "2026-10-26T12:46:08.618Z",
+    "durationMs": 2629,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-4.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-4.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-5.receipt.json",
+    "id": "B-launch-poll-5",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:09.120Z",
+    "endedAt": "2026-10-26T12:46:11.243Z",
+    "durationMs": 2122,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-5.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-5.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-poll-6.receipt.json",
+    "id": "B-launch-poll-6",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:11.748Z",
+    "endedAt": "2026-10-26T12:46:13.858Z",
+    "durationMs": 2110,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-poll-6.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-poll-6.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-start.receipt.json",
+    "id": "B-launch-start",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "monkey",
+      "-p",
+      "dev.translationtest.ns",
+      "-c",
+      "android.intent.category.LAUNCHER",
+      "1"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:45.326Z",
+    "endedAt": "2026-10-26T12:45:53.427Z",
+    "durationMs": 8100,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-start.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-start.stderr.log",
+    "stdoutBytes": 231,
+    "stderrBytes": 258
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-stopped-pid.receipt.json",
+    "id": "B-launch-stopped-pid",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "sh",
+      "-c",
+      "pidof dev.translationtest.ns; exit 0"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:45.239Z",
+    "endedAt": "2026-10-26T12:45:45.326Z",
+    "durationMs": 87,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-stopped-pid.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-stopped-pid.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-launch-xml.receipt.json",
+    "id": "B-launch-xml",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:46:14.731Z",
+    "endedAt": "2026-10-26T12:46:16.869Z",
+    "durationMs": 2137,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-launch-xml.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-launch-xml.stderr.log",
+    "stdoutBytes": 34,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-force-stop.receipt.json",
+    "id": "B-relaunch-force-stop",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "am",
+      "force-stop",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:16.724Z",
+    "endedAt": "2026-10-26T12:48:16.975Z",
+    "durationMs": 251,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-force-stop.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-force-stop.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-logcat.receipt.json",
+    "id": "B-relaunch-logcat",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "logcat",
+      "-d",
+      "-t",
+      "400",
+      "--pid=4385"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:27.257Z",
+    "endedAt": "2026-10-26T12:48:27.343Z",
+    "durationMs": 86,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-logcat.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-logcat.stderr.log",
+    "stdoutBytes": 5049,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-pid.receipt.json",
+    "id": "B-relaunch-pid",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pidof",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:27.185Z",
+    "endedAt": "2026-10-26T12:48:27.256Z",
+    "durationMs": 71,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-pid.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-pid.stderr.log",
+    "stdoutBytes": 6,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-png.receipt.json",
+    "id": "B-relaunch-png",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:24.622Z",
+    "endedAt": "2026-10-26T12:48:24.915Z",
+    "durationMs": 294,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch.png",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-png.stderr.log",
+    "stdoutBytes": 38004,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-poll-1.receipt.json",
+    "id": "B-relaunch-poll-1",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "-tt",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:18.161Z",
+    "endedAt": "2026-10-26T12:48:20.655Z",
+    "durationMs": 2494,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-poll-1.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-poll-1.stderr.log",
+    "stdoutBytes": 60,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-poll-2.receipt.json",
+    "id": "B-relaunch-poll-2",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "-tt",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:21.161Z",
+    "endedAt": "2026-10-26T12:48:24.620Z",
+    "durationMs": 3459,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-poll-2.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-poll-2.stderr.log",
+    "stdoutBytes": 2666,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-start.receipt.json",
+    "id": "B-relaunch-start",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "monkey",
+      "-p",
+      "dev.translationtest.ns",
+      "-c",
+      "android.intent.category.LAUNCHER",
+      "1"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:17.081Z",
+    "endedAt": "2026-10-26T12:48:18.161Z",
+    "durationMs": 1079,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-start.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-start.stderr.log",
+    "stdoutBytes": 229,
+    "stderrBytes": 258
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-stopped-pid.receipt.json",
+    "id": "B-relaunch-stopped-pid",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "sh",
+      "-c",
+      "pidof dev.translationtest.ns; exit 0"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:16.977Z",
+    "endedAt": "2026-10-26T12:48:17.081Z",
+    "durationMs": 104,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-stopped-pid.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-stopped-pid.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/B-relaunch-xml.receipt.json",
+    "id": "B-relaunch-xml",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "-tt",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/dev/tty"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:24.916Z",
+    "endedAt": "2026-10-26T12:48:27.182Z",
+    "durationMs": 2266,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/B-relaunch-xml.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/B-relaunch-xml.stderr.log",
+    "stdoutBytes": 2666,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-accessibility.receipt.json",
+    "id": "after-accessibility",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "enabled_accessibility_services"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.824Z",
+    "endedAt": "2026-10-26T12:48:41.874Z",
+    "durationMs": 50,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-accessibility.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-accessibility.stderr.log",
+    "stdoutBytes": 6,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-density.receipt.json",
+    "id": "after-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.sf.lcd_density"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.544Z",
+    "endedAt": "2026-10-26T12:48:41.593Z",
+    "durationMs": 48,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-density.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-font-scale-getprop.receipt.json",
+    "id": "after-font-scale-getprop",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "font_scale"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.653Z",
+    "endedAt": "2026-10-26T12:48:41.708Z",
+    "durationMs": 55,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-font-scale-getprop.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-font-scale-getprop.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-font-scale.receipt.json",
+    "id": "after-font-scale",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "system",
+      "font_scale"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.708Z",
+    "endedAt": "2026-10-26T12:48:41.770Z",
+    "durationMs": 62,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-font-scale.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-font-scale.stderr.log",
+    "stdoutBytes": 5,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-model.receipt.json",
+    "id": "after-model",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.product.model"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.447Z",
+    "endedAt": "2026-10-26T12:48:41.492Z",
+    "durationMs": 45,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-model.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-model.stderr.log",
+    "stdoutBytes": 21,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-night.receipt.json",
+    "id": "after-night",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "cmd",
+      "uimode",
+      "night"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.770Z",
+    "endedAt": "2026-10-26T12:48:41.823Z",
+    "durationMs": 53,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-night.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-night.stderr.log",
+    "stdoutBytes": 16,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-sdk.receipt.json",
+    "id": "after-sdk",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.493Z",
+    "endedAt": "2026-10-26T12:48:41.544Z",
+    "durationMs": 50,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-sdk.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-sdk.stderr.log",
+    "stdoutBytes": 4,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/after-wm-density.receipt.json",
+    "id": "after-wm-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "wm",
+      "density"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.593Z",
+    "endedAt": "2026-10-26T12:48:41.652Z",
+    "durationMs": 59,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/after-wm-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/after-wm-density.stderr.log",
+    "stdoutBytes": 23,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-accessibility.receipt.json",
+    "id": "before-accessibility",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "enabled_accessibility_services"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:26.043Z",
+    "endedAt": "2026-10-26T12:45:26.103Z",
+    "durationMs": 60,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-accessibility.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-accessibility.stderr.log",
+    "stdoutBytes": 6,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-density.receipt.json",
+    "id": "before-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.sf.lcd_density"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.727Z",
+    "endedAt": "2026-10-26T12:45:25.774Z",
+    "durationMs": 48,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-density.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-font-scale-getprop.receipt.json",
+    "id": "before-font-scale-getprop",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "font_scale"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.847Z",
+    "endedAt": "2026-10-26T12:45:25.893Z",
+    "durationMs": 45,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-font-scale-getprop.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-font-scale-getprop.stderr.log",
+    "stdoutBytes": 2,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-font-scale.receipt.json",
+    "id": "before-font-scale",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "settings",
+      "get",
+      "system",
+      "font_scale"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.893Z",
+    "endedAt": "2026-10-26T12:45:25.982Z",
+    "durationMs": 89,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-font-scale.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-font-scale.stderr.log",
+    "stdoutBytes": 5,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-model.receipt.json",
+    "id": "before-model",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.product.model"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.635Z",
+    "endedAt": "2026-10-26T12:45:25.678Z",
+    "durationMs": 43,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-model.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-model.stderr.log",
+    "stdoutBytes": 21,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-night.receipt.json",
+    "id": "before-night",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "cmd",
+      "uimode",
+      "night"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.982Z",
+    "endedAt": "2026-10-26T12:45:26.043Z",
+    "durationMs": 60,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-night.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-night.stderr.log",
+    "stdoutBytes": 16,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-sdk.receipt.json",
+    "id": "before-sdk",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.679Z",
+    "endedAt": "2026-10-26T12:45:25.726Z",
+    "durationMs": 47,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-sdk.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-sdk.stderr.log",
+    "stdoutBytes": 4,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/before-wm-density.receipt.json",
+    "id": "before-wm-density",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "wm",
+      "density"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.775Z",
+    "endedAt": "2026-10-26T12:45:25.847Z",
+    "durationMs": 72,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/before-wm-density.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/before-wm-density.stderr.log",
+    "stdoutBytes": 23,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/boot-completed.receipt.json",
+    "id": "boot-completed",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "getprop",
+      "sys.boot_completed"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.082Z",
+    "endedAt": "2026-10-26T12:45:25.359Z",
+    "durationMs": 277,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/boot-completed.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/boot-completed.stderr.log",
+    "stdoutBytes": 3,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/completion-branch.receipt.json",
+    "id": "completion-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:50:44.310Z",
+    "endedAt": "2026-10-26T12:50:44.341Z",
+    "durationMs": 31,
+    "timeoutMs": 30000,
+    "exitCode": 0,
+    "stdout": "migration/evidence/NS01/b-device2/completion-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/completion-branch.stderr.log"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/completion-head.receipt.json",
+    "id": "completion-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:50:44.341Z",
+    "endedAt": "2026-10-26T12:50:44.375Z",
+    "durationMs": 33,
+    "timeoutMs": 30000,
+    "exitCode": 0,
+    "stdout": "migration/evidence/NS01/b-device2/completion-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/completion-head.stderr.log"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/completion-index.receipt.json",
+    "id": "completion-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:50:44.375Z",
+    "endedAt": "2026-10-26T12:50:44.408Z",
+    "durationMs": 33,
+    "timeoutMs": 30000,
+    "exitCode": 0,
+    "stdout": "migration/evidence/NS01/b-device2/completion-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/completion-index.stderr.log"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/device-avd-confirm.receipt.json",
+    "id": "device-avd-confirm",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "emu",
+      "avd",
+      "name"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.042Z",
+    "endedAt": "2026-10-26T12:45:25.081Z",
+    "durationMs": 39,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/device-avd-confirm.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/device-avd-confirm.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/device-avd.receipt.json",
+    "id": "device-avd",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "emu",
+      "avd",
+      "name"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:56.191Z",
+    "endedAt": "2026-10-26T12:44:56.234Z",
+    "durationMs": 43,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/device-avd.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/device-avd.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-capture-diagnostic.receipt.json",
+    "id": "driver-capture-diagnostic",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "capture-diagnostic"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:47:55.031Z",
+    "endedAt": "2026-10-26T12:47:57.303Z",
+    "durationMs": 2270,
+    "exitCode": 1,
+    "findings": [
+      "Diagnostic PTY capture did not verify shell"
+    ],
+    "failure": "Diagnostic PTY capture did not verify shell"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-final-audit.receipt.json",
+    "id": "driver-final-audit",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "final-audit"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.446Z",
+    "endedAt": "2026-10-26T12:48:44.159Z",
+    "durationMs": 2712,
+    "exitCode": 0,
+    "findings": [],
+    "failure": null
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-finalize.receipt.json",
+    "id": "driver-finalize",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-finalize.mjs"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:50:44.300Z",
+    "endedAt": "2026-10-26T12:50:44.409Z",
+    "durationMs": 107,
+    "exitCode": 0,
+    "stdout": "migration/evidence/NS01/b-device2/driver-finalize.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/driver-finalize.stderr.log"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-gate-device.receipt.json",
+    "id": "driver-gate-device",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "gate-device"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.039Z",
+    "endedAt": "2026-10-26T12:45:26.105Z",
+    "durationMs": 1064,
+    "exitCode": 0,
+    "findings": [
+      "Receipt-runner parsing correction only: adb emu avd name returned RN01_API36 with CR-CR-LF; initial parser retained one CR and falsely reported Wrong AVD. Raw receipt preserved. No device/product/test/config fix."
+    ],
+    "failure": null
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-gate.receipt.json",
+    "id": "driver-gate",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "gate"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:53.376Z",
+    "endedAt": "2026-10-26T12:44:56.236Z",
+    "durationMs": 2858,
+    "exitCode": 1,
+    "findings": [
+      "Wrong AVD"
+    ],
+    "failure": "Wrong AVD"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-install.receipt.json",
+    "id": "driver-install",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "install"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:31.129Z",
+    "endedAt": "2026-10-26T12:45:40.645Z",
+    "durationMs": 9515,
+    "exitCode": 0,
+    "findings": [],
+    "failure": null
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-launch.receipt.json",
+    "id": "driver-launch",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "launch"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:44.579Z",
+    "endedAt": "2026-10-26T12:46:17.100Z",
+    "durationMs": 32519,
+    "exitCode": 1,
+    "findings": [
+      "B-launch: launch assertions failed"
+    ],
+    "failure": "B-launch: launch assertions failed"
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/driver-relaunch.receipt.json",
+    "id": "driver-relaunch",
+    "command": [
+      "C:\\Users\\Gerrit\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns01-r1-b2-20261026\\b2-runner.mjs",
+      "relaunch"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:16.723Z",
+    "endedAt": "2026-10-26T12:48:27.396Z",
+    "durationMs": 10672,
+    "exitCode": 0,
+    "findings": [],
+    "failure": null
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/entry-branch.receipt.json",
+    "id": "entry-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:53.379Z",
+    "endedAt": "2026-10-26T12:44:53.416Z",
+    "durationMs": 36,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/entry-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/entry-branch.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/entry-files.receipt.json",
+    "id": "entry-files",
+    "command": [
+      "git",
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:53.511Z",
+    "endedAt": "2026-10-26T12:44:53.626Z",
+    "durationMs": 115,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/entry-files.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/entry-files.stderr.log",
+    "stdoutBytes": 1582897,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/entry-head.receipt.json",
+    "id": "entry-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:53.417Z",
+    "endedAt": "2026-10-26T12:44:53.448Z",
+    "durationMs": 31,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/entry-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/entry-head.stderr.log",
+    "stdoutBytes": 41,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/entry-index.receipt.json",
+    "id": "entry-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:44:53.449Z",
+    "endedAt": "2026-10-26T12:44:53.511Z",
+    "durationMs": 62,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/entry-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/entry-index.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/final-branch.receipt.json",
+    "id": "final-branch",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.984Z",
+    "endedAt": "2026-10-26T12:48:42.016Z",
+    "durationMs": 32,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/final-branch.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/final-branch.stderr.log",
+    "stdoutBytes": 18,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/final-files.receipt.json",
+    "id": "final-files",
+    "command": [
+      "git",
+      "ls-files",
+      "-z",
+      "--cached",
+      "--others",
+      "--exclude-standard"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:42.081Z",
+    "endedAt": "2026-10-26T12:48:42.162Z",
+    "durationMs": 80,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/final-files.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/final-files.stderr.log",
+    "stdoutBytes": 1594499,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/final-head.receipt.json",
+    "id": "final-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:42.017Z",
+    "endedAt": "2026-10-26T12:48:42.047Z",
+    "durationMs": 31,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/final-head.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/final-head.stderr.log",
+    "stdoutBytes": 41,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/final-index.receipt.json",
+    "id": "final-index",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:42.048Z",
+    "endedAt": "2026-10-26T12:48:42.081Z",
+    "durationMs": 33,
+    "timeoutMs": 60000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/final-index.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/final-index.stderr.log",
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/final-pid.receipt.json",
+    "id": "final-pid",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pidof",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.938Z",
+    "endedAt": "2026-10-26T12:48:41.983Z",
+    "durationMs": 45,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/final-pid.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/final-pid.stderr.log",
+    "stdoutBytes": 6,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/install.receipt.json",
+    "id": "install",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "install",
+      "-r",
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:31.260Z",
+    "endedAt": "2026-10-26T12:45:34.717Z",
+    "durationMs": 3457,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/install.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/install.stderr.log",
+    "stdoutBytes": 38,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/installed-apk-sha256.receipt.json",
+    "id": "installed-apk-sha256",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "sha256sum",
+      "/data/app/~~4hIPk7RHHonqGOkwPzPG8g==/dev.translationtest.ns-Jttu63ewZYHnSTF-YPs19g==/base.apk"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:34.951Z",
+    "endedAt": "2026-10-26T12:45:40.642Z",
+    "durationMs": 5691,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/installed-apk-sha256.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/installed-apk-sha256.stderr.log",
+    "stdoutBytes": 161,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/ns-path-installed.receipt.json",
+    "id": "ns-path-installed",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pm",
+      "path",
+      "dev.translationtest.ns"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:34.718Z",
+    "endedAt": "2026-10-26T12:45:34.951Z",
+    "durationMs": 233,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/ns-path-installed.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/ns-path-installed.stderr.log",
+    "stdoutBytes": 103,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/package-service-before.receipt.json",
+    "id": "package-service-before",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "service",
+      "check",
+      "package"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.460Z",
+    "endedAt": "2026-10-26T12:45:25.547Z",
+    "durationMs": 87,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/package-service-before.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/package-service-before.stderr.log",
+    "stdoutBytes": 24,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/package-service-preinstall.receipt.json",
+    "id": "package-service-preinstall",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "service",
+      "check",
+      "package"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:31.131Z",
+    "endedAt": "2026-10-26T12:45:31.186Z",
+    "durationMs": 55,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/package-service-preinstall.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/package-service-preinstall.stderr.log",
+    "stdoutBytes": 24,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/rn-path-after.receipt.json",
+    "id": "rn-path-after",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pm",
+      "path",
+      "dev.translationtest.rn"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:48:41.875Z",
+    "endedAt": "2026-10-26T12:48:41.937Z",
+    "durationMs": 61,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/rn-path-after.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/rn-path-after.stderr.log",
+    "stdoutBytes": 103,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/rn-path-before.receipt.json",
+    "id": "rn-path-before",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pm",
+      "path",
+      "dev.translationtest.rn"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.548Z",
+    "endedAt": "2026-10-26T12:45:25.634Z",
+    "durationMs": 86,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/rn-path-before.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/rn-path-before.stderr.log",
+    "stdoutBytes": 103,
+    "stderrBytes": 0
+  },
+  {
+    "phase": "Historical b-device2; not rerun in C",
+    "receipt": "migration/evidence/NS01/b-device2/system-server.receipt.json",
+    "id": "system-server",
+    "command": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "pidof",
+      "system_server"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "startedAt": "2026-10-26T12:45:25.361Z",
+    "endedAt": "2026-10-26T12:45:25.459Z",
+    "durationMs": 99,
+    "timeoutMs": 30000,
+    "timedOut": false,
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "migration/evidence/NS01/b-device2/system-server.stdout.log",
+    "stderr": "migration/evidence/NS01/b-device2/system-server.stderr.log",
+    "stdoutBytes": 5,
+    "stderrBytes": 0
+  }
+]

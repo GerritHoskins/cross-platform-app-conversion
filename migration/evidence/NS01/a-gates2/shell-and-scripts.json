@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "files": [
+    "app.css",
+    "app.ts",
+    "components/Home.vue",
+    "shell/shell-content.ts"
+  ],
+  "detailsRemoved": true,
+  "detailsReferences": [],
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "android": "npx --yes nativescript@9.1.2 run android --no-hmr",
+    "build:android": "npx --yes nativescript@9.1.2 build android"
+  },
+  "themePolicy": "Explicit #ffffff backgrounds and #111111 foregrounds remain high contrast without changing system theme. Pixel verification belongs to phase B.",
+  "testScope": "One pure TypeScript smoke test; not native rendering proof."
+}

@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "package": "NS01",
+  "phase": "B",
+  "run": "sol-ns01-r1-b2-20261026",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "appId": "dev.translationtest.ns",
+  "serial": "emulator-5554",
+  "avd": "RN01_API36",
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117561814,
+    "sha256": "6f1e624bad3943b1c76774afc39d01748b1a1d845e6cf555bb8746af596d8f24"
+  },
+  "cases": [
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/install.receipt.json",
+        "migration/evidence/NS01/b-device2/install.stdout.log",
+        "migration/evidence/NS01/b-device2/ns-path-installed.stdout.log",
+        "migration/evidence/NS01/b-device2/installed-apk-sha256.stdout.log",
+        "migration/evidence/NS01/b-device2/install-verification.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "Exact A4 APK installed successfully; installed base.apk SHA-256 matches A4."
+    },
+    {
+      "id": "B-launch",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-launch-assertions.json",
+        "migration/evidence/NS01/b-device2/B-launch.png",
+        "migration/evidence/NS01/b-device2/B-launch-xml.receipt.json",
+        "migration/evidence/NS01/b-device2/B-launch-xml.stdout.log",
+        "migration/evidence/NS01/b-device2/B-launch-poll-1.stderr.log",
+        "migration/evidence/NS01/b-device2/B-launch-poll-2.stderr.log",
+        "migration/evidence/NS01/b-device2/driver-launch.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "First cold launch has PID but no XML proof. Dump transport did not return XML; 20-second observation window exceeded. Missing first-frame XML remains unresolved."
+    },
+    {
+      "id": "B-relaunch",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-relaunch-assertions.json",
+        "migration/evidence/NS01/b-device2/B-relaunch.png",
+        "migration/evidence/NS01/b-device2/B-relaunch.xml",
+        "migration/evidence/NS01/b-device2/B-relaunch-pid.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "Second cold launch shell confirmed in XML; pixel inspection remains pending coordinator."
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS01/b-device2/B-launch-logcat.stdout.log",
+        "migration/evidence/NS01/b-device2/B-relaunch-logcat.stdout.log",
+        "migration/evidence/NS01/b-device2/logcat-summary.json",
+        "migration/evidence/NS01/b-device2/warnings-errors-verbatim.txt"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "Both requested bounded PID logs recorded without suppression; warnings and ashmem deprecation error retained verbatim. No matched fatal-crash pattern in these bounded logs; not a claim of error-free logs."
+    }
+  ],
+  "findings": [
+    "B-launch BLOCKED: first cold-launch shell not proven by XML within 20 seconds; first assertion frame lacks XML. Original evidence is preserved, not replaced by the second launch.",
+    "B-launch-diagnostic also lacks XML; every distinct PNG still needs coordinator pixel/privacy inspection, including incomplete pairs.",
+    "Bounded app logs contain runtime/emulator warnings, ashmem deprecation error and startup jank; no product/dependency/config fix attempted.",
+    "Initial receipt-runner AVD parser falsely rejected CR-CR-LF output. Parser-only correction and read-only AVD confirmation are documented; no real AVD mismatch occurred."
+  ],
+  "timeouts": [],
+  "finalPid": "4385",
+  "finalState": {
+    "pass": true,
+    "pid": "4385",
+    "foregroundEvidence": "migration/evidence/NS01/b-device2/B-relaunch.xml",
+    "settingsUnchanged": true,
+    "rnPathUnchanged": true,
+    "noNewDeviceInput": true,
+    "note": "Last UI frame is B-relaunch; subsequent calls read settings, RN path and PID only."
+  },
+  "coordinatorDisposition": "A4 automatic Android SDK Platform 36 revision 2 install/license and Gradle 8.14.3 wrapper download accepted under NS01 step 8; carry into later handoff. No such installs/downloads performed in B2."
+}

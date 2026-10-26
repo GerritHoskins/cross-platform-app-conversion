@@ -1,0 +1,30 @@
+# ns create
+
+### Description
+
+Interactively creates a new NativeScript app based on a predefined template.
+
+### Commands
+
+[90m┌──────────────────[39m[90m┬────────────────────────────────────────────────────────────────────────────────────────┐[39m
+[90m│[39m[1m[32m Template         [39m[22m[90m│[39m[1m[32m Synopsis                                                                               [39m[22m[90m│[39m
+[90m│[39m JavaScript based [90m│[39m $ ns create [<App Name>] [--js] [--path <Directory>] [--appid <App ID>]                [90m│[39m
+[90m│[39m TypeScript based [90m│[39m $ ns create [<App Name>] --ts [--path <Directory>] [--appid <App ID>]                  [90m│[39m
+[90m│[39m Angular based    [90m│[39m $ ns create [<App Name>] --ng [--path <Directory>] [--appid <App ID>]                  [90m│[39m
+[90m│[39m Vue.js based     [90m│[39m $ ns create [<App Name>] --vue [--path <Directory>] [--appid <App ID>]                 [90m│[39m
+[90m│[39m Custom template  [90m│[39m $ ns create [<App Name>] [--path <Directory>] [--appid <App ID>] --template <Template> [90m│[39m
+[90m└──────────────────[39m[90m┴────────────────────────────────────────────────────────────────────────────────────────┘[39m
+
+### Options
+
+    * `--path` - Specifies the directory where you want to create the project, if different from the current directory. `<Directory>` is the absolute path to an empty directory in which you want to create the project.
+    * `--appid` - Sets the application identifier of your project. `<App ID>` is the value of the application identifier and it must meet the specific requirements of each platform that you want to target. If not specified, the application identifier is set to `org.nativescript.<App name>`. For more information about the `<App ID>` requirements, run `$ ns help create`.
+    * `--js`, `--javascript` - Sets the template for your project to the JavaScript template.
+    * `--ts`, `--tsc`, `--typescript` - Sets the template for your project to the TypeScript template.
+    * `--ng`, `--angular` - Sets the template for your project to the Angular template.
+    * `--vue`, `--vuejs` - Sets the template for your project to the Vue.js template.
+
+### Arguments
+
+<App Name> is the name of project and must meet the requirements of each platform that you want to target. If not specified in the initial command, the NativeScript CLI will ask you for it afterwards. For more information about the <App Name> requirements, run $ ns help create.
+

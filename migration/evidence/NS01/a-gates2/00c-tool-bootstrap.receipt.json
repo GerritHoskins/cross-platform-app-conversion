@@ -1,0 +1,13 @@
+{
+  "command": "terminal",
+  "args": [
+    "for p in migration/evidence/NS01/a-gates2 migration/handoffs/NS01-checkpoint-a2.md tools/qwen-supervisor/.runs/sol-ns01-r1-a2-20261026; do if test -e \"$p\"; then printf 'EXISTS %s\\n' \"$p\"; else printf 'ABSENT %s\\n' \"$p\"; fi; done"
+  ],
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "metadataUnavailable": "Three initial read-only terminal bootstrap probes preceded the spawnSync receipt runner. Their exact terminal requests and returned output/exit codes are recorded in bootstrap receipts; terminal did not expose start timestamps or durations, so those fields are null rather than invented. Subsequent child commands have measured timestamps/durations and bounded logs. Terminal driver invocations launch the recorded .mjs orchestration.",
+  "stdout": "00c-tool-bootstrap.stdout.log",
+  "stderr": "00c-tool-bootstrap.stderr.log"
+}
