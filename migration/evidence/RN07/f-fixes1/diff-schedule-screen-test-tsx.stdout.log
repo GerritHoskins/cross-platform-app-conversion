@@ -1,0 +1,89 @@
+diff --git a/migration/react-native/__tests__/schedule-screen.test.tsx b/migration/react-native/__tests__/schedule-screen.test.tsx
+index 1101b1b..85586e2 100644
+--- a/migration/react-native/__tests__/schedule-screen.test.tsx
++++ b/migration/react-native/__tests__/schedule-screen.test.tsx
+@@ -1,6 +1,6 @@
+ import '../test-utils/gesture-test-setup';
+ import { router } from 'expo-router';
+-import { Alert, Pressable, SectionList, Text } from 'react-native';
++import { Alert, Pressable, SectionList, StyleSheet, Text } from 'react-native';
+ import type { Fiber } from 'test-renderer';
+ 
+ import type { Conference } from '@migration/core';
+@@ -377,6 +377,76 @@ describe('ScheduleScreen favorite controls', () => {
+   });
+ });
+ 
++describe('ScheduleScreen RN07 regressions', () => {
++  afterEach(() => jest.restoreAllMocks());
++
++  function sectionList(): Fiber {
++    let fiber: Fiber | null = screen.getAllByTestId(/^session-/)[0].unstable_fiber;
++    while (fiber && fiber.type !== SectionList && fiber.elementType !== SectionList) fiber = fiber.return;
++    expect(fiber).not.toBeNull();
++    return fiber!;
++  }
++
++  test('F-1 keeps handled row and favorite taps available with the keyboard open', async () => {
++    const view = await render(<ConferenceProvider><ScheduleScreen /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    expect(sectionList().memoizedProps.keyboardShouldPersistTaps).toBe('handled');
++    await view.unmount();
++  });
++
++  test('F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list', async () => {
++    let conference!: ReturnType<typeof useConference>;
++    function Probe() {
++      conference = useConference();
++      return null;
++    }
++    const scroll = jest.spyOn(SectionList.prototype, 'scrollToLocation').mockImplementation(() => {});
++    const view = await render(<ConferenceProvider><ScheduleScreen /><Probe /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    const instance = sectionList().stateNode;
++    scroll.mockClear();
++    await act(async () => { conference.dispatch({ type: 'favoriteAdded', sessionId: 4 }); });
++    expect(scroll).not.toHaveBeenCalled();
++
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: ['Ionic'] }); });
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await fireEvent.changeText(screen.getByLabelText('Search sessions'), 'University');
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await fireEvent.press(screen.getByTestId('mode-favorites'));
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await act(async () => { conference.dispatch({ type: 'favoriteAdded', sessionId: 2 }); });
++    await act(async () => { conference.dispatch({ type: 'favoriteRemoved', sessionId: 2 }); });
++    expect(scroll).not.toHaveBeenCalled();
++
++    // Empty results unmount the list: do not scroll to a nonexistent section.
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: [] }); });
++    expect(screen.getByText('No sessions match your search or filters.')).toBeTruthy();
++    expect(scroll).not.toHaveBeenCalled();
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: ['Ionic'] }); });
++    expect(scroll).toHaveBeenCalledTimes(1);
++    await view.unmount();
++  });
++
++  test('F-3 lets the search field grow with font scale instead of fixing its height', async () => {
++    const view = await render(<ConferenceProvider><ScheduleScreen /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    const style = StyleSheet.flatten(screen.getByLabelText('Search sessions').props.style);
++    expect(style.height).toBeUndefined();
++    expect(style.minHeight).toBe(42);
++    expect(style.paddingVertical).toBeGreaterThan(0);
++    await view.unmount();
++  });
++});
++
+ describe('ScheduleScreen behavior (ready state)', () => {
+   test('search filters live, shows the generic empty message, and restores on clear', async () => {
+     let loaderCalls = 0;

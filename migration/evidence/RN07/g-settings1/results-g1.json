@@ -1,0 +1,445 @@
+[
+  {
+    "case": "G1.release-gate",
+    "status": "BLOCKED",
+    "run": "g-settings1",
+    "preconditions": "Exact HEAD equality required; branch migration/slice-1 and index empty.",
+    "steps": [
+      "Read branch, HEAD, RN06 review commit, index, raw porcelain, recompute preservation hashes."
+    ],
+    "expected": "HEAD equals RN06 review commit; preservation matches except authorized D5-only package amendment.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/preservation-entry.json",
+      "migration/evidence/RN07/g-settings1/gate-blocker.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Coordinator must resolve candidate/gate authority before a new device run. No history rewrite or candidate substitution performed.",
+    "teardown": "No input or settings write. Settings entry/final identical."
+  },
+  {
+    "case": "G01",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Keyboard input/edit and Back.",
+    "steps": [],
+    "expected": "Checklist G01; Keyboard input/edit and Back.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G02",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Keyboard-visible first-tap parity.",
+    "steps": [],
+    "expected": "Checklist G02; Keyboard-visible first-tap parity.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G02.row",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Row first tap.",
+    "steps": [],
+    "expected": "Checklist G02; Row first tap.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G02.mode",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Mode first tap.",
+    "steps": [],
+    "expected": "Checklist G02; Mode first tap.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G02.filter",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Filter first tap.",
+    "steps": [],
+    "expected": "Checklist G02; Filter first tap.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G02.favorite",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Row Favorite first tap.",
+    "steps": [],
+    "expected": "Checklist G02; Row Favorite first tap.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G05",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Font-scale flows.",
+    "steps": [],
+    "expected": "Checklist G05; Font-scale flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G05.default",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Default font flows.",
+    "steps": [],
+    "expected": "Checklist G05; Default font flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G05.1.3",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Font 1.3 flows.",
+    "steps": [],
+    "expected": "Checklist G05; Font 1.3 flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G05.largest",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Largest >=1.5 flows.",
+    "steps": [],
+    "expected": "Checklist G05; Largest >=1.5 flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G06",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Display-size flows.",
+    "steps": [],
+    "expected": "Checklist G06; Display-size flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G06.default",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Default density flows.",
+    "steps": [],
+    "expected": "Checklist G06; Default density flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G06.larger",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Larger density flows.",
+    "steps": [],
+    "expected": "Checklist G06; Larger density flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G07",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Light/dark flows.",
+    "steps": [],
+    "expected": "Checklist G07; Light/dark flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G07.light",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Light flows.",
+    "steps": [],
+    "expected": "Checklist G07; Light flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G07.dark-live-switch",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Live dark switch and flows.",
+    "steps": [],
+    "expected": "Checklist G07; Live dark switch and flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G08",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Portrait insets/edges.",
+    "steps": [],
+    "expected": "Checklist G08; Portrait insets/edges.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G08.bars",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before System bars.",
+    "steps": [],
+    "expected": "Checklist G08; System bars.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G08.keyboard",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Keyboard insets.",
+    "steps": [],
+    "expected": "Checklist G08; Keyboard insets.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G08.schedule-edges",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Schedule top/bottom.",
+    "steps": [],
+    "expected": "Checklist G08; Schedule top/bottom.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G08.filter-bottom",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Filter bottom keyboard closed.",
+    "steps": [],
+    "expected": "Checklist G08; Filter bottom keyboard closed.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G09",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Background/resume flows.",
+    "steps": [],
+    "expected": "Checklist G09; Background/resume flows.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G09.schedule",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Schedule background/resume.",
+    "steps": [],
+    "expected": "Checklist G09; Schedule background/resume.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G09.modal-draft",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Unapplied modal draft background/resume.",
+    "steps": [],
+    "expected": "Checklist G09; Unapplied modal draft background/resume.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  },
+  {
+    "case": "G09.detail",
+    "status": "NOT RUN",
+    "run": "g-settings1",
+    "preconditions": "Release gate must pass before Detail background/resume.",
+    "steps": [],
+    "expected": "Checklist G09; Detail background/resume.",
+    "observed": "G1 exact-HEAD prerequisite failed: recorded HEAD 40ea01f467160a60b806c13527f9501d4d900e81 versus required RN06 f5a1d83. No device case attempted.",
+    "evidence": [
+      "migration/evidence/RN07/g-settings1/gate-blocker.json",
+      "migration/evidence/RN07/g-settings1/settings-entry.json",
+      "migration/evidence/RN07/g-settings1/settings-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "defectOrDecision": "Blocked run; unattempted case, not a product FAIL. G02 known issue was not reproduced here.",
+    "teardown": "No device inputs or setting writes; settings unchanged."
+  }
+]

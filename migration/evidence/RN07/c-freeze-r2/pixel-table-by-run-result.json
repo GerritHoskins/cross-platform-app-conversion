@@ -1,0 +1,282 @@
+{
+  "reports": [
+    {
+      "path": "migration/evidence/RN07/pixel-inspection-coordinator.md",
+      "sha256": "84009d80bc3df278e1bac939310d2d96e4d96227e5a30b0da2b42b1c1c4432f5"
+    },
+    {
+      "path": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+      "sha256": "55030107d65049abdefc33cd4d63925654e37ff9d2daaff9db8883eb55351800"
+    }
+  ],
+  "supplement": {
+    "rows": 471,
+    "counts": {
+      "PASS": 393,
+      "LIMITED": 42,
+      "FAIL": 17,
+      "BLOCKED": 19
+    },
+    "byRun": {
+      "b-device1": {
+        "PASS": 4,
+        "LIMITED": 0,
+        "FAIL": 0,
+        "BLOCKED": 0
+      },
+      "b-device2": {
+        "PASS": 43,
+        "LIMITED": 3,
+        "FAIL": 0,
+        "BLOCKED": 0
+      },
+      "g-settings1b": {
+        "PASS": 74,
+        "LIMITED": 12,
+        "FAIL": 17,
+        "BLOCKED": 0
+      },
+      "g-settings2a": {
+        "PASS": 188,
+        "LIMITED": 14,
+        "FAIL": 0,
+        "BLOCKED": 2
+      },
+      "g-settings2b": {
+        "PASS": 9,
+        "LIMITED": 5,
+        "FAIL": 0,
+        "BLOCKED": 0
+      },
+      "g-settings2c": {
+        "PASS": 10,
+        "LIMITED": 6,
+        "FAIL": 0,
+        "BLOCKED": 11
+      },
+      "g-settings3": {
+        "PASS": 65,
+        "LIMITED": 2,
+        "FAIL": 0,
+        "BLOCKED": 6
+      }
+    },
+    "failRows": [
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 76,
+        "frames": [
+          "g-settings1b/G02-row-first"
+        ],
+        "asInspectedSha256": "1b6f2aa335ada1a29c19e59f30bc668d3fbf58b01362ee5ae58597cfaae2b468",
+        "verdict": "FAIL",
+        "observed": "Candidate 1: first row tap with the IME up only dismissed it; still on the schedule (no detail). Confirms G02.row FAIL, fixed by F-1 (PASS in g-settings2a). Byte-identical: g-settings1b/G05.default-search-dismiss-first-row, g-settings1b/G08-keyboard-first-row-dismiss, g-settings1b/G08-query-clear, g-settings1b/G09-dismiss-keyboard-first-row, g-settings1b/G09.schedule-after, g-settings1b/G09.schedule-before."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 106,
+        "frames": [
+          "g-settings1b/G05.font2-0-detail-return"
+        ],
+        "asInspectedSha256": "56b1f49067ce30162813341a709476776757c42599724d7798e846108363523b",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 schedule: search field placeholder clipped (fixed height; the G05 FAIL fixed by F-3); mode buttons wrap; rows readable. Byte-identical: g-settings1b/G05.font2-0-filter-done, g-settings1b/G05.font2-0-schedule-return-top, g-settings1b/G05.font2-0-schedule-scroll."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 108,
+        "frames": [
+          "g-settings1b/G05.font2-0-alert-ok"
+        ],
+        "asInspectedSha256": "28d3b1b85ac043dc6a0c840406605f1fb863a1ca4c1b78e1df8c18ba98f45805",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 schedule after alert OK: search placeholder clipped (G05 FAIL, fixed by F-3); rest readable. Byte-identical: g-settings1b/G05.font2-0-seek-favorite4-1."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 109,
+        "frames": [
+          "g-settings1b/G05.font2-0-selected-favorites"
+        ],
+        "asInspectedSha256": "f48efe8a1ba06df28dede257d38b331867f1888c75bfefff34597568db878dca",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 Favorites: University of Ionic with Remove readable; search placeholder clipped (G05 FAIL, fixed by F-3)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 110,
+        "frames": [
+          "g-settings1b/G05.font2-0-search-focus"
+        ],
+        "asInspectedSha256": "cbadd7a6ae51cdabbd05a7821d2041043d1b49bc222cfce38cb9804577830618",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 search focused: placeholder clipped (G05 FAIL, fixed by F-3); IME toolbar covers left edge."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 111,
+        "frames": [
+          "g-settings1b/G05.font2-0-search-dismiss-first-row"
+        ],
+        "asInspectedSha256": "1b7d28be0318a6ed2dacf2f092ca2578329b1d2453eeab43dcd0a0586f5bd234",
+        "verdict": "FAIL",
+        "observed": "Font 2.0: typed \"Ionic\" clipped in the search field (G05 FAIL, fixed by F-3); results readable."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 129,
+        "frames": [
+          "g-settings1b/G07.dark-detail4"
+        ],
+        "asInspectedSha256": "11f0e39718b2ca4885d0945197af8903146de6b603f302905485a0c744962c0a",
+        "verdict": "FAIL",
+        "observed": "Dark detail (candidate 1): content dark and readable, but the native header and status bar stay white (G07 FAIL, fixed by F-4)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 130,
+        "frames": [
+          "g-settings1b/G07.dark-detail-scroll"
+        ],
+        "asInspectedSha256": "258a262df5e089ced8d5cc575766d9c6df49d49942fa641a1faeceb4c8248157",
+        "verdict": "FAIL",
+        "observed": "Dark detail scrolled: content readable; header stays white (G07 FAIL, fixed by F-4)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 131,
+        "frames": [
+          "g-settings1b/G07.dark-filter-bottom"
+        ],
+        "asInspectedSha256": "6f85355b216183cbdafb0243e60a1f59e543a80f61c3ccc624a5592959844892",
+        "verdict": "FAIL",
+        "observed": "Dark filter bottom: tracks and actions readable on dark; header stays white (G07 FAIL, fixed by F-4). Byte-identical: g-settings1b/G07.dark-filter-restore-all, g-settings1b/G07.dark-filter-select, g-settings1b/G07.dark-filter-top."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 132,
+        "frames": [
+          "g-settings1b/G07.dark-favorites-empty"
+        ],
+        "asInspectedSha256": "e84b9aa64ac4e427200428c07dc238736ea158b39745e4f940ae088895429857",
+        "verdict": "FAIL",
+        "observed": "Dark Favorites empty: content dark and readable, Favorite sessions selected; header stays white (G07 FAIL, fixed by F-4)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 134,
+        "frames": [
+          "g-settings1b/G07.dark-alert-ok"
+        ],
+        "asInspectedSha256": "b00f55bd6c71b8e7e4e789feb9e0dbb95c49e1004b5f59fa8607b2eff30bcf3d",
+        "verdict": "FAIL",
+        "observed": "Dark schedule after OK: rows, headings, Favorite buttons readable; header stays white (G07 FAIL, fixed by F-4). Byte-identical: g-settings1b/G07.dark-all-again, g-settings1b/G07.dark-dark-after-switch, g-settings1b/G07.dark-detail-return, g-settings1b/G07.dark-filter-done, g-settings1b/G07.dark-return-all, g-settings1b/G07.dark-schedule-return-top, g-settings1b/G07.dark-schedule-top."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 135,
+        "frames": [
+          "g-settings1b/G07.dark-selected-favorites"
+        ],
+        "asInspectedSha256": "a7ab7d688e3bed801dabc90f7fc5218d1e63eba8d9ab4cec4c6518d7e6a7217b",
+        "verdict": "FAIL",
+        "observed": "Dark Favorites: University of Ionic with Remove readable; header stays white (G07 FAIL, fixed by F-4)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 136,
+        "frames": [
+          "g-settings1b/G07.dark-search-focus"
+        ],
+        "asInspectedSha256": "a1ba2a0f49c7346073259df5dd8d22efc4c3c4e9da3a0a53394ba694d02da249",
+        "verdict": "FAIL",
+        "observed": "Dark search focus: dark input readable; header white (G07 FAIL). Gboard clipboard chip shows host clipboard (environment; privacy note)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 137,
+        "frames": [
+          "g-settings1b/G07.dark-search-Ionic"
+        ],
+        "asInspectedSha256": "416528ff254043d89b48ecc45f8060447a1d120a20064610043ecb950f902c6e",
+        "verdict": "FAIL",
+        "observed": "Dark search \"Ionic\": readable dark input and rows; header white (G07 FAIL, fixed by F-4); IME toolbar on left."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 138,
+        "frames": [
+          "g-settings1b/G07.dark-search-dismiss-first-row"
+        ],
+        "asInspectedSha256": "2bfe00545cbcd4c6676a587d49ead9d71120afd5ac453d0f8177751a2720c698",
+        "verdict": "FAIL",
+        "observed": "Dark: search kept after first-tap keyboard dismissal; readable; header white (G07 FAIL, fixed by F-4)."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 165,
+        "frames": [
+          "g-settings1b/G05.font2-0-detail-bottom-ready"
+        ],
+        "asInspectedSha256": "c8e3e1a1e572b744dc10c3baf2ffb2b72dbe701dcd2a76e51a0730b06033cb48",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 schedule: search placeholder clipped (G05 FAIL, fixed by F-3); mode buttons wrap; rows readable. Byte-identical: g-settings1b/G05.font2-0-ready."
+      },
+      {
+        "report": "migration/evidence/RN07/pixel-inspection-coordinator-r2.md",
+        "line": 166,
+        "frames": [
+          "g-settings1b/G05.font2-0-detail-bottom-empty-favorites"
+        ],
+        "asInspectedSha256": "233378724eb78e1d24afb4411489b6b9799ef12809b85296a0a2c388b8bbce30",
+        "verdict": "FAIL",
+        "observed": "Font 2.0 Favorites empty: message readable; search placeholder clipped (G05 FAIL, fixed by F-3). Byte-identical: g-settings1b/G05.font2-0-empty-favorites, g-settings1b/G05.font2-0-favorites-empty."
+      }
+    ],
+    "policy": "All supplemental FAIL rows are candidate-1 G02/G05/G07 defects fixed and reverified on candidate 2; BLOCKED remains environment/automation, LIMITED remains limited."
+  },
+  "coverageByRun": {
+    "b-device1": {
+      "pngs": 126,
+      "distinctAsInspected": 72,
+      "uncovered": 0
+    },
+    "b-device2": {
+      "pngs": 186,
+      "distinctAsInspected": 74,
+      "uncovered": 0
+    },
+    "g-settings1": {
+      "pngs": 0,
+      "distinctAsInspected": 0,
+      "uncovered": 0
+    },
+    "g-settings1b": {
+      "pngs": 279,
+      "distinctAsInspected": 127,
+      "uncovered": 0
+    },
+    "g-settings2a": {
+      "pngs": 247,
+      "distinctAsInspected": 214,
+      "uncovered": 0
+    },
+    "g-settings2b": {
+      "pngs": 19,
+      "distinctAsInspected": 15,
+      "uncovered": 0
+    },
+    "g-settings2c": {
+      "pngs": 40,
+      "distinctAsInspected": 30,
+      "uncovered": 0
+    },
+    "g-settings3": {
+      "pngs": 131,
+      "distinctAsInspected": 79,
+      "uncovered": 0
+    }
+  },
+  "totalPngs": 1028,
+  "gaps": []
+}

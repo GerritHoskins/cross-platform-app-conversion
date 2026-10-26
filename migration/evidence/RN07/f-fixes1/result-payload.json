@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "package": "RN07",
+  "phase": "F",
+  "status": "CHECKPOINTED",
+  "summary": "Candidate 1 -> candidate 2: exactly four target-only fixes with four focused red/green tests; all software gates pass; device acceptance remains G2.",
+  "files": [
+    "migration/react-native/src/screens/schedule-screen.tsx",
+    "migration/react-native/src/app/_layout.tsx",
+    "migration/react-native/__tests__/schedule-screen.test.tsx",
+    "migration/react-native/__tests__/root-layout.test.tsx",
+    "migration/handoffs/RN07-checkpoint-f1.md",
+    "migration/evidence/RN07/f-fixes1/candidate1.json",
+    "migration/evidence/RN07/f-fixes1/candidate2.json",
+    "migration/evidence/RN07/f-fixes1/fixes.json",
+    "migration/evidence/RN07/f-fixes1/fixes.diff",
+    "migration/evidence/RN07/f-fixes1/jest1.json",
+    "migration/evidence/RN07/f-fixes1/jest2.json",
+    "migration/evidence/RN07/f-fixes1/android-artifacts.json",
+    "migration/evidence/RN07/f-fixes1/commands.jsonl",
+    "migration/evidence/RN07/f-fixes1/checkpoint-verification.json"
+  ],
+  "fixes": [
+    {
+      "id": "F-1",
+      "applied": true,
+      "tests": [
+        "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open"
+      ]
+    },
+    {
+      "id": "F-2",
+      "applied": true,
+      "tests": [
+        "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list"
+      ]
+    },
+    {
+      "id": "F-3",
+      "applied": true,
+      "tests": [
+        "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height"
+      ]
+    },
+    {
+      "id": "F-4",
+      "applied": true,
+      "tests": [
+        "F-4 follows dark and light schemes for native headers, content and the automatic status bar"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "node-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/node-version.receipt.json"
+    },
+    {
+      "id": "entry-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-branch.receipt.json"
+    },
+    {
+      "id": "entry-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-head.receipt.json"
+    },
+    {
+      "id": "entry-base-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-base-diff.receipt.json"
+    },
+    {
+      "id": "entry-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-index.receipt.json"
+    },
+    {
+      "id": "entry-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-status.receipt.json"
+    },
+    {
+      "id": "entry-gate",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/entry-gate.receipt.json"
+    },
+    {
+      "id": "candidate1-tracked-files",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/candidate1-tracked-files.receipt.json"
+    },
+    {
+      "id": "focused-red",
+      "exitCode": 1,
+      "receipt": "migration/evidence/RN07/f-fixes1/focused-red.receipt.json"
+    },
+    {
+      "id": "focused-red2",
+      "exitCode": 1,
+      "receipt": "migration/evidence/RN07/f-fixes1/focused-red2.receipt.json"
+    },
+    {
+      "id": "focused-green",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/focused-green.receipt.json"
+    },
+    {
+      "id": "core-integration-before",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/core-integration-before.receipt.json"
+    },
+    {
+      "id": "core-tests",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/core-tests.receipt.json"
+    },
+    {
+      "id": "core-tracked-clean",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/core-tracked-clean.receipt.json"
+    },
+    {
+      "id": "typecheck",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/typecheck.receipt.json"
+    },
+    {
+      "id": "jest1",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/jest1.receipt.json"
+    },
+    {
+      "id": "jest1-inspect",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/jest1-inspect.receipt.json"
+    },
+    {
+      "id": "jest2",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/jest2.receipt.json"
+    },
+    {
+      "id": "jest2-inspect",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/jest2-inspect.receipt.json"
+    },
+    {
+      "id": "core-integration",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/core-integration.receipt.json"
+    },
+    {
+      "id": "bundle-android",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/bundle-android.receipt.json"
+    },
+    {
+      "id": "android-inventory",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/android-inventory.receipt.json"
+    },
+    {
+      "id": "diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-check.receipt.json"
+    },
+    {
+      "id": "protected-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/protected-diff.receipt.json"
+    },
+    {
+      "id": "index-empty",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/index-empty.receipt.json"
+    },
+    {
+      "id": "software-gates-phase",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/software-gates-phase.receipt.json"
+    },
+    {
+      "id": "candidate2-tracked-files",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/candidate2-tracked-files.receipt.json"
+    },
+    {
+      "id": "diff-schedule-screen-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-schedule-screen-tsx.receipt.json"
+    },
+    {
+      "id": "diff-_layout-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-_layout-tsx.receipt.json"
+    },
+    {
+      "id": "diff-schedule-screen-test-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-schedule-screen-test-tsx.receipt.json"
+    },
+    {
+      "id": "diff-root-layout-test-tsx",
+      "exitCode": 1,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-root-layout-test-tsx.receipt.json"
+    },
+    {
+      "id": "final-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-branch.receipt.json"
+    },
+    {
+      "id": "final-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-head.receipt.json"
+    },
+    {
+      "id": "final-base-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-base-diff.receipt.json"
+    },
+    {
+      "id": "final-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-status.receipt.json"
+    },
+    {
+      "id": "final-scope",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-scope.receipt.json"
+    },
+    {
+      "id": "final-preservation",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-preservation.receipt.json"
+    },
+    {
+      "id": "bootstrap-discovery",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/bootstrap-discovery.receipt.json"
+    },
+    {
+      "id": "record-candidate2-phase",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/record-candidate2-phase.receipt.json"
+    },
+    {
+      "id": "checkpoint-diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-diff-check.receipt.json"
+    },
+    {
+      "id": "checkpoint-protected-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-protected-diff.receipt.json"
+    },
+    {
+      "id": "checkpoint-index-empty",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-index-empty.receipt.json"
+    },
+    {
+      "id": "checkpoint-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-status.receipt.json"
+    },
+    {
+      "id": "checkpoint-preparation",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-preparation.receipt.json"
+    },
+    {
+      "id": "close-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/close-status.receipt.json"
+    },
+    {
+      "id": "close-index-empty",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/close-index-empty.receipt.json"
+    },
+    {
+      "id": "close-diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/close-diff-check.receipt.json"
+    },
+    {
+      "id": "checkpoint-verification",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/checkpoint-verification.receipt.json"
+    }
+  ],
+  "testCounts": {
+    "candidate1": {
+      "suites": 6,
+      "tests": 95
+    },
+    "candidate2": {
+      "suites": 7,
+      "tests": 99,
+      "fullRuns": 2,
+      "perSuite": [
+        {
+          "suite": "filter-screen.test.tsx",
+          "status": "passed",
+          "passed": 12,
+          "total": 12
+        },
+        {
+          "suite": "schedule-screen.test.tsx",
+          "status": "passed",
+          "passed": 15,
+          "total": 15
+        },
+        {
+          "suite": "root-layout.test.tsx",
+          "status": "passed",
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "suite": "session-detail-screen.test.tsx",
+          "status": "passed",
+          "passed": 15,
+          "total": 15
+        },
+        {
+          "suite": "schedule-swipe.test.tsx",
+          "status": "passed",
+          "passed": 17,
+          "total": 17
+        },
+        {
+          "suite": "shell-screen.test.tsx",
+          "status": "passed",
+          "passed": 4,
+          "total": 4
+        },
+        {
+          "suite": "conference-state.test.ts",
+          "status": "passed",
+          "passed": 35,
+          "total": 35
+        }
+      ]
+    },
+    "core": {
+      "tests": 53,
+      "passed": 53
+    },
+    "newTests": [
+      {
+        "suite": "schedule-screen.test.tsx",
+        "name": "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open",
+        "status": "passed"
+      },
+      {
+        "suite": "schedule-screen.test.tsx",
+        "name": "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list",
+        "status": "passed"
+      },
+      {
+        "suite": "schedule-screen.test.tsx",
+        "name": "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height",
+        "status": "passed"
+      },
+      {
+        "suite": "root-layout.test.tsx",
+        "name": "F-4 follows dark and light schemes for native headers, content and the automatic status bar",
+        "status": "passed"
+      }
+    ]
+  },
+  "unresolved": [
+    "G2 device validation pending for G02 row/favorite with a real on-screen keyboard, E06 apply-from-bottom, G05 font 2.0 search, G07 dark header/status bar, and regressions F01-F05/C02/C06.",
+    "G01 keyboard/Back rerun and G03/G04 TalkBack remain G2 work under D6/D2.",
+    "D03/D04 remain BLOCKED by the development-client limitation (D3); F02 diagonal-left remains the known gesture-ambiguity limitation (D5).",
+    "Initial read-only discovery receipt has unavailable timing (null); timed entry gates were repeated."
+  ]
+}

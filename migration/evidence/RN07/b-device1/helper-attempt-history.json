@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": "B-baseline launcher dump",
+      "issue": "uiautomator returned no XML during launcher startup; helper exited 1 after successful force-stop/start",
+      "resolution": "Fresh read-only capture B-baseline-launcher-retry; one launcher connection tap, no additional relaunch."
+    },
+    {
+      "attempt": "B-baseline-tracks-close",
+      "issue": "Helper viewport check excluded header bounds, target absent; no tap was sent",
+      "resolution": "Helper-only visible bounds corrected to include header; Navigate up tap succeeded in B-baseline-tracks-close2."
+    },
+    {
+      "attempt": "C-baseline launcher dump",
+      "issue": "uiautomator returned no XML during launcher startup; helper exited 1 after successful force-stop/start",
+      "resolution": "Fresh read-only C-baseline-launcher-retry; one launcher connection tap, no additional relaunch. Later baseline helper waits 6000ms rather than 2500ms."
+    },
+    {
+      "attempt": "C03-setup-remove12-confirm",
+      "issue": "Requested Remove did not match Android XML uppercase REMOVE; guard stopped before input",
+      "resolution": "Captured exact native alert labels; sent one REMOVE tap in C03-setup-remove12-confirm2."
+    }
+  ],
+  "productEdits": false,
+  "failedAttemptsPreserved": true
+}

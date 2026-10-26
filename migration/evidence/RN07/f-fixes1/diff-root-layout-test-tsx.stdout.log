@@ -1,0 +1,52 @@
+diff --git a/migration/react-native/__tests__/root-layout.test.tsx b/migration/react-native/__tests__/root-layout.test.tsx
+new file mode 100644
+index 0000000..b28fd1b
+--- /dev/null
++++ b/migration/react-native/__tests__/root-layout.test.tsx
+@@ -0,0 +1,46 @@
++import '../test-utils/gesture-test-setup';
++import { Stack } from 'expo-router';
++import { StatusBar } from 'expo-status-bar';
++import * as ReactNative from 'react-native';
++import { render } from '@testing-library/react-native';
++
++import RootLayout from '../src/app/_layout';
++
++jest.mock('expo-router', () => {
++  const React = require('react') as typeof import('react');
++  return {
++    Stack: Object.assign(
++      jest.fn(({ children }: { children: React.ReactNode }) => React.createElement(React.Fragment, null, children)),
++      { Screen: () => null },
++    ),
++  };
++});
++jest.mock('expo-status-bar', () => ({ StatusBar: jest.fn(() => null) }));
++
++afterEach(() => jest.restoreAllMocks());
++
++test('F-4 follows dark and light schemes for native headers, content and the automatic status bar', async () => {
++  const scheme = jest.spyOn(ReactNative, 'useColorScheme').mockReturnValue('dark');
++  const view = await render(<RootLayout />);
++  expect(Stack).toHaveBeenLastCalledWith(expect.objectContaining({
++    screenOptions: {
++      headerStyle: { backgroundColor: '#1c1c22' },
++      headerTintColor: '#f2f2f5',
++      headerTitleStyle: { color: '#f2f2f5' },
++      contentStyle: { backgroundColor: '#101014' },
++    },
++  }), undefined);
++  expect(StatusBar).toHaveBeenLastCalledWith(expect.objectContaining({ style: 'auto' }), undefined);
++
++  scheme.mockReturnValue('light');
++  await view.rerender(<RootLayout />);
++  expect(Stack).toHaveBeenLastCalledWith(expect.objectContaining({
++    screenOptions: {
++      headerStyle: { backgroundColor: '#ffffff' },
++      headerTintColor: '#111114',
++      headerTitleStyle: { color: '#111114' },
++      contentStyle: { backgroundColor: '#f5f5f7' },
++    },
++  }), undefined);
++  await view.unmount();
++});

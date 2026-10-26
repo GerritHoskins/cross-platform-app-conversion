@@ -1,0 +1,14 @@
+{
+  "command": "bash",
+  "args": [
+    "-c",
+    "git branch --show-current && git rev-parse --short HEAD && git log --format=%h -1 -- migration/reviews/RN06-r1.md && git diff --cached --quiet; git status --porcelain=v1 --untracked-files=all"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "stdout": "migration/evidence/RN07/g-settings1/discovery.stdout.log",
+  "stderr": null,
+  "note": "Retrospective receipt of initial read-only terminal call. Timing unavailable; original raw output preserved."
+}

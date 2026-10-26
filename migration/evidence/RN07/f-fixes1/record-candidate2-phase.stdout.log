@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "candidateFiles": 34,
+  "additionalFiles": [
+    {
+      "path": "migration/react-native/__tests__/root-layout.test.tsx",
+      "sha256": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "F-1",
+      "testNames": [
+        "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open"
+      ]
+    },
+    {
+      "id": "F-2",
+      "testNames": [
+        "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list"
+      ]
+    },
+    {
+      "id": "F-3",
+      "testNames": [
+        "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height"
+      ]
+    },
+    {
+      "id": "F-4",
+      "testNames": [
+        "F-4 follows dark and light schemes for native headers, content and the automatic status bar"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "diff-schedule-screen-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-schedule-screen-tsx.receipt.json",
+      "expectedExitCode": 0
+    },
+    {
+      "id": "diff-_layout-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-_layout-tsx.receipt.json",
+      "expectedExitCode": 0
+    },
+    {
+      "id": "diff-schedule-screen-test-tsx",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-schedule-screen-test-tsx.receipt.json",
+      "expectedExitCode": 0
+    },
+    {
+      "id": "diff-root-layout-test-tsx",
+      "exitCode": 1,
+      "receipt": "migration/evidence/RN07/f-fixes1/diff-root-layout-test-tsx.receipt.json",
+      "expectedExitCode": 1
+    },
+    {
+      "id": "final-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-branch.receipt.json"
+    },
+    {
+      "id": "final-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-head.receipt.json"
+    },
+    {
+      "id": "final-base-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-base-diff.receipt.json"
+    },
+    {
+      "id": "final-status",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-status.receipt.json"
+    },
+    {
+      "id": "final-scope",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-scope.receipt.json"
+    },
+    {
+      "id": "final-preservation",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN07/f-fixes1/final-preservation.receipt.json"
+    }
+  ],
+  "warnings": [
+    {
+      "path": "migration/evidence/RN07/f-fixes1/bundle-android.stdout.log",
+      "line": 9,
+      "text": "| (node:45592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.",
+      "continuation": "| (Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "path": "migration/evidence/RN07/f-fixes1/bundle-android.stdout.log",
+      "line": 10,
+      "text": "| (Use `node --trace-warnings ...` to show where the warning was created)",
+      "continuation": null
+    },
+    {
+      "path": "migration/evidence/RN07/f-fixes1/bundle-android.stdout.log",
+      "line": 11,
+      "text": "| (node:45592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.",
+      "continuation": "| (Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "path": "migration/evidence/RN07/f-fixes1/bundle-android.stdout.log",
+      "line": 12,
+      "text": "| (Use `node --trace-warnings ...` to show where the warning was created)",
+      "continuation": null
+    },
+    {
+      "path": "migration/evidence/RN07/f-fixes1/diff-check.stderr.log",
+      "line": 1,
+      "text": "warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it",
+      "continuation": null
+    }
+  ]
+}

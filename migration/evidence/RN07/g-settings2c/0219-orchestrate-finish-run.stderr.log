@@ -1,0 +1,11 @@
+file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-rn07-r1-g2c-20261025/finish.mjs:8
+const written=[];for(const dir of [P,R])for(const f of fs.readdirSync(dir))if(/\.(mjs|json|jsonl|md|xml)$/.test(f))written.push(dir+'/'+f);written.push('migration/handoffs/RN07-checkpoint-g2c.md');const crlf=written.filter(p=>fs.readFileSync(p).includes(Buffer.from('\r\n')));if(crlf.length)throw Error('Authored CRLF '+crlf.join(','));
+                                                                                                                                                                                                                                                                                                         ^
+
+Error: Authored CRLF tools/qwen-supervisor/.runs/sol-rn07-r1-g2c-20261025/stream.jsonl
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-rn07-r1-g2c-20261025/finish.mjs:8:298
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

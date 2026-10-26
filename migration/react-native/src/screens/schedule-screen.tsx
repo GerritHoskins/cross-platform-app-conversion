@@ -202,6 +202,7 @@ export default function ScheduleScreen() {
   const searchText = selection?.searchText ?? '';
   const activeMode: ScheduleMode = selection?.mode ?? 'all';
   const favoritesCount = selection?.favoriteIds.length ?? 0;
+  const list = useRef<SectionList<Session, { key: string; title: string; data: Session[] }>>(null);
   const openRow = useRef<SwipeableMethods | null>(null);
   const onRowOpen = useCallback((methods: SwipeableMethods) => {
     if (openRow.current && openRow.current !== methods) openRow.current.close();
@@ -214,6 +215,8 @@ export default function ScheduleScreen() {
   useEffect(() => {
     openRow.current?.close();
     openRow.current = null;
+    // Empty results unmount the list, leaving no section to scroll to.
+    list.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, animated: false });
   }, [searchText, activeMode, selection?.selectedTracks]);
 
   const handleSearch = (nextSearchText: string) => {
@@ -320,7 +323,9 @@ export default function ScheduleScreen() {
           <Text style={[styles.emptyMessage, { color: palette.subtle }]}>{emptyMessage}</Text>
         ) : (
           <SectionList
+            ref={list}
             accessibilityRole="list"
+            keyboardShouldPersistTaps="handled"
             sections={sections}
             keyExtractor={(item: Session) => String(item.id)}
             stickySectionHeadersEnabled={false}
@@ -354,10 +359,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   input: {
-    height: 42,
+    minHeight: 42,
     borderRadius: 8,
     borderWidth: 1,
     paddingHorizontal: 12,
+    paddingVertical: 8,
     fontSize: 16,
   },
   modeRow: {

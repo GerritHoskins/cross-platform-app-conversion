@@ -1,0 +1,36 @@
+target project:      C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native
+source fixture:      C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\public\data\data.json
+bundled fixture:     C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\react-native\src\data\conference.json
+reference cases:     C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\reference\expected-cases.json
+sibling core:        C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\core
+
+PASS  source fixture SHA-256 matches reference sourceDataSha256 — da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75 === da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75
+PASS  bundled fixture SHA-256 matches reference sourceDataSha256 (raw bytes) — da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75 === da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75
+PASS  source and bundled fixture byte hashes agree
+reference normalizedSessionCount: 20
+
+PASS  target dependency spec is file:../core — spec="file:../core"
+resolved entry:      C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\core\dist\index.js
+real entry path:     C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\core\dist\index.js
+PASS  resolved entry is compiled dist/index.js
+resolved package root: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\core
+install is a link resolving to the sibling core (reported as such, not an independent copy)
+PASS  main matches sibling core — "dist/index.js" === "dist/index.js"
+PASS  types matches sibling core — "dist/index.d.ts" === "dist/index.d.ts"
+PASS  exports matches sibling core
+PASS  declarations exist (dist/index.d.ts) — C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\core\dist\index.d.ts
+PASS  dist file inventory matches sibling dist (relative paths) — 14 file(s) vs 14
+PASS  dist byte hashes match sibling dist — 14/14 identical
+
+PASS  normalized session count matches reference normalizedSessionCount — 20 === 20
+PASS  first session id is numeric 1 — 1
+PASS  first session name is Breakfast
+PASS  first session startMinutes is 480 — 480
+PASS  first session endMinutes is 540 — 540
+PASS  first session groupTime is 8:00 am — "8:00 am"
+PASS  first session tracks are ["Food"] — ["Food"]
+PASS  first session description is empty — ""
+PASS  first session keeps original timeStart string — "8:00 am"
+PASS  first session keeps original timeEnd string — "9:00 am"
+
+RESULT: all checks passed

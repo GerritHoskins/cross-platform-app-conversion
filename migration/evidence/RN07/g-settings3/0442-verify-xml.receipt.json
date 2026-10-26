@@ -1,0 +1,15 @@
+{
+  "command": "python",
+  "args": [
+    "-c",
+    "import json,xml.etree.ElementTree as E; p=\"migration/evidence/RN07/g-settings3/capture-index.json\"; a=json.load(open(p,encoding=\"utf-8\")); [E.parse(f[\"xml\"]) for f in a]; print(json.dumps({\"parsed\":len(a),\"allValid\":True}))"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-26T06:54:57.275Z",
+  "durationMs": 202,
+  "stdout": "migration/evidence/RN07/g-settings3/0442-verify-xml.stdout.log",
+  "stderr": "migration/evidence/RN07/g-settings3/0442-verify-xml.stderr.log",
+  "rawCRLF": true,
+  "error": null
+}

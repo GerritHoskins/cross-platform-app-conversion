@@ -1,0 +1,219 @@
+diff --git a/migration/react-native/src/screens/schedule-screen.tsx b/migration/react-native/src/screens/schedule-screen.tsx
+index ba5d7cc..3834829 100644
+--- a/migration/react-native/src/screens/schedule-screen.tsx
++++ b/migration/react-native/src/screens/schedule-screen.tsx
+@@ -202,6 +202,7 @@ export default function ScheduleScreen() {
+   const searchText = selection?.searchText ?? '';
+   const activeMode: ScheduleMode = selection?.mode ?? 'all';
+   const favoritesCount = selection?.favoriteIds.length ?? 0;
++  const list = useRef<SectionList<Session, { key: string; title: string; data: Session[] }>>(null);
+   const openRow = useRef<SwipeableMethods | null>(null);
+   const onRowOpen = useCallback((methods: SwipeableMethods) => {
+     if (openRow.current && openRow.current !== methods) openRow.current.close();
+@@ -214,6 +215,8 @@ export default function ScheduleScreen() {
+   useEffect(() => {
+     openRow.current?.close();
+     openRow.current = null;
++    // Empty results unmount the list, leaving no section to scroll to.
++    list.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, animated: false });
+   }, [searchText, activeMode, selection?.selectedTracks]);
+ 
+   const handleSearch = (nextSearchText: string) => {
+@@ -320,7 +323,9 @@ export default function ScheduleScreen() {
+           <Text style={[styles.emptyMessage, { color: palette.subtle }]}>{emptyMessage}</Text>
+         ) : (
+           <SectionList
++            ref={list}
+             accessibilityRole="list"
++            keyboardShouldPersistTaps="handled"
+             sections={sections}
+             keyExtractor={(item: Session) => String(item.id)}
+             stickySectionHeadersEnabled={false}
+@@ -354,10 +359,11 @@ const styles = StyleSheet.create({
+     borderWidth: 1,
+   },
+   input: {
+-    height: 42,
++    minHeight: 42,
+     borderRadius: 8,
+     borderWidth: 1,
+     paddingHorizontal: 12,
++    paddingVertical: 8,
+     fontSize: 16,
+   },
+   modeRow: {
+diff --git a/migration/react-native/src/app/_layout.tsx b/migration/react-native/src/app/_layout.tsx
+index 120763a..f618fe5 100644
+--- a/migration/react-native/src/app/_layout.tsx
++++ b/migration/react-native/src/app/_layout.tsx
+@@ -1,4 +1,6 @@
+ import { Stack } from 'expo-router';
++import { StatusBar } from 'expo-status-bar';
++import { useColorScheme } from 'react-native';
+ import { GestureHandlerRootView } from 'react-native-gesture-handler';
+ 
+ import { ConferenceProvider } from '@/state/conference-state';
+@@ -6,10 +8,21 @@ import { ConferenceProvider } from '@/state/conference-state';
+ export const unstable_settings = { initialRouteName: 'index' };
+ 
+ export default function RootLayout() {
++  const dark = useColorScheme() === 'dark';
++  const background = dark ? '#101014' : '#f5f5f7';
++  const surface = dark ? '#1c1c22' : '#ffffff';
++  const text = dark ? '#f2f2f5' : '#111114';
++
+   return (
+     <GestureHandlerRootView style={{ flex: 1 }}>
+       <ConferenceProvider>
+-        <Stack>
++        <StatusBar style="auto" />
++        <Stack screenOptions={{
++          headerStyle: { backgroundColor: surface },
++          headerTintColor: text,
++          headerTitleStyle: { color: text },
++          contentStyle: { backgroundColor: background },
++        }}>
+           <Stack.Screen name="index" options={{ title: 'Conference' }} />
+           <Stack.Screen name="session/[sessionId]" options={{ title: 'Session' }} />
+           <Stack.Screen name="filter" options={{ title: 'Filter Sessions', presentation: 'modal' }} />
+diff --git a/migration/react-native/__tests__/schedule-screen.test.tsx b/migration/react-native/__tests__/schedule-screen.test.tsx
+index 1101b1b..85586e2 100644
+--- a/migration/react-native/__tests__/schedule-screen.test.tsx
++++ b/migration/react-native/__tests__/schedule-screen.test.tsx
+@@ -1,6 +1,6 @@
+ import '../test-utils/gesture-test-setup';
+ import { router } from 'expo-router';
+-import { Alert, Pressable, SectionList, Text } from 'react-native';
++import { Alert, Pressable, SectionList, StyleSheet, Text } from 'react-native';
+ import type { Fiber } from 'test-renderer';
+ 
+ import type { Conference } from '@migration/core';
+@@ -377,6 +377,76 @@ describe('ScheduleScreen favorite controls', () => {
+   });
+ });
+ 
++describe('ScheduleScreen RN07 regressions', () => {
++  afterEach(() => jest.restoreAllMocks());
++
++  function sectionList(): Fiber {
++    let fiber: Fiber | null = screen.getAllByTestId(/^session-/)[0].unstable_fiber;
++    while (fiber && fiber.type !== SectionList && fiber.elementType !== SectionList) fiber = fiber.return;
++    expect(fiber).not.toBeNull();
++    return fiber!;
++  }
++
++  test('F-1 keeps handled row and favorite taps available with the keyboard open', async () => {
++    const view = await render(<ConferenceProvider><ScheduleScreen /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    expect(sectionList().memoizedProps.keyboardShouldPersistTaps).toBe('handled');
++    await view.unmount();
++  });
++
++  test('F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list', async () => {
++    let conference!: ReturnType<typeof useConference>;
++    function Probe() {
++      conference = useConference();
++      return null;
++    }
++    const scroll = jest.spyOn(SectionList.prototype, 'scrollToLocation').mockImplementation(() => {});
++    const view = await render(<ConferenceProvider><ScheduleScreen /><Probe /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    const instance = sectionList().stateNode;
++    scroll.mockClear();
++    await act(async () => { conference.dispatch({ type: 'favoriteAdded', sessionId: 4 }); });
++    expect(scroll).not.toHaveBeenCalled();
++
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: ['Ionic'] }); });
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await fireEvent.changeText(screen.getByLabelText('Search sessions'), 'University');
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await fireEvent.press(screen.getByTestId('mode-favorites'));
++    expect(scroll).toHaveBeenCalledTimes(1);
++    expect(scroll).toHaveBeenLastCalledWith({ sectionIndex: 0, itemIndex: 0, animated: false });
++    expect(sectionList().stateNode).toBe(instance);
++    scroll.mockClear();
++    await act(async () => { conference.dispatch({ type: 'favoriteAdded', sessionId: 2 }); });
++    await act(async () => { conference.dispatch({ type: 'favoriteRemoved', sessionId: 2 }); });
++    expect(scroll).not.toHaveBeenCalled();
++
++    // Empty results unmount the list: do not scroll to a nonexistent section.
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: [] }); });
++    expect(screen.getByText('No sessions match your search or filters.')).toBeTruthy();
++    expect(scroll).not.toHaveBeenCalled();
++    await act(async () => { conference.dispatch({ type: 'setSelectedTracks', selectedTracks: ['Ionic'] }); });
++    expect(scroll).toHaveBeenCalledTimes(1);
++    await view.unmount();
++  });
++
++  test('F-3 lets the search field grow with font scale instead of fixing its height', async () => {
++    const view = await render(<ConferenceProvider><ScheduleScreen /></ConferenceProvider>);
++    await screen.findByTestId('session-1');
++    const style = StyleSheet.flatten(screen.getByLabelText('Search sessions').props.style);
++    expect(style.height).toBeUndefined();
++    expect(style.minHeight).toBe(42);
++    expect(style.paddingVertical).toBeGreaterThan(0);
++    await view.unmount();
++  });
++});
++
+ describe('ScheduleScreen behavior (ready state)', () => {
+   test('search filters live, shows the generic empty message, and restores on clear', async () => {
+     let loaderCalls = 0;
+diff --git a/migration/react-native/__tests__/root-layout.test.tsx b/migration/react-native/__tests__/root-layout.test.tsx
+new file mode 100644
+index 0000000..b28fd1b
+--- /dev/null
++++ b/migration/react-native/__tests__/root-layout.test.tsx
+@@ -0,0 +1,46 @@
++import '../test-utils/gesture-test-setup';
++import { Stack } from 'expo-router';
++import { StatusBar } from 'expo-status-bar';
++import * as ReactNative from 'react-native';
++import { render } from '@testing-library/react-native';
++
++import RootLayout from '../src/app/_layout';
++
++jest.mock('expo-router', () => {
++  const React = require('react') as typeof import('react');
++  return {
++    Stack: Object.assign(
++      jest.fn(({ children }: { children: React.ReactNode }) => React.createElement(React.Fragment, null, children)),
++      { Screen: () => null },
++    ),
++  };
++});
++jest.mock('expo-status-bar', () => ({ StatusBar: jest.fn(() => null) }));
++
++afterEach(() => jest.restoreAllMocks());
++
++test('F-4 follows dark and light schemes for native headers, content and the automatic status bar', async () => {
++  const scheme = jest.spyOn(ReactNative, 'useColorScheme').mockReturnValue('dark');
++  const view = await render(<RootLayout />);
++  expect(Stack).toHaveBeenLastCalledWith(expect.objectContaining({
++    screenOptions: {
++      headerStyle: { backgroundColor: '#1c1c22' },
++      headerTintColor: '#f2f2f5',
++      headerTitleStyle: { color: '#f2f2f5' },
++      contentStyle: { backgroundColor: '#101014' },
++    },
++  }), undefined);
++  expect(StatusBar).toHaveBeenLastCalledWith(expect.objectContaining({ style: 'auto' }), undefined);
++
++  scheme.mockReturnValue('light');
++  await view.rerender(<RootLayout />);
++  expect(Stack).toHaveBeenLastCalledWith(expect.objectContaining({
++    screenOptions: {
++      headerStyle: { backgroundColor: '#ffffff' },
++      headerTintColor: '#111114',
++      headerTitleStyle: { color: '#111114' },
++      contentStyle: { backgroundColor: '#f5f5f7' },
++    },
++  }), undefined);
++  await view.unmount();
++});

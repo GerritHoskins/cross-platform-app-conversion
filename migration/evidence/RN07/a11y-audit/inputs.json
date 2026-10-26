@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "run": "a11y-audit",
+  "candidate": "2",
+  "observer": "Hermes GPT-6.1 Sol high (offline tree audit)",
+  "createdAt": "2026-10-26T06:23:08.119Z",
+  "sourceIndex": "migration/evidence/RN07/g-settings2a/capture-index.json",
+  "sourceIndexSha256": "139424232ab556b3c380bb8458eb74cdd02ed080a3a7e1216cf611c772c55707",
+  "selectionPolicy": "Indexed candidate-2 app surfaces only; launcher, LogBox, Gboard-toolbar subjects excluded",
+  "frames": [
+    {
+      "id": "F01-all",
+      "surface": "schedule-top-all",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-all.xml",
+      "sha256": "180bc1d155a7f36d4e01b1b87a99ef3247608dd4fa099189f3479e727006cb17",
+      "capturedAt": "2026-10-25T20:09:54.421Z",
+      "why": "Empty search/All selected; closed rows at restored defaults",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F01-single-favorite",
+      "surface": "schedule-favorites",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-single-favorite.xml",
+      "sha256": "78c40f51a9909da38c5076d532d947ef57de56da50435b2a07a0d3a6ed91455f",
+      "capturedAt": "2026-10-25T20:11:16.666Z",
+      "why": "Favorites selected with Breakfast row",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F01-add-reveal",
+      "surface": "schedule-swipe-revealed",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-add-reveal.xml",
+      "sha256": "3d4b3ac717b95b28a99a30244349926a096596ae7950ef8aa48ae1e83df9f805",
+      "capturedAt": "2026-10-25T20:10:18.599Z",
+      "why": "F01 Breakfast swipe action revealed; compare closed F01-all",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F01-add-action",
+      "surface": "alert-favorite-added",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-add-action.xml",
+      "sha256": "49a5f7e4297e975adbf7306fa934ba088f1efa0591e0af2c44b364b2981c5e98",
+      "capturedAt": "2026-10-25T20:10:26.418Z",
+      "why": "F01 Favorite Added confirmation",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F01-duplicate-action",
+      "surface": "alert-already-added",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-duplicate-action.xml",
+      "sha256": "f9f4b58baa15188df0ed41dee389571c1a60eb5547425a22272e82010c7f3d3b",
+      "capturedAt": "2026-10-25T20:10:50.456Z",
+      "why": "Favorite already added / Remove Favorite confirmation",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F01-removal-action",
+      "surface": "alert-remove-favorite",
+      "xml": "migration/evidence/RN07/g-settings2a/F01-removal-action.xml",
+      "sha256": "97374d46c494ef72582226d13e7c0a76e8bdd170f275186b8c75214788acd06c",
+      "capturedAt": "2026-10-25T20:12:58.561Z",
+      "why": "Remove Favorite confirmation in Favorites mode",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "G02-row-first",
+      "surface": "detail-ionic4-before-default",
+      "xml": "migration/evidence/RN07/g-settings2a/G02-row-first.xml",
+      "sha256": "4c9ff7a908440b7d779f10de378124d7fe2a36b354cacf706678c7e272a140d2",
+      "capturedAt": "2026-10-25T19:57:11.528Z",
+      "why": "University of Ionic (4), unfavorited at default settings; no Ionic star-toggle action captured",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "G07-dark-detail4",
+      "surface": "detail-ionic4-before",
+      "xml": "migration/evidence/RN07/g-settings2a/G07-dark-detail4.xml",
+      "sha256": "88a38ff29ceb7fbafdb3356811e385040b775bcd3e1873956a76b1203f8b51bf",
+      "capturedAt": "2026-10-25T20:07:55.547Z",
+      "why": "University of Ionic (4), before favorite; dark settings",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "yes",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "F03b-correct-detail",
+      "surface": "detail-ionic4-after",
+      "xml": "migration/evidence/RN07/g-settings2a/F03b-correct-detail.xml",
+      "sha256": "4714d882c00a333862b6acdceafd6444d9bbb199172d66a2da121242341c3a19",
+      "capturedAt": "2026-10-25T20:16:40.212Z",
+      "why": "University of Ionic (4), after list favorite (NOT a captured star toggle)",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "C06-detail-initial",
+      "surface": "detail-breakfast1-before",
+      "xml": "migration/evidence/RN07/g-settings2a/C06-detail-initial.xml",
+      "sha256": "861281b2655b68624a20259024efda9421faab88972813acab40fe3e41cb6d29",
+      "capturedAt": "2026-10-25T20:25:49.411Z",
+      "why": "Breakfast (1), before actual C06 star toggle",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "C06-star-on",
+      "surface": "detail-breakfast1-after",
+      "xml": "migration/evidence/RN07/g-settings2a/C06-star-on.xml",
+      "sha256": "628e41ff8ff17f9ae51cf40adfdae6817bb02f95d5e5443e8d5cd0c38bf381aa",
+      "capturedAt": "2026-10-25T20:26:02.778Z",
+      "why": "Breakfast (1), after actual C06 star-on",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "C06-star-off",
+      "surface": "detail-breakfast1-off",
+      "xml": "migration/evidence/RN07/g-settings2a/C06-star-off.xml",
+      "sha256": "1b09dd3bed512ebf78f4048c5dbe003a2a65398cf383bb9949b0861b5136ac8c",
+      "capturedAt": "2026-10-25T20:26:34.131Z",
+      "why": "Breakfast (1), after actual C06 star-off",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "G07-dark-filter",
+      "surface": "filter-top-dark",
+      "xml": "migration/evidence/RN07/g-settings2a/G07-dark-filter.xml",
+      "sha256": "e51066a4377480698c6fd5e2d5e8d8520099256f74ecdf4e02dabf4a69f08243",
+      "capturedAt": "2026-10-25T20:08:11.288Z",
+      "why": "Filter modal top, dark, all tracks checked",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "yes",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "E06-bottom-filter",
+      "surface": "filter-bottom-default",
+      "xml": "migration/evidence/RN07/g-settings2a/E06-bottom-filter.xml",
+      "sha256": "a1a43b97095468db73224ee2b464b957cf08a2296580674b5c471ebfa19643ab",
+      "capturedAt": "2026-10-25T20:03:46.484Z",
+      "why": "Default filter modal including final track and Done; schedule was bottom-scrolled, not proof of filter scrolling",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "E06-bottom-none",
+      "surface": "filter-none",
+      "xml": "migration/evidence/RN07/g-settings2a/E06-bottom-none.xml",
+      "sha256": "bd5d7f45ac8a2468104a1edd3b6ed5ef733348fbe31144e2e27a23c25c848880",
+      "capturedAt": "2026-10-25T20:03:54.338Z",
+      "why": "Deselect All state, all tracks unchecked",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "E06-bottom-ionic",
+      "surface": "filter-ionic-only",
+      "xml": "migration/evidence/RN07/g-settings2a/E06-bottom-ionic.xml",
+      "sha256": "254b19d268594a91952aa300181941b4baccd9ad0324ac32d246651827dcf8d8",
+      "capturedAt": "2026-10-25T20:04:02.238Z",
+      "why": "Ionic-only checked state",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "no",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    },
+    {
+      "id": "G07-dark-favorite",
+      "surface": "alert-dark-favorite-added",
+      "xml": "migration/evidence/RN07/g-settings2a/G07-dark-favorite.xml",
+      "sha256": "c412d00664da94b79fe2f7b83deed56e7501c62082e5d3aa92067b665ec3d4f6",
+      "capturedAt": "2026-10-25T20:08:27.001Z",
+      "why": "Dark-mode Favorite Added alert",
+      "settings": {
+        "fontScale": "1.0",
+        "night": "yes",
+        "basis": "G2a checkpoint/capture notes: G05 font2.0 restored before G07 and F/C regressions; G07-dark-* night yes; light restored before F01"
+      }
+    }
+  ],
+  "coverageLimits": [
+    "No University of Ionic actual star-toggle before/after pair exists in selected input run: Ionic unfavorited/favorited states selected without claiming the causal star action; Breakfast C06 is the real toggle sequence",
+    "Filter top and bottom both fit at font1.0; E06-bottom-filter contains Communication through Workshop without filter scrolling"
+  ],
+  "limits": [
+    "No speech",
+    "No TalkBack traversal",
+    "No native focus containment/return",
+    "No pixel inspection",
+    "No device, emulator, Metro or network use"
+  ]
+}
