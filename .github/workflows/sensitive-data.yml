@@ -1,0 +1,19 @@
+name: Sensitive data check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Scan tracked files for clipboard data and credentials
+        run: node scripts/check-sensitive-data.mjs --all

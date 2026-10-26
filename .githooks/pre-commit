@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks host clipboard data and credentials (see scripts/check-sensitive-data.mjs).
+# Enable once per clone: git config core.hooksPath .githooks
+exec node scripts/check-sensitive-data.mjs --staged
