@@ -1,0 +1,193 @@
+{
+  "proof": {
+    "status": "PASS",
+    "category": "build/static, not device execution",
+    "buildReceipt": "migration/evidence/NS03/a-gates3/build-android.receipt.json",
+    "vendor": {
+      "path": "migration/nativescript/platforms/android/app/src/main/assets/app/vendor.mjs",
+      "sha256": "5ed47425cc2a52f46ac0a0435f21c24d6afd3f92c1626c3765ceca1426803fb0"
+    },
+    "bundle": {
+      "path": "migration/nativescript/platforms/android/app/src/main/assets/app/bundle.mjs",
+      "sha256": "1157d5941de0c70009fe83e3961889f3a3f1357faf24873b708e29aa39ee7489"
+    },
+    "moduleLine": 21472,
+    "importLine": 21489,
+    "excerpt": [
+      "/* harmony export */ });",
+      "/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(\"./node_modules/nativescript-vue/dist/index.js\");",
+      "/* harmony import */ var _vue_devtools_api__WEBPACK_IMPORTED_MODULE_1__ = /*#__PURE__*/__webpack_require__(\"./node_modules/@vue/devtools-api/lib/esm/index.js\");"
+    ],
+    "claim": "Built Vuex ESM module resolves vue directly to nativescript-vue/dist/index.js through unchanged template alias; no alternate store or runtime shim."
+  },
+  "counts": {
+    "core": {
+      "tests": 53,
+      "passed": 53
+    },
+    "target": {
+      "runs": [
+        {
+          "id": "first",
+          "files": 4,
+          "tests": 34,
+          "receipt": "migration/evidence/NS03/a-gates3/tests-first.receipt.json"
+        },
+        {
+          "id": "second",
+          "files": 4,
+          "tests": 34,
+          "receipt": "migration/evidence/NS03/a-gates3/tests-second.receipt.json"
+        }
+      ],
+      "files": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 27,
+          "passed": 27,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1,
+          "status": "passed"
+        }
+      ],
+      "tests": 34,
+      "passed": 34
+    },
+    "ns02": {
+      "files": 2,
+      "tests": 4,
+      "passed": 4
+    },
+    "referenceCases": {
+      "tests": 11,
+      "passed": 11,
+      "ids": [
+        "default-all",
+        "no-tracks",
+        "single-track",
+        "search-case-insensitive",
+        "search-no-match",
+        "search-plus-track",
+        "favorites-empty",
+        "favorites-some",
+        "favorites-order",
+        "add-duplicate",
+        "remove-absent"
+      ]
+    },
+    "supplementalDetailsReceipt": "migration/evidence/NS03/a-gates3/tests-details.receipt.json"
+  }
+}
+ListView selector API: [
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 16,
+    "excerpt": [
+      "            validator(value) {",
+      "                return Array.isArray(value) || value instanceof ObservableArray;",
+      "            },",
+      "        },",
+      "        itemTemplateSelector: Function,",
+      "    },",
+      "    emits: {",
+      "        itemTap: (event) => !!event,",
+      "    },",
+      "    setup(props, ctx) {",
+      "        const { itemTemplates, templateNameFor, renderCell, cellVNodes } = useItemTemplates({",
+      "            slots: ctx.slots,",
+      "            selectTemplate: (item) => props.itemTemplateSelector?.(item),"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 24,
+    "excerpt": [
+      "    },",
+      "    setup(props, ctx) {",
+      "        const { itemTemplates, templateNameFor, renderCell, cellVNodes } = useItemTemplates({",
+      "            slots: ctx.slots,",
+      "            selectTemplate: (item) => props.itemTemplateSelector?.(item),",
+      "            componentName: 'ListView',",
+      "        });",
+      "        const listView = ref(null);",
+      "        function refresh() {",
+      "            try {",
+      "                // ObservableArray notifies the native ListView of changes itself",
+      "                if (props.items instanceof ObservableArray) {",
+      "                    return;"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 44,
+    "excerpt": [
+      "        }",
+      "        // depth 1 tracks the array's length and slots without walking into the",
+      "        // items themselves; cells re-render on their own when item fields change",
+      "        watch(() => props.items, refresh, { deep: 1 });",
+      "        watch(() => props.itemTemplateSelector, refresh);",
+      "        function listItemAt(index) {",
+      "            return createItemContext(props.items instanceof ObservableArray",
+      "                ? props.items.getItem(index)",
+      "                : props.items[index], index);",
+      "        }",
+      "        // the native event carries only the index; the template's item context",
+      "        // is what handlers want",
+      "        function onItemTap(event) {"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 58,
+    "excerpt": [
+      "        }",
+      "        function onItemLoading(event) {",
+      "            event.view = renderCell(listItemAt(event.index), event.view);",
+      "        }",
+      "        function itemTemplateSelector(item, index) {",
+      "            return templateNameFor(createItemContext(item, index));",
+      "        }",
+      "        return () => {",
+      "            return h('NSCListView', {",
+      "                ref: listView,",
+      "                items: props.items,",
+      "                itemTemplates,",
+      "                itemTemplateSelector,"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 66,
+    "excerpt": [
+      "            return h('NSCListView', {",
+      "                ref: listView,",
+      "                items: props.items,",
+      "                itemTemplates,",
+      "                itemTemplateSelector,",
+      "                onItemLoading,",
+      "                onItemTap,",
+      "            }, cellVNodes());",
+      "        };",
+      "    },",
+      "});",
+      "//# sourceMappingURL=ListView.js.map"
+    ]
+  }
+]
+acceptance-evidence: PASS

@@ -1,0 +1,40 @@
+{
+  "excerpts": [
+    {
+      "path": "migration/nativescript/platforms/android/app/src/main/assets/app/bundle.mjs",
+      "line": 753,
+      "text": "/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = /*#__PURE__*/__webpack_require__(\"./node_modules/vuex/dist/vuex.esm-bundler.js\");",
+      "following": [
+        "/* harmony import */ var _migration_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(\"../core/dist/index.js\");",
+        "/* harmony import */ var _data_load_conference__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(\"./src/data/load-conference.ts\");",
+        "",
+        "",
+        "",
+        "const conferenceStoreKey = Symbol('conference-store');",
+        "function useConferenceStore() {",
+        "    const store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.useStore)(conferenceStoreKey);",
+        "    if (!store)",
+        "        throw new Error('useConferenceStore requires the conference store to be installed.');",
+        "    return store;"
+      ]
+    },
+    {
+      "path": "migration/nativescript/platforms/android/app/src/main/assets/app/vendor.mjs",
+      "line": 21472,
+      "text": "/***/ \"./node_modules/vuex/dist/vuex.esm-bundler.js\"",
+      "following": [
+        "(__unused_webpack_module, __webpack_exports__, __webpack_require__) {",
+        "",
+        "__webpack_require__.r(__webpack_exports__);",
+        "/* harmony export */ __webpack_require__.d(__webpack_exports__, {",
+        "/* harmony export */   Store: () => (/* binding */ Store),",
+        "/* harmony export */   createLogger: () => (/* binding */ createLogger),",
+        "/* harmony export */   createNamespacedHelpers: () => (/* binding */ createNamespacedHelpers),",
+        "/* harmony export */   createStore: () => (/* binding */ createStore),",
+        "/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),",
+        "/* harmony export */   mapActions: () => (/* binding */ mapActions),",
+        "/* harmony export */   mapGetters: () => (/* binding */ mapGetters),"
+      ]
+    }
+  ]
+}

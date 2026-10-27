@@ -1,0 +1,4168 @@
+{
+  "status": "PASS",
+  "branch": "migration/slice-1",
+  "head": "533ed4ab41a751b4761af31e43a757f4126e2ea0",
+  "index": "",
+  "evidenceDirectoryAbsentBeforeCreation": true,
+  "apk": {
+    "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "exists": true,
+    "size": 118504855,
+    "sha256": "a290b5e9259a573a505dffa7797c5e037f510e2532be184fd3e91eadfcc69ff8"
+  },
+  "targetHashSource": "a-gates3/preservation-final.json (target + implementation + package/lockfile); supervisor baseline only for immutable history",
+  "files": [
+    {
+      "path": "android/.gitignore",
+      "expected": "065e4a92a240fe11a0ea230491ad9dabef143f5fd5a3e6884ad6f0395666a971",
+      "actual": "065e4a92a240fe11a0ea230491ad9dabef143f5fd5a3e6884ad6f0395666a971",
+      "match": true
+    },
+    {
+      "path": "android/app/.gitignore",
+      "expected": "99c54e51ee601a60fbde8016b2cbf717483bc2e92773be86c9247d02a7fa6ea4",
+      "actual": "99c54e51ee601a60fbde8016b2cbf717483bc2e92773be86c9247d02a7fa6ea4",
+      "match": true
+    },
+    {
+      "path": "android/app/build.gradle",
+      "expected": "3b31ffdae1550598461aba9357bbbf25570f77f22e4537a1186977f75936aeee",
+      "actual": "3b31ffdae1550598461aba9357bbbf25570f77f22e4537a1186977f75936aeee",
+      "match": true
+    },
+    {
+      "path": "android/app/capacitor.build.gradle",
+      "expected": "4394f780b335a599e53277ea070ec3c378fc69dbb90a10fd27c6b3384bd3acbc",
+      "actual": "4394f780b335a599e53277ea070ec3c378fc69dbb90a10fd27c6b3384bd3acbc",
+      "match": true
+    },
+    {
+      "path": "android/app/proguard-rules.pro",
+      "expected": "1cf8c57e8f79c250b0af9c1a5a4edad71a5c348a79ab70243b6bae086c150ad2",
+      "actual": "1cf8c57e8f79c250b0af9c1a5a4edad71a5c348a79ab70243b6bae086c150ad2",
+      "match": true
+    },
+    {
+      "path": "android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java",
+      "expected": "ff50b4c110a7434312f9af54171f9e8523b015836f707c9b387b76d4c38a97f8",
+      "actual": "ff50b4c110a7434312f9af54171f9e8523b015836f707c9b387b76d4c38a97f8",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "expected": "35a046f86e13e0c0579feae75721f1935eb818e328e4768871b127d051dadd6c",
+      "actual": "35a046f86e13e0c0579feae75721f1935eb818e328e4768871b127d051dadd6c",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/java/io/ionic/conference/vue/MainActivity.java",
+      "expected": "037ee1b78af58d2647cc0748500cc3a32b563042a69d3792ba5d36b26dfe72ef",
+      "actual": "037ee1b78af58d2647cc0748500cc3a32b563042a69d3792ba5d36b26dfe72ef",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-hdpi/splash.png",
+      "expected": "53a39d05f5a399a43468975d109212ddefd5a4a21bd1fa2d2247df7df83648e4",
+      "actual": "53a39d05f5a399a43468975d109212ddefd5a4a21bd1fa2d2247df7df83648e4",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-ldpi/splash.png",
+      "expected": "0a7790a69bf9eed09c5704a3fef829b89f331d24068b147569f229aeb6e9f784",
+      "actual": "0a7790a69bf9eed09c5704a3fef829b89f331d24068b147569f229aeb6e9f784",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-mdpi/splash.png",
+      "expected": "869172a1747b32340a5f11a9b5abfc8d99c328cada5233319e13094090a34d85",
+      "actual": "869172a1747b32340a5f11a9b5abfc8d99c328cada5233319e13094090a34d85",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-hdpi/splash.png",
+      "expected": "ba02c0012462862a124c716c6208d92bc3da019c6ba0039f09861d0a9be48c7d",
+      "actual": "ba02c0012462862a124c716c6208d92bc3da019c6ba0039f09861d0a9be48c7d",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-ldpi/splash.png",
+      "expected": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+      "actual": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-mdpi/splash.png",
+      "expected": "cc10e50ebd4078883bacdecca8ded5c7124c6e1bb075d195e13f425cd3ef039b",
+      "actual": "cc10e50ebd4078883bacdecca8ded5c7124c6e1bb075d195e13f425cd3ef039b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-xhdpi/splash.png",
+      "expected": "ef21a0e0bc3f9d4a73eade1ce456d73c6319254a42b72bf049b56e0135815af5",
+      "actual": "ef21a0e0bc3f9d4a73eade1ce456d73c6319254a42b72bf049b56e0135815af5",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-xxhdpi/splash.png",
+      "expected": "ba6eeb1c4825cd44bec9966d8706a7b7ff6fcac746acf02480a20b0dc3125514",
+      "actual": "ba6eeb1c4825cd44bec9966d8706a7b7ff6fcac746acf02480a20b0dc3125514",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-night-xxxhdpi/splash.png",
+      "expected": "7bd4721c0e6216a276b0bcd41cd0cb3aa1d5c8c5656684973be7ea71a6bc96a6",
+      "actual": "7bd4721c0e6216a276b0bcd41cd0cb3aa1d5c8c5656684973be7ea71a6bc96a6",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-xhdpi/splash.png",
+      "expected": "f79b98a835d4d7566726391a82f7b6895f230b1fc428e34c90ec11f2231a1976",
+      "actual": "f79b98a835d4d7566726391a82f7b6895f230b1fc428e34c90ec11f2231a1976",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-xxhdpi/splash.png",
+      "expected": "ec260ee48706ed81b78d0cd1ff222b4b9196db677241def1ca85c7e821ae42d7",
+      "actual": "ec260ee48706ed81b78d0cd1ff222b4b9196db677241def1ca85c7e821ae42d7",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-land-xxxhdpi/splash.png",
+      "expected": "57733b5f49ecb6fd5cfb667a4ec45caaf8742a803ee36c3e5db998f80d5534b7",
+      "actual": "57733b5f49ecb6fd5cfb667a4ec45caaf8742a803ee36c3e5db998f80d5534b7",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-night/splash.png",
+      "expected": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+      "actual": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-hdpi/splash.png",
+      "expected": "4fcc77ee175bc890052d4ecd6c5d284e719d4fc588f72ce5da0ed97a027fe2ce",
+      "actual": "4fcc77ee175bc890052d4ecd6c5d284e719d4fc588f72ce5da0ed97a027fe2ce",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-ldpi/splash.png",
+      "expected": "247114013a8363c8c6a2c13ebbb320660d7e225cb95ce27ba3103253915b4518",
+      "actual": "247114013a8363c8c6a2c13ebbb320660d7e225cb95ce27ba3103253915b4518",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-mdpi/splash.png",
+      "expected": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+      "actual": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-hdpi/splash.png",
+      "expected": "13a0a6ad9def0e5b44df686cd896be3ac1b42e0c618d3e34b5a1881ac1bd4e59",
+      "actual": "13a0a6ad9def0e5b44df686cd896be3ac1b42e0c618d3e34b5a1881ac1bd4e59",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-ldpi/splash.png",
+      "expected": "81e3eacf311b0c7bd9bf7645061bf1e772dc5cbb181930cd0c4ffb90c96b2ae1",
+      "actual": "81e3eacf311b0c7bd9bf7645061bf1e772dc5cbb181930cd0c4ffb90c96b2ae1",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-mdpi/splash.png",
+      "expected": "cb37e4aac89205458a004052c60d9d0977fb2e8c5197ae1d5e1d621916d2dbb8",
+      "actual": "cb37e4aac89205458a004052c60d9d0977fb2e8c5197ae1d5e1d621916d2dbb8",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-xhdpi/splash.png",
+      "expected": "04308d8d9a8c4627207286157f16957c75aa952c9a5411d01a9547aa4aa9f992",
+      "actual": "04308d8d9a8c4627207286157f16957c75aa952c9a5411d01a9547aa4aa9f992",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-xxhdpi/splash.png",
+      "expected": "962e6be9a32ab3e889e189627c80cc49182fbb8c5652c66ad51757a0a81ad045",
+      "actual": "962e6be9a32ab3e889e189627c80cc49182fbb8c5652c66ad51757a0a81ad045",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-night-xxxhdpi/splash.png",
+      "expected": "2004092ada5fc2bfb0e361b80972840126dfcb51724dc24103277f7b068952aa",
+      "actual": "2004092ada5fc2bfb0e361b80972840126dfcb51724dc24103277f7b068952aa",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-xhdpi/splash.png",
+      "expected": "f0fe57d2e5c90b15d6b14e406702713b27f50fc1d71280ce7686190efb4f0c52",
+      "actual": "f0fe57d2e5c90b15d6b14e406702713b27f50fc1d71280ce7686190efb4f0c52",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-xxhdpi/splash.png",
+      "expected": "572454fe1bcf2f53febaf81d3af6cbf389c0788de45d2d7a681eef109d2a1e30",
+      "actual": "572454fe1bcf2f53febaf81d3af6cbf389c0788de45d2d7a681eef109d2a1e30",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-port-xxxhdpi/splash.png",
+      "expected": "516df6026658606268d3773302ac1d7078970213a74a4ce015c33b7f820f838e",
+      "actual": "516df6026658606268d3773302ac1d7078970213a74a4ce015c33b7f820f838e",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml",
+      "expected": "a8514094f754b099d3e55ce1d6e0b2de79db418b2eeacb0fc2a6bb0bfadef221",
+      "actual": "a8514094f754b099d3e55ce1d6e0b2de79db418b2eeacb0fc2a6bb0bfadef221",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable/ic_launcher_background.xml",
+      "expected": "718ba51adf166bb55c3e9936bb8199a0148457f7f0191aaa2f37a94f3159d6ec",
+      "actual": "718ba51adf166bb55c3e9936bb8199a0148457f7f0191aaa2f37a94f3159d6ec",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/drawable/splash.png",
+      "expected": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+      "actual": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/layout/activity_main.xml",
+      "expected": "5d770feb791313b947020cbfc57e5c733c556dac5e9e49261a1190e527073253",
+      "actual": "5d770feb791313b947020cbfc57e5c733c556dac5e9e49261a1190e527073253",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "expected": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+      "actual": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "expected": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+      "actual": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "expected": "4c4f3e93d7ba21fca9c24faf124413c647e23f729421fc5e47f0226372120e15",
+      "actual": "4c4f3e93d7ba21fca9c24faf124413c647e23f729421fc5e47f0226372120e15",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png",
+      "expected": "be121605783e9f38b03d15e4635e3c366bf82237c2beb3a03e568e9c1ca3f57c",
+      "actual": "be121605783e9f38b03d15e4635e3c366bf82237c2beb3a03e568e9c1ca3f57c",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+      "expected": "62e46b0970e1ec28aa4fbb15378e91f4ecf5543f2ef80f092f5f6aa80b0cbb14",
+      "actual": "62e46b0970e1ec28aa4fbb15378e91f4ecf5543f2ef80f092f5f6aa80b0cbb14",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "expected": "ed01831831327a7106c24cf9c2bcceedff4edd75322510d4d6b9bcb1cea8547b",
+      "actual": "ed01831831327a7106c24cf9c2bcceedff4edd75322510d4d6b9bcb1cea8547b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-ldpi/ic_launcher.png",
+      "expected": "4a10ccc10df4f48f3471e506c41e8a91429882ed97bb8757e81897f01ea80b84",
+      "actual": "4a10ccc10df4f48f3471e506c41e8a91429882ed97bb8757e81897f01ea80b84",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-ldpi/ic_launcher_background.png",
+      "expected": "47001a46853f8c3c483410d829b855df65c8734db2c68b381d6acbbcb147abf0",
+      "actual": "47001a46853f8c3c483410d829b855df65c8734db2c68b381d6acbbcb147abf0",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png",
+      "expected": "4b90bbe4ae5833457755ad17b6d647a7b2bb0d19677bdf59685520e4102891f0",
+      "actual": "4b90bbe4ae5833457755ad17b6d647a7b2bb0d19677bdf59685520e4102891f0",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-ldpi/ic_launcher_round.png",
+      "expected": "f4838ea5dd34f280cde96f5f7fb8ac784a3b3cad4fbb33a21e7ebea08cb4651f",
+      "actual": "f4838ea5dd34f280cde96f5f7fb8ac784a3b3cad4fbb33a21e7ebea08cb4651f",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "expected": "79bbf3a5f59e95c8bb0ab7eabf73695b130d0447167177e32ff562a65826e13d",
+      "actual": "79bbf3a5f59e95c8bb0ab7eabf73695b130d0447167177e32ff562a65826e13d",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png",
+      "expected": "5079167094da9b1937268a41e96fca626d4c9bbdee1f88b72fa0fd77383f89a6",
+      "actual": "5079167094da9b1937268a41e96fca626d4c9bbdee1f88b72fa0fd77383f89a6",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+      "expected": "da3c69491276d304497d0006d357e7f7680d66039c1d20abbf0f88cff1835a8e",
+      "actual": "da3c69491276d304497d0006d357e7f7680d66039c1d20abbf0f88cff1835a8e",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "expected": "12058b587dbd8eac44bdfcce15c4cf75c0ac890e35bb976bf1adb691df66973b",
+      "actual": "12058b587dbd8eac44bdfcce15c4cf75c0ac890e35bb976bf1adb691df66973b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "expected": "010e916581e1ee75401b566eb24bf090bc9d0abf2bd5613f461134a60afce135",
+      "actual": "010e916581e1ee75401b566eb24bf090bc9d0abf2bd5613f461134a60afce135",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png",
+      "expected": "c7bca769fd64af988d0920f515f8b3613cfa951c4806fc281ae35a2b7edf1ba7",
+      "actual": "c7bca769fd64af988d0920f515f8b3613cfa951c4806fc281ae35a2b7edf1ba7",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+      "expected": "ab3c42f34ff0919f3ac994555c7260d320b704527c58d204bc1d2cc3cca3e77d",
+      "actual": "ab3c42f34ff0919f3ac994555c7260d320b704527c58d204bc1d2cc3cca3e77d",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "expected": "efc69fa32bce41f5697798e9c1c3f65cef54346eeda8a269eaa5ce3459d91c2b",
+      "actual": "efc69fa32bce41f5697798e9c1c3f65cef54346eeda8a269eaa5ce3459d91c2b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "expected": "71fef5ccba3c55b8aa6cc8bcf59c191d73cb374aee7bc343b6c18b15992371fe",
+      "actual": "71fef5ccba3c55b8aa6cc8bcf59c191d73cb374aee7bc343b6c18b15992371fe",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png",
+      "expected": "9a127f670aea85938fb8532b121c4a32e3de41f485ceb0e1a12865ca9046550e",
+      "actual": "9a127f670aea85938fb8532b121c4a32e3de41f485ceb0e1a12865ca9046550e",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "expected": "bb181066fcc75e1864943072c2ee63e36dcc9fb3b0c6a39efe8357baf806dc92",
+      "actual": "bb181066fcc75e1864943072c2ee63e36dcc9fb3b0c6a39efe8357baf806dc92",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "expected": "31879b3e8cdc3632c314c739523184d332a33389c231e84e37eae0b690b92161",
+      "actual": "31879b3e8cdc3632c314c739523184d332a33389c231e84e37eae0b690b92161",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "expected": "941558c980334bb2c24ba1b8dc72d0384f5c87ffcd95be89ea00daba66f5915e",
+      "actual": "941558c980334bb2c24ba1b8dc72d0384f5c87ffcd95be89ea00daba66f5915e",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png",
+      "expected": "d1354ebb84c56fe48a20edbb3483658fd2d130416eca295b93f5153837a75c82",
+      "actual": "d1354ebb84c56fe48a20edbb3483658fd2d130416eca295b93f5153837a75c82",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "expected": "3b1517e1da1a96351ed904d6cb0a516576b862aee5af25b879e12dc517f8bd5b",
+      "actual": "3b1517e1da1a96351ed904d6cb0a516576b862aee5af25b879e12dc517f8bd5b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "expected": "1ab356c97757f1a3a9653065f4b17a3dc5e902a42377027bd2fd9cb244f48a0b",
+      "actual": "1ab356c97757f1a3a9653065f4b17a3dc5e902a42377027bd2fd9cb244f48a0b",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/values-night/splash_background.xml",
+      "expected": "19b527c0843dcb6778e69e9b42754f163b7cbd4ed435952c8aa324f4bdd4e61a",
+      "actual": "19b527c0843dcb6778e69e9b42754f163b7cbd4ed435952c8aa324f4bdd4e61a",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/values/ic_launcher_background.xml",
+      "expected": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+      "actual": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/values/splash_background.xml",
+      "expected": "aa325a188da519e43a4942e7d789bfd79f8d41acb0c92c7e8d339f6456a347a0",
+      "actual": "aa325a188da519e43a4942e7d789bfd79f8d41acb0c92c7e8d339f6456a347a0",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/values/strings.xml",
+      "expected": "95b4dbd6e38b10ef6d250e1966ef86ae1ec7d0955779216bc5fd983f3486e659",
+      "actual": "95b4dbd6e38b10ef6d250e1966ef86ae1ec7d0955779216bc5fd983f3486e659",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "expected": "59b0536dceb6d8a49360614d91b3b0dc46afe2648a2f5ac5c6cd1d73ea69330d",
+      "actual": "59b0536dceb6d8a49360614d91b3b0dc46afe2648a2f5ac5c6cd1d73ea69330d",
+      "match": true
+    },
+    {
+      "path": "android/app/src/main/res/xml/file_paths.xml",
+      "expected": "a46ed43ef65c90cb6778f4581decf3556e3f0055aad8f36d69dae16f9a0e99aa",
+      "actual": "a46ed43ef65c90cb6778f4581decf3556e3f0055aad8f36d69dae16f9a0e99aa",
+      "match": true
+    },
+    {
+      "path": "android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java",
+      "expected": "d4045ae8fac1f0807e6b24eb34e68409a9a235df9d1a3f896fb8c9a49424363d",
+      "actual": "d4045ae8fac1f0807e6b24eb34e68409a9a235df9d1a3f896fb8c9a49424363d",
+      "match": true
+    },
+    {
+      "path": "android/build.gradle",
+      "expected": "46ade7db7afeb8049ccea59fce83095dca736ceb8c9acd79cc944e988c3357d9",
+      "actual": "46ade7db7afeb8049ccea59fce83095dca736ceb8c9acd79cc944e988c3357d9",
+      "match": true
+    },
+    {
+      "path": "android/capacitor.settings.gradle",
+      "expected": "c2a4d3cf2907adfe2bb7d542266d62076d95399fc482e41f08e9069a49f4fdc4",
+      "actual": "c2a4d3cf2907adfe2bb7d542266d62076d95399fc482e41f08e9069a49f4fdc4",
+      "match": true
+    },
+    {
+      "path": "android/gradle.properties",
+      "expected": "3bab15c5b8bc4c2f4b6cf525497d15ad4abca53a460e6dd2eb0f0135817d31e6",
+      "actual": "3bab15c5b8bc4c2f4b6cf525497d15ad4abca53a460e6dd2eb0f0135817d31e6",
+      "match": true
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "expected": "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172",
+      "actual": "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172",
+      "match": true
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "expected": "9a479a85aa879bb55284fc16d0de5b81a745c3854f4e2d88c42e7debaf007435",
+      "actual": "9a479a85aa879bb55284fc16d0de5b81a745c3854f4e2d88c42e7debaf007435",
+      "match": true
+    },
+    {
+      "path": "android/gradlew",
+      "expected": "b187b4c52e749f5760afdd6fadc31b2a98ad35fb249bf0dff03b72650f320409",
+      "actual": "b187b4c52e749f5760afdd6fadc31b2a98ad35fb249bf0dff03b72650f320409",
+      "match": true
+    },
+    {
+      "path": "android/gradlew.bat",
+      "expected": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b",
+      "actual": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b",
+      "match": true
+    },
+    {
+      "path": "android/settings.gradle",
+      "expected": "6ce098d15ebd69b44c4ecd786bca1bdc366340d2459b2af4d7bb0ab317aa9669",
+      "actual": "6ce098d15ebd69b44c4ecd786bca1bdc366340d2459b2af4d7bb0ab317aa9669",
+      "match": true
+    },
+    {
+      "path": "android/variables.gradle",
+      "expected": "83d502c9ed8fcf1dd4791482067abeedbebae49fafe9cd14a8a1f5891deb0d88",
+      "actual": "83d502c9ed8fcf1dd4791482067abeedbebae49fafe9cd14a8a1f5891deb0d88",
+      "match": true
+    },
+    {
+      "path": "ios/.gitignore",
+      "expected": "2b7132a9943d2622e51e656897ca5162f56b121b40b423dedce1fbc699dba88a",
+      "actual": "2b7132a9943d2622e51e656897ca5162f56b121b40b423dedce1fbc699dba88a",
+      "match": true
+    },
+    {
+      "path": "ios/App/App.xcodeproj/project.pbxproj",
+      "expected": "75d8e21df5113b3ff4b42c66c9137cd0afa1bc006b883a1c6e45323adf2e4c8f",
+      "actual": "75d8e21df5113b3ff4b42c66c9137cd0afa1bc006b883a1c6e45323adf2e4c8f",
+      "match": true
+    },
+    {
+      "path": "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "expected": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "actual": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "match": true
+    },
+    {
+      "path": "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+      "expected": "1423f4111fa4fd7149bbf359f154e06c3dc6a91f9adb0e5eaa47c00c9f17c1e8",
+      "actual": "1423f4111fa4fd7149bbf359f154e06c3dc6a91f9adb0e5eaa47c00c9f17c1e8",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/AppDelegate.swift",
+      "expected": "481e2ad8672b14acbd3e3df65acdc6d046526ae542b7bec903cf842fc68d9e49",
+      "actual": "481e2ad8672b14acbd3e3df65acdc6d046526ae542b7bec903cf842fc68d9e49",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png",
+      "expected": "d4a686203b73c8159a0308c77cc340a08ffe089707f0731ddd94f93c93f54637",
+      "actual": "d4a686203b73c8159a0308c77cc340a08ffe089707f0731ddd94f93c93f54637",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "expected": "30cdf27ab0ec2bcb51c244b829ea2f2202978c4bb8374299e90c09ea4017276c",
+      "actual": "30cdf27ab0ec2bcb51c244b829ea2f2202978c4bb8374299e90c09ea4017276c",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Contents.json",
+      "expected": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+      "actual": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Contents.json",
+      "expected": "cfabec10f16bc5ae4b60f28dccc7f1626fd59b13135e064350ce36f484b44f95",
+      "actual": "cfabec10f16bc5ae4b60f28dccc7f1626fd59b13135e064350ce36f484b44f95",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@1x~universal~anyany-dark.png",
+      "expected": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "actual": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@1x~universal~anyany.png",
+      "expected": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "actual": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@2x~universal~anyany-dark.png",
+      "expected": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "actual": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@2x~universal~anyany.png",
+      "expected": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "actual": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@3x~universal~anyany-dark.png",
+      "expected": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "actual": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/Default@3x~universal~anyany.png",
+      "expected": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "actual": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Base.lproj/LaunchScreen.storyboard",
+      "expected": "87a42e842164d75f39cca56a2cf743652f4d8e858f2eba12ae21a8ddcd9a21c6",
+      "actual": "87a42e842164d75f39cca56a2cf743652f4d8e858f2eba12ae21a8ddcd9a21c6",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Base.lproj/Main.storyboard",
+      "expected": "7b7dc7acc67134bfaa80e5ce9c9068ba53db5369b9b70248aa7439fc2b09daae",
+      "actual": "7b7dc7acc67134bfaa80e5ce9c9068ba53db5369b9b70248aa7439fc2b09daae",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/Info.plist",
+      "expected": "b39afb829c992c31ac94af55ef54baa991a33d16a9d9932009dc0c89a0a18514",
+      "actual": "b39afb829c992c31ac94af55ef54baa991a33d16a9d9932009dc0c89a0a18514",
+      "match": true
+    },
+    {
+      "path": "ios/App/App/SceneDelegate.swift",
+      "expected": "738b9b96bb71d34d80cd8c1183cf7f8f6f2e789c64e46fb5fe6777a35ae12dfd",
+      "actual": "738b9b96bb71d34d80cd8c1183cf7f8f6f2e789c64e46fb5fe6777a35ae12dfd",
+      "match": true
+    },
+    {
+      "path": "ios/App/CapApp-SPM/.gitignore",
+      "expected": "4b958e2b4dd57319aadef2551153c74b9cb5ffe9f89d6e3e491122a94913f016",
+      "actual": "4b958e2b4dd57319aadef2551153c74b9cb5ffe9f89d6e3e491122a94913f016",
+      "match": true
+    },
+    {
+      "path": "ios/App/CapApp-SPM/Package.swift",
+      "expected": "6b8d2fdbb3ef646e00b8d32be78817fe16277098181b2c823464a2a20b44fae9",
+      "actual": "6b8d2fdbb3ef646e00b8d32be78817fe16277098181b2c823464a2a20b44fae9",
+      "match": true
+    },
+    {
+      "path": "ios/App/CapApp-SPM/README.md",
+      "expected": "42c535861f4a866e35f85764ed6af1ea046d6a409bf9852ecb00e5d292a1626e",
+      "actual": "42c535861f4a866e35f85764ed6af1ea046d6a409bf9852ecb00e5d292a1626e",
+      "match": true
+    },
+    {
+      "path": "ios/App/CapApp-SPM/Sources/CapApp-SPM/CapApp-SPM.swift",
+      "expected": "70bf9dafddc35e3877dfb133a996f5be7ccd1e132897a98fdbf4869ff605ece9",
+      "actual": "70bf9dafddc35e3877dfb133a996f5be7ccd1e132897a98fdbf4869ff605ece9",
+      "match": true
+    },
+    {
+      "path": "ios/debug.xcconfig",
+      "expected": "4838938a72b913b99cfda54a43bbe73f05893071dc6e3702b0adc44794b64272",
+      "actual": "4838938a72b913b99cfda54a43bbe73f05893071dc6e3702b0adc44794b64272",
+      "match": true
+    },
+    {
+      "path": "migration/core/.gitignore",
+      "expected": "48ba754e605bda557b663d961731f7c80911a52c44e5cd639f565a384ecbfc78",
+      "actual": "48ba754e605bda557b663d961731f7c80911a52c44e5cd639f565a384ecbfc78",
+      "match": true
+    },
+    {
+      "path": "migration/core/package-lock.json",
+      "expected": "05fa0a14619ad5abd7349805a48e4157d1b20b1b691f3c93cfbe8e87da50bf6a",
+      "actual": "05fa0a14619ad5abd7349805a48e4157d1b20b1b691f3c93cfbe8e87da50bf6a",
+      "match": true
+    },
+    {
+      "path": "migration/core/package.json",
+      "expected": "1ec048dc37dbf8a50e4d45b328214467515d7ffa550684382e7247a361bf807a",
+      "actual": "1ec048dc37dbf8a50e4d45b328214467515d7ffa550684382e7247a361bf807a",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/favorites.ts",
+      "expected": "b7bdee58947de72c680cb9178caf2505bc2deaeb895b94a384e84367ec970cc6",
+      "actual": "b7bdee58947de72c680cb9178caf2505bc2deaeb895b94a384e84367ec970cc6",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/grouping.ts",
+      "expected": "df9b563448dbece50437678a7e9ccefcfb98ee14cdb25409ce85fb9f4992f3b3",
+      "actual": "df9b563448dbece50437678a7e9ccefcfb98ee14cdb25409ce85fb9f4992f3b3",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/index.ts",
+      "expected": "de094976cdd807afa6ef3409c6bb7236c494e36f7740633320306615577c9377",
+      "actual": "de094976cdd807afa6ef3409c6bb7236c494e36f7740633320306615577c9377",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/normalize.ts",
+      "expected": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+      "actual": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/selection.ts",
+      "expected": "9bdc15a3f88647442dfd238a9f7aa3cd648be93ccf9762f9d24d95c73929760a",
+      "actual": "9bdc15a3f88647442dfd238a9f7aa3cd648be93ccf9762f9d24d95c73929760a",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/time.ts",
+      "expected": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "actual": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "match": true
+    },
+    {
+      "path": "migration/core/src/types.ts",
+      "expected": "08be30012c09c880534984873609e5065eb9656bc79764f38a2cd9b41b40ed08",
+      "actual": "08be30012c09c880534984873609e5065eb9656bc79764f38a2cd9b41b40ed08",
+      "match": true
+    },
+    {
+      "path": "migration/core/test/algorithms.test.ts",
+      "expected": "4c6f1f18b5a5eff91f7e9cccdf5399c054390d0a33dbb49c5021de3f6ece7b7b",
+      "actual": "4c6f1f18b5a5eff91f7e9cccdf5399c054390d0a33dbb49c5021de3f6ece7b7b",
+      "match": true
+    },
+    {
+      "path": "migration/core/test/expected-cases.test.ts",
+      "expected": "08dc57508d6c0a0fddb1e9d71197824dbf565f20db53791d7aab1585e3e345ef",
+      "actual": "08dc57508d6c0a0fddb1e9d71197824dbf565f20db53791d7aab1585e3e345ef",
+      "match": true
+    },
+    {
+      "path": "migration/core/test/normalize.test.ts",
+      "expected": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+      "actual": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+      "match": true
+    },
+    {
+      "path": "migration/core/test/smoke.test.ts",
+      "expected": "7818ba913cb79fb29033ec644a8e3e29a83b7b72d2d21c93acc0bc5d98924e12",
+      "actual": "7818ba913cb79fb29033ec644a8e3e29a83b7b72d2d21c93acc0bc5d98924e12",
+      "match": true
+    },
+    {
+      "path": "migration/core/test/time.test.ts",
+      "expected": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+      "actual": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+      "match": true
+    },
+    {
+      "path": "migration/core/tsconfig.json",
+      "expected": "67e10cfd19702ac2c839be9041bd4d8a73d48d4005a7a16d8a859c7609ecd78a",
+      "actual": "67e10cfd19702ac2c839be9041bd4d8a73d48d4005a7a16d8a859c7609ecd78a",
+      "match": true
+    },
+    {
+      "path": "migration/core/tsconfig.test.json",
+      "expected": "1c2b9d7b92a298a7e2f67b0609dbb1dfb5277cf5af0f493e6711e3a6dfb603bd",
+      "actual": "1c2b9d7b92a298a7e2f67b0609dbb1dfb5277cf5af0f493e6711e3a6dfb603bd",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/.gitignore",
+      "expected": "a4539afae80e04c845f5d58c1ba36a0e1291e5f9a25ff5a0e1de136daf8498f4",
+      "actual": "a4539afae80e04c845f5d58c1ba36a0e1291e5f9a25ff5a0e1de136daf8498f4",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/LICENSE",
+      "expected": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+      "actual": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/README.md",
+      "expected": "752737655eb43815dd10a934a043537d83402eca61ba2e6cdc0348c86b6f4b75",
+      "actual": "752737655eb43815dd10a934a043537d83402eca61ba2e6cdc0348c86b6f4b75",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "expected": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+      "actual": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+      "expected": "5ee787d672358996454d0e3a6282fc9b9d6c530ebc9ec9eb94b0328ec4488ea6",
+      "actual": "5ee787d672358996454d0e3a6282fc9b9d6c530ebc9ec9eb94b0328ec4488ea6",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/root-layout.test.tsx",
+      "expected": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f",
+      "actual": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "expected": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348",
+      "actual": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-swipe.test.tsx",
+      "expected": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9",
+      "actual": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+      "expected": "0c94b2776ce38872f75ce9eb1f5ff17716939db7cf6c560c2227a5073ce20d76",
+      "actual": "0c94b2776ce38872f75ce9eb1f5ff17716939db7cf6c560c2227a5073ce20d76",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "expected": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1",
+      "actual": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/app.json",
+      "expected": "88d351708f2e5031b3f00b8c07879e82a34a4155ea7949a5931eea2545f8dd2e",
+      "actual": "88d351708f2e5031b3f00b8c07879e82a34a4155ea7949a5931eea2545f8dd2e",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/Assets/expo-symbol 2.svg",
+      "expected": "ad117d20fd819f4ec71876ce09c0e8b9275b1f20c5ec3c9d7d1914977ceffec6",
+      "actual": "ad117d20fd819f4ec71876ce09c0e8b9275b1f20c5ec3c9d7d1914977ceffec6",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/Assets/grid.png",
+      "expected": "8247d79a2b31328fe4e330a973e6fae16924ed9aebd72c64d464d6856ab18c72",
+      "actual": "8247d79a2b31328fe4e330a973e6fae16924ed9aebd72c64d464d6856ab18c72",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/expo.icon/icon.json",
+      "expected": "747c56e178222a6255c6dd61c5de011b286cdc935febe89f04d1b191c3d076fe",
+      "actual": "747c56e178222a6255c6dd61c5de011b286cdc935febe89f04d1b191c3d076fe",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-background.png",
+      "expected": "fb139c2dee362ebf2070e23b96da6fc0d43f8492de38b8af1fd7223e19b5861d",
+      "actual": "fb139c2dee362ebf2070e23b96da6fc0d43f8492de38b8af1fd7223e19b5861d",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-foreground.png",
+      "expected": "9e3d0315a33c6799de601dd34cd8bf8cc3a8d16f3bf75592baec2ceb7240b391",
+      "actual": "9e3d0315a33c6799de601dd34cd8bf8cc3a8d16f3bf75592baec2ceb7240b391",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/android-icon-monochrome.png",
+      "expected": "6371fc2c12e33ad2215a86c281db3d682a81bebe7c957a842c13b8bf00cceb83",
+      "actual": "6371fc2c12e33ad2215a86c281db3d682a81bebe7c957a842c13b8bf00cceb83",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-badge-white.png",
+      "expected": "d9ba28c5e93aea3c2dabd901ee96fea3bb296ad8e648f6f64706dae11a1a62bd",
+      "actual": "d9ba28c5e93aea3c2dabd901ee96fea3bb296ad8e648f6f64706dae11a1a62bd",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-badge.png",
+      "expected": "ff353c7efadbd379903923cb604fca11c908cba0d4658cc2bd1f147d98317249",
+      "actual": "ff353c7efadbd379903923cb604fca11c908cba0d4658cc2bd1f147d98317249",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/expo-logo.png",
+      "expected": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+      "actual": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/favicon.png",
+      "expected": "a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba",
+      "actual": "a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/icon.png",
+      "expected": "7a667804bb80a6a424a5daf18a2599c4f32237cf06fe78fc0de45dbb09e0eccf",
+      "actual": "7a667804bb80a6a424a5daf18a2599c4f32237cf06fe78fc0de45dbb09e0eccf",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/logo-glow.png",
+      "expected": "bbd98a3f3c12d090f4df6065b7462fcdf6bc266209d002b4ef5fe554c245f66c",
+      "actual": "bbd98a3f3c12d090f4df6065b7462fcdf6bc266209d002b4ef5fe554c245f66c",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo.png",
+      "expected": "224b7636b15e672801579b5b418077cbc2ca42f0146389062364356b0ecb5c5c",
+      "actual": "224b7636b15e672801579b5b418077cbc2ca42f0146389062364356b0ecb5c5c",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo@2x.png",
+      "expected": "fa600be9ad2f869c7a8dbaffc78bb15af741123e1319c948f0be51753a153cde",
+      "actual": "fa600be9ad2f869c7a8dbaffc78bb15af741123e1319c948f0be51753a153cde",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/react-logo@3x.png",
+      "expected": "cd84e02a5d542a3e71b7fa10a685c1b9fb51db4aff92aca6c0da6461ce17be16",
+      "actual": "cd84e02a5d542a3e71b7fa10a685c1b9fb51db4aff92aca6c0da6461ce17be16",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/splash-icon.png",
+      "expected": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+      "actual": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore.png",
+      "expected": "e2dea1c2d20929d83e8eebd74818e808b1b72e376d3a1f3a03679fff0255d073",
+      "actual": "e2dea1c2d20929d83e8eebd74818e808b1b72e376d3a1f3a03679fff0255d073",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore@2x.png",
+      "expected": "1b54913b3a0acc3e1fb72d3b9b79ad04814304b35bbb9d03a533e6130ad6c26a",
+      "actual": "1b54913b3a0acc3e1fb72d3b9b79ad04814304b35bbb9d03a533e6130ad6c26a",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/explore@3x.png",
+      "expected": "2f3e43801df70ebe83273b90a7d170bacf5ca74a8a8dc5c154a020c2c8b06609",
+      "actual": "2f3e43801df70ebe83273b90a7d170bacf5ca74a8a8dc5c154a020c2c8b06609",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home.png",
+      "expected": "3829632ec7d495225395f5da3d0942935d7d055979b174613d1ade82fe420e76",
+      "actual": "3829632ec7d495225395f5da3d0942935d7d055979b174613d1ade82fe420e76",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home@2x.png",
+      "expected": "21c5a07df9017d97464a0a8256e265288f2fca0741ca651de05e12b32f32f5ab",
+      "actual": "21c5a07df9017d97464a0a8256e265288f2fca0741ca651de05e12b32f32f5ab",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tabIcons/home@3x.png",
+      "expected": "fe5b397975e7cb70ae7a122472d174ed12ec2ae106f7b49c968225ad37f8b3b8",
+      "actual": "fe5b397975e7cb70ae7a122472d174ed12ec2ae106f7b49c968225ad37f8b3b8",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/assets/images/tutorial-web.png",
+      "expected": "e372ec23ad6262e2e0dc2799ce416b495a631a565bcd24f0615d4afc04dac3bd",
+      "actual": "e372ec23ad6262e2e0dc2799ce416b495a631a565bcd24f0615d4afc04dac3bd",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/package-lock.json",
+      "expected": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb",
+      "actual": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/package.json",
+      "expected": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016",
+      "actual": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/scripts/reset-project.js",
+      "expected": "e1989c1ca90f059a21b3319c7428bccd875e165dcb41f7ee3c580f407b21aa1b",
+      "actual": "e1989c1ca90f059a21b3319c7428bccd875e165dcb41f7ee3c580f407b21aa1b",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/scripts/verify-core-integration.cjs",
+      "expected": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6",
+      "actual": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/app/_layout.tsx",
+      "expected": "1e24934c6a9c3b0e130a36d669377cce723268476a852f6b27a0774e192f9d3b",
+      "actual": "1e24934c6a9c3b0e130a36d669377cce723268476a852f6b27a0774e192f9d3b",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/app/filter.tsx",
+      "expected": "957b8baf2914f45c7ffa23abb7ba2e8193e074ba63a9e5d80225535fb7831292",
+      "actual": "957b8baf2914f45c7ffa23abb7ba2e8193e074ba63a9e5d80225535fb7831292",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/app/index.tsx",
+      "expected": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "actual": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/app/session/[sessionId].tsx",
+      "expected": "82aef2a4af75eef30d6905f046414f6dd3a3d34b1f3a81a49a878bf8baa1f7c1",
+      "actual": "82aef2a4af75eef30d6905f046414f6dd3a3d34b1f3a81a49a878bf8baa1f7c1",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.module.css",
+      "expected": "a70d5b1b0561336e53541e4fcca0431fa9e3671fc29dd232a44d546ff488423c",
+      "actual": "a70d5b1b0561336e53541e4fcca0431fa9e3671fc29dd232a44d546ff488423c",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.tsx",
+      "expected": "53772b1cfee876e9e79be0456fc6a4500b76a88e12990c63b3cc96d9ba9842b5",
+      "actual": "53772b1cfee876e9e79be0456fc6a4500b76a88e12990c63b3cc96d9ba9842b5",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/animated-icon.web.tsx",
+      "expected": "d99b902d487bb7a0c6357b201cc5c5fda1fd1a482e6edea3d896324e949712d2",
+      "actual": "d99b902d487bb7a0c6357b201cc5c5fda1fd1a482e6edea3d896324e949712d2",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/app-tabs.tsx",
+      "expected": "69f9558ef4b19a57d6ab124e12a95d778e36d4691df3e2a135ddbc91c5f5ec92",
+      "actual": "69f9558ef4b19a57d6ab124e12a95d778e36d4691df3e2a135ddbc91c5f5ec92",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/app-tabs.web.tsx",
+      "expected": "ac95e9f5379239e28b777800df5bb7b67f14001d8133081fe873d747959df045",
+      "actual": "ac95e9f5379239e28b777800df5bb7b67f14001d8133081fe873d747959df045",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/external-link.tsx",
+      "expected": "2838582e2dc21877652b710d4aee5f4ba5a795b17fcf63bd7ac9c25a749c8c26",
+      "actual": "2838582e2dc21877652b710d4aee5f4ba5a795b17fcf63bd7ac9c25a749c8c26",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/hint-row.tsx",
+      "expected": "2b5b1bbd4da6d9946e9a267587d7d6279059b0fab01dfeca144cd8cc3653a099",
+      "actual": "2b5b1bbd4da6d9946e9a267587d7d6279059b0fab01dfeca144cd8cc3653a099",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/themed-text.tsx",
+      "expected": "ae907d2b52a6a231963db7882acb5f853e6a08b94c34efc88d89fb1cd5f83264",
+      "actual": "ae907d2b52a6a231963db7882acb5f853e6a08b94c34efc88d89fb1cd5f83264",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/themed-view.tsx",
+      "expected": "e13930b2f4dfd4dab093d1a86c1586825a97d56e895ba8cb9c89233e654138c9",
+      "actual": "e13930b2f4dfd4dab093d1a86c1586825a97d56e895ba8cb9c89233e654138c9",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/ui/collapsible.tsx",
+      "expected": "73613fbb9c2d64215f7c365683ec790dbf6f04160bea48bc7273cc0a36d4a95b",
+      "actual": "73613fbb9c2d64215f7c365683ec790dbf6f04160bea48bc7273cc0a36d4a95b",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/components/web-badge.tsx",
+      "expected": "0af7715337e070c7c476202c8dd77f2fd6a3514255ace1ead9f832ccc8351a7f",
+      "actual": "0af7715337e070c7c476202c8dd77f2fd6a3514255ace1ead9f832ccc8351a7f",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/constants/theme.ts",
+      "expected": "5c524dc8b8c75b01e6f5d10ec0d2efa094f3e4591cb8b2866508573806311a69",
+      "actual": "5c524dc8b8c75b01e6f5d10ec0d2efa094f3e4591cb8b2866508573806311a69",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/data/conference.json",
+      "expected": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "actual": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/data/load-conference.ts",
+      "expected": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5",
+      "actual": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/global.css",
+      "expected": "3d65b4b82fe8112cd874d5058bb78b94743d2679958a421191802f4239cedf56",
+      "actual": "3d65b4b82fe8112cd874d5058bb78b94743d2679958a421191802f4239cedf56",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-color-scheme.ts",
+      "expected": "33beb965500ae5fdfe5c8699805a6be94c8c126a751fbe2ed7bcae87df394882",
+      "actual": "33beb965500ae5fdfe5c8699805a6be94c8c126a751fbe2ed7bcae87df394882",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-color-scheme.web.ts",
+      "expected": "84f19b5c1a8e941ab9868d2e83f6e61db11d3d9bf4fa91fac979bcd0fdc8019b",
+      "actual": "84f19b5c1a8e941ab9868d2e83f6e61db11d3d9bf4fa91fac979bcd0fdc8019b",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/hooks/use-theme.ts",
+      "expected": "267508aef2ef836c3267d3ffb52bbd499282a4ea1dab2c36e061e008945d77b8",
+      "actual": "267508aef2ef836c3267d3ffb52bbd499282a4ea1dab2c36e061e008945d77b8",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/screens/filter-screen.tsx",
+      "expected": "450056947d4453ffe58614e33fe0f4f699b23fe4891b5ccda51dbe8b230b7e70",
+      "actual": "450056947d4453ffe58614e33fe0f4f699b23fe4891b5ccda51dbe8b230b7e70",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/screens/schedule-screen.tsx",
+      "expected": "a7f1798ee957f79ae26236e4a7db28713a6e16052670d5b26335e435d7ba6727",
+      "actual": "a7f1798ee957f79ae26236e4a7db28713a6e16052670d5b26335e435d7ba6727",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/screens/session-detail-screen.tsx",
+      "expected": "172483ff91d97a3a2293d51ceae506ef95284c2cb4ddc57c41b08783455641d0",
+      "actual": "172483ff91d97a3a2293d51ceae506ef95284c2cb4ddc57c41b08783455641d0",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/screens/shell-screen.tsx",
+      "expected": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f",
+      "actual": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/src/state/conference-state.tsx",
+      "expected": "7358cda6b6677b5537c4964cf913efd29f9edcc3ff9ad706e0f64565c4c326d0",
+      "actual": "7358cda6b6677b5537c4964cf913efd29f9edcc3ff9ad706e0f64565c4c326d0",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/test-utils/gesture-test-setup.ts",
+      "expected": "c809ea29634e5be2a4f4daaae2a23bf9489f1c492b7426c923e8e317134fa7fd",
+      "actual": "c809ea29634e5be2a4f4daaae2a23bf9489f1c492b7426c923e8e317134fa7fd",
+      "match": true
+    },
+    {
+      "path": "migration/react-native/tsconfig.json",
+      "expected": "b3fcbc507af0df8008ffae41c5132e2bafceb650f6f55347d7492e0d8f98e3c0",
+      "actual": "b3fcbc507af0df8008ffae41c5132e2bafceb650f6f55347d7492e0d8f98e3c0",
+      "match": true
+    },
+    {
+      "path": "migration/reference/contract.md",
+      "expected": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "actual": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "match": true
+    },
+    {
+      "path": "migration/reference/derive-expected.mjs",
+      "expected": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954",
+      "actual": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954",
+      "match": true
+    },
+    {
+      "path": "migration/reference/expected-cases.json",
+      "expected": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "actual": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "match": true
+    },
+    {
+      "path": "package-lock.json",
+      "expected": "ca8851075cf35a39c32e6be790c171049c2be3dcd9ee5272732b49fbfddc6f84",
+      "actual": "ca8851075cf35a39c32e6be790c171049c2be3dcd9ee5272732b49fbfddc6f84",
+      "match": true
+    },
+    {
+      "path": "package.json",
+      "expected": "2fe4e34a2930cb0a92f55c3209d17b2267367d9e245630363296b9b3c30237ec",
+      "actual": "2fe4e34a2930cb0a92f55c3209d17b2267367d9e245630363296b9b3c30237ec",
+      "match": true
+    },
+    {
+      "path": "public/assets/icon/favicon.png",
+      "expected": "e820db45563316ad63b8557a3cb9a681a9f59faf899c250393113fcbe885d2cd",
+      "actual": "e820db45563316ad63b8557a3cb9a681a9f59faf899c250393113fcbe885d2cd",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-128.webp",
+      "expected": "c5158ca86a9c002e022b35449e9db1b2ff8d343516474b771bd1e99e16469559",
+      "actual": "c5158ca86a9c002e022b35449e9db1b2ff8d343516474b771bd1e99e16469559",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-192.webp",
+      "expected": "76666574c5bbaf54e79cf12f233eb729f6c562b208b12a7f11b49e3f229ee6db",
+      "actual": "76666574c5bbaf54e79cf12f233eb729f6c562b208b12a7f11b49e3f229ee6db",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-256.webp",
+      "expected": "6b49128fbf3d0de2a45bdece9beab40456acc9b6002fbf046233261c0bec71f0",
+      "actual": "6b49128fbf3d0de2a45bdece9beab40456acc9b6002fbf046233261c0bec71f0",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-48.webp",
+      "expected": "3eacaf9b576cd716579c850c33f0623c1e9984ac13dc61f3b0c69e02a05404fe",
+      "actual": "3eacaf9b576cd716579c850c33f0623c1e9984ac13dc61f3b0c69e02a05404fe",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-512.webp",
+      "expected": "4bd667771ea59235a3e7ed0e5bc159d97198caaab9fa9d73c5e9d11dbed21170",
+      "actual": "4bd667771ea59235a3e7ed0e5bc159d97198caaab9fa9d73c5e9d11dbed21170",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-72.webp",
+      "expected": "72fc18968141c99aaa62cff9dfcf8fa276d2a2f42de83a814cfb64cd6247305a",
+      "actual": "72fc18968141c99aaa62cff9dfcf8fa276d2a2f42de83a814cfb64cd6247305a",
+      "match": true
+    },
+    {
+      "path": "public/assets/icons/icon-96.webp",
+      "expected": "8d97437aa551f66fbaf5b2f67078ff862dc8ff8ef0d0bcb56c6f683d326da942",
+      "actual": "8d97437aa551f66fbaf5b2f67078ff862dc8ff8ef0d0bcb56c6f683d326da942",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/about/austin.jpg",
+      "expected": "bf6e554500d2322291fb295799dc9d1ee97aa52728b2e9678fdab57d49fa4abf",
+      "actual": "bf6e554500d2322291fb295799dc9d1ee97aa52728b2e9678fdab57d49fa4abf",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/about/chicago.jpg",
+      "expected": "1d01a4f6426dfe6a8e80ea85299f782c69ddcaee8f66a917e2fcb79411a2522d",
+      "actual": "1d01a4f6426dfe6a8e80ea85299f782c69ddcaee8f66a917e2fcb79411a2522d",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/about/madison.jpg",
+      "expected": "841da52c9196b6e03773f3962cd7beb7371feb8d4a37a0647796293e291f3191",
+      "actual": "841da52c9196b6e03773f3962cd7beb7371feb8d4a37a0647796293e291f3191",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/about/seattle.jpg",
+      "expected": "e9f70c3eed707f440c19b9f69ce16a6d4fe4ddfa78ece87a5aafdf956718b780",
+      "actual": "e9f70c3eed707f440c19b9f69ce16a6d4fe4ddfa78ece87a5aafdf956718b780",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/appicon.png",
+      "expected": "160db226798906a50c3a52821e0ea7c105919533ea01dbbe29784a8dc6c36aa0",
+      "actual": "160db226798906a50c3a52821e0ea7c105919533ea01dbbe29784a8dc6c36aa0",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/appicon.svg",
+      "expected": "42e179ca151a6e11496dbcf722c4ed4faf9878a1d3f656c2c0e597a33f4350d9",
+      "actual": "42e179ca151a6e11496dbcf722c4ed4faf9878a1d3f656c2c0e597a33f4350d9",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/ica-slidebox-img-1.png",
+      "expected": "8032ae1529c1100f90e7cc425fb482005e5b7dc14710133bea16e8e9e262ba4f",
+      "actual": "8032ae1529c1100f90e7cc425fb482005e5b7dc14710133bea16e8e9e262ba4f",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/ica-slidebox-img-2.png",
+      "expected": "c7152095c713b7a75c4c408641423606d7654ef48cb67918e5880cef3dc7d005",
+      "actual": "c7152095c713b7a75c4c408641423606d7654ef48cb67918e5880cef3dc7d005",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/ica-slidebox-img-3.png",
+      "expected": "60c8d33303b75a491802186e7a1fb38626bd4bde1dcabb0606803a0b09aa41f2",
+      "actual": "60c8d33303b75a491802186e7a1fb38626bd4bde1dcabb0606803a0b09aa41f2",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/ica-slidebox-img-4.png",
+      "expected": "dbb7b2d4b0df31d1b303eff51203871ee7c6b1e9929d17cf4ba8602b7ea3a3a4",
+      "actual": "dbb7b2d4b0df31d1b303eff51203871ee7c6b1e9929d17cf4ba8602b7ea3a3a4",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/ionic-logo-white.svg",
+      "expected": "7eef0dcfeeabf4508ffb7254dd27842fbfa5528569b8c2afbd9d40f92f197bcd",
+      "actual": "7eef0dcfeeabf4508ffb7254dd27842fbfa5528569b8c2afbd9d40f92f197bcd",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speaker-background.png",
+      "expected": "f01780e387d05fb5e985e403bde6656a45af951b2441b1a2f671ff304da8898f",
+      "actual": "f01780e387d05fb5e985e403bde6656a45af951b2441b1a2f671ff304da8898f",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/bear.jpg",
+      "expected": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b",
+      "actual": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/cheetah.jpg",
+      "expected": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e",
+      "actual": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/duck.jpg",
+      "expected": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0",
+      "actual": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/eagle.jpg",
+      "expected": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a",
+      "actual": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/elephant.jpg",
+      "expected": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0",
+      "actual": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/giraffe.jpg",
+      "expected": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de",
+      "actual": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/iguana.jpg",
+      "expected": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b",
+      "actual": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/kitten.jpg",
+      "expected": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f",
+      "actual": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/lion.jpg",
+      "expected": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca",
+      "actual": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/mouse.jpg",
+      "expected": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9",
+      "actual": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/puppy.jpg",
+      "expected": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac",
+      "actual": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/rabbit.jpg",
+      "expected": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2",
+      "actual": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2",
+      "match": true
+    },
+    {
+      "path": "public/assets/img/speakers/turtle.jpg",
+      "expected": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf",
+      "actual": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf",
+      "match": true
+    },
+    {
+      "path": "public/data/data.json",
+      "expected": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "actual": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "match": true
+    },
+    {
+      "path": "public/favicon.ico",
+      "expected": "c1209882f16bd48bb22a16e4bbeb25ff5d642718db72487080a263c5755d070d",
+      "actual": "c1209882f16bd48bb22a16e4bbeb25ff5d642718db72487080a263c5755d070d",
+      "match": true
+    },
+    {
+      "path": "public/index.html",
+      "expected": "3bf875feea057e46bf9ec340512d9ab4173a25524ba59c609f9ac652a34b0ba9",
+      "actual": "3bf875feea057e46bf9ec340512d9ab4173a25524ba59c609f9ac652a34b0ba9",
+      "match": true
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "expected": "83cf0ca2e8ee14d0943f825b3d3613f97a45b2f858d368817d1d2dff4dc601f2",
+      "actual": "83cf0ca2e8ee14d0943f825b3d3613f97a45b2f858d368817d1d2dff4dc601f2",
+      "match": true
+    },
+    {
+      "path": "src/App.vue",
+      "expected": "a4fa9a6c2690a333968ecbb7d5baa38c9d9d3c7cd566343660c596001a3897a2",
+      "actual": "a4fa9a6c2690a333968ecbb7d5baa38c9d9d3c7cd566343660c596001a3897a2",
+      "match": true
+    },
+    {
+      "path": "src/api/index.ts",
+      "expected": "7a4292be419ed2b9734371dfe973019802815633369ac951bbd4f29f7777a141",
+      "actual": "7a4292be419ed2b9734371dfe973019802815633369ac951bbd4f29f7777a141",
+      "match": true
+    },
+    {
+      "path": "src/components/Menu.vue",
+      "expected": "e7b0d85a874e4b7b91d671b6cd671da922c971adc4e732af0c512d3180cb0eb5",
+      "actual": "e7b0d85a874e4b7b91d671b6cd671da922c971adc4e732af0c512d3180cb0eb5",
+      "match": true
+    },
+    {
+      "path": "src/filters/dateFormat.ts",
+      "expected": "93404b9ce01e9c7f553040fd8a7523b9c5456dc8f3626cbd6bfd7605851d43be",
+      "actual": "93404b9ce01e9c7f553040fd8a7523b9c5456dc8f3626cbd6bfd7605851d43be",
+      "match": true
+    },
+    {
+      "path": "src/filters/lowercase.ts",
+      "expected": "2badd923e7f063afa4fc6206330b591cbe62a3b14c9f6f4b97b2daad3c2731ee",
+      "actual": "2badd923e7f063afa4fc6206330b591cbe62a3b14c9f6f4b97b2daad3c2731ee",
+      "match": true
+    },
+    {
+      "path": "src/main.ts",
+      "expected": "981273c89eadcefe26914e9c914aef5d414a969b8f59b66441076600899e06a4",
+      "actual": "981273c89eadcefe26914e9c914aef5d414a969b8f59b66441076600899e06a4",
+      "match": true
+    },
+    {
+      "path": "src/router.ts",
+      "expected": "8bc81cfefd3f298ce664f2d3e07d488829c67b7b0237dfee67910ed2b17ee83e",
+      "actual": "8bc81cfefd3f298ce664f2d3e07d488829c67b7b0237dfee67910ed2b17ee83e",
+      "match": true
+    },
+    {
+      "path": "src/store/index.ts",
+      "expected": "7e6400166985981e28570c52e7ea56226f274af3307fa196464f3a815ec570e9",
+      "actual": "7e6400166985981e28570c52e7ea56226f274af3307fa196464f3a815ec570e9",
+      "match": true
+    },
+    {
+      "path": "src/store/modules/darkMode.ts",
+      "expected": "79bf2e75be08ccb06f2357e39048dc2628f437b3e63a8b2846ff94472237eb78",
+      "actual": "79bf2e75be08ccb06f2357e39048dc2628f437b3e63a8b2846ff94472237eb78",
+      "match": true
+    },
+    {
+      "path": "src/store/modules/locations.ts",
+      "expected": "5fbaeff8300e57cecc0664767f8ed6ce18120d660dfe05f75efa57820f4275ee",
+      "actual": "5fbaeff8300e57cecc0664767f8ed6ce18120d660dfe05f75efa57820f4275ee",
+      "match": true
+    },
+    {
+      "path": "src/store/modules/sessions.ts",
+      "expected": "4d2435e0d2ad8bb4d346f25b4dd5cadd9318b23c9b2cb2b55d9257d1e7780519",
+      "actual": "4d2435e0d2ad8bb4d346f25b4dd5cadd9318b23c9b2cb2b55d9257d1e7780519",
+      "match": true
+    },
+    {
+      "path": "src/store/modules/speakers.ts",
+      "expected": "d003550e7f8f7bcbeef2829842f3c4beb19cf55e7b0fe3a58ba35ebcfd1bb5bd",
+      "actual": "d003550e7f8f7bcbeef2829842f3c4beb19cf55e7b0fe3a58ba35ebcfd1bb5bd",
+      "match": true
+    },
+    {
+      "path": "src/store/modules/user.ts",
+      "expected": "f644688e651f9da648977d03910322242859136617699910530595cbd2de8f98",
+      "actual": "f644688e651f9da648977d03910322242859136617699910530595cbd2de8f98",
+      "match": true
+    },
+    {
+      "path": "src/theme/custom.css",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "src/theme/variables.css",
+      "expected": "903f72b9b189d5aa559f993474129d20490cbff0d092ad850669e3b385ca03f8",
+      "actual": "903f72b9b189d5aa559f993474129d20490cbff0d092ad850669e3b385ca03f8",
+      "match": true
+    },
+    {
+      "path": "src/types/images.d.ts",
+      "expected": "28b583f48d03ba0c73053868e9837ad943288e21841ac9f97b4bc807890bd4d9",
+      "actual": "28b583f48d03ba0c73053868e9837ad943288e21841ac9f97b4bc807890bd4d9",
+      "match": true
+    },
+    {
+      "path": "src/utils/loadState.ts",
+      "expected": "67130df8120933c9e1ebe4eb3c3926165ee9aa5cfeb6d5351b5de383d3fedf3b",
+      "actual": "67130df8120933c9e1ebe4eb3c3926165ee9aa5cfeb6d5351b5de383d3fedf3b",
+      "match": true
+    },
+    {
+      "path": "src/utils/time.spec.ts",
+      "expected": "6983f88f8ca7c2b5d8c2b8aa481291af4bef4984f82eda1dc887a73547c0cd04",
+      "actual": "6983f88f8ca7c2b5d8c2b8aa481291af4bef4984f82eda1dc887a73547c0cd04",
+      "match": true
+    },
+    {
+      "path": "src/utils/time.ts",
+      "expected": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "actual": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+      "match": true
+    },
+    {
+      "path": "src/views/About.vue",
+      "expected": "719c6e81c1798890607b99d57e402e9326c108f32d7a7266109cd7786a6c62d1",
+      "actual": "719c6e81c1798890607b99d57e402e9326c108f32d7a7266109cd7786a6c62d1",
+      "match": true
+    },
+    {
+      "path": "src/views/Account.vue",
+      "expected": "192ef853b7fa21e593d06646d70a6f9332f25deb98db15209b95e58d709cf5bb",
+      "actual": "192ef853b7fa21e593d06646d70a6f9332f25deb98db15209b95e58d709cf5bb",
+      "match": true
+    },
+    {
+      "path": "src/views/Login.vue",
+      "expected": "a8f5f8cc798b194fca2a311ca72c620f3002d1a39fd279852386bb4c3a2616d7",
+      "actual": "a8f5f8cc798b194fca2a311ca72c620f3002d1a39fd279852386bb4c3a2616d7",
+      "match": true
+    },
+    {
+      "path": "src/views/Map.vue",
+      "expected": "7bbce21654d670745c9ec671d39410c336b5c91d30cb2fab6e9452254d0b9487",
+      "actual": "7bbce21654d670745c9ec671d39410c336b5c91d30cb2fab6e9452254d0b9487",
+      "match": true
+    },
+    {
+      "path": "src/views/SessionDetail.vue",
+      "expected": "06e158f2f191b571a253baf485ee4da997143f75d3e9b55686ff3f4823370d77",
+      "actual": "06e158f2f191b571a253baf485ee4da997143f75d3e9b55686ff3f4823370d77",
+      "match": true
+    },
+    {
+      "path": "src/views/SessionList.vue",
+      "expected": "a7f92ab3c3b1013a8d4a7b8adb8d7a26faa4c8407f3a75de4972bb26471913ac",
+      "actual": "a7f92ab3c3b1013a8d4a7b8adb8d7a26faa4c8407f3a75de4972bb26471913ac",
+      "match": true
+    },
+    {
+      "path": "src/views/SessionListFilter.vue",
+      "expected": "abcd228d0964025ed6b4b4aa23a46a7afd4ebe114e59eb2a9e53b86cbb221074",
+      "actual": "abcd228d0964025ed6b4b4aa23a46a7afd4ebe114e59eb2a9e53b86cbb221074",
+      "match": true
+    },
+    {
+      "path": "src/views/Signup.vue",
+      "expected": "8715e072b4539f5838bb15951c62b0ad8a49c495819e34a4e87449beeccd9d31",
+      "actual": "8715e072b4539f5838bb15951c62b0ad8a49c495819e34a4e87449beeccd9d31",
+      "match": true
+    },
+    {
+      "path": "src/views/SpeakerDetail.vue",
+      "expected": "12dbdd4c5eb8674e3d3c1c6afbba5ca9c100345b809eff099a53855127d05bb9",
+      "actual": "12dbdd4c5eb8674e3d3c1c6afbba5ca9c100345b809eff099a53855127d05bb9",
+      "match": true
+    },
+    {
+      "path": "src/views/SpeakerList.vue",
+      "expected": "e92c0ca5013fc9ebbf79a3c0f322e69e721a33a6952a25cf4e94cc8f630779be",
+      "actual": "e92c0ca5013fc9ebbf79a3c0f322e69e721a33a6952a25cf4e94cc8f630779be",
+      "match": true
+    },
+    {
+      "path": "src/views/Support.vue",
+      "expected": "0c73188528b73f9a38acf38a0b281c431428d77a3dc7f9a018cb0108a20ad527",
+      "actual": "0c73188528b73f9a38acf38a0b281c431428d77a3dc7f9a018cb0108a20ad527",
+      "match": true
+    },
+    {
+      "path": "src/views/Tabs.vue",
+      "expected": "c53421488b0a3f13c62438d60ce5f3093074afbc09f324e947274932faad9f0e",
+      "actual": "c53421488b0a3f13c62438d60ce5f3093074afbc09f324e947274932faad9f0e",
+      "match": true
+    },
+    {
+      "path": "src/views/Tutorial.vue",
+      "expected": "eb29b2627a49d362b7b0521b83d2fa3e1725cc59b01a62bcdacf3a806d3f8a7d",
+      "actual": "eb29b2627a49d362b7b0521b83d2fa3e1725cc59b01a62bcdacf3a806d3f8a7d",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/.gitignore",
+      "expected": "45d9d024cd2854ac52da0b7ad53abd080f5b394b28b3b5c0280f69057d1f85b0",
+      "actual": "45d9d024cd2854ac52da0b7ad53abd080f5b394b28b3b5c0280f69057d1f85b0",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/app.gradle",
+      "expected": "4d9fc9048bcd0851ce38e4dbb0f281b30d1d3890473b1588906820e53ff2dbdc",
+      "actual": "4d9fc9048bcd0851ce38e4dbb0f281b30d1d3890473b1588906820e53ff2dbdc",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/before-plugins.gradle",
+      "expected": "944bd95d39bab10456a4015db1404fc92385453903ef1fab60c238406e59ef25",
+      "actual": "944bd95d39bab10456a4015db1404fc92385453903ef1fab60c238406e59ef25",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/AndroidManifest.xml",
+      "expected": "1aed4600e5001df7ca73dee24fa1d8c4bfc58ff3899f4692929a83fd212451e5",
+      "actual": "1aed4600e5001df7ca73dee24fa1d8c4bfc58ff3899f4692929a83fd212451e5",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/background.png",
+      "expected": "c9ff1a41982dbcad65c2dc90c4b76bb42662af1ff3c1d07d475e6ed8b36aa508",
+      "actual": "c9ff1a41982dbcad65c2dc90c4b76bb42662af1ff3c1d07d475e6ed8b36aa508",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/logo.png",
+      "expected": "40ca5cfe9eeca880184c4f3be06f78c7f42a8456a2f0c45b7659b7cde882c228",
+      "actual": "40ca5cfe9eeca880184c4f3be06f78c7f42a8456a2f0c45b7659b7cde882c228",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/background.png",
+      "expected": "facd016870e072eda630661c8d146ec8ecbd5669f65bb258c49ff58089548d34",
+      "actual": "facd016870e072eda630661c8d146ec8ecbd5669f65bb258c49ff58089548d34",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/logo.png",
+      "expected": "bcdbae08acaf6e881dab7c7e6f31672dd8ec0fdcc70961c4bd5aa705e2a579b0",
+      "actual": "bcdbae08acaf6e881dab7c7e6f31672dd8ec0fdcc70961c4bd5aa705e2a579b0",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/background.png",
+      "expected": "7aa434da59098a89a17206c14e279eff044662a1304561445b2bb8d301334d9f",
+      "actual": "7aa434da59098a89a17206c14e279eff044662a1304561445b2bb8d301334d9f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/logo.png",
+      "expected": "13da1afa6a09cd697230673ea3d541ea7ca2fae0635bb1ef388d32ac115cd48a",
+      "actual": "13da1afa6a09cd697230673ea3d541ea7ca2fae0635bb1ef388d32ac115cd48a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-nodpi/splash_screen.xml",
+      "expected": "ef54f9b6957ccf898616899b75c86216a17abf375dce148c45393dc2e8156d18",
+      "actual": "ef54f9b6957ccf898616899b75c86216a17abf375dce148c45393dc2e8156d18",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/background.png",
+      "expected": "84059ea8e837fdacf26c9a59b0ebd221ed2e37f02a1f9954c943984d3723869a",
+      "actual": "84059ea8e837fdacf26c9a59b0ebd221ed2e37f02a1f9954c943984d3723869a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/logo.png",
+      "expected": "860d212d0b142752580b438c856a2638c588f6e2d4a2eeaf0121af2083d4dc04",
+      "actual": "860d212d0b142752580b438c856a2638c588f6e2d4a2eeaf0121af2083d4dc04",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/background.png",
+      "expected": "ea630ded2508d45b11177542f338b8755398607a8d13299735cf99f67985907e",
+      "actual": "ea630ded2508d45b11177542f338b8755398607a8d13299735cf99f67985907e",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/logo.png",
+      "expected": "e1acc7a8ed145df35b59567fcee5dabeabf707b917046b6573211e479c001c5a",
+      "actual": "e1acc7a8ed145df35b59567fcee5dabeabf707b917046b6573211e479c001c5a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/background.png",
+      "expected": "4a67ff5341145dc8d639ac388d82679719ba88bd448ad817a1dd457fff72a17a",
+      "actual": "4a67ff5341145dc8d639ac388d82679719ba88bd448ad817a1dd457fff72a17a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/logo.png",
+      "expected": "7efba00a714a532b8adc21a1f8bfd17f96fe86293d7463d9e6f8d491e4c3137c",
+      "actual": "7efba00a714a532b8adc21a1f8bfd17f96fe86293d7463d9e6f8d491e4c3137c",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/drawable/ic_launcher_foreground.xml",
+      "expected": "ae4577fa18556a350ce11bee71ca9c1fbff5bb3e444b1b0c9e573af321ba9c8a",
+      "actual": "ae4577fa18556a350ce11bee71ca9c1fbff5bb3e444b1b0c9e573af321ba9c8a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "expected": "daf8d08484dc1c1d1f268c4e5a69f9a9597c6941dc199890008cffd29aae8c88",
+      "actual": "daf8d08484dc1c1d1f268c4e5a69f9a9597c6941dc199890008cffd29aae8c88",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "expected": "ca76219db66a355db87a5dd22f94353b4f8492e59400f3df4043f007bc7df0bc",
+      "actual": "ca76219db66a355db87a5dd22f94353b4f8492e59400f3df4043f007bc7df0bc",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "expected": "13c28fedafb06880b6a9c9bbdb5c0eb6f67cf5467387bbf63cf382414d73e623",
+      "actual": "13c28fedafb06880b6a9c9bbdb5c0eb6f67cf5467387bbf63cf382414d73e623",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "expected": "7f9dfe5d96f965a73c096e18532ab71ec859636fc4bf1e70742f2787aa08e3ad",
+      "actual": "7f9dfe5d96f965a73c096e18532ab71ec859636fc4bf1e70742f2787aa08e3ad",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "expected": "0d25e14a02a945f3242d863b99fcebe2653e6f74db90da87773ec3e16b2f501a",
+      "actual": "0d25e14a02a945f3242d863b99fcebe2653e6f74db90da87773ec3e16b2f501a",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "expected": "ee3a4bd8db2ab3d6a6a11aafce9940bda97b1839eaf71eae285efa90e7ffd1a9",
+      "actual": "ee3a4bd8db2ab3d6a6a11aafce9940bda97b1839eaf71eae285efa90e7ffd1a9",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values-v21/colors.xml",
+      "expected": "b97dbdfed2967cbd043dec289ab8adf3d3a0fea5225143d643346248cf72745e",
+      "actual": "b97dbdfed2967cbd043dec289ab8adf3d3a0fea5225143d643346248cf72745e",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values-v21/styles.xml",
+      "expected": "dc6079ed1600dc3529b35e6461a5da6d5727dab1f6ab5bd82d8cfc12280d08f6",
+      "actual": "dc6079ed1600dc3529b35e6461a5da6d5727dab1f6ab5bd82d8cfc12280d08f6",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values-v29/styles.xml",
+      "expected": "85e785876a7e87bfadd493ebbd696731765592ea8305a082aa332c997c9614f6",
+      "actual": "85e785876a7e87bfadd493ebbd696731765592ea8305a082aa332c997c9614f6",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values/colors.xml",
+      "expected": "013f508b9c9af43521481f67bb9643b4f758e01076193d7dbc1d66120b7ec710",
+      "actual": "013f508b9c9af43521481f67bb9643b4f758e01076193d7dbc1d66120b7ec710",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values/ic_launcher_background.xml",
+      "expected": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+      "actual": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/values/styles.xml",
+      "expected": "096e4238b20a426fec0f0eadd0c44d0b9ddc56483c08bd1ef2a24085fb4d1a0f",
+      "actual": "096e4238b20a426fec0f0eadd0c44d0b9ddc56483c08bd1ef2a24085fb4d1a0f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/Android/src/main/res/xml/network_security.xml",
+      "expected": "1926625e90205ef976ad1252e0fbbe520ae61458d6f3c71fcd8ac1f12a8cea52",
+      "actual": "1926625e90205ef976ad1252e0fbbe520ae61458d6f3c71fcd8ac1f12a8cea52",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "expected": "78edaf41467898f8c330e54278c3e49ddbf3a6ab6c528a248551d5d54a93e3dc",
+      "actual": "78edaf41467898f8c330e54278c3e49ddbf3a6ab6c528a248551d5d54a93e3dc",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-1024.png",
+      "expected": "5fdebc7c0087aeab1785887a72971aeb9b2155def489a2cfb06b88649cfcf571",
+      "actual": "5fdebc7c0087aeab1785887a72971aeb9b2155def489a2cfb06b88649cfcf571",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20.png",
+      "expected": "d93bd5971a9cd55dd2f796ce1c33fbc42c4119ca3f2dce1d20607ef90f24c032",
+      "actual": "d93bd5971a9cd55dd2f796ce1c33fbc42c4119ca3f2dce1d20607ef90f24c032",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@2x.png",
+      "expected": "0ec87384ccd808288f3b7a66a89a06346f536469e894a8dbcf282e5cd98fa7d2",
+      "actual": "0ec87384ccd808288f3b7a66a89a06346f536469e894a8dbcf282e5cd98fa7d2",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@3x.png",
+      "expected": "799232cf0354e70147b06c86a69b2619cf158edbfe25613ce092ac29f9bfe47e",
+      "actual": "799232cf0354e70147b06c86a69b2619cf158edbfe25613ce092ac29f9bfe47e",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29.png",
+      "expected": "d7075d160371e6312ef90c655cd5673b56fa3784e1fb65a6a366479f1dba36de",
+      "actual": "d7075d160371e6312ef90c655cd5673b56fa3784e1fb65a6a366479f1dba36de",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@2x.png",
+      "expected": "e2248aa03c1bf24b65430c343b636166111e6175cd8469d64539d21fce022005",
+      "actual": "e2248aa03c1bf24b65430c343b636166111e6175cd8469d64539d21fce022005",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@3x.png",
+      "expected": "200f32e4522312ecce067bd20b62933ce1e11318ae30c438a2729edc18fad435",
+      "actual": "200f32e4522312ecce067bd20b62933ce1e11318ae30c438a2729edc18fad435",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40.png",
+      "expected": "90127a63aacfc752e9e45dbcf795867fc512f134ad3169652db859518acba953",
+      "actual": "90127a63aacfc752e9e45dbcf795867fc512f134ad3169652db859518acba953",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@2x.png",
+      "expected": "89ec59f727a1b44662fea8646433348345e89da14a6f05a81261537f693d0fcb",
+      "actual": "89ec59f727a1b44662fea8646433348345e89da14a6f05a81261537f693d0fcb",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@3x.png",
+      "expected": "17184ef759339bd2560dbe2400b8cb2a54dd0ab5440c8421c14ac62fa371113f",
+      "actual": "17184ef759339bd2560dbe2400b8cb2a54dd0ab5440c8421c14ac62fa371113f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@2x.png",
+      "expected": "58fa8ec8a01cbf1e6668a6577300030231f3cb58baa1c921702545f41d155c06",
+      "actual": "58fa8ec8a01cbf1e6668a6577300030231f3cb58baa1c921702545f41d155c06",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@3x.png",
+      "expected": "cef911b750ec7474aab4f580caec7afad8c45072e1e982e69c13d1f26179488d",
+      "actual": "cef911b750ec7474aab4f580caec7afad8c45072e1e982e69c13d1f26179488d",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76.png",
+      "expected": "ac8b7d0f6901c09a579d713e773e1155a067b44b7f084b8a7e9a96044fda7c74",
+      "actual": "ac8b7d0f6901c09a579d713e773e1155a067b44b7f084b8a7e9a96044fda7c74",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76@2x.png",
+      "expected": "20129d1a3bc812ac0e02b0ea673de56f58475db8590166177078662af58c30e3",
+      "actual": "20129d1a3bc812ac0e02b0ea673de56f58475db8590166177078662af58c30e3",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-83.5@2x.png",
+      "expected": "0456fef1bbc18c7766808b0a8669c8e9274fb4474dd8a5135bdc97e5226369b2",
+      "actual": "0456fef1bbc18c7766808b0a8669c8e9274fb4474dd8a5135bdc97e5226369b2",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/Contents.json",
+      "expected": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+      "actual": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/Contents.json",
+      "expected": "06bd82fd85b0509a55edbd245a83c81ae95ce1bcb62b491d575d15a1929cd69f",
+      "actual": "06bd82fd85b0509a55edbd245a83c81ae95ce1bcb62b491d575d15a1929cd69f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill.png",
+      "expected": "25b1ff91ad7f19a8529970b60cdcec268b249d356beea1daf5d1021ede71f353",
+      "actual": "25b1ff91ad7f19a8529970b60cdcec268b249d356beea1daf5d1021ede71f353",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@2x.png",
+      "expected": "448a197176cfbf1d4ba3988750ac0e08b0febbc93732eba4999b1cd9fdbb7c44",
+      "actual": "448a197176cfbf1d4ba3988750ac0e08b0febbc93732eba4999b1cd9fdbb7c44",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@3x.png",
+      "expected": "3e30de9ac3613a5dab4e9e346e7cbe5eeb61cb1e45af2d4e31c5f73819fb13e9",
+      "actual": "3e30de9ac3613a5dab4e9e346e7cbe5eeb61cb1e45af2d4e31c5f73819fb13e9",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/Contents.json",
+      "expected": "ace65297e913b94ab3a22f88c420f13db93a27a1b7485c074026235fa0d2859b",
+      "actual": "ace65297e913b94ab3a22f88c420f13db93a27a1b7485c074026235fa0d2859b",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center.png",
+      "expected": "b9939c625c086e351dcae3997591f83891468b9271181bbae830052df5a1a938",
+      "actual": "b9939c625c086e351dcae3997591f83891468b9271181bbae830052df5a1a938",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@2x.png",
+      "expected": "a9e3a864b5d783d5dd7a73298bb20abbc342b9ed9a1bfc8fb85b52d11b05cc29",
+      "actual": "a9e3a864b5d783d5dd7a73298bb20abbc342b9ed9a1bfc8fb85b52d11b05cc29",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@3x.png",
+      "expected": "dfd4b38061c183330381c392794f45314a7a3b2bfdde052ef81cea49afbfbc21",
+      "actual": "dfd4b38061c183330381c392794f45314a7a3b2bfdde052ef81cea49afbfbc21",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/Info.plist",
+      "expected": "c228674e971d23ef8a3781dd7126e5c5771c221965f06f41bc272fe659de1d65",
+      "actual": "c228674e971d23ef8a3781dd7126e5c5771c221965f06f41bc272fe659de1d65",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/LaunchScreen.storyboard",
+      "expected": "83248be677d03859403d9f0f1c182a03421537c8c499d38680c3fefd9ab50a2d",
+      "actual": "83248be677d03859403d9f0f1c182a03421537c8c499d38680c3fefd9ab50a2d",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/App_Resources/iOS/build.xcconfig",
+      "expected": "488f394bfeb19a6dbd046f13b16f4ed6604b78290cc92c9e3ac5b33ec7d95968",
+      "actual": "488f394bfeb19a6dbd046f13b16f4ed6604b78290cc92c9e3ac5b33ec7d95968",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "expected": "1e6edd78f49556b77e2522bf7eb80de0108e80f896d4ac485029567e962c9df1",
+      "actual": "1e6edd78f49556b77e2522bf7eb80de0108e80f896d4ac485029567e962c9df1",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "expected": "435957531a1ac1eeef237c94046bfa1247ed776f8c4266e35cc99fa7734c5987",
+      "actual": "435957531a1ac1eeef237c94046bfa1247ed776f8c4266e35cc99fa7734c5987",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/nativescript.config.ts",
+      "expected": "a94e43ce44ae8921ebabba7211b7abf771432ce8f81d5c6ffce137d0e326499f",
+      "actual": "a94e43ce44ae8921ebabba7211b7abf771432ce8f81d5c6ffce137d0e326499f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/package-lock.json",
+      "expected": "6e1c380214b731574e9b49ed60d003eb063a97a89f89b74bb19e38d7fcb83e7c",
+      "actual": "6e1c380214b731574e9b49ed60d003eb063a97a89f89b74bb19e38d7fcb83e7c",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/package.json",
+      "expected": "1756966d2e898965a4127e136050a0821938b0cd9ec1290b6fa8405d31a642e6",
+      "actual": "1756966d2e898965a4127e136050a0821938b0cd9ec1290b6fa8405d31a642e6",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/scripts/verify-core-integration.cjs",
+      "expected": "212c1a4df5a9636da370393538f3ebc93f26b95d532caffb50b7c70a5bd06e47",
+      "actual": "212c1a4df5a9636da370393538f3ebc93f26b95d532caffb50b7c70a5bd06e47",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/app.css",
+      "expected": "0dcf45a8c043bfc211ab5e263dfdd51b602076644f9a92fd9eb44b82e4ebcd80",
+      "actual": "0dcf45a8c043bfc211ab5e263dfdd51b602076644f9a92fd9eb44b82e4ebcd80",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/app.ts",
+      "expected": "444cce2ca855848427517171ff0762960c6d4da28aea2589dfabe5322d54a2d2",
+      "actual": "444cce2ca855848427517171ff0762960c6d4da28aea2589dfabe5322d54a2d2",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/components/Home.vue",
+      "expected": "528a8983988e93c7443cc2aa901b1e524604cbcfc6bf40bfb548e26c77a58b97",
+      "actual": "528a8983988e93c7443cc2aa901b1e524604cbcfc6bf40bfb548e26c77a58b97",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/data/conference.json",
+      "expected": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "actual": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/data/load-conference.ts",
+      "expected": "ed3234b4496bab88e49bc13ebb53408273d8b783b543ee66b0a44fe8d23a96e5",
+      "actual": "ed3234b4496bab88e49bc13ebb53408273d8b783b543ee66b0a44fe8d23a96e5",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/shell/shell-content.ts",
+      "expected": "73ebff26c4dcdb1f8aa09d4315805bd72e962279131aa3b2efbce6e5fb1d7f12",
+      "actual": "73ebff26c4dcdb1f8aa09d4315805bd72e962279131aa3b2efbce6e5fb1d7f12",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/tsconfig.json",
+      "expected": "44ec6f1e008dce8d6d382317b6497a50429825f092c3207dfefc2d4d32fdae59",
+      "actual": "44ec6f1e008dce8d6d382317b6497a50429825f092c3207dfefc2d4d32fdae59",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/types/references.d.ts",
+      "expected": "782e3e3bd2a6cee4e8088461e03c6b62e45095fcf8ae9a653224c4bc9fd9cec1",
+      "actual": "782e3e3bd2a6cee4e8088461e03c6b62e45095fcf8ae9a653224c4bc9fd9cec1",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/types/shims.vue.d.ts",
+      "expected": "f147886b3722a2914f592c7467b48380f8cedf26456d187473fbaaad3ac57719",
+      "actual": "f147886b3722a2914f592c7467b48380f8cedf26456d187473fbaaad3ac57719",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/webpack.config.js",
+      "expected": "44e287096e3a3b171f22239a2487cdf8a2e460077e69736840a24f9ba452a724",
+      "actual": "44e287096e3a3b171f22239a2487cdf8a2e460077e69736840a24f9ba452a724",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/components/Schedule.vue",
+      "expected": "a692bf8260131b83772c49e41dd674955a2d7d68b697732c0c66cf7e91a675c9",
+      "actual": "a692bf8260131b83772c49e41dd674955a2d7d68b697732c0c66cf7e91a675c9",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/state/conference-store.ts",
+      "expected": "d0071c1addc09f22ffe1bf1b19618f93e657fe0fb2aae601bf93d6e313378335",
+      "actual": "d0071c1addc09f22ffe1bf1b19618f93e657fe0fb2aae601bf93d6e313378335",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/src/state/schedule-rows.ts",
+      "expected": "81ac8fb600d965c756f2708cd43e02ff184cade20919ea48ba048276b99e3c2c",
+      "actual": "81ac8fb600d965c756f2708cd43e02ff184cade20919ea48ba048276b99e3c2c",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "expected": "3c072067563f176496adf73ec8971a877e51dfab03addb110932caf0cd2f229f",
+      "actual": "3c072067563f176496adf73ec8971a877e51dfab03addb110932caf0cd2f229f",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+      "expected": "1fe7087f6f37305c949f252246dcd6f699199932886ebdbbe4fea8bc75048b61",
+      "actual": "1fe7087f6f37305c949f252246dcd6f699199932886ebdbbe4fea8bc75048b61",
+      "match": true
+    },
+    {
+      "path": "migration/nativescript/types/vuex.d.ts",
+      "expected": "cb1acc1331546b999397a74b36380706875ae7cf6c8e2c200a05e6183dd95eac",
+      "actual": "cb1acc1331546b999397a74b36380706875ae7cf6c8e2c200a05e6183dd95eac",
+      "match": true
+    },
+    {
+      "path": "migration/work-packages/NS03.md",
+      "expected": "3ae69b29166d3966df39a240f237e4d1767a525be38ff8c1665edc6977823535",
+      "actual": "3ae69b29166d3966df39a240f237e4d1767a525be38ff8c1665edc6977823535",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.receipt.json",
+      "expected": "4412084a41f5fed53edeae274966c3ec2fb3ecfef25fdf7557bf8d301f03a467",
+      "actual": "4412084a41f5fed53edeae274966c3ec2fb3ecfef25fdf7557bf8d301f03a467",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.receipt.json",
+      "expected": "bc9e826f07ec8cee00ea09e1ad395ad2407109f5d3faae57cfb019a812dfb16c",
+      "actual": "bc9e826f07ec8cee00ea09e1ad395ad2407109f5d3faae57cfb019a812dfb16c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.stdout.log",
+      "expected": "5a61d9b28066486be469b04ba70e4aef6de1a695cdbdf5513bef115adb6bbf5d",
+      "actual": "5a61d9b28066486be469b04ba70e4aef6de1a695cdbdf5513bef115adb6bbf5d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verification.json",
+      "expected": "a72d9a91e04a535f404605881cc21ab44305eb391141d54179f6f663dadfe311",
+      "actual": "a72d9a91e04a535f404605881cc21ab44305eb391141d54179f6f663dadfe311",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.receipt.json",
+      "expected": "1ac44d65e0130fc54fde77c594a64810e6bcae622cf582fd62b00a2545f82055",
+      "actual": "1ac44d65e0130fc54fde77c594a64810e6bcae622cf582fd62b00a2545f82055",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.stdout.log",
+      "expected": "22988784555eb1c85c7ff72f446e261f131f044bada55b527577f841e873994c",
+      "actual": "22988784555eb1c85c7ff72f446e261f131f044bada55b527577f841e873994c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.receipt.json",
+      "expected": "8d01e35cb7232a949ae78cf91122c9486af26898737da3b7e7967c0616c01914",
+      "actual": "8d01e35cb7232a949ae78cf91122c9486af26898737da3b7e7967c0616c01914",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.stdout.log",
+      "expected": "c4347d66a9df64d247d1bc9ce823c66d1b7c7ce6d3ab1e61d5324bf0164eb48c",
+      "actual": "c4347d66a9df64d247d1bc9ce823c66d1b7c7ce6d3ab1e61d5324bf0164eb48c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/class-audit.json",
+      "expected": "727f23467f2ac13484b72c8e85e109fbd39c04717308f0f8d151cc8a7d9486b7",
+      "actual": "727f23467f2ac13484b72c8e85e109fbd39c04717308f0f8d151cc8a7d9486b7",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/commands.jsonl",
+      "expected": "ce2e460580d661936f340baeb8c7181174bbdaf57ace0e47b53a2a43e66802d4",
+      "actual": "ce2e460580d661936f340baeb8c7181174bbdaf57ace0e47b53a2a43e66802d4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/core-preservation-after-entry-test.json",
+      "expected": "c0e0db2718ec7fa23b5239171613e82e06b06cd6cac35b92451413024eeedd73",
+      "actual": "c0e0db2718ec7fa23b5239171613e82e06b06cd6cac35b92451413024eeedd73",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.receipt.json",
+      "expected": "f0cbad593b07a2dd1f723c764f9bed080f65ae733e3473d1edd3402d3b60ec70",
+      "actual": "f0cbad593b07a2dd1f723c764f9bed080f65ae733e3473d1edd3402d3b60ec70",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.stdout.log",
+      "expected": "b93f72cbbd6b57a18499567db1a21a734b9c7af53827efacd6264d0c1c811601",
+      "actual": "b93f72cbbd6b57a18499567db1a21a734b9c7af53827efacd6264d0c1c811601",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-install.receipt.json",
+      "expected": "fd50aaed718ad3d06355a8f41323899217b236f9e633888c737e40440e6f7325",
+      "actual": "fd50aaed718ad3d06355a8f41323899217b236f9e633888c737e40440e6f7325",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-install.stderr.log",
+      "expected": "7b2716bf741af63cd1bab5fc9f802053dba18ec1b2b9b6bddecb190ac4cd7a84",
+      "actual": "7b2716bf741af63cd1bab5fc9f802053dba18ec1b2b9b6bddecb190ac4cd7a84",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-install.stdout.log",
+      "expected": "25eb8ecfea7ca81a78184e0920058be6abd4a747c1b063198b8089a1456a0769",
+      "actual": "25eb8ecfea7ca81a78184e0920058be6abd4a747c1b063198b8089a1456a0769",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-scope.receipt.json",
+      "expected": "a14293fc9a471438b372ca6c8d02af90c566cb0fa073575410ff553fd52716cf",
+      "actual": "a14293fc9a471438b372ca6c8d02af90c566cb0fa073575410ff553fd52716cf",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-scope.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/d1-scope.stdout.log",
+      "expected": "80bcae7571e8f288d4e4300eabd33f4e74409f758de4204737f0f713b3da904b",
+      "actual": "80bcae7571e8f288d4e4300eabd33f4e74409f758de4204737f0f713b3da904b",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.receipt.json",
+      "expected": "c81da60a8b9fb64a0466a9db8ebcbb4646d4b766a8308bb3172b61eb9dc16f89",
+      "actual": "c81da60a8b9fb64a0466a9db8ebcbb4646d4b766a8308bb3172b61eb9dc16f89",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-branch.receipt.json",
+      "expected": "5807475404755499be21bce23ff5e8f1cfb4d26ff6cea17daff7193298029742",
+      "actual": "5807475404755499be21bce23ff5e8f1cfb4d26ff6cea17daff7193298029742",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.receipt.json",
+      "expected": "049ca54a162b95b9d749f326dc25e04624cdc402bbdaedb9b29dc2ff53343b3d",
+      "actual": "049ca54a162b95b9d749f326dc25e04624cdc402bbdaedb9b29dc2ff53343b3d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-gate.json",
+      "expected": "a396420e0966457e0a73c106e60276587be88697fa3f62c97b1a8a6c478c1d34",
+      "actual": "a396420e0966457e0a73c106e60276587be88697fa3f62c97b1a8a6c478c1d34",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-head.receipt.json",
+      "expected": "f42792397f73caa3b01019831147054f78020d2a1f279b524437c850f84acd6d",
+      "actual": "f42792397f73caa3b01019831147054f78020d2a1f279b524437c850f84acd6d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.receipt.json",
+      "expected": "a7b8159df6b436407a83c4760259b31797626c7c59e739db74ea83f6b3cc3b6d",
+      "actual": "a7b8159df6b436407a83c4760259b31797626c7c59e739db74ea83f6b3cc3b6d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.stdout.log",
+      "expected": "239b057f9b05bafd589c56bedb8337bbd4f8be338092c5acee42c243ef407811",
+      "actual": "239b057f9b05bafd589c56bedb8337bbd4f8be338092c5acee42c243ef407811",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-index.receipt.json",
+      "expected": "0b58f261bfb442e948ef477e7faaac7f4a52126152c876605a2972a92eb9878a",
+      "actual": "0b58f261bfb442e948ef477e7faaac7f4a52126152c876605a2972a92eb9878a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.receipt.json",
+      "expected": "aeda50cf8fdcf18e86cb20b178213625791725155e0d6e9b1f6718507d30c6e7",
+      "actual": "aeda50cf8fdcf18e86cb20b178213625791725155e0d6e9b1f6718507d30c6e7",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.stdout.log",
+      "expected": "899be4de09c6c61be78bef16824fef7ffbc6843f1b7f81555399c678b51c856c",
+      "actual": "899be4de09c6c61be78bef16824fef7ffbc6843f1b7f81555399c678b51c856c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-audit.receipt.json",
+      "expected": "8f7e358e16043b4452959046b83f807cd2ef53369b54c13a9eb9d0a5fb952fcd",
+      "actual": "8f7e358e16043b4452959046b83f807cd2ef53369b54c13a9eb9d0a5fb952fcd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-audit.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-audit.stdout.log",
+      "expected": "9190454ab14a7540055cb4d4e47acfac2e469298a2333d26fec979a0c61c58b4",
+      "actual": "9190454ab14a7540055cb4d4e47acfac2e469298a2333d26fec979a0c61c58b4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-branch.receipt.json",
+      "expected": "b8721f7b2977806a7958f6d05ad01b9c2d8aad9b5a39e9b6e27d1a2ece6af000",
+      "actual": "b8721f7b2977806a7958f6d05ad01b9c2d8aad9b5a39e9b6e27d1a2ece6af000",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.receipt.json",
+      "expected": "65aa6a3c9fbdc6d16d98bf7b035de3963347c3b535a4e838f5e2f67e9cef3d4e",
+      "actual": "65aa6a3c9fbdc6d16d98bf7b035de3963347c3b535a4e838f5e2f67e9cef3d4e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.receipt.json",
+      "expected": "b0ca0d466e38024b2a01c4f4bda1f042374d8a023d801f1341f5ec788ce5f4c6",
+      "actual": "b0ca0d466e38024b2a01c4f4bda1f042374d8a023d801f1341f5ec788ce5f4c6",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-head.receipt.json",
+      "expected": "dbb10474a7f158178bb49df23cd08c9812a07b6e047d996241a4d1273dae4c0e",
+      "actual": "dbb10474a7f158178bb49df23cd08c9812a07b6e047d996241a4d1273dae4c0e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-hooks.receipt.json",
+      "expected": "1dfcb644717facb41f7640918f5b4a2ee2317384182cad47ea67794d3a49691e",
+      "actual": "1dfcb644717facb41f7640918f5b4a2ee2317384182cad47ea67794d3a49691e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-hooks.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-hooks.stdout.log",
+      "expected": "239b057f9b05bafd589c56bedb8337bbd4f8be338092c5acee42c243ef407811",
+      "actual": "239b057f9b05bafd589c56bedb8337bbd4f8be338092c5acee42c243ef407811",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-index.receipt.json",
+      "expected": "cc064b0dbc69d8e8aeb7b8e69c1f3498f9390ee6e687d160b8e2241f06f86c3f",
+      "actual": "cc064b0dbc69d8e8aeb7b8e69c1f3498f9390ee6e687d160b8e2241f06f86c3f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.receipt.json",
+      "expected": "5ebed77c9ee4fa0b803a6f49e214098b2ac43b9fa94e19fffbf400c277c21f25",
+      "actual": "5ebed77c9ee4fa0b803a6f49e214098b2ac43b9fa94e19fffbf400c277c21f25",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.stdout.log",
+      "expected": "b6767ab1f823ab317645246f0fe998ba9839ffacdd888476131b93c522953f5a",
+      "actual": "b6767ab1f823ab317645246f0fe998ba9839ffacdd888476131b93c522953f5a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.receipt.json",
+      "expected": "c9ba6a691994099e1ea28577d0f91ddaef71652c101a5842daf6170ba0d65dbe",
+      "actual": "c9ba6a691994099e1ea28577d0f91ddaef71652c101a5842daf6170ba0d65dbe",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.receipt.json",
+      "expected": "5095edad67ff58f4c44b6df09d8b79346b07ccf3aea8529820735fb98dca113b",
+      "actual": "5095edad67ff58f4c44b6df09d8b79346b07ccf3aea8529820735fb98dca113b",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.stdout.log",
+      "expected": "3d31bb2efc8ea878774de0c9a45f72b567a86dcd3ec4cd63c5a814f95ed85e8c",
+      "actual": "3d31bb2efc8ea878774de0c9a45f72b567a86dcd3ec4cd63c5a814f95ed85e8c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.receipt.json",
+      "expected": "199e8427b3ace01ad41bcf6e0dec9637fbc38512fa1b4bd958e40099658f5eef",
+      "actual": "199e8427b3ace01ad41bcf6e0dec9637fbc38512fa1b4bd958e40099658f5eef",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.stdout.log",
+      "expected": "f3e99b0965276fa75596a77e692a255581c21544b1d256719f81eee2e1ac7041",
+      "actual": "f3e99b0965276fa75596a77e692a255581c21544b1d256719f81eee2e1ac7041",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/java-version.receipt.json",
+      "expected": "9c4b8f9d174c22b60e584f0e3876c1bdd057c5b4ae659cf1daf81d0c1705c751",
+      "actual": "9c4b8f9d174c22b60e584f0e3876c1bdd057c5b4ae659cf1daf81d0c1705c751",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/java-version.stderr.log",
+      "expected": "cc04ef173943034688c3f0596de6f04e0c0f3a3ab4ff17096c0c5e795ea96607",
+      "actual": "cc04ef173943034688c3f0596de6f04e0c0f3a3ab4ff17096c0c5e795ea96607",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/java-version.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.receipt.json",
+      "expected": "790e9bd505b9837cdf723a6d89396c755e7de537e8e1df2ac8d7662bb206eca1",
+      "actual": "790e9bd505b9837cdf723a6d89396c755e7de537e8e1df2ac8d7662bb206eca1",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.stderr.log",
+      "expected": "3eed0dbbb59f9d433c5419cbd8f4bd9c47bf5585978f55ad28b9f57a09ce4085",
+      "actual": "3eed0dbbb59f9d433c5419cbd8f4bd9c47bf5585978f55ad28b9f57a09ce4085",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.stdout.log",
+      "expected": "f8cdb563673db8d4101c347e3b61a13bedcff4c2ccfe0eb97c24c167b456bfab",
+      "actual": "f8cdb563673db8d4101c347e3b61a13bedcff4c2ccfe0eb97c24c167b456bfab",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/lockfile-scope.json",
+      "expected": "e9757bf4747ee71b4f92d0b7bb25fe0f3dd2fa51498964008ed2425999f4ac63",
+      "actual": "e9757bf4747ee71b4f92d0b7bb25fe0f3dd2fa51498964008ed2425999f4ac63",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/node-version.receipt.json",
+      "expected": "0f4726303d2c56f7c252d24f03582e91f9dfd2aa16ecf218edf3e35eef122a51",
+      "actual": "0f4726303d2c56f7c252d24f03582e91f9dfd2aa16ecf218edf3e35eef122a51",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/node-version.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/node-version.stdout.log",
+      "expected": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "actual": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/npm-version.receipt.json",
+      "expected": "df58231196dca5829041ef3925fb960baa13b325e26c56f63b42b9268fee9a27",
+      "actual": "df58231196dca5829041ef3925fb960baa13b325e26c56f63b42b9268fee9a27",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/npm-version.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/npm-version.stdout.log",
+      "expected": "041fb0a6f23ccf0102a18d4591e1bfa36eebc17d27d348727a5eee18806d1c3c",
+      "actual": "041fb0a6f23ccf0102a18d4591e1bfa36eebc17d27d348727a5eee18806d1c3c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/preservation-entry.json",
+      "expected": "70c94fd8c1c4739d817b25888b4793c527308baba43c55ac4491957bdd786daa",
+      "actual": "70c94fd8c1c4739d817b25888b4793c527308baba43c55ac4491957bdd786daa",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/preservation-final.json",
+      "expected": "a5812bb6bf2d36e24643faa2bcc845450a1679bfee2dc14ffaffbac45c025eb0",
+      "actual": "a5812bb6bf2d36e24643faa2bcc845450a1679bfee2dc14ffaffbac45c025eb0",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/results-a.json",
+      "expected": "cead81475ddd1103357e36baee0de139ff703154dc9525b7fb8723988e4c86d4",
+      "actual": "cead81475ddd1103357e36baee0de139ff703154dc9525b7fb8723988e4c86d4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates/test-counts.json",
+      "expected": "bc8a05d1aad84db14286e0c782aa6b5931ddd39457908e668f4f21f2c9c331d1",
+      "actual": "bc8a05d1aad84db14286e0c782aa6b5931ddd39457908e668f4f21f2c9c331d1",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.receipt.json",
+      "expected": "54c8dbcaf1ee05adc2da80381eadeb7d1b9dc2343afce42630264aa16b7892bc",
+      "actual": "54c8dbcaf1ee05adc2da80381eadeb7d1b9dc2343afce42630264aa16b7892bc",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.stdout.log",
+      "expected": "c35e4aa2f7c6f5e7a0fb2f51be8d31a8710f59fa7a28b6b929f9bcdfab873110",
+      "actual": "c35e4aa2f7c6f5e7a0fb2f51be8d31a8710f59fa7a28b6b929f9bcdfab873110",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/blocker.json",
+      "expected": "2b3a223c6060741e1962824fbb2d6f6d9010416389a69160d4ab69c4da7657de",
+      "actual": "2b3a223c6060741e1962824fbb2d6f6d9010416389a69160d4ab69c4da7657de",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-finalize.receipt.json",
+      "expected": "650f4dd9936b2dab917bd4007e6e7210d9b4324c60a9b50dd9980227907e9927",
+      "actual": "650f4dd9936b2dab917bd4007e6e7210d9b4324c60a9b50dd9980227907e9927",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-finalize.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-finalize.stdout.log",
+      "expected": "af18d3ab4d4a10fb27341723867fa74147a16529092830f1591435f4dd8e8046",
+      "actual": "af18d3ab4d4a10fb27341723867fa74147a16529092830f1591435f4dd8e8046",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-index.receipt.json",
+      "expected": "405956b203ddf8b3150c863d5d3ed7e6f404b967073b7db5126a6ce334b8c816",
+      "actual": "405956b203ddf8b3150c863d5d3ed7e6f404b967073b7db5126a6ce334b8c816",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-status.receipt.json",
+      "expected": "9ab748e9d61ee6eed19370e6479969244cc4d2776fbff4bc7bda50f24278311e",
+      "actual": "9ab748e9d61ee6eed19370e6479969244cc4d2776fbff4bc7bda50f24278311e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-status.stdout.log",
+      "expected": "f94b6b59873334ef839e0c57c92aed14af53c03766cd76f899ba6c1df7ed4771",
+      "actual": "f94b6b59873334ef839e0c57c92aed14af53c03766cd76f899ba6c1df7ed4771",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/checkpoint-verification.json",
+      "expected": "1bf52a72d04b50846de5f91f727aa58453dec764b6cb89e962bcc2aaa5354d00",
+      "actual": "1bf52a72d04b50846de5f91f727aa58453dec764b6cb89e962bcc2aaa5354d00",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/class-audit.json",
+      "expected": "4f17f17ba75068734469266f074862c1a2bd35eb9b837fd1877eb8adb764a624",
+      "actual": "4f17f17ba75068734469266f074862c1a2bd35eb9b837fd1877eb8adb764a624",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/commands.jsonl",
+      "expected": "02bee7dec0d76a22693b64a349650ed09ff6f8077789abc15f234cfee7ddff7f",
+      "actual": "02bee7dec0d76a22693b64a349650ed09ff6f8077789abc15f234cfee7ddff7f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/core-test.receipt.json",
+      "expected": "642ce5a70a255cf7150c5cdf3778d4add17846f31b4423f96643fabe24b2ba5c",
+      "actual": "642ce5a70a255cf7150c5cdf3778d4add17846f31b4423f96643fabe24b2ba5c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/core-test.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/core-test.stdout.log",
+      "expected": "3cf25e44a6b2e83be95563cc5193260042b630d7552368f7d68716555e84b0f0",
+      "actual": "3cf25e44a6b2e83be95563cc5193260042b630d7552368f7d68716555e84b0f0",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.receipt.json",
+      "expected": "bf904b612bd0445312e1d6a98ad0b5fb242df356ce1eb0c98e2fee7830eaa916",
+      "actual": "bf904b612bd0445312e1d6a98ad0b5fb242df356ce1eb0c98e2fee7830eaa916",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-gate.json",
+      "expected": "9dc49d7ac7953cd5c8fc1dc1848ad7c6ded1876aabc004d67ea61907505ea2fb",
+      "actual": "9dc49d7ac7953cd5c8fc1dc1848ad7c6ded1876aabc004d67ea61907505ea2fb",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-head.receipt.json",
+      "expected": "6301320bc47bb420ddee0ddfc0eb5c78ba9c0ef556bd3b5c916564872a529d7c",
+      "actual": "6301320bc47bb420ddee0ddfc0eb5c78ba9c0ef556bd3b5c916564872a529d7c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.receipt.json",
+      "expected": "0462de7901aa6c3dbc4722ce2e0c78a32917459f1e322f0c7b3d1588413a36cd",
+      "actual": "0462de7901aa6c3dbc4722ce2e0c78a32917459f1e322f0c7b3d1588413a36cd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.stdout.log",
+      "expected": "e4222e0dd03202b40bef768269d31fda2ffc3c027716569440fe70b56eaa837e",
+      "actual": "e4222e0dd03202b40bef768269d31fda2ffc3c027716569440fe70b56eaa837e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-index.receipt.json",
+      "expected": "fe0c7d6fd5263085d0e473ff615089e54e683a105375cc338a993ed97d27f791",
+      "actual": "fe0c7d6fd5263085d0e473ff615089e54e683a105375cc338a993ed97d27f791",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.receipt.json",
+      "expected": "a17a210e76edf319a066ca256d77ee43601f94356f7a3e7518b47eee323d756e",
+      "actual": "a17a210e76edf319a066ca256d77ee43601f94356f7a3e7518b47eee323d756e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.stdout.log",
+      "expected": "fd41a187b57f170a321351db91bae55b36b3402823d47dc43b6382135683d53b",
+      "actual": "fd41a187b57f170a321351db91bae55b36b3402823d47dc43b6382135683d53b",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-status.receipt.json",
+      "expected": "726bdf350bf09e525bbadea9bc429492f734375ada07c3f9b9fbb18a17921deb",
+      "actual": "726bdf350bf09e525bbadea9bc429492f734375ada07c3f9b9fbb18a17921deb",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-status.stdout.log",
+      "expected": "ae471455121c2ce285efc892d483bc5f5c414522e4b69da8cc7b5b6ea9ddb61e",
+      "actual": "ae471455121c2ce285efc892d483bc5f5c414522e4b69da8cc7b5b6ea9ddb61e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.receipt.json",
+      "expected": "c32c48bfcb1387c88d8b70ef55911ae5101f42486dd6ddefa518fc5a9a6ee106",
+      "actual": "c32c48bfcb1387c88d8b70ef55911ae5101f42486dd6ddefa518fc5a9a6ee106",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.stdout.log",
+      "expected": "695903ed1899480da1385cebf4597561602759d118be6d83b50d279f0ef909c9",
+      "actual": "695903ed1899480da1385cebf4597561602759d118be6d83b50d279f0ef909c9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry.receipt.json",
+      "expected": "60cb90c9c9bcfb0b14a0bf8fc65488015abb428395a9d68214aa6cb55f1a5e84",
+      "actual": "60cb90c9c9bcfb0b14a0bf8fc65488015abb428395a9d68214aa6cb55f1a5e84",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/entry.stdout.log",
+      "expected": "35328966be2ec07a90146e43e5cfe21c9a05cf25e8882e54c41697aefc36c46b",
+      "actual": "35328966be2ec07a90146e43e5cfe21c9a05cf25e8882e54c41697aefc36c46b",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-audit.receipt.json",
+      "expected": "037bc8f2f5620612281ab66623a98ccff3aeab82294e2bf5c33a0a798b0b2f49",
+      "actual": "037bc8f2f5620612281ab66623a98ccff3aeab82294e2bf5c33a0a798b0b2f49",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-audit.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-audit.stdout.log",
+      "expected": "53a128be385a1b2e25f0f281c1b0c39bc95b0da77415cb7ea2c5dfe4300284cf",
+      "actual": "53a128be385a1b2e25f0f281c1b0c39bc95b0da77415cb7ea2c5dfe4300284cf",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-branch.receipt.json",
+      "expected": "b7b195dc958f058c9c1dc360ac172dc5fd4962573e4fb3c6b182ececbca277e2",
+      "actual": "b7b195dc958f058c9c1dc360ac172dc5fd4962573e4fb3c6b182ececbca277e2",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.receipt.json",
+      "expected": "c97146094d8a252e595b5896aa305875140fd9d451c65d3a4a998c2ffe295047",
+      "actual": "c97146094d8a252e595b5896aa305875140fd9d451c65d3a4a998c2ffe295047",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.receipt.json",
+      "expected": "cabda0ea03846ed91f8e8ecf2d8235e0d58c5824429117042bc7302962a00c7a",
+      "actual": "cabda0ea03846ed91f8e8ecf2d8235e0d58c5824429117042bc7302962a00c7a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-head.receipt.json",
+      "expected": "1e779bb7cd497b1da58cd601eec7a308a19880c247d1cf9b2c226dab75b8e158",
+      "actual": "1e779bb7cd497b1da58cd601eec7a308a19880c247d1cf9b2c226dab75b8e158",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-index.receipt.json",
+      "expected": "5ac5bdccb4418f8c0e3680c22532ec538a5f7c0cfe252db6774172cde9262456",
+      "actual": "5ac5bdccb4418f8c0e3680c22532ec538a5f7c0cfe252db6774172cde9262456",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-status.receipt.json",
+      "expected": "5f6cb02f3eb8d59ca01f06edf2fc742ac0c2ac2ee8a293bb400b002aadf068a6",
+      "actual": "5f6cb02f3eb8d59ca01f06edf2fc742ac0c2ac2ee8a293bb400b002aadf068a6",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/final-status.stdout.log",
+      "expected": "534a4c6197ba3006e1cd04c677b85f03d3ae6ef83273a1783e3650e24ea34ec5",
+      "actual": "534a4c6197ba3006e1cd04c677b85f03d3ae6ef83273a1783e3650e24ea34ec5",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/focus-mechanism.json",
+      "expected": "fc2a4b3e3f0db043e1badcde9a46fcd46738012364dc831a7cc0489c7bdf7842",
+      "actual": "fc2a4b3e3f0db043e1badcde9a46fcd46738012364dc831a7cc0489c7bdf7842",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.receipt.json",
+      "expected": "afd7f9bd491c5aecd5b97ff218a4d83e2b9d64f3e08de8b0922bd84a1128a375",
+      "actual": "afd7f9bd491c5aecd5b97ff218a4d83e2b9d64f3e08de8b0922bd84a1128a375",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.stdout.log",
+      "expected": "36d03b9fd2dbe8ebce0bfde9b168dbfb135aa0619e6460caaa3c1d95bc339782",
+      "actual": "36d03b9fd2dbe8ebce0bfde9b168dbfb135aa0619e6460caaa3c1d95bc339782",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.receipt.json",
+      "expected": "181e476f895e701288e23b5b158d44ee78bd4eea646886fa37dc4b2056a5d43f",
+      "actual": "181e476f895e701288e23b5b158d44ee78bd4eea646886fa37dc4b2056a5d43f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.stdout.log",
+      "expected": "c328ec2c729235bb6763a42722c8044d50d1f38cbf847d4758b9312c0b88ff26",
+      "actual": "c328ec2c729235bb6763a42722c8044d50d1f38cbf847d4758b9312c0b88ff26",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.receipt.json",
+      "expected": "b992d31f0b2f5f139c118ba0dd05412b718b64b30a67b8657e04089ac2cb92d1",
+      "actual": "b992d31f0b2f5f139c118ba0dd05412b718b64b30a67b8657e04089ac2cb92d1",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.stderr.log",
+      "expected": "958da874866177596c71303166558f19b23963afda09ed27720bd2cb46b54db9",
+      "actual": "958da874866177596c71303166558f19b23963afda09ed27720bd2cb46b54db9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.receipt.json",
+      "expected": "ff676612a034aec313912fa0434fdf30326699724c97cc18cce0843271402844",
+      "actual": "ff676612a034aec313912fa0434fdf30326699724c97cc18cce0843271402844",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.stdout.log",
+      "expected": "7909a0e45f5c25058cc4a210158b2056cd96ef7ed9ae62ecbb68ee7cce709aca",
+      "actual": "7909a0e45f5c25058cc4a210158b2056cd96ef7ed9ae62ecbb68ee7cce709aca",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.receipt.json",
+      "expected": "ea28f92db1d11fadac8ee024b2dfce486cefdb809025c39e34960d164f0772ea",
+      "actual": "ea28f92db1d11fadac8ee024b2dfce486cefdb809025c39e34960d164f0772ea",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.stdout.log",
+      "expected": "95a8bfa4800dbc97757af2d2576b6e049ab98f7b935330aa40bcc5f9be434f6d",
+      "actual": "95a8bfa4800dbc97757af2d2576b6e049ab98f7b935330aa40bcc5f9be434f6d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.receipt.json",
+      "expected": "a9b0fe5345e2de5efbe143aebd225a5c69bdc2719d5127654c4226274529b62e",
+      "actual": "a9b0fe5345e2de5efbe143aebd225a5c69bdc2719d5127654c4226274529b62e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.stdout.log",
+      "expected": "b66809fa2e961bc279d40a05aee1bf8c34437e6e3db29296c9519d2168406536",
+      "actual": "b66809fa2e961bc279d40a05aee1bf8c34437e6e3db29296c9519d2168406536",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope.json",
+      "expected": "3e002211260a9da45c45a5bffae2867b126289f88d978118d1ac78ad39a99073",
+      "actual": "3e002211260a9da45c45a5bffae2867b126289f88d978118d1ac78ad39a99073",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/node-version.receipt.json",
+      "expected": "f2723f744fca834c0eb3aa13ee07b53aec2233f2ea14c6e3a724cc187e2245a3",
+      "actual": "f2723f744fca834c0eb3aa13ee07b53aec2233f2ea14c6e3a724cc187e2245a3",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/node-version.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/node-version.stdout.log",
+      "expected": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "actual": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.json",
+      "expected": "8ff14448ec9275f0ddd57ca75e3488e07f1e1d87edb327614ad87069d8f28397",
+      "actual": "8ff14448ec9275f0ddd57ca75e3488e07f1e1d87edb327614ad87069d8f28397",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.receipt.json",
+      "expected": "790b5885d4704c322b5dc4cd47c217706c042818f2d4282d822be8fed440ee16",
+      "actual": "790b5885d4704c322b5dc4cd47c217706c042818f2d4282d822be8fed440ee16",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.stdout.log",
+      "expected": "f3c063582232239640a39b63a300766c9f7b79ed1bdae4cc7834f3ce6f3068f0",
+      "actual": "f3c063582232239640a39b63a300766c9f7b79ed1bdae4cc7834f3ce6f3068f0",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.receipt.json",
+      "expected": "0ad7a44dd6b282202ff2e8d5257d66eabfa471a145b70c88ff923e78881a20ad",
+      "actual": "0ad7a44dd6b282202ff2e8d5257d66eabfa471a145b70c88ff923e78881a20ad",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.stderr.log",
+      "expected": "64240dbe3086f7b317878dbd1a1e3b4da2d410cd2b1b7675e1a1b28c9217789d",
+      "actual": "64240dbe3086f7b317878dbd1a1e3b4da2d410cd2b1b7675e1a1b28c9217789d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.stdout.log",
+      "expected": "46cacd70e0125ba873a13737cb9788ca1aaf8c84be4ee89d730cb240a912d3bc",
+      "actual": "46cacd70e0125ba873a13737cb9788ca1aaf8c84be4ee89d730cb240a912d3bc",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/preservation-entry.json",
+      "expected": "b7a994fc4c9df9edbb7a18e3e60d152db87154e23f66063534e7938f6fb995fd",
+      "actual": "b7a994fc4c9df9edbb7a18e3e60d152db87154e23f66063534e7938f6fb995fd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/preservation-final.json",
+      "expected": "309f15d2771333c7c7720b2319e703186138bf9173a9c2f60622e6130445e08e",
+      "actual": "309f15d2771333c7c7720b2319e703186138bf9173a9c2f60622e6130445e08e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/results-a2.json",
+      "expected": "c68902e1b4f25678c2581f8b31bf0a4288962a1475d2024cf017a93a80142365",
+      "actual": "c68902e1b4f25678c2581f8b31bf0a4288962a1475d2024cf017a93a80142365",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/test-counts.json",
+      "expected": "9dc56c8516f5b5ecf9d355cff94dc18beaa48ffe0b906d576ce3b3238116f00d",
+      "actual": "9dc56c8516f5b5ecf9d355cff94dc18beaa48ffe0b906d576ce3b3238116f00d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/typecheck.receipt.json",
+      "expected": "27f5ff6e51b2885482e7442aa35d2f9b0e2c52b763f8c35c8b543abef222ea16",
+      "actual": "27f5ff6e51b2885482e7442aa35d2f9b0e2c52b763f8c35c8b543abef222ea16",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/typecheck.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/typecheck.stdout.log",
+      "expected": "2d23f59da075e89dac072b8882f5709900b779b0e55085e647fb237f0b6f452b",
+      "actual": "2d23f59da075e89dac072b8882f5709900b779b0e55085e647fb237f0b6f452b",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/verify-core.receipt.json",
+      "expected": "aaacd4fdd9b91e14823a909009373affb5c1d67b6115ffc70f0137014cfb2656",
+      "actual": "aaacd4fdd9b91e14823a909009373affb5c1d67b6115ffc70f0137014cfb2656",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/verify-core.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates2/verify-core.stdout.log",
+      "expected": "c0000cf54b1caabc3fe3e9beae691f5db9076b4f578c8f2e6b24ba66e98ef10e",
+      "actual": "c0000cf54b1caabc3fe3e9beae691f5db9076b4f578c8f2e6b24ba66e98ef10e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/acceptance-evidence.receipt.json",
+      "expected": "e345aa84eaee38e6e2d35c4edbdf514ba17bd0b01546c1ef36a3698e658d6059",
+      "actual": "e345aa84eaee38e6e2d35c4edbdf514ba17bd0b01546c1ef36a3698e658d6059",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/acceptance-evidence.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/acceptance-evidence.stdout.log",
+      "expected": "14066cabc3e44124ea0bbeb076994ad026c0f3d586ed11bf6e2f600c822d5109",
+      "actual": "14066cabc3e44124ea0bbeb076994ad026c0f3d586ed11bf6e2f600c822d5109",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/apk.json",
+      "expected": "1a8fa79e8a7221aa8bf3c9f2f5727c83c785ddeed89fc31e876d076642ba998d",
+      "actual": "1a8fa79e8a7221aa8bf3c9f2f5727c83c785ddeed89fc31e876d076642ba998d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-android.receipt.json",
+      "expected": "4da7d6bc6321e2ffef10024c2d2cf0109269bbc239dbf328e8df4cfb55c90b63",
+      "actual": "4da7d6bc6321e2ffef10024c2d2cf0109269bbc239dbf328e8df4cfb55c90b63",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-android.stderr.log",
+      "expected": "caf649ffa60face8f2be9ef01a3de686675568df617912850ef73da07fa8be69",
+      "actual": "caf649ffa60face8f2be9ef01a3de686675568df617912850ef73da07fa8be69",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-android.stdout.log",
+      "expected": "ff64621deb99bd328b9c928185f9d7c0878a759ba8797f8d8d2a9ef121103f66",
+      "actual": "ff64621deb99bd328b9c928185f9d7c0878a759ba8797f8d8d2a9ef121103f66",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-inspection.receipt.json",
+      "expected": "30a29d87820de6cc01f37cf6d10d89ad768bf4a347c48ba97d79e5489af70393",
+      "actual": "30a29d87820de6cc01f37cf6d10d89ad768bf4a347c48ba97d79e5489af70393",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-inspection.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/build-inspection.stdout.log",
+      "expected": "489a83af14fed82dcfc93a56492acb088970d6958235959a81fd0473ee31442e",
+      "actual": "489a83af14fed82dcfc93a56492acb088970d6958235959a81fd0473ee31442e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/bundle-alias-proof.json",
+      "expected": "e772a1ee462d338c22e2e177b1820e5d3def4dd428f6186e5c3cc8791b2b1ccc",
+      "actual": "e772a1ee462d338c22e2e177b1820e5d3def4dd428f6186e5c3cc8791b2b1ccc",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/bundle-alias-proof.txt",
+      "expected": "2f620330fa5cb9706619fe80b73be0d9daf2bf9ff514f14a4ed2f4528a9e4f10",
+      "actual": "2f620330fa5cb9706619fe80b73be0d9daf2bf9ff514f14a4ed2f4528a9e4f10",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/bundle-inspection.json",
+      "expected": "e8183e7d15419e5b4a3b6c5be5f63849a3676e027bd83a80f6a4b11e79ef7b89",
+      "actual": "e8183e7d15419e5b4a3b6c5be5f63849a3676e027bd83a80f6a4b11e79ef7b89",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/checkpoint.receipt.json",
+      "expected": "e407a200bfc0832b08d24cfb863302de0b31636848f6ed3631cb9bb52a37309d",
+      "actual": "e407a200bfc0832b08d24cfb863302de0b31636848f6ed3631cb9bb52a37309d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/checkpoint.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/checkpoint.stdout.log",
+      "expected": "69d525745221d490dc3455813ef25bc71e78e8bf8a314b50820d8e5d39d67c51",
+      "actual": "69d525745221d490dc3455813ef25bc71e78e8bf8a314b50820d8e5d39d67c51",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/class-audit.json",
+      "expected": "ddac44d08b165a3c1f1068c0e33aaee46d782d848801adc162d832a3b58fdf34",
+      "actual": "ddac44d08b165a3c1f1068c0e33aaee46d782d848801adc162d832a3b58fdf34",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/commands.jsonl",
+      "expected": "6aa21edb2ff71241028526302d8a6e49b84ae74506e083b4b464edfe4c089705",
+      "actual": "6aa21edb2ff71241028526302d8a6e49b84ae74506e083b4b464edfe4c089705",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/contract-inspection.receipt.json",
+      "expected": "8764bcc4b58f4189a37236c6305ae398262d0457c2e018916e63f4e121f5ea33",
+      "actual": "8764bcc4b58f4189a37236c6305ae398262d0457c2e018916e63f4e121f5ea33",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/contract-inspection.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/contract-inspection.stdout.log",
+      "expected": "69f56ae6bf0a93d6cfe5296f7350ac292c6b31b3ca5d06619ed4a839cb66f51e",
+      "actual": "69f56ae6bf0a93d6cfe5296f7350ac292c6b31b3ca5d06619ed4a839cb66f51e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/core-test.receipt.json",
+      "expected": "9fb584c8ba23ec0fd014ff30003bf912ef22161291faecff1ee7382e2e03b212",
+      "actual": "9fb584c8ba23ec0fd014ff30003bf912ef22161291faecff1ee7382e2e03b212",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/core-test.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/core-test.stdout.log",
+      "expected": "d8e9277fb59ac3e213b5dbe4c850f124561f491394e335f51bfb4cbb0d8e0fab",
+      "actual": "d8e9277fb59ac3e213b5dbe4c850f124561f491394e335f51bfb4cbb0d8e0fab",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-branch.receipt.json",
+      "expected": "32ff7dcb2d0ba5197bb7fec9ecb0eb4a1d8de429e8e2ea41f645e212008b493c",
+      "actual": "32ff7dcb2d0ba5197bb7fec9ecb0eb4a1d8de429e8e2ea41f645e212008b493c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-gate.json",
+      "expected": "da26f13a36fc2a09a24ac5faf2d9556d431f09db84455c0101cff507e7639222",
+      "actual": "da26f13a36fc2a09a24ac5faf2d9556d431f09db84455c0101cff507e7639222",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-head.receipt.json",
+      "expected": "2d7d0fe98be674e49c0b8cedd8309a611fe2fe27a0f21e70309332e5d4a58ff5",
+      "actual": "2d7d0fe98be674e49c0b8cedd8309a611fe2fe27a0f21e70309332e5d4a58ff5",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-history-files.receipt.json",
+      "expected": "71700dbec292803ea934e9bb27b4dce0d55451350c4100d04565622a10ea23a2",
+      "actual": "71700dbec292803ea934e9bb27b4dce0d55451350c4100d04565622a10ea23a2",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-history-files.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-history-files.stdout.log",
+      "expected": "ebfbda0418cc4e35a9d7ab877c172a5bb747e59d3125f6fa246d6e79d4aafa51",
+      "actual": "ebfbda0418cc4e35a9d7ab877c172a5bb747e59d3125f6fa246d6e79d4aafa51",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-index.receipt.json",
+      "expected": "6546970e34bb33d3bc47526e44fefd0709ddc14a9ce4c49ef396f78d74af03e9",
+      "actual": "6546970e34bb33d3bc47526e44fefd0709ddc14a9ce4c49ef396f78d74af03e9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-status.receipt.json",
+      "expected": "b4d5f61c125751030edcaae8984e666c1d4588c5490b4cef843a83970a1e5421",
+      "actual": "b4d5f61c125751030edcaae8984e666c1d4588c5490b4cef843a83970a1e5421",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-status.stdout.log",
+      "expected": "b8a8ade190685a2c846ec908c381b7908dd8356237b68b2a2f870d92bb596d91",
+      "actual": "b8a8ade190685a2c846ec908c381b7908dd8356237b68b2a2f870d92bb596d91",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-target-files.receipt.json",
+      "expected": "98c9ba637c0c8d9c7aba347dc6cd1a6fbdb2f4fe21055ea2429fd5fb96b5e5df",
+      "actual": "98c9ba637c0c8d9c7aba347dc6cd1a6fbdb2f4fe21055ea2429fd5fb96b5e5df",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-target-files.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry-target-files.stdout.log",
+      "expected": "695903ed1899480da1385cebf4597561602759d118be6d83b50d279f0ef909c9",
+      "actual": "695903ed1899480da1385cebf4597561602759d118be6d83b50d279f0ef909c9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry.receipt.json",
+      "expected": "23c923a2609c01dfedbf864b53d261606a45d22c646d996aa4330f81d5f5f6fb",
+      "actual": "23c923a2609c01dfedbf864b53d261606a45d22c646d996aa4330f81d5f5f6fb",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/entry.stdout.log",
+      "expected": "040db6eb3474fb0e8c971c24f9f8cd02b16646061888b49a6dfc75e281b087e9",
+      "actual": "040db6eb3474fb0e8c971c24f9f8cd02b16646061888b49a6dfc75e281b087e9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-audit.receipt.json",
+      "expected": "a797b6fb5db58fa985436a267b82d9c9a67391933296de1b2026f49c651baacd",
+      "actual": "a797b6fb5db58fa985436a267b82d9c9a67391933296de1b2026f49c651baacd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-audit.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-audit.stdout.log",
+      "expected": "b39678c543e268e0232ebb9de9974418679a6d5379d8aed23e1fe1400be5f55c",
+      "actual": "b39678c543e268e0232ebb9de9974418679a6d5379d8aed23e1fe1400be5f55c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-branch.receipt.json",
+      "expected": "6ebb7f351b449dd9ce239e8a44cfbe14bd3a3bb97a459d5d1d7450d3815294dc",
+      "actual": "6ebb7f351b449dd9ce239e8a44cfbe14bd3a3bb97a459d5d1d7450d3815294dc",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-branch.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-branch.stdout.log",
+      "expected": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "actual": "01739ced859358405f5c970a98662ffc5d333e1cf5ebabdd024313c0719d2831",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-core-diff.receipt.json",
+      "expected": "cb21794045c005f45fece6f405d2dcbe4cc001a0a46cf7ebc90fe286b5e6cd38",
+      "actual": "cb21794045c005f45fece6f405d2dcbe4cc001a0a46cf7ebc90fe286b5e6cd38",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-core-diff.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-core-diff.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-diff-check.receipt.json",
+      "expected": "28eba460915b1d4f4d8e59a269a53a23a5293b173e2cd7949de76e4bfa3f576e",
+      "actual": "28eba460915b1d4f4d8e59a269a53a23a5293b173e2cd7949de76e4bfa3f576e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-diff-check.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-diff-check.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-head.receipt.json",
+      "expected": "2494f12228a422cc68651d808b7edb045864879284f329e4e3119d741cd23695",
+      "actual": "2494f12228a422cc68651d808b7edb045864879284f329e4e3119d741cd23695",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-head.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-head.stdout.log",
+      "expected": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "actual": "eab4c1819a234bcc696b9255fecbb4b2d8315081ccd53adb670f2de3e5f96ab4",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-index.receipt.json",
+      "expected": "f6210e60cefedc5120a1afbd888a1543a72dd2625e00408256fc7b155a05e5a0",
+      "actual": "f6210e60cefedc5120a1afbd888a1543a72dd2625e00408256fc7b155a05e5a0",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-status.receipt.json",
+      "expected": "85384cc565c9467ff68f517ce9fddc46e06b696ce9db204bbfee660fdad68c62",
+      "actual": "85384cc565c9467ff68f517ce9fddc46e06b696ce9db204bbfee660fdad68c62",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/final-status.stdout.log",
+      "expected": "1ab55d9ae2332c361e4b7d0c5c4b3618b0e37608890e1e4a08ecd61327ab5046",
+      "actual": "1ab55d9ae2332c361e4b7d0c5c4b3618b0e37608890e1e4a08ecd61327ab5046",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/fixes.json",
+      "expected": "ef5c74edd00ddfd6c77021ea0e17689e54c240a0c257b38011682af578ea31c8",
+      "actual": "ef5c74edd00ddfd6c77021ea0e17689e54c240a0c257b38011682af578ea31c8",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/instruction-inventory.receipt.json",
+      "expected": "f7046c6d3fa2787f91d8b3e8acec920cf62869bc0bfba3eb6acddfbead9cd70a",
+      "actual": "f7046c6d3fa2787f91d8b3e8acec920cf62869bc0bfba3eb6acddfbead9cd70a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/instruction-inventory.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/instruction-inventory.stdout.log",
+      "expected": "1f6b1d90530b15d76ab3858abbfebe180af9145d751f07150426e26976056752",
+      "actual": "1f6b1d90530b15d76ab3858abbfebe180af9145d751f07150426e26976056752",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-build-android.receipt.json",
+      "expected": "952e4d79e07d2729f0739dab657c38141a1781bdb356a7c46da52afebfabca71",
+      "actual": "952e4d79e07d2729f0739dab657c38141a1781bdb356a7c46da52afebfabca71",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-build-android.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-build-android.stdout.log",
+      "expected": "1980adf957225ed5a0c0beeabb9ac918ed695259cb728c64e34cae2d904caf69",
+      "actual": "1980adf957225ed5a0c0beeabb9ac918ed695259cb728c64e34cae2d904caf69",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-core-test.receipt.json",
+      "expected": "9f5f428df71f1beca86191ffebc2430eac85aa2fd1a257a0b940a2da0973e53a",
+      "actual": "9f5f428df71f1beca86191ffebc2430eac85aa2fd1a257a0b940a2da0973e53a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-core-test.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-core-test.stdout.log",
+      "expected": "7dfb71933b432ed2d824533b6e6c14dfa5611322845e5501a045a49abec74fe0",
+      "actual": "7dfb71933b432ed2d824533b6e6c14dfa5611322845e5501a045a49abec74fe0",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-final-audit.receipt.json",
+      "expected": "e292fef5c1d356589f6e49ae5ec209bdc55675b2a22cfbd74d3dc8f1b21ae81e",
+      "actual": "e292fef5c1d356589f6e49ae5ec209bdc55675b2a22cfbd74d3dc8f1b21ae81e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-final-audit.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-final-audit.stdout.log",
+      "expected": "41818ffe08ed0efe41c9912bddf521744311961ab8a2e8d771c0e050b9c3dcc3",
+      "actual": "41818ffe08ed0efe41c9912bddf521744311961ab8a2e8d771c0e050b9c3dcc3",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-details.receipt.json",
+      "expected": "b0e9c98e16a50b503456ef059e81395853bd49eb882aa019f0e56840ef54c5ef",
+      "actual": "b0e9c98e16a50b503456ef059e81395853bd49eb882aa019f0e56840ef54c5ef",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-details.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-details.stdout.log",
+      "expected": "66c0bd232955b35a985e6419bd29099966bb0fd442484dbd24dcbca140e552d7",
+      "actual": "66c0bd232955b35a985e6419bd29099966bb0fd442484dbd24dcbca140e552d7",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-first.receipt.json",
+      "expected": "dd2ee6e776067d6669724573a1d9984c5fdc43e1e5d7cee64b9e25937bd294fd",
+      "actual": "dd2ee6e776067d6669724573a1d9984c5fdc43e1e5d7cee64b9e25937bd294fd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-first.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-first.stdout.log",
+      "expected": "68dd2006075e13e193257da33e6f713f9d9cf7825b216cde0ecb8015b6695e08",
+      "actual": "68dd2006075e13e193257da33e6f713f9d9cf7825b216cde0ecb8015b6695e08",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-second.receipt.json",
+      "expected": "205194fed94480bc686261fb2a75040d53e42f70e8022e3c0471dbeba14e9631",
+      "actual": "205194fed94480bc686261fb2a75040d53e42f70e8022e3c0471dbeba14e9631",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-second.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-tests-second.stdout.log",
+      "expected": "704bcfc6d652e8366d9070311d1ee743b6806d43fefce73cfe54129202319968",
+      "actual": "704bcfc6d652e8366d9070311d1ee743b6806d43fefce73cfe54129202319968",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck-shim.receipt.json",
+      "expected": "fd3a4669a2b1a7f7f10a234a4d29aae715e74f6415e9c629c1bd2e8984d37ec2",
+      "actual": "fd3a4669a2b1a7f7f10a234a4d29aae715e74f6415e9c629c1bd2e8984d37ec2",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck-shim.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck-shim.stdout.log",
+      "expected": "fe4eeb9597592509551d3b4cf98ba4a61b7fe60be1925a205146b778c6660d5a",
+      "actual": "fe4eeb9597592509551d3b4cf98ba4a61b7fe60be1925a205146b778c6660d5a",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck.receipt.json",
+      "expected": "59cf3d7acb38f56657b42d094d5518d651af279ca236ac8d4ede185061906c97",
+      "actual": "59cf3d7acb38f56657b42d094d5518d651af279ca236ac8d4ede185061906c97",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-typecheck.stdout.log",
+      "expected": "e87a4d7623cf5e94e4463678a52bab15202cfccd3800823aa8e0cc395a244996",
+      "actual": "e87a4d7623cf5e94e4463678a52bab15202cfccd3800823aa8e0cc395a244996",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-verify-core.receipt.json",
+      "expected": "ae582d618626926072f49b41cb795c560f8913efb301ae09d7369b5536404b71",
+      "actual": "ae582d618626926072f49b41cb795c560f8913efb301ae09d7369b5536404b71",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-verify-core.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/invoke-verify-core.stdout.log",
+      "expected": "8e6fc47ab555d3b90a0ed47c34dcc506ec9e1598fb0cd8afa5d14369ce253fa6",
+      "actual": "8e6fc47ab555d3b90a0ed47c34dcc506ec9e1598fb0cd8afa5d14369ce253fa6",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/listview-api-inspection.json",
+      "expected": "76fe28209faf138347e777132d14ccb95f30a4c4b0365a809cb8681e80ef4f4f",
+      "actual": "76fe28209faf138347e777132d14ccb95f30a4c4b0365a809cb8681e80ef4f4f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/node-version.receipt.json",
+      "expected": "1a50f93a53092c1a5a31b2641da903cc2febd566605a6811584a4ecd3ee826b8",
+      "actual": "1a50f93a53092c1a5a31b2641da903cc2febd566605a6811584a4ecd3ee826b8",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/node-version.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/node-version.stdout.log",
+      "expected": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "actual": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci-integrity.json",
+      "expected": "409ac8bbebb951a1bff14922e2d6fb46b08381f7df3af0e090482f1790edd5d6",
+      "actual": "409ac8bbebb951a1bff14922e2d6fb46b08381f7df3af0e090482f1790edd5d6",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci-integrity.receipt.json",
+      "expected": "7a1fe889a902f5a43fdd0e8da9b3d23587d2829d2c9d2e61771e9a9d398dbacc",
+      "actual": "7a1fe889a902f5a43fdd0e8da9b3d23587d2829d2c9d2e61771e9a9d398dbacc",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci-integrity.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci-integrity.stdout.log",
+      "expected": "dc7bf412f34f00018a8f3278998ff91d16a7cd6dadaf1e674bfc7be9792ffe54",
+      "actual": "dc7bf412f34f00018a8f3278998ff91d16a7cd6dadaf1e674bfc7be9792ffe54",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci.receipt.json",
+      "expected": "2b1a32f1ef7a13f0cc855bd3c3177b9ee8c9777829fae5de56e364e2dbe50495",
+      "actual": "2b1a32f1ef7a13f0cc855bd3c3177b9ee8c9777829fae5de56e364e2dbe50495",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci.stderr.log",
+      "expected": "64240dbe3086f7b317878dbd1a1e3b4da2d410cd2b1b7675e1a1b28c9217789d",
+      "actual": "64240dbe3086f7b317878dbd1a1e3b4da2d410cd2b1b7675e1a1b28c9217789d",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/npm-ci.stdout.log",
+      "expected": "5354d0dd01a630f7fd183c9503b9a688e5297d7e2a1db9199601ef08ead93690",
+      "actual": "5354d0dd01a630f7fd183c9503b9a688e5297d7e2a1db9199601ef08ead93690",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-index.receipt.json",
+      "expected": "3bcea2dc2b03205be40d6adfc987b1520c1d51817a3f49538e039367e2173e23",
+      "actual": "3bcea2dc2b03205be40d6adfc987b1520c1d51817a3f49538e039367e2173e23",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-index.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-index.stdout.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-status.receipt.json",
+      "expected": "ce3ba6ae4d667bf7ed6242f089c7b44abf365326dcbcb247b4f002cd3547ca1f",
+      "actual": "ce3ba6ae4d667bf7ed6242f089c7b44abf365326dcbcb247b4f002cd3547ca1f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-status.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-status.stdout.log",
+      "expected": "b4f932c0eca6f2cc7e725e30a3170b16c708abcc2bfa6e5b088e61a64f54050f",
+      "actual": "b4f932c0eca6f2cc7e725e30a3170b16c708abcc2bfa6e5b088e61a64f54050f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-verification.json",
+      "expected": "49b0f807492921023266870d1cc346b57c9ab758e7008116413ddd3ba4318cd9",
+      "actual": "49b0f807492921023266870d1cc346b57c9ab758e7008116413ddd3ba4318cd9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-verification.receipt.json",
+      "expected": "b39da3f0c467e5d1c3d05e5b356a631db77b76195ce89d1e3942c8cacb4fe902",
+      "actual": "b39da3f0c467e5d1c3d05e5b356a631db77b76195ce89d1e3942c8cacb4fe902",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-verification.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/packet-verification.stdout.log",
+      "expected": "3196876fd9873135842cf268bf8e904410dc01716422d594696a10a732baff41",
+      "actual": "3196876fd9873135842cf268bf8e904410dc01716422d594696a10a732baff41",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/preservation-entry.json",
+      "expected": "ec6c6b32faa5837399116b3f4a29082dea80b50e0538246f5f163d84b16a9d05",
+      "actual": "ec6c6b32faa5837399116b3f4a29082dea80b50e0538246f5f163d84b16a9d05",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/preservation-final.json",
+      "expected": "9f3fdf3e0c3d32ebdb79bc4bb12e6f32e765acc2ba73a2bec0046933689329b1",
+      "actual": "9f3fdf3e0c3d32ebdb79bc4bb12e6f32e765acc2ba73a2bec0046933689329b1",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/reference-case-contracts.json",
+      "expected": "0e24656f10e5ea327a46118ce5d2fb96c2ba9c90bbe6dba5ba99d04c7dd1e9ff",
+      "actual": "0e24656f10e5ea327a46118ce5d2fb96c2ba9c90bbe6dba5ba99d04c7dd1e9ff",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/results-a3.json",
+      "expected": "35b066b2af5d8fa02ca8244008acf0aa7b4db4e1e3809204fa0d9227dcad2cdb",
+      "actual": "35b066b2af5d8fa02ca8244008acf0aa7b4db4e1e3809204fa0d9227dcad2cdb",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/test-counts.json",
+      "expected": "2258f871611ab18c37c1206bb228f6a9bacaed8afcb4ee286b4a07551ff9556f",
+      "actual": "2258f871611ab18c37c1206bb228f6a9bacaed8afcb4ee286b4a07551ff9556f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/test-details.json",
+      "expected": "06622d8e634ef652cd05f71217863a5bdfef0d8d15665067e4cd20025c0f687f",
+      "actual": "06622d8e634ef652cd05f71217863a5bdfef0d8d15665067e4cd20025c0f687f",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-details.receipt.json",
+      "expected": "00b6a6cca151271b957c711a4ecc2f3501b0af660a793eb9f0362cda89a51412",
+      "actual": "00b6a6cca151271b957c711a4ecc2f3501b0af660a793eb9f0362cda89a51412",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-details.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-details.stdout.log",
+      "expected": "24a56115f11e2d0df28a156246448edf60e292e7007ec366c35d3e23298a12df",
+      "actual": "24a56115f11e2d0df28a156246448edf60e292e7007ec366c35d3e23298a12df",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-first.receipt.json",
+      "expected": "f2dd258e9e063865f71f10e021cbe24b5a41eecab1e90792d4fc459b5b1f3c60",
+      "actual": "f2dd258e9e063865f71f10e021cbe24b5a41eecab1e90792d4fc459b5b1f3c60",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-first.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-first.stdout.log",
+      "expected": "3c808d81c09cbd528056a444d1d1d37139048966fc45f04615a87414e0a0d1ed",
+      "actual": "3c808d81c09cbd528056a444d1d1d37139048966fc45f04615a87414e0a0d1ed",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-second.receipt.json",
+      "expected": "fd6aa0112e6826ea8b48c1ad418346818c48c32b86f980bd57b4a8c072ccf45c",
+      "actual": "fd6aa0112e6826ea8b48c1ad418346818c48c32b86f980bd57b4a8c072ccf45c",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-second.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/tests-second.stdout.log",
+      "expected": "511e696813e99f12516f47aabaed490c937f5dee8212ffc14665ae09f756cda5",
+      "actual": "511e696813e99f12516f47aabaed490c937f5dee8212ffc14665ae09f756cda5",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck-shim.receipt.json",
+      "expected": "ebaf44ac238aef75c3ed0f1b4a3cc022b2f73ec34d09399837fd375aa0116acd",
+      "actual": "ebaf44ac238aef75c3ed0f1b4a3cc022b2f73ec34d09399837fd375aa0116acd",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck-shim.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck-shim.stdout.log",
+      "expected": "84329210b873f36224f1720f2e09ae1db2d04c9094a0ea8c41bd148203a8a6f9",
+      "actual": "84329210b873f36224f1720f2e09ae1db2d04c9094a0ea8c41bd148203a8a6f9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck.receipt.json",
+      "expected": "2cf1f42f033b34cd934830a9b8bc99390cc7a59e6293703fb300768767f9dc38",
+      "actual": "2cf1f42f033b34cd934830a9b8bc99390cc7a59e6293703fb300768767f9dc38",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/typecheck.stdout.log",
+      "expected": "84329210b873f36224f1720f2e09ae1db2d04c9094a0ea8c41bd148203a8a6f9",
+      "actual": "84329210b873f36224f1720f2e09ae1db2d04c9094a0ea8c41bd148203a8a6f9",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/verify-core.receipt.json",
+      "expected": "04687ba651a214a7705b76a92dde4d69e513a4a6dae598ac5aeadce384671832",
+      "actual": "04687ba651a214a7705b76a92dde4d69e513a4a6dae598ac5aeadce384671832",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/verify-core.stderr.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/verify-core.stdout.log",
+      "expected": "c0000cf54b1caabc3fe3e9beae691f5db9076b4f578c8f2e6b24ba66e98ef10e",
+      "actual": "c0000cf54b1caabc3fe3e9beae691f5db9076b4f578c8f2e6b24ba66e98ef10e",
+      "match": true
+    },
+    {
+      "path": "migration/evidence/NS03/a-gates3/vitest-cache-inspection.json",
+      "expected": "537451a6537f6bb72be79a8fa0bdc829eaac493aa1bcbe4553521d9a49497046",
+      "actual": "537451a6537f6bb72be79a8fa0bdc829eaac493aa1bcbe4553521d9a49497046",
+      "match": true
+    },
+    {
+      "path": "migration/handoffs/NS03-checkpoint-a.md",
+      "expected": "60e2a3da8a35f7cb6edc49d9783d48f8fe9710c149f3056c93c73ddc94a6b8ee",
+      "actual": "60e2a3da8a35f7cb6edc49d9783d48f8fe9710c149f3056c93c73ddc94a6b8ee",
+      "match": true
+    },
+    {
+      "path": "migration/handoffs/NS03-checkpoint-a2.md",
+      "expected": "e6640f52e78810ccc092970e027eb47c5e4063213f248e21af2db42af6163cf1",
+      "actual": "e6640f52e78810ccc092970e027eb47c5e4063213f248e21af2db42af6163cf1",
+      "match": true
+    },
+    {
+      "path": "migration/handoffs/NS03-checkpoint-a3.md",
+      "expected": "01d370a7483531a8165e766e971a17c150e416504471925cf44ce1d950f0a901",
+      "actual": "01d370a7483531a8165e766e971a17c150e416504471925cf44ce1d950f0a901",
+      "match": true
+    }
+  ]
+}

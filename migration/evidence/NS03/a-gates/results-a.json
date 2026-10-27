@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "package": "NS03",
+  "phase": "A",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "generatedAt": "2026-10-26T20:35:14.278Z",
+  "cases": [
+    {
+      "id": "A1-preflight",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/entry-gate.json",
+        "migration/evidence/NS03/a-gates/preservation-entry.json",
+        "migration/evidence/NS03/a-gates/node-version.receipt.json",
+        "migration/evidence/NS03/a-gates/npm-version.receipt.json",
+        "migration/evidence/NS03/a-gates/java-version.receipt.json"
+      ],
+      "detail": "Exact raw porcelain gate, full HEAD/branch/ancestor/index/hooks and absent evidence directory passed; IDEA hash only."
+    },
+    {
+      "id": "A2-core-entry",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/core-test-entry.receipt.json",
+        "migration/evidence/NS03/a-gates/core-test-entry.stdout.log",
+        "migration/evidence/NS03/a-gates/core-preservation-after-entry-test.json"
+      ],
+      "detail": "53/53 tests passed; no tracked core change."
+    },
+    {
+      "id": "A3-D1-install",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/d1-install.receipt.json",
+        "migration/evidence/NS03/a-gates/d1-install.stdout.log",
+        "migration/evidence/NS03/a-gates/d1-install.stderr.log"
+      ],
+      "detail": "Exact vuex 4.1.0 added without direct vue, legacy peer flags, or .npmrc."
+    },
+    {
+      "id": "A3-D1-lockfile-scope",
+      "status": "BLOCKED",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/d1-scope.receipt.json",
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Out-of-scope csstype addition and TypeScript metadata change; required immediate stop."
+    },
+    {
+      "id": "A4-implementation-and-tests",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "No implementation after D1 blocker; SearchBar focus mechanism not implemented."
+    },
+    {
+      "id": "A5-core-test",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-npm-ci-lockfile-integrity",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-verify-core",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-typecheck",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-target-tests-first",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-target-tests-second",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-android-build-apk",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A5-vuex-runtime-alias-proof",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/lockfile-scope.json"
+      ],
+      "detail": "Stopped at D1; no prior artifact or historical test output substituted."
+    },
+    {
+      "id": "A6-preservation-index-class-audit",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS03/a-gates/preservation-final.json",
+        "migration/evidence/NS03/a-gates/class-audit.json",
+        "migration/evidence/NS03/a-gates/final-audit.receipt.json",
+        "migration/evidence/NS03/a-gates/final-index.receipt.json",
+        "migration/evidence/NS03/a-gates/final-core-diff.receipt.json",
+        "migration/evidence/NS03/a-gates/final-diff-check.receipt.json"
+      ],
+      "detail": "Protected files, IDEA hash, coordinator package and NS02-required unchanged files preserved; only target manifests differ; index empty."
+    },
+    {
+      "id": "phase-B-device",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [],
+      "detail": "Outside this session; no emulator/device interaction or keyboard observation."
+    },
+    {
+      "id": "review-submission-freeze",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [],
+      "detail": "Not authorized in Phase A; no review dispatch, submission or freeze."
+    }
+  ],
+  "testCounts": {
+    "coreEntry": {
+      "tests": 53,
+      "passed": 53,
+      "failed": 0
+    },
+    "coreFinal": null,
+    "targetFirst": null,
+    "targetSecond": null,
+    "explanation": "Core entry count remains the expected 53. No target tests were changed or run; implementation and sequential gates stopped at D1."
+  },
+  "unresolved": [
+    "D1 scope violation: added node_modules/csstype@3.2.3, outside approved vuex/vue/@vue/* allowlist.",
+    "D1 scope violation: node_modules/typescript@6.0.3 metadata changed from dev:true to devOptional:true.",
+    "Coordinator/human disposition required before continuation; no manual lockfile repair or dependency workaround attempted.",
+    "Store/rows/schedule/wiring/focus mechanism and new target tests not implemented.",
+    "Sequential static gates, Android build/alias proof, and all device observations not run.",
+    "npm install warnings: 6 vulnerabilities (5 moderate, 1 high) and pending install-script approvals; no remediation attempted."
+  ]
+}

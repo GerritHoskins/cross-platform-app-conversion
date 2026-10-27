@@ -1,0 +1,404 @@
+[
+  {
+    "id": "default-all",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "groupTime": "11:00 am",
+        "sessionIds": [
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      },
+      {
+        "groupTime": "1:00 pm",
+        "sessionIds": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          19,
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "no-tracks",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": []
+  },
+  {
+    "id": "single-track",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Ionic"
+      ],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "search-case-insensitive",
+    "input": {
+      "searchText": "IOnic",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          7,
+          8
+        ]
+      },
+      {
+        "groupTime": "11:00 am",
+        "sessionIds": [
+          9,
+          11
+        ]
+      },
+      {
+        "groupTime": "1:00 pm",
+        "sessionIds": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "search-no-match",
+    "input": {
+      "searchText": "zzz-no-such-session",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": []
+  },
+  {
+    "id": "search-plus-track",
+    "input": {
+      "searchText": "Ionic",
+      "selectedTracks": [
+        "Ionic",
+        "Design"
+      ],
+      "favoriteIds": [],
+      "mode": "all"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          7
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "id": "favorites-empty",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [],
+      "mode": "favorites"
+    },
+    "expectedGroups": []
+  },
+  {
+    "id": "favorites-some",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food"
+      ],
+      "favoriteIds": [
+        12,
+        3
+      ],
+      "mode": "favorites"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "favorites-order",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [
+        20,
+        1
+      ],
+      "mode": "favorites"
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "add-duplicate",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [
+        1,
+        12
+      ],
+      "mode": "favorites"
+    },
+    "action": {
+      "op": "addFavorite",
+      "sessionId": 12
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "remove-absent",
+    "input": {
+      "searchText": "",
+      "selectedTracks": [
+        "Food",
+        "Ionic",
+        "Tooling",
+        "Vue",
+        "Design",
+        "Services",
+        "Workshop",
+        "Communication",
+        "Navigation",
+        "Documentation"
+      ],
+      "favoriteIds": [
+        1,
+        12
+      ],
+      "mode": "favorites"
+    },
+    "action": {
+      "op": "removeFavorite",
+      "sessionId": 99
+    },
+    "expectedGroups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  }
+]

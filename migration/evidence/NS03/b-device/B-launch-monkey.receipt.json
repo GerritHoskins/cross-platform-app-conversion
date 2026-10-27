@@ -1,0 +1,22 @@
+{
+  "name": "B-launch-monkey",
+  "argv": [
+    "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+    "-s",
+    "emulator-5554",
+    "shell",
+    "monkey",
+    "-p",
+    "dev.translationtest.ns",
+    "-c",
+    "android.intent.category.LAUNCHER",
+    "1"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "startedUnix": 1793050430.3210783,
+  "elapsedSeconds": 9.073801600025035,
+  "timeoutSeconds": 30,
+  "exitCode": 0,
+  "stdout": "B-launch-monkey.stdout.log",
+  "stderr": "B-launch-monkey.stderr.log"
+}

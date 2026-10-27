@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "package": "NS03",
+  "revision": 1,
+  "phase": "C",
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "533ed4ab41a751b4761af31e43a757f4126e2ea0",
+  "observer": "Hermes GPT-6.1 Sol high: final software gates and historical-evidence reconciliation; Claude Code coordinator: direct pixel inspection; human: dispositions",
+  "cases": [
+    {
+      "id": "C-preflight",
+      "status": "PASS",
+      "category": "static preservation",
+      "summary": "Required branch/full HEAD, empty index, allowed-path class audit, 81 target files matching A3 final target/implementation records, 261 protected files matching A3 entry, IDEA hash only, and unchanged A3 APK.",
+      "evidence": ["migration/evidence/NS03/c-freeze/preflight-audit.json", "migration/evidence/NS03/c-freeze/preservation-entry.json", "migration/evidence/NS03/c-freeze/entry-status.receipt.json"]
+    },
+    {
+      "id": "core",
+      "status": "PASS",
+      "category": "Phase C automated",
+      "summary": "npm --prefix migration/core test: exit 0, 53 passed, zero failed.",
+      "evidence": ["migration/evidence/NS03/c-freeze/core-test.receipt.json", "migration/evidence/NS03/c-freeze/core-test.stdout.log"]
+    },
+    {
+      "id": "D1-lockfile-scope",
+      "status": "PASS",
+      "category": "static with human amendment",
+      "summary": "Exact vuex 4.1.0 dependency; npm-resolved vue peer; six new entries, root vuex metadata and TypeScript dev-to-devOptional only; no removals. Current lockfile equals accepted run 1 hash and is unchanged by C npm ci.",
+      "disposition": "A1 originally BLOCKED on csstype and TypeScript metadata; human amended D1 and accepted the actual run 1 install as is. A2 resumed from it. No other churn, peer bypass, direct vue dependency, .npmrc change or lockfile repair.",
+      "evidence": ["migration/work-packages/NS03.md", "migration/evidence/NS03/a-gates/results-a.json", "migration/evidence/NS03/a-gates/lockfile-scope.json", "migration/evidence/NS03/a-gates2/lockfile-scope.json", "migration/evidence/NS03/c-freeze/lockfile-scope.json", "migration/evidence/NS03/c-freeze/npm-ci-integrity.json"]
+    },
+    {
+      "id": "D1-Vuex-typing-shim",
+      "status": "PASS",
+      "category": "type-only amendment and Phase C typecheck",
+      "summary": "types/vuex.d.ts re-exports Vuex's shipped named/default declarations. No handwritten Vuex types, runtime shim or tsconfig edit. C typecheck passes.",
+      "disposition": "A2 originally BLOCKED: Vuex 4.1.0 exports hide its declarations under bundler resolution (TS7016 with cascading TS2769/TS7006). Human authorized the type-only shim. A3 added it and adjusted only NS03 store-test action payload commits; all A3 gates passed.",
+      "evidence": ["migration/work-packages/NS03.md", "migration/evidence/NS03/a-gates2/typecheck.stdout.log", "migration/evidence/NS03/a-gates3/fixes.json", "migration/nativescript/types/vuex.d.ts", "migration/evidence/NS03/c-freeze/typecheck.receipt.json"]
+    },
+    {
+      "id": "store-contract",
+      "status": "PASS",
+      "category": "automated logic; not component rendering",
+      "summary": "Fresh Vuex stores, RN03-equivalent state and selection mutations, copied arrays, frozen history, public-core-only derived groups, load/retry generation boundary, retained data/selection on load or failure, and exact search without reload. Store file has 27 tests, including 11 reference and 7 lifecycle cases.",
+      "reviewerNote": "Mutations replace the whole state object with replaceState to preserve earlier frozen snapshots. This is a design note, not a deviation.",
+      "evidence": ["migration/nativescript/src/state/conference-store.ts", "migration/nativescript/__tests__/conference-store.test.ts", "migration/evidence/NS03/a-gates3/test-details.json", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json", "migration/evidence/NS03/c-freeze/tests-first.receipt.json", "migration/evidence/NS03/c-freeze/tests-second.receipt.json"]
+    },
+    {
+      "id": "reference-cases",
+      "status": "PASS",
+      "category": "automated logic",
+      "summary": "All 11 frozen reference cases pass through the real bundled loader, public core, mutations and scheduleGroups. Expected-case JSON is test-only.",
+      "caseStatuses": {"default-all":"PASS","no-tracks":"PASS","single-track":"PASS","search-case-insensitive":"PASS","search-no-match":"PASS","search-plus-track":"PASS","favorites-empty":"PASS","favorites-some":"PASS","favorites-order":"PASS","add-duplicate":"PASS","remove-absent":"PASS"},
+      "evidence": ["migration/evidence/NS03/a-gates3/test-details.json", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json", "migration/evidence/NS03/c-freeze/tests-first.receipt.json", "migration/evidence/NS03/c-freeze/tests-second.receipt.json"]
+    },
+    {
+      "id": "lifecycle",
+      "status": "PASS",
+      "category": "automated controlled-loader logic",
+      "caseStatuses": {"pending/promise-boundary":"PASS","sync-throw/retry-success":"PASS","rejection/retry-success":"PASS","failed-retry-retains-data-and-selection":"PASS","stale-resolve":"PASS","stale-reject":"PASS","stale-success-during-newer-pending":"PASS"},
+      "evidence": ["migration/nativescript/__tests__/conference-store.test.ts", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json", "migration/evidence/NS03/c-freeze/tests-first.receipt.json", "migration/evidence/NS03/c-freeze/tests-second.receipt.json"]
+    },
+    {
+      "id": "rows",
+      "status": "PASS",
+      "category": "automated pure-row logic; rendering proven separately",
+      "summary": "Three tests cover header/session flattening in core order, stable h:/s: keys and immutability. Screen uses native ListView/itemTemplateSelector, not another selector implementation; headings are not sticky.",
+      "evidence": ["migration/nativescript/src/state/schedule-rows.ts", "migration/nativescript/__tests__/schedule-rows.test.ts", "migration/nativescript/src/components/Schedule.vue", "migration/evidence/NS03/c-freeze/tests-first.receipt.json", "migration/evidence/NS03/c-freeze/tests-second.receipt.json"]
+    },
+    {
+      "id": "verify-core",
+      "status": "PASS",
+      "category": "Phase C static integration",
+      "summary": "npm run verify:core: exit 0; raw fixture hashes agree; installed public compiled core is the sibling junction, with matching 14-file dist inventory; 20 normalized sessions, first Breakfast.",
+      "evidence": ["migration/evidence/NS03/c-freeze/verify-core.receipt.json", "migration/evidence/NS03/c-freeze/verify-core.stdout.log"]
+    },
+    {
+      "id": "typecheck",
+      "status": "PASS",
+      "category": "Phase C static",
+      "summary": "npm run typecheck: exit 0 (vue-tsc --noEmit).",
+      "evidence": ["migration/evidence/NS03/c-freeze/typecheck.receipt.json", "migration/evidence/NS03/c-freeze/typecheck.stdout.log"]
+    },
+    {
+      "id": "tests-first",
+      "status": "PASS",
+      "category": "Phase C automated",
+      "summary": "npm test: exit 0; 4 files / 34 tests, including the unchanged NS02 loader 3 and shell 1 tests.",
+      "evidence": ["migration/evidence/NS03/c-freeze/tests-first.receipt.json", "migration/evidence/NS03/c-freeze/tests-first.stdout.log"]
+    },
+    {
+      "id": "tests-second",
+      "status": "PASS",
+      "category": "Phase C repeatability",
+      "summary": "npm test repeated: exit 0; same 4 files / 34 tests.",
+      "evidence": ["migration/evidence/NS03/c-freeze/tests-second.receipt.json", "migration/evidence/NS03/c-freeze/tests-second.stdout.log"]
+    },
+    {
+      "id": "npm-ci",
+      "status": "PASS",
+      "category": "Phase C clean install and preservation",
+      "summary": "Target npm ci: exit 0; accepted lockfile and all 81 target hashes unchanged after install. Pinned Node first on PATH; NoDefaultCurrentDirectoryInExePath removed from all child environments.",
+      "evidence": ["migration/evidence/NS03/c-freeze/npm-ci.receipt.json", "migration/evidence/NS03/c-freeze/npm-ci-integrity.json", "migration/evidence/NS03/c-freeze/post-ci-audit.json"]
+    },
+    {
+      "id": "android-build",
+      "status": "PASS",
+      "category": "historical Phase A run 3 build; not rerun in C",
+      "summary": "A3 npm run build:android exited 0. C rehashed the 118504855-byte APK and found it unchanged. APK identity is in A3 apk.json and C static-final-audit.json. No rebuild.",
+      "evidence": ["migration/evidence/NS03/a-gates3/build-android.receipt.json", "migration/evidence/NS03/a-gates3/apk.json", "migration/evidence/NS03/c-freeze/static-final-audit.json"]
+    },
+    {
+      "id": "Vuex-runtime-alias",
+      "status": "PASS",
+      "category": "historical build/static alias proof; artifacts rehashed in C",
+      "summary": "A3 vendor Vuex ESM module line 21472 imports nativescript-vue/dist/index.js for vue at line 21489 via the unchanged template alias. C checked recorded vendor/bundle hashes without rebuilding.",
+      "evidence": ["migration/evidence/NS03/a-gates3/bundle-alias-proof.json", "migration/evidence/NS03/a-gates3/bundle-alias-proof.txt", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json"]
+    },
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "category": "historical Phase B device",
+      "summary": "adb install -r succeeded on emulator-5554/RN01_API36; installed base.apk hash matched the A3 APK. No C device interaction or current installed-state claim.",
+      "evidence": ["migration/evidence/NS03/b-device/B-install.receipt.json", "migration/evidence/NS03/b-device/B-install-assertions.json", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json"]
+    },
+    {
+      "id": "B-launch",
+      "status": "PASS",
+      "historicalStatus": "FAIL",
+      "category": "historical XML plus coordinator pixels, human-dispositioned",
+      "summary": "Conference, Search sessions, 8:00 am and Breakfast present. Actual AutoCompleteTextView search child is unfocused; session automation IDs are resource-id values. Coordinator sees both mode controls, schedule and no keyboard.",
+      "disposition": "Human accepts ALL SESSIONS / FAVORITE SESSIONS as native Android textAllCaps tab styling, matching Ionic's Material segment; source SegmentedBarItem titles are the exact package strings. Final B-launch PASS on XML plus coordinator pixels. Original FAIL, helper false-negative records and B-launch-disposition.json remain unchanged.",
+      "timingDisposition": "Third polling dump completed at 20.981 s; first valid schedule XML at 14.836 s is byte-identical to assertion XML. Human accepts the disclosed polling overshoot as not a failure; no relaunch/reassessment input.",
+      "evidence": ["migration/evidence/NS03/b-device/results-b.json", "migration/evidence/NS03/b-device/B-launch-disposition.json", "migration/evidence/NS03/b-device/B-launch.xml", "migration/evidence/NS03/b-device/B-launch.png", "migration/evidence/NS03/pixel-inspection-coordinator.md", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json"]
+    },
+    {
+      "id": "B-scroll",
+      "status": "PASS",
+      "category": "historical device XML and coordinator pixels",
+      "summary": "Last heading 3:00 pm reached after three 400-ms upward swipes wholly within current ListView bounds.",
+      "evidence": ["migration/evidence/NS03/b-device/B-scroll-assertions.json", "migration/evidence/NS03/b-device/B-scroll.xml", "migration/evidence/NS03/b-device/B-scroll.png", "migration/evidence/NS03/pixel-inspection-coordinator.md"]
+    },
+    {
+      "id": "B-favorites",
+      "status": "PASS",
+      "category": "historical device XML and coordinator pixels",
+      "summary": "Favorites selected via current XML bounds centre; No favorite sessions. and zero rows.",
+      "evidence": ["migration/evidence/NS03/b-device/B-favorites-assertions.json", "migration/evidence/NS03/b-device/B-favorites.xml", "migration/evidence/NS03/b-device/B-favorites.png", "migration/evidence/NS03/pixel-inspection-coordinator.md"]
+    },
+    {
+      "id": "B-all",
+      "status": "PASS",
+      "category": "historical device XML and coordinator pixels",
+      "summary": "All selected again via XML bounds; six visible session rows, no favorite empty message. Returning list begins at top.",
+      "reviewerNote": "The v-if branch recreates the ListView when switching between rows and empty favorites, so returning to All sessions starts at the top. Scroll retention is not an NS03 requirement; this is a design note, not a deviation.",
+      "evidence": ["migration/evidence/NS03/b-device/B-all-assertions.json", "migration/evidence/NS03/b-device/B-all.xml", "migration/evidence/NS03/b-device/B-all.png", "migration/evidence/NS03/pixel-inspection-coordinator.md"]
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "category": "historical bounded device logs",
+      "summary": "PID 6565 unchanged before/after; no detected fatal pattern in the last 400 PID-filtered lines; foreground NativeScript activity recorded. Warning/error lines preserved verbatim; not exhaustive or warning-free runtime proof.",
+      "evidence": ["migration/evidence/NS03/b-device/B-logcat-assertions.json", "migration/evidence/NS03/b-device/B-logcat.stdout.log", "migration/evidence/NS03/b-device/logcat-warnings-errors-verbatim.txt"]
+    },
+    {
+      "id": "pixel-inspection",
+      "status": "PASS",
+      "category": "coordinator visual evidence; no executor visual claim",
+      "caseStatuses": {"B-launch":"PASS","B-scroll":"PASS","B-favorites":"PASS","B-all":"PASS"},
+      "summary": "Claude Code coordinator directly inspected all four distinct PNGs; all PASS; no keyboard, clipboard suggestion, notification text or personal content. C reconciled PNG hashes and complete report coverage.",
+      "evidence": ["migration/evidence/NS03/pixel-inspection-coordinator.md", "migration/evidence/NS03/c-freeze/evidence-reconciliation.json"]
+    },
+    {
+      "id": "D6-launch-focus",
+      "status": "PASS",
+      "category": "source mechanism plus historical XML and coordinator pixels",
+      "summary": "SearchBar loaded handler gives parent touch-mode focus, clears native SearchView focus and dismisses soft input. XML search child focused=false and coordinator launch pixels show no cursor or keyboard. Later SearchBar taps/text behavior not observed on device.",
+      "evidence": ["migration/nativescript/src/components/Schedule.vue", "migration/evidence/NS03/b-device/B-launch-disposition.json", "migration/evidence/NS03/pixel-inspection-coordinator.md"]
+    },
+    {
+      "id": "preservation-and-class-audit",
+      "status": "PASS",
+      "category": "Phase C static preservation",
+      "summary": "81 target hashes match A3 final records; 261 protected hashes match A3 entry; 633 pre-existing NS03 evidence/checkpoint files, including the coordinator report, unchanged. Empty index, allowed-path audit, core tracked diff and git diff --check pass. Only NS03 package Status line is authorized to change during final packet preparation.",
+      "evidence": ["migration/evidence/NS03/c-freeze/static-final-audit.json", "migration/evidence/NS03/c-freeze/final-index.receipt.json", "migration/evidence/NS03/c-freeze/final-core-diff.receipt.json", "migration/evidence/NS03/c-freeze/final-diff-check.receipt.json"]
+    }
+  ],
+  "counts": {"total":24,"PASS":24,"FAIL":0,"BLOCKED":0,"NOT RUN":0},
+  "subcaseCounts": {"referenceCases":{"total":11,"PASS":11},"lifecycle":{"total":7,"PASS":7},"pixelFrames":{"total":4,"PASS":4},"policy":"Subcases are included in their parent cases, not added to the 24 top-level case count; test executions are not acceptance-case counts."},
+  "testCounts": {"core":{"tests":53,"passed":53,"failed":0},"targetFirst":{"files":4,"tests":34,"passed":34,"failed":0},"targetSecond":{"files":4,"tests":34,"passed":34,"failed":0},"byFile":{"conference-store.test.ts":27,"schedule-rows.test.ts":3,"load-conference.test.ts":3,"shell-content.test.ts":1},"ns02":{"files":2,"tests":4,"passed":4,"unchanged":true},"referenceCases":{"tests":11,"passed":11},"lifecycle":{"tests":7,"passed":7},"evidence":"migration/evidence/NS03/c-freeze/test-counts.json"},
+  "historicalResults": {"phaseA1":"migration/evidence/NS03/a-gates/results-a.json","phaseA2":"migration/evidence/NS03/a-gates2/results-a2.json","phaseA3":"migration/evidence/NS03/a-gates3/results-a3.json","phaseB":"migration/evidence/NS03/b-device/results-b.json","policy":"Immutable history. Final statuses apply human dispositions and later successful evidence without rewriting historical failures or pending fields."},
+  "dispositions": [
+    {"id":"1-D1-scope","authority":"human, repeated in Phase C assignment","summary":"A1 BLOCKED at csstype and TypeScript dev-to-devOptional; D1 amended and run 1 install/lockfile accepted unchanged; A2 resumed."},
+    {"id":"2-D1-typing","authority":"human, repeated in Phase C assignment","summary":"A2 BLOCKED by Vuex export-map declaration resolution; type-only shim authorized; A3 shim and NS03 store-test payload correction passed all A gates."},
+    {"id":"3-B-launch-labels","authority":"human, Phase C assignment","summary":"Uppercase labels accepted as Android textAllCaps styling matching Ionic Material segment; exact source titles confirmed. Final B-launch PASS on XML plus coordinator pixels; original FAIL records unchanged."},
+    {"id":"4-launch-polling","authority":"human, Phase C assignment","summary":"20.981-s third dump overshoot accepted as disclosed, not failure; first valid XML at 14.836 s is byte-identical to assertion XML."},
+    {"id":"5-pixels","authority":"Claude Code coordinator inspection, acknowledged by human","summary":"All four frames PASS; no keyboard at launch, no personal content; coordinator report immutable."},
+    {"id":"6-reviewer-design-notes","authority":"Phase C assignment","summary":"Whole-state replaceState preserves earlier deep-frozen snapshots. v-if recreates ListView on return from empty favorites, starting All sessions at the top. Neither is a deviation; scroll retention is not required."}
+  ],
+  "warnings": ["npm ci: 6 vulnerabilities (5 moderate, 1 high); no audit remediation.","Pending install-script approvals for @nativescript/core, @parcel/watcher and core-js-pure; no approval/config changes.","Deprecations: source-map-resolve and webpack-chain. A3 build records NativeScript DEP0190 and Java deprecated-API warnings.","Bounded logcat includes thread-suspension, CPU-variant, HWUI and ashmem deprecation warning/error lines; no detected fatal pattern, not exhaustive runtime proof."],
+  "limits": ["Search/no-match/clear device-unverified under D5; covered through store tests, not device input.","Rendering, taps, launch keyboard and scrolling proven by historical Android observations and coordinator pixels only, not Vitest.","Light theme only; no dark-theme observation.","Headers are not sticky; scroll position is not retained across the observed mode switches.","No favorite buttons, detail navigation, filter modal or swipe actions in NS03; later packages require separate assignment.","No rebuild, device/emulator interaction, product/test/config edit, delegation/review dispatch, staging, commit or push in Phase C.","READY_FOR_REVIEW is not independent review approval or human acceptance. Coordinator owns review dispatch."],
+  "instrumentation": {"helperCorrection":"migration/evidence/NS03/c-freeze/helper-correction.json","summary":"Initial C helper falsely rejected Node's spec-reporter prefix after core command exit 0 (53 passed). Parser corrected, original receipts retained, preservation rechecked and remaining gates passed. No product failure waived."},
+  "unresolved": [],
+  "next": "Next: none; STOP — NS04 requires a separate human assignment"
+}

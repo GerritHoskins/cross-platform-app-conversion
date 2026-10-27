@@ -1,0 +1,35 @@
+Error: typecheck: exit 2: 
+> nativescript@1.0.0 typecheck
+> vue-tsc --noEmit
+
+src/app.ts(7,9): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(plugin: Plugin<unknown[], unknown[]>, ...options: NoInfer<unknown[]>): App<NSVElement>', gave the following error.
+    Argument of type 'ConferenceStore' is not assignable to parameter of type 'Plugin<unknown[], unknown[]>'.
+      Type 'ConferenceStore' is not assignable to type 'FunctionPlugin<unknown[]>'.
+        Type 'ConferenceStore' is not assignable to type '(app: App<any>, ...options: unknown[]) => any'.
+          Type 'ConferenceStore' provides no match for the signature '(app: App<any>, ...options: unknown[]): any'.
+  Overload 2 of 2, '(plugin: Plugin<unknown, [unknown]>, options: unknown): App<NSVElement>', gave the following error.
+    Argument of type 'ConferenceStore' is not assignable to parameter of type 'Plugin<unknown, [unknown]>'.
+      Type 'ConferenceStore' is not assignable to type 'FunctionPlugin<[unknown]>'.
+        Type 'ConferenceStore' is not assignable to type '(app: App<any>, options_0: unknown) => any'.
+          Type 'ConferenceStore' provides no match for the signature '(app: App<any>, options_0: unknown): any'.
+src/state/conference-store.ts(1,51): error TS7016: Could not find a declaration file for module 'vuex'. 'C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/node_modules/vuex/dist/vuex.mjs' implicitly has an 'any' type.
+  There are types at 'C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/node_modules/vuex/types/index.d.ts', but this result could not be resolved when respecting package.json "exports". The 'vuex' library may need to update its package.json or typings.
+src/state/conference-store.ts(44,19): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(47,21): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(55,18): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(58,21): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(61,15): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(64,25): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(67,22): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(72,22): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/state/conference-store.ts(78,20): error TS7031: Binding element 'commit' implicitly has an 'any' type.
+src/state/conference-store.ts(88,15): error TS7031: Binding element 'dispatch' implicitly has an 'any' type.
+
+    at run (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns03-r1-a2-20261026/runner.mjs:31:31)
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns03-r1-a2-20261026/runner.mjs:52:45
+    at capture (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns03-r1-a2-20261026/runner.mjs:40:9)
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns03-r1-a2-20261026/runner.mjs:52:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)

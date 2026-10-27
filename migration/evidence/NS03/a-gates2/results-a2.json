@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "package": "NS03",
+  "phase": "A2",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "branch": "migration/slice-1",
+  "head": "533ed4ab41a751b4761af31e43a757f4126e2ea0",
+  "cases": [
+    {
+      "id": "1-entry-and-preservation",
+      "status": "PASS",
+      "evidence": [
+        "entry-gate.json",
+        "preservation-entry.json",
+        "entry-index.receipt.json",
+        "node-version.receipt.json"
+      ]
+    },
+    {
+      "id": "1-amended-lockfile-scope",
+      "status": "PASS",
+      "evidence": [
+        "lockfile-scope.json",
+        "lockfile-scope-check.receipt.json"
+      ]
+    },
+    {
+      "id": "2-store-rows-screen-wiring-tests",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/nativescript/src/state/conference-store.ts",
+        "migration/nativescript/src/state/schedule-rows.ts",
+        "migration/nativescript/src/components/Schedule.vue",
+        "migration/nativescript/src/components/Home.vue",
+        "migration/nativescript/src/app.ts",
+        "migration/nativescript/__tests__/conference-store.test.ts",
+        "migration/nativescript/__tests__/schedule-rows.test.ts"
+      ],
+      "note": "Seven implementation/test files written. Compilation failed; behavior not claimed verified."
+    },
+    {
+      "id": "2-focus-mechanism",
+      "status": "NOT RUN",
+      "evidence": [
+        "focus-mechanism.json"
+      ],
+      "note": "Mechanism authored; runtime focus verification belongs to Phase B."
+    },
+    {
+      "id": "3-core-test",
+      "status": "PASS",
+      "evidence": [
+        "core-test.receipt.json",
+        "core-test.stdout.log",
+        "test-counts.json"
+      ]
+    },
+    {
+      "id": "3-npm-ci-integrity",
+      "status": "PASS",
+      "evidence": [
+        "npm-ci.receipt.json",
+        "npm-ci-integrity.json"
+      ]
+    },
+    {
+      "id": "3-verify-core",
+      "status": "PASS",
+      "evidence": [
+        "verify-core.receipt.json",
+        "verify-core.stdout.log"
+      ]
+    },
+    {
+      "id": "3-typecheck",
+      "status": "FAIL",
+      "evidence": [
+        "typecheck.receipt.json",
+        "typecheck.stdout.log",
+        "blocker.json"
+      ],
+      "note": "Exit 2. Stop-on-failure applied; no workaround."
+    },
+    {
+      "id": "3-target-test-first",
+      "status": "NOT RUN",
+      "evidence": [
+        "test-counts.json"
+      ]
+    },
+    {
+      "id": "3-target-test-second",
+      "status": "NOT RUN",
+      "evidence": [
+        "test-counts.json"
+      ]
+    },
+    {
+      "id": "3-build-android-apk",
+      "status": "NOT RUN",
+      "evidence": [
+        "blocker.json"
+      ]
+    },
+    {
+      "id": "3-bundle-vuex-alias-proof",
+      "status": "NOT RUN",
+      "evidence": [
+        "blocker.json"
+      ]
+    },
+    {
+      "id": "4-protected-paths-and-ns02-preservation",
+      "status": "PASS",
+      "evidence": [
+        "preservation-final.json",
+        "class-audit.json",
+        "final-audit.receipt.json"
+      ]
+    },
+    {
+      "id": "4-empty-index-and-class-audit",
+      "status": "PASS",
+      "evidence": [
+        "final-index.receipt.json",
+        "class-audit.json"
+      ]
+    },
+    {
+      "id": "phase-b-device-observation",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Explicitly prohibited in this session."
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "status": "PASS",
+      "tests": 53,
+      "passed": 53
+    },
+    "targetFirst": {
+      "status": "NOT RUN",
+      "files": null,
+      "tests": null
+    },
+    "targetSecond": {
+      "status": "NOT RUN",
+      "files": null,
+      "tests": null
+    },
+    "ns02": {
+      "status": "NOT RUN",
+      "unchanged": true,
+      "historicalTests": 4,
+      "note": "Historical count only; not a test pass in this run."
+    }
+  },
+  "lockfileScope": "PASS",
+  "apk": {
+    "path": null,
+    "size": null,
+    "sha256": null
+  },
+  "unresolved": [
+    "BLOCKED: Vuex 4.1.0 declarations cannot resolve under the existing bundler module resolution/package exports (TS7016); app.use TS2769 and implicit-any diagnostics also reported. No workaround attempted after the failed gate.",
+    "Target tests (including unchanged NS02 tests) have not run in A2. Authored reference, lifecycle and row tests are not verified.",
+    "Android build, APK metadata and runtime vue -> nativescript-vue alias proof NOT RUN. No prior APK is claimed for A2.",
+    "SearchBar focus mechanism is implemented statically only; launch focus/keyboard, rendering and taps require separately authorized Phase B and coordinator inspection.",
+    "npm ci retains 6 vulnerabilities (5 moderate, 1 high), deprecations and pending install-script approvals; no fixes or approvals made."
+  ],
+  "instrumentationNote": "Initial combined read-only Git inspection preceded receipt helpers and was repeated as entry-* commands. Early helper wrappers recorded PASS/error progress only; their child-command stdout/stderr receipts contain the actual gate output. No output was fabricated."
+}

@@ -1,0 +1,977 @@
+{
+  "status": "PASS",
+  "classes": [
+    {
+      "status": " M",
+      "path": "migration/nativescript/package-lock.json",
+      "class": "accepted D1 manifest; unchanged since entry"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/package.json",
+      "class": "accepted D1 manifest; unchanged since entry"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/app.ts",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/components/Home.vue",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-index.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-porcelain.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verification.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-verify.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/checkpoint-write.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/class-audit.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/commands.jsonl",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/core-preservation-after-entry-test.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/core-test-entry.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-install.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-install.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-install.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-scope.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-scope.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/d1-scope.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-ancestor.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-branch.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-branch.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-branch.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-expected-head.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-gate.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-head.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-head.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-head.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-hooks.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-index.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-index.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-index.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/entry-porcelain.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-audit.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-audit.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-audit.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-branch.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-branch.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-branch.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-core-diff.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-diff-check.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-head.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-head.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-head.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-hooks.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-hooks.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-hooks.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-index.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-index.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-index.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/final-porcelain.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/instruction-paths.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-migration-nativescript.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/inventory-package-json.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/java-version.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/java-version.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/java-version.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/lockfile-baseline.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/lockfile-scope.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/node-version.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/node-version.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/node-version.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/npm-version.receipt.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/npm-version.stderr.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/npm-version.stdout.log",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/preservation-entry.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/preservation-final.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/results-a.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates/test-counts.json",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/api-inspection.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/commands.jsonl",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/core-test.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/core-test.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/core-test.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-branch.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-gate.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-head.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-head.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-head.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-history-files.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-index.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-index.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-index.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-package-baseline.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-status.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-status.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-status.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry-target-files.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/entry.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-branch.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-branch.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-branch.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-core-diff.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-diff-check.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-head.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-head.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-head.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-index.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-index.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/final-index.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/instruction-inventory.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-core-test.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-typecheck.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/invoke-verify-core.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-head.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope-check.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/lockfile-scope.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/node-version.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/node-version.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/node-version.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci-integrity.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/npm-ci.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/preservation-entry.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/typecheck.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/typecheck.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/typecheck.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/verify-core.receipt.json",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/verify-core.stderr.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS03/a-gates2/verify-core.stdout.log",
+      "class": "A2 evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/handoffs/NS03-checkpoint-a.md",
+      "class": "immutable run 1 history; preserved"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/components/Schedule.vue",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/state/conference-store.ts",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/state/schedule-rows.ts",
+      "class": "NS03 implementation"
+    },
+    {
+      "status": "??",
+      "path": "migration/work-packages/NS03.md",
+      "class": "coordinator package; preserved"
+    }
+  ],
+  "protectedCount": 261,
+  "ns02TrackedCount": 75,
+  "immutableHistoryCount": 98,
+  "trackedChangedSinceEntry": [
+    "migration/nativescript/src/app.ts",
+    "migration/nativescript/src/components/Home.vue"
+  ],
+  "packageAndLockUnchangedSinceEntry": true,
+  "ideaHashOnly": true,
+  "ns02ProtectedTargetPaths": [
+    "src/data/**",
+    "src/shell/shell-content.ts",
+    "scripts/verify-core-integration.cjs",
+    "__tests__/load-conference.test.ts",
+    "__tests__/shell-content.test.ts"
+  ],
+  "lfViolations": []
+}

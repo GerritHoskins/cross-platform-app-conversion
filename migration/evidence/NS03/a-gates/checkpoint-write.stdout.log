@@ -1,0 +1,86 @@
+{
+  "status": "BLOCKED",
+  "cases": [
+    {
+      "id": "A1-preflight",
+      "status": "PASS"
+    },
+    {
+      "id": "A2-core-entry",
+      "status": "PASS"
+    },
+    {
+      "id": "A3-D1-install",
+      "status": "PASS"
+    },
+    {
+      "id": "A3-D1-lockfile-scope",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "A4-implementation-and-tests",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-core-test",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-npm-ci-lockfile-integrity",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-verify-core",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-typecheck",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-target-tests-first",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-target-tests-second",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-android-build-apk",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A5-vuex-runtime-alias-proof",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "A6-preservation-index-class-audit",
+      "status": "PASS"
+    },
+    {
+      "id": "phase-B-device",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "review-submission-freeze",
+      "status": "NOT RUN"
+    }
+  ],
+  "testCounts": {
+    "coreEntry": {
+      "tests": 53,
+      "passed": 53,
+      "failed": 0
+    },
+    "coreFinal": null,
+    "targetFirst": null,
+    "targetSecond": null,
+    "explanation": "Core entry count remains the expected 53. No target tests were changed or run; implementation and sequential gates stopped at D1."
+  },
+  "blockers": [
+    "node_modules/typescript",
+    "node_modules/csstype"
+  ],
+  "checkpoint": "migration/handoffs/NS03-checkpoint-a.md",
+  "result": "tools/qwen-supervisor/.runs/sol-ns03-r1-a-20261026/result.json"
+}

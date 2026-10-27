@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "package": "NS03",
+  "phase": "A3",
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "1-entry-gate-and-preservation",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/entry.receipt.json",
+        "migration/evidence/NS03/a-gates3/entry-gate.json",
+        "migration/evidence/NS03/a-gates3/preservation-entry.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Branch/full HEAD/index/status/absence/lockfile and all run 2 authored final hashes match; IDEA hash-only."
+    },
+    {
+      "id": "2-typing-amendment-and-test-fix",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/typecheck-shim.receipt.json",
+        "migration/evidence/NS03/a-gates3/fixes.json",
+        "migration/evidence/NS03/a-gates3/contract-inspection.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Declaration-only re-export shim clears all original diagnostics; frozen action tests corrected before gates; no failed fixes."
+    },
+    {
+      "id": "3-core-test",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/core-test.receipt.json",
+        "migration/evidence/NS03/a-gates3/core-test.stdout.log",
+        "migration/evidence/NS03/a-gates3/core-test.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "53/53"
+    },
+    {
+      "id": "3-npm-ci",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/npm-ci.receipt.json",
+        "migration/evidence/NS03/a-gates3/npm-ci.stdout.log",
+        "migration/evidence/NS03/a-gates3/npm-ci.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Clean install, unchanged accepted lockfile"
+    },
+    {
+      "id": "3-verify-core",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/verify-core.receipt.json",
+        "migration/evidence/NS03/a-gates3/verify-core.stdout.log",
+        "migration/evidence/NS03/a-gates3/verify-core.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Real compiled public core/fixture verified"
+    },
+    {
+      "id": "3-typecheck",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/typecheck.receipt.json",
+        "migration/evidence/NS03/a-gates3/typecheck.stdout.log",
+        "migration/evidence/NS03/a-gates3/typecheck.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Vue typecheck passed"
+    },
+    {
+      "id": "3-tests-first",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/tests-first.receipt.json",
+        "migration/evidence/NS03/a-gates3/tests-first.stdout.log",
+        "migration/evidence/NS03/a-gates3/tests-first.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "4 files / 34 tests"
+    },
+    {
+      "id": "3-tests-second",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/tests-second.receipt.json",
+        "migration/evidence/NS03/a-gates3/tests-second.stdout.log",
+        "migration/evidence/NS03/a-gates3/tests-second.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "4 files / 34 tests, same counts"
+    },
+    {
+      "id": "3-build-android",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/build-android.receipt.json",
+        "migration/evidence/NS03/a-gates3/build-android.stdout.log",
+        "migration/evidence/NS03/a-gates3/build-android.stderr.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Fresh APK built, no device interaction"
+    },
+    {
+      "id": "3-npm-ci-integrity",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/npm-ci-integrity.json",
+        "migration/evidence/NS03/a-gates3/npm-ci-integrity.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Both manifests preserved; lockfile equals baseline."
+    },
+    {
+      "id": "3-reference-ns02-test-counts",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/test-counts.json",
+        "migration/evidence/NS03/a-gates3/test-details.json",
+        "migration/evidence/NS03/a-gates3/tests-details.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "All 11 reference cases and unchanged NS02 4 tests passed."
+    },
+    {
+      "id": "3-apk-alias-proof",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/apk.json",
+        "migration/evidence/NS03/a-gates3/bundle-alias-proof.json",
+        "migration/evidence/NS03/a-gates3/bundle-alias-proof.txt",
+        "migration/evidence/NS03/a-gates3/acceptance-evidence.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Built Vuex imports aliased NativeScript-Vue; bounded module excerpt and artifact hashes."
+    },
+    {
+      "id": "4-preservation-index-class-audit",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS03/a-gates3/preservation-final.json",
+        "migration/evidence/NS03/a-gates3/class-audit.json",
+        "migration/evidence/NS03/a-gates3/final-audit.receipt.json",
+        "migration/evidence/NS03/a-gates3/final-index.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Protected paths/history/NS02 files preserved; only allowed paths; empty index."
+    },
+    {
+      "id": "phase-b-device-observation",
+      "status": "NOT RUN",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Outside A3 authorization; no runtime focus/keyboard/rendering claim."
+    },
+    {
+      "id": "phase-c-review-freeze",
+      "status": "NOT RUN",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "summary": "Coordinator-owned future phase; no dispatch/submission/freeze."
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "tests": 53,
+      "passed": 53
+    },
+    "target": {
+      "runs": [
+        {
+          "id": "first",
+          "files": 4,
+          "tests": 34,
+          "receipt": "migration/evidence/NS03/a-gates3/tests-first.receipt.json"
+        },
+        {
+          "id": "second",
+          "files": 4,
+          "tests": 34,
+          "receipt": "migration/evidence/NS03/a-gates3/tests-second.receipt.json"
+        }
+      ],
+      "files": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 27,
+          "passed": 27,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1,
+          "status": "passed"
+        }
+      ],
+      "tests": 34,
+      "passed": 34
+    },
+    "ns02": {
+      "files": 2,
+      "tests": 4,
+      "passed": 4
+    },
+    "referenceCases": {
+      "tests": 11,
+      "passed": 11,
+      "ids": [
+        "default-all",
+        "no-tracks",
+        "single-track",
+        "search-case-insensitive",
+        "search-no-match",
+        "search-plus-track",
+        "favorites-empty",
+        "favorites-some",
+        "favorites-order",
+        "add-duplicate",
+        "remove-absent"
+      ]
+    },
+    "supplementalDetailsReceipt": "migration/evidence/NS03/a-gates3/tests-details.receipt.json"
+  },
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "a290b5e9259a573a505dffa7797c5e037f510e2532be184fd3e91eadfcc69ff8",
+    "modifiedAt": "2026-10-26T21:25:37.135Z",
+    "buildReceipt": "migration/evidence/NS03/a-gates3/build-android.receipt.json"
+  },
+  "unresolved": [
+    "Phase B has not run: no install, launch, emulator/device interaction, pixels or XML. Launch focus/keyboard, rendering, scroll and mode taps need separate observation.",
+    "Search/no-match/clear are store-tested but device-unverified per D5. UI rendering/taps are not tested by Vitest.",
+    "Coordinator pixel inspection and Phase C handoff/freeze/independent review remain unrun; no review dispatch or submission in A3.",
+    "Existing dependency warnings remain: 6 vulnerabilities (5 moderate, 1 high), two deprecations and three pending install-script approvals; no dependency remediation/approval.",
+    "Build retains NativeScript DEP0190 and Java deprecated-API warnings; no runtime/device result is claimed."
+  ]
+}

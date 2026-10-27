@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "category": "receipt-helper correction; no product failure",
+  "initialInvocationExitCode": 1,
+  "failedAssertion": "core count",
+  "cause": "The helper expected TAP summary prefixes (#); Node emitted the spec reporter prefix (ℹ). The actual core command exited 0 and reported tests 53, pass 53, fail 0.",
+  "actualReceipt": "migration/evidence/NS03/c-freeze/core-test.receipt.json",
+  "actualOutput": "migration/evidence/NS03/c-freeze/core-test.stdout.log",
+  "correction": "Accept the observed spec prefix as well as TAP and explicitly require fail 0. Resume with the original command receipts retained, a fresh preservation audit, and no rewriting of earlier C receipts. No gate failure waived and no source/test/config change.",
+  "resumeCommand": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe tools/qwen-supervisor/.runs/sol-ns03-r1-c-20261026/static-gates.cjs --resume"
+}
