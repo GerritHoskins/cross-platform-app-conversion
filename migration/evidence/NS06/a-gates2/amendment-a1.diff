@@ -1,0 +1,12 @@
+diff --git a/C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/NS06/a-gates2/Schedule.run1.vue b/C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/src/components/Schedule.vue
+index 52c4237..fed33fc 100644
+--- a/C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/NS06/a-gates2/Schedule.run1.vue
++++ b/C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/src/components/Schedule.vue
+@@ -160,6 +160,7 @@ onMounted(() => {
+               <Button
+                 :text="swipeActionLabel(store.state.selection?.mode ?? 'all')"
+                 :automationText="`swipe-action-${item.session.id}`"
++                :visibility="swipeState.openId === item.session.id ? 'visible' : 'collapse'"
+                 :accessibilityHidden="true"
+                 horizontalAlignment="right"
+                 width="96"

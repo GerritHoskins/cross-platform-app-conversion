@@ -1,0 +1,956 @@
+{
+  "version": 1,
+  "package": "NS06",
+  "phase": "B",
+  "run": 2,
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "apk": {
+    "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "size": 118504855,
+    "sha256": "e58c43978bb5ae3c6b632160ee4d5a731c5ad3826e8d76f7debd02773810b341"
+  },
+  "cases": {
+    "B-install": {
+      "status": "PASS",
+      "evidence": [
+        "B-install.xml",
+        "B-install.png",
+        "B-install-hash.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    "B1": {
+      "status": "PASS",
+      "evidence": [
+        "B1-baseline.xml",
+        "B1-baseline.png",
+        "B1-baseline-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "initialPid": "17474",
+      "buttons": [
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-1",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,772][1059,898]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-4",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite University of Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1143][1059,1269]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-2",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Getting Started with Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1393][1059,1519]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-3",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Ionic Tooling. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1643][1059,1769]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-5",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Migrating to Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,2014][1059,2140]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-6",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite What's New in Vue. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,2264][1059,2337]",
+          "drawing-order": "2",
+          "hint": ""
+        }
+      ]
+    },
+    "B2-open": {
+      "status": "FAIL",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-1",
+      "name": "Breakfast"
+    },
+    "B2-dialog": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B2-closed": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B2-favorites": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B3-open": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B3-dialog": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B3-closed": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B3-still-favorite": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B4-open": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B4-dialog": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B4-removed": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Current XML right edge shifted exactly 96 dp, but raw left edge remains clipped at 0. Strict stipulated left-edge open proof did not pass; no authorization received to substitute the right-edge proof. No hidden-action tap attempted. Original assertion failure is not a diagnosis of product failure."
+    },
+    "B2-independent-empty-favorites": {
+      "status": "PASS",
+      "evidence": [
+        "B2-independent-empty-favorites.xml",
+        "B2-independent-empty-favorites.png",
+        "B2-independent-empty-favorites-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "Independent empty-mode observation, NOT add/remove evidence"
+    },
+    "B5": {
+      "status": "PASS",
+      "evidence": [
+        "B5-before.xml",
+        "B5-before.png",
+        "B5-before-observed.json",
+        "B5-after.xml",
+        "B5-after.png",
+        "B5-after-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "before": {
+        "firstHeading": {
+          "index": "0",
+          "text": "8:00 am",
+          "resource-id": "",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.ns",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,590][1080,710]",
+          "drawing-order": "1",
+          "hint": ""
+        },
+        "firstRow": {
+          "index": "0",
+          "text": "",
+          "resource-id": "session-1",
+          "class": "android.view.ViewGroup",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Breakfast",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,711][807,960]",
+          "drawing-order": "1",
+          "hint": ""
+        }
+      },
+      "after": {
+        "firstHeading": {
+          "index": "0",
+          "text": "10:00 am",
+          "resource-id": "",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.ns",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,590][1080,671]",
+          "drawing-order": "1",
+          "hint": ""
+        },
+        "firstRow": {
+          "index": "0",
+          "text": "",
+          "resource-id": "session-5",
+          "class": "android.view.ViewGroup",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Migrating to Ionic",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,672][807,921]",
+          "drawing-order": "1",
+          "hint": ""
+        }
+      },
+      "gesture": "input swipe 540 1800 540 900 400"
+    },
+    "B6-open": {
+      "status": "FAIL",
+      "evidence": [
+        "B6-open.xml",
+        "B6-open.png",
+        "B6-open-observed.json",
+        "B6-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-5",
+      "name": "Migrating to Ionic"
+    },
+    "B6-closed-no-nav": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B6-open.xml",
+        "B6-open.png",
+        "B6-open-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Strict left-edge proof did not pass. No content tap claimed as open-row close/link-guard observation."
+    },
+    "B6-detail": {
+      "status": "PASS",
+      "evidence": [
+        "B6-detail.xml",
+        "B6-detail.png",
+        "B6-detail-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-5",
+      "name": "Migrating to Ionic",
+      "note": "Independent normal closed-row navigation after XML-proven mode reset; not a successful link-guard sequence."
+    },
+    "B6-back": {
+      "status": "PASS",
+      "evidence": [
+        "B6-back.xml",
+        "B6-back.png",
+        "B6-back-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "backNode": {
+        "index": "0",
+        "text": "",
+        "resource-id": "",
+        "class": "android.widget.ImageButton",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Back",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,128][147,275]",
+        "drawing-order": "2",
+        "hint": ""
+      }
+    },
+    "B7-a-open": {
+      "status": "FAIL",
+      "evidence": [
+        "B7-a-open.xml",
+        "B7-a-open.png",
+        "B7-a-open-observed.json",
+        "B7-a-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-1",
+      "name": "Breakfast"
+    },
+    "B7-b-open": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B7-a-open.xml",
+        "B7-a-open.png",
+        "B7-a-open-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Strict left-edge open-row proof did not pass; no dependent second reveal or close swipe executed."
+    },
+    "B7-closed": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B7-a-open.xml",
+        "B7-a-open.png",
+        "B7-a-open-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Strict left-edge open-row proof did not pass; no dependent second reveal or close swipe executed."
+    },
+    "B8-open": {
+      "status": "FAIL",
+      "evidence": [
+        "B8-open.xml",
+        "B8-open.png",
+        "B8-open-observed.json",
+        "B8-mode-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-1",
+      "name": "Breakfast"
+    },
+    "B8-mode-closed": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B8-mode-closed.xml",
+        "B8-mode-closed.png",
+        "B8-mode-closed-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Open prerequisite failed"
+    },
+    "B8-open-again": {
+      "status": "FAIL",
+      "evidence": [
+        "B8-open-again.xml",
+        "B8-open-again.png",
+        "B8-open-again-observed.json",
+        "B8-filter-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowId": "session-1",
+      "name": "Breakfast"
+    },
+    "B8-filtered": {
+      "status": "PASS",
+      "evidence": [
+        "B8-filtered.xml",
+        "B8-filtered.png",
+        "B8-filtered-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "rowIds": [
+        "session-1",
+        "session-12"
+      ],
+      "allTracksRaw": [
+        {
+          "index": "3",
+          "text": "Food",
+          "resource-id": "",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.ns",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[42,885][765,928]",
+          "drawing-order": "4",
+          "hint": ""
+        },
+        {
+          "index": "3",
+          "text": "Food",
+          "resource-id": "",
+          "class": "android.widget.TextView",
+          "package": "dev.translationtest.ns",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[42,1256][765,1299]",
+          "drawing-order": "4",
+          "hint": ""
+        }
+      ]
+    },
+    "B8-filter-close": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B8-open-again.xml",
+        "B8-open-again.png",
+        "B8-open-again-observed.json",
+        "B8-filtered.xml",
+        "B8-filtered.png",
+        "B8-filtered-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    "B8-restored": {
+      "status": "PASS",
+      "evidence": [
+        "B8-restored.xml",
+        "B8-restored.png",
+        "B8-restored-observed.json",
+        "B8-all-selected.xml",
+        "B8-all-selected.png",
+        "B8-all-selected-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    "B9-buttons": {
+      "status": "PASS",
+      "evidence": [
+        "B9-buttons.xml",
+        "B9-buttons.png",
+        "B9-buttons-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "column1Buttons": [
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-1",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,772][1059,898]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-4",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite University of Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1143][1059,1269]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-2",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Getting Started with Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1393][1059,1519]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-3",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Ionic Tooling. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,1643][1059,1769]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-5",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite Migrating to Ionic. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,2014][1059,2140]",
+          "drawing-order": "2",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite",
+          "resource-id": "favorite-6",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite What's New in Vue. Favorite",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[828,2264][1059,2337]",
+          "drawing-order": "2",
+          "hint": ""
+        }
+      ]
+    },
+    "B9-hidden-actions": {
+      "status": "PASS",
+      "evidence": [
+        "B9-buttons.xml",
+        "B9-buttons.png",
+        "B9-buttons-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "separateAccessibleSwipeActionNodes": [],
+      "note": "XML accessibility exposure only; visual labels/reveal await coordinator pixels"
+    },
+    "B-logcat": {
+      "status": "PASS",
+      "evidence": [
+        "B-logcat.txt",
+        "B-logcat-warnings-errors-verbatim.txt",
+        "B-logcat-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    "B-environment": {
+      "status": "PASS",
+      "evidence": [
+        "environment-before.json",
+        "environment-after.json",
+        "environment-comparison.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    "B11-final": {
+      "status": "PASS",
+      "evidence": [
+        "B11-final.xml",
+        "B11-final.png",
+        "B11-final-observed.json",
+        "B8-all-selected.xml",
+        "B8-all-selected.png",
+        "B8-all-selected-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "note": "All tracks selected in B8-all-selected; no subsequent filter change. All sessions; foreground schedule."
+    },
+    "B9-swipe-coexistence": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B9-buttons.xml",
+        "B9-buttons.png",
+        "B9-buttons-observed.json",
+        "observation-summary.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "reason": "Retained buttons and XML-inaccessible action confirmed; working swipe-path action not accepted under strict left-edge proof, so coexistence not claimed PASS."
+    },
+    "B2": {
+      "status": "FAIL",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-reveal.json",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B2-open",
+        "B2-dialog",
+        "B2-closed",
+        "B2-favorites"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B3": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B3-open",
+        "B3-dialog",
+        "B3-closed",
+        "B3-still-favorite"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B4": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B2-open.xml",
+        "B2-open.png",
+        "B2-open-observed.json",
+        "B2-clipping-measurement.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B4-open",
+        "B4-dialog",
+        "B4-removed"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B6": {
+      "status": "FAIL",
+      "evidence": [
+        "B6-open.xml",
+        "B6-open.png",
+        "B6-open-observed.json",
+        "B6-reveal.json",
+        "B6-detail.xml",
+        "B6-detail.png",
+        "B6-detail-observed.json",
+        "B6-back.xml",
+        "B6-back.png",
+        "B6-back-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B6-open",
+        "B6-closed-no-nav",
+        "B6-detail",
+        "B6-back"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B7": {
+      "status": "FAIL",
+      "evidence": [
+        "B7-a-open.xml",
+        "B7-a-open.png",
+        "B7-a-open-observed.json",
+        "B7-a-reveal.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B7-a-open",
+        "B7-b-open",
+        "B7-closed"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B8": {
+      "status": "FAIL",
+      "evidence": [
+        "B8-open.xml",
+        "B8-open.png",
+        "B8-open-observed.json",
+        "B8-mode-reveal.json",
+        "B8-mode-closed.xml",
+        "B8-mode-closed.png",
+        "B8-mode-closed-observed.json",
+        "B8-open-again.xml",
+        "B8-open-again.png",
+        "B8-open-again-observed.json",
+        "B8-filter-reveal.json",
+        "B8-filtered.xml",
+        "B8-filtered.png",
+        "B8-filtered-observed.json",
+        "B8-restored.xml",
+        "B8-restored.png",
+        "B8-restored-observed.json",
+        "B8-all-selected.xml",
+        "B8-all-selected.png",
+        "B8-all-selected-observed.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B8-open",
+        "B8-mode-closed",
+        "B8-open-again",
+        "B8-filtered",
+        "B8-filter-close",
+        "B8-restored"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    },
+    "B9": {
+      "status": "BLOCKED",
+      "evidence": [
+        "B9-buttons.xml",
+        "B9-buttons.png",
+        "B9-buttons-observed.json",
+        "observation-summary.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+      "subcases": [
+        "B9-buttons",
+        "B9-hidden-actions",
+        "B9-swipe-coexistence"
+      ],
+      "note": "Aggregate includes observation-protocol failure/blockers, not a product-defect diagnosis; see observation-summary.json."
+    }
+  },
+  "caseCounts": {
+    "PASS": 13,
+    "FAIL": 9,
+    "BLOCKED": 19
+  },
+  "countsNote": "Aggregates and subcases overlap; not independent test totals.",
+  "evidence": [
+    "entry-gate.json",
+    "final-preservation.json",
+    "capture-index.json",
+    "observation-summary.json",
+    "commands.jsonl",
+    "environment-comparison.json"
+  ],
+  "unresolved": [
+    "Open-row proof requires coordinator disposition: XML clips left edges at 0 while right edges move exactly 96 dp. Original strict FAIL records preserved; no substitute proof or action tap authorized.",
+    "Swipe-path add/already-added/remove dialogs, dialog-answer close, link guard, single-open replacement and right-swipe close remain unverified.",
+    "Open-row mode/filter closing and swipe/button coexistence not claimed accepted under strict proof rule.",
+    "Every PNG awaits coordinator pixel/privacy inspection. No Phase C authorization."
+  ]
+}

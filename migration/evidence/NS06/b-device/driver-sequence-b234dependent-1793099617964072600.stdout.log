@@ -1,0 +1,15 @@
+CASE B2-dialog BLOCKED
+CASE B2-closed BLOCKED
+CASE B2-favorites BLOCKED
+CASE B3-open BLOCKED
+CASE B3-dialog BLOCKED
+CASE B3-closed BLOCKED
+CASE B3-still-favorite BLOCKED
+CASE B4-open BLOCKED
+CASE B4-dialog BLOCKED
+CASE B4-removed BLOCKED
+CASE B2 FAIL
+CASE B3 BLOCKED
+CASE B4 BLOCKED
+B4-independent-empty-favorites {"expectedStateAppeared": true, "rows": [], "labels": [{"text": "Conference", "resource-id": "", "content-desc": "Conference", "bounds": "[42,166][316,237]", "clickable": "false", "selected": "false"}, {"text": "", "resource-id": "Search sessions", "content-desc": "", "bounds": "[0,275][1080,401]", "clickable": "false", "selected": "false"}, {"text": "   Search sessions", "resource-id": "dev.translationtest.ns:id/search_src_text", "content-desc": "", "bounds": "[21,289][954,384]", "clickable": "true", "selected": "false"}, {"text": "", "resource-id": "dev.translationtest.ns:id/search_close_btn", "content-desc": "Clear query", "bounds": "[954,275][1059,398]", "clickable": "true", "selected": "false"}, {"text": "ALL SESSIONS", "resource-id": "android:id/title", "content-desc": "", "bounds": "[98,422][341,569]", "clickable": "false", "selected": "false"}, {"text": "FAVORITE SESSIONS", "resource-id": "android:id/title", "content-desc": "", "bounds": "[450,422][743,569]", "clickable": "false", "selected": "true"}, {"text": "Filter", "resource-id": "Filter sessions", "content-desc": "Filter sessions. Filter", "bounds": "[817,422][1048,569]", "clickable": "true", "selected": "false"}, {"text": "No favorite sessions.", "resource-id": "", "content-desc": "", "bounds": "[63,1442][1017,1485]", "clickable": "false", "selected": "false"}]}
+CASE B4-independent-empty-baseline PASS

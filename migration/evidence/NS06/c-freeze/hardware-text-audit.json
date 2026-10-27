@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": 1,
+      "source": "migration/evidence/NS06/b-device/commands.jsonl",
+      "commands": 392,
+      "inputCommands": 24,
+      "hardwareKeyEvents": 0,
+      "textInputs": 0,
+      "forbidden": [],
+      "systemEdgeGesture": "none reported"
+    },
+    {
+      "run": 2,
+      "source": "migration/evidence/NS06/b-device2/commands.jsonl",
+      "commands": 332,
+      "inputCommands": 28,
+      "hardwareKeyEvents": 0,
+      "textInputs": 0,
+      "forbidden": [],
+      "systemEdgeGesture": "none reported"
+    },
+    {
+      "run": 3,
+      "source": "migration/evidence/NS06/b-device3/commands.jsonl",
+      "commands": 235,
+      "inputCommands": 23,
+      "hardwareKeyEvents": 0,
+      "textInputs": 0,
+      "forbidden": [],
+      "systemEdgeGesture": "Coordinator C2: input swipe from x=40 triggered Android system Back; not a hardware keyevent"
+    },
+    {
+      "run": 4,
+      "source": "migration/evidence/NS06/b-device4/commands.jsonl",
+      "commands": 167,
+      "inputCommands": 14,
+      "hardwareKeyEvents": 0,
+      "textInputs": 0,
+      "forbidden": [],
+      "systemEdgeGesture": "none reported"
+    }
+  ],
+  "scope": "Reparsed historical commands only; no device interaction. No keyevent or text input in any run. Run 3 system Back was a swipe-edge effect, not a hardware key."
+}

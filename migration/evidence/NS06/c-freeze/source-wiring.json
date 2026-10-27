@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "sources": [
+    "migration/nativescript/src/components/Schedule.vue",
+    "migration/nativescript/src/state/row-swipe.ts",
+    "migration/nativescript/__tests__/row-swipe.test.ts"
+  ],
+  "changeFavoriteByteIdenticalToHEAD": true,
+  "columnOneByteIdenticalToHEAD": true,
+  "watcher": "watch([\n  () => store.state.selection?.searchText,\n  () => store.state.selection?.mode,\n  () => store.state.selection?.selectedTracks,\n], () => {\n  swipeState.value = rowSwipeReducer(swipeState.value, { type: 'list-changed' });",
+  "A1": {
+    "status": "PASS",
+    "beforeSha256": "799c36996b531913d362ac243ba7a50ce39ddf81fc6ff548db60bca9594e410a",
+    "afterSha256": "b1e2d1d9f259e4c925a498117d1af8f4ec2bb6f08bbd0eaa0e4812cf2db711d4",
+    "addition": ":visibility=\"swipeState.openId === item.session.id ? 'visible' : 'collapse'\"",
+    "exactOneLineAddition": true,
+    "unchanged": [
+      "all other Schedule.vue bytes",
+      "row-swipe.ts",
+      "row-swipe.test.ts"
+    ],
+    "diff": "amendment-a1.diff",
+    "expectedDiffExitCode": 1
+  },
+  "sourceHashMatchesA2": true,
+  "scope": "Static source checks only; gesture rendering and native dialogs are B3/B4 evidence, not Vitest"
+}

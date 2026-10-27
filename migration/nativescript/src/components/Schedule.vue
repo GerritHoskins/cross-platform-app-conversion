@@ -1,14 +1,23 @@
 <script lang="ts" setup>
-import { $navigateTo, $showModal, computed, onMounted } from 'nativescript-vue';
-import { Dialogs, type EventData, type SearchBar, type SegmentedBar, type View } from '@nativescript/core';
+import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
+import { Dialogs, SwipeDirection, type EventData, type SearchBar, type SegmentedBar, type SwipeGestureEventData, type View } from '@nativescript/core';
 import SessionDetail from './SessionDetail.vue';
 import TrackFilter from './TrackFilter.vue';
 import { applyFilterResult } from '../state/track-filter';
 import { useConferenceStore } from '../state/conference-store';
 import { listFavoriteAction } from '../state/session-detail';
 import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
+import { rowSwipeReducer, rowTapAction, swipeActionLabel, type RowSwipeState } from '../state/row-swipe';
 
 const store = useConferenceStore();
+const swipeState = ref<RowSwipeState>({ openId: null });
+watch([
+  () => store.state.selection?.searchText,
+  () => store.state.selection?.mode,
+  () => store.state.selection?.selectedTracks,
+], () => {
+  swipeState.value = rowSwipeReducer(swipeState.value, { type: 'list-changed' });
+});
 const ready = computed(() => store.state.status === 'ready');
 const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');
 const rows = computed(() => toScheduleRows(store.getters.scheduleGroups));
@@ -24,8 +33,25 @@ function openFilter() {
   });
 }
 
+function swipeRow(event: SwipeGestureEventData, id: number) {
+  if (event.direction === SwipeDirection.left) {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-left', id });
+  } else if (event.direction === SwipeDirection.right) {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-right', id });
+  }
+}
+
 function openSession(event: EventData, id: number) {
+  if (rowTapAction(swipeState.value, id) === 'close') {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-right', id });
+    return;
+  }
   $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
+}
+
+async function changeSwipeFavorite(id: number) {
+  await changeFavorite(id);
+  swipeState.value = rowSwipeReducer(swipeState.value, { type: 'settled', id });
 }
 
 async function changeFavorite(id: number) {
@@ -130,19 +156,32 @@ onMounted(() => {
         </template>
         <template #session="{ item }">
           <GridLayout :key="item.key" columns="*,auto">
-            <StackLayout
-              col="0"
-              :automationText="`session-${item.session.id}`"
-              class="schedule-session"
-              accessibilityRole="link"
-              :accessibilityLabel="item.session.name"
-              @tap="openSession($event, item.session.id)"
-            >
-              <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
-              <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
-              <Label :text="item.session.location" textWrap="true" color="#333333" />
-              <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
-            </StackLayout>
+            <GridLayout col="0">
+              <Button
+                :text="swipeActionLabel(store.state.selection?.mode ?? 'all')"
+                :automationText="`swipe-action-${item.session.id}`"
+                :visibility="swipeState.openId === item.session.id ? 'visible' : 'collapse'"
+                :accessibilityHidden="true"
+                horizontalAlignment="right"
+                width="96"
+                minHeight="48"
+                @tap="changeSwipeFavorite(item.session.id)"
+              />
+              <StackLayout
+                :automationText="`session-${item.session.id}`"
+                class="schedule-session"
+                :translateX="swipeState.openId === item.session.id ? -96 : 0"
+                accessibilityRole="link"
+                :accessibilityLabel="item.session.name"
+                @swipe="swipeRow($event, item.session.id)"
+                @tap="openSession($event, item.session.id)"
+              >
+                <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
+                <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
+                <Label :text="item.session.location" textWrap="true" color="#333333" />
+                <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
+              </StackLayout>
+            </GridLayout>
             <Button
               col="1"
               :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"

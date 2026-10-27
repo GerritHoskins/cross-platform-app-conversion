@@ -1,0 +1,38 @@
+{
+  "source": "Actual terminal tool returns in this Phase C supervisor stream; terminal-level timings not exposed and not reconstructed",
+  "invocations": [
+    {
+      "helper": "gates.mjs",
+      "exitCode": 1,
+      "reason": "core-json-test exit 7: ERR_UNSUPPORTED_ESM_URL_SCHEME",
+      "timing": null,
+      "receipt": "migration/evidence/NS06/c-freeze/core-json-test.receipt.json"
+    },
+    {
+      "helper": "gates-continue.mjs",
+      "exitCode": 0,
+      "timing": null
+    },
+    {
+      "helper": "reconcile.mjs",
+      "attempt": 1,
+      "exitCode": 1,
+      "reason": "Unknown command layout: history includes string-form outer-terminal provenance",
+      "timing": null
+    },
+    {
+      "helper": "reconcile.mjs",
+      "attempt": 2,
+      "exitCode": 1,
+      "reason": "Column 1 changed: helper regex expected closing tag; actual unchanged Button is self-closing",
+      "timing": null
+    },
+    {
+      "helper": "reconcile.mjs",
+      "attempt": 3,
+      "exitCode": 0,
+      "timing": null
+    }
+  ],
+  "disposition": "All corrected in run-directory helpers only. Historical/product records not edited."
+}

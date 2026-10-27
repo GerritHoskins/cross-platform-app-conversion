@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "unchangedFunctions": [
+    "function openFilter()",
+    "async function changeFavorite(id: number)",
+    "function changeSearch(event: EventData)",
+    "function changeMode(event: EventData)",
+    "function clearLaunchFocus(event: EventData)"
+  ],
+  "preserved": [
+    "NS03 derived/loading/error/empty states",
+    "SearchBar focus and bindings",
+    "NS04 column 1 Favorite/Remove controls and dialog handler",
+    "NS05 Filter controls",
+    "existing opaque schedule-session style"
+  ],
+  "watcher": "shallow multi-source watch: searchText, mode, selectedTracks only; no deep or favorites watch",
+  "gesture": "core discrete swipe on row content: left opens, right closes; other directions ignored",
+  "action": "await unchanged changeFavorite(id), then settled(id)",
+  "tap": "rowTapAction closes matching open row and returns before navigation",
+  "reveal": "two layers in column 0; right aligned 96-wide minHeight 48 accessibility-hidden action behind opaque content translated -96 when its ID is open",
+  "limitations": "Source assertions and pure Vitest tests do not prove native activation, hit testing, scrolling, accessibility output, recycling presentation or dialog timing on device"
+}

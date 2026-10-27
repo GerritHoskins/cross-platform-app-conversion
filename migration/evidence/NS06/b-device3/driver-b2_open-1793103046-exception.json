@@ -1,0 +1,4 @@
+{
+  "error": "case() got multiple values for argument 'name'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns06-r1-b3-20261027\\device.py\", line 172, in main\n    try: (globals() if namespace is None else namespace)[sys.argv[1]]()\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns06-r1-b3-20261027\\steps.py\", line 12, in b2_open\n    case('B2-open','PASS' if ok else 'FAIL',evs('B2-open')+evs('B2-nonfavorite-precondition')+['B2-reveal.json'],rowId=r,name=name)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: case() got multiple values for argument 'name'\n"
+}

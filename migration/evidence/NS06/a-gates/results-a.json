@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "package": "NS06",
+  "phase": "A",
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "A1-entry",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/entry-gate.json",
+        "migration/evidence/NS06/a-gates/entry-branch.receipt.json",
+        "migration/evidence/NS06/a-gates/entry-head.receipt.json",
+        "migration/evidence/NS06/a-gates/entry-index.receipt.json",
+        "migration/evidence/NS06/a-gates/entry-porcelain.receipt.json",
+        "migration/evidence/NS06/a-gates/entry-ancestor.receipt.json",
+        "migration/evidence/NS06/a-gates/entry-hooks.receipt.json"
+      ]
+    },
+    {
+      "id": "A1-versions-preservation",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/preservation-entry.json",
+        "migration/evidence/NS06/a-gates/node-version.receipt.json",
+        "migration/evidence/NS06/a-gates/npm-version.receipt.json",
+        "migration/evidence/NS06/a-gates/installed-versions-entry.receipt.json"
+      ]
+    },
+    {
+      "id": "A2-core-entry",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/core-entry-test.receipt.json",
+        "migration/evidence/NS06/a-gates/core-entry-counts.json",
+        "migration/evidence/NS06/a-gates/core-entry-unchanged.receipt.json"
+      ]
+    },
+    {
+      "id": "A3-D1-D4-wiring",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/source-wiring-audit.json",
+        "migration/evidence/NS06/a-gates/source-wiring-audit.receipt.json"
+      ]
+    },
+    {
+      "id": "A3-D5-tests",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/test-counts.json",
+        "migration/evidence/NS06/a-gates/tests-first.json",
+        "migration/evidence/NS06/a-gates/tests-second.json"
+      ]
+    },
+    {
+      "id": "A4-core",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/core-gate-test.receipt.json",
+        "migration/evidence/NS06/a-gates/core-gate-counts.json",
+        "migration/evidence/NS06/a-gates/core-gate-unchanged.receipt.json"
+      ]
+    },
+    {
+      "id": "A4-ci",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/npm-ci.receipt.json",
+        "migration/evidence/NS06/a-gates/post-ci-dependency-hashes.json"
+      ]
+    },
+    {
+      "id": "A4-verify-core",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/verify-core.receipt.json"
+      ]
+    },
+    {
+      "id": "A4-typecheck",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/typecheck.receipt.json"
+      ]
+    },
+    {
+      "id": "A4-tests-first",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/tests-first.receipt.json",
+        "migration/evidence/NS06/a-gates/tests-first.json"
+      ]
+    },
+    {
+      "id": "A4-tests-second-repeatability",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/tests-second.receipt.json",
+        "migration/evidence/NS06/a-gates/tests-second.json",
+        "migration/evidence/NS06/a-gates/test-counts.json"
+      ]
+    },
+    {
+      "id": "A4-build",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/build-android.receipt.json",
+        "migration/evidence/NS06/a-gates/apk.json"
+      ]
+    },
+    {
+      "id": "A4-packaged-bundle",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/bundle-evidence.json",
+        "migration/evidence/NS06/a-gates/bundle-evidence.receipt.json"
+      ]
+    },
+    {
+      "id": "A5-preservation",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/final-audit.json",
+        "migration/evidence/NS06/a-gates/checkpoint-audit.json"
+      ]
+    },
+    {
+      "id": "A5-index-and-classes",
+      "status": "PASS",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/final-index.receipt.json",
+        "migration/evidence/NS06/a-gates/checkpoint-index.receipt.json",
+        "migration/evidence/NS06/a-gates/checkpoint-audit.json"
+      ]
+    },
+    {
+      "id": "B-device-and-pixels",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/handoffs/NS06-checkpoint-a.md"
+      ],
+      "reason": "Explicit Phase A stop; not authorized in this session."
+    },
+    {
+      "id": "C-review-freeze",
+      "status": "NOT RUN",
+      "observer": "Hermes GPT-6.1 Sol high (software)",
+      "evidence": [
+        "migration/handoffs/NS06-checkpoint-a.md"
+      ],
+      "reason": "No submission, freeze or review dispatch authorized."
+    }
+  ],
+  "testCounts": {
+    "coreEntry": {
+      "tests": 53,
+      "failures": 0,
+      "source": "Node test runner summary in core-entry-test.stdout.log (Vitest counts use JSON separately)"
+    },
+    "coreGate": {
+      "tests": 53,
+      "failures": 0,
+      "source": "core-gate-test.stdout.log"
+    },
+    "baseline": {
+      "source": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/evidence/NS05/c-freeze/tests-first.json",
+      "files": 6,
+      "tests": 94
+    },
+    "first": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    },
+    "second": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    },
+    "delta": {
+      "files": 1,
+      "tests": 21
+    },
+    "baselineIdentitiesRetained": true,
+    "perFile": [
+      {
+        "path": "__tests__/conference-store.test.ts",
+        "tests": 39,
+        "passed": 39
+      },
+      {
+        "path": "__tests__/load-conference.test.ts",
+        "tests": 3,
+        "passed": 3
+      },
+      {
+        "path": "__tests__/row-swipe.test.ts",
+        "tests": 21,
+        "passed": 21
+      },
+      {
+        "path": "__tests__/schedule-rows.test.ts",
+        "tests": 3,
+        "passed": 3
+      },
+      {
+        "path": "__tests__/session-detail.test.ts",
+        "tests": 29,
+        "passed": 29
+      },
+      {
+        "path": "__tests__/shell-content.test.ts",
+        "tests": 1,
+        "passed": 1
+      },
+      {
+        "path": "__tests__/track-filter.test.ts",
+        "tests": 19,
+        "passed": 19
+      }
+    ]
+  },
+  "apk": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "5bb29364c308853eac7701ee843f3719ce81722f71b8fc30dedb87b859814a30",
+    "modifiedAt": "2026-10-27T11:02:31.256Z",
+    "buildReceipt": "build-android.receipt.json"
+  },
+  "bundleEvidence": {
+    "apkSha256": "5bb29364c308853eac7701ee843f3719ce81722f71b8fc30dedb87b859814a30",
+    "entry": "assets/app/bundle.mjs",
+    "bundleSize": 145340,
+    "matches": [
+      {
+        "needle": "swipe-action-",
+        "byteOffset": 60725,
+        "snippet": "                                      automationText: `swipe-action-${item.session.id}`,\n                                            "
+      },
+      {
+        "needle": "swipe-left",
+        "byteOffset": 39169,
+        "snippet": "MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'swipe-left', id });\n            }\n            else if (event.direction === "
+      },
+      {
+        "needle": "list-changed",
+        "byteOffset": 37777,
+        "snippet": "MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'list-changed' });\n        });\n        const ready = (0,vue__WEBPACK_IMPORTED_"
+      },
+      {
+        "needle": "swipe-right",
+        "byteOffset": 39444,
+        "snippet": "MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'swipe-right', id });\n            }\n        }\n        function openSession(ev"
+      },
+      {
+        "needle": "settled",
+        "byteOffset": 40248,
+        "snippet": "MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'settled', id });\n        }\n        async function changeFavorite(id) {\n "
+      }
+    ],
+    "bounded": true,
+    "inspection": "Read APK ZIP central directory; inflate exact app bundle; literal bounded string search, no bundle dump"
+  },
+  "unresolved": [
+    "Phase B not run: gesture activation/reveal, native swipe-path dialogs and settlement, vertical scrolling, link guard, single-open/recycling presentation, list-change closing and retained accessible buttons require device evidence and coordinator pixel inspection.",
+    "No release or iOS build/observation. Gesture feel versus Ionic remains unverified. Hardware Back, keyboard, large text, dark mode and full Android acceptance belong to NS07.",
+    "npm ci reports 6 existing vulnerabilities (5 moderate, 1 high), deprecation warnings and 3 pending install-script approvals. Android CLI emits DEP0190. No dependency/policy changes made."
+  ]
+}
