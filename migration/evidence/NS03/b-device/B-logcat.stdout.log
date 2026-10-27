@@ -1,0 +1,53 @@
+--------- beginning of main
+10-26 21:34:00.373  6565  6565 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-26 21:34:00.919  6565  6565 W nslationtest.ns: Suspending all threads took: 13.813ms
+10-26 21:34:00.936  6565  6565 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-26 21:34:00.941  6565  6565 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-26 21:34:00.941  6565  6565 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-26 21:34:01.732  6565  6565 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-26 21:34:03.246  6565  6565 D nativeloader: Configuring clns-9 for other apk /data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/lib/x86_64:/data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-26 21:34:03.336  6565  6565 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-26 21:34:03.583  6565  6565 V GraphicsEnvironment: Currently set values for:
+10-26 21:34:03.583  6565  6565 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-26 21:34:03.583  6565  6565 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-26 21:34:03.583  6565  6565 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-26 21:34:03.586  6565  6565 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-26 21:34:03.586  6565  6565 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-26 21:34:03.586  6565  6565 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-26 21:34:04.836  6565  6565 D nativeloader: Load /data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk!classes5.dex): ok
+10-26 21:34:04.836  6565  6565 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-26 21:34:06.054  6565  6565 D TNS.Runtime: V8 version 14.9.207.39
+10-26 21:34:07.691  6565  6565 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-26 21:34:08.519  6565  6565 I Choreographer: Skipped 255 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-26 21:34:08.552  6565  6621 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-26 21:34:08.625  6565  6565 I nslationtest.ns: AssetManager2(0x738ba9013a98) locale list changing from [] to [en-US]
+10-26 21:34:09.081  6565  6621 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-26 21:34:09.091  6565  6621 I EGL_emulation: Opening libGLESv2_emulation.so
+10-26 21:34:09.104  6565  6621 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-26 21:34:09.153  6565  6565 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-26 21:34:09.161  6565  6565 I nslationtest.ns: AssetManager2(0x738ba900e958) locale list changing from [] to [en-US]
+10-26 21:34:09.334  6565  6565 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-26 21:34:09.453  6565  6565 W HWUI    : Image decoding logging dropped!
+10-26 21:34:09.457  6565  6565 W HWUI    : Image decoding logging dropped!
+10-26 21:34:09.597  6565  6565 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-26 21:34:09.599  6565  6565 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-26 21:34:09.801  6565  6565 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-26 21:34:10.249  6565  6565 W HWUI    : Image decoding logging dropped!
+10-26 21:34:10.250  6565  6565 W HWUI    : Image decoding logging dropped!
+10-26 21:34:10.268  6565  6565 D AutofillManager: view not autofillable - not passing ime action check
+10-26 21:34:10.437  6565  6565 D AutofillManager: view not autofillable - not passing ime action check
+10-26 21:34:10.452  6565  6565 I ImeTracker: dev.translationtest.ns:ad2a7f9a: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-26 21:34:10.480  6565  6565 I ImeTracker: dev.translationtest.ns:ad2a7f9a: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-26 21:34:10.480  6565  6565 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-26 21:34:10.639  6565  6565 W HWUI    : Unknown dataspace 0
+10-26 21:34:10.694  6565  6565 D AutofillManager: view not autofillable - not passing ime action check
+10-26 21:34:10.694  6565  6565 D AutofillManager: view not autofillable - not passing ime action check
+10-26 21:34:11.096  6565  6574 I nslationtest.ns: Background concurrent mark compact GC freed 6773KB AllocSpace bytes, 11(284KB) LOS objects, 49% free, 3380KB/6761KB, paused 35.975ms,12.889ms total 154.860ms
+10-26 21:34:11.588  6565  6565 I Choreographer: Skipped 53 frames!  The application may be doing too much work on its main thread.
+10-26 21:34:11.625  6565  6588 I HWUI    : Davey! duration=842ms; Flags=1, FrameTimelineVsyncId=32400, IntendedVsync=32007221668496, Vsync=32007221668496, InputEventId=0, HandleInputStart=32007224265700, AnimationStart=32007224284600, PerformTraversalsStart=32007224346400, DrawStart=32007742387600, FrameDeadline=32007238335162, FrameStartTime=32007224252900, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=32007753539900, SyncStart=32007755820400, IssueDrawCommandsStart=32007758432500, SwapBuffers=32007967653900, FrameCompleted=32008066419400, DequeueBufferDuration=16000, QueueBufferDuration=228600, GpuCompleted=32008066289500, SwapBuffersCompleted=32008066419400, DisplayPresentTime=127051726603344, CommandSubmissionCompleted=32007967653900, 
+10-26 21:34:11.722  6565  6591 I HWUI    : Davey! duration=965ms; Flags=0, FrameTimelineVsyncId=32415, IntendedVsync=32007238335162, Vsync=32008121668460, InputEventId=0, HandleInputStart=32008140309400, AnimationStart=32008140345500, PerformTraversalsStart=32008146837100, DrawStart=32008162894600, FrameDeadline=32008088335128, FrameStartTime=32008130951200, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=32008163628400, SyncStart=32008195639100, IssueDrawCommandsStart=32008195695900, SwapBuffers=32008196357300, FrameCompleted=32008235654700, DequeueBufferDuration=16700, QueueBufferDuration=192200, GpuCompleted=32008235570100, SwapBuffersCompleted=32008235654700, DisplayPresentTime=127047431958672, CommandSubmissionCompleted=32008196357300, 
+10-26 21:34:12.033  6565  6565 D InsetsController: hide(ime(), fromIme=false)
+10-26 21:34:12.044  6565  6565 I ImeTracker: dev.translationtest.ns:c460b1a7: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-26 21:34:13.600  6565  6573 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-26 21:34:13.842  6565  6646 D ProfileInstaller: Installing profile for dev.translationtest.ns

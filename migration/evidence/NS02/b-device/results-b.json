@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "package": "NS02",
+  "phase": "B",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "run": "sol-ns02-r1-b-20261026",
+  "gate": {
+    "status": "BLOCKED",
+    "branch": "migration/slice-1",
+    "expectedHead": "52ae6de",
+    "actualHead": "f2f51ea460d405f4d454f0f8a1a0080a913694d7",
+    "indexEmpty": true,
+    "apkSizeAndSha256Match": true,
+    "phaseATargetFilesChecked": 8,
+    "phaseATargetHashesMatch": true,
+    "evidence": ["migration/evidence/NS02/b-device/entry-gate.json", "migration/evidence/NS02/b-device/commands.jsonl"]
+  },
+  "cases": {
+    "B-install": {
+      "status": "BLOCKED",
+      "reason": "Entry HEAD gate failed; no ADB command or install executed.",
+      "evidence": ["migration/evidence/NS02/b-device/entry-gate.json"]
+    },
+    "B-launch": {
+      "status": "BLOCKED",
+      "reason": "Entry HEAD gate failed; no launch or assertion frame captured.",
+      "evidence": ["migration/evidence/NS02/b-device/entry-gate.json"]
+    },
+    "B-relaunch": {
+      "status": "BLOCKED",
+      "reason": "Entry HEAD gate failed; no relaunch, PID observation or assertion frame captured.",
+      "evidence": ["migration/evidence/NS02/b-device/entry-gate.json"]
+    },
+    "B-logcat": {
+      "status": "BLOCKED",
+      "reason": "Entry HEAD gate failed; no logcat capture executed.",
+      "evidence": ["migration/evidence/NS02/b-device/entry-gate.json"]
+    }
+  },
+  "environmentBefore": "NOT RUN: stopped at repository gate before any ADB call",
+  "environmentAfter": "NOT RUN: no device actions occurred",
+  "assertionFrames": [],
+  "deviceCommandsExecuted": false,
+  "foregroundState": "Not observed or changed; foreground requirement not verified because entry gate failed",
+  "pixelInspection": "No PNGs produced; no pixel claims",
+  "unresolved": ["HEAD mismatch: expected 52ae6de; actual f2f51ea460d405f4d454f0f8a1a0080a913694d7. Coordinator disposition required; no Git repair attempted."],
+  "limits": "No product/test/config edits, fixes, handoff/submission/freeze, delegation/review dispatch, staging/commit/push, settings changes or device interaction. Stopped before Phase B device steps."
+}

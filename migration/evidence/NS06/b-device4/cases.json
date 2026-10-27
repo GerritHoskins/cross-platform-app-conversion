@@ -1,0 +1,544 @@
+{
+  "B-install": {
+    "status": "PASS",
+    "evidence": [
+      "B-install.png",
+      "B-install.xml",
+      "B-install-observed.json",
+      "B-install-hash.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+  },
+  "B1": {
+    "status": "PASS",
+    "evidence": [
+      "B1-baseline.png",
+      "B1-baseline.xml",
+      "B1-baseline-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "pid": "21291",
+    "closedRight": 807
+  },
+  "B7-a-open": {
+    "status": "PASS",
+    "evidence": [
+      "B7-a-open.png",
+      "B7-a-open.xml",
+      "B7-a-open-observed.json",
+      "B7-a-reveal.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowId": "session-1",
+    "name": "Breakfast"
+  },
+  "B7-single-open": {
+    "status": "PASS",
+    "evidence": [
+      "B7-b-open.png",
+      "B7-b-open.xml",
+      "B7-b-open-observed.json",
+      "B7-b-reveal.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "A": "session-1",
+    "AName": "Breakfast",
+    "AClosedBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "ACurrentBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "B": "session-4",
+    "BName": "University of Ionic",
+    "BClosedBounds": [
+      0,
+      1082,
+      807,
+      1331
+    ],
+    "BCurrentBounds": [
+      0,
+      1082,
+      555,
+      1331
+    ],
+    "leftEdgeAssertion": false
+  },
+  "B7-close": {
+    "status": "PASS",
+    "evidence": [
+      "B7-closed.png",
+      "B7-closed.xml",
+      "B7-closed-observed.json",
+      "B7-close-gesture.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "A": "session-1",
+    "AClosedBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "ACurrentBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "B": "session-4",
+    "BClosedBounds": [
+      0,
+      1082,
+      807,
+      1331
+    ],
+    "BCurrentBounds": [
+      0,
+      1082,
+      807,
+      1331
+    ],
+    "closedRule": "abs(currentRight-closedRight)<=10",
+    "leftEdgeAssertion": false,
+    "expectedState": true
+  },
+  "B8-open": {
+    "status": "PASS",
+    "evidence": [
+      "B8-open.png",
+      "B8-open.xml",
+      "B8-open-observed.json",
+      "B8-mode-reveal.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowId": "session-1",
+    "name": "Breakfast"
+  },
+  "B8-mode-close": {
+    "status": "PASS",
+    "evidence": [
+      "B8-open.png",
+      "B8-open.xml",
+      "B8-open-observed.json",
+      "B8-mode-closed.png",
+      "B8-mode-closed.xml",
+      "B8-mode-closed-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowId": "session-1",
+    "name": "Breakfast",
+    "visibleRows": [],
+    "noVisibleOpenRows": true,
+    "emptyFavorites": true
+  },
+  "B8-open-again": {
+    "status": "PASS",
+    "evidence": [
+      "B8-open-again.png",
+      "B8-open-again.xml",
+      "B8-open-again-observed.json",
+      "B8-filter-reveal.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowId": "session-1",
+    "name": "Breakfast"
+  },
+  "B8-food-draft": {
+    "status": "PASS",
+    "evidence": [
+      "B8-food-draft.png",
+      "B8-food-draft.xml",
+      "B8-food-draft-observed.json",
+      "B8-food-on-tap.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "switches": [
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Communication",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Communication",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,380][1017,451]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Design",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Design",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,506][1017,577]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Documentation",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Documentation",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,632][1017,703]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Food",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Food",
+        "checkable": "true",
+        "checked": "true",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,758][1017,829]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Ionic",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Ionic",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,884][1017,955]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Navigation",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Navigation",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,1010][1017,1081]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Services",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Services",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,1136][1017,1207]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Tooling",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Tooling",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,1262][1017,1333]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Vue",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Vue",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,1388][1017,1459]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      {
+        "index": "1",
+        "text": "",
+        "resource-id": "track-Workshop",
+        "class": "android.widget.Switch",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Workshop",
+        "checkable": "true",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[895,1514][1017,1585]",
+        "drawing-order": "2",
+        "hint": ""
+      }
+    ]
+  },
+  "B8-food-filter": {
+    "status": "PASS",
+    "evidence": [
+      "B8-filtered.png",
+      "B8-filtered.xml",
+      "B8-filtered-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowIds": [
+      "session-1",
+      "session-12"
+    ],
+    "names": [
+      "Breakfast",
+      "Lunch"
+    ],
+    "foodRaw": [
+      {
+        "index": "3",
+        "text": "Food",
+        "resource-id": "",
+        "class": "android.widget.TextView",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[42,885][765,928]",
+        "drawing-order": "4",
+        "hint": ""
+      },
+      {
+        "index": "3",
+        "text": "Food",
+        "resource-id": "",
+        "class": "android.widget.TextView",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[42,1256][765,1299]",
+        "drawing-order": "4",
+        "hint": ""
+      }
+    ],
+    "closedRight": 807
+  },
+  "B8-filter-close": {
+    "status": "PASS",
+    "evidence": [
+      "B8-open-again.png",
+      "B8-open-again.xml",
+      "B8-open-again-observed.json",
+      "B8-filtered.png",
+      "B8-filtered.xml",
+      "B8-filtered-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rowId": "session-1",
+    "closedBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "currentBounds": [
+      0,
+      711,
+      807,
+      960
+    ],
+    "leftEdgeAssertion": false
+  },
+  "B8-restored": {
+    "status": "PASS",
+    "evidence": [
+      "B8-all-selected.png",
+      "B8-all-selected.xml",
+      "B8-all-selected-observed.json",
+      "B8-restored.png",
+      "B8-restored.xml",
+      "B8-restored-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "allTracks": true
+  },
+  "B9-labels": {
+    "status": "PASS",
+    "evidence": [
+      "B9-buttons.png",
+      "B9-buttons.xml",
+      "B9-buttons-observed.json",
+      "B9-accessibility-inventory.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "rawContentDescriptions": [
+      "Favorite Breakfast. Favorite",
+      "Favorite University of Ionic. Favorite",
+      "Favorite Getting Started with Ionic. Favorite",
+      "Favorite Ionic Tooling. Favorite",
+      "Favorite Migrating to Ionic. Favorite",
+      "Favorite What's New in Vue. Favorite"
+    ]
+  },
+  "B9-hidden-action": {
+    "status": "PASS",
+    "evidence": [
+      "B9-buttons.png",
+      "B9-buttons.xml",
+      "B9-buttons-observed.json",
+      "B9-accessibility-inventory.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "note": "No separate swipe-action-* elements in compressed XML; pixels pending coordinator"
+  },
+  "B9-coexistence": {
+    "status": "PASS",
+    "evidence": [
+      "B9-buttons.png",
+      "B9-buttons.xml",
+      "B9-buttons-observed.json",
+      "B9-accessibility-inventory.json",
+      "B7-a-open.xml",
+      "B7-b-open.xml",
+      "B8-open.xml",
+      "B8-open-again.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "note": "Same-run labelled column-1 buttons retained alongside C1-proven reveals; no repeated B2-B6"
+  },
+  "B-logcat": {
+    "status": "PASS",
+    "evidence": [
+      "B-logcat.txt",
+      "B-logcat-warnings-errors-verbatim.txt",
+      "B-logcat-observed.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+  },
+  "B11-final": {
+    "status": "PASS",
+    "evidence": [
+      "B11-final.png",
+      "B11-final.xml",
+      "B11-final-observed.json",
+      "B8-all-selected.png",
+      "B8-all-selected.xml",
+      "B8-all-selected-observed.json",
+      "environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+    "allTracksEvidence": "B8-all-selected.xml followed by Done; no further filter changes"
+  }
+}

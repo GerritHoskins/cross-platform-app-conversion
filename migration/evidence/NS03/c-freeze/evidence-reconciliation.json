@@ -1,0 +1,507 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-26T23:38:34.232Z",
+  "category": "Phase C read-only reconciliation of historical evidence; no device/rebuild or executor pixel observation",
+  "testDetailsHistorical": [
+    {
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "tests": [
+        {
+          "name": "conference store state and mutations fresh stores start idle with independent state and request generations",
+          "title": "fresh stores start idle with independent state and request generations",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations frozen prior states and load payloads survive success, loading, failure and later success",
+          "title": "frozen prior states and load payloads survive success, loading, failure and later success",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations setSearchText changes only its selection field and leaves frozen history intact",
+          "title": "setSearchText changes only its selection field and leaves frozen history intact",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations setMode changes only its selection field and leaves frozen history intact",
+          "title": "setMode changes only its selection field and leaves frozen history intact",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations setSelectedTracks changes only its selection field and leaves frozen history intact",
+          "title": "setSelectedTracks changes only its selection field and leaves frozen history intact",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations setFavoriteIds changes only its selection field and leaves frozen history intact",
+          "title": "setFavoriteIds changes only its selection field and leaves frozen history intact",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations copies incoming arrays and preserves search, tracks and favorites across mode switches",
+          "title": "copies incoming arrays and preserves search, tracks and favorites across mode switches",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations all selection mutations are pre-load no-ops even with a frozen initial state",
+          "title": "all selection mutations are pre-load no-ops even with a frozen initial state",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "conference store state and mutations search/no-match/clear and mode switches derive groups without calling the loader again",
+          "title": "search/no-match/clear and mode switches derive groups without calling the loader again",
+          "groups": [
+            "conference store state and mutations"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core default-all",
+          "title": "default-all",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core no-tracks",
+          "title": "no-tracks",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core single-track",
+          "title": "single-track",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core search-case-insensitive",
+          "title": "search-case-insensitive",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core search-no-match",
+          "title": "search-no-match",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core search-plus-track",
+          "title": "search-plus-track",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core favorites-empty",
+          "title": "favorites-empty",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core favorites-some",
+          "title": "favorites-some",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core favorites-order",
+          "title": "favorites-order",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core add-duplicate",
+          "title": "add-duplicate",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "frozen reference cases through public mutations and the real loader/core remove-absent",
+          "title": "remove-absent",
+          "groups": [
+            "frozen reference cases through public mutations and the real loader/core"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle pending load starts synchronously but calls the loader behind a promise boundary",
+          "title": "pending load starts synchronously but calls the loader behind a promise boundary",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle throw is captured and retry success clears the error",
+          "title": "throw is captured and retry success clears the error",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle reject is captured and retry success clears the error",
+          "title": "reject is captured and retry success clears the error",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a failed retry retains earlier data/selection and a later retry keeps selection",
+          "title": "a failed retry retains earlier data/selection and a later retry keeps selection",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier resolve cannot overwrite a newer retry",
+          "title": "stale earlier resolve cannot overwrite a newer retry",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier reject cannot overwrite a newer retry",
+          "title": "stale earlier reject cannot overwrite a newer retry",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a stale success leaves a newer pending request loading",
+          "title": "a stale success leaves a newer pending request loading",
+          "groups": [
+            "controlled loader lifecycle"
+          ],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "tests": [
+        {
+          "name": "loads the bundled fixture through the real public core with the reference count",
+          "title": "loads the bundled fixture through the real public core with the reference count",
+          "groups": [],
+          "status": "passed"
+        },
+        {
+          "name": "normalizes the first session and preserves its original time strings",
+          "title": "normalizes the first session and preserves its original time strings",
+          "groups": [],
+          "status": "passed"
+        },
+        {
+          "name": "returns independent objects and nested arrays on every call",
+          "title": "returns independent objects and nested arrays on every call",
+          "groups": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+      "tests": [
+        {
+          "name": "preserves input group/session order, with a header immediately before each group",
+          "title": "preserves input group/session order, with a header immediately before each group",
+          "groups": [],
+          "status": "passed"
+        },
+        {
+          "name": "uses distinct, stable header/time and session/id keys on repeated conversion",
+          "title": "uses distinct, stable header/time and session/id keys on repeated conversion",
+          "groups": [],
+          "status": "passed"
+        },
+        {
+          "name": "empty groups produce empty rows without placeholder content",
+          "title": "empty groups produce empty rows without placeholder content",
+          "groups": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "tests": [
+        {
+          "name": "provides the conference shell title and normalized diagnostic body",
+          "title": "provides the conference shell title and normalized diagnostic body",
+          "groups": [],
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "referenceCases": [
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core default-all",
+      "title": "default-all",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core no-tracks",
+      "title": "no-tracks",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core single-track",
+      "title": "single-track",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core search-case-insensitive",
+      "title": "search-case-insensitive",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core search-no-match",
+      "title": "search-no-match",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core search-plus-track",
+      "title": "search-plus-track",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core favorites-empty",
+      "title": "favorites-empty",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core favorites-some",
+      "title": "favorites-some",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core favorites-order",
+      "title": "favorites-order",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core add-duplicate",
+      "title": "add-duplicate",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "frozen reference cases through public mutations and the real loader/core remove-absent",
+      "title": "remove-absent",
+      "groups": [
+        "frozen reference cases through public mutations and the real loader/core"
+      ],
+      "status": "passed"
+    }
+  ],
+  "lifecycle": [
+    {
+      "name": "controlled loader lifecycle pending load starts synchronously but calls the loader behind a promise boundary",
+      "title": "pending load starts synchronously but calls the loader behind a promise boundary",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle throw is captured and retry success clears the error",
+      "title": "throw is captured and retry success clears the error",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle reject is captured and retry success clears the error",
+      "title": "reject is captured and retry success clears the error",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle a failed retry retains earlier data/selection and a later retry keeps selection",
+      "title": "a failed retry retains earlier data/selection and a later retry keeps selection",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle stale earlier resolve cannot overwrite a newer retry",
+      "title": "stale earlier resolve cannot overwrite a newer retry",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle stale earlier reject cannot overwrite a newer retry",
+      "title": "stale earlier reject cannot overwrite a newer retry",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "controlled loader lifecycle a stale success leaves a newer pending request loading",
+      "title": "a stale success leaves a newer pending request loading",
+      "groups": [
+        "controlled loader lifecycle"
+      ],
+      "status": "passed"
+    }
+  ],
+  "installedVersions": {
+    "@migration/core": "0.1.0",
+    "@nativescript/android": "9.1.1",
+    "@nativescript/core": "9.1.3",
+    "@nativescript/types": "9.1.4",
+    "@nativescript/webpack": "5.0.39",
+    "nativescript-vue": "3.1.2",
+    "vuex": "4.1.0",
+    "vue": "3.5.44",
+    "@vue/runtime-core": "3.5.44",
+    "typescript": "6.0.3",
+    "vue-tsc": "3.3.13",
+    "vitest": "5.0.5",
+    "csstype": "3.2.3"
+  },
+  "frames": [
+    {
+      "id": "B-launch",
+      "png": "migration/evidence/NS03/b-device/B-launch.png",
+      "pngSha256": "d8efccb4045c736ba68ac1b1fac0e3a1d0924b614435139ca1465602c3faffea",
+      "xml": "migration/evidence/NS03/b-device/B-launch.xml",
+      "xmlSha256": "53916aaa17ef1d7fb85889a00d1a047f7110c2a76ae2909d55a2f28a73c7ef9c",
+      "pixelStatus": "PASS",
+      "inspector": "Claude Code coordinator (claude-opus-5-5); not executor pixel observation"
+    },
+    {
+      "id": "B-scroll",
+      "png": "migration/evidence/NS03/b-device/B-scroll.png",
+      "pngSha256": "5cba4fd1fbab4ba5f2833470a3a26deafa5632981851db458f857b9f689b7dec",
+      "xml": "migration/evidence/NS03/b-device/B-scroll.xml",
+      "xmlSha256": "6d846c83994e2bc53d1f0db0c28ee118b5c6a4d77365c1ee9b2cb10eaa6e65f1",
+      "pixelStatus": "PASS",
+      "inspector": "Claude Code coordinator (claude-opus-5-5); not executor pixel observation"
+    },
+    {
+      "id": "B-favorites",
+      "png": "migration/evidence/NS03/b-device/B-favorites.png",
+      "pngSha256": "21663f2936e20b490e790819cc939bf4e58a2ac494ed8407f2275288d5622ab1",
+      "xml": "migration/evidence/NS03/b-device/B-favorites.xml",
+      "xmlSha256": "a0e587b737e5429967f187b3e246de5e6185a8202fb616e9cca30a2e083d58f3",
+      "pixelStatus": "PASS",
+      "inspector": "Claude Code coordinator (claude-opus-5-5); not executor pixel observation"
+    },
+    {
+      "id": "B-all",
+      "png": "migration/evidence/NS03/b-device/B-all.png",
+      "pngSha256": "b22a429e9af3c47e47d1f38b72e75e59d936140f0aedf3e40f6876c9fd922bef",
+      "xml": "migration/evidence/NS03/b-device/B-all.xml",
+      "xmlSha256": "53916aaa17ef1d7fb85889a00d1a047f7110c2a76ae2909d55a2f28a73c7ef9c",
+      "pixelStatus": "PASS",
+      "inspector": "Claude Code coordinator (claude-opus-5-5); not executor pixel observation"
+    }
+  ],
+  "pixelReport": "migration/evidence/NS03/pixel-inspection-coordinator.md",
+  "pixelReportSha256": "7e74680b3f217f5827628efa0244915e23af967b1e2aadcaaf7cadfab1c5f9a1",
+  "privacy": "PASS: coordinator reports no keyboard at launch and no personal content in all four frames",
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "a290b5e9259a573a505dffa7797c5e037f510e2532be184fd3e91eadfcc69ff8",
+    "modifiedAt": "2026-10-26T21:25:37.135Z",
+    "buildReceipt": "migration/evidence/NS03/a-gates3/build-android.receipt.json"
+  },
+  "installedCopy": {
+    "status": "PASS",
+    "installedPath": "/data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk",
+    "sha256Output": "a290b5e9259a573a505dffa7797c5e037f510e2532be184fd3e91eadfcc69ff8  /data/app/~~_0BiTNYf7CmLCXFRQKIRPw==/dev.translationtest.ns-KH7i38ce6duXu6lUJISvag==/base.apk",
+    "expectedSha256": "a290b5e9259a573a505dffa7797c5e037f510e2532be184fd3e91eadfcc69ff8"
+  },
+  "launchHistoricalStatus": "FAIL",
+  "launchFirstValidSeconds": 14.836063299997477,
+  "firstAndAssertionXmlByteIdentical": true,
+  "sourceSegmentedBarTitlesExact": true,
+  "aliasArtifactsUnchanged": true
+}

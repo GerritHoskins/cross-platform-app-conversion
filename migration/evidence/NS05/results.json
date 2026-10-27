@@ -1,0 +1,1970 @@
+{
+  "version": 1,
+  "package": "NS05",
+  "revision": 1,
+  "phase": "C",
+  "status": "READY_FOR_REVIEW",
+  "observer": "Hermes GPT-6.1 Sol high static checks; historical B device actions; coordinator pixels",
+  "cases": [
+    {
+      "id": "C-preflight",
+      "status": "PASS",
+      "category": "static",
+      "detail": "Correct branch/full HEAD, empty index, exact six target paths and hashes, protected entry hashes, APK unchanged; raw git captured before C evidence writes.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/entry-audit.json"
+      ]
+    },
+    {
+      "id": "C-core",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Core command exit 0; reporter JSON summary 53 passed, zero failed.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/core-test.receipt.json",
+        "migration/evidence/NS05/c-freeze/core-tests.json"
+      ]
+    },
+    {
+      "id": "C-no-dependency-change",
+      "status": "PASS",
+      "category": "static",
+      "detail": "Target npm ci exit 0; root and target package.json/package-lock.json byte-identical to HEAD; target source/test hashes unchanged after ci.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/npm-ci.receipt.json",
+        "migration/evidence/NS05/c-freeze/post-ci-audit.json"
+      ]
+    },
+    {
+      "id": "D1-trackOptions",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Ready guards, sorted checked options and fresh independent arrays/rows.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json"
+      ],
+      "assertions": [
+        "NS05 track options returns empty options before load, while loading and after an error",
+        "NS05 track options all ten options are sorted and checked after the real load",
+        "NS05 track options mirrors only Ionic after replacing the applied selection",
+        "NS05 track options an empty applied selection leaves all options unchecked",
+        "NS05 track options every read returns fresh options and changing them cannot affect state or later reads",
+        "NS05 track options requires ready status, conference and selection, including during a reload"
+      ]
+    },
+    {
+      "id": "D2-draft-and-applyFilterResult",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Immutable drafts, complete array apply including [], nonarray no-op, preserved selection fields and loader count.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json"
+      ],
+      "assertions": [
+        "pure track filter drafts toggle changes only the named row in either direction and preserves frozen input",
+        "pure track filter drafts toggle of an unknown name still returns independent unchanged options",
+        "pure track filter drafts setAllTracks(false) changes every row without mutating input",
+        "pure track filter drafts setAllTracks(true) changes every row without mutating input",
+        "pure track filter drafts Reset uses the same draft-only clear as Deselect All",
+        "pure track filter drafts checked names keep displayed sorted order and return a fresh array",
+        "pure track filter drafts empty drafts remain empty with fresh outputs for every operation",
+        "modal results through the real store, loader and core draft toggles, deselect, select and Reset never affect applied state or groups",
+        "modal results through the real store, loader and core Done with only Ionic matches single-track and reopening mirrors the applied filter",
+        "modal results through the real store, loader and core Done with Design and Ionic then search Ionic matches search-plus-track",
+        "modal results through the real store, loader and core empty Done matches no-tracks, reopens unchecked, and Select All restores default-all",
+        "modal results through the real store, loader and core closing with undefined discards edits without a commit or reload",
+        "modal results through the real store, loader and core closing with false discards edits without a commit or reload",
+        "modal results through the real store, loader and core closing with null discards edits without a commit or reload",
+        "modal results through the real store, loader and core closing with true discards edits without a commit or reload",
+        "modal results through the real store, loader and core closing with \"Ionic\" discards edits without a commit or reload",
+        "modal results through the real store, loader and core closing with {\"tracks\":[\"Design\"]} discards edits without a commit or reload",
+        "modal results through the real store, loader and core Food with favorites 12 and 3 matches favorites-some without resetting mode or search",
+        "modal results through the real store, loader and core applying and dismissing retain a nonempty search, favorites and mode throughout"
+      ]
+    },
+    {
+      "id": "reference-single-track",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Real loader/core groups and flat session IDs match the frozen case. ",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/track-filter.test.ts"
+      ],
+      "assertions": [
+        "frozen reference cases through public mutations and the real loader/core single-track",
+        "modal results through the real store, loader and core Done with only Ionic matches single-track and reopening mirrors the applied filter"
+      ]
+    },
+    {
+      "id": "reference-no-tracks",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Real loader/core groups and flat session IDs match the frozen case. ",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/track-filter.test.ts"
+      ],
+      "assertions": [
+        "frozen reference cases through public mutations and the real loader/core no-tracks",
+        "modal results through the real store, loader and core empty Done matches no-tracks, reopens unchecked, and Select All restores default-all"
+      ]
+    },
+    {
+      "id": "reference-search-plus-track",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Real loader/core groups and flat session IDs match the frozen case. Device typing unverified.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/track-filter.test.ts"
+      ],
+      "assertions": [
+        "frozen reference cases through public mutations and the real loader/core search-plus-track",
+        "modal results through the real store, loader and core Done with Design and Ionic then search Ionic matches search-plus-track"
+      ]
+    },
+    {
+      "id": "reference-default-all",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Real loader/core groups and flat session IDs match the frozen case. ",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/track-filter.test.ts"
+      ],
+      "assertions": [
+        "frozen reference cases through public mutations and the real loader/core default-all",
+        "modal results through the real store, loader and core empty Done matches no-tracks, reopens unchecked, and Select All restores default-all"
+      ]
+    },
+    {
+      "id": "reference-favorites-some",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "Real loader/core groups and flat session IDs match the frozen case. ",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/track-filter.test.ts"
+      ],
+      "assertions": [
+        "frozen reference cases through public mutations and the real loader/core favorites-some",
+        "NS04 favorite mutations and detail getters favorites-some through the new mutations and real loader/core",
+        "modal results through the real store, loader and core Food with favorites 12 and 3 matches favorites-some without resetting mode or search"
+      ]
+    },
+    {
+      "id": "C-NS04-tests-retained",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "All 69 baseline reporter test identities retained and passed; original store test text retained with only NS05 describe block inserted; other tests hash-identical.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/evidence-reconciliation.json",
+        "migration/evidence/NS05/c-freeze/static-final-audit.json",
+        "migration/evidence/NS05/c-freeze/tests-first.json",
+        "migration/evidence/NS05/c-freeze/tests-second.json"
+      ]
+    },
+    {
+      "id": "C-verify-core",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "verify:core integration check; exit 0.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/verify-core.receipt.json",
+        "migration/evidence/NS05/c-freeze/verify-core.stdout.log"
+      ]
+    },
+    {
+      "id": "C-typecheck",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "vue-tsc --noEmit; exit 0.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/typecheck.receipt.json",
+        "migration/evidence/NS05/c-freeze/typecheck.stdout.log"
+      ]
+    },
+    {
+      "id": "C-tests-first",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "6 files/94 passed; exit 0.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-first.receipt.json",
+        "migration/evidence/NS05/c-freeze/tests-first.stdout.log"
+      ]
+    },
+    {
+      "id": "C-tests-second",
+      "status": "PASS",
+      "category": "automated",
+      "detail": "6 files/94 passed, identical test identities; exit 0.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/tests-second.receipt.json",
+        "migration/evidence/NS05/c-freeze/tests-second.stdout.log"
+      ]
+    },
+    {
+      "id": "A-build",
+      "status": "PASS",
+      "category": "historical-build",
+      "detail": "Phase A single-run Android debug build exit 0; NOT rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/build-android.receipt.json",
+        "migration/evidence/NS05/a-gates/build-android.stdout.log"
+      ]
+    },
+    {
+      "id": "A-bundle-proof",
+      "status": "PASS",
+      "category": "historical-build",
+      "detail": "Phase A APK bundle has Filter Sessions and Deselect All; C host APK SHA/size still match. No bundle rebuild.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/bundle-evidence.json",
+        "migration/evidence/NS05/a-gates/apk.json",
+        "migration/evidence/NS05/c-freeze/static-final-audit.json"
+      ]
+    },
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B-install PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/installed-apk.json",
+        "migration/evidence/NS05/b-device/B-install.png",
+        "migration/evidence/NS05/b-device/B-install.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": false
+    },
+    {
+      "id": "B1",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B1 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B1-schedule.png",
+        "migration/evidence/NS05/b-device/B1-schedule.xml"
+      ],
+      "historicalDetails": {
+        "filter": [
+          {
+            "index": "1",
+            "text": "Filter",
+            "resource-id": "Filter sessions",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Filter sessions. Filter",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[817,422][1048,569]",
+            "drawing-order": "2",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "besideMode": true
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B2",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B2 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B2-open.png",
+        "migration/evidence/NS05/b-device/B2-open.xml",
+        "migration/evidence/NS05/b-device/B2-open-observed.json"
+      ],
+      "historicalDetails": {
+        "close": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.ImageButton",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Close",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,128][147,275]",
+            "drawing-order": "2",
+            "hint": ""
+          }
+        ],
+        "trackOrder": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ],
+        "scrollNeeded": false
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B3-ionic-off",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B3-ionic-off PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B3-ionic-off.png",
+        "migration/evidence/NS05/b-device/B3-ionic-off.xml",
+        "migration/evidence/NS05/b-device/B3-ionic-off-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B3-deselect",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B3-deselect PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B3-deselect.png",
+        "migration/evidence/NS05/b-device/B3-deselect.xml",
+        "migration/evidence/NS05/b-device/B3-deselect-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": []
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B3-select",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B3-select PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B3-select.png",
+        "migration/evidence/NS05/b-device/B3-select.xml",
+        "migration/evidence/NS05/b-device/B3-select-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B3-reset",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B3-reset PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B3-reset.png",
+        "migration/evidence/NS05/b-device/B3-reset.xml",
+        "migration/evidence/NS05/b-device/B3-reset-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": []
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B4-only-ionic",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B4-only-ionic PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B4-only-ionic.png",
+        "migration/evidence/NS05/b-device/B4-only-ionic.xml",
+        "migration/evidence/NS05/b-device/B4-only-ionic-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B4-applied",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B4-applied PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B4-applied.png",
+        "migration/evidence/NS05/b-device/B4-applied.xml",
+        "migration/evidence/NS05/b-device/B4-applied-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B5-reopen",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B5-reopen PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B5-reopen.png",
+        "migration/evidence/NS05/b-device/B5-reopen.xml",
+        "migration/evidence/NS05/b-device/B5-reopen-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B5-draft",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B5-draft PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B5-draft.png",
+        "migration/evidence/NS05/b-device/B5-draft.xml",
+        "migration/evidence/NS05/b-device/B5-draft-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Design",
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B5-closed",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B5-closed PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B5-closed.png",
+        "migration/evidence/NS05/b-device/B5-closed.xml",
+        "migration/evidence/NS05/b-device/B5-closed-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B5-reopen-again",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B5-reopen-again PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B5-reopen-again.png",
+        "migration/evidence/NS05/b-device/B5-reopen-again.xml",
+        "migration/evidence/NS05/b-device/B5-reopen-again-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B6-draft",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B6-draft PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B6-draft.png",
+        "migration/evidence/NS05/b-device/B6-draft.xml",
+        "migration/evidence/NS05/b-device/B6-draft-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Design",
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B6-back",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B6-back PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B6-back.png",
+        "migration/evidence/NS05/b-device/B6-back.xml",
+        "migration/evidence/NS05/b-device/B6-back-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B6-reopen",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B6-reopen PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B6-reopen.png",
+        "migration/evidence/NS05/b-device/B6-reopen.xml",
+        "migration/evidence/NS05/b-device/B6-reopen-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-deselect",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-deselect PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-deselect.png",
+        "migration/evidence/NS05/b-device/B7-deselect.xml",
+        "migration/evidence/NS05/b-device/B7-deselect-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": []
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-empty",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-empty PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-empty.png",
+        "migration/evidence/NS05/b-device/B7-empty.xml",
+        "migration/evidence/NS05/b-device/B7-empty-observed.json"
+      ],
+      "historicalDetails": {
+        "rows": [],
+        "emptyLabel": [
+          {
+            "index": "2",
+            "text": "No sessions match your search or filters.",
+            "resource-id": "",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[63,1442][1017,1485]",
+            "drawing-order": "3",
+            "hint": ""
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-reopen",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-reopen PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-reopen.png",
+        "migration/evidence/NS05/b-device/B7-reopen.xml",
+        "migration/evidence/NS05/b-device/B7-reopen-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": []
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-select",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-select PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-select.png",
+        "migration/evidence/NS05/b-device/B7-select.xml",
+        "migration/evidence/NS05/b-device/B7-select-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-restored",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-restored PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-restored.png",
+        "migration/evidence/NS05/b-device/B7-restored.xml",
+        "migration/evidence/NS05/b-device/B7-restored-observed.json"
+      ],
+      "historicalDetails": {
+        "expectedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ],
+        "firstObservedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6
+            ]
+          }
+        ],
+        "scope": "Visible first rows matched; full group availability verified separately by bounded scrolling."
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-all-groups",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-all-groups PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-restored.png",
+        "migration/evidence/NS05/b-device/B7-restored.xml",
+        "migration/evidence/NS05/b-device/B7-restored-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1.xml",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2.xml",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3.xml",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3-observed.json"
+      ],
+      "historicalDetails": {
+        "observedIds": [
+          1,
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "observedGroupTimes": [
+          "8:00 am",
+          "9:15 am",
+          "10:00 am",
+          "11:00 am",
+          "12:00 pm",
+          "1:00 pm",
+          "2:00 pm",
+          "3:00 pm"
+        ],
+        "expectedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B7-foreground-top",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7-foreground-top PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-return-top-3.png",
+        "migration/evidence/NS05/b-device/B7-return-top-3.xml",
+        "migration/evidence/NS05/b-device/B7-return-top-3-observed.json"
+      ],
+      "historicalDetails": {
+        "finalRows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Breakfast",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1082][807,1331]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-3",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Ionic Tooling",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1582][807,1831]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1953][807,2202]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-6",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "What's New in Vue",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,2203][807,2337]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ]
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B-logcat PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B-logcat.txt",
+        "migration/evidence/NS05/b-device/B-logcat-warnings-errors.txt",
+        "migration/evidence/NS05/b-device/pid-runtime.json"
+      ],
+      "historicalDetails": {
+        "note": "Bounded PID tail only; warnings/errors preserved verbatim; not a warning-free or exhaustive claim."
+      },
+      "aggregate": false
+    },
+    {
+      "id": "B9-foreground",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B9-foreground PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B9-final-schedule.png",
+        "migration/evidence/NS05/b-device/B9-final-schedule.xml",
+        "migration/evidence/NS05/b-device/B9-final-schedule-observed.json"
+      ],
+      "historicalDetails": null,
+      "aggregate": false
+    },
+    {
+      "id": "B3",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B3 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B3-deselect-observed.json",
+        "migration/evidence/NS05/b-device/B3-deselect.png",
+        "migration/evidence/NS05/b-device/B3-deselect.xml",
+        "migration/evidence/NS05/b-device/B3-ionic-off-observed.json",
+        "migration/evidence/NS05/b-device/B3-ionic-off.png",
+        "migration/evidence/NS05/b-device/B3-ionic-off.xml",
+        "migration/evidence/NS05/b-device/B3-reset-observed.json",
+        "migration/evidence/NS05/b-device/B3-reset.png",
+        "migration/evidence/NS05/b-device/B3-reset.xml",
+        "migration/evidence/NS05/b-device/B3-select-observed.json",
+        "migration/evidence/NS05/b-device/B3-select.png",
+        "migration/evidence/NS05/b-device/B3-select.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": true
+    },
+    {
+      "id": "B4",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B4 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B4-applied-observed.json",
+        "migration/evidence/NS05/b-device/B4-applied.png",
+        "migration/evidence/NS05/b-device/B4-applied.xml",
+        "migration/evidence/NS05/b-device/B4-only-ionic-observed.json",
+        "migration/evidence/NS05/b-device/B4-only-ionic.png",
+        "migration/evidence/NS05/b-device/B4-only-ionic.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": true
+    },
+    {
+      "id": "B5",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B5 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B5-closed-observed.json",
+        "migration/evidence/NS05/b-device/B5-closed.png",
+        "migration/evidence/NS05/b-device/B5-closed.xml",
+        "migration/evidence/NS05/b-device/B5-draft-observed.json",
+        "migration/evidence/NS05/b-device/B5-draft.png",
+        "migration/evidence/NS05/b-device/B5-draft.xml",
+        "migration/evidence/NS05/b-device/B5-reopen-again-observed.json",
+        "migration/evidence/NS05/b-device/B5-reopen-again.png",
+        "migration/evidence/NS05/b-device/B5-reopen-again.xml",
+        "migration/evidence/NS05/b-device/B5-reopen-observed.json",
+        "migration/evidence/NS05/b-device/B5-reopen.png",
+        "migration/evidence/NS05/b-device/B5-reopen.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": true
+    },
+    {
+      "id": "B6",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B6 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B6-back-observed.json",
+        "migration/evidence/NS05/b-device/B6-back.png",
+        "migration/evidence/NS05/b-device/B6-back.xml",
+        "migration/evidence/NS05/b-device/B6-draft-observed.json",
+        "migration/evidence/NS05/b-device/B6-draft.png",
+        "migration/evidence/NS05/b-device/B6-draft.xml",
+        "migration/evidence/NS05/b-device/B6-reopen-observed.json",
+        "migration/evidence/NS05/b-device/B6-reopen.png",
+        "migration/evidence/NS05/b-device/B6-reopen.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": true
+    },
+    {
+      "id": "B7",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "B7 PASS per immutable Phase B observations; no device action rerun in C.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/evidence/NS05/b-device/B7-deselect-observed.json",
+        "migration/evidence/NS05/b-device/B7-deselect.png",
+        "migration/evidence/NS05/b-device/B7-deselect.xml",
+        "migration/evidence/NS05/b-device/B7-empty-observed.json",
+        "migration/evidence/NS05/b-device/B7-empty.png",
+        "migration/evidence/NS05/b-device/B7-empty.xml",
+        "migration/evidence/NS05/b-device/B7-reopen-observed.json",
+        "migration/evidence/NS05/b-device/B7-reopen.png",
+        "migration/evidence/NS05/b-device/B7-reopen.xml",
+        "migration/evidence/NS05/b-device/B7-restored-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-1.xml",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-2.xml",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3-observed.json",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3.png",
+        "migration/evidence/NS05/b-device/B7-restored-scrolled-3.xml",
+        "migration/evidence/NS05/b-device/B7-restored.png",
+        "migration/evidence/NS05/b-device/B7-restored.xml",
+        "migration/evidence/NS05/b-device/B7-return-top-3-observed.json",
+        "migration/evidence/NS05/b-device/B7-return-top-3.png",
+        "migration/evidence/NS05/b-device/B7-return-top-3.xml",
+        "migration/evidence/NS05/b-device/B7-select-observed.json",
+        "migration/evidence/NS05/b-device/B7-select.png",
+        "migration/evidence/NS05/b-device/B7-select.xml"
+      ],
+      "historicalDetails": null,
+      "aggregate": true
+    },
+    {
+      "id": "C-hardware-key-check",
+      "status": "PASS",
+      "category": "historical-reconciliation",
+      "detail": "Exactly one keyevent 4; fresh modal XML precedes B6 command, coordinator confirmed.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/evidence-reconciliation.json",
+        "migration/evidence/NS05/b-device/B6-back-key.json",
+        "migration/evidence/NS05/b-device/B6-immediately-before-back.xml",
+        "migration/evidence/NS05/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "C-pixel-inspection",
+      "status": "PASS",
+      "category": "coordinator-pixels",
+      "detail": "All 27 distinct frames PASS; all 28 PNG hashes reconcile; no keyboard/personal content. Coordinator inspection, not executor pixel claim.",
+      "evidence": [
+        "migration/evidence/NS05/pixel-inspection-coordinator.md",
+        "migration/evidence/NS05/c-freeze/evidence-reconciliation.json"
+      ]
+    },
+    {
+      "id": "C-final-preservation",
+      "status": "PASS",
+      "category": "static",
+      "detail": "261 protected tracked files, all 84 tracked NativeScript hashes and three new targets match phase A; earlier NS05 history unchanged; class audit clean.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/static-final-audit.json"
+      ]
+    }
+  ],
+  "resultCounts": {
+    "total": 50,
+    "passed": 50,
+    "failed": 0,
+    "blocked": 0,
+    "byCategory": {
+      "static": 3,
+      "automated": 13,
+      "historical-build": 2,
+      "historical-device": 30,
+      "historical-reconciliation": 1,
+      "coordinator-pixels": 1
+    },
+    "historicalDeviceCases": 30,
+    "deviceAggregateCases": 5
+  },
+  "testCounts": {
+    "source": "Reporter JSON only; files = testResults.length, not numTotalTestSuites",
+    "core": {
+      "report": "migration/evidence/NS05/c-freeze/core-tests.json",
+      "tests": 53,
+      "failed": 0,
+      "passed": 53,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "topLevel": 53,
+      "suites": 0
+    },
+    "baseline": {
+      "report": "migration/evidence/NS04/c-freeze/tests-first.json",
+      "files": 5,
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "pending": 0,
+      "perFile": [
+        {
+          "path": "__tests__/conference-store.test.ts",
+          "tests": 33,
+          "passed": 33,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1,
+          "status": "passed"
+        }
+      ]
+    },
+    "first": {
+      "report": "migration/evidence/NS05/c-freeze/tests-first.json",
+      "files": 6,
+      "tests": 94,
+      "passed": 94,
+      "failed": 0,
+      "pending": 0,
+      "perFile": [
+        {
+          "path": "__tests__/conference-store.test.ts",
+          "tests": 39,
+          "passed": 39,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/track-filter.test.ts",
+          "tests": 19,
+          "passed": 19,
+          "status": "passed"
+        }
+      ]
+    },
+    "second": {
+      "report": "migration/evidence/NS05/c-freeze/tests-second.json",
+      "files": 6,
+      "tests": 94,
+      "passed": 94,
+      "failed": 0,
+      "pending": 0,
+      "perFile": [
+        {
+          "path": "__tests__/conference-store.test.ts",
+          "tests": 39,
+          "passed": 39,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1,
+          "status": "passed"
+        },
+        {
+          "path": "__tests__/track-filter.test.ts",
+          "tests": 19,
+          "passed": 19,
+          "status": "passed"
+        }
+      ]
+    },
+    "delta": {
+      "files": 1,
+      "tests": 25
+    },
+    "retainedTests": 69
+  },
+  "coordinatorDispositions": [
+    {
+      "id": "C1-single-runs",
+      "summary": "Phase A passed in a single run with capture-before-write ordering. Phase B passed in a single run on the already-running RN01_API36 emulator, started by the coordinator during NS04; no settings changes.",
+      "disposition": "PASS; COORDINATOR DISPOSITION",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/results-a.json",
+        "migration/evidence/NS05/b-device/results-b.json",
+        "migration/handoffs/NS05-checkpoint-a.md",
+        "migration/handoffs/NS05-checkpoint-b.md"
+      ]
+    },
+    {
+      "id": "C2-helper-exact-match",
+      "summary": "During B the helper rejected an ambiguous text match because Select All is a substring of Deselect All, then switched to exact matching before tapping; tooling correction, not a product failure.",
+      "disposition": "DISCLOSED; NO INCORRECT TAP OR PRODUCT FIX",
+      "evidence": [
+        "migration/evidence/NS05/b-device/execution-audit.json",
+        "migration/handoffs/NS05-checkpoint-b.md"
+      ]
+    },
+    {
+      "id": "C3-hardware-key",
+      "summary": "Exactly one Android Back keyevent 4 at B6, preceded by fresh XML proving the filter modal open, as D7 allows. Coordinator confirmed the count from commands.jsonl; Phase C reparsed history without contacting a device.",
+      "disposition": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/b-device/B6-back-key.json",
+        "migration/evidence/NS05/b-device/B6-immediately-before-back.xml",
+        "migration/evidence/NS05/b-device/commands.jsonl",
+        "migration/evidence/NS05/c-freeze/evidence-reconciliation.json",
+        "migration/evidence/NS05/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "C4-pixels",
+      "summary": "Coordinator inspected all 27 distinct frames (28 PNGs): PASS; no keyboard or personal content. Switch states differ mainly by thumb position/track colour (NS07 accessibility); FAVORITE SESSIONS wraps beside Filter; Reset and Deselect All give the same draft (Android source parity).",
+      "disposition": "PASS; OBSERVATIONS NOT FAILURES",
+      "evidence": [
+        "migration/evidence/NS05/pixel-inspection-coordinator.md",
+        "migration/evidence/NS05/c-freeze/evidence-reconciliation.json"
+      ]
+    },
+    {
+      "id": "C5-reviewer-design-notes",
+      "summary": "trackOptions is a read-only accessor on store.getters rather than a cached Vuex getter, so every read returns a fresh array (D1). Switch checkedChange ignores programmatic updates so Select All/Reset cannot double-toggle. Modal close NavigationButton and Android Back both reach closeCallback without data, which applyFilterResult ignores.",
+      "disposition": "DESIGN NOTES; NOT DEVIATIONS",
+      "evidence": [
+        "migration/nativescript/src/state/conference-store.ts",
+        "migration/nativescript/src/components/TrackFilter.vue",
+        "migration/nativescript/src/state/track-filter.ts",
+        "migration/nativescript/src/components/Schedule.vue",
+        "migration/evidence/NS05/b-device/results-b.json"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "summary": "Read-only uncached trackOptions accessor on store.getters and typed TrackOption; [] unless ready/conference/selection, then public core sortTracksByName mapped to fresh {name,checked}; existing setSelectedTracks reused. Every NS03/NS04 export and behavior retained."
+    },
+    {
+      "id": "D2",
+      "summary": "Pure immutable toggleTrack, setAllTracks and checkedTrackNames helpers. applyFilterResult commits existing setSelectedTracks only for arrays, including []; every nonarray is ignored. Done replaces the complete applied filter; other selection fields and loader count retained."
+    },
+    {
+      "id": "D3",
+      "summary": "Fullscreen native modal: Frame/Page, Filter Sessions ActionBar, close NavigationButton calls $closeModal() with no data; local draft initialized once from trackOptions. Reopen recreates draft from applied state; Android Back also discards through undefined closeCallback."
+    },
+    {
+      "id": "D4",
+      "summary": "Tracks heading, ten sorted native Switch rows, automationText track-<name>. checkedChange ignores programmatic synchronization. Reset and Deselect All clear only draft; Select All checks all; Done returns checked names in displayed order. No separate Cancel beyond ActionBar close; no track icons."
+    },
+    {
+      "id": "D5",
+      "summary": "Filter sessions button beside SegmentedBar, disabled until ready; fullscreen $showModal closeCallback calls only applyFilterResult. Existing search focus, states/messages and NS04 rows/dialogs unchanged; no reload or search/mode/favorite reset."
+    },
+    {
+      "id": "D6",
+      "summary": "Real loader/core Vitest for fresh derived options, immutable helpers, apply/discard/preservation, all five reference cases. All 69 NS04 tests retained; 6 files/94 tests twice, +6 getter/+19 draft-result tests. Modal rendering, Switch taps and native dismissal are device-only evidence, not Vitest."
+    },
+    {
+      "id": "D7",
+      "summary": "Historical A debug build and bundle, B install -r with matching installed hash; B1–B7 and bounded same-PID logcat PASS, exactly one XML-confirmed Back. Coordinator pixels PASS for all 27 distinct frames. Phase C performs static gates and host hashing only; no rebuild/device action."
+    }
+  ],
+  "warnings": [
+    {
+      "id": "npm-audit",
+      "detail": "npm ci: six vulnerabilities (five moderate, one high); no audit fix/dependency changes.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/npm-ci.stdout.log"
+      ]
+    },
+    {
+      "id": "install-scripts",
+      "detail": "Three pending install-script approvals: @nativescript/core, @parcel/watcher, core-js-pure; no approval/policy changes. Deprecated source-map-resolve and webpack-chain.",
+      "evidence": [
+        "migration/evidence/NS05/c-freeze/npm-ci.stderr.log"
+      ]
+    },
+    {
+      "id": "android-build",
+      "detail": "Historical NativeScript Android build DEP0190 shell-based child warning; executor helper children use shell:false.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/build-android.stderr.log"
+      ]
+    },
+    {
+      "id": "logcat",
+      "detail": "Bounded PID tail retained 72 W/E lines, including CPU-variant, HWUI, ashmem deprecation, WindowOnBackDispatcher and Back-dismissal input-disposal warnings. No detected fatal pattern; not exhaustive or warning-free.",
+      "evidence": [
+        "migration/evidence/NS05/b-device/B-logcat.txt",
+        "migration/evidence/NS05/b-device/B-logcat-warnings-errors-verbatim.txt",
+        "migration/evidence/NS05/b-device/pid-runtime.json"
+      ]
+    }
+  ],
+  "limits": [
+    "Vitest proves store/draft/result logic only. Modal rendering, native Switch taps and native dismissal are proven by historical Android device evidence only, not Vitest.",
+    "search-plus-track is logic-tested but device-unverified: no text input authorized or performed.",
+    "Large text, dark mode, Switch contrast/state affordance and other hardware-back paths are deferred to NS07.",
+    "iOS presentation, gestures/swipes feature work (NS06) and track icons are outside NS05. Bounded ListView observation swipes do not implement NS06.",
+    "Debug APK only; release build not built. First-load all-checked equivalence relies on this fixture: ten top-level tracks equal the ten session-track names; differing future sets need a contract decision.",
+    "No emulator/device action or Android rebuild in C; historical PID/environment/install evidence does not claim current device state.",
+    "Independent review, human acceptance and coordinator review dispatch remain pending; no delegation, staging, commit or push."
+  ],
+  "evidenceCategories": [
+    "static audits",
+    "automated real-core/store tests",
+    "historical Android build/bundle",
+    "historical Android XML/actions/logcat",
+    "coordinator pixels/privacy"
+  ],
+  "historicalResultsImmutable": true,
+  "next": "Next: none; STOP — NS06 requires a separate human assignment"
+}

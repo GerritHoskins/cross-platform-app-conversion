@@ -1,0 +1,18 @@
+{
+  "commands": [
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/device.py gate",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/device.py install",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/sequence.py B1",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/correct-row.py",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/sequence.py B2",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/favorites.py B3",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/favorites.py B4",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/favorites.py B5",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/direct.py 3",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/direct.py 9999; python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/direct.py abc",
+    "python -B tools/qwen-supervisor/.runs/sol-ns04-r1-b-20261027/audit.py"
+  ],
+  "exitCodeEach": 0,
+  "source": "actual terminal-tool results",
+  "note": "Read_file/search_files/write_file/patch are tool operations, not terminal commands. They are retained in the supervisor stream. No original outer-wrapper timestamps or raw outer streams have been fabricated."
+}

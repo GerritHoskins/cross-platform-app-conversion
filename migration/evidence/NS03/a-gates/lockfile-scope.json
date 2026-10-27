@@ -1,0 +1,206 @@
+{
+  "status": "BLOCKED",
+  "lockfileSha256": "6e1c380214b731574e9b49ed60d003eb063a97a89f89b74bb19e38d7fcb83e7c",
+  "added": [
+    {
+      "path": "node_modules/@vue/devtools-api",
+      "beforeVersion": null,
+      "afterVersion": "6.6.4",
+      "before": null,
+      "after": {
+        "version": "6.6.4",
+        "resolved": "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz",
+        "integrity": "sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==",
+        "license": "MIT"
+      }
+    },
+    {
+      "path": "node_modules/@vue/runtime-dom",
+      "beforeVersion": null,
+      "afterVersion": "3.5.44",
+      "before": null,
+      "after": {
+        "version": "3.5.44",
+        "resolved": "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.5.44.tgz",
+        "integrity": "sha512-3fc4ARcXVhVBaJ3ujWiNZJARD6pkyRcwG+ZYhMzjKtKUp7MAY0HLwr7r3Smep3Li6ZaWT6ewdmx8XqdaD5oNZg==",
+        "license": "MIT",
+        "peer": true,
+        "dependencies": {
+          "@vue/reactivity": "3.5.44",
+          "@vue/runtime-core": "3.5.44",
+          "@vue/shared": "3.5.44",
+          "csstype": "^3.2.3"
+        }
+      }
+    },
+    {
+      "path": "node_modules/@vue/server-renderer",
+      "beforeVersion": null,
+      "afterVersion": "3.5.44",
+      "before": null,
+      "after": {
+        "version": "3.5.44",
+        "resolved": "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.5.44.tgz",
+        "integrity": "sha512-R4S1UoH4h5Frrauv8Z5XE5TxV9oBiUSgWIC4TyVK1FK+RocRnOLwFA5Xcmo2011RlgJp+AbZCnw6afrhlgRuUQ==",
+        "license": "MIT",
+        "peer": true,
+        "dependencies": {
+          "@vue/compiler-ssr": "3.5.44",
+          "@vue/runtime-dom": "3.5.44",
+          "@vue/shared": "3.5.44"
+        }
+      }
+    },
+    {
+      "path": "node_modules/csstype",
+      "beforeVersion": null,
+      "afterVersion": "3.2.3",
+      "before": null,
+      "after": {
+        "version": "3.2.3",
+        "resolved": "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz",
+        "integrity": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==",
+        "license": "MIT",
+        "peer": true
+      }
+    },
+    {
+      "path": "node_modules/vue",
+      "beforeVersion": null,
+      "afterVersion": "3.5.44",
+      "before": null,
+      "after": {
+        "version": "3.5.44",
+        "resolved": "https://registry.npmjs.org/vue/-/vue-3.5.44.tgz",
+        "integrity": "sha512-dvvmaOCG7lAMkJTPqPwWeGMsPS6DIsFsfZDUgBp9V6mHf9b3+/wyVwYR4Es+WV6uJC0FKRxp81Obcq0ZwUcGFQ==",
+        "license": "MIT",
+        "peer": true,
+        "dependencies": {
+          "@vue/compiler-dom": "3.5.44",
+          "@vue/compiler-sfc": "3.5.44",
+          "@vue/runtime-dom": "3.5.44",
+          "@vue/server-renderer": "3.5.44",
+          "@vue/shared": "3.5.44"
+        },
+        "peerDependencies": {
+          "typescript": "*"
+        },
+        "peerDependenciesMeta": {
+          "typescript": {
+            "optional": true
+          }
+        }
+      }
+    },
+    {
+      "path": "node_modules/vuex",
+      "beforeVersion": null,
+      "afterVersion": "4.1.0",
+      "before": null,
+      "after": {
+        "version": "4.1.0",
+        "resolved": "https://registry.npmjs.org/vuex/-/vuex-4.1.0.tgz",
+        "integrity": "sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==",
+        "license": "MIT",
+        "dependencies": {
+          "@vue/devtools-api": "^6.0.0-beta.11"
+        },
+        "peerDependencies": {
+          "vue": "^3.2.0"
+        }
+      }
+    }
+  ],
+  "removed": [],
+  "changed": [
+    {
+      "path": "",
+      "beforeVersion": "1.0.0",
+      "afterVersion": "1.0.0",
+      "before": {
+        "name": "nativescript",
+        "version": "1.0.0",
+        "dependencies": {
+          "@migration/core": "file:../core",
+          "@nativescript/core": "~9.1.1",
+          "nativescript-vue": "3.1.2"
+        },
+        "devDependencies": {
+          "@nativescript/android": "9.1.1",
+          "@nativescript/tailwind": "~4.0.10",
+          "@nativescript/types": "~9.1.1",
+          "@nativescript/webpack": "~5.0.38",
+          "@types/node": "~26.5.0",
+          "tailwindcss": "^4.3.3",
+          "typescript": "^6.0.3",
+          "vitest": "5.0.5",
+          "vue-tsc": "3.3.13"
+        }
+      },
+      "after": {
+        "name": "nativescript",
+        "version": "1.0.0",
+        "dependencies": {
+          "@migration/core": "file:../core",
+          "@nativescript/core": "~9.1.1",
+          "nativescript-vue": "3.1.2",
+          "vuex": "4.1.0"
+        },
+        "devDependencies": {
+          "@nativescript/android": "9.1.1",
+          "@nativescript/tailwind": "~4.0.10",
+          "@nativescript/types": "~9.1.1",
+          "@nativescript/webpack": "~5.0.38",
+          "@types/node": "~26.5.0",
+          "tailwindcss": "^4.3.3",
+          "typescript": "^6.0.3",
+          "vitest": "5.0.5",
+          "vue-tsc": "3.3.13"
+        }
+      }
+    },
+    {
+      "path": "node_modules/typescript",
+      "beforeVersion": "6.0.3",
+      "afterVersion": "6.0.3",
+      "before": {
+        "version": "6.0.3",
+        "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
+        "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+        "dev": true,
+        "license": "Apache-2.0",
+        "bin": {
+          "tsc": "bin/tsc",
+          "tsserver": "bin/tsserver"
+        },
+        "engines": {
+          "node": ">=14.17"
+        }
+      },
+      "after": {
+        "version": "6.0.3",
+        "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
+        "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+        "devOptional": true,
+        "license": "Apache-2.0",
+        "bin": {
+          "tsc": "bin/tsc",
+          "tsserver": "bin/tsserver"
+        },
+        "engines": {
+          "node": ">=14.17"
+        }
+      }
+    }
+  ],
+  "violations": [
+    "node_modules/typescript",
+    "node_modules/csstype"
+  ],
+  "versions": {
+    "vitestVue": "3.5.44",
+    "vitestRuntimeCore": "3.5.44",
+    "nativescriptVue": "3.1.2",
+    "nativescriptRuntimeCore": "3.5.44"
+  }
+}

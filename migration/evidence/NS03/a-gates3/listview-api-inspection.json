@@ -1,0 +1,96 @@
+[
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 16,
+    "excerpt": [
+      "            validator(value) {",
+      "                return Array.isArray(value) || value instanceof ObservableArray;",
+      "            },",
+      "        },",
+      "        itemTemplateSelector: Function,",
+      "    },",
+      "    emits: {",
+      "        itemTap: (event) => !!event,",
+      "    },",
+      "    setup(props, ctx) {",
+      "        const { itemTemplates, templateNameFor, renderCell, cellVNodes } = useItemTemplates({",
+      "            slots: ctx.slots,",
+      "            selectTemplate: (item) => props.itemTemplateSelector?.(item),"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 24,
+    "excerpt": [
+      "    },",
+      "    setup(props, ctx) {",
+      "        const { itemTemplates, templateNameFor, renderCell, cellVNodes } = useItemTemplates({",
+      "            slots: ctx.slots,",
+      "            selectTemplate: (item) => props.itemTemplateSelector?.(item),",
+      "            componentName: 'ListView',",
+      "        });",
+      "        const listView = ref(null);",
+      "        function refresh() {",
+      "            try {",
+      "                // ObservableArray notifies the native ListView of changes itself",
+      "                if (props.items instanceof ObservableArray) {",
+      "                    return;"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 44,
+    "excerpt": [
+      "        }",
+      "        // depth 1 tracks the array's length and slots without walking into the",
+      "        // items themselves; cells re-render on their own when item fields change",
+      "        watch(() => props.items, refresh, { deep: 1 });",
+      "        watch(() => props.itemTemplateSelector, refresh);",
+      "        function listItemAt(index) {",
+      "            return createItemContext(props.items instanceof ObservableArray",
+      "                ? props.items.getItem(index)",
+      "                : props.items[index], index);",
+      "        }",
+      "        // the native event carries only the index; the template's item context",
+      "        // is what handlers want",
+      "        function onItemTap(event) {"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 58,
+    "excerpt": [
+      "        }",
+      "        function onItemLoading(event) {",
+      "            event.view = renderCell(listItemAt(event.index), event.view);",
+      "        }",
+      "        function itemTemplateSelector(item, index) {",
+      "            return templateNameFor(createItemContext(item, index));",
+      "        }",
+      "        return () => {",
+      "            return h('NSCListView', {",
+      "                ref: listView,",
+      "                items: props.items,",
+      "                itemTemplates,",
+      "                itemTemplateSelector,"
+    ]
+  },
+  {
+    "path": "migration/nativescript/node_modules/nativescript-vue/dist/components/ListView.js",
+    "line": 66,
+    "excerpt": [
+      "            return h('NSCListView', {",
+      "                ref: listView,",
+      "                items: props.items,",
+      "                itemTemplates,",
+      "                itemTemplateSelector,",
+      "                onItemLoading,",
+      "                onItemTap,",
+      "            }, cellVNodes());",
+      "        };",
+      "    },",
+      "});",
+      "//# sourceMappingURL=ListView.js.map"
+    ]
+  }
+]

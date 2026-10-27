@@ -1,0 +1,55 @@
+{
+  "rowId": "session-1",
+  "name": "Breakfast",
+  "closedBounds": [
+    0,
+    711,
+    807,
+    960
+  ],
+  "currentBounds": [
+    0,
+    711,
+    555,
+    960
+  ],
+  "closedRight": 807,
+  "currentRight": 555,
+  "rightEdgeShift": 252,
+  "leftEdgeBefore": 0,
+  "leftEdgeAfter": 0,
+  "leftEdgeAssertion": false,
+  "openRule": "closedRight - currentRight >= 240 (C1)",
+  "attempts": [
+    {
+      "command": [
+        "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "swipe",
+        "767",
+        "836",
+        "407",
+        "836",
+        "300"
+      ],
+      "coordinates": [
+        767,
+        836,
+        407,
+        836,
+        300
+      ],
+      "opened": true,
+      "afterBounds": [
+        0,
+        711,
+        555,
+        960
+      ]
+    }
+  ],
+  "status": "PASS"
+}

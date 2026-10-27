@@ -1,0 +1,874 @@
+{
+  "version": 1,
+  "package": "NS04",
+  "revision": 1,
+  "phase": "C",
+  "status": "READY_FOR_REVIEW",
+  "observer": "Hermes GPT-6.1 Sol high / software; historical device actions and coordinator pixels attributed separately",
+  "cases": [
+    {
+      "id": "preflight",
+      "status": "PASS",
+      "category": "scope",
+      "detail": "Branch/full HEAD/index, target hashes, APK, manifest bytes, protected paths and class audit passed in C; Phase A run 1 remains historical BLOCKED, not an application failure.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/entry-audit.json",
+        "migration/evidence/NS04/a-gates2/entry-gate.json"
+      ],
+      "historicalAttempts": [
+        {
+          "run": 1,
+          "status": "BLOCKED",
+          "disposition": {
+            "id": "C1-run1-preflight",
+            "disposition": "RESOLVED BY AUTHORIZED FRESH RUN; historical BLOCKED retained",
+            "summary": "Phase A run 1 receipt helper wrote evidence before raw porcelain, failing exact clean-state gate; no product change. Coordinator authorized run 2 with unchanged scope and capture-before-write ordering. Run 2 passed all Phase A gates.",
+            "evidence": [
+              "migration/evidence/NS04/a-gates/results-a.json",
+              "migration/handoffs/NS04-checkpoint-a.md",
+              "migration/evidence/NS04/a-gates2/entry-gate.json",
+              "migration/work-packages/NS04.md"
+            ]
+          }
+        },
+        {
+          "run": 2,
+          "status": "PASS",
+          "evidence": "migration/evidence/NS04/a-gates2/results-a.json"
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "status": "PASS",
+      "category": "software",
+      "detail": "53 passed, zero failed; tracked core unchanged.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/core-test.receipt.json",
+        "migration/evidence/NS04/c-freeze/core-test.stdout.log",
+        "migration/evidence/NS04/c-freeze/core-diff.receipt.json"
+      ]
+    },
+    {
+      "id": "no-dependency-change",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Target npm ci passed; target and root manifests byte-identical to HEAD; lockfile and all seven target hashes unchanged after ci.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/npm-ci.receipt.json",
+        "migration/evidence/NS04/c-freeze/post-ci-audit.json"
+      ]
+    },
+    {
+      "id": "store-D2",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Current-state public-core mutations compose, duplicate/absent semantics/no-selection no-ops/frozen history/other fields retained; typed getters known/unknown/preload.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/evidence/NS04/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/conference-store.test.ts"
+      ]
+    },
+    {
+      "id": "ID-parsing-D3",
+      "status": "PASS",
+      "category": "software",
+      "detail": "ASCII-digit parser table plus real loaded lookup: 003 -> 3; malformed/partial/whitespace rejected; unmatched 9999 unknown.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/nativescript/__tests__/session-detail.test.ts"
+      ]
+    },
+    {
+      "id": "list-action-D4-helpers",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Exact add-then-alert and both confirm-remove plans, including reproduced already-favorite quirk; native dialogs covered by B4/B5.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/nativescript/src/state/session-detail.ts"
+      ]
+    },
+    {
+      "id": "harness-helper-D6",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Dev/non-dev/raw/empty/null/missing extras; debug harness source gate and packaged development proof cited separately.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/nativescript/__tests__/session-detail.test.ts"
+      ]
+    },
+    {
+      "id": "favorites-some",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Frozen reference case through new favorite mutations, real loader and public core; scheduleGroups matches expected order/groups.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/evidence/NS04/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/conference-store.test.ts"
+      ]
+    },
+    {
+      "id": "favorites-order",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Frozen reference case through new favorite mutations, real loader and public core; scheduleGroups matches expected order/groups.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.json",
+        "migration/evidence/NS04/c-freeze/tests-second.json",
+        "migration/nativescript/__tests__/conference-store.test.ts"
+      ]
+    },
+    {
+      "id": "NS03-tests-retained",
+      "status": "PASS",
+      "category": "software",
+      "detail": "All 34 baseline tests retained; original store source survives removing only added block; protected NS02 and row tests unchanged.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/ns03-tests-retained.json",
+        "migration/evidence/NS04/c-freeze/static-final-audit.json"
+      ]
+    },
+    {
+      "id": "verify-core",
+      "status": "PASS",
+      "category": "software",
+      "detail": "Public compiled-core junction and 14-file inventory/fixture agreement.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/verify-core.receipt.json",
+        "migration/evidence/NS04/c-freeze/verify-core.stdout.log"
+      ]
+    },
+    {
+      "id": "typecheck",
+      "status": "PASS",
+      "category": "software",
+      "detail": "vue-tsc --noEmit.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/typecheck.receipt.json",
+        "migration/evidence/NS04/c-freeze/typecheck.stdout.log"
+      ]
+    },
+    {
+      "id": "tests-first",
+      "status": "PASS",
+      "category": "software",
+      "detail": "5 files / 69 passed / 0 failed.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-first.receipt.json",
+        "migration/evidence/NS04/c-freeze/tests-first.stdout.log"
+      ]
+    },
+    {
+      "id": "tests-second",
+      "status": "PASS",
+      "category": "software",
+      "detail": "5 files / 69 passed / 0 failed again; identical counts.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/tests-second.receipt.json",
+        "migration/evidence/NS04/c-freeze/tests-second.stdout.log"
+      ]
+    },
+    {
+      "id": "build-android",
+      "status": "PASS",
+      "category": "historical-build",
+      "detail": "Phase A run 2 build PASS, exit 0; not rebuilt in C. APK rehashed unchanged.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/build-android.receipt.json",
+        "migration/evidence/NS04/a-gates2/apk.json",
+        "migration/evidence/NS04/c-freeze/static-final-audit.json"
+      ]
+    },
+    {
+      "id": "dev-bundle-proof",
+      "status": "PASS",
+      "category": "historical-build",
+      "detail": "Phase A run 2 packaged development bundle: __DEV__ compiled true, raw extra and one-shot guard; generated/packaged bundle hashes agree. No release build.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/dev-build-evidence.json",
+        "migration/evidence/NS04/a-gates2/bundle-evidence.receipt.json"
+      ]
+    },
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "adb install -r succeeded; installed base.apk SHA-256 equals A run 2 APK. Historical Phase B only; C performed no device action.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B-install-1793087598878215600.stdout.log",
+        "migration/evidence/NS04/b-device/B-install-assertions.json",
+        "migration/evidence/NS04/b-device/B-install.png",
+        "migration/evidence/NS04/b-device/B-install.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B-install",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B-install.png",
+            "migration/evidence/NS04/b-device/B-install.xml",
+            "migration/evidence/NS04/b-device/B-install-assertions.json",
+            "migration/evidence/NS04/b-device/B-install-1793087598878215600.stdout.log"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B1",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Cold schedule and one swipe; corrected first fully visible row is What's New in Vue/id 6 before tap; disclosed, not failure.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B1-scroll-reference-correction.json",
+        "migration/evidence/NS04/b-device/B1-scrolled.png",
+        "migration/evidence/NS04/b-device/B1-scrolled.xml",
+        "migration/evidence/NS04/b-device/B1-start-assertions.json",
+        "migration/evidence/NS04/b-device/B1-start.png",
+        "migration/evidence/NS04/b-device/B1-start.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B1-start",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B1-start.png",
+            "migration/evidence/NS04/b-device/B1-start.xml",
+            "migration/evidence/NS04/b-device/B1-start-assertions.json"
+          ]
+        },
+        {
+          "id": "B1-scrolled",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B1-scrolled.png",
+            "migration/evidence/NS04/b-device/B1-scrolled.xml",
+            "migration/evidence/NS04/b-device/B1-scroll-reference-correction.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B2",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Matching detail name/time/location, Add to favorites and disabled six placeholders; no loading/error UI in assertion XML.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B2-detail-assertions.json",
+        "migration/evidence/NS04/b-device/B2-detail.png",
+        "migration/evidence/NS04/b-device/B2-detail.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B2-detail",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B2-detail.png",
+            "migration/evidence/NS04/b-device/B2-detail.xml",
+            "migration/evidence/NS04/b-device/B2-detail-assertions.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B3",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Immediate selected toggle without dialog; ActionBar back returns to identical viewport and all mode with no loading UI.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B3-back-assertions.json",
+        "migration/evidence/NS04/b-device/B3-back-observations.json",
+        "migration/evidence/NS04/b-device/B3-back.png",
+        "migration/evidence/NS04/b-device/B3-back.xml",
+        "migration/evidence/NS04/b-device/B3-toggled-assertions.json",
+        "migration/evidence/NS04/b-device/B3-toggled-observations.json",
+        "migration/evidence/NS04/b-device/B3-toggled.png",
+        "migration/evidence/NS04/b-device/B3-toggled.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B3-toggled",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B3-toggled.png",
+            "migration/evidence/NS04/b-device/B3-toggled.xml",
+            "migration/evidence/NS04/b-device/B3-toggled-assertions.json",
+            "migration/evidence/NS04/b-device/B3-toggled-observations.json"
+          ]
+        },
+        {
+          "id": "B3-back",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B3-back.png",
+            "migration/evidence/NS04/b-device/B3-back.xml",
+            "migration/evidence/NS04/b-device/B3-back-assertions.json",
+            "migration/evidence/NS04/b-device/B3-back-observations.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B4",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Favorite mode shows session 6; Remove Favorite exact confirmation; Cancel retains, Remove yields No favorite sessions.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B4-cancel-assertions.json",
+        "migration/evidence/NS04/b-device/B4-cancel-observations.json",
+        "migration/evidence/NS04/b-device/B4-cancel.png",
+        "migration/evidence/NS04/b-device/B4-cancel.xml",
+        "migration/evidence/NS04/b-device/B4-dialog-again-assertions.json",
+        "migration/evidence/NS04/b-device/B4-dialog-again-observations.json",
+        "migration/evidence/NS04/b-device/B4-dialog-again.png",
+        "migration/evidence/NS04/b-device/B4-dialog-again.xml",
+        "migration/evidence/NS04/b-device/B4-dialog-assertions.json",
+        "migration/evidence/NS04/b-device/B4-dialog-observations.json",
+        "migration/evidence/NS04/b-device/B4-dialog.png",
+        "migration/evidence/NS04/b-device/B4-dialog.xml",
+        "migration/evidence/NS04/b-device/B4-favorites-assertions.json",
+        "migration/evidence/NS04/b-device/B4-favorites-observations.json",
+        "migration/evidence/NS04/b-device/B4-favorites.png",
+        "migration/evidence/NS04/b-device/B4-favorites.xml",
+        "migration/evidence/NS04/b-device/B4-removed-assertions.json",
+        "migration/evidence/NS04/b-device/B4-removed-observations.json",
+        "migration/evidence/NS04/b-device/B4-removed.png",
+        "migration/evidence/NS04/b-device/B4-removed.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B4-favorites",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B4-favorites.png",
+            "migration/evidence/NS04/b-device/B4-favorites.xml",
+            "migration/evidence/NS04/b-device/B4-favorites-assertions.json",
+            "migration/evidence/NS04/b-device/B4-favorites-observations.json"
+          ]
+        },
+        {
+          "id": "B4-dialog",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B4-dialog.png",
+            "migration/evidence/NS04/b-device/B4-dialog.xml",
+            "migration/evidence/NS04/b-device/B4-dialog-assertions.json",
+            "migration/evidence/NS04/b-device/B4-dialog-observations.json"
+          ]
+        },
+        {
+          "id": "B4-cancel",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B4-cancel.png",
+            "migration/evidence/NS04/b-device/B4-cancel.xml",
+            "migration/evidence/NS04/b-device/B4-cancel-assertions.json",
+            "migration/evidence/NS04/b-device/B4-cancel-observations.json"
+          ]
+        },
+        {
+          "id": "B4-dialog-again",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B4-dialog-again.png",
+            "migration/evidence/NS04/b-device/B4-dialog-again.xml",
+            "migration/evidence/NS04/b-device/B4-dialog-again-assertions.json",
+            "migration/evidence/NS04/b-device/B4-dialog-again-observations.json"
+          ]
+        },
+        {
+          "id": "B4-removed",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B4-removed.png",
+            "migration/evidence/NS04/b-device/B4-removed.xml",
+            "migration/evidence/NS04/b-device/B4-removed-assertions.json",
+            "migration/evidence/NS04/b-device/B4-removed-observations.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B5",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Non-favorite adds before Favorite Added/OK; repeat Favorite shows already-favorite removal quirk; Cancel retains (favorites readback), Remove removes.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B5-added-assertions.json",
+        "migration/evidence/NS04/b-device/B5-added-observations.json",
+        "migration/evidence/NS04/b-device/B5-added.png",
+        "migration/evidence/NS04/b-device/B5-added.xml",
+        "migration/evidence/NS04/b-device/B5-already-assertions.json",
+        "migration/evidence/NS04/b-device/B5-already-observations.json",
+        "migration/evidence/NS04/b-device/B5-already-remove-assertions.json",
+        "migration/evidence/NS04/b-device/B5-already-remove-observations.json",
+        "migration/evidence/NS04/b-device/B5-already-remove.png",
+        "migration/evidence/NS04/b-device/B5-already-remove.xml",
+        "migration/evidence/NS04/b-device/B5-already.png",
+        "migration/evidence/NS04/b-device/B5-already.xml",
+        "migration/evidence/NS04/b-device/B5-final-all-assertions.json",
+        "migration/evidence/NS04/b-device/B5-final-all-observations.json",
+        "migration/evidence/NS04/b-device/B5-final-all.png",
+        "migration/evidence/NS04/b-device/B5-final-all.xml",
+        "migration/evidence/NS04/b-device/B5-removed-assertions.json",
+        "migration/evidence/NS04/b-device/B5-removed-observations.json",
+        "migration/evidence/NS04/b-device/B5-removed.png",
+        "migration/evidence/NS04/b-device/B5-removed.xml",
+        "migration/evidence/NS04/b-device/B5-still-favorite-assertions.json",
+        "migration/evidence/NS04/b-device/B5-still-favorite-observations.json",
+        "migration/evidence/NS04/b-device/B5-still-favorite.png",
+        "migration/evidence/NS04/b-device/B5-still-favorite.xml"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B5-added",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-added.png",
+            "migration/evidence/NS04/b-device/B5-added.xml",
+            "migration/evidence/NS04/b-device/B5-added-assertions.json",
+            "migration/evidence/NS04/b-device/B5-added-observations.json"
+          ]
+        },
+        {
+          "id": "B5-already",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-already.png",
+            "migration/evidence/NS04/b-device/B5-already.xml",
+            "migration/evidence/NS04/b-device/B5-already-assertions.json",
+            "migration/evidence/NS04/b-device/B5-already-observations.json"
+          ]
+        },
+        {
+          "id": "B5-still-favorite",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-still-favorite.png",
+            "migration/evidence/NS04/b-device/B5-still-favorite.xml",
+            "migration/evidence/NS04/b-device/B5-still-favorite-assertions.json",
+            "migration/evidence/NS04/b-device/B5-still-favorite-observations.json"
+          ]
+        },
+        {
+          "id": "B5-already-remove",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-already-remove.png",
+            "migration/evidence/NS04/b-device/B5-already-remove.xml",
+            "migration/evidence/NS04/b-device/B5-already-remove-assertions.json",
+            "migration/evidence/NS04/b-device/B5-already-remove-observations.json"
+          ]
+        },
+        {
+          "id": "B5-removed",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-removed.png",
+            "migration/evidence/NS04/b-device/B5-removed.xml",
+            "migration/evidence/NS04/b-device/B5-removed-assertions.json",
+            "migration/evidence/NS04/b-device/B5-removed-observations.json"
+          ]
+        },
+        {
+          "id": "B5-final-all",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B5-final-all.png",
+            "migration/evidence/NS04/b-device/B5-final-all.xml",
+            "migration/evidence/NS04/b-device/B5-final-all-assertions.json",
+            "migration/evidence/NS04/b-device/B5-final-all-observations.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B6",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Cold entry 3 opens Ionic Tooling, back lands on schedule; 9999/abc not-found with disabled toggle; final foreground schedule.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B6-9999-assertions.json",
+        "migration/evidence/NS04/b-device/B6-9999.png",
+        "migration/evidence/NS04/b-device/B6-9999.xml",
+        "migration/evidence/NS04/b-device/B6-abc-assertions.json",
+        "migration/evidence/NS04/b-device/B6-abc.png",
+        "migration/evidence/NS04/b-device/B6-abc.xml",
+        "migration/evidence/NS04/b-device/B6-back-assertions.json",
+        "migration/evidence/NS04/b-device/B6-back-observations.json",
+        "migration/evidence/NS04/b-device/B6-back.png",
+        "migration/evidence/NS04/b-device/B6-back.xml",
+        "migration/evidence/NS04/b-device/B6-entry-3-assertions.json",
+        "migration/evidence/NS04/b-device/B6-entry-3.png",
+        "migration/evidence/NS04/b-device/B6-entry-3.xml",
+        "migration/evidence/NS04/b-device/B6-final-all-assertions.json",
+        "migration/evidence/NS04/b-device/B6-final-all-observations.json",
+        "migration/evidence/NS04/b-device/B6-final-all.png",
+        "migration/evidence/NS04/b-device/B6-final-all.xml",
+        "migration/evidence/NS04/b-device/B6-foreground-assertions.json",
+        "migration/evidence/NS04/b-device/B6-foreground.png",
+        "migration/evidence/NS04/b-device/B6-foreground.xml",
+        "migration/evidence/NS04/b-device/final-activity-1793088015605218000.stdout.log"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B6-entry-3",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-entry-3.png",
+            "migration/evidence/NS04/b-device/B6-entry-3.xml",
+            "migration/evidence/NS04/b-device/B6-entry-3-assertions.json"
+          ]
+        },
+        {
+          "id": "B6-back",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-back.png",
+            "migration/evidence/NS04/b-device/B6-back.xml",
+            "migration/evidence/NS04/b-device/B6-back-assertions.json",
+            "migration/evidence/NS04/b-device/B6-back-observations.json"
+          ]
+        },
+        {
+          "id": "B6-9999",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-9999.png",
+            "migration/evidence/NS04/b-device/B6-9999.xml",
+            "migration/evidence/NS04/b-device/B6-9999-assertions.json"
+          ]
+        },
+        {
+          "id": "B6-abc",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-abc.png",
+            "migration/evidence/NS04/b-device/B6-abc.xml",
+            "migration/evidence/NS04/b-device/B6-abc-assertions.json"
+          ]
+        },
+        {
+          "id": "B6-final-all",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-final-all.png",
+            "migration/evidence/NS04/b-device/B6-final-all.xml",
+            "migration/evidence/NS04/b-device/B6-final-all-assertions.json",
+            "migration/evidence/NS04/b-device/B6-final-all-observations.json"
+          ]
+        },
+        {
+          "id": "B6-foreground",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-foreground.png",
+            "migration/evidence/NS04/b-device/B6-foreground.xml",
+            "migration/evidence/NS04/b-device/B6-foreground-assertions.json",
+            "migration/evidence/NS04/b-device/final-activity-1793088015605218000.stdout.log"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "category": "historical-device",
+      "detail": "Four bounded last-400-line PID logs with stable PIDs and no detected fatal pattern; W/E retained verbatim, not exhaustive runtime proof.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B1-logcat-1793087860769195800.stdout.log",
+        "migration/evidence/NS04/b-device/B1-logcat-summary.json",
+        "migration/evidence/NS04/b-device/B1-warnings-errors.txt",
+        "migration/evidence/NS04/b-device/B6-3-logcat-1793087897755931600.stdout.log",
+        "migration/evidence/NS04/b-device/B6-3-logcat-summary.json",
+        "migration/evidence/NS04/b-device/B6-3-warnings-errors.txt",
+        "migration/evidence/NS04/b-device/B6-9999-logcat-1793087910321699100.stdout.log",
+        "migration/evidence/NS04/b-device/B6-9999-logcat-summary.json",
+        "migration/evidence/NS04/b-device/B6-9999-warnings-errors.txt",
+        "migration/evidence/NS04/b-device/B6-abc-logcat-1793087922008085500.stdout.log",
+        "migration/evidence/NS04/b-device/B6-abc-logcat-summary.json",
+        "migration/evidence/NS04/b-device/B6-abc-warnings-errors.txt"
+      ],
+      "sourceResult": "migration/evidence/NS04/b-device/results-b.json",
+      "subCases": [
+        {
+          "id": "B-logcat-B1",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B1-logcat-1793087860769195800.stdout.log",
+            "migration/evidence/NS04/b-device/B1-warnings-errors.txt",
+            "migration/evidence/NS04/b-device/B1-logcat-summary.json"
+          ]
+        },
+        {
+          "id": "B-logcat-B6-3",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-3-logcat-1793087897755931600.stdout.log",
+            "migration/evidence/NS04/b-device/B6-3-warnings-errors.txt",
+            "migration/evidence/NS04/b-device/B6-3-logcat-summary.json"
+          ]
+        },
+        {
+          "id": "B-logcat-B6-9999",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-9999-logcat-1793087910321699100.stdout.log",
+            "migration/evidence/NS04/b-device/B6-9999-warnings-errors.txt",
+            "migration/evidence/NS04/b-device/B6-9999-logcat-summary.json"
+          ]
+        },
+        {
+          "id": "B-logcat-B6-abc",
+          "status": "PASS",
+          "evidence": [
+            "migration/evidence/NS04/b-device/B6-abc-logcat-1793087922008085500.stdout.log",
+            "migration/evidence/NS04/b-device/B6-abc-warnings-errors.txt",
+            "migration/evidence/NS04/b-device/B6-abc-logcat-summary.json"
+          ]
+        }
+      ],
+      "pixelStatus": "PASS per coordinator; original B pending annotation is immutable historical state"
+    },
+    {
+      "id": "pixel-inspection",
+      "status": "PASS",
+      "category": "coordinator-pixels",
+      "detail": "Coordinator PASS for all 23 PNG files/20 distinct frames; no keyboard/personal content; C hash/coverage reconciliation PASS.",
+      "evidence": [
+        "migration/evidence/NS04/pixel-inspection-coordinator.md",
+        "migration/evidence/NS04/c-freeze/pixel-evidence-reconciliation.json"
+      ]
+    },
+    {
+      "id": "preservation-class-audit",
+      "status": "PASS",
+      "category": "scope",
+      "detail": "All 261 protected paths match run 2 entry; all 81 tracked native files match run 2 final; seven target records match; earlier NS04 history unchanged; IDEA hash only.",
+      "evidence": [
+        "migration/evidence/NS04/c-freeze/static-final-audit.json"
+      ]
+    }
+  ],
+  "counts": {
+    "total": 26,
+    "PASS": 26
+  },
+  "subcaseCounts": {
+    "total": 27,
+    "PASS": 27
+  },
+  "testCounts": {
+    "core": {
+      "tests": 53,
+      "passed": 53,
+      "failed": 0,
+      "receipt": "migration/evidence/NS04/c-freeze/core-test.receipt.json"
+    },
+    "baseline": {
+      "files": 4,
+      "tests": 34
+    },
+    "first": {
+      "files": 5,
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "byFile": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 33,
+          "passed": 33
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1
+        }
+      ]
+    },
+    "second": {
+      "files": 5,
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "byFile": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 33,
+          "passed": 33
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1
+        }
+      ]
+    },
+    "repeatable": true,
+    "additionalFiles": 1,
+    "additionalTests": 35
+  },
+  "historicalRun1": {
+    "status": "BLOCKED",
+    "finalDisposition": "Coordinator-authorized run 2 passed; historical results not overwritten",
+    "evidence": "migration/evidence/NS04/a-gates/results-a.json"
+  },
+  "coordinatorDispositions": [
+    {
+      "id": "C1-run1-preflight",
+      "disposition": "RESOLVED BY AUTHORIZED FRESH RUN; historical BLOCKED retained",
+      "summary": "Phase A run 1 receipt helper wrote evidence before raw porcelain, failing exact clean-state gate; no product change. Coordinator authorized run 2 with unchanged scope and capture-before-write ordering. Run 2 passed all Phase A gates.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/results-a.json",
+        "migration/handoffs/NS04-checkpoint-a.md",
+        "migration/evidence/NS04/a-gates2/entry-gate.json",
+        "migration/work-packages/NS04.md"
+      ]
+    },
+    {
+      "id": "C2-emulator-launch",
+      "disposition": "COORDINATOR AUTHORIZED",
+      "summary": "No emulator was running before B. Coordinator normally launched RN01_API36 from its snapshot, with no settings changes; executor used that AVD.",
+      "evidence": [
+        "migration/handoffs/NS04.md",
+        "migration/evidence/NS04/b-device/results-b.json"
+      ]
+    },
+    {
+      "id": "C3-B1-reference",
+      "disposition": "DISCLOSED; NOT A FAILURE",
+      "summary": "Executor initially selected a partially visible row, then corrected the reference to first fully visible row What's New in Vue, id 6, from the same B1 XML before tapping. No extra swipe, relaunch or product change; original evidence retained.",
+      "evidence": [
+        "migration/evidence/NS04/b-device/B1-scroll-reference-correction.json",
+        "migration/handoffs/NS04-checkpoint-b.md"
+      ]
+    },
+    {
+      "id": "C4-pixels",
+      "disposition": "PASS; OBSERVATIONS DEFERRED TO NS07",
+      "summary": "Coordinator pixel inspection passed all 20 distinct frames (23 PNG files): no keyboard/personal content. Disabled controls differ only by missing border (XML enabled=false); dialog buttons are uppercase and lack destructive styling. These are NS07 concerns, not NS04 failures.",
+      "evidence": [
+        "migration/evidence/NS04/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "C5-reviewer-design-notes",
+      "disposition": "DESIGN NOTES; NOT DEVIATIONS",
+      "summary": "Android dialogs have positive/negative buttons only (D4); mode changes recreate the ListView and return to top (NS03 v-if), while detail back retains viewport (B3-back). __DEV__ harness is proven only in debug/development bundle; release not built.",
+      "evidence": [
+        "migration/evidence/NS04/pixel-inspection-coordinator.md",
+        "migration/evidence/NS04/b-device/B3-back-observations.json",
+        "migration/evidence/NS04/a-gates2/dev-build-evidence.json"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "summary": "Root Frame is the schedule stack; row content navigates with only raw sessionId; detail imports no schedule and reads no navigation history. ActionBar back retains the mounted schedule. Search retention is source/store evidence, not a device search claim."
+    },
+    {
+      "id": "D2",
+      "summary": "favoriteAdded/favoriteRemoved use public core addFavorite/removeFavorite on current selection within replaceState mutations; typed sessionById/isFavorite; NS03 exports, lifecycle and setFavoriteIds retained."
+    },
+    {
+      "id": "D3",
+      "summary": "Strict ASCII decimal digits, then loaded-session lookup: 3 and 003 resolve to 3; 9999 parses but is unmatched; abc, 3abc, -1, empty and whitespace are rejected. Deliberately stricter than source parseInt."
+    },
+    {
+      "id": "D4",
+      "summary": "GridLayout row content link and sibling Favorite/Remove button; add commits before title-only Favorite Added/OK alert; existing-favorite quirk and favorites-mode removal use exact confirmation strings. Cancel commits nothing; Remove removes. Android dialogs offer positive/negative only, no destructive styling."
+    },
+    {
+      "id": "D5",
+      "summary": "Independent SessionDetail page with loading/error/retry, ready known/unknown, session fields, immediate no-dialog toggle, scalar selected/disabled accessibilityState and six disabled placeholders. Fixed light palette, ScrollView and ActionBar back."
+    },
+    {
+      "id": "D6",
+      "summary": "One-shot root Frame loaded harness reads raw ns04SessionId launch extra only under __DEV__; directEntrySessionId rejects missing/empty/non-dev input. Navigates above Schedule without animation. Substitutes for a URL deep link; debug development-mode bundle only, release not built."
+    },
+    {
+      "id": "D7",
+      "summary": "Real loader/core Vitest logic, no core mocks or snapshots: mutations/getters, frozen history, composition, favorites-some/favorites-order and helpers. All 34 NS03 tests retained; 5 files/69 tests twice. Native navigation/dialog/rendering are historical device evidence, not Vitest coverage."
+    },
+    {
+      "id": "D8",
+      "summary": "Phase B installed A run 2 debug APK with matching installed SHA-256; B1–B6 and bounded PID logcat PASS. XML-derived taps, one swipe, no text input/hardware keys; coordinator inspected all 23 PNG files/20 distinct frames."
+    }
+  ],
+  "evidenceCategories": [
+    "historical failed preflight",
+    "run 2 implementation/static/build/dev-bundle",
+    "historical device XML/PNG/install/hash/PID logs",
+    "coordinator pixel inspection",
+    "Phase C rerun static gates and preservation",
+    "post-freeze manifest receipts under run directory only"
+  ],
+  "warnings": [
+    "npm ci: 6 vulnerabilities (5 moderate, 1 high); source-map-resolve and webpack-chain deprecations. No audit fix or dependency change.",
+    "Three unapproved install scripts: @nativescript/core@9.1.3, @parcel/watcher@2.6.0, core-js-pure@3.51.0. No approvals or allowScripts/config change.",
+    "Historical Android build: NativeScript DEP0190 shell-child warning; executor helpers use argument arrays and shell:false.",
+    "Historical bounded PID logcat preserves CPU variant, HWUI, ashmem deprecation and WindowOnBackDispatcher W/E lines. No detected fatal pattern is not exhaustive or warning-free runtime proof."
+  ],
+  "limits": [
+    "Navigation, dialogs, native rendering and ActionBar back are proven by Phase B device XML and coordinator pixels, not Vitest; no device/emulator interaction in C.",
+    "Detail loading/error/retry rendering has source/type/logic evidence only, not native error-injection coverage; no loader-call-count instrumentation on device.",
+    "Hardware back, keyboard, large text, dark theme and disabled-control styling belong to NS07. No text input in B or C.",
+    "Release build not built; __DEV__ exclusion not executed in a release APK. No iOS validation.",
+    "Search/no-match/clear remain device-unverified; search text retention has source/store evidence only.",
+    "Favorites remain in memory; filter modal, swipe actions, speakers entry, sharing and placeholder behaviors are out of scope.",
+    "READY_FOR_REVIEW/FROZEN is not independent review approval or human acceptance. Coordinator owns formal review dispatch.",
+    "Next: none; STOP — NS05 requires a separate human assignment"
+  ],
+  "unresolved": [],
+  "reviewPending": true,
+  "next": "Next: none; STOP — NS05 requires a separate human assignment"
+}

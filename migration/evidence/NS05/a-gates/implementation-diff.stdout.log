@@ -1,0 +1,198 @@
+diff --git a/migration/nativescript/__tests__/conference-store.test.ts b/migration/nativescript/__tests__/conference-store.test.ts
+index 76f88dd..05c5311 100644
+--- a/migration/nativescript/__tests__/conference-store.test.ts
++++ b/migration/nativescript/__tests__/conference-store.test.ts
+@@ -273,6 +273,72 @@ describe('NS04 favorite mutations and detail getters', () => {
+   });
+ });
+ 
++describe('NS05 track options', () => {
++  const sortedNames = ['Communication', 'Design', 'Documentation', 'Food', 'Ionic', 'Navigation', 'Services', 'Tooling', 'Vue', 'Workshop'];
++
++  test('returns empty options before load, while loading and after an error', () => {
++    const store = createConferenceStore();
++    expect(store.getters.trackOptions).toEqual([]);
++    store.commit('loadStarted');
++    expect(store.getters.trackOptions).toEqual([]);
++    store.commit('loadFailed', 'offline');
++    expect(store.getters.trackOptions).toEqual([]);
++  });
++
++  test('all ten options are sorted and checked after the real load', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: true })));
++    expect([...store.state.selection!.selectedTracks].sort()).toEqual(sortedNames);
++    expect(store.state.conference!.tracks.map((track: { name: string }) => track.name).sort()).toEqual(sortedNames);
++  });
++
++  test('mirrors only Ionic after replacing the applied selection', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    store.commit('setSelectedTracks', ['Ionic']);
++    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: name === 'Ionic' })));
++  });
++
++  test('an empty applied selection leaves all options unchecked', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    store.commit('setSelectedTracks', []);
++    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: false })));
++  });
++
++  test('every read returns fresh options and changing them cannot affect state or later reads', async () => {
++    const store = createConferenceStore();
++    const idle = store.getters.trackOptions;
++    expect(store.getters.trackOptions).not.toBe(idle);
++    await store.dispatch('load');
++    const before = freezeState(store.state);
++    const first = store.getters.trackOptions;
++    const second = store.getters.trackOptions;
++    expect(second).not.toBe(first);
++    expect(second[0]).not.toBe(first[0]);
++    first[0].checked = false;
++    first[0].name = 'Changed draft';
++    first.pop();
++    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: true })));
++    expect(toRaw(store.state)).toBe(before);
++  });
++
++  test('requires ready status, conference and selection, including during a reload', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    const ready = store.state;
++    store.commit('loadStarted');
++    expect(store.getters.trackOptions).toEqual([]);
++    store.commit('loadFailed', 'offline');
++    expect(store.getters.trackOptions).toEqual([]);
++    store.replaceState({ ...ready, conference: null });
++    expect(store.getters.trackOptions).toEqual([]);
++    store.replaceState({ ...ready, selection: null });
++    expect(store.getters.trackOptions).toEqual([]);
++  });
++});
++
+ describe('controlled loader lifecycle', () => {
+   test('pending load starts synchronously but calls the loader behind a promise boundary', async () => {
+     const pending = deferred<Conference>();
+diff --git a/migration/nativescript/src/components/Schedule.vue b/migration/nativescript/src/components/Schedule.vue
+index 3a37271..cf5de72 100644
+--- a/migration/nativescript/src/components/Schedule.vue
++++ b/migration/nativescript/src/components/Schedule.vue
+@@ -1,7 +1,9 @@
+ <script lang="ts" setup>
+-import { $navigateTo, computed, onMounted } from 'nativescript-vue';
++import { $navigateTo, $showModal, computed, onMounted } from 'nativescript-vue';
+ import { Dialogs, type EventData, type SearchBar, type SegmentedBar, type View } from '@nativescript/core';
+ import SessionDetail from './SessionDetail.vue';
++import TrackFilter from './TrackFilter.vue';
++import { applyFilterResult } from '../state/track-filter';
+ import { useConferenceStore } from '../state/conference-store';
+ import { listFavoriteAction } from '../state/session-detail';
+ import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
+@@ -15,6 +17,13 @@ const emptyMessage = computed(() => store.state.selection?.mode === 'favorites'
+   : 'No sessions match your search or filters.');
+ const templateFor = ({ item }: { item: ScheduleRow }) => item.kind;
+ 
++function openFilter() {
++  $showModal(TrackFilter, {
++    fullscreen: true,
++    closeCallback: (result: unknown) => applyFilterResult(store, result),
++  });
++}
++
+ function openSession(event: EventData, id: number) {
+   $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
+ }
+@@ -72,19 +81,30 @@ onMounted(() => {
+         @textChange="changeSearch"
+         @loaded="clearLaunchFocus"
+       />
+-      <SegmentedBar
+-        row="1"
+-        :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
+-        :isEnabled="ready"
+-        color="#111111"
+-        backgroundColor="#eeeeee"
+-        selectedBackgroundColor="#c5ddf4"
+-        margin="8,12"
+-        @selectedIndexChange="changeMode"
+-      >
+-        <SegmentedBarItem title="All sessions" />
+-        <SegmentedBarItem title="Favorite sessions" />
+-      </SegmentedBar>
++      <GridLayout row="1" columns="*,auto">
++        <SegmentedBar
++          col="0"
++          :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
++          :isEnabled="ready"
++          color="#111111"
++          backgroundColor="#eeeeee"
++          selectedBackgroundColor="#c5ddf4"
++          margin="8,12"
++          @selectedIndexChange="changeMode"
++        >
++          <SegmentedBarItem title="All sessions" />
++          <SegmentedBarItem title="Favorite sessions" />
++        </SegmentedBar>
++        <Button
++          col="1"
++          text="Filter"
++          automationText="Filter sessions"
++          accessibilityLabel="Filter sessions"
++          :isEnabled="ready"
++          margin="8,12,8,0"
++          @tap="openFilter"
++        />
++      </GridLayout>
+       <StackLayout v-if="loading" row="2" verticalAlignment="center" margin="24">
+         <ActivityIndicator :busy="true" color="#245a91" />
+         <Label text="Loading sessions…" textAlignment="center" color="#111111" />
+diff --git a/migration/nativescript/src/state/conference-store.ts b/migration/nativescript/src/state/conference-store.ts
+index b6a5700..bc4c50c 100644
+--- a/migration/nativescript/src/state/conference-store.ts
++++ b/migration/nativescript/src/state/conference-store.ts
+@@ -6,6 +6,7 @@ import {
+   groupSessions,
+   removeFavorite,
+   selectSessions,
++  sortTracksByName,
+   type Conference,
+   type ScheduleMode,
+   type Selection,
+@@ -21,10 +22,16 @@ export interface ConferenceState {
+   error: string | null;
+ }
+ 
++export interface TrackOption {
++  name: string;
++  checked: boolean;
++}
++
+ export type ConferenceLoader = () => Conference | Promise<Conference>;
+ export type ConferenceStore = Omit<Store<ConferenceState>, 'getters'> & {
+   readonly getters: {
+     readonly scheduleGroups: SessionGroup[];
++    readonly trackOptions: TrackOption[];
+     readonly sessionById: (id: number) => Session | undefined;
+     readonly isFavorite: (id: number) => boolean;
+   };
+@@ -115,5 +122,18 @@ export function createConferenceStore(loader: ConferenceLoader = loadConference)
+       },
+     },
+   });
++  // Vuex caches registered getters. This read-only accessor deliberately derives
++  // fresh options on every read so a modal draft cannot mutate a cached result.
++  Object.defineProperty(store.getters, 'trackOptions', {
++    enumerable: true,
++    get(): TrackOption[] {
++      const { status, conference, selection } = store.state;
++      if (status !== 'ready' || !conference || !selection) return [];
++      return sortTracksByName(conference.tracks).map(track => ({
++        name: track.name,
++        checked: selection.selectedTracks.includes(track.name),
++      }));
++    },
++  });
+   return store as ConferenceStore;
+ }

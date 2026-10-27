@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "resultEntries": 50,
+  "resultCounts": {
+    "total": 50,
+    "passed": 50,
+    "failed": 0,
+    "blocked": 0,
+    "byCategory": {
+      "static": 3,
+      "automated": 13,
+      "historical-build": 2,
+      "historical-device": 30,
+      "historical-reconciliation": 1,
+      "coordinator-pixels": 1
+    },
+    "historicalDeviceCases": 30,
+    "deviceAggregateCases": 5
+  },
+  "evidencePathsExist": true,
+  "checkpointBeforeFreeze": true,
+  "statusLineReady": true,
+  "hardwareFreshXmlCommandBeforeBack": "B6-immediately-before-back-xml-1-1793093404548831700",
+  "prefreezeAudit": "migration/evidence/NS05/c-freeze/prefreeze-audit.json",
+  "noMigrationWriteAfterManifestWrite": true,
+  "remaining": "manifest --write; manifest check; read-only postfreeze validation; run result only"
+}

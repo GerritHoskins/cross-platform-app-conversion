@@ -1,0 +1,24 @@
+{"id":"final-branch","command":"git","args":["branch","--show-current"],"cwd":"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main","exitCode":0,"startedAt":"2026-10-27T09:17:45.785Z","durationMs":32,"signal":null,"stdoutBytes":18,"stderrBytes":0,"stdout":"migration/slice-1\n","stderr":""}
+{"id":"final-head","command":"git","args":["rev-parse","HEAD"],"cwd":"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main","exitCode":0,"startedAt":"2026-10-27T09:17:45.822Z","durationMs":31,"signal":null,"stdoutBytes":41,"stderrBytes":0,"stdout":"230a054818bc90477d6d0a67fa86d3891d810d12\n","stderr":""}
+{"id":"final-index","command":"git","args":["diff","--cached","--exit-code"],"cwd":"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main","exitCode":0,"startedAt":"2026-10-27T09:17:45.853Z","durationMs":38,"signal":null,"stdoutBytes":0,"stderrBytes":0,"stdout":"","stderr":""}
+{"id":"final-diff-check","command":"git","args":["diff","--check"],"cwd":"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main","exitCode":0,"startedAt":"2026-10-27T09:17:45.893Z","durationMs":54,"signal":null,"stdoutBytes":0,"stderrBytes":0,"stdout":"","stderr":""}
+{"id":"final-core-unchanged","command":"git","args":["diff","--exit-code","HEAD","--","migration/core"],"cwd":"C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main","exitCode":0,"startedAt":"2026-10-27T09:17:45.948Z","durationMs":39,"signal":null,"stdoutBytes":0,"stderrBytes":0,"stdout":"","stderr":""}
+{
+  "passed": true,
+  "branch": "migration/slice-1",
+  "head": "230a054818bc90477d6d0a67fa86d3891d810d12",
+  "protectedCount": 261,
+  "nativeTrackedCount": 84,
+  "changedProtected": [],
+  "changedNative": [
+    "migration/nativescript/__tests__/conference-store.test.ts",
+    "migration/nativescript/src/components/Schedule.vue",
+    "migration/nativescript/src/state/conference-store.ts"
+  ],
+  "manifestsUnchanged": true,
+  "ideaUnchanged": true,
+  "originalTestsRetained": true,
+  "unchangedExistingTests": true,
+  "lfText": true,
+  "forbiddenPaths": []
+}

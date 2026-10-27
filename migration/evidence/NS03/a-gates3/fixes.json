@@ -1,0 +1,20 @@
+{
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "fixes": [
+    {
+      "path": "migration/nativescript/types/vuex.d.ts",
+      "cause": "Vuex 4.1.0 root export hides declarations under bundler resolution",
+      "change": "Ambient vuex module re-exports all named and default declarations from shipped vuex/types/index.d.ts; no handwritten types or runtime/config changes",
+      "verification": "typecheck-shim.receipt.json (exit 0)"
+    },
+    {
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "cause": "Run 2 tests used Redux-like object commits; Vuex object-style commits pass the entire object, not its payload property",
+      "change": "Pass frozen action.type and action.payload separately for success, failure, selection and pre-load no-op cases; retain frozen payload/history assertions",
+      "basis": "contract-inspection.stdout.log: Vuex unifyObjectStyle and Store.prototype.commit; caught by source inspection, no failed fix attempt"
+    }
+  ],
+  "productRuntimeChangesSinceRun2": false,
+  "noInstall": true,
+  "noDeviceInteraction": true
+}

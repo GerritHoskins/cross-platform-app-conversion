@@ -1,0 +1,13 @@
+{
+  "id": "terminal-tool-prelude",
+  "command": [
+    "bash",
+    "-lc",
+    "git branch --show-current && git rev-parse HEAD && git diff --cached --name-status && git status --porcelain=v1"
+  ],
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "source": "Observed terminal tool response in this session; retrospective invocation receipt, no invented stdout/stderr or timing.",
+  "outputEvidence": "prelude-terminal.json"
+}

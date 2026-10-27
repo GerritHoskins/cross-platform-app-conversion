@@ -1,0 +1,24 @@
+{
+  "defaultWebpack": true,
+  "buildSucceeded": true,
+  "listing": "migration/evidence/NS02/a-gates/bundle-listing.txt",
+  "coreModuleListed": true,
+  "jsonModuleListed": false,
+  "claim": "Successful Android webpack bundle consumed the application import chain to the linked compiled public core and bundled JSON; no device execution.",
+  "dataModulesListed": true,
+  "sourceMapEvidence": {
+    "path": "migration/nativescript/platforms/android/app/src/main/assets/app/bundle.mjs.map",
+    "exists": true,
+    "sources": [
+      "webpack://nativescript/../core/dist/favorites.js",
+      "webpack://nativescript/../core/dist/grouping.js",
+      "webpack://nativescript/../core/dist/index.js",
+      "webpack://nativescript/../core/dist/normalize.js",
+      "webpack://nativescript/../core/dist/selection.js",
+      "webpack://nativescript/../core/dist/time.js",
+      "webpack://nativescript/./src/data/load-conference.ts"
+    ]
+  },
+  "jsonModuleListedIndividually": false,
+  "note": "Default webpack listing groups src/data into 2 modules rather than naming conference.json individually. Successful static JSON import/build is recorded; no bundle content is dumped."
+}

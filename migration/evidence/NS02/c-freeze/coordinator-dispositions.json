@@ -1,0 +1,36 @@
+[
+  {
+    "id": "merge-head",
+    "summary": "The human fork merged main after phase A as f2f51ea460d405f4d454f0f8a1a0080a913694d7; its tree equals 52ae6de. The first phase B attempt stopped at the old HEAD gate before any device action. B2 ran against the merge HEAD.",
+    "evidence": [
+      "migration/evidence/NS02/b-device/results-b.json",
+      "migration/evidence/NS02/b-device2/entry-gate.json",
+      "migration/evidence/NS02/c-freeze/entry-audit.json"
+    ]
+  },
+  {
+    "id": "B-launch",
+    "summary": "PASS per the executor B-launch-disposition.json and coordinator pixel inspection: both cold launches show the required diagnostic. The first helper incorrectly expected separate text nodes for a combined two-line Label and counted monkey launch time as XML polling. Its original BLOCKED records remain immutable. All post-monkey XML polling was approximately 13676 ms (2 ms rounding uncertainty), below 20000 ms; no third launch.",
+    "evidence": [
+      "migration/evidence/NS02/b-device2/B-launch-disposition.json",
+      "migration/evidence/NS02/pixel-inspection-coordinator.md"
+    ]
+  },
+  {
+    "id": "webpack",
+    "summary": "The template webpack config was used unchanged. The phase A Android build succeeded; the D2 fallback was not needed.",
+    "evidence": [
+      "migration/evidence/NS02/a-gates/bundle-proof.json",
+      "migration/evidence/NS02/c-freeze/post-ci-audit.json"
+    ]
+  },
+  {
+    "id": "module-load-design-note",
+    "summary": "Design note for the reviewer, not a deviation: shell-content.ts computes the diagnostic text from loadConference() once at module load. The loader itself calls public normalizeConference on every invocation, with no cache, as required by the contract.",
+    "evidence": [
+      "migration/nativescript/src/shell/shell-content.ts",
+      "migration/nativescript/src/data/load-conference.ts",
+      "migration/nativescript/__tests__/load-conference.test.ts"
+    ]
+  }
+]

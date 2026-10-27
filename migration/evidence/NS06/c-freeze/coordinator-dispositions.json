@@ -1,0 +1,177 @@
+{
+  "dispositions": [
+    {
+      "id": "disposition-1",
+      "summary": "Phase A run 1 passed; phase B run 1 FAIL: no reveal opened a row. Coordinator pixels, unlike XML, showed the accessibilityHidden action Button elevated above the content on every row, intercepting gestures. Human-approved Amendment A1 renders the action only while its row is open and taps at the computed revealed-strip centre.",
+      "disposition": "Original FAIL/BLOCKED retained; A1 implemented in A2; acceptance evidence B3/B4.",
+      "evidence": [
+        "migration/evidence/NS06/a-gates/results-a.json",
+        "migration/evidence/NS06/b-device/results-b.json",
+        "migration/evidence/NS06/pixel-inspection-coordinator.md",
+        "migration/work-packages/NS06.md"
+      ]
+    },
+    {
+      "id": "disposition-2",
+      "summary": "Phase A run 2 applied A1 as exactly one visibility binding in Schedule.vue and passed all gates. The A2 debug APK remains unchanged and matches both B3/B4 installed-copy records.",
+      "disposition": "PASS; no Phase C rebuild.",
+      "evidence": [
+        "migration/evidence/NS06/a-gates2/results-a.json",
+        "migration/evidence/NS06/a-gates2/amendment-a1.json",
+        "migration/evidence/NS06/a-gates2/apk.json",
+        "migration/evidence/NS06/c-freeze/build-reconciliation.json"
+      ]
+    },
+    {
+      "id": "disposition-3",
+      "summary": "Phase B run 2 observed exactly 96 dp (252 px) right-edge displacement, but swipe-dependent cases were BLOCKED under the coordinator prompt requiring both edges to move. Uiautomator clips the left edge at x=0. C1 defines open by right-edge displacement >=240 px and closed within 10 px; left edge recorded, not asserted.",
+      "disposition": "Original strict-predicate FAIL/BLOCKED retained; coordinator correction C1, no scope change; B3/B4 prove acceptance.",
+      "evidence": [
+        "migration/evidence/NS06/b-device2/results-b.json",
+        "migration/evidence/NS06/b-device2/B2-clipping-measurement.json",
+        "migration/work-packages/NS06.md"
+      ]
+    },
+    {
+      "id": "disposition-4",
+      "summary": "Phase B run 3 passed B-install, B1–B6 (reveal; three swipe-path dialogs and dialog-answer close; vertical scroll; open-row tap guard; detail and ActionBar back) and B7 single-open. B7 close started at x=40 in the system back-gesture edge zone and foreground became the launcher. C2 corrects close to x=150→510.",
+      "disposition": "Original B7/B11 FAIL and B8/B9 BLOCKED retained; mandated stop obeyed. C2 is a coordinator correction, no scope change; B4 supplies remaining acceptance.",
+      "evidence": [
+        "migration/evidence/NS06/b-device3/results-b.json",
+        "migration/evidence/NS06/b-device3/B7-close-gesture.json",
+        "migration/evidence/NS06/b-device3/B7-stop.json",
+        "migration/work-packages/NS06.md"
+      ]
+    },
+    {
+      "id": "disposition-5",
+      "summary": "Phase B run 4 passed B7 open A/open B/corrected close; B8 mode switch and Food filter each close the open row, then restore; B9 labelled column-1 buttons with swipe actions not separately exposed; bounded logcat and final foreground. B2–B6 stand from run 3. No hardware keys or text input in any run.",
+      "disposition": "PASS with historical source attribution, not a rerun of B2–B6.",
+      "evidence": [
+        "migration/evidence/NS06/b-device4/results-b.json",
+        "migration/evidence/NS06/b-device3/results-b.json",
+        "migration/evidence/NS06/c-freeze/hardware-text-audit.json"
+      ]
+    },
+    {
+      "id": "disposition-6",
+      "summary": "Coordinator inspected all 82 distinct frames across four runs (95 PNG files). Run 1 records the overlay defect; runs 2–4 show the A1 reveal and specified behaviours. No keyboard or personal content.",
+      "disposition": "PASS supporting coordinator pixels/privacy, not formal review; executor reconciled hashes and coverage only.",
+      "evidence": [
+        "migration/evidence/NS06/pixel-inspection-coordinator.md",
+        "migration/evidence/NS06/c-freeze/pixel-reconciliation.json"
+      ]
+    },
+    {
+      "id": "disposition-7",
+      "summary": "Reviewer design notes, not deviations: D1 is a discrete core swipe with a fixed 96 dp reveal, not a finger-following drag. An open row briefly shows the same-labelled revealed action beside the column-1 button; the revealed action is hidden from assistive technology. Gesture feel and reveal styling versus Ionic remain unverified.",
+      "disposition": "DISCLOSED DESIGN/LIMITS, not failures under NS06.",
+      "evidence": [
+        "migration/work-packages/NS06.md",
+        "migration/nativescript/src/components/Schedule.vue",
+        "migration/evidence/NS06/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "phase-C-helper-disposition",
+      "summary": "The extra Node core JSON reporter initially exited 7 because a Windows absolute ESM path needed file://; retry used pathToFileURL and passed. Reconciliation helper initially rejected string-form outer provenance and then expected a closing Button tag instead of the actual self-closing tag; helper-only corrections passed. No product/test/config edits or hidden device retry.",
+      "disposition": "RESOLVED; failed helper invocations retained/disclosed, not product gates reclassified.",
+      "evidence": [
+        "migration/evidence/NS06/c-freeze/core-json-test.receipt.json",
+        "migration/evidence/NS06/c-freeze/core-json-test-retry.receipt.json",
+        "migration/evidence/NS06/c-freeze/helper-reporter-disposition.json",
+        "migration/evidence/NS06/c-freeze/helper-provenance.json"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "summary": "NativeScript core @swipe on row content; left opens, right closes matching open row, up/down ignored; fixed state-bound 96 dp reveal, not finger-following pan; no plugin.",
+      "source": [
+        "migration/nativescript/src/components/Schedule.vue:36",
+        "migration/nativescript/src/components/Schedule.vue:170"
+      ]
+    },
+    {
+      "id": "D2",
+      "summary": "Column 0 layers: right-aligned width 96/minHeight 48 mode-labelled swipe-action-ID Button, accessibilityHidden; opaque session-ID content translates -96 while open; original column-1 path retained. A1 collapses action while closed.",
+      "source": [
+        "migration/nativescript/src/components/Schedule.vue:159",
+        "migration/nativescript/src/components/Schedule.vue:214"
+      ]
+    },
+    {
+      "id": "D3",
+      "summary": "changeSwipeFavorite awaits unchanged changeFavorite/listFavoriteAction then settled(id) after native OK/Cancel/Remove. Existing column-1 handler unchanged; add-before-alert and already-favorite removal-confirmation quirk retained.",
+      "source": [
+        "migration/nativescript/src/components/Schedule.vue:52",
+        "migration/nativescript/src/state/session-detail.ts:19"
+      ]
+    },
+    {
+      "id": "D4",
+      "summary": "Pure row-swipe reducer, tap decision and mode label. Single-open replacement, matching right/settled close and list-changed close. Shallow watch on searchText/mode/selectedTracks only, excluding favorites; tap open content closes without navigation.",
+      "source": [
+        "migration/nativescript/src/state/row-swipe.ts:3",
+        "migration/nativescript/src/components/Schedule.vue:13",
+        "migration/nativescript/src/components/Schedule.vue:44"
+      ]
+    },
+    {
+      "id": "D5",
+      "summary": "Vitest reducer/tap/label logic and unchanged listFavoriteAction branches; all NS05 test identities retained. No Vitest gesture/native dialog/reveal rendering claims.",
+      "source": [
+        "migration/nativescript/__tests__/row-swipe.test.ts:5",
+        "migration/evidence/NS06/c-freeze/test-counts.json"
+      ]
+    },
+    {
+      "id": "D6",
+      "summary": "Historical A2 debug build; B3/B4 matching installed copies on RN01_API36/emulator-5554, PNG/XML/action coordinates, A1 computed strip-centre taps, bounded same-PID logcat, no text input/hardware keys. C performs host/static checks only.",
+      "source": [
+        "migration/evidence/NS06/a-gates2/results-a.json",
+        "migration/evidence/NS06/b-device3/results-b.json",
+        "migration/evidence/NS06/b-device4/results-b.json"
+      ]
+    },
+    {
+      "id": "A1",
+      "summary": "Human amendment: only render the action while its row is open; tap hidden action at midpoint(openRight,closedRight), row centre y, recorded per tap. One Schedule.vue visibility binding; all other D1–D6 unchanged.",
+      "source": [
+        "migration/work-packages/NS06.md:62",
+        "migration/evidence/NS06/a-gates2/amendment-a1.json"
+      ]
+    },
+    {
+      "id": "C1",
+      "summary": "Coordinator correction without scope change: open if right edge >=240 px left of closed edge; closed within 10 px; record clipped left edge without asserting it.",
+      "source": [
+        "migration/work-packages/NS06.md:73"
+      ]
+    },
+    {
+      "id": "C2",
+      "summary": "Coordinator correction without scope change: close gesture starts at x=150 and ends x=510 at open-content centre y, not x=40 system Back edge zone. B4 covers B7–B9; B2–B6 stand from B3.",
+      "source": [
+        "migration/work-packages/NS06.md:77"
+      ]
+    }
+  ],
+  "warnings": [
+    "npm ci: 6 vulnerabilities (5 moderate, 1 high), unchanged dependencies; no audit fix.",
+    "npm install-script approvals pending for @nativescript/core, @parcel/watcher and core-js-pure; no policy change. source-map-resolve and webpack-chain deprecations retained.",
+    "Historical Android CLI DEP0190 warning; no C Android build.",
+    "B3 logcat retains 16 W/E lines, B4 retains 66 W/E lines (CPU-variant, ashmem deprecation, HWUI and WindowOnBackDispatcher); no detected fatal pattern in bounded same-PID capture.",
+    "Historical poll deadline/receipt overhead and B3 helper exceptions remain disclosed in original checkpoints."
+  ],
+  "limits": [
+    "Gestures, reveal rendering, ListView recycling, swipe-path native dialogs and vertical scrolling are historical device evidence only, not Vitest.",
+    "Search-triggered list-change close is statically wired but device-unverified: no text input allowed.",
+    "Gesture feel and reveal styling/animation/colour/divider versus Ionic unverified; discrete fixed reveal, not drag.",
+    "Hardware Back, keyboard, large text, dark mode and broader Android acceptance belong to NS07; separate human assignment required.",
+    "No release or iOS build/observation. Debug Android build is historical A2, not rerun in C.",
+    "B logcat is bounded to last 400 PID lines, not exhaustive or warning-free.",
+    "No formal review dispatched by executor; READY_FOR_REVIEW is not approval or human acceptance."
+  ]
+}

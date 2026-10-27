@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "commandCount": 213,
+  "adbCommandCount": 203,
+  "receiptCountChecked": 212,
+  "forbiddenCommands": [],
+  "missingEvidence": [],
+  "frameCount": 23,
+  "failedCommandReceipts": [
+    {
+      "id": "B1-before-force-stop-pid-1793087644314979900",
+      "exitCode": 1
+    },
+    {
+      "id": "B1-after-force-stop-pid-1793087644562729900",
+      "exitCode": 1
+    },
+    {
+      "id": "B6-3-after-force-stop-pid-1793087886379916400",
+      "exitCode": 1
+    },
+    {
+      "id": "B6-9999-after-force-stop-pid-1793087903490544700",
+      "exitCode": 1
+    },
+    {
+      "id": "B6-abc-after-force-stop-pid-1793087910659488000",
+      "exitCode": 1
+    }
+  ],
+  "note": "pidof exits 1 when no process exists after force-stop; not a device-case failure. This audit covers recorded child commands plus the initial read-only terminal prelude. Outer terminal driver calls documented separately."
+}

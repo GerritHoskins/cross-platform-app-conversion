@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "branch": "migration/slice-1",
+  "head": "96139c00be18030b68e0fa0f14c64a78df853e32",
+  "indexEmpty": true,
+  "unexpectedPorcelain": [],
+  "oldPorcelainUnchanged": true,
+  "preservation": {
+    "checked": 28844,
+    "mismatches": [],
+    "historyCount": 2838,
+    "historySetUnchanged": true,
+    "historyAdded": [],
+    "historyMissing": []
+  },
+  "targetHashes": {
+    "migration/nativescript/src/components/Schedule.vue": "b1e2d1d9f259e4c925a498117d1af8f4ec2bb6f08bbd0eaa0e4812cf2db711d4",
+    "migration/nativescript/src/state/row-swipe.ts": "16468bed80fa63b3f4d7a32971e85b91b3309ea302de21806619702af60ac086",
+    "migration/nativescript/__tests__/row-swipe.test.ts": "0644403e5a64d2f662d9f756faecb77c1f03015aa51b5fe381b5be1b06730750"
+  },
+  "apk": {
+    "size": 118504855,
+    "sha256": "e58c43978bb5ae3c6b632160ee4d5a731c5ad3826e8d76f7debd02773810b341"
+  },
+  "capturePairs": 26,
+  "captureHashesAndPngXmlValid": true,
+  "caseCounts": {
+    "PASS": 26,
+    "FAIL": 3,
+    "BLOCKED": 10
+  },
+  "childCommandsBeforeWrapperReceipt": 223,
+  "adbCommands": 214,
+  "outerTerminalProvenance": 11,
+  "lastGesture": {
+    "args": [
+      "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "input",
+      "swipe",
+      "40",
+      "1068",
+      "400",
+      "1068",
+      "300"
+    ],
+    "startUnix": 1793103181.1392746,
+    "elapsedSeconds": 0.3485751000116579,
+    "timeoutSeconds": 30,
+    "exitCode": 0,
+    "stdout": "0194-B7-close.stdout.log",
+    "stderr": "0194-B7-close.stderr.log"
+  },
+  "noUiInputOrRelaunchAfterLastGesture": true,
+  "maxSuccessfulPollSeconds": 5.5424628000182565,
+  "maxPollSeconds": 10.022961100010434,
+  "checkpointSha256": "d22f36e265636781f2c7d7b6f59cbd856087831d77a599792174b3f83e34ae2c",
+  "productChanges": false,
+  "pixelsPendingCoordinator": true
+}

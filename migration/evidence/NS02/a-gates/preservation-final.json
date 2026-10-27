@@ -1,0 +1,973 @@
+{
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "head": "52ae6deaee453e105217014983e3e011df757bb2",
+  "branch": "migration/slice-1",
+  "protectedCount": 261,
+  "ns01TrackedCount": 71,
+  "protectedChanges": [],
+  "ns01TrackedChanges": [
+    "migration/nativescript/__tests__/shell-content.test.ts",
+    "migration/nativescript/package-lock.json",
+    "migration/nativescript/package.json",
+    "migration/nativescript/src/shell/shell-content.ts"
+  ],
+  "unexpectedTargetChanges": [],
+  "ideaUnchanged": true,
+  "packageUnchanged": true,
+  "rawPorcelain": " M migration/nativescript/__tests__/shell-content.test.ts\n M migration/nativescript/package-lock.json\n M migration/nativescript/package.json\n M migration/nativescript/src/shell/shell-content.ts\n?? migration/evidence/NS02/a-gates/01-branch.receipt.json\n?? migration/evidence/NS02/a-gates/01-branch.stderr.log\n?? migration/evidence/NS02/a-gates/01-branch.stdout.log\n?? migration/evidence/NS02/a-gates/02-head.receipt.json\n?? migration/evidence/NS02/a-gates/02-head.stderr.log\n?? migration/evidence/NS02/a-gates/02-head.stdout.log\n?? migration/evidence/NS02/a-gates/03-expected-head.receipt.json\n?? migration/evidence/NS02/a-gates/03-expected-head.stderr.log\n?? migration/evidence/NS02/a-gates/03-expected-head.stdout.log\n?? migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json\n?? migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log\n?? migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log\n?? migration/evidence/NS02/a-gates/05-ancestor.receipt.json\n?? migration/evidence/NS02/a-gates/05-ancestor.stderr.log\n?? migration/evidence/NS02/a-gates/05-ancestor.stdout.log\n?? migration/evidence/NS02/a-gates/06-index.receipt.json\n?? migration/evidence/NS02/a-gates/06-index.stderr.log\n?? migration/evidence/NS02/a-gates/06-index.stdout.log\n?? migration/evidence/NS02/a-gates/07-status-entry.receipt.json\n?? migration/evidence/NS02/a-gates/07-status-entry.stderr.log\n?? migration/evidence/NS02/a-gates/07-status-entry.stdout.log\n?? migration/evidence/NS02/a-gates/08-hooks.receipt.json\n?? migration/evidence/NS02/a-gates/08-hooks.stderr.log\n?? migration/evidence/NS02/a-gates/08-hooks.stdout.log\n?? migration/evidence/NS02/a-gates/09-node-version.receipt.json\n?? migration/evidence/NS02/a-gates/09-node-version.stderr.log\n?? migration/evidence/NS02/a-gates/09-node-version.stdout.log\n?? migration/evidence/NS02/a-gates/10-npm-version.receipt.json\n?? migration/evidence/NS02/a-gates/10-npm-version.stderr.log\n?? migration/evidence/NS02/a-gates/10-npm-version.stdout.log\n?? migration/evidence/NS02/a-gates/11-java-version.receipt.json\n?? migration/evidence/NS02/a-gates/11-java-version.stderr.log\n?? migration/evidence/NS02/a-gates/11-java-version.stdout.log\n?? migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json\n?? migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log\n?? migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log\n?? migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log\n?? migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json\n?? migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log\n?? migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log\n?? migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json\n?? migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log\n?? migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log\n?? migration/evidence/NS02/a-gates/16-core-status.receipt.json\n?? migration/evidence/NS02/a-gates/16-core-status.stderr.log\n?? migration/evidence/NS02/a-gates/16-core-status.stdout.log\n?? migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json\n?? migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log\n?? migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log\n?? migration/evidence/NS02/a-gates/17-target-install.receipt.json\n?? migration/evidence/NS02/a-gates/17-target-install.stderr.log\n?? migration/evidence/NS02/a-gates/17-target-install.stdout.log\n?? migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json\n?? migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log\n?? migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log\n?? migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json\n?? migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log\n?? migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log\n?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log\n?? migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json\n?? migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log\n?? migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log\n?? migration/evidence/NS02/a-gates/22-target-ci.receipt.json\n?? migration/evidence/NS02/a-gates/22-target-ci.stderr.log\n?? migration/evidence/NS02/a-gates/22-target-ci.stdout.log\n?? migration/evidence/NS02/a-gates/23-verify-core.receipt.json\n?? migration/evidence/NS02/a-gates/23-verify-core.stderr.log\n?? migration/evidence/NS02/a-gates/23-verify-core.stdout.log\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log\n?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log\n?? migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json\n?? migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log\n?? migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log\n?? migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json\n?? migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log\n?? migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log\n?? migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json\n?? migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log\n?? migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log\n?? migration/evidence/NS02/a-gates/27-build-android.receipt.json\n?? migration/evidence/NS02/a-gates/27-build-android.stderr.log\n?? migration/evidence/NS02/a-gates/27-build-android.stdout.log\n?? migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json\n?? migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log\n?? migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log\n?? migration/evidence/NS02/a-gates/29-final-head.receipt.json\n?? migration/evidence/NS02/a-gates/29-final-head.stderr.log\n?? migration/evidence/NS02/a-gates/29-final-head.stdout.log\n?? migration/evidence/NS02/a-gates/30-final-branch.receipt.json\n?? migration/evidence/NS02/a-gates/30-final-branch.stderr.log\n?? migration/evidence/NS02/a-gates/30-final-branch.stdout.log\n?? migration/evidence/NS02/a-gates/31-final-index.receipt.json\n?? migration/evidence/NS02/a-gates/31-final-index.stderr.log\n?? migration/evidence/NS02/a-gates/31-final-index.stdout.log\n?? migration/evidence/NS02/a-gates/32-diff-check.receipt.json\n?? migration/evidence/NS02/a-gates/32-diff-check.stderr.log\n?? migration/evidence/NS02/a-gates/32-diff-check.stdout.log\n?? migration/evidence/NS02/a-gates/33-protected-diff.receipt.json\n?? migration/evidence/NS02/a-gates/33-protected-diff.stderr.log\n?? migration/evidence/NS02/a-gates/33-protected-diff.stdout.log\n?? migration/evidence/NS02/a-gates/apk.json\n?? migration/evidence/NS02/a-gates/bundle-listing.txt\n?? migration/evidence/NS02/a-gates/commands.jsonl\n?? migration/evidence/NS02/a-gates/entry-gate.json\n?? migration/evidence/NS02/a-gates/fixture-copy.json\n?? migration/evidence/NS02/a-gates/gate-progress.json\n?? migration/evidence/NS02/a-gates/lockfile-scope.json\n?? migration/evidence/NS02/a-gates/npm-ci-lockfile.json\n?? migration/evidence/NS02/a-gates/preservation-entry.json\n?? migration/nativescript/__tests__/load-conference.test.ts\n?? migration/nativescript/scripts/verify-core-integration.cjs\n?? migration/nativescript/src/data/conference.json\n?? migration/nativescript/src/data/load-conference.ts\n?? migration/work-packages/NS02.md\n",
+  "classes": [
+    {
+      "raw": " M migration/nativescript/__tests__/shell-content.test.ts",
+      "path": "migration/nativescript/__tests__/shell-content.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package-lock.json",
+      "path": "migration/nativescript/package-lock.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/package.json",
+      "path": "migration/nativescript/package.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": " M migration/nativescript/src/shell/shell-content.ts",
+      "path": "migration/nativescript/src/shell/shell-content.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/01-branch.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/01-branch.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/01-branch.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/01-branch.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/02-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/02-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/02-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/02-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/03-expected-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/03-expected-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/05-ancestor.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/05-ancestor.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/06-index.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/06-index.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/06-index.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/06-index.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/07-status-entry.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/07-status-entry.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/08-hooks.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/08-hooks.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/09-node-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/09-node-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/10-npm-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/10-npm-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/11-java-version.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/11-java-version.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16-core-status.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/16-core-status.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/17-target-install.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/17-target-install.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/22-target-ci.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/22-target-ci.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23-verify-core.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/23-verify-core.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/27-build-android.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/27-build-android.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/29-final-head.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/29-final-head.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/30-final-branch.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/30-final-branch.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/31-final-index.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/31-final-index.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/32-diff-check.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/32-diff-check.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.stderr.log",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.stderr.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/33-protected-diff.stdout.log",
+      "path": "migration/evidence/NS02/a-gates/33-protected-diff.stdout.log",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/apk.json",
+      "path": "migration/evidence/NS02/a-gates/apk.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/bundle-listing.txt",
+      "path": "migration/evidence/NS02/a-gates/bundle-listing.txt",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/commands.jsonl",
+      "path": "migration/evidence/NS02/a-gates/commands.jsonl",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/entry-gate.json",
+      "path": "migration/evidence/NS02/a-gates/entry-gate.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/fixture-copy.json",
+      "path": "migration/evidence/NS02/a-gates/fixture-copy.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/gate-progress.json",
+      "path": "migration/evidence/NS02/a-gates/gate-progress.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/lockfile-scope.json",
+      "path": "migration/evidence/NS02/a-gates/lockfile-scope.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/npm-ci-lockfile.json",
+      "path": "migration/evidence/NS02/a-gates/npm-ci-lockfile.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/evidence/NS02/a-gates/preservation-entry.json",
+      "path": "migration/evidence/NS02/a-gates/preservation-entry.json",
+      "category": "new Phase A evidence"
+    },
+    {
+      "raw": "?? migration/nativescript/__tests__/load-conference.test.ts",
+      "path": "migration/nativescript/__tests__/load-conference.test.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/scripts/verify-core-integration.cjs",
+      "path": "migration/nativescript/scripts/verify-core-integration.cjs",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/conference.json",
+      "path": "migration/nativescript/src/data/conference.json",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/nativescript/src/data/load-conference.ts",
+      "path": "migration/nativescript/src/data/load-conference.ts",
+      "category": "allowed target integration"
+    },
+    {
+      "raw": "?? migration/work-packages/NS02.md",
+      "path": "migration/work-packages/NS02.md",
+      "category": "pre-existing coordinator-owned package"
+    }
+  ],
+  "whitespaceFailures": [],
+  "protected": {
+    "android/.gitignore": "065e4a92a240fe11a0ea230491ad9dabef143f5fd5a3e6884ad6f0395666a971",
+    "android/app/.gitignore": "99c54e51ee601a60fbde8016b2cbf717483bc2e92773be86c9247d02a7fa6ea4",
+    "android/app/build.gradle": "3b31ffdae1550598461aba9357bbbf25570f77f22e4537a1186977f75936aeee",
+    "android/app/capacitor.build.gradle": "4394f780b335a599e53277ea070ec3c378fc69dbb90a10fd27c6b3384bd3acbc",
+    "android/app/proguard-rules.pro": "1cf8c57e8f79c250b0af9c1a5a4edad71a5c348a79ab70243b6bae086c150ad2",
+    "android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java": "ff50b4c110a7434312f9af54171f9e8523b015836f707c9b387b76d4c38a97f8",
+    "android/app/src/main/AndroidManifest.xml": "35a046f86e13e0c0579feae75721f1935eb818e328e4768871b127d051dadd6c",
+    "android/app/src/main/java/io/ionic/conference/vue/MainActivity.java": "037ee1b78af58d2647cc0748500cc3a32b563042a69d3792ba5d36b26dfe72ef",
+    "android/app/src/main/res/drawable-land-hdpi/splash.png": "53a39d05f5a399a43468975d109212ddefd5a4a21bd1fa2d2247df7df83648e4",
+    "android/app/src/main/res/drawable-land-ldpi/splash.png": "0a7790a69bf9eed09c5704a3fef829b89f331d24068b147569f229aeb6e9f784",
+    "android/app/src/main/res/drawable-land-mdpi/splash.png": "869172a1747b32340a5f11a9b5abfc8d99c328cada5233319e13094090a34d85",
+    "android/app/src/main/res/drawable-land-night-hdpi/splash.png": "ba02c0012462862a124c716c6208d92bc3da019c6ba0039f09861d0a9be48c7d",
+    "android/app/src/main/res/drawable-land-night-ldpi/splash.png": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+    "android/app/src/main/res/drawable-land-night-mdpi/splash.png": "cc10e50ebd4078883bacdecca8ded5c7124c6e1bb075d195e13f425cd3ef039b",
+    "android/app/src/main/res/drawable-land-night-xhdpi/splash.png": "ef21a0e0bc3f9d4a73eade1ce456d73c6319254a42b72bf049b56e0135815af5",
+    "android/app/src/main/res/drawable-land-night-xxhdpi/splash.png": "ba6eeb1c4825cd44bec9966d8706a7b7ff6fcac746acf02480a20b0dc3125514",
+    "android/app/src/main/res/drawable-land-night-xxxhdpi/splash.png": "7bd4721c0e6216a276b0bcd41cd0cb3aa1d5c8c5656684973be7ea71a6bc96a6",
+    "android/app/src/main/res/drawable-land-xhdpi/splash.png": "f79b98a835d4d7566726391a82f7b6895f230b1fc428e34c90ec11f2231a1976",
+    "android/app/src/main/res/drawable-land-xxhdpi/splash.png": "ec260ee48706ed81b78d0cd1ff222b4b9196db677241def1ca85c7e821ae42d7",
+    "android/app/src/main/res/drawable-land-xxxhdpi/splash.png": "57733b5f49ecb6fd5cfb667a4ec45caaf8742a803ee36c3e5db998f80d5534b7",
+    "android/app/src/main/res/drawable-night/splash.png": "b43a650ad75d63e09d24369c9d8a491d1ca0af2d00a0d0757cf08b0c3627aad1",
+    "android/app/src/main/res/drawable-port-hdpi/splash.png": "4fcc77ee175bc890052d4ecd6c5d284e719d4fc588f72ce5da0ed97a027fe2ce",
+    "android/app/src/main/res/drawable-port-ldpi/splash.png": "247114013a8363c8c6a2c13ebbb320660d7e225cb95ce27ba3103253915b4518",
+    "android/app/src/main/res/drawable-port-mdpi/splash.png": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+    "android/app/src/main/res/drawable-port-night-hdpi/splash.png": "13a0a6ad9def0e5b44df686cd896be3ac1b42e0c618d3e34b5a1881ac1bd4e59",
+    "android/app/src/main/res/drawable-port-night-ldpi/splash.png": "81e3eacf311b0c7bd9bf7645061bf1e772dc5cbb181930cd0c4ffb90c96b2ae1",
+    "android/app/src/main/res/drawable-port-night-mdpi/splash.png": "cb37e4aac89205458a004052c60d9d0977fb2e8c5197ae1d5e1d621916d2dbb8",
+    "android/app/src/main/res/drawable-port-night-xhdpi/splash.png": "04308d8d9a8c4627207286157f16957c75aa952c9a5411d01a9547aa4aa9f992",
+    "android/app/src/main/res/drawable-port-night-xxhdpi/splash.png": "962e6be9a32ab3e889e189627c80cc49182fbb8c5652c66ad51757a0a81ad045",
+    "android/app/src/main/res/drawable-port-night-xxxhdpi/splash.png": "2004092ada5fc2bfb0e361b80972840126dfcb51724dc24103277f7b068952aa",
+    "android/app/src/main/res/drawable-port-xhdpi/splash.png": "f0fe57d2e5c90b15d6b14e406702713b27f50fc1d71280ce7686190efb4f0c52",
+    "android/app/src/main/res/drawable-port-xxhdpi/splash.png": "572454fe1bcf2f53febaf81d3af6cbf389c0788de45d2d7a681eef109d2a1e30",
+    "android/app/src/main/res/drawable-port-xxxhdpi/splash.png": "516df6026658606268d3773302ac1d7078970213a74a4ce015c33b7f820f838e",
+    "android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml": "a8514094f754b099d3e55ce1d6e0b2de79db418b2eeacb0fc2a6bb0bfadef221",
+    "android/app/src/main/res/drawable/ic_launcher_background.xml": "718ba51adf166bb55c3e9936bb8199a0148457f7f0191aaa2f37a94f3159d6ec",
+    "android/app/src/main/res/drawable/splash.png": "30a6eb24f2998448485bc308399b5d388a23ae514369629660e7e3b1a3f62410",
+    "android/app/src/main/res/layout/activity_main.xml": "5d770feb791313b947020cbfc57e5c733c556dac5e9e49261a1190e527073253",
+    "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+    "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml": "70f2c6a1478441deb70762f95abf87a8ab8b2b38d53715edc1f7b73df8e5f8df",
+    "android/app/src/main/res/mipmap-hdpi/ic_launcher.png": "4c4f3e93d7ba21fca9c24faf124413c647e23f729421fc5e47f0226372120e15",
+    "android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png": "be121605783e9f38b03d15e4635e3c366bf82237c2beb3a03e568e9c1ca3f57c",
+    "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png": "62e46b0970e1ec28aa4fbb15378e91f4ecf5543f2ef80f092f5f6aa80b0cbb14",
+    "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png": "ed01831831327a7106c24cf9c2bcceedff4edd75322510d4d6b9bcb1cea8547b",
+    "android/app/src/main/res/mipmap-ldpi/ic_launcher.png": "4a10ccc10df4f48f3471e506c41e8a91429882ed97bb8757e81897f01ea80b84",
+    "android/app/src/main/res/mipmap-ldpi/ic_launcher_background.png": "47001a46853f8c3c483410d829b855df65c8734db2c68b381d6acbbcb147abf0",
+    "android/app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png": "4b90bbe4ae5833457755ad17b6d647a7b2bb0d19677bdf59685520e4102891f0",
+    "android/app/src/main/res/mipmap-ldpi/ic_launcher_round.png": "f4838ea5dd34f280cde96f5f7fb8ac784a3b3cad4fbb33a21e7ebea08cb4651f",
+    "android/app/src/main/res/mipmap-mdpi/ic_launcher.png": "79bbf3a5f59e95c8bb0ab7eabf73695b130d0447167177e32ff562a65826e13d",
+    "android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png": "5079167094da9b1937268a41e96fca626d4c9bbdee1f88b72fa0fd77383f89a6",
+    "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png": "da3c69491276d304497d0006d357e7f7680d66039c1d20abbf0f88cff1835a8e",
+    "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png": "12058b587dbd8eac44bdfcce15c4cf75c0ac890e35bb976bf1adb691df66973b",
+    "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png": "010e916581e1ee75401b566eb24bf090bc9d0abf2bd5613f461134a60afce135",
+    "android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png": "c7bca769fd64af988d0920f515f8b3613cfa951c4806fc281ae35a2b7edf1ba7",
+    "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png": "ab3c42f34ff0919f3ac994555c7260d320b704527c58d204bc1d2cc3cca3e77d",
+    "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png": "efc69fa32bce41f5697798e9c1c3f65cef54346eeda8a269eaa5ce3459d91c2b",
+    "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png": "71fef5ccba3c55b8aa6cc8bcf59c191d73cb374aee7bc343b6c18b15992371fe",
+    "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png": "9a127f670aea85938fb8532b121c4a32e3de41f485ceb0e1a12865ca9046550e",
+    "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png": "bb181066fcc75e1864943072c2ee63e36dcc9fb3b0c6a39efe8357baf806dc92",
+    "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png": "31879b3e8cdc3632c314c739523184d332a33389c231e84e37eae0b690b92161",
+    "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png": "941558c980334bb2c24ba1b8dc72d0384f5c87ffcd95be89ea00daba66f5915e",
+    "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png": "d1354ebb84c56fe48a20edbb3483658fd2d130416eca295b93f5153837a75c82",
+    "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png": "3b1517e1da1a96351ed904d6cb0a516576b862aee5af25b879e12dc517f8bd5b",
+    "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png": "1ab356c97757f1a3a9653065f4b17a3dc5e902a42377027bd2fd9cb244f48a0b",
+    "android/app/src/main/res/values-night/splash_background.xml": "19b527c0843dcb6778e69e9b42754f163b7cbd4ed435952c8aa324f4bdd4e61a",
+    "android/app/src/main/res/values/ic_launcher_background.xml": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+    "android/app/src/main/res/values/splash_background.xml": "aa325a188da519e43a4942e7d789bfd79f8d41acb0c92c7e8d339f6456a347a0",
+    "android/app/src/main/res/values/strings.xml": "95b4dbd6e38b10ef6d250e1966ef86ae1ec7d0955779216bc5fd983f3486e659",
+    "android/app/src/main/res/values/styles.xml": "59b0536dceb6d8a49360614d91b3b0dc46afe2648a2f5ac5c6cd1d73ea69330d",
+    "android/app/src/main/res/xml/file_paths.xml": "a46ed43ef65c90cb6778f4581decf3556e3f0055aad8f36d69dae16f9a0e99aa",
+    "android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java": "d4045ae8fac1f0807e6b24eb34e68409a9a235df9d1a3f896fb8c9a49424363d",
+    "android/build.gradle": "46ade7db7afeb8049ccea59fce83095dca736ceb8c9acd79cc944e988c3357d9",
+    "android/capacitor.settings.gradle": "c2a4d3cf2907adfe2bb7d542266d62076d95399fc482e41f08e9069a49f4fdc4",
+    "android/gradle.properties": "3bab15c5b8bc4c2f4b6cf525497d15ad4abca53a460e6dd2eb0f0135817d31e6",
+    "android/gradle/wrapper/gradle-wrapper.jar": "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172",
+    "android/gradle/wrapper/gradle-wrapper.properties": "9a479a85aa879bb55284fc16d0de5b81a745c3854f4e2d88c42e7debaf007435",
+    "android/gradlew": "b187b4c52e749f5760afdd6fadc31b2a98ad35fb249bf0dff03b72650f320409",
+    "android/gradlew.bat": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b",
+    "android/settings.gradle": "6ce098d15ebd69b44c4ecd786bca1bdc366340d2459b2af4d7bb0ab317aa9669",
+    "android/variables.gradle": "83d502c9ed8fcf1dd4791482067abeedbebae49fafe9cd14a8a1f5891deb0d88",
+    "ios/.gitignore": "2b7132a9943d2622e51e656897ca5162f56b121b40b423dedce1fbc699dba88a",
+    "ios/App/App.xcodeproj/project.pbxproj": "75d8e21df5113b3ff4b42c66c9137cd0afa1bc006b883a1c6e45323adf2e4c8f",
+    "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+    "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved": "1423f4111fa4fd7149bbf359f154e06c3dc6a91f9adb0e5eaa47c00c9f17c1e8",
+    "ios/App/App/AppDelegate.swift": "481e2ad8672b14acbd3e3df65acdc6d046526ae542b7bec903cf842fc68d9e49",
+    "ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png": "d4a686203b73c8159a0308c77cc340a08ffe089707f0731ddd94f93c93f54637",
+    "ios/App/App/Assets.xcassets/AppIcon.appiconset/Contents.json": "30cdf27ab0ec2bcb51c244b829ea2f2202978c4bb8374299e90c09ea4017276c",
+    "ios/App/App/Assets.xcassets/Contents.json": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Contents.json": "cfabec10f16bc5ae4b60f28dccc7f1626fd59b13135e064350ce36f484b44f95",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@1x~universal~anyany-dark.png": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@1x~universal~anyany.png": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@2x~universal~anyany-dark.png": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@2x~universal~anyany.png": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@3x~universal~anyany-dark.png": "9c368ba1ed2983db4be0b16d6d1c28c938dc1b6cd743e721fe54f1730f22fcbd",
+    "ios/App/App/Assets.xcassets/Splash.imageset/Default@3x~universal~anyany.png": "4886fb868f6585bc486aa92f6d73bca78031a3df5983dcc96ee72e33dda5ffec",
+    "ios/App/App/Base.lproj/LaunchScreen.storyboard": "87a42e842164d75f39cca56a2cf743652f4d8e858f2eba12ae21a8ddcd9a21c6",
+    "ios/App/App/Base.lproj/Main.storyboard": "7b7dc7acc67134bfaa80e5ce9c9068ba53db5369b9b70248aa7439fc2b09daae",
+    "ios/App/App/Info.plist": "b39afb829c992c31ac94af55ef54baa991a33d16a9d9932009dc0c89a0a18514",
+    "ios/App/App/SceneDelegate.swift": "738b9b96bb71d34d80cd8c1183cf7f8f6f2e789c64e46fb5fe6777a35ae12dfd",
+    "ios/App/CapApp-SPM/.gitignore": "4b958e2b4dd57319aadef2551153c74b9cb5ffe9f89d6e3e491122a94913f016",
+    "ios/App/CapApp-SPM/Package.swift": "6b8d2fdbb3ef646e00b8d32be78817fe16277098181b2c823464a2a20b44fae9",
+    "ios/App/CapApp-SPM/README.md": "42c535861f4a866e35f85764ed6af1ea046d6a409bf9852ecb00e5d292a1626e",
+    "ios/App/CapApp-SPM/Sources/CapApp-SPM/CapApp-SPM.swift": "70bf9dafddc35e3877dfb133a996f5be7ccd1e132897a98fdbf4869ff605ece9",
+    "ios/debug.xcconfig": "4838938a72b913b99cfda54a43bbe73f05893071dc6e3702b0adc44794b64272",
+    "migration/core/.gitignore": "48ba754e605bda557b663d961731f7c80911a52c44e5cd639f565a384ecbfc78",
+    "migration/core/package-lock.json": "05fa0a14619ad5abd7349805a48e4157d1b20b1b691f3c93cfbe8e87da50bf6a",
+    "migration/core/package.json": "1ec048dc37dbf8a50e4d45b328214467515d7ffa550684382e7247a361bf807a",
+    "migration/core/src/favorites.ts": "b7bdee58947de72c680cb9178caf2505bc2deaeb895b94a384e84367ec970cc6",
+    "migration/core/src/grouping.ts": "df9b563448dbece50437678a7e9ccefcfb98ee14cdb25409ce85fb9f4992f3b3",
+    "migration/core/src/index.ts": "de094976cdd807afa6ef3409c6bb7236c494e36f7740633320306615577c9377",
+    "migration/core/src/normalize.ts": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7",
+    "migration/core/src/selection.ts": "9bdc15a3f88647442dfd238a9f7aa3cd648be93ccf9762f9d24d95c73929760a",
+    "migration/core/src/time.ts": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+    "migration/core/src/types.ts": "08be30012c09c880534984873609e5065eb9656bc79764f38a2cd9b41b40ed08",
+    "migration/core/test/algorithms.test.ts": "4c6f1f18b5a5eff91f7e9cccdf5399c054390d0a33dbb49c5021de3f6ece7b7b",
+    "migration/core/test/expected-cases.test.ts": "08dc57508d6c0a0fddb1e9d71197824dbf565f20db53791d7aab1585e3e345ef",
+    "migration/core/test/normalize.test.ts": "0fff075f4469db60be88e1a68258c4eea63e423ea93ab31e39ddc2efe3001a45",
+    "migration/core/test/smoke.test.ts": "7818ba913cb79fb29033ec644a8e3e29a83b7b72d2d21c93acc0bc5d98924e12",
+    "migration/core/test/time.test.ts": "edb85e2912bc8613a8c3eac159c13f721e5f7c6b63fd725b6b32ad6d7c039ec5",
+    "migration/core/tsconfig.json": "67e10cfd19702ac2c839be9041bd4d8a73d48d4005a7a16d8a859c7609ecd78a",
+    "migration/core/tsconfig.test.json": "1c2b9d7b92a298a7e2f67b0609dbb1dfb5277cf5af0f493e6711e3a6dfb603bd",
+    "migration/react-native/.gitignore": "a4539afae80e04c845f5d58c1ba36a0e1291e5f9a25ff5a0e1de136daf8498f4",
+    "migration/react-native/LICENSE": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+    "migration/react-native/README.md": "752737655eb43815dd10a934a043537d83402eca61ba2e6cdc0348c86b6f4b75",
+    "migration/react-native/__tests__/conference-state.test.ts": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+    "migration/react-native/__tests__/filter-screen.test.tsx": "5ee787d672358996454d0e3a6282fc9b9d6c530ebc9ec9eb94b0328ec4488ea6",
+    "migration/react-native/__tests__/root-layout.test.tsx": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f",
+    "migration/react-native/__tests__/schedule-screen.test.tsx": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348",
+    "migration/react-native/__tests__/schedule-swipe.test.tsx": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9",
+    "migration/react-native/__tests__/session-detail-screen.test.tsx": "0c94b2776ce38872f75ce9eb1f5ff17716939db7cf6c560c2227a5073ce20d76",
+    "migration/react-native/__tests__/shell-screen.test.tsx": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1",
+    "migration/react-native/app.json": "88d351708f2e5031b3f00b8c07879e82a34a4155ea7949a5931eea2545f8dd2e",
+    "migration/react-native/assets/expo.icon/Assets/expo-symbol 2.svg": "ad117d20fd819f4ec71876ce09c0e8b9275b1f20c5ec3c9d7d1914977ceffec6",
+    "migration/react-native/assets/expo.icon/Assets/grid.png": "8247d79a2b31328fe4e330a973e6fae16924ed9aebd72c64d464d6856ab18c72",
+    "migration/react-native/assets/expo.icon/icon.json": "747c56e178222a6255c6dd61c5de011b286cdc935febe89f04d1b191c3d076fe",
+    "migration/react-native/assets/images/android-icon-background.png": "fb139c2dee362ebf2070e23b96da6fc0d43f8492de38b8af1fd7223e19b5861d",
+    "migration/react-native/assets/images/android-icon-foreground.png": "9e3d0315a33c6799de601dd34cd8bf8cc3a8d16f3bf75592baec2ceb7240b391",
+    "migration/react-native/assets/images/android-icon-monochrome.png": "6371fc2c12e33ad2215a86c281db3d682a81bebe7c957a842c13b8bf00cceb83",
+    "migration/react-native/assets/images/expo-badge-white.png": "d9ba28c5e93aea3c2dabd901ee96fea3bb296ad8e648f6f64706dae11a1a62bd",
+    "migration/react-native/assets/images/expo-badge.png": "ff353c7efadbd379903923cb604fca11c908cba0d4658cc2bd1f147d98317249",
+    "migration/react-native/assets/images/expo-logo.png": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+    "migration/react-native/assets/images/favicon.png": "a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba",
+    "migration/react-native/assets/images/icon.png": "7a667804bb80a6a424a5daf18a2599c4f32237cf06fe78fc0de45dbb09e0eccf",
+    "migration/react-native/assets/images/logo-glow.png": "bbd98a3f3c12d090f4df6065b7462fcdf6bc266209d002b4ef5fe554c245f66c",
+    "migration/react-native/assets/images/react-logo.png": "224b7636b15e672801579b5b418077cbc2ca42f0146389062364356b0ecb5c5c",
+    "migration/react-native/assets/images/react-logo@2x.png": "fa600be9ad2f869c7a8dbaffc78bb15af741123e1319c948f0be51753a153cde",
+    "migration/react-native/assets/images/react-logo@3x.png": "cd84e02a5d542a3e71b7fa10a685c1b9fb51db4aff92aca6c0da6461ce17be16",
+    "migration/react-native/assets/images/splash-icon.png": "27b060a757a29038c9618586baa0ba3894dbe60d084c6059df497ff429c2d92f",
+    "migration/react-native/assets/images/tabIcons/explore.png": "e2dea1c2d20929d83e8eebd74818e808b1b72e376d3a1f3a03679fff0255d073",
+    "migration/react-native/assets/images/tabIcons/explore@2x.png": "1b54913b3a0acc3e1fb72d3b9b79ad04814304b35bbb9d03a533e6130ad6c26a",
+    "migration/react-native/assets/images/tabIcons/explore@3x.png": "2f3e43801df70ebe83273b90a7d170bacf5ca74a8a8dc5c154a020c2c8b06609",
+    "migration/react-native/assets/images/tabIcons/home.png": "3829632ec7d495225395f5da3d0942935d7d055979b174613d1ade82fe420e76",
+    "migration/react-native/assets/images/tabIcons/home@2x.png": "21c5a07df9017d97464a0a8256e265288f2fca0741ca651de05e12b32f32f5ab",
+    "migration/react-native/assets/images/tabIcons/home@3x.png": "fe5b397975e7cb70ae7a122472d174ed12ec2ae106f7b49c968225ad37f8b3b8",
+    "migration/react-native/assets/images/tutorial-web.png": "e372ec23ad6262e2e0dc2799ce416b495a631a565bcd24f0615d4afc04dac3bd",
+    "migration/react-native/package-lock.json": "c92a4712cdfadc0d7dc2c211abeb5f57df96336a0994db46675f37296f95bbfb",
+    "migration/react-native/package.json": "fe73e5834f7a95eaea545b27413f861502e0c03ae0ba66b7683dafe7852c5016",
+    "migration/react-native/scripts/reset-project.js": "e1989c1ca90f059a21b3319c7428bccd875e165dcb41f7ee3c580f407b21aa1b",
+    "migration/react-native/scripts/verify-core-integration.cjs": "5f6e8afe6576693007307078c11befa74c553b9e0e02fb68186f27d6bc6d52e6",
+    "migration/react-native/src/app/_layout.tsx": "1e24934c6a9c3b0e130a36d669377cce723268476a852f6b27a0774e192f9d3b",
+    "migration/react-native/src/app/filter.tsx": "957b8baf2914f45c7ffa23abb7ba2e8193e074ba63a9e5d80225535fb7831292",
+    "migration/react-native/src/app/index.tsx": "8c7ed2a96857d1fabb2bf66cc49a2e117f4c74430761f252aa9f784ad5d7881a",
+    "migration/react-native/src/app/session/[sessionId].tsx": "82aef2a4af75eef30d6905f046414f6dd3a3d34b1f3a81a49a878bf8baa1f7c1",
+    "migration/react-native/src/components/animated-icon.module.css": "a70d5b1b0561336e53541e4fcca0431fa9e3671fc29dd232a44d546ff488423c",
+    "migration/react-native/src/components/animated-icon.tsx": "53772b1cfee876e9e79be0456fc6a4500b76a88e12990c63b3cc96d9ba9842b5",
+    "migration/react-native/src/components/animated-icon.web.tsx": "d99b902d487bb7a0c6357b201cc5c5fda1fd1a482e6edea3d896324e949712d2",
+    "migration/react-native/src/components/app-tabs.tsx": "69f9558ef4b19a57d6ab124e12a95d778e36d4691df3e2a135ddbc91c5f5ec92",
+    "migration/react-native/src/components/app-tabs.web.tsx": "ac95e9f5379239e28b777800df5bb7b67f14001d8133081fe873d747959df045",
+    "migration/react-native/src/components/external-link.tsx": "2838582e2dc21877652b710d4aee5f4ba5a795b17fcf63bd7ac9c25a749c8c26",
+    "migration/react-native/src/components/hint-row.tsx": "2b5b1bbd4da6d9946e9a267587d7d6279059b0fab01dfeca144cd8cc3653a099",
+    "migration/react-native/src/components/themed-text.tsx": "ae907d2b52a6a231963db7882acb5f853e6a08b94c34efc88d89fb1cd5f83264",
+    "migration/react-native/src/components/themed-view.tsx": "e13930b2f4dfd4dab093d1a86c1586825a97d56e895ba8cb9c89233e654138c9",
+    "migration/react-native/src/components/ui/collapsible.tsx": "73613fbb9c2d64215f7c365683ec790dbf6f04160bea48bc7273cc0a36d4a95b",
+    "migration/react-native/src/components/web-badge.tsx": "0af7715337e070c7c476202c8dd77f2fd6a3514255ace1ead9f832ccc8351a7f",
+    "migration/react-native/src/constants/theme.ts": "5c524dc8b8c75b01e6f5d10ec0d2efa094f3e4591cb8b2866508573806311a69",
+    "migration/react-native/src/data/conference.json": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+    "migration/react-native/src/data/load-conference.ts": "4d1be333692e555aeea43fd4d39f9ffd9da36defccba9e4df0a0a3305af2a3d5",
+    "migration/react-native/src/global.css": "3d65b4b82fe8112cd874d5058bb78b94743d2679958a421191802f4239cedf56",
+    "migration/react-native/src/hooks/use-color-scheme.ts": "33beb965500ae5fdfe5c8699805a6be94c8c126a751fbe2ed7bcae87df394882",
+    "migration/react-native/src/hooks/use-color-scheme.web.ts": "84f19b5c1a8e941ab9868d2e83f6e61db11d3d9bf4fa91fac979bcd0fdc8019b",
+    "migration/react-native/src/hooks/use-theme.ts": "267508aef2ef836c3267d3ffb52bbd499282a4ea1dab2c36e061e008945d77b8",
+    "migration/react-native/src/screens/filter-screen.tsx": "450056947d4453ffe58614e33fe0f4f699b23fe4891b5ccda51dbe8b230b7e70",
+    "migration/react-native/src/screens/schedule-screen.tsx": "a7f1798ee957f79ae26236e4a7db28713a6e16052670d5b26335e435d7ba6727",
+    "migration/react-native/src/screens/session-detail-screen.tsx": "172483ff91d97a3a2293d51ceae506ef95284c2cb4ddc57c41b08783455641d0",
+    "migration/react-native/src/screens/shell-screen.tsx": "71d29b5097ddcce89d35e71577abdb66c91591ff4baf1c53e94c7a679c0d751f",
+    "migration/react-native/src/state/conference-state.tsx": "7358cda6b6677b5537c4964cf913efd29f9edcc3ff9ad706e0f64565c4c326d0",
+    "migration/react-native/test-utils/gesture-test-setup.ts": "c809ea29634e5be2a4f4daaae2a23bf9489f1c492b7426c923e8e317134fa7fd",
+    "migration/react-native/tsconfig.json": "b3fcbc507af0df8008ffae41c5132e2bafceb650f6f55347d7492e0d8f98e3c0",
+    "migration/reference/contract.md": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+    "migration/reference/derive-expected.mjs": "7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954",
+    "migration/reference/expected-cases.json": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+    "package-lock.json": "ca8851075cf35a39c32e6be790c171049c2be3dcd9ee5272732b49fbfddc6f84",
+    "package.json": "2fe4e34a2930cb0a92f55c3209d17b2267367d9e245630363296b9b3c30237ec",
+    "public/assets/icon/favicon.png": "e820db45563316ad63b8557a3cb9a681a9f59faf899c250393113fcbe885d2cd",
+    "public/assets/icons/icon-128.webp": "c5158ca86a9c002e022b35449e9db1b2ff8d343516474b771bd1e99e16469559",
+    "public/assets/icons/icon-192.webp": "76666574c5bbaf54e79cf12f233eb729f6c562b208b12a7f11b49e3f229ee6db",
+    "public/assets/icons/icon-256.webp": "6b49128fbf3d0de2a45bdece9beab40456acc9b6002fbf046233261c0bec71f0",
+    "public/assets/icons/icon-48.webp": "3eacaf9b576cd716579c850c33f0623c1e9984ac13dc61f3b0c69e02a05404fe",
+    "public/assets/icons/icon-512.webp": "4bd667771ea59235a3e7ed0e5bc159d97198caaab9fa9d73c5e9d11dbed21170",
+    "public/assets/icons/icon-72.webp": "72fc18968141c99aaa62cff9dfcf8fa276d2a2f42de83a814cfb64cd6247305a",
+    "public/assets/icons/icon-96.webp": "8d97437aa551f66fbaf5b2f67078ff862dc8ff8ef0d0bcb56c6f683d326da942",
+    "public/assets/img/about/austin.jpg": "bf6e554500d2322291fb295799dc9d1ee97aa52728b2e9678fdab57d49fa4abf",
+    "public/assets/img/about/chicago.jpg": "1d01a4f6426dfe6a8e80ea85299f782c69ddcaee8f66a917e2fcb79411a2522d",
+    "public/assets/img/about/madison.jpg": "841da52c9196b6e03773f3962cd7beb7371feb8d4a37a0647796293e291f3191",
+    "public/assets/img/about/seattle.jpg": "e9f70c3eed707f440c19b9f69ce16a6d4fe4ddfa78ece87a5aafdf956718b780",
+    "public/assets/img/appicon.png": "160db226798906a50c3a52821e0ea7c105919533ea01dbbe29784a8dc6c36aa0",
+    "public/assets/img/appicon.svg": "42e179ca151a6e11496dbcf722c4ed4faf9878a1d3f656c2c0e597a33f4350d9",
+    "public/assets/img/ica-slidebox-img-1.png": "8032ae1529c1100f90e7cc425fb482005e5b7dc14710133bea16e8e9e262ba4f",
+    "public/assets/img/ica-slidebox-img-2.png": "c7152095c713b7a75c4c408641423606d7654ef48cb67918e5880cef3dc7d005",
+    "public/assets/img/ica-slidebox-img-3.png": "60c8d33303b75a491802186e7a1fb38626bd4bde1dcabb0606803a0b09aa41f2",
+    "public/assets/img/ica-slidebox-img-4.png": "dbb7b2d4b0df31d1b303eff51203871ee7c6b1e9929d17cf4ba8602b7ea3a3a4",
+    "public/assets/img/ionic-logo-white.svg": "7eef0dcfeeabf4508ffb7254dd27842fbfa5528569b8c2afbd9d40f92f197bcd",
+    "public/assets/img/speaker-background.png": "f01780e387d05fb5e985e403bde6656a45af951b2441b1a2f671ff304da8898f",
+    "public/assets/img/speakers/bear.jpg": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b",
+    "public/assets/img/speakers/cheetah.jpg": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e",
+    "public/assets/img/speakers/duck.jpg": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0",
+    "public/assets/img/speakers/eagle.jpg": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a",
+    "public/assets/img/speakers/elephant.jpg": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0",
+    "public/assets/img/speakers/giraffe.jpg": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de",
+    "public/assets/img/speakers/iguana.jpg": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b",
+    "public/assets/img/speakers/kitten.jpg": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f",
+    "public/assets/img/speakers/lion.jpg": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca",
+    "public/assets/img/speakers/mouse.jpg": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9",
+    "public/assets/img/speakers/puppy.jpg": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac",
+    "public/assets/img/speakers/rabbit.jpg": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2",
+    "public/assets/img/speakers/turtle.jpg": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf",
+    "public/data/data.json": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+    "public/favicon.ico": "c1209882f16bd48bb22a16e4bbeb25ff5d642718db72487080a263c5755d070d",
+    "public/index.html": "3bf875feea057e46bf9ec340512d9ab4173a25524ba59c609f9ac652a34b0ba9",
+    "public/manifest.webmanifest": "83cf0ca2e8ee14d0943f825b3d3613f97a45b2f858d368817d1d2dff4dc601f2",
+    "src/App.vue": "a4fa9a6c2690a333968ecbb7d5baa38c9d9d3c7cd566343660c596001a3897a2",
+    "src/api/index.ts": "7a4292be419ed2b9734371dfe973019802815633369ac951bbd4f29f7777a141",
+    "src/components/Menu.vue": "e7b0d85a874e4b7b91d671b6cd671da922c971adc4e732af0c512d3180cb0eb5",
+    "src/filters/dateFormat.ts": "93404b9ce01e9c7f553040fd8a7523b9c5456dc8f3626cbd6bfd7605851d43be",
+    "src/filters/lowercase.ts": "2badd923e7f063afa4fc6206330b591cbe62a3b14c9f6f4b97b2daad3c2731ee",
+    "src/main.ts": "981273c89eadcefe26914e9c914aef5d414a969b8f59b66441076600899e06a4",
+    "src/router.ts": "8bc81cfefd3f298ce664f2d3e07d488829c67b7b0237dfee67910ed2b17ee83e",
+    "src/store/index.ts": "7e6400166985981e28570c52e7ea56226f274af3307fa196464f3a815ec570e9",
+    "src/store/modules/darkMode.ts": "79bf2e75be08ccb06f2357e39048dc2628f437b3e63a8b2846ff94472237eb78",
+    "src/store/modules/locations.ts": "5fbaeff8300e57cecc0664767f8ed6ce18120d660dfe05f75efa57820f4275ee",
+    "src/store/modules/sessions.ts": "4d2435e0d2ad8bb4d346f25b4dd5cadd9318b23c9b2cb2b55d9257d1e7780519",
+    "src/store/modules/speakers.ts": "d003550e7f8f7bcbeef2829842f3c4beb19cf55e7b0fe3a58ba35ebcfd1bb5bd",
+    "src/store/modules/user.ts": "f644688e651f9da648977d03910322242859136617699910530595cbd2de8f98",
+    "src/theme/custom.css": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/theme/variables.css": "903f72b9b189d5aa559f993474129d20490cbff0d092ad850669e3b385ca03f8",
+    "src/types/images.d.ts": "28b583f48d03ba0c73053868e9837ad943288e21841ac9f97b4bc807890bd4d9",
+    "src/utils/loadState.ts": "67130df8120933c9e1ebe4eb3c3926165ee9aa5cfeb6d5351b5de383d3fedf3b",
+    "src/utils/time.spec.ts": "6983f88f8ca7c2b5d8c2b8aa481291af4bef4984f82eda1dc887a73547c0cd04",
+    "src/utils/time.ts": "1957c01106e1f4c1ec68d1d6fe51881072246df46c8f91d2ac074dec0371b6d1",
+    "src/views/About.vue": "719c6e81c1798890607b99d57e402e9326c108f32d7a7266109cd7786a6c62d1",
+    "src/views/Account.vue": "192ef853b7fa21e593d06646d70a6f9332f25deb98db15209b95e58d709cf5bb",
+    "src/views/Login.vue": "a8f5f8cc798b194fca2a311ca72c620f3002d1a39fd279852386bb4c3a2616d7",
+    "src/views/Map.vue": "7bbce21654d670745c9ec671d39410c336b5c91d30cb2fab6e9452254d0b9487",
+    "src/views/SessionDetail.vue": "06e158f2f191b571a253baf485ee4da997143f75d3e9b55686ff3f4823370d77",
+    "src/views/SessionList.vue": "a7f92ab3c3b1013a8d4a7b8adb8d7a26faa4c8407f3a75de4972bb26471913ac",
+    "src/views/SessionListFilter.vue": "abcd228d0964025ed6b4b4aa23a46a7afd4ebe114e59eb2a9e53b86cbb221074",
+    "src/views/Signup.vue": "8715e072b4539f5838bb15951c62b0ad8a49c495819e34a4e87449beeccd9d31",
+    "src/views/SpeakerDetail.vue": "12dbdd4c5eb8674e3d3c1c6afbba5ca9c100345b809eff099a53855127d05bb9",
+    "src/views/SpeakerList.vue": "e92c0ca5013fc9ebbf79a3c0f322e69e721a33a6952a25cf4e94cc8f630779be",
+    "src/views/Support.vue": "0c73188528b73f9a38acf38a0b281c431428d77a3dc7f9a018cb0108a20ad527",
+    "src/views/Tabs.vue": "c53421488b0a3f13c62438d60ce5f3093074afbc09f324e947274932faad9f0e",
+    "src/views/Tutorial.vue": "eb29b2627a49d362b7b0521b83d2fa3e1725cc59b01a62bcdacf3a806d3f8a7d"
+  },
+  "ns01Target": {
+    "migration/nativescript/.gitignore": "45d9d024cd2854ac52da0b7ad53abd080f5b394b28b3b5c0280f69057d1f85b0",
+    "migration/nativescript/App_Resources/Android/app.gradle": "4d9fc9048bcd0851ce38e4dbb0f281b30d1d3890473b1588906820e53ff2dbdc",
+    "migration/nativescript/App_Resources/Android/before-plugins.gradle": "944bd95d39bab10456a4015db1404fc92385453903ef1fab60c238406e59ef25",
+    "migration/nativescript/App_Resources/Android/src/main/AndroidManifest.xml": "1aed4600e5001df7ca73dee24fa1d8c4bfc58ff3899f4692929a83fd212451e5",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/background.png": "c9ff1a41982dbcad65c2dc90c4b76bb42662af1ff3c1d07d475e6ed8b36aa508",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/logo.png": "40ca5cfe9eeca880184c4f3be06f78c7f42a8456a2f0c45b7659b7cde882c228",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/background.png": "facd016870e072eda630661c8d146ec8ecbd5669f65bb258c49ff58089548d34",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/logo.png": "bcdbae08acaf6e881dab7c7e6f31672dd8ec0fdcc70961c4bd5aa705e2a579b0",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/background.png": "7aa434da59098a89a17206c14e279eff044662a1304561445b2bb8d301334d9f",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/logo.png": "13da1afa6a09cd697230673ea3d541ea7ca2fae0635bb1ef388d32ac115cd48a",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-nodpi/splash_screen.xml": "ef54f9b6957ccf898616899b75c86216a17abf375dce148c45393dc2e8156d18",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/background.png": "84059ea8e837fdacf26c9a59b0ebd221ed2e37f02a1f9954c943984d3723869a",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/logo.png": "860d212d0b142752580b438c856a2638c588f6e2d4a2eeaf0121af2083d4dc04",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/background.png": "ea630ded2508d45b11177542f338b8755398607a8d13299735cf99f67985907e",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/logo.png": "e1acc7a8ed145df35b59567fcee5dabeabf707b917046b6573211e479c001c5a",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/background.png": "4a67ff5341145dc8d639ac388d82679719ba88bd448ad817a1dd457fff72a17a",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/logo.png": "7efba00a714a532b8adc21a1f8bfd17f96fe86293d7463d9e6f8d491e4c3137c",
+    "migration/nativescript/App_Resources/Android/src/main/res/drawable/ic_launcher_foreground.xml": "ae4577fa18556a350ce11bee71ca9c1fbff5bb3e444b1b0c9e573af321ba9c8a",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "daf8d08484dc1c1d1f268c4e5a69f9a9597c6941dc199890008cffd29aae8c88",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-hdpi/ic_launcher.png": "ca76219db66a355db87a5dd22f94353b4f8492e59400f3df4043f007bc7df0bc",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-mdpi/ic_launcher.png": "13c28fedafb06880b6a9c9bbdb5c0eb6f67cf5467387bbf63cf382414d73e623",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xhdpi/ic_launcher.png": "7f9dfe5d96f965a73c096e18532ab71ec859636fc4bf1e70742f2787aa08e3ad",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxhdpi/ic_launcher.png": "0d25e14a02a945f3242d863b99fcebe2653e6f74db90da87773ec3e16b2f501a",
+    "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png": "ee3a4bd8db2ab3d6a6a11aafce9940bda97b1839eaf71eae285efa90e7ffd1a9",
+    "migration/nativescript/App_Resources/Android/src/main/res/values-v21/colors.xml": "b97dbdfed2967cbd043dec289ab8adf3d3a0fea5225143d643346248cf72745e",
+    "migration/nativescript/App_Resources/Android/src/main/res/values-v21/styles.xml": "dc6079ed1600dc3529b35e6461a5da6d5727dab1f6ab5bd82d8cfc12280d08f6",
+    "migration/nativescript/App_Resources/Android/src/main/res/values-v29/styles.xml": "85e785876a7e87bfadd493ebbd696731765592ea8305a082aa332c997c9614f6",
+    "migration/nativescript/App_Resources/Android/src/main/res/values/colors.xml": "013f508b9c9af43521481f67bb9643b4f758e01076193d7dbc1d66120b7ec710",
+    "migration/nativescript/App_Resources/Android/src/main/res/values/ic_launcher_background.xml": "cd40bafe618ff506f4088778b135cb4faa15f25e0c9b475e22d730c74b7be115",
+    "migration/nativescript/App_Resources/Android/src/main/res/values/styles.xml": "096e4238b20a426fec0f0eadd0c44d0b9ddc56483c08bd1ef2a24085fb4d1a0f",
+    "migration/nativescript/App_Resources/Android/src/main/res/xml/network_security.xml": "1926625e90205ef976ad1252e0fbbe520ae61458d6f3c71fcd8ac1f12a8cea52",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/Contents.json": "78edaf41467898f8c330e54278c3e49ddbf3a6ab6c528a248551d5d54a93e3dc",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-1024.png": "5fdebc7c0087aeab1785887a72971aeb9b2155def489a2cfb06b88649cfcf571",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20.png": "d93bd5971a9cd55dd2f796ce1c33fbc42c4119ca3f2dce1d20607ef90f24c032",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@2x.png": "0ec87384ccd808288f3b7a66a89a06346f536469e894a8dbcf282e5cd98fa7d2",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@3x.png": "799232cf0354e70147b06c86a69b2619cf158edbfe25613ce092ac29f9bfe47e",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29.png": "d7075d160371e6312ef90c655cd5673b56fa3784e1fb65a6a366479f1dba36de",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@2x.png": "e2248aa03c1bf24b65430c343b636166111e6175cd8469d64539d21fce022005",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@3x.png": "200f32e4522312ecce067bd20b62933ce1e11318ae30c438a2729edc18fad435",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40.png": "90127a63aacfc752e9e45dbcf795867fc512f134ad3169652db859518acba953",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@2x.png": "89ec59f727a1b44662fea8646433348345e89da14a6f05a81261537f693d0fcb",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@3x.png": "17184ef759339bd2560dbe2400b8cb2a54dd0ab5440c8421c14ac62fa371113f",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@2x.png": "58fa8ec8a01cbf1e6668a6577300030231f3cb58baa1c921702545f41d155c06",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@3x.png": "cef911b750ec7474aab4f580caec7afad8c45072e1e982e69c13d1f26179488d",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76.png": "ac8b7d0f6901c09a579d713e773e1155a067b44b7f084b8a7e9a96044fda7c74",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76@2x.png": "20129d1a3bc812ac0e02b0ea673de56f58475db8590166177078662af58c30e3",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-83.5@2x.png": "0456fef1bbc18c7766808b0a8669c8e9274fb4474dd8a5135bdc97e5226369b2",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/Contents.json": "972ec1fd42325872438eb085ac29e94f51c10788ec18ec5549439950866c541d",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/Contents.json": "06bd82fd85b0509a55edbd245a83c81ae95ce1bcb62b491d575d15a1929cd69f",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill.png": "25b1ff91ad7f19a8529970b60cdcec268b249d356beea1daf5d1021ede71f353",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@2x.png": "448a197176cfbf1d4ba3988750ac0e08b0febbc93732eba4999b1cd9fdbb7c44",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@3x.png": "3e30de9ac3613a5dab4e9e346e7cbe5eeb61cb1e45af2d4e31c5f73819fb13e9",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/Contents.json": "ace65297e913b94ab3a22f88c420f13db93a27a1b7485c074026235fa0d2859b",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center.png": "b9939c625c086e351dcae3997591f83891468b9271181bbae830052df5a1a938",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@2x.png": "a9e3a864b5d783d5dd7a73298bb20abbc342b9ed9a1bfc8fb85b52d11b05cc29",
+    "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@3x.png": "dfd4b38061c183330381c392794f45314a7a3b2bfdde052ef81cea49afbfbc21",
+    "migration/nativescript/App_Resources/iOS/Info.plist": "c228674e971d23ef8a3781dd7126e5c5771c221965f06f41bc272fe659de1d65",
+    "migration/nativescript/App_Resources/iOS/LaunchScreen.storyboard": "83248be677d03859403d9f0f1c182a03421537c8c499d38680c3fefd9ab50a2d",
+    "migration/nativescript/App_Resources/iOS/build.xcconfig": "488f394bfeb19a6dbd046f13b16f4ed6604b78290cc92c9e3ac5b33ec7d95968",
+    "migration/nativescript/__tests__/shell-content.test.ts": "435957531a1ac1eeef237c94046bfa1247ed776f8c4266e35cc99fa7734c5987",
+    "migration/nativescript/nativescript.config.ts": "a94e43ce44ae8921ebabba7211b7abf771432ce8f81d5c6ffce137d0e326499f",
+    "migration/nativescript/package-lock.json": "9364dcfb452a9f26b1e762cfc3d05d217618350809171cd20488f97bf5a6d8c5",
+    "migration/nativescript/package.json": "fd41a187b57f170a321351db91bae55b36b3402823d47dc43b6382135683d53b",
+    "migration/nativescript/src/app.css": "0dcf45a8c043bfc211ab5e263dfdd51b602076644f9a92fd9eb44b82e4ebcd80",
+    "migration/nativescript/src/app.ts": "39f68dd4e39a0c5231621829f60d3e805efe507fe83a8d539e5db3e1f613700f",
+    "migration/nativescript/src/components/Home.vue": "9ac1fc266cf4587a7abae2e5d2cf44bc0e936edf6a528f496e481c3d93cdd824",
+    "migration/nativescript/src/shell/shell-content.ts": "73ebff26c4dcdb1f8aa09d4315805bd72e962279131aa3b2efbce6e5fb1d7f12",
+    "migration/nativescript/tsconfig.json": "44ec6f1e008dce8d6d382317b6497a50429825f092c3207dfefc2d4d32fdae59",
+    "migration/nativescript/types/references.d.ts": "782e3e3bd2a6cee4e8088461e03c6b62e45095fcf8ae9a653224c4bc9fd9cec1",
+    "migration/nativescript/types/shims.vue.d.ts": "f147886b3722a2914f592c7467b48380f8cedf26456d187473fbaaad3ac57719",
+    "migration/nativescript/webpack.config.js": "44e287096e3a3b171f22239a2487cdf8a2e460077e69736840a24f9ba452a724"
+  }
+}

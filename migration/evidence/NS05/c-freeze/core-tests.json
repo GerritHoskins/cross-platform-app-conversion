@@ -1,0 +1,1066 @@
+{
+  "reporter": "Node test event JSON reporter",
+  "events": [
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected",
+        "nesting": 0,
+        "testNumber": 1,
+        "testId": 1,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 1.0851,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 58,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "all-tracks rule holds in favorites mode too",
+        "nesting": 0,
+        "testNumber": 2,
+        "testId": 2,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1125,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 64,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "empty selectedTracks gives no pass even with matching search and a matching favorite",
+        "nesting": 0,
+        "testNumber": 3,
+        "testId": 3,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0852,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 70,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "search is a case-insensitive substring on the name",
+        "nesting": 0,
+        "testNumber": 4,
+        "testId": 4,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1008,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 73,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "search matches the name only, not description or location",
+        "nesting": 0,
+        "testNumber": 5,
+        "testId": 5,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0946,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 76,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "a space is a truthy search text: names containing a space match, names without do not",
+        "nesting": 0,
+        "testNumber": 6,
+        "testId": 6,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1128,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 80,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "grouping keeps equal start minutes in input order within their group",
+        "nesting": 0,
+        "testNumber": 7,
+        "testId": 7,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2365,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 83,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "input with reverse-time sessions is grouped and sorted chronologically",
+        "nesting": 0,
+        "testNumber": 8,
+        "testId": 8,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2269,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 96,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "group order is first-occurrence order after sorting by start time, not the group label order",
+        "nesting": 0,
+        "testNumber": 9,
+        "testId": 9,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2113,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 127,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "empty selectedTracks gives no pass and groupSessions of empty input gives []",
+        "nesting": 0,
+        "testNumber": 10,
+        "testId": 10,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1576,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 160,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "addFavorite appends a new id and is a no-op copy for an existing id",
+        "nesting": 0,
+        "testNumber": 11,
+        "testId": 11,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1199,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 164,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "removeFavorite removes every occurrence and gives an equal copy for an absent id",
+        "nesting": 0,
+        "testNumber": 12,
+        "testId": 12,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.107,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 172,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "outputs are fresh arrays, never the input reference",
+        "nesting": 0,
+        "testNumber": 13,
+        "testId": 13,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 5.8345,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 180,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "initialSelectedTracks lists every session track in first-appearance order",
+        "nesting": 0,
+        "testNumber": 14,
+        "testId": 14,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0842,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 190,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "every function works on deep-frozen inputs and returns new arrays",
+        "nesting": 0,
+        "testNumber": 15,
+        "testId": 15,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.7504,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 194,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "groupSessions on a deeply frozen, reverse-chronological input: no throw, chronological groups, input unchanged",
+        "nesting": 0,
+        "testNumber": 16,
+        "testId": 16,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1868,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 233,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "selectSessions returns the passing sessions in exactly the deliberately non-chronological input order",
+        "nesting": 0,
+        "testNumber": 17,
+        "testId": 17,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1505,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 261,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "sortTracksByName orders by name and leaves the input order untouched",
+        "nesting": 0,
+        "testNumber": 18,
+        "testId": 18,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0898,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 282,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "createInitialSelection gives empty search, all session tracks in first-appearance order, no favorites, all mode",
+        "nesting": 0,
+        "testNumber": 19,
+        "testId": 19,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0557,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 293,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 19,
+          "failed": 0,
+          "passed": 19,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 19,
+          "suites": 0
+        },
+        "duration_ms": 17.4385,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "default-all",
+        "nesting": 0,
+        "testNumber": 20,
+        "testId": 1,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 2.0747,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "no-tracks",
+        "nesting": 0,
+        "testNumber": 21,
+        "testId": 2,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1959,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "single-track",
+        "nesting": 0,
+        "testNumber": 22,
+        "testId": 3,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2823,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "search-case-insensitive",
+        "nesting": 0,
+        "testNumber": 23,
+        "testId": 4,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2088,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "search-no-match",
+        "nesting": 0,
+        "testNumber": 24,
+        "testId": 5,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1778,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "search-plus-track",
+        "nesting": 0,
+        "testNumber": 25,
+        "testId": 6,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2066,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "favorites-empty",
+        "nesting": 0,
+        "testNumber": 26,
+        "testId": 7,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1023,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "favorites-some",
+        "nesting": 0,
+        "testNumber": 27,
+        "testId": 8,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1763,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "favorites-order",
+        "nesting": 0,
+        "testNumber": 28,
+        "testId": 9,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2926,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "add-duplicate",
+        "nesting": 0,
+        "testNumber": 29,
+        "testId": 10,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3557,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "remove-absent",
+        "nesting": 0,
+        "testNumber": 30,
+        "testId": 11,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1764,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 48,
+        "column": 29,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "createInitialSelection selects every session track in first-appearance order",
+        "nesting": 0,
+        "testNumber": 31,
+        "testId": 12,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2058,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 78,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 12,
+          "failed": 0,
+          "passed": 12,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 12,
+          "suites": 0
+        },
+        "duration_ms": 16.3133,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "fixture data normalizes to the contracted shape",
+        "nesting": 0,
+        "testNumber": 32,
+        "testId": 1,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 1.8531,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 36,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "session 1 matches the frozen contract values",
+        "nesting": 0,
+        "testNumber": 33,
+        "testId": 2,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1421,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 46,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "every session is finite, ordered, and fully resolved",
+        "nesting": 0,
+        "testNumber": 34,
+        "testId": 3,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.262,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 53,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "unresolved speaker names are omitted from speakerIds",
+        "nesting": 0,
+        "testNumber": 35,
+        "testId": 4,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3037,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 68,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "missing schedule is reported at path \"schedule\"",
+        "nesting": 0,
+        "testNumber": 36,
+        "testId": 5,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3593,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 79,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "non-numeric session id fails at its path",
+        "nesting": 0,
+        "testNumber": 37,
+        "testId": 6,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.315,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 82,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "duplicate session id fails at the second occurrence",
+        "nesting": 0,
+        "testNumber": 38,
+        "testId": 7,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.4295,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 87,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "missing session name fails at its path",
+        "nesting": 0,
+        "testNumber": 39,
+        "testId": 8,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3783,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 92,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "unparseable timeStart fails at its path",
+        "nesting": 0,
+        "testNumber": 40,
+        "testId": 9,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2848,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 97,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "non-string description fails at its path",
+        "nesting": 0,
+        "testNumber": 41,
+        "testId": 10,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3525,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 102,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "non-array session tracks fails at its path",
+        "nesting": 0,
+        "testNumber": 42,
+        "testId": 11,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2516,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 107,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "speaker without id fails at its path",
+        "nesting": 0,
+        "testNumber": 43,
+        "testId": 12,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.2041,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 112,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "normalization does not mutate its input",
+        "nesting": 0,
+        "testNumber": 44,
+        "testId": 13,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.3482,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 117,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "mutating one result cannot affect a later normalization of the same input",
+        "nesting": 0,
+        "testNumber": 45,
+        "testId": 14,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.226,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 122,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 14,
+          "failed": 0,
+          "passed": 14,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 14,
+          "suites": 0
+        },
+        "duration_ms": 19.1255,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "public package exports are correct",
+        "nesting": 0,
+        "testNumber": 46,
+        "testId": 1,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.6264,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 10,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\smoke.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "self-reference resolves to the built dist entrypoint",
+        "nesting": 0,
+        "testNumber": 47,
+        "testId": 2,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.8082,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 14,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\smoke.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 2,
+          "failed": 0,
+          "passed": 2,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 2,
+          "suites": 0
+        },
+        "duration_ms": 7.61,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\smoke.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "parseTimeToMinutes parses morning and afternoon times",
+        "nesting": 0,
+        "testNumber": 48,
+        "testId": 1,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.7442,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 9,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "parseTimeToMinutes handles noon and midnight",
+        "nesting": 0,
+        "testNumber": 49,
+        "testId": 2,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.1197,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 15,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "parseTimeToMinutes returns Infinity for malformed values",
+        "nesting": 0,
+        "testNumber": 50,
+        "testId": 3,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0958,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 20,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "parseTimeToMinutes tolerates surrounding whitespace and mixed case",
+        "nesting": 0,
+        "testNumber": 51,
+        "testId": 4,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0813,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 26,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "compareTimes orders chronologically across noon",
+        "nesting": 0,
+        "testNumber": 52,
+        "testId": 5,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.5147,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 29,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "compareTimes keeps malformed values last and treats them as equal",
+        "nesting": 0,
+        "testNumber": 53,
+        "testId": 6,
+        "parentId": 0,
+        "details": {
+          "duration_ms": 0.0999,
+          "type": "test"
+        },
+        "tags": [],
+        "line": 33,
+        "column": 25,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 6,
+          "failed": 0,
+          "passed": 6,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 6,
+          "suites": 0
+        },
+        "duration_ms": 7.9529,
+        "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 53,
+          "failed": 0,
+          "passed": 53,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 53,
+          "suites": 0
+        },
+        "duration_ms": 95.5774
+      }
+    }
+  ]
+}

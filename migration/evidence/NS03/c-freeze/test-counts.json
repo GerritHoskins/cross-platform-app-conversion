@@ -1,0 +1,77 @@
+{
+  "core": {
+    "tests": 53,
+    "passed": 53,
+    "failed": 0,
+    "receipt": "migration/evidence/NS03/c-freeze/core-test.receipt.json"
+  },
+  "target": {
+    "runs": [
+      {
+        "id": "tests-first",
+        "files": 4,
+        "tests": 34,
+        "passed": 34,
+        "failed": 0,
+        "receipt": "migration/evidence/NS03/c-freeze/tests-first.receipt.json"
+      },
+      {
+        "id": "tests-second",
+        "files": 4,
+        "tests": 34,
+        "passed": 34,
+        "failed": 0,
+        "receipt": "migration/evidence/NS03/c-freeze/tests-second.receipt.json"
+      }
+    ],
+    "files": [
+      {
+        "path": "migration/nativescript/__tests__/conference-store.test.ts",
+        "tests": 27,
+        "passed": 27,
+        "status": "passed"
+      },
+      {
+        "path": "migration/nativescript/__tests__/load-conference.test.ts",
+        "tests": 3,
+        "passed": 3,
+        "status": "passed"
+      },
+      {
+        "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+        "tests": 3,
+        "passed": 3,
+        "status": "passed"
+      },
+      {
+        "path": "migration/nativescript/__tests__/shell-content.test.ts",
+        "tests": 1,
+        "passed": 1,
+        "status": "passed"
+      }
+    ]
+  },
+  "referenceCases": {
+    "tests": 11,
+    "passed": 11,
+    "ids": [
+      "default-all",
+      "no-tracks",
+      "single-track",
+      "search-case-insensitive",
+      "search-no-match",
+      "search-plus-track",
+      "favorites-empty",
+      "favorites-some",
+      "favorites-order",
+      "add-duplicate",
+      "remove-absent"
+    ]
+  },
+  "ns02": {
+    "files": 2,
+    "tests": 4,
+    "passed": 4,
+    "unchanged": true
+  }
+}

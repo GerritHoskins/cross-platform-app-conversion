@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "01-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/01-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/01-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/01-branch.stderr.log"
+  },
+  {
+    "id": "02-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/02-head.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/02-head.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/02-head.stderr.log"
+  },
+  {
+    "id": "03-expected-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "52ae6de^{commit}"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/03-expected-head.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/03-expected-head.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/03-expected-head.stderr.log"
+  },
+  {
+    "id": "04-ancestor-id",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "8d5b2fe^{commit}"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/04-ancestor-id.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/04-ancestor-id.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/04-ancestor-id.stderr.log"
+  },
+  {
+    "id": "05-ancestor",
+    "command": "git",
+    "args": [
+      "merge-base",
+      "--is-ancestor",
+      "8d5b2fe30fe8bf5029e1946663955e92984b839e",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/05-ancestor.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/05-ancestor.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/05-ancestor.stderr.log"
+  },
+  {
+    "id": "06-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/06-index.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/06-index.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/06-index.stderr.log"
+  },
+  {
+    "id": "07-status-entry",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/07-status-entry.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/07-status-entry.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/07-status-entry.stderr.log"
+  },
+  {
+    "id": "08-hooks",
+    "command": "git",
+    "args": [
+      "config",
+      "--get",
+      "core.hooksPath"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/08-hooks.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/08-hooks.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/08-hooks.stderr.log"
+  },
+  {
+    "id": "09-node-version",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/09-node-version.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/09-node-version.stderr.log"
+  },
+  {
+    "id": "10-npm-version",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/10-npm-version.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/10-npm-version.stderr.log"
+  },
+  {
+    "id": "11-java-version",
+    "command": "java",
+    "args": [
+      "-version"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/11-java-version.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/11-java-version.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/11-java-version.stderr.log"
+  },
+  {
+    "id": "12-protected-inventory",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--",
+      "package.json",
+      "package-lock.json",
+      "src",
+      "public",
+      "android",
+      "ios",
+      "migration/core",
+      "migration/reference",
+      "migration/react-native"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/12-protected-inventory.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/12-protected-inventory.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/12-protected-inventory.stderr.log"
+  },
+  {
+    "id": "13-ns01-inventory",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "-z",
+      "--",
+      "migration/nativescript"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/13-ns01-inventory.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/13-ns01-inventory.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/13-ns01-inventory.stderr.log"
+  },
+  {
+    "id": "14-core-typecheck",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "typecheck"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/14-core-typecheck.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/14-core-typecheck.stderr.log"
+  },
+  {
+    "id": "15-core-test-initial",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/15-core-test-initial.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/15-core-test-initial.stderr.log"
+  },
+  {
+    "id": "16-core-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all",
+      "--",
+      "migration/core"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/16-core-status.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/16-core-status.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/16-core-status.stderr.log"
+  },
+  {
+    "id": "16a-core-status-check",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\integration-setup.mjs",
+      "core-status"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/16a-core-status-check.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/16a-core-status-check.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/16a-core-status-check.stderr.log"
+  },
+  {
+    "id": "17-target-install",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "install"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/17-target-install.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/17-target-install.stderr.log"
+  },
+  {
+    "id": "18-fixture-copy",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\integration-setup.mjs",
+      "copy-and-lock"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/18-fixture-copy.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/18-fixture-copy.stderr.log"
+  },
+  {
+    "id": "19-lockfile-head",
+    "command": "git",
+    "args": [
+      "show",
+      "HEAD:migration/nativescript/package-lock.json"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/19-lockfile-head.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/19-lockfile-head.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/19-lockfile-head.stderr.log"
+  },
+  {
+    "id": "20-lockfile-scope-check",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\integration-setup.mjs",
+      "lock"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/20-lockfile-scope-check.stderr.log"
+  },
+  {
+    "id": "21-core-test-gate",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--prefix",
+      "migration/core",
+      "test"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/21-core-test-gate.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/21-core-test-gate.stderr.log"
+  },
+  {
+    "id": "22-target-ci",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "ci"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/22-target-ci.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/22-target-ci.stderr.log"
+  },
+  {
+    "id": "23-verify-core",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "verify:core"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/23-verify-core.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/23-verify-core.stderr.log"
+  },
+  {
+    "id": "23a-verify-core-other-cwd",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\scripts\\verify-core-integration.cjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.stderr.log"
+  },
+  {
+    "id": "24-target-typecheck",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "typecheck"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/24-target-typecheck.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/24-target-typecheck.stderr.log"
+  },
+  {
+    "id": "25-target-tests-first",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/25-target-tests-first.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/25-target-tests-first.stderr.log"
+  },
+  {
+    "id": "26-target-tests-second",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/26-target-tests-second.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/26-target-tests-second.stderr.log"
+  },
+  {
+    "id": "27-build-android",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "build:android"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/27-build-android.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/27-build-android.stderr.log"
+  },
+  {
+    "id": "28-sequential-gates",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\gates.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/28-sequential-gates.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/28-sequential-gates.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/28-sequential-gates.stderr.log"
+  },
+  {
+    "id": "29-final-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/29-final-head.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/29-final-head.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/29-final-head.stderr.log"
+  },
+  {
+    "id": "30-final-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/30-final-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/30-final-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/30-final-branch.stderr.log"
+  },
+  {
+    "id": "31-final-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/31-final-index.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/31-final-index.stderr.log"
+  },
+  {
+    "id": "32-diff-check",
+    "command": "git",
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/32-diff-check.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/32-diff-check.stderr.log"
+  },
+  {
+    "id": "33-protected-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--exit-code",
+      "--",
+      "package.json",
+      "package-lock.json",
+      "src",
+      "public",
+      "android",
+      "ios",
+      "migration/core",
+      "migration/reference",
+      "migration/react-native"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/33-protected-diff.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/33-protected-diff.stderr.log"
+  },
+  {
+    "id": "34-final-porcelain",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/34-final-porcelain.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/34-final-porcelain.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/34-final-porcelain.stderr.log"
+  },
+  {
+    "id": "35-target-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--",
+      "migration/nativescript/package.json",
+      "migration/nativescript/src/shell/shell-content.ts",
+      "migration/nativescript/__tests__/shell-content.test.ts"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/35-target-diff.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/35-target-diff.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/35-target-diff.stderr.log"
+  },
+  {
+    "id": "36-final-audit",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\final-audit.mjs"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/36-final-audit.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/36-final-audit.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/36-final-audit.stderr.log"
+  },
+  {
+    "id": "37-checkpoint-packet-validation",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\tools\\qwen-supervisor\\.runs\\sol-ns02-r1-a-20261026\\finish.mjs",
+      "worker"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/37-checkpoint-packet-validation.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/37-checkpoint-packet-validation.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/37-checkpoint-packet-validation.stderr.log"
+  },
+  {
+    "id": "38-checkpoint-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/38-checkpoint-head.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/38-checkpoint-head.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/38-checkpoint-head.stderr.log"
+  },
+  {
+    "id": "39-checkpoint-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/39-checkpoint-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/39-checkpoint-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/39-checkpoint-branch.stderr.log"
+  },
+  {
+    "id": "40-checkpoint-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/40-checkpoint-index.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/40-checkpoint-index.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/40-checkpoint-index.stderr.log"
+  },
+  {
+    "id": "41-checkpoint-diff-check",
+    "command": "git",
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/41-checkpoint-diff-check.stderr.log"
+  },
+  {
+    "id": "42-checkpoint-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/a-gates/42-checkpoint-status.receipt.json",
+    "stdout": "migration/evidence/NS02/a-gates/42-checkpoint-status.stdout.log",
+    "stderr": "migration/evidence/NS02/a-gates/42-checkpoint-status.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/00-gate-driver.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/00-gate-driver.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/00-gate-driver.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/01-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/01-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/01-branch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/02-head.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/02-head.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/02-head.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/03-index.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/03-index.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/03-index.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/04-status.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/04-status.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/04-status.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/90-final-head.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/90-final-head.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/90-final-head.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/91-final-index.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/91-final-index.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/91-final-index.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/92-final-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/92-final-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/92-final-branch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device/99-blocked-packet-verification.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device/99-blocked-packet-verification.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device/99-blocked-packet-verification.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-install.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-install.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-install.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-dump-1.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-dump-1.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-dump-1.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-dump-2.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-dump-2.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-dump-2.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-dump-3.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-dump-3.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-dump-3.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-force-stop.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-force-stop.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-force-stop.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-logcat.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-logcat.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-logcat.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-monkey.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-monkey.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-monkey.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-pid.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-pid.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-pid.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-png.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch.png",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-png.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 1,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-stopped-pid.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-stopped-pid.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-stopped-pid.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-xml-2.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-poll-2.xml",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-xml-2.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-launch-xml-3.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-launch-poll-3.xml",
+    "stderr": "migration/evidence/NS02/b-device2/B-launch-xml-3.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-dump-1.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-dump-1.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-dump-1.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-dump-2.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-dump-2.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-dump-2.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-force-stop.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-force-stop.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-force-stop.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-logcat.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-logcat.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-logcat.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-monkey.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-monkey.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-monkey.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-pid.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-pid.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-pid.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-png.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch.png",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-png.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 1,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-stopped-pid.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-stopped-pid.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-stopped-pid.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/B-relaunch-xml-2.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/B-relaunch-poll-2.xml",
+    "stderr": "migration/evidence/NS02/b-device2/B-relaunch-xml-2.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-accessibility_services.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-accessibility_services.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-accessibility_services.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-avd.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-avd.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-avd.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-density.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-density.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-density.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-font_scale.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-font_scale.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-font_scale.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-model.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-model.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-model.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-night.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-night.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-night.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-package-service.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-package-service.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-package-service.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-rn_path.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-rn_path.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-rn_path.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/after-sdk.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/after-sdk.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/after-sdk.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-accessibility_services.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-accessibility_services.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-accessibility_services.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-avd.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-avd.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-avd.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-density.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-density.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-density.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-font_scale.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-font_scale.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-font_scale.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-model.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-model.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-model.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-night.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-night.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-night.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-package-service.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-package-service.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-package-service.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-rn_path.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-rn_path.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-rn_path.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/before-sdk.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/before-sdk.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/before-sdk.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-B-launch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-B-launch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-B-launch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-B-relaunch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-B-relaunch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-B-relaunch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-after.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-after.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-after.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-before.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-before.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-before.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-gate.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-gate.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-gate.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-install.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-install.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-install.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-integrity.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-integrity.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-integrity.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-packet-audit.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-packet-audit.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-packet-audit.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-reassess-launch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-reassess-launch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-reassess-launch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/driver-timing-disposition.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/driver-timing-disposition.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/driver-timing-disposition.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-branch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-head.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-head.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-head.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-index.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-index.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-index.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-merge-tree.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-merge-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-merge-tree.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-phase-a-tree.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-phase-a-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-phase-a-tree.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/entry-status.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/entry-status.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/entry-status.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-activity.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-activity.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-activity.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-branch.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-branch.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-head.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-head.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-head.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-index.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-index.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-index.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-merge-tree.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-merge-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-merge-tree.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-phase-a-tree.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-phase-a-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-phase-a-tree.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-pid.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-pid.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-pid.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/final-status.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/final-status.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/final-status.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/install-package-service.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/install-package-service.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/install-package-service.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/installed-path.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/installed-path.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/installed-path.stderr.log"
+  },
+  {
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "receipt": "migration/evidence/NS02/b-device2/installed-sha256.receipt.json",
+    "stdout": "migration/evidence/NS02/b-device2/installed-sha256.stdout.log",
+    "stderr": "migration/evidence/NS02/b-device2/installed-sha256.stderr.log"
+  }
+]

@@ -29,3 +29,29 @@ migration/evidence/NS01/b-device/** -text
 migration/evidence/NS01/b-device2/** -text
 migration/evidence/NS01/a-gates3/06-node-version.stdout.log -text
 migration/evidence/NS01/c-freeze/node-version.stdout.log -text
+# NS02 frozen evidence: raw CRLF device and node-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS02/b-device/** -text
+migration/evidence/NS02/b-device2/** -text
+migration/evidence/NS02/c-freeze/node-version.stdout.log -text
+# NS03 frozen evidence: raw CRLF device and node/java-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS03/b-device/** -text
+migration/evidence/NS03/a-gates/java-version.stderr.log -text
+migration/evidence/NS03/a-gates/node-version.stdout.log -text
+migration/evidence/NS03/c-freeze/node-version.stdout.log -text
+# NS04 frozen evidence: raw CRLF device, build and node-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS04/b-device/** -text
+migration/evidence/NS04/a-gates2/build-android.stdout.log -text
+migration/evidence/NS04/a-gates2/node-version.stdout.log -text
+migration/evidence/NS04/c-freeze/node-version.stdout.log -text
+# NS05 frozen evidence: raw CRLF device, build and node-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS05/b-device/** -text
+migration/evidence/NS05/a-gates/build-android.stdout.log -text
+migration/evidence/NS05/a-gates/node-version.stdout.log -text
+migration/evidence/NS05/c-freeze/node-version.stdout.log -text
+# NS06 frozen evidence: raw CRLF device and node/test captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS06/b-device/** -text
+migration/evidence/NS06/b-device2/** -text
+migration/evidence/NS06/b-device3/** -text
+migration/evidence/NS06/b-device4/** -text
+migration/evidence/NS06/c-freeze/core-json-test.stderr.log -text
+migration/evidence/NS06/c-freeze/node-version.stdout.log -text

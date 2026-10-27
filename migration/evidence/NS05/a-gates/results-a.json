@@ -1,0 +1,369 @@
+{
+  "version": 1,
+  "package": "NS05",
+  "phase": "A",
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "A1-entry-gate",
+      "status": "PASS",
+      "detail": "Exact branch/HEAD/ancestor, empty index, raw untrimmed porcelain with path from index 3, absent evidence directory, hooks path; receipts buffered before evidence writes.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/entry-gate.json",
+        "migration/evidence/NS05/a-gates/entry-branch.receipt.json",
+        "migration/evidence/NS05/a-gates/entry-head.receipt.json",
+        "migration/evidence/NS05/a-gates/entry-index.receipt.json",
+        "migration/evidence/NS05/a-gates/entry-porcelain.stdout.log",
+        "migration/evidence/NS05/a-gates/entry-ancestor.receipt.json",
+        "migration/evidence/NS05/a-gates/entry-hooks.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A1-environment-preservation-entry",
+      "status": "PASS",
+      "detail": "Pinned Node v24.19.0, npm 11.16.0, installed versions; IDEA.md hashed only; protected and NativeScript tracked files and target manifest SHA-256 entry inventory. Helpers use shell:false argument arrays; child PATH starts with pinned Node and NoDefaultCurrentDirectoryInExePath is deleted case-insensitively.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/node-version.receipt.json",
+        "migration/evidence/NS05/a-gates/node-version.stdout.log",
+        "migration/evidence/NS05/a-gates/npm-version.stdout.log",
+        "migration/evidence/NS05/a-gates/installed-versions.stdout.log",
+        "migration/evidence/NS05/a-gates/preservation-entry.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A2-initial-core",
+      "status": "PASS",
+      "detail": "53 tests pass, no tracked core changes.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/core-initial-test.receipt.json",
+        "migration/evidence/NS05/a-gates/core-initial-test.stdout.log",
+        "migration/evidence/NS05/a-gates/core-initial-unchanged.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-D1-track-options",
+      "status": "PASS",
+      "detail": "Typed read-only trackOptions accessor uses public core sortTracksByName, ready/conference/selection guard, fresh array and rows each read. Noncached accessor avoids sharing Vuex cached output with drafts; all NS03/NS04 code retained.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/implementation-diff.stdout.log",
+        "migration/evidence/NS05/a-gates/tests-first.json",
+        "migration/evidence/NS05/a-gates/tests-second.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-D2-pure-draft-result",
+      "status": "PASS",
+      "detail": "Pure helpers return fresh arrays; array result commits existing setSelectedTracks including []; all nonarrays are no-ops. Real-store/loader/core tests cover draft isolation, copying, five frozen cases, cancellation, preserved search/mode/favorites and unchanged loader count.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/tests-first.json",
+        "migration/evidence/NS05/a-gates/tests-second.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-D3-D4-modal-source-static",
+      "status": "PASS",
+      "detail": "Source/typecheck/build evidence only: fullscreen Frame/Page, local draft initialized once from trackOptions, Filter Sessions ActionBar, Close filter NavigationButton calls $closeModal() with no data; Tracks, sorted native Switch rows with automationText, Reset/Deselect All/Select All/Done. checkedChange guard ignores programmatic synchronization. Native rendering/taps/dismissal are NOT proven here.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/installed-modal-api.json",
+        "migration/evidence/NS05/a-gates/typecheck.receipt.json",
+        "migration/evidence/NS05/a-gates/build-android.receipt.json",
+        "migration/evidence/NS05/a-gates/bundle-evidence.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-D5-schedule-source-static",
+      "status": "PASS",
+      "detail": "Filter button beside SegmentedBar, disabled unless ready, accessible Filter sessions; $showModal fullscreen closeCallback calls only applyFilterResult. NS03 focus, states/messages and NS04 rows/dialogs unchanged.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/implementation-diff.stdout.log",
+        "migration/evidence/NS05/a-gates/typecheck.receipt.json",
+        "migration/evidence/NS05/a-gates/build-android.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-D6-tests-retained",
+      "status": "PASS",
+      "detail": "All 69 NS04 tests retained; 25 additions (6 getter tests and 19 draft/result tests). No snapshots or core mocks.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/ns04-tests-retained.json",
+        "migration/evidence/NS05/a-gates/tests-first.json",
+        "migration/evidence/NS05/a-gates/tests-second.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-core-test",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/core-test.receipt.json",
+        "migration/evidence/NS05/a-gates/core-test.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-npm-ci",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/npm-ci.receipt.json",
+        "migration/evidence/NS05/a-gates/npm-ci.stdout.log",
+        "migration/evidence/NS05/a-gates/post-ci-manifests.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-verify-core",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/verify-core.receipt.json",
+        "migration/evidence/NS05/a-gates/verify-core.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-typecheck",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/typecheck.receipt.json",
+        "migration/evidence/NS05/a-gates/typecheck.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-tests-first",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/tests-first.receipt.json",
+        "migration/evidence/NS05/a-gates/tests-first.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-tests-second",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/tests-second.receipt.json",
+        "migration/evidence/NS05/a-gates/tests-second.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-test-repeatability",
+      "status": "PASS",
+      "detail": "6 files / 94 tests on both JSON reports; delta +1 file / +25 tests over NS04.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/test-counts.json",
+        "migration/evidence/NS05/a-gates/tests-first.json",
+        "migration/evidence/NS05/a-gates/tests-second.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-build-android",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/build-android.receipt.json",
+        "migration/evidence/NS05/a-gates/build-android.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-apk-and-bundle",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/inspect-apk.receipt.json",
+        "migration/evidence/NS05/a-gates/apk.json",
+        "migration/evidence/NS05/a-gates/bundle-evidence.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A5-final-preservation-index-class-audit",
+      "status": "PASS",
+      "detail": "261 protected tracked files unchanged; only the three allowed existing NativeScript files differ, three allowed new target files; target/root manifests, other existing tests, NS02/NS04 protected files and IDEA.md unchanged. Index empty; diff check clean; no forbidden changed/new path classes.",
+      "evidence": [
+        "migration/evidence/NS05/a-gates/preservation-final.json",
+        "migration/evidence/NS05/a-gates/class-audit.json",
+        "migration/evidence/NS05/a-gates/final-index.receipt.json",
+        "migration/evidence/NS05/a-gates/final-diff-check.receipt.json",
+        "migration/evidence/NS05/a-gates/final-core-unchanged.receipt.json",
+        "migration/evidence/NS05/a-gates/checkpoint-proof.json",
+        "migration/evidence/NS05/a-gates/checkpoint-index.receipt.json",
+        "migration/evidence/NS05/a-gates/checkpoint-porcelain.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "B-D7-device-observation",
+      "status": "NOT RUN",
+      "detail": "Separate human-assigned Phase B: install/hash readback, modal rendering, native Switch taps, close-button and exactly one confirmed-modal Android Back cancellation, schedule states and PID logs. No emulator/device interaction in this session.",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "coordinator-pixels-and-phase-C-review",
+      "status": "NOT RUN",
+      "detail": "Coordinator pixel inspection and later Phase C/freeze/review are outside this checkpoint. No submission, handoff freeze, delegation/review dispatch, staging, commit or push.",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    }
+  ],
+  "files": [
+    "migration/nativescript/src/state/conference-store.ts",
+    "migration/nativescript/src/state/track-filter.ts",
+    "migration/nativescript/src/components/TrackFilter.vue",
+    "migration/nativescript/src/components/Schedule.vue",
+    "migration/nativescript/__tests__/conference-store.test.ts",
+    "migration/nativescript/__tests__/track-filter.test.ts"
+  ],
+  "testCounts": {
+    "baseline": {
+      "files": 5,
+      "tests": 69
+    },
+    "first": {
+      "files": 6,
+      "tests": 94,
+      "passed": 94,
+      "failed": 0,
+      "pending": 0,
+      "perFile": [
+        {
+          "path": "__tests__/conference-store.test.ts",
+          "status": "passed",
+          "tests": 39,
+          "passed": 39
+        },
+        {
+          "path": "__tests__/load-conference.test.ts",
+          "status": "passed",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "__tests__/schedule-rows.test.ts",
+          "status": "passed",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "__tests__/session-detail.test.ts",
+          "status": "passed",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "__tests__/shell-content.test.ts",
+          "status": "passed",
+          "tests": 1,
+          "passed": 1
+        },
+        {
+          "path": "__tests__/track-filter.test.ts",
+          "status": "passed",
+          "tests": 19,
+          "passed": 19
+        }
+      ]
+    },
+    "second": {
+      "files": 6,
+      "tests": 94,
+      "passed": 94,
+      "failed": 0,
+      "pending": 0,
+      "perFile": [
+        {
+          "path": "__tests__/conference-store.test.ts",
+          "status": "passed",
+          "tests": 39,
+          "passed": 39
+        },
+        {
+          "path": "__tests__/load-conference.test.ts",
+          "status": "passed",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "__tests__/schedule-rows.test.ts",
+          "status": "passed",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "__tests__/session-detail.test.ts",
+          "status": "passed",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "__tests__/shell-content.test.ts",
+          "status": "passed",
+          "tests": 1,
+          "passed": 1
+        },
+        {
+          "path": "__tests__/track-filter.test.ts",
+          "status": "passed",
+          "tests": 19,
+          "passed": 19
+        }
+      ]
+    },
+    "delta": {
+      "files": 1,
+      "tests": 25
+    },
+    "derivedFrom": [
+      "tests-first.json",
+      "tests-second.json"
+    ]
+  },
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "3a16979e17ee45ea3702babd0864f93b1d4e94acdb5bb0d12f36cd9873842311"
+  },
+  "bundleEvidence": {
+    "apk": {
+      "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+      "size": 118504855,
+      "sha256": "3a16979e17ee45ea3702babd0864f93b1d4e94acdb5bb0d12f36cd9873842311"
+    },
+    "entry": "assets/app/bundle.mjs",
+    "bundleBytes": 140415,
+    "sha256": "1eb6e6978e6856a35c7be540757982461c122584884728251440e47d30ce70db",
+    "method": "Bounded exact-string search of decompressed APK ZIP entry; bundle not dumped.",
+    "matches": [
+      {
+        "needle": "Filter Sessions",
+        "found": true,
+        "offset": 77644,
+        "excerpt": "ActionBar, {\n                        title: \"Filter Sessions\",\n                        class: \"filter-act"
+      },
+      {
+        "needle": "Deselect All",
+        "found": true,
+        "offset": 82795,
+        "excerpt": "                                      text: \"Deselect All\",\n                                        on"
+      }
+    ]
+  },
+  "warnings": [
+    "npm ci reports six dependency vulnerabilities (five moderate, one high), deprecated source-map-resolve/webpack-chain and three pending install-script approvals; no dependency/policy changes made.",
+    "NativeScript Android build emits DEP0190 for its own shell-based child call; executor helpers use shell:false."
+  ],
+  "unresolved": [
+    "Phase B / D7 not run: native modal rendering, switches, close-button and Android Back cancellation require device evidence.",
+    "Coordinator pixel inspection and Phase C final gates/freeze/independent review remain separate; no acceptance or review approval claimed.",
+    "Search-plus-track is logic-tested only; device text input is not authorized. iOS, swipes, large text and dark mode are out of scope."
+  ]
+}

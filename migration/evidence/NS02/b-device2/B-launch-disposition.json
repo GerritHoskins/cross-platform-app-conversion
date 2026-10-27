@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "supersedesCaseStatusOnly": [
+    "B-launch-observation.json",
+    "B-launch-reassessment.json"
+  ],
+  "originalRecordsUnmodified": true,
+  "monkeyDurationMs": 8249,
+  "firstRequiredContentIncludingMonkeyMs": 17505,
+  "firstRequiredContentAfterMonkeyMsApprox": 9256,
+  "allXmlPollingAfterMonkeyMsApprox": 13676,
+  "roundingUncertaintyMs": 2,
+  "pollingLimitMs": 20000,
+  "basis": "Step 3 launches via monkey, then polls UI XML up to 20 seconds. All XML polling after monkey completed within the bound. Required content was already present within 20 seconds even counting monkey. The helper initially tested separate exact text nodes rather than strings in a combined Label and incorrectly treated monkey execution time as polling. No product issue or additional device action; raw original records retained.",
+  "frameXml": "migration/evidence/NS02/b-device2/B-launch.xml",
+  "framePng": "migration/evidence/NS02/b-device2/B-launch.png",
+  "frameXmlSha256": "46d24a1ef293537325139fe098be48f18690705290ef2ff4953d08beaea83a21",
+  "assertions": {
+    "expectedTexts": [
+      "Conference",
+      "Sessions: 20",
+      "First session: 1 — Breakfast"
+    ],
+    "expectedStringsPresent": {
+      "Conference": true,
+      "Sessions: 20": true,
+      "First session: 1 — Breakfast": true
+    },
+    "nonemptyNodeTexts": [
+      "Conference",
+      "Sessions: 20\nFirst session: 1 — Breakfast"
+    ],
+    "appPackagePresent": true,
+    "errorDialogNodes": [],
+    "passed": true
+  },
+  "pixels": "pending coordinator; no executor pixel claim"
+}

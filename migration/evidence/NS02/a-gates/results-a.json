@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "package": "NS02",
+  "phase": "A",
+  "status": "PASS",
+  "checkpointStatus": "CHECKPOINTED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "head": "52ae6deaee453e105217014983e3e011df757bb2",
+  "ns01Ancestor": "8d5b2fe30fe8bf5029e1946663955e92984b839e",
+  "cases": [
+    {
+      "id": "A1-preflight",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/entry-gate.json",
+        "migration/evidence/NS02/a-gates/preservation-entry.json",
+        "migration/evidence/NS02/a-gates/09-node-version.receipt.json",
+        "migration/evidence/NS02/a-gates/10-npm-version.receipt.json",
+        "migration/evidence/NS02/a-gates/11-java-version.receipt.json"
+      ],
+      "detail": "Exact branch/full HEAD/ancestor/raw porcelain, empty index and .githooks passed; IDEA.md hash-only; protected and NS01 inventories recorded.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A2-core-baseline",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/14-core-typecheck.receipt.json",
+        "migration/evidence/NS02/a-gates/15-core-test-initial.receipt.json",
+        "migration/evidence/NS02/a-gates/16-core-status.receipt.json"
+      ],
+      "detail": "53 tests passed, unchanged approved count; no nonignored core changes after build/test.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A3-install-copy-lockfile",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/17-target-install.receipt.json",
+        "migration/evidence/NS02/a-gates/18-fixture-copy.receipt.json",
+        "migration/evidence/NS02/a-gates/20-lockfile-scope-check.receipt.json",
+        "migration/evidence/NS02/a-gates/fixture-copy.json",
+        "migration/evidence/NS02/a-gates/lockfile-scope.json"
+      ],
+      "detail": "D1 local dependency; fixture raw bytes agree; exactly three authorized lockfile additions, no unrelated churn.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A4-integration",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+        "migration/evidence/NS02/a-gates/23a-verify-core-other-cwd.receipt.json",
+        "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+        "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+        "migration/evidence/NS02/a-gates/bundle-proof.json"
+      ],
+      "detail": "Real public compiled-core loader, derived diagnostic, independent-result tests, built-in-only read-only verifier; Home.vue and webpack unchanged; D2 not needed.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A5-sequential-gates",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/21-core-test-gate.receipt.json",
+        "migration/evidence/NS02/a-gates/22-target-ci.receipt.json",
+        "migration/evidence/NS02/a-gates/23-verify-core.receipt.json",
+        "migration/evidence/NS02/a-gates/24-target-typecheck.receipt.json",
+        "migration/evidence/NS02/a-gates/25-target-tests-first.receipt.json",
+        "migration/evidence/NS02/a-gates/26-target-tests-second.receipt.json",
+        "migration/evidence/NS02/a-gates/27-build-android.receipt.json",
+        "migration/evidence/NS02/a-gates/npm-ci-lockfile.json",
+        "migration/evidence/NS02/a-gates/apk.json",
+        "migration/evidence/NS02/a-gates/bundle-proof.json"
+      ],
+      "detail": "Core 53/53; npm ci with unchanged lockfile; verify; Vue typecheck; Vitest 2 files/4 tests twice; default webpack and Android APK build succeeded.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "A6-final-preservation-and-class-audit",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS02/a-gates/31-final-index.receipt.json",
+        "migration/evidence/NS02/a-gates/32-diff-check.receipt.json",
+        "migration/evidence/NS02/a-gates/33-protected-diff.receipt.json",
+        "migration/evidence/NS02/a-gates/36-final-audit.receipt.json",
+        "migration/evidence/NS02/a-gates/preservation-final.json",
+        "migration/evidence/NS02/a-gates/checkpoint-validation.json"
+      ],
+      "detail": "261 protected hashes unchanged; 71 NS01 target hashes compared with only four allowed modifications; four allowed new target files; IDEA.md and NS02.md unchanged; no unauthorized paths or staged changes.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "B-device-and-coordinator-pixels",
+      "status": "NOT RUN",
+      "evidence": [],
+      "detail": "Explicitly excluded from this Phase A session; no device interaction or native-rendering acceptance.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "C-final-handoff-freeze-review",
+      "status": "NOT RUN",
+      "evidence": [],
+      "detail": "Explicitly excluded; checkpoint only, no submission/review/staging/commit/push.",
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "initial": 53,
+      "gate": 53,
+      "expected": 53,
+      "changed": false
+    },
+    "25-target-tests-first": {
+      "filesPassed": 2,
+      "filesTotal": 2,
+      "testsPassed": 4,
+      "testsTotal": 4
+    },
+    "26-target-tests-second": {
+      "filesPassed": 2,
+      "filesTotal": 2,
+      "testsPassed": 4,
+      "testsTotal": 4
+    }
+  },
+  "lockfileScope": {
+    "status": "PASS",
+    "evidence": "migration/evidence/NS02/a-gates/lockfile-scope.json",
+    "changes": [
+      {
+        "path": [
+          "packages",
+          "",
+          "dependencies",
+          "@migration/core"
+        ],
+        "after": "file:../core"
+      },
+      {
+        "path": [
+          "packages",
+          "../core"
+        ],
+        "after": {
+          "name": "@migration/core",
+          "version": "0.1.0",
+          "devDependencies": {
+            "@types/node": "26.6.5",
+            "typescript": "5.9.3"
+          }
+        }
+      },
+      {
+        "path": [
+          "packages",
+          "node_modules/@migration/core"
+        ],
+        "after": {
+          "resolved": "../core",
+          "link": true
+        }
+      }
+    ]
+  },
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117584840,
+    "sha256": "b86e65ac73aa0cda512952234a2aaea01dbcd8621dbcf2655e183222348563db"
+  },
+  "limitations": [
+    "No Phase B device or pixel evidence.",
+    "JSON module is grouped as one of two src/data modules in default webpack listing, not individually named.",
+    "Existing npm audit, script-approval, dependency-version and deprecation warnings retained; no audit fix or upgrades."
+  ]
+}

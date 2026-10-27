@@ -1,0 +1,750 @@
+[
+  {
+    "id": "entry-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.108Z",
+    "finishedAt": "2026-10-26T15:54:59.138Z",
+    "durationMs": 30,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-branch.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-branch.receipt.json"
+  },
+  {
+    "id": "entry-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.139Z",
+    "finishedAt": "2026-10-26T15:54:59.158Z",
+    "durationMs": 19,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-head.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-head.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-head.receipt.json"
+  },
+  {
+    "id": "entry-merge-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "f2f51ea^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.159Z",
+    "finishedAt": "2026-10-26T15:54:59.184Z",
+    "durationMs": 25,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-merge-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-merge-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-merge-tree.receipt.json"
+  },
+  {
+    "id": "entry-phase-a-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "52ae6de^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.185Z",
+    "finishedAt": "2026-10-26T15:54:59.207Z",
+    "durationMs": 22,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-phase-a-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-phase-a-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-phase-a-tree.receipt.json"
+  },
+  {
+    "id": "entry-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.207Z",
+    "finishedAt": "2026-10-26T15:54:59.246Z",
+    "durationMs": 39,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-index.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-index.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-index.receipt.json"
+  },
+  {
+    "id": "entry-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.247Z",
+    "finishedAt": "2026-10-26T15:54:59.297Z",
+    "durationMs": 50,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-status.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-status.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-status.receipt.json"
+  },
+  {
+    "id": "entry-target-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--name-only",
+      "HEAD",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.405Z",
+    "finishedAt": "2026-10-26T15:54:59.436Z",
+    "durationMs": 31,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-target-diff.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-target-diff.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-target-diff.receipt.json"
+  },
+  {
+    "id": "entry-target-new",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.437Z",
+    "finishedAt": "2026-10-26T15:54:59.460Z",
+    "durationMs": 23,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/entry-target-new.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/entry-target-new.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/entry-target-new.receipt.json"
+  },
+  {
+    "id": "ns01-commit",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "8d5b2fe"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.461Z",
+    "finishedAt": "2026-10-26T15:54:59.481Z",
+    "durationMs": 20,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/ns01-commit.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/ns01-commit.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/ns01-commit.receipt.json"
+  },
+  {
+    "id": "ns01-ancestor",
+    "command": "git",
+    "args": [
+      "merge-base",
+      "--is-ancestor",
+      "8d5b2fe30fe8bf5029e1946663955e92984b839e",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.482Z",
+    "finishedAt": "2026-10-26T15:54:59.502Z",
+    "durationMs": 20,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/ns01-ancestor.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/ns01-ancestor.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/ns01-ancestor.receipt.json"
+  },
+  {
+    "id": "node-version",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.503Z",
+    "finishedAt": "2026-10-26T15:54:59.520Z",
+    "durationMs": 17,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/node-version.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/node-version.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/node-version.receipt.json"
+  },
+  {
+    "id": "npm-version",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.520Z",
+    "finishedAt": "2026-10-26T15:54:59.617Z",
+    "durationMs": 97,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/npm-version.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/npm-version.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/npm-version.receipt.json"
+  },
+  {
+    "id": "core-test",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "--prefix",
+      "migration/core",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:54:59.617Z",
+    "finishedAt": "2026-10-26T15:55:03.642Z",
+    "durationMs": 4025,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/core-test.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/core-test.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/core-test.receipt.json"
+  },
+  {
+    "id": "npm-ci",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "ci"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:03.643Z",
+    "finishedAt": "2026-10-26T15:55:23.223Z",
+    "durationMs": 19580,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/npm-ci.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/npm-ci.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/npm-ci.receipt.json"
+  },
+  {
+    "id": "post-ci-branch",
+    "command": "git",
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.224Z",
+    "finishedAt": "2026-10-26T15:55:23.264Z",
+    "durationMs": 40,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-branch.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-branch.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-branch.receipt.json"
+  },
+  {
+    "id": "post-ci-head",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.264Z",
+    "finishedAt": "2026-10-26T15:55:23.293Z",
+    "durationMs": 29,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-head.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-head.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-head.receipt.json"
+  },
+  {
+    "id": "post-ci-merge-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "f2f51ea^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.294Z",
+    "finishedAt": "2026-10-26T15:55:23.332Z",
+    "durationMs": 38,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-merge-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-merge-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-merge-tree.receipt.json"
+  },
+  {
+    "id": "post-ci-phase-a-tree",
+    "command": "git",
+    "args": [
+      "rev-parse",
+      "52ae6de^{tree}"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.334Z",
+    "finishedAt": "2026-10-26T15:55:23.358Z",
+    "durationMs": 24,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-phase-a-tree.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-phase-a-tree.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-phase-a-tree.receipt.json"
+  },
+  {
+    "id": "post-ci-index",
+    "command": "git",
+    "args": [
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.358Z",
+    "finishedAt": "2026-10-26T15:55:23.380Z",
+    "durationMs": 22,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-index.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-index.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-index.receipt.json"
+  },
+  {
+    "id": "post-ci-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.381Z",
+    "finishedAt": "2026-10-26T15:55:23.422Z",
+    "durationMs": 41,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-status.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-status.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-status.receipt.json"
+  },
+  {
+    "id": "post-ci-target-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--name-only",
+      "HEAD",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.524Z",
+    "finishedAt": "2026-10-26T15:55:23.553Z",
+    "durationMs": 29,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-target-diff.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-target-diff.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-target-diff.receipt.json"
+  },
+  {
+    "id": "post-ci-target-new",
+    "command": "git",
+    "args": [
+      "ls-files",
+      "--others",
+      "--exclude-standard",
+      "--",
+      "migration/nativescript/"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.554Z",
+    "finishedAt": "2026-10-26T15:55:23.577Z",
+    "durationMs": 23,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/post-ci-target-new.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/post-ci-target-new.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/post-ci-target-new.receipt.json"
+  },
+  {
+    "id": "verify-core",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "verify:core"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.579Z",
+    "finishedAt": "2026-10-26T15:55:23.793Z",
+    "durationMs": 214,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/verify-core.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/verify-core.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/verify-core.receipt.json"
+  },
+  {
+    "id": "typecheck",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "run",
+      "typecheck"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:23.793Z",
+    "finishedAt": "2026-10-26T15:55:26.548Z",
+    "durationMs": 2755,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/typecheck.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/typecheck.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/typecheck.receipt.json"
+  },
+  {
+    "id": "tests-first",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:26.549Z",
+    "finishedAt": "2026-10-26T15:55:27.237Z",
+    "durationMs": 688,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/tests-first.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/tests-first.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/tests-first.receipt.json"
+  },
+  {
+    "id": "tests-second",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "test"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:27.238Z",
+    "finishedAt": "2026-10-26T15:55:27.843Z",
+    "durationMs": 605,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/tests-second.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/tests-second.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/tests-second.receipt.json"
+  },
+  {
+    "id": "resolved-versions",
+    "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "args": [
+      "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+      "ls",
+      "--depth=0",
+      "--json"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:27.844Z",
+    "finishedAt": "2026-10-26T15:55:28.435Z",
+    "durationMs": 591,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/resolved-versions.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/resolved-versions.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/resolved-versions.receipt.json"
+  },
+  {
+    "id": "lockfile-baseline",
+    "command": "git",
+    "args": [
+      "show",
+      "HEAD:migration/nativescript/package-lock.json"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:28.436Z",
+    "finishedAt": "2026-10-26T15:55:28.465Z",
+    "durationMs": 29,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/lockfile-baseline.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/lockfile-baseline.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/lockfile-baseline.receipt.json"
+  },
+  {
+    "id": "diff-check",
+    "command": "git",
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "exitCode": 0,
+    "startedAt": "2026-10-26T15:55:28.594Z",
+    "finishedAt": "2026-10-26T15:55:28.657Z",
+    "durationMs": 63,
+    "signal": null,
+    "error": null,
+    "environment": {
+      "pinnedNodeFirstOnPath": true,
+      "removedKeys": [
+        "NODEFAULTCURRENTDIRECTORYINEXEPATH"
+      ],
+      "noDefaultCurrentDirectoryInExePathPresentInChild": false
+    },
+    "stdout": "migration/evidence/NS02/c-freeze/diff-check.stdout.log",
+    "stderr": "migration/evidence/NS02/c-freeze/diff-check.stderr.log",
+    "receipt": "migration/evidence/NS02/c-freeze/diff-check.receipt.json"
+  }
+]

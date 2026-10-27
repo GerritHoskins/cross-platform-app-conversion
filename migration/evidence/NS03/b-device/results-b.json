@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "package": "NS03",
+  "phase": "B",
+  "status": "FAIL",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "cases": [
+    {
+      "id": "B-install",
+      "status": "PASS",
+      "summary": "Install -r succeeded; installed SHA-256 equals phase A run 3.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-install-assertions.json",
+        "migration/evidence/NS03/b-device/B-install.receipt.json",
+        "migration/evidence/NS03/b-device/B-install-pm-path.receipt.json",
+        "migration/evidence/NS03/b-device/B-install-device-sha256.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    {
+      "id": "B-launch",
+      "status": "FAIL",
+      "summary": "FAIL literal-label contract: native uppercase mode labels. Schedule ready at 14.836 s; actual search editable child focused=false; no detected loading/error/dialog nodes. Pixels pending.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-launch-disposition.json",
+        "migration/evidence/NS03/b-device/B-launch.png",
+        "migration/evidence/NS03/b-device/B-launch.xml"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    {
+      "id": "B-scroll",
+      "status": "PASS",
+      "summary": "Last heading 3:00 pm reached after 3 upward swipes, 400 ms each, inside current ListView bounds.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-scroll-assertions.json",
+        "migration/evidence/NS03/b-device/B-scroll.png",
+        "migration/evidence/NS03/b-device/B-scroll.xml"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    {
+      "id": "B-favorites",
+      "status": "PASS",
+      "summary": "Tapped observed FAVORITE SESSIONS at current XML bounds centre; No favorite sessions. visible; zero session rows.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-favorites-assertions.json",
+        "migration/evidence/NS03/b-device/B-favorites.png",
+        "migration/evidence/NS03/b-device/B-favorites.xml"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    {
+      "id": "B-all",
+      "status": "PASS",
+      "summary": "Tapped observed ALL SESSIONS at current XML bounds centre; six session rows visible; no favorite empty message.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-all-assertions.json",
+        "migration/evidence/NS03/b-device/B-all.png",
+        "migration/evidence/NS03/b-device/B-all.xml"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    },
+    {
+      "id": "B-logcat",
+      "status": "PASS",
+      "summary": "PID 6565 unchanged; no detected fatal pattern in last 400 PID-filtered log lines; warnings/errors saved verbatim; app resumed in foreground.",
+      "evidence": [
+        "migration/evidence/NS03/b-device/B-logcat-assertions.json",
+        "migration/evidence/NS03/b-device/B-logcat.stdout.log",
+        "migration/evidence/NS03/b-device/logcat-warnings-errors-verbatim.txt",
+        "migration/evidence/NS03/b-device/pid-before-sequence.receipt.json",
+        "migration/evidence/NS03/b-device/pid-after-sequence.receipt.json",
+        "migration/evidence/NS03/b-device/foreground-after.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator"
+    }
+  ],
+  "caseStatuses": {
+    "B-install": "PASS",
+    "B-launch": "FAIL",
+    "B-scroll": "PASS",
+    "B-favorites": "PASS",
+    "B-all": "PASS",
+    "B-logcat": "PASS"
+  },
+  "gate": "migration/evidence/NS03/b-device/gate.json",
+  "preservation": "migration/evidence/NS03/b-device/preservation-final.json",
+  "environment": "migration/evidence/NS03/b-device/environment-comparison.json",
+  "captureIndex": "migration/evidence/NS03/b-device/capture-index.json",
+  "firstDefaultAllHeading": "8:00 am",
+  "lastDefaultAllHeading": "3:00 pm",
+  "noKeyboardAcceptance": "PENDING_COORDINATOR_PIXELS",
+  "unresolved": [
+    "Literal All sessions / Favorite sessions text differs from native ALL SESSIONS / FAVORITE SESSIONS; B-launch remains FAIL pending coordinator disposition, no waiver claimed.",
+    "Coordinator must inspect all four PNGs, including launch keyboard/privacy. Executor has not visually inspected pixels.",
+    "Launch polling helper third dump completed at 20.981 s; first valid schedule XML at 14.836 s is byte-identical. Timing overshoot disclosed; no relaunch.",
+    "Search, no-match and clear remain device-unverified under D5 no-text-input rule.",
+    "Phase C final gates, formal handoff/submission/freeze and review are outside this checkpoint."
+  ],
+  "restrictions": "No product/test/config edits; no settings changes, Back/Home, search taps, text input, input_method dumps, RN uninstall, delegation, dispatch, staging, commit, push or Phase C actions."
+}

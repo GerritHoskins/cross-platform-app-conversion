@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\tools\qwen-supervisor\.runs\sol-ns05-r1-b-20261027\sequence.py", line 143, in <module>
+    {'b3':b3,'b4':b4,'b5':b5,'b6':b6,'b7':b7,'runtime':runtime}[sys.argv[1]]()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\tools\qwen-supervisor\.runs\sol-ns05-r1-b-20261027\sequence.py", line 51, in b3
+    click_button('B3-select','Select All',d.TRACKS)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\tools\qwen-supervisor\.runs\sol-ns05-r1-b-20261027\sequence.py", line 14, in click_button
+    d.tap(label,'button',name,lambda t:d.modal(t) and d.switches(t,selected))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\tools\qwen-supervisor\.runs\sol-ns05-r1-b-20261027\device.py", line 127, in tap
+    assert len(candidates)==1,(kind,value,candidates)
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: ('button', 'Select All', [{'index': '0', 'text': 'Deselect All', 'resource-id': '', 'class': 'android.widget.Button', 'package': 'dev.translationtest.ns', 'content-desc': '', 'checkable': 'false', 'checked': 'false', 'clickable': 'true', 'enabled': 'true', 'focusable': 'true', 'focused': 'false', 'scrollable': 'false', 'long-clickable': 'false', 'password': 'false', 'selected': 'false', 'bounds': '[32,2053][540,2179]', 'drawing-order': '1', 'hint': ''}, {'index': '1', 'text': 'Select All', 'resource-id': '', 'class': 'android.widget.Button', 'package': 'dev.translationtest.ns', 'content-desc': '', 'checkable': 'false', 'checked': 'false', 'clickable': 'true', 'enabled': 'true', 'focusable': 'true', 'focused': 'false', 'scrollable': 'false', 'long-clickable': 'false', 'password': 'false', 'selected': 'false', 'bounds': '[540,2053][1048,2179]', 'drawing-order': '2', 'hint': ''}])

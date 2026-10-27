@@ -23,7 +23,26 @@ The migration runs as small, reviewed work packages. An AI executor implements e
 ## Status
 
 - **React Native, done:** RN01–RN07. Expo shell and Android development build, core integration, schedule browsing, session detail and favorites, track filter modal, swipe actions on rows, and Android acceptance on an emulator. Known limits (native cold-start links, diagonal swipe, TalkBack traversal, keyboard insets) are listed in `migration/handoffs/RN07.md`.
-- **NativeScript, in progress:** NS01 (shell and Android launch) is done; NS02–NS07 follow.
+- **NativeScript, in progress:** NS01–NS06 are done: shell and Android launch, shared core with the bundled fixture, Vuex-backed schedule list, session detail and favorites, track filter modal, and swipe actions on rows. NS07 (Android acceptance on an emulator) is under way.
+
+## Screenshots
+
+The same screens on an Android emulator, React Native on the left and NativeScript on the right. Both targets read the same fixture through the shared core. NativeScript uses the platform's default controls, so its tabs, switches and dialog buttons look more like stock Android.
+
+| React Native (Expo) | NativeScript-Vue |
+| :---: | :---: |
+| <img src="docs/screenshots/rn-schedule.png" width="240" alt="React Native schedule list"> | <img src="docs/screenshots/ns-schedule.png" width="240" alt="NativeScript schedule list"> |
+| Schedule grouped by start time | Schedule grouped by start time |
+| <img src="docs/screenshots/rn-detail.png" width="240" alt="React Native session detail"> | <img src="docs/screenshots/ns-detail.png" width="240" alt="NativeScript session detail"> |
+| Session detail | Session detail |
+| <img src="docs/screenshots/rn-filter.png" width="240" alt="React Native track filter"> | <img src="docs/screenshots/ns-filter.png" width="240" alt="NativeScript track filter"> |
+| Track filter modal | Track filter modal |
+| <img src="docs/screenshots/rn-swipe.png" width="240" alt="React Native row swiped open"> | <img src="docs/screenshots/ns-swipe.png" width="240" alt="NativeScript row swiped open"> |
+| Row swiped open to show Favorite | Row swiped open to show Favorite |
+| <img src="docs/screenshots/rn-already-favorite.png" width="240" alt="React Native already-favorite dialog"> | <img src="docs/screenshots/ns-already-favorite.png" width="240" alt="NativeScript already-favorite dialog"> |
+| Favoriting a session twice offers removal, as the source app does | Same dialog |
+
+The grey gear in the React Native screenshots is the Expo development client's menu button. It is not part of the app.
 
 ## Running
 

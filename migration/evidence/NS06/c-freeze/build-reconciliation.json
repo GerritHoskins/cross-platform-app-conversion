@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "apk": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "e58c43978bb5ae3c6b632160ee4d5a731c5ad3826e8d76f7debd02773810b341",
+    "modifiedAt": "2026-10-27T11:38:49.083Z",
+    "buildReceipt": "build-android.receipt.json"
+  },
+  "buildReceipt": "migration/evidence/NS06/a-gates2/build-android.receipt.json",
+  "buildExitCode": 0,
+  "buildRerun": false,
+  "hostAPKHashUnchanged": true,
+  "bundle": {
+    "entry": "assets/app/bundle.mjs",
+    "size": 145745,
+    "sha256": "76662d0e925c21cc70566a0fc3c7281f07b32c5d57d06ebb2d0bf52a9ea7715b",
+    "matches": [
+      {
+        "needle": "swipe-action-",
+        "byteOffset": 60973,
+        "snippet": "                                           automationText: `swipe-action-${item.session.id}`,\n                                                            visibility: $setup.swipeState.openId === item.session.id ? 'visibl"
+      },
+      {
+        "needle": "rowSwipeReducer",
+        "byteOffset": 37981,
+        "snippet": "te.value = (0,_state_row_swipe__WEBPACK_IMPORTED_MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'list-changed' });\n        });\n        const ready = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(() => store.state."
+      },
+      {
+        "needle": "swipe-left",
+        "byteOffset": 39417,
+        "snippet": "RTED_MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'swipe-left', id });\n            }\n            else if (event.direction === _nativescript_core__WEBPACK_IMPORTED_MODULE_1__.SwipeDirection.right) {\n             "
+      },
+      {
+        "needle": "swipe-right",
+        "byteOffset": 39692,
+        "snippet": "RTED_MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'swipe-right', id });\n            }\n        }\n        function openSession(event, id) {\n            if ((0,_state_row_swipe__WEBPACK_IMPORTED_MODULE_9__.rowTapAc"
+      },
+      {
+        "needle": "settled",
+        "byteOffset": 40496,
+        "snippet": "RTED_MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'settled', id });\n        }\n        async function changeFavorite(id) {\n            const plan = (0,_state_session_detail__WEBPACK_IMPORTED_MODULE_7__.listFavori"
+      },
+      {
+        "needle": "list-changed",
+        "byteOffset": 38025,
+        "snippet": "RTED_MODULE_9__.rowSwipeReducer)(swipeState.value, { type: 'list-changed' });\n        });\n        const ready = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(() => store.state.status === 'ready');\n        const loading ="
+      }
+    ],
+    "A1Visibility": true,
+    "unchangedFromA2": true
+  },
+  "installedCopies": [
+    {
+      "run": 3,
+      "source": "migration/evidence/NS06/b-device3/B-install-hash.json",
+      "installedPath": "package:/data/app/~~vUVnCJDQtHSzAqCrH61UIA==/dev.translationtest.ns-Ykk4Ne7t_jsXiITs4JVdrA==/base.apk",
+      "installedHash": "e58c43978bb5ae3c6b632160ee4d5a731c5ad3826e8d76f7debd02773810b341",
+      "status": "PASS"
+    },
+    {
+      "run": 4,
+      "source": "migration/evidence/NS06/b-device4/B-install-hash.json",
+      "installedPath": "package:/data/app/~~3dv1V_j0g1d2iDqeEQmDgA==/dev.translationtest.ns-8wXvo6bHtVU0DdnlHfXEuA==/base.apk",
+      "installedHash": "e58c43978bb5ae3c6b632160ee4d5a731c5ad3826e8d76f7debd02773810b341",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Host artifact/bundle read only. Installed-copy proof is historical B3/B4, not a current device-state claim."
+}

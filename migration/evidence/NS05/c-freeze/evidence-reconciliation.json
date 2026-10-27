@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "originalStoreTestTextRetained": true,
+  "retainedReporterTests": 69,
+  "secondRunNamesIdentical": true,
+  "hardware": {
+    "keyeventCount": 1,
+    "command": {
+      "id": "B6-only-back-1793093404576792600",
+      "command": [
+        "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "4"
+      ],
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": "2026-10-27T09:30:04.576785+00:00",
+      "durationMs": 72,
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    },
+    "freshXml": "migration/evidence/NS05/b-device/B6-immediately-before-back.xml",
+    "modalConfirmed": true,
+    "coordinatorConfirmed": true
+  },
+  "pixels": {
+    "report": "migration/evidence/NS05/pixel-inspection-coordinator.md",
+    "files": 28,
+    "distinct": 27,
+    "reviewedPass": 27,
+    "hashesMatch": true,
+    "privacy": "Coordinator: no keyboard or personal content",
+    "executorPixelInspection": false
+  },
+  "installedCopy": {
+    "evidence": "migration/evidence/NS05/b-device/installed-apk.json",
+    "matchesPhaseA": true,
+    "currentDeviceClaim": false
+  }
+}

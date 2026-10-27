@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "package": "NS04",
+  "phase": "A",
+  "status": "BLOCKED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "1-preflight",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/entry-gate.json",
+        "migration/evidence/NS04/a-gates/entry-status.stdout.log"
+      ],
+      "detail": "Receipt helper wrote entry-branch/head/index receipts under evidence before capturing raw porcelain. The exact raw status gate therefore failed on self-created files. Branch, full HEAD, ancestor, index, hooks and evidenceAbsent-before-helper were true; rawPorcelainExact and parsedPathExact were false. No retry or product work."
+    },
+    {
+      "id": "1-versions-preservation",
+      "status": "NOT RUN",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/entry-gate.json"
+      ],
+      "detail": "Stopped before versions, IDEA hash-only and protected/target hash inventory. IDEA contents were never read."
+    },
+    {
+      "id": "2-core-baseline",
+      "status": "NOT RUN",
+      "evidence": [],
+      "detail": "Preflight blocked."
+    },
+    {
+      "id": "3-implementation-D1-D7",
+      "status": "NOT RUN",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/blocked-product-diff.receipt.json"
+      ],
+      "detail": "No source, test, dependency or configuration edits."
+    },
+    {
+      "id": "4-core-test",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-target-npm-ci",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-verify-core",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-typecheck",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-tests-first",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-tests-second",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-build-android",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "4-dev-build-harness-evidence",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "5-preservation-comparison",
+      "status": "NOT RUN",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/blocked-final-audit.json"
+      ],
+      "detail": "Entry hashes unavailable; no hash-comparison claim."
+    },
+    {
+      "id": "5-index-and-class-audit",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/NS04/a-gates/blocked-final-audit.json",
+        "migration/evidence/NS04/a-gates/blocked-final-index.receipt.json",
+        "migration/evidence/NS04/a-gates/blocked-product-diff.receipt.json",
+        "migration/evidence/NS04/a-gates/blocked-final-status.receipt.json"
+      ]
+    },
+    {
+      "id": "phase-B-device",
+      "status": "NOT RUN",
+      "evidence": [],
+      "detail": "Explicitly out of scope; no emulator/device commands."
+    }
+  ]
+}

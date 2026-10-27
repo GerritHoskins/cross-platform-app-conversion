@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "status": "PASS",
+  "generatedAt": "2026-10-26T23:43:27.390Z",
+  "counts": {
+    "total": 24,
+    "PASS": 24,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT RUN": 0
+  },
+  "subcaseCounts": {
+    "referenceCases": {
+      "total": 11,
+      "PASS": 11
+    },
+    "lifecycle": {
+      "total": 7,
+      "PASS": 7
+    },
+    "pixelFrames": {
+      "total": 4,
+      "PASS": 4
+    },
+    "policy": "Subcases are included in their parent cases, not added to the 24 top-level case count; test executions are not acceptance-case counts."
+  },
+  "testCounts": {
+    "core": {
+      "tests": 53,
+      "passed": 53,
+      "failed": 0
+    },
+    "targetFirst": {
+      "files": 4,
+      "tests": 34,
+      "passed": 34,
+      "failed": 0
+    },
+    "targetSecond": {
+      "files": 4,
+      "tests": 34,
+      "passed": 34,
+      "failed": 0
+    },
+    "byFile": {
+      "conference-store.test.ts": 27,
+      "schedule-rows.test.ts": 3,
+      "load-conference.test.ts": 3,
+      "shell-content.test.ts": 1
+    },
+    "ns02": {
+      "files": 2,
+      "tests": 4,
+      "passed": 4,
+      "unchanged": true
+    },
+    "referenceCases": {
+      "tests": 11,
+      "passed": 11
+    },
+    "lifecycle": {
+      "tests": 7,
+      "passed": 7
+    },
+    "evidence": "migration/evidence/NS03/c-freeze/test-counts.json"
+  },
+  "decisions": [
+    "D1",
+    "D1-scope-amendment",
+    "D1-typing-amendment",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "resultEvidencePathsExist": true,
+  "checkpointBeforeFreeze": true,
+  "statusLineOnly": true,
+  "historyFilesPreserved": 633,
+  "targetFilesPreserved": 81,
+  "protectedFilesPreserved": 261,
+  "indexEmpty": true,
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": [],
+    "status": "intended; coordinator checks live route and dispatches"
+  },
+  "freezePolicy": "All C evidence/receipts finalized before manifest --write; after --write no migration/ writes. Actual manifest check output in run-local directory only."
+}

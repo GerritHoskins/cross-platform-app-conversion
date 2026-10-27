@@ -1,0 +1,268 @@
+diff --git a/migration/nativescript/__tests__/conference-store.test.ts b/migration/nativescript/__tests__/conference-store.test.ts
+index 6103e7c..76f88dd 100644
+--- a/migration/nativescript/__tests__/conference-store.test.ts
++++ b/migration/nativescript/__tests__/conference-store.test.ts
+@@ -184,6 +184,95 @@ describe('frozen reference cases through public mutations and the real loader/co
+   });
+ });
+ 
++describe('NS04 favorite mutations and detail getters', () => {
++  test('favorite mutations are no-ops before selection exists, including loading and error', () => {
++    const store = createConferenceStore();
++    for (const status of ['idle', 'loading', 'error'] as const) {
++      if (status === 'loading') store.commit('loadStarted');
++      if (status === 'error') store.commit('loadFailed', 'offline');
++      const before = freezeState(store.state);
++      store.commit('favoriteAdded', 3);
++      store.commit('favoriteRemoved', 3);
++      expect(toRaw(store.state)).toBe(before);
++      expect(store.getters.sessionById(3)).toBeUndefined();
++      expect(store.getters.isFavorite(3)).toBe(false);
++    }
++  });
++
++  test('add, duplicate add, remove and absent remove preserve all other fields and frozen history', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    store.commit('setSearchText', ' IOnic ');
++    store.commit('setSelectedTracks', ['Ionic']);
++    store.commit('setMode', 'favorites');
++    const operations = [
++      ['favoriteAdded', 3, [3]],
++      ['favoriteAdded', 3, [3]],
++      ['favoriteRemoved', 3, []],
++      ['favoriteRemoved', 9999, []],
++    ] as const;
++    for (const [type, id, expected] of operations) {
++      const before = freezeState(store.state);
++      const priorIds = [...before.selection!.favoriteIds];
++      store.commit(type, id);
++      expect(store.state).toEqual({ ...before, selection: { ...before.selection, favoriteIds: expected } });
++      expect(before.selection!.favoriteIds).toEqual(priorIds);
++      expect(store.state.conference).toBe(before.conference);
++      expect(store.state).not.toBe(before);
++    }
++  });
++
++  test('two consecutive adds compose in order from current state without mutating either snapshot', async () => {
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    const initial = freezeState(store.state);
++    store.commit('favoriteAdded', 12);
++    const first = freezeState(store.state);
++    store.commit('favoriteAdded', 3);
++    expect(store.state.selection!.favoriteIds).toEqual([12, 3]);
++    expect(initial.selection!.favoriteIds).toEqual([]);
++    expect(first.selection!.favoriteIds).toEqual([12]);
++  });
++
++  test('detail getters resolve known/unknown IDs and hide sessions outside ready without losing favorite state', async () => {
++    const store = createConferenceStore();
++    expect(store.getters.sessionById(3)).toBeUndefined();
++    expect(store.getters.isFavorite(3)).toBe(false);
++    await store.dispatch('load');
++    expect(store.getters.sessionById(3)).toEqual(loadConference().sessions.find(session => session.id === 3));
++    expect(store.getters.sessionById(9999)).toBeUndefined();
++    expect(store.getters.sessionById(Number.NaN)).toBeUndefined();
++    expect(store.getters.isFavorite(3)).toBe(false);
++    store.commit('favoriteAdded', 3);
++    expect(store.getters.isFavorite(3)).toBe(true);
++    expect(store.getters.isFavorite(9999)).toBe(false);
++    store.commit('loadStarted');
++    expect(store.getters.sessionById(3)).toBeUndefined();
++    expect(store.getters.isFavorite(3)).toBe(true);
++    store.commit('loadFailed', 'offline');
++    expect(store.getters.sessionById(3)).toBeUndefined();
++    expect(store.getters.isFavorite(3)).toBe(true);
++    store.commit('favoriteRemoved', 3);
++    expect(store.getters.isFavorite(3)).toBe(false);
++  });
++
++  test.each(['favorites-some', 'favorites-order'])('%s through the new mutations and real loader/core', async (id) => {
++    const fixture = deepFreeze(reference.cases.find(item => item.id === id)!);
++    const store = createConferenceStore();
++    await store.dispatch('load');
++    store.commit('setSearchText', fixture.input.searchText);
++    store.commit('setSelectedTracks', fixture.input.selectedTracks);
++    for (const sessionId of fixture.input.favoriteIds) store.commit('favoriteAdded', sessionId);
++    store.commit('setMode', 'favorites');
++    expect(store.state.selection!.favoriteIds).toEqual(fixture.input.favoriteIds);
++    expect(store.getters.scheduleGroups.map(group => ({
++      groupTime: group.groupTime, sessionIds: group.sessions.map(session => session.id),
++    }))).toEqual(fixture.expected.groups);
++    expect(store.getters.scheduleGroups.flatMap(group => group.sessions.map(session => session.id)))
++      .toEqual(fixture.expected.sessionIds);
++  });
++});
++
+ describe('controlled loader lifecycle', () => {
+   test('pending load starts synchronously but calls the loader behind a promise boundary', async () => {
+     const pending = deferred<Conference>();
+diff --git a/migration/nativescript/src/components/Home.vue b/migration/nativescript/src/components/Home.vue
+index 1bbbcc9..03e888b 100644
+--- a/migration/nativescript/src/components/Home.vue
++++ b/migration/nativescript/src/components/Home.vue
+@@ -1,9 +1,28 @@
+ <script lang="ts" setup>
++import { $navigateTo } from 'nativescript-vue';
++import { Application, type EventData, type Frame } from '@nativescript/core';
+ import Schedule from './Schedule.vue';
++import SessionDetail from './SessionDetail.vue';
++import { directEntrySessionId } from '../state/session-detail';
++
++declare const __DEV__: boolean;
++let handledFirstLoad = false;
++
++function directEntry(event: EventData) {
++  if (handledFirstLoad) return;
++  handledFirstLoad = true;
++  if (__DEV__) {
++    const extra = Application.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');
++    const sessionId = directEntrySessionId(extra, __DEV__);
++    if (sessionId !== undefined) {
++      $navigateTo(SessionDetail, { frame: event.object as Frame, props: { sessionId }, animated: false });
++    }
++  }
++}
+ </script>
+ 
+ <template>
+-  <Frame>
++  <Frame @loaded="directEntry">
+     <Schedule />
+   </Frame>
+ </template>
+diff --git a/migration/nativescript/src/components/Schedule.vue b/migration/nativescript/src/components/Schedule.vue
+index afb3a06..3a37271 100644
+--- a/migration/nativescript/src/components/Schedule.vue
++++ b/migration/nativescript/src/components/Schedule.vue
+@@ -1,7 +1,9 @@
+ <script lang="ts" setup>
+-import { computed, onMounted } from 'nativescript-vue';
+-import type { EventData, SearchBar, SegmentedBar } from '@nativescript/core';
++import { $navigateTo, computed, onMounted } from 'nativescript-vue';
++import { Dialogs, type EventData, type SearchBar, type SegmentedBar, type View } from '@nativescript/core';
++import SessionDetail from './SessionDetail.vue';
+ import { useConferenceStore } from '../state/conference-store';
++import { listFavoriteAction } from '../state/session-detail';
+ import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
+ 
+ const store = useConferenceStore();
+@@ -13,6 +15,20 @@ const emptyMessage = computed(() => store.state.selection?.mode === 'favorites'
+   : 'No sessions match your search or filters.');
+ const templateFor = ({ item }: { item: ScheduleRow }) => item.kind;
+ 
++function openSession(event: EventData, id: number) {
++  $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
++}
++
++async function changeFavorite(id: number) {
++  const plan = listFavoriteAction(store.state.selection?.mode ?? 'all', store.getters.isFavorite(id));
++  if (plan.kind === 'add-then-alert') {
++    store.commit('favoriteAdded', id);
++    await Dialogs.alert(plan.dialog);
++  } else if (await Dialogs.confirm(plan.dialog)) {
++    store.commit('favoriteRemoved', id);
++  }
++}
++
+ function changeSearch(event: EventData) {
+   store.commit('setSearchText', (event.object as SearchBar).text);
+ }
+@@ -93,12 +109,30 @@ onMounted(() => {
+           <Label :key="item.key" :text="item.groupTime" class="schedule-heading" />
+         </template>
+         <template #session="{ item }">
+-          <StackLayout :key="item.key" :automationText="`session-${item.session.id}`" class="schedule-session">
+-            <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
+-            <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
+-            <Label :text="item.session.location" textWrap="true" color="#333333" />
+-            <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
+-          </StackLayout>
++          <GridLayout :key="item.key" columns="*,auto">
++            <StackLayout
++              col="0"
++              :automationText="`session-${item.session.id}`"
++              class="schedule-session"
++              accessibilityRole="link"
++              :accessibilityLabel="item.session.name"
++              @tap="openSession($event, item.session.id)"
++            >
++              <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
++              <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
++              <Label :text="item.session.location" textWrap="true" color="#333333" />
++              <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
++            </StackLayout>
++            <Button
++              col="1"
++              :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
++              :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
++              :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
++              verticalAlignment="center"
++              margin="8"
++              @tap="changeFavorite(item.session.id)"
++            />
++          </GridLayout>
+         </template>
+       </ListView>
+     </GridLayout>
+diff --git a/migration/nativescript/src/state/conference-store.ts b/migration/nativescript/src/state/conference-store.ts
+index b35d8ad..b6a5700 100644
+--- a/migration/nativescript/src/state/conference-store.ts
++++ b/migration/nativescript/src/state/conference-store.ts
+@@ -1,12 +1,15 @@
+ import { createStore, useStore, type Store } from 'vuex';
+ import type { InjectionKey } from 'vue';
+ import {
++  addFavorite,
+   createInitialSelection,
+   groupSessions,
++  removeFavorite,
+   selectSessions,
+   type Conference,
+   type ScheduleMode,
+   type Selection,
++  type Session,
+   type SessionGroup,
+ } from '@migration/core';
+ import { loadConference } from '../data/load-conference';
+@@ -20,7 +23,11 @@ export interface ConferenceState {
+ 
+ export type ConferenceLoader = () => Conference | Promise<Conference>;
+ export type ConferenceStore = Omit<Store<ConferenceState>, 'getters'> & {
+-  readonly getters: { readonly scheduleGroups: SessionGroup[] };
++  readonly getters: {
++    readonly scheduleGroups: SessionGroup[];
++    readonly sessionById: (id: number) => Session | undefined;
++    readonly isFavorite: (id: number) => boolean;
++  };
+ };
+ 
+ export const conferenceStoreKey: InjectionKey<Store<ConferenceState>> = Symbol('conference-store');
+@@ -67,8 +74,26 @@ export function createConferenceStore(loader: ConferenceLoader = loadConference)
+       setFavoriteIds(state, favoriteIds: readonly number[]) {
+         if (state.selection) replace(state, { selection: { ...state.selection, favoriteIds: [...favoriteIds] } });
+       },
++      favoriteAdded(state, sessionId: number) {
++        if (state.selection) replace(state, {
++          selection: { ...state.selection, favoriteIds: addFavorite(state.selection.favoriteIds, sessionId) },
++        });
++      },
++      favoriteRemoved(state, sessionId: number) {
++        if (state.selection) replace(state, {
++          selection: { ...state.selection, favoriteIds: removeFavorite(state.selection.favoriteIds, sessionId) },
++        });
++      },
+     },
+     getters: {
++      sessionById(state) {
++        return (id: number): Session | undefined => state.status === 'ready'
++          ? state.conference?.sessions.find(session => session.id === id)
++          : undefined;
++      },
++      isFavorite(state) {
++        return (id: number): boolean => state.selection?.favoriteIds.includes(id) ?? false;
++      },
+       scheduleGroups(state): SessionGroup[] {
+         if (state.status !== 'ready' || !state.conference || !state.selection) return [];
+         return groupSessions(selectSessions(state.conference.sessions, state.selection));

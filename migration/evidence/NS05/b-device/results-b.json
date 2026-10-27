@@ -1,0 +1,1301 @@
+{
+  "version": 1,
+  "package": "NS05",
+  "phase": "B",
+  "status": "PASS",
+  "observer": "Hermes GPT-6.1 Sol high (device actions); pixels pending coordinator",
+  "cases": {
+    "B-install": {
+      "status": "PASS",
+      "evidence": [
+        "installed-apk.json",
+        "B-install.png",
+        "B-install.xml"
+      ],
+      "details": null
+    },
+    "B1": {
+      "status": "PASS",
+      "evidence": [
+        "B1-schedule.png",
+        "B1-schedule.xml"
+      ],
+      "details": {
+        "filter": [
+          {
+            "index": "1",
+            "text": "Filter",
+            "resource-id": "Filter sessions",
+            "class": "android.widget.Button",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Filter sessions. Filter",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[817,422][1048,569]",
+            "drawing-order": "2",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "besideMode": true
+      }
+    },
+    "B2": {
+      "status": "PASS",
+      "evidence": [
+        "B2-open.png",
+        "B2-open.xml",
+        "B2-open-observed.json"
+      ],
+      "details": {
+        "close": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "",
+            "class": "android.widget.ImageButton",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Close",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,128][147,275]",
+            "drawing-order": "2",
+            "hint": ""
+          }
+        ],
+        "trackOrder": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ],
+        "scrollNeeded": false
+      }
+    },
+    "B3-ionic-off": {
+      "status": "PASS",
+      "evidence": [
+        "B3-ionic-off.png",
+        "B3-ionic-off.xml",
+        "B3-ionic-off-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      }
+    },
+    "B3-deselect": {
+      "status": "PASS",
+      "evidence": [
+        "B3-deselect.png",
+        "B3-deselect.xml",
+        "B3-deselect-observed.json"
+      ],
+      "details": {
+        "expectedChecked": []
+      }
+    },
+    "B3-select": {
+      "status": "PASS",
+      "evidence": [
+        "B3-select.png",
+        "B3-select.xml",
+        "B3-select-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      }
+    },
+    "B3-reset": {
+      "status": "PASS",
+      "evidence": [
+        "B3-reset.png",
+        "B3-reset.xml",
+        "B3-reset-observed.json"
+      ],
+      "details": {
+        "expectedChecked": []
+      }
+    },
+    "B4-only-ionic": {
+      "status": "PASS",
+      "evidence": [
+        "B4-only-ionic.png",
+        "B4-only-ionic.xml",
+        "B4-only-ionic-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      }
+    },
+    "B4-applied": {
+      "status": "PASS",
+      "evidence": [
+        "B4-applied.png",
+        "B4-applied.xml",
+        "B4-applied-observed.json"
+      ],
+      "details": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      }
+    },
+    "B5-reopen": {
+      "status": "PASS",
+      "evidence": [
+        "B5-reopen.png",
+        "B5-reopen.xml",
+        "B5-reopen-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      }
+    },
+    "B5-draft": {
+      "status": "PASS",
+      "evidence": [
+        "B5-draft.png",
+        "B5-draft.xml",
+        "B5-draft-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Design",
+          "Ionic"
+        ]
+      }
+    },
+    "B5-closed": {
+      "status": "PASS",
+      "evidence": [
+        "B5-closed.png",
+        "B5-closed.xml",
+        "B5-closed-observed.json"
+      ],
+      "details": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      }
+    },
+    "B5-reopen-again": {
+      "status": "PASS",
+      "evidence": [
+        "B5-reopen-again.png",
+        "B5-reopen-again.xml",
+        "B5-reopen-again-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      }
+    },
+    "B6-draft": {
+      "status": "PASS",
+      "evidence": [
+        "B6-draft.png",
+        "B6-draft.xml",
+        "B6-draft-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Design",
+          "Ionic"
+        ]
+      }
+    },
+    "B6-back": {
+      "status": "PASS",
+      "evidence": [
+        "B6-back.png",
+        "B6-back.xml",
+        "B6-back-observed.json"
+      ],
+      "details": {
+        "expectedGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "actualGroups": [
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,961][807,1210]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "mode": [
+          {
+            "index": "0",
+            "text": "ALL SESSIONS",
+            "resource-id": "android:id/title",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "true",
+            "bounds": "[98,422][341,569]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ],
+        "search": [
+          {
+            "index": "0",
+            "text": "   Search sessions",
+            "resource-id": "dev.translationtest.ns:id/search_src_text",
+            "class": "android.widget.AutoCompleteTextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "true",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[21,289][954,384]",
+            "drawing-order": "3",
+            "hint": "   Search sessions"
+          }
+        ]
+      }
+    },
+    "B6-reopen": {
+      "status": "PASS",
+      "evidence": [
+        "B6-reopen.png",
+        "B6-reopen.xml",
+        "B6-reopen-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Ionic"
+        ]
+      }
+    },
+    "B7-deselect": {
+      "status": "PASS",
+      "evidence": [
+        "B7-deselect.png",
+        "B7-deselect.xml",
+        "B7-deselect-observed.json"
+      ],
+      "details": {
+        "expectedChecked": []
+      }
+    },
+    "B7-empty": {
+      "status": "PASS",
+      "evidence": [
+        "B7-empty.png",
+        "B7-empty.xml",
+        "B7-empty-observed.json"
+      ],
+      "details": {
+        "rows": [],
+        "emptyLabel": [
+          {
+            "index": "2",
+            "text": "No sessions match your search or filters.",
+            "resource-id": "",
+            "class": "android.widget.TextView",
+            "package": "dev.translationtest.ns",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[63,1442][1017,1485]",
+            "drawing-order": "3",
+            "hint": ""
+          }
+        ]
+      }
+    },
+    "B7-reopen": {
+      "status": "PASS",
+      "evidence": [
+        "B7-reopen.png",
+        "B7-reopen.xml",
+        "B7-reopen-observed.json"
+      ],
+      "details": {
+        "expectedChecked": []
+      }
+    },
+    "B7-select": {
+      "status": "PASS",
+      "evidence": [
+        "B7-select.png",
+        "B7-select.xml",
+        "B7-select-observed.json"
+      ],
+      "details": {
+        "expectedChecked": [
+          "Communication",
+          "Design",
+          "Documentation",
+          "Food",
+          "Ionic",
+          "Navigation",
+          "Services",
+          "Tooling",
+          "Vue",
+          "Workshop"
+        ]
+      }
+    },
+    "B7-restored": {
+      "status": "PASS",
+      "evidence": [
+        "B7-restored.png",
+        "B7-restored.xml",
+        "B7-restored-observed.json"
+      ],
+      "details": {
+        "expectedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ],
+        "firstObservedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6
+            ]
+          }
+        ],
+        "scope": "Visible first rows matched; full group availability verified separately by bounded scrolling."
+      }
+    },
+    "B7-all-groups": {
+      "status": "PASS",
+      "evidence": [
+        "B7-restored.png",
+        "B7-restored.xml",
+        "B7-restored-observed.json",
+        "B7-restored-scrolled-1.png",
+        "B7-restored-scrolled-1.xml",
+        "B7-restored-scrolled-1-observed.json",
+        "B7-restored-scrolled-2.png",
+        "B7-restored-scrolled-2.xml",
+        "B7-restored-scrolled-2-observed.json",
+        "B7-restored-scrolled-3.png",
+        "B7-restored-scrolled-3.xml",
+        "B7-restored-scrolled-3-observed.json"
+      ],
+      "details": {
+        "observedIds": [
+          1,
+          4,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "observedGroupTimes": [
+          "8:00 am",
+          "9:15 am",
+          "10:00 am",
+          "11:00 am",
+          "12:00 pm",
+          "1:00 pm",
+          "2:00 pm",
+          "3:00 pm"
+        ],
+        "expectedGroups": [
+          {
+            "groupTime": "8:00 am",
+            "sessionIds": [
+              1
+            ]
+          },
+          {
+            "groupTime": "9:15 am",
+            "sessionIds": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "groupTime": "10:00 am",
+            "sessionIds": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "groupTime": "11:00 am",
+            "sessionIds": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "groupTime": "12:00 pm",
+            "sessionIds": [
+              12
+            ]
+          },
+          {
+            "groupTime": "1:00 pm",
+            "sessionIds": [
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "groupTime": "2:00 pm",
+            "sessionIds": [
+              16,
+              17,
+              18
+            ]
+          },
+          {
+            "groupTime": "3:00 pm",
+            "sessionIds": [
+              19,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "B7-foreground-top": {
+      "status": "PASS",
+      "evidence": [
+        "B7-return-top-3.png",
+        "B7-return-top-3.xml",
+        "B7-return-top-3-observed.json"
+      ],
+      "details": {
+        "finalRows": [
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-1",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Breakfast",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,711][807,960]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-4",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "University of Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1082][807,1331]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-2",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Getting Started with Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1332][807,1581]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-3",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Ionic Tooling",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1582][807,1831]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-5",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "Migrating to Ionic",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,1953][807,2202]",
+            "drawing-order": "1",
+            "hint": ""
+          },
+          {
+            "index": "0",
+            "text": "",
+            "resource-id": "session-6",
+            "class": "android.view.ViewGroup",
+            "package": "dev.translationtest.ns",
+            "content-desc": "What's New in Vue",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "true",
+            "enabled": "true",
+            "focusable": "true",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,2203][807,2337]",
+            "drawing-order": "1",
+            "hint": ""
+          }
+        ]
+      }
+    },
+    "B-logcat": {
+      "status": "PASS",
+      "evidence": [
+        "B-logcat.txt",
+        "B-logcat-warnings-errors.txt",
+        "pid-runtime.json"
+      ],
+      "details": {
+        "note": "Bounded PID tail only; warnings/errors preserved verbatim; not a warning-free or exhaustive claim."
+      }
+    },
+    "B9-foreground": {
+      "status": "PASS",
+      "evidence": [
+        "B9-final-schedule.png",
+        "B9-final-schedule.xml",
+        "B9-final-schedule-observed.json"
+      ],
+      "details": null
+    },
+    "B3": {
+      "status": "PASS",
+      "evidence": [
+        "B3-deselect-observed.json",
+        "B3-deselect.png",
+        "B3-deselect.xml",
+        "B3-ionic-off-observed.json",
+        "B3-ionic-off.png",
+        "B3-ionic-off.xml",
+        "B3-reset-observed.json",
+        "B3-reset.png",
+        "B3-reset.xml",
+        "B3-select-observed.json",
+        "B3-select.png",
+        "B3-select.xml"
+      ],
+      "subcases": [
+        "B3-ionic-off",
+        "B3-deselect",
+        "B3-select",
+        "B3-reset"
+      ]
+    },
+    "B4": {
+      "status": "PASS",
+      "evidence": [
+        "B4-applied-observed.json",
+        "B4-applied.png",
+        "B4-applied.xml",
+        "B4-only-ionic-observed.json",
+        "B4-only-ionic.png",
+        "B4-only-ionic.xml"
+      ],
+      "subcases": [
+        "B4-only-ionic",
+        "B4-applied"
+      ]
+    },
+    "B5": {
+      "status": "PASS",
+      "evidence": [
+        "B5-closed-observed.json",
+        "B5-closed.png",
+        "B5-closed.xml",
+        "B5-draft-observed.json",
+        "B5-draft.png",
+        "B5-draft.xml",
+        "B5-reopen-again-observed.json",
+        "B5-reopen-again.png",
+        "B5-reopen-again.xml",
+        "B5-reopen-observed.json",
+        "B5-reopen.png",
+        "B5-reopen.xml"
+      ],
+      "subcases": [
+        "B5-reopen",
+        "B5-draft",
+        "B5-closed",
+        "B5-reopen-again"
+      ]
+    },
+    "B6": {
+      "status": "PASS",
+      "evidence": [
+        "B6-back-observed.json",
+        "B6-back.png",
+        "B6-back.xml",
+        "B6-draft-observed.json",
+        "B6-draft.png",
+        "B6-draft.xml",
+        "B6-reopen-observed.json",
+        "B6-reopen.png",
+        "B6-reopen.xml"
+      ],
+      "subcases": [
+        "B6-draft",
+        "B6-back",
+        "B6-reopen"
+      ]
+    },
+    "B7": {
+      "status": "PASS",
+      "evidence": [
+        "B7-deselect-observed.json",
+        "B7-deselect.png",
+        "B7-deselect.xml",
+        "B7-empty-observed.json",
+        "B7-empty.png",
+        "B7-empty.xml",
+        "B7-reopen-observed.json",
+        "B7-reopen.png",
+        "B7-reopen.xml",
+        "B7-restored-observed.json",
+        "B7-restored-scrolled-1-observed.json",
+        "B7-restored-scrolled-1.png",
+        "B7-restored-scrolled-1.xml",
+        "B7-restored-scrolled-2-observed.json",
+        "B7-restored-scrolled-2.png",
+        "B7-restored-scrolled-2.xml",
+        "B7-restored-scrolled-3-observed.json",
+        "B7-restored-scrolled-3.png",
+        "B7-restored-scrolled-3.xml",
+        "B7-restored.png",
+        "B7-restored.xml",
+        "B7-return-top-3-observed.json",
+        "B7-return-top-3.png",
+        "B7-return-top-3.xml",
+        "B7-select-observed.json",
+        "B7-select.png",
+        "B7-select.xml"
+      ],
+      "subcases": [
+        "B7-deselect",
+        "B7-empty",
+        "B7-reopen",
+        "B7-select",
+        "B7-restored",
+        "B7-all-groups",
+        "B7-foreground-top"
+      ]
+    }
+  },
+  "evidence": [
+    "entry-gate.json",
+    "capture-index.json",
+    "commands.jsonl",
+    "execution-audit.json",
+    "preservation-exit.json",
+    "environment-before.json",
+    "environment-after.json",
+    "B6-immediately-before-back.xml",
+    "B-logcat-warnings-errors-verbatim.txt"
+  ],
+  "limits": [
+    "Every PNG awaits coordinator pixel/privacy inspection.",
+    "Bounded last-400-line PID logcat is not an exhaustive or warning-free claim.",
+    "No product/test/config changes or rebuild; no Phase C, submission/freeze, review dispatch or git writes.",
+    "Observer helper ambiguity was corrected before any affected device action; original failure receipt retained."
+  ]
+}

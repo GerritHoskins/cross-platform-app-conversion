@@ -1,0 +1,48 @@
+diff --git a/migration/nativescript/__tests__/shell-content.test.ts b/migration/nativescript/__tests__/shell-content.test.ts
+index dd00649..781966c 100644
+--- a/migration/nativescript/__tests__/shell-content.test.ts
++++ b/migration/nativescript/__tests__/shell-content.test.ts
+@@ -1,9 +1,9 @@
+ import { expect, test } from 'vitest';
+ import { shellContent } from '../src/shell/shell-content';
+ 
+-test('provides the conference shell title and welcome body', () => {
++test('provides the conference shell title and normalized diagnostic body', () => {
+   expect(shellContent).toEqual({
+     title: 'Conference',
+-    body: 'Welcome to the conference app.',
++    body: 'Sessions: 20\nFirst session: 1 — Breakfast',
+   });
+ });
+diff --git a/migration/nativescript/package.json b/migration/nativescript/package.json
+index aa8e4d6..5585fc6 100644
+--- a/migration/nativescript/package.json
++++ b/migration/nativescript/package.json
+@@ -7,9 +7,11 @@
+     "typecheck": "vue-tsc --noEmit",
+     "test": "vitest run",
+     "android": "npx --yes nativescript@9.1.2 run android --no-hmr",
+-    "build:android": "npx --yes nativescript@9.1.2 build android"
++    "build:android": "npx --yes nativescript@9.1.2 build android",
++    "verify:core": "node scripts/verify-core-integration.cjs"
+   },
+   "dependencies": {
++    "@migration/core": "file:../core",
+     "@nativescript/core": "~9.1.1",
+     "nativescript-vue": "3.1.2"
+   },
+diff --git a/migration/nativescript/src/shell/shell-content.ts b/migration/nativescript/src/shell/shell-content.ts
+index 263bdd9..3dd56ab 100644
+--- a/migration/nativescript/src/shell/shell-content.ts
++++ b/migration/nativescript/src/shell/shell-content.ts
+@@ -1,4 +1,9 @@
++import { loadConference } from '../data/load-conference';
++
++const conference = loadConference();
++const firstSession = conference.sessions[0];
++
+ export const shellContent = {
+   title: 'Conference',
+-  body: 'Welcome to the conference app.',
++  body: `Sessions: ${conference.sessions.length}\nFirst session: ${firstSession.id} — ${firstSession.name}`,
+ } as const;

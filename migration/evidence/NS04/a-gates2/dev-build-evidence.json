@@ -1,0 +1,63 @@
+{
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "98045dd415f05012476aaa0d07c6f8707fc673ff22f369542513c289a14250ff"
+  },
+  "packagedBundle": {
+    "path": "assets/app/bundle.mjs",
+    "size": 114972,
+    "sha256": "840a86511203660bca7ebebe73e0557e683a96dcfe37df3f4d9161c4f4bf9305"
+  },
+  "generatedBundle": {
+    "path": "migration/nativescript/platforms/android/app/src/main/assets/app/bundle.mjs",
+    "sha256": "840a86511203660bca7ebebe73e0557e683a96dcfe37df3f4d9161c4f4bf9305"
+  },
+  "buildOutput": [
+    "asset \u001b[1m\u001b[32mbundle.mjs\u001b[39m\u001b[22m 112 KiB \u001b[1m\u001b[32m[emitted]\u001b[39m\u001b[22m [javascript module] (name: bundle) 1 related asset",
+    "\t + adding nativescript runtime package dependency: nativescript-optimized-with-inspector",
+    "The build result is located at: C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk"
+  ],
+  "matches": [
+    {
+      "line": 486,
+      "text": "        let handledFirstLoad = false;"
+    },
+    {
+      "line": 487,
+      "text": "        function directEntry(event) {"
+    },
+    {
+      "line": 488,
+      "text": "            if (handledFirstLoad)"
+    },
+    {
+      "line": 490,
+      "text": "            handledFirstLoad = true;"
+    },
+    {
+      "line": 491,
+      "text": "            if (true) {"
+    },
+    {
+      "line": 492,
+      "text": "                const extra = _nativescript_core__WEBPACK_IMPORTED_MODULE_1__.Application.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');"
+    },
+    {
+      "line": 499,
+      "text": "        const __returned__ = { get handledFirstLoad() { return handledFirstLoad; }, set handledFirstLoad(v) { handledFirstLoad = v; }, directEntry, Schedule: _Schedule_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"] };"
+    },
+    {
+      "line": 1375,
+      "text": "module.exports = /*#__PURE__*/JSON.parse('{\"schedule\":[{\"date\":\"2047-05-17\",\"groups\":[{\"time\":\"8:00 am\",\"sessions\":[{\"name\":\"Breakfast\",\"timeStart\":\"8:00 am\",\"timeEnd\":\"9:00 am\",\"location\":\"Dining Hall\",\"tracks\":[\"Food\"],\"id\":\"1\"}]},{\"time\":\"9:15 am\",\"sessions\":[{\"name\":\"Getting Started with Ionic\",\"location\":\"Hall 2\",\"description\":\"Mobile devices "
+    }
+  ],
+  "harnessExcerpt": "function directEntry(event) {\n            if (handledFirstLoad)\n                return;\n            handledFirstLoad = true;\n            if (true) {\n                const extra = _nativescript_core__WEBPACK_IMPORTED_MODULE_1__.Application.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');\n                const sessionId = (0,_state_session_detail__WEBPACK_IMPORTED_MODULE_4__.directEntrySessionId)(extra, true);\n                if (sessionId !== undefined) {\n                    (0,vue__WEBPACK_IMPORTED_MODULE_0__.$navigateTo)(_SessionDetail_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"], { frame: event.object, props: { sessionId }, animated: false });\n                }\n            }\n        }\n        const __returned__ = { get handledFirstLoad() { return handledFirstLoad; }, set handledFirstLoad(v) { handledFirstLoad = v; }, directEntry, Schedule: _Schedule_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"",
+  "extraPresent": true,
+  "harnessPresent": true,
+  "devGateCompiledTrue": true,
+  "onceGuardPresent": true,
+  "releaseBuilt": false,
+  "interpretation": "Debug/inspector build output plus the __DEV__ source branch compiled to if (true) in the APK bundle establish development mode; no runtime/device observation or release exclusion test.",
+  "packagedMatchesGenerated": true
+}
