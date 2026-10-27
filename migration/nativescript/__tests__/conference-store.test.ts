@@ -184,6 +184,95 @@ describe('frozen reference cases through public mutations and the real loader/co
   });
 });
 
+describe('NS04 favorite mutations and detail getters', () => {
+  test('favorite mutations are no-ops before selection exists, including loading and error', () => {
+    const store = createConferenceStore();
+    for (const status of ['idle', 'loading', 'error'] as const) {
+      if (status === 'loading') store.commit('loadStarted');
+      if (status === 'error') store.commit('loadFailed', 'offline');
+      const before = freezeState(store.state);
+      store.commit('favoriteAdded', 3);
+      store.commit('favoriteRemoved', 3);
+      expect(toRaw(store.state)).toBe(before);
+      expect(store.getters.sessionById(3)).toBeUndefined();
+      expect(store.getters.isFavorite(3)).toBe(false);
+    }
+  });
+
+  test('add, duplicate add, remove and absent remove preserve all other fields and frozen history', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    store.commit('setSearchText', ' IOnic ');
+    store.commit('setSelectedTracks', ['Ionic']);
+    store.commit('setMode', 'favorites');
+    const operations = [
+      ['favoriteAdded', 3, [3]],
+      ['favoriteAdded', 3, [3]],
+      ['favoriteRemoved', 3, []],
+      ['favoriteRemoved', 9999, []],
+    ] as const;
+    for (const [type, id, expected] of operations) {
+      const before = freezeState(store.state);
+      const priorIds = [...before.selection!.favoriteIds];
+      store.commit(type, id);
+      expect(store.state).toEqual({ ...before, selection: { ...before.selection, favoriteIds: expected } });
+      expect(before.selection!.favoriteIds).toEqual(priorIds);
+      expect(store.state.conference).toBe(before.conference);
+      expect(store.state).not.toBe(before);
+    }
+  });
+
+  test('two consecutive adds compose in order from current state without mutating either snapshot', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    const initial = freezeState(store.state);
+    store.commit('favoriteAdded', 12);
+    const first = freezeState(store.state);
+    store.commit('favoriteAdded', 3);
+    expect(store.state.selection!.favoriteIds).toEqual([12, 3]);
+    expect(initial.selection!.favoriteIds).toEqual([]);
+    expect(first.selection!.favoriteIds).toEqual([12]);
+  });
+
+  test('detail getters resolve known/unknown IDs and hide sessions outside ready without losing favorite state', async () => {
+    const store = createConferenceStore();
+    expect(store.getters.sessionById(3)).toBeUndefined();
+    expect(store.getters.isFavorite(3)).toBe(false);
+    await store.dispatch('load');
+    expect(store.getters.sessionById(3)).toEqual(loadConference().sessions.find(session => session.id === 3));
+    expect(store.getters.sessionById(9999)).toBeUndefined();
+    expect(store.getters.sessionById(Number.NaN)).toBeUndefined();
+    expect(store.getters.isFavorite(3)).toBe(false);
+    store.commit('favoriteAdded', 3);
+    expect(store.getters.isFavorite(3)).toBe(true);
+    expect(store.getters.isFavorite(9999)).toBe(false);
+    store.commit('loadStarted');
+    expect(store.getters.sessionById(3)).toBeUndefined();
+    expect(store.getters.isFavorite(3)).toBe(true);
+    store.commit('loadFailed', 'offline');
+    expect(store.getters.sessionById(3)).toBeUndefined();
+    expect(store.getters.isFavorite(3)).toBe(true);
+    store.commit('favoriteRemoved', 3);
+    expect(store.getters.isFavorite(3)).toBe(false);
+  });
+
+  test.each(['favorites-some', 'favorites-order'])('%s through the new mutations and real loader/core', async (id) => {
+    const fixture = deepFreeze(reference.cases.find(item => item.id === id)!);
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    store.commit('setSearchText', fixture.input.searchText);
+    store.commit('setSelectedTracks', fixture.input.selectedTracks);
+    for (const sessionId of fixture.input.favoriteIds) store.commit('favoriteAdded', sessionId);
+    store.commit('setMode', 'favorites');
+    expect(store.state.selection!.favoriteIds).toEqual(fixture.input.favoriteIds);
+    expect(store.getters.scheduleGroups.map(group => ({
+      groupTime: group.groupTime, sessionIds: group.sessions.map(session => session.id),
+    }))).toEqual(fixture.expected.groups);
+    expect(store.getters.scheduleGroups.flatMap(group => group.sessions.map(session => session.id)))
+      .toEqual(fixture.expected.sessionIds);
+  });
+});
+
 describe('controlled loader lifecycle', () => {
   test('pending load starts synchronously but calls the loader behind a promise boundary', async () => {
     const pending = deferred<Conference>();

@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "package": "NS04",
+  "phase": "A",
+  "run": 2,
+  "status": "PASS",
+  "checkpointStatus": "CHECKPOINTED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "cases": [
+    {
+      "id": "1-preflight",
+      "status": "PASS",
+      "detail": "Exact raw-porcelain gate passed before evidence writes; pinned versions, IDEA hash only, preservation and manifest hashes captured.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/entry-gate.json",
+        "migration/evidence/NS04/a-gates2/entry-status.stdout.log",
+        "migration/evidence/NS04/a-gates2/preservation-entry.json",
+        "migration/evidence/NS04/a-gates2/node-version.receipt.json",
+        "migration/evidence/NS04/a-gates2/npm-version.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "2-initial-core",
+      "status": "PASS",
+      "detail": "53 tests passed; zero tracked core changes.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/initial-core-test.receipt.json",
+        "migration/evidence/NS04/a-gates2/initial-core-test.stdout.log",
+        "migration/evidence/NS04/a-gates2/initial-core-diff.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "3-implementation-D1-D6",
+      "status": "PASS",
+      "detail": "Seven allowed target files implement approved source/static contracts; navigation, rendering, dialogs and native retention are not device-observed.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/final-audit.json",
+        "migration/evidence/NS04/a-gates2/final-target-diff.stdout.log",
+        "migration/evidence/NS04/a-gates2/typecheck.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "3-tests-D7",
+      "status": "PASS",
+      "detail": "Original NS03 store test source retained verbatim; protected NS02/row tests unchanged; real loader/core; new store/reference/helper cases green.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/final-audit.json",
+        "migration/evidence/NS04/a-gates2/tests-first.json",
+        "migration/evidence/NS04/a-gates2/tests-second.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-gate-core-test",
+      "status": "PASS",
+      "detail": "53 passed, zero failures in the sequential gate; tracked core unchanged.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/gate-core-test.receipt.json",
+        "migration/evidence/NS04/a-gates2/gate-core-test.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-npm-ci",
+      "status": "PASS",
+      "detail": "Clean install passed; target manifests stayed byte-identical.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/npm-ci.receipt.json",
+        "migration/evidence/NS04/a-gates2/npm-ci.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-verify-core",
+      "status": "PASS",
+      "detail": "Public compiled core and bundled-fixture integration passed.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/verify-core.receipt.json",
+        "migration/evidence/NS04/a-gates2/verify-core.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-typecheck",
+      "status": "PASS",
+      "detail": "vue-tsc --noEmit passed.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/typecheck.receipt.json",
+        "migration/evidence/NS04/a-gates2/typecheck.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-tests-first",
+      "status": "PASS",
+      "detail": "5 files / 69 tests passed.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/tests-first.receipt.json",
+        "migration/evidence/NS04/a-gates2/tests-first.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-tests-second",
+      "status": "PASS",
+      "detail": "5 files / 69 tests passed again with identical file/test counts.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/tests-second.receipt.json",
+        "migration/evidence/NS04/a-gates2/tests-second.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-build-android",
+      "status": "PASS",
+      "detail": "Android debug build passed; no install or launch.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/build-android.receipt.json",
+        "migration/evidence/NS04/a-gates2/build-android.stdout.log"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-manifest-integrity",
+      "status": "PASS",
+      "detail": "package.json and package-lock.json hashes equal entry before/after npm ci and build.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/pre-ci-manifest-integrity.json",
+        "migration/evidence/NS04/a-gates2/post-ci-manifest-integrity.json",
+        "migration/evidence/NS04/a-gates2/post-build-manifest-integrity.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "4-apk-and-development-bundle",
+      "status": "PASS",
+      "detail": "Debug/inspector output and packaged harness if (true) establish __DEV__ development mode. APK and generated bundle hashes agree; ns04SessionId and once guard are present.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/apk.json",
+        "migration/evidence/NS04/a-gates2/dev-build-evidence.json",
+        "migration/evidence/NS04/a-gates2/bundle-evidence.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "5-final-preservation-and-class-audit",
+      "status": "PASS",
+      "detail": "Protected paths, run 1 history, package and non-allowed target files match entry; empty index and allowed changes only.",
+      "evidence": [
+        "migration/evidence/NS04/a-gates2/preservation-final.json",
+        "migration/evidence/NS04/a-gates2/final-audit.json",
+        "migration/evidence/NS04/a-gates2/final-index.receipt.json",
+        "migration/evidence/NS04/a-gates2/final-status.receipt.json"
+      ],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "Phase-B-device-observation",
+      "status": "NOT RUN",
+      "detail": "Explicitly excluded: device/emulator install, launch, taps, XML, PNG, pixels, PID logs, back/scroll preservation and cold-entry execution.",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    },
+    {
+      "id": "Phase-C-review-freeze",
+      "status": "NOT RUN",
+      "detail": "No submission, freeze, review dispatch, staging, commit or push.",
+      "evidence": [],
+      "observer": "Hermes GPT-6.1 Sol high (software)"
+    }
+  ],
+  "testCounts": {
+    "baseline": {
+      "files": 4,
+      "tests": 34
+    },
+    "first": {
+      "files": 5,
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "byFile": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 33,
+          "passed": 33
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1
+        }
+      ]
+    },
+    "second": {
+      "files": 5,
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "byFile": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "tests": 33,
+          "passed": 33
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "tests": 3,
+          "passed": 3
+        },
+        {
+          "path": "migration/nativescript/__tests__/session-detail.test.ts",
+          "tests": 29,
+          "passed": 29
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "tests": 1,
+          "passed": 1
+        }
+      ]
+    },
+    "repeatable": true,
+    "additionalFiles": 1,
+    "additionalTests": 35
+  },
+  "apk": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118504855,
+    "sha256": "98045dd415f05012476aaa0d07c6f8707fc673ff22f369542513c289a14250ff"
+  },
+  "devBuildEvidence": {
+    "evidence": "migration/evidence/NS04/a-gates2/dev-build-evidence.json",
+    "devGateCompiledTrue": true,
+    "extraPresent": true,
+    "onceGuardPresent": true,
+    "packagedMatchesGenerated": true
+  },
+  "limits": [
+    "Vitest proves logic, not native UI/navigation/dialog execution.",
+    "Android native dialogs have no destructive-button styling.",
+    "Release build/exclusion, iOS and dark theme unverified.",
+    "npm audit: 5 moderate and 1 high vulnerability; no audit fix or script approvals."
+  ]
+}

@@ -1,12 +1,15 @@
 import { createStore, useStore, type Store } from 'vuex';
 import type { InjectionKey } from 'vue';
 import {
+  addFavorite,
   createInitialSelection,
   groupSessions,
+  removeFavorite,
   selectSessions,
   type Conference,
   type ScheduleMode,
   type Selection,
+  type Session,
   type SessionGroup,
 } from '@migration/core';
 import { loadConference } from '../data/load-conference';
@@ -20,7 +23,11 @@ export interface ConferenceState {
 
 export type ConferenceLoader = () => Conference | Promise<Conference>;
 export type ConferenceStore = Omit<Store<ConferenceState>, 'getters'> & {
-  readonly getters: { readonly scheduleGroups: SessionGroup[] };
+  readonly getters: {
+    readonly scheduleGroups: SessionGroup[];
+    readonly sessionById: (id: number) => Session | undefined;
+    readonly isFavorite: (id: number) => boolean;
+  };
 };
 
 export const conferenceStoreKey: InjectionKey<Store<ConferenceState>> = Symbol('conference-store');
@@ -67,8 +74,26 @@ export function createConferenceStore(loader: ConferenceLoader = loadConference)
       setFavoriteIds(state, favoriteIds: readonly number[]) {
         if (state.selection) replace(state, { selection: { ...state.selection, favoriteIds: [...favoriteIds] } });
       },
+      favoriteAdded(state, sessionId: number) {
+        if (state.selection) replace(state, {
+          selection: { ...state.selection, favoriteIds: addFavorite(state.selection.favoriteIds, sessionId) },
+        });
+      },
+      favoriteRemoved(state, sessionId: number) {
+        if (state.selection) replace(state, {
+          selection: { ...state.selection, favoriteIds: removeFavorite(state.selection.favoriteIds, sessionId) },
+        });
+      },
     },
     getters: {
+      sessionById(state) {
+        return (id: number): Session | undefined => state.status === 'ready'
+          ? state.conference?.sessions.find(session => session.id === id)
+          : undefined;
+      },
+      isFavorite(state) {
+        return (id: number): boolean => state.selection?.favoriteIds.includes(id) ?? false;
+      },
       scheduleGroups(state): SessionGroup[] {
         if (state.status !== 'ready' || !state.conference || !state.selection) return [];
         return groupSessions(selectSessions(state.conference.sessions, state.selection));

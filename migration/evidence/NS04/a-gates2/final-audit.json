@@ -1,0 +1,722 @@
+{
+  "assertions": {
+    "protectedPathsUnchanged": true,
+    "targetChangesAllowed": true,
+    "onlyAllowedTrackedDiff": true,
+    "immutableRun1AndPackageUnchanged": true,
+    "ideaHashUnchanged": true,
+    "exactSevenTargetPaths": true,
+    "noOutOfScopeStatus": true,
+    "entryHistoryStillUntracked": true,
+    "targetManifestsByteIdentical": true,
+    "ns02AndScheduleRowTestsUnchanged": true,
+    "ns03TestsPreservedVerbatim": true,
+    "ns03FocusPreservedVerbatim": true,
+    "noRuntimeReferenceImports": true,
+    "allWrittenTargetTextLf": true,
+    "core53Passed": true,
+    "indexEmpty": true,
+    "coreTrackedUnchanged": true,
+    "whitespaceClean": true,
+    "targetDiffCaptured": true,
+    "buildOutputsIgnored": true
+  },
+  "pass": true,
+  "protectedFileCount": 261,
+  "nativescriptTrackedFileCount": 81,
+  "immutableHistoryFileCount": 36,
+  "protectedChanges": [],
+  "nativeChanges": [
+    "migration/nativescript/__tests__/conference-store.test.ts",
+    "migration/nativescript/src/components/Home.vue",
+    "migration/nativescript/src/components/Schedule.vue",
+    "migration/nativescript/src/state/conference-store.ts"
+  ],
+  "historyChanges": [],
+  "changedTargetFiles": [
+    {
+      "status": " M",
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "sha256": "dfe7be422d3aaa6e276e00279ce0644edbe0a495791eebaeba115e3948ee5005"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/components/Home.vue",
+      "sha256": "3d43f953bad7f2f6b3e0836350f0438fe526edfa736f14726e5e26d132c0093c"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/components/Schedule.vue",
+      "sha256": "81dcd8f240906b193d20d526421412fe52483e69f65ac98bd083b905e24894db"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/state/conference-store.ts",
+      "sha256": "eab3200ff89df4913f9fba4ac3af8a1e16705c82fce233aa53b50f1a7512eb1f"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/__tests__/session-detail.test.ts",
+      "sha256": "7014cd8c39b570dc139726145443eb84b5d4ec7c7e7bdf67ed6bf77a1a4eb70b"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/components/SessionDetail.vue",
+      "sha256": "01921ee8b98e09c5a6c0ebefda86a2c0c4e1dcd37f3af929e63478d3538144d8"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/state/session-detail.ts",
+      "sha256": "459b91cca385e0ab3515f3bdc3a4edbe53fad782993c7272da90873417ab34d9"
+    }
+  ],
+  "classes": [
+    {
+      "status": " M",
+      "path": "migration/nativescript/__tests__/conference-store.test.ts",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/components/Home.vue",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/components/Schedule.vue",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": " M",
+      "path": "migration/nativescript/src/state/conference-store.ts",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-audit.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-index.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-index.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-index.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-status.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-status.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-final-status.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-product-diff.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-product-diff.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/blocked-product-diff.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/checkpoint-blocked-helper.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/checkpoint-blocked-helper.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/checkpoint-blocked-helper.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/commands.jsonl",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-ancestor.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-ancestor.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-ancestor.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-branch.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-branch.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-branch.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-gate.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-head.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-head.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-head.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-hooks.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-hooks.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-hooks.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-index.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-index.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-index.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-status.receipt.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-status.stderr.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/entry-status.stdout.log",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates/results-a.json",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/apk.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/build-android.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/build-android.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/build-android.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/bundle-evidence.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/bundle-evidence.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/bundle-evidence.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/commands.jsonl",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/dev-build-evidence.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-ancestor.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-ancestor.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-ancestor.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-branch.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-branch.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-branch.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-gate.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-head.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-head.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-head.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-hooks.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-hooks.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-hooks.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-index.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-index.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-index.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-native-files.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-native-files.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-native-files.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-protected-files.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-protected-files.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-protected-files.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-status.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-status.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/entry-status.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-diff-names.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-diff-names.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-diff-names.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-native-files.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-native-files.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-native-files.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-protected-files.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-protected-files.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/final-protected-files.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-diff.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-diff.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-diff.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-test.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-test.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/gate-core-test.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-diff.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-diff.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-diff.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-test.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-test.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/initial-core-test.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/instruction-discovery.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/node-version.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/node-version.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/node-version.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-ci.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-ci.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-ci.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-version.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-version.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/npm-version.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/post-build-manifest-integrity.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/post-ci-manifest-integrity.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/pre-build-manifest-integrity.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/pre-ci-manifest-integrity.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/preservation-entry.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/preservation-final.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/test-counts.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-first.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-first.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-first.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-first.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-second.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-second.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-second.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/tests-second.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/typecheck.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/typecheck.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/typecheck.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/verify-core.receipt.json",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/verify-core.stderr.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/evidence/NS04/a-gates2/verify-core.stdout.log",
+      "class": "NS04-run2-evidence"
+    },
+    {
+      "status": "??",
+      "path": "migration/handoffs/NS04-checkpoint-a.md",
+      "class": "immutable-entry-history-or-package"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/__tests__/session-detail.test.ts",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/components/SessionDetail.vue",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": "??",
+      "path": "migration/nativescript/src/state/session-detail.ts",
+      "class": "NS04-allowed-target"
+    },
+    {
+      "status": "??",
+      "path": "migration/work-packages/NS04.md",
+      "class": "immutable-entry-history-or-package"
+    }
+  ],
+  "__DEV__Declaration": "declare const __DEV__: boolean; in Home.vue only; protected types/vuex.d.ts and tsconfig.json unchanged",
+  "accessibilityState": "NativeScript declares a scalar enum: selected while favorite, undefined clears selection, disabled for unknown IDs; no React-style object."
+}

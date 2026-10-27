@@ -1,0 +1,136 @@
+{
+  "pass": true,
+  "polls": {
+    "B1-scrolled-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.4580926000198815,
+      "limitSeconds": 10
+    },
+    "B1-start-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 6.991399299993645,
+      "limitSeconds": 60
+    },
+    "B2-detail-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.128288900014013,
+      "limitSeconds": 10
+    },
+    "B3-back-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1920557000266854,
+      "limitSeconds": 10
+    },
+    "B3-toggled-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.135595600004308,
+      "limitSeconds": 10
+    },
+    "B4-cancel-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1115670000144746,
+      "limitSeconds": 10
+    },
+    "B4-dialog-again-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1539929999853484,
+      "limitSeconds": 10
+    },
+    "B4-dialog-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.3812625000136904,
+      "limitSeconds": 10
+    },
+    "B4-favorites-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.088731600000756,
+      "limitSeconds": 10
+    },
+    "B4-removed-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.2339605999877676,
+      "limitSeconds": 10
+    },
+    "B5-added-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.2383338999934494,
+      "limitSeconds": 10
+    },
+    "B5-all-ready-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1342592000146396,
+      "limitSeconds": 10
+    },
+    "B5-already-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.148912999982713,
+      "limitSeconds": 10
+    },
+    "B5-already-remove-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1553516999993008,
+      "limitSeconds": 10
+    },
+    "B5-cancel-closed-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1866947000089567,
+      "limitSeconds": 10
+    },
+    "B5-final-all-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.117215199978091,
+      "limitSeconds": 10
+    },
+    "B5-ok-closed-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.180461500014644,
+      "limitSeconds": 10
+    },
+    "B5-remove-closed-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.279932399978861,
+      "limitSeconds": 10
+    },
+    "B5-removed-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.037806600012118,
+      "limitSeconds": 10
+    },
+    "B5-return-all-ready-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.121520100015914,
+      "limitSeconds": 10
+    },
+    "B5-still-favorite-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.0678000999905635,
+      "limitSeconds": 10
+    },
+    "B6-9999-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 6.263751399994362,
+      "limitSeconds": 60
+    },
+    "B6-abc-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 6.262730899994494,
+      "limitSeconds": 60
+    },
+    "B6-back-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.1877693999849726,
+      "limitSeconds": 10
+    },
+    "B6-entry-3-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 6.297879899997497,
+      "limitSeconds": 60
+    },
+    "B6-final-all-poll.json": {
+      "pass": true,
+      "elapsedSeconds": 2.157331800000975,
+      "limitSeconds": 10
+    }
+  },
+  "note": "Post-tap UI polling capped at 10 seconds; cold launches use a separate 60-second readiness ceiling. Dump commands use remaining time when lower than the 30-second ADB ceiling. Failed dumps retry at most five times with two-second waits."
+}

@@ -38,3 +38,8 @@ migration/evidence/NS03/b-device/** -text
 migration/evidence/NS03/a-gates/java-version.stderr.log -text
 migration/evidence/NS03/a-gates/node-version.stdout.log -text
 migration/evidence/NS03/c-freeze/node-version.stdout.log -text
+# NS04 frozen evidence: raw CRLF device, build and node-version captures; store bytes as-is so manifest hashes hold.
+migration/evidence/NS04/b-device/** -text
+migration/evidence/NS04/a-gates2/build-android.stdout.log -text
+migration/evidence/NS04/a-gates2/node-version.stdout.log -text
+migration/evidence/NS04/c-freeze/node-version.stdout.log -text

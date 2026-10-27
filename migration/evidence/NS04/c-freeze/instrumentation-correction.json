@@ -1,0 +1,12 @@
+{
+  "status": "RESOLVED",
+  "command": "node tools/qwen-supervisor/.runs/sol-ns04-r1-c-20261027/c-gates.mjs static",
+  "observedOuterExitCode": 1,
+  "gateChildExitCodes": 0,
+  "issue": "After both test runs succeeded, helper expected TAP summary prefix #; pinned Node emitted spec reporter prefix ℹ. Only summary parsing failed, no application/static gate failed.",
+  "correction": "Run-local helper parser accepts observed tests/pass/fail summary; reconcile mode reused immutable captured receipts/reports without rerunning install or tests, then completed versions and preservation audits.",
+  "reconciliationCommand": "node tools/qwen-supervisor/.runs/sol-ns04-r1-c-20261027/c-gates.mjs reconcile",
+  "reconciliationExitCode": 0,
+  "productChanges": false,
+  "originalReceiptsPreserved": true
+}

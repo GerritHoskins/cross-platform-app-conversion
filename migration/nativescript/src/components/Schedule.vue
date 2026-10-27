@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { computed, onMounted } from 'nativescript-vue';
-import type { EventData, SearchBar, SegmentedBar } from '@nativescript/core';
+import { $navigateTo, computed, onMounted } from 'nativescript-vue';
+import { Dialogs, type EventData, type SearchBar, type SegmentedBar, type View } from '@nativescript/core';
+import SessionDetail from './SessionDetail.vue';
 import { useConferenceStore } from '../state/conference-store';
+import { listFavoriteAction } from '../state/session-detail';
 import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
 
 const store = useConferenceStore();
@@ -12,6 +14,20 @@ const emptyMessage = computed(() => store.state.selection?.mode === 'favorites' 
   ? 'No favorite sessions.'
   : 'No sessions match your search or filters.');
 const templateFor = ({ item }: { item: ScheduleRow }) => item.kind;
+
+function openSession(event: EventData, id: number) {
+  $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
+}
+
+async function changeFavorite(id: number) {
+  const plan = listFavoriteAction(store.state.selection?.mode ?? 'all', store.getters.isFavorite(id));
+  if (plan.kind === 'add-then-alert') {
+    store.commit('favoriteAdded', id);
+    await Dialogs.alert(plan.dialog);
+  } else if (await Dialogs.confirm(plan.dialog)) {
+    store.commit('favoriteRemoved', id);
+  }
+}
 
 function changeSearch(event: EventData) {
   store.commit('setSearchText', (event.object as SearchBar).text);
@@ -93,12 +109,30 @@ onMounted(() => {
           <Label :key="item.key" :text="item.groupTime" class="schedule-heading" />
         </template>
         <template #session="{ item }">
-          <StackLayout :key="item.key" :automationText="`session-${item.session.id}`" class="schedule-session">
-            <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
-            <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
-            <Label :text="item.session.location" textWrap="true" color="#333333" />
-            <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
-          </StackLayout>
+          <GridLayout :key="item.key" columns="*,auto">
+            <StackLayout
+              col="0"
+              :automationText="`session-${item.session.id}`"
+              class="schedule-session"
+              accessibilityRole="link"
+              :accessibilityLabel="item.session.name"
+              @tap="openSession($event, item.session.id)"
+            >
+              <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
+              <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
+              <Label :text="item.session.location" textWrap="true" color="#333333" />
+              <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
+            </StackLayout>
+            <Button
+              col="1"
+              :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
+              :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
+              :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
+              verticalAlignment="center"
+              margin="8"
+              @tap="changeFavorite(item.session.id)"
+            />
+          </GridLayout>
         </template>
       </ListView>
     </GridLayout>
