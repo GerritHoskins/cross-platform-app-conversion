@@ -1,0 +1,100 @@
+18|export interface ShowModalOptions {
+19|    /**
+20|     * Any context you want to pass to the modally shown view. This same context will be available in the arguments of the shownModally event handler.
+21|     */
+22|    context: any;
+23|    /**
+24|     * A function that will be called when the view is closed. Any arguments provided when calling ShownModallyData.closeCallback will be available here.
+25|     */
+26|    closeCallback: (...args: any[]) => void;
+27|    /**
+28|     * An optional parameter specifying whether to show the modal view in full-screen mode.
+29|     */
+30|    fullscreen?: boolean;
+31|    /**
+32|     * An optional parameter specifying whether to show the modal view with animation.
+33|     */
+34|    animated?: boolean;
+35|    /**
+36|     * An optional parameter specifying whether to stretch the modal view when not in full-screen mode.
+37|     */
+38|    stretched?: boolean;
+39|    /**
+40|     * An optional custom transition effect
+41|     */
+42|    transition?: ModalTransitionType;
+43|    /**
+44|     * An optional parameter that specify options specific to iOS as an object.
+45|     */
+46|    ios?: {
+47|        /**
+48|         * The UIModalPresentationStyle to be used when showing the dialog in iOS .
+49|         */
+50|        presentationStyle?: any;
+51|        /**
+52|         * width of the popup dialog
+53|         */
+54|        width?: number;
+55|        /**
+56|         * height of the popup dialog
+57|         */
+58|        height?: number;
+59|        /**
+60|         * The preferred status bar style for the modal view
+61|         */
+62|        statusBarStyle?: 'light' | 'dark';
+63|    };
+64|    android?: {
+65|        /**
+66|         * @deprecated Use ShowModalOptions.cancelable instead.
+67|         * An optional parameter specifying whether the modal view can be dismissed when not in full-screen mode.
+68|         */
+69|        cancelable?: boolean;
+70|        /**
+71|         * An optional parameter specifying the windowSoftInputMode of the dialog window.
+72|         * For possible values see https://developer.android.com/reference/android/view/WindowManager.LayoutParams#softInputMode
+73|         */
+74|        windowSoftInputMode?: number;
+75|    };
+76|    /**
+77|     * An optional parameter specifying whether the modal view can be dismissed when not in full-screen mode.
+78|     */
+79|    cancelable?: boolean;
+80|}
+81|/**
+82| * Gets an ancestor from a given type.
+83| * @param view - Starting view (child view).
+84| * @param criterion - The type of ancestor view we are looking for. Could be a string containing a class name or an actual type.
+85| * Returns an instance of a view (if found), otherwise undefined.
+86| */
+87|export declare function getAncestor<T extends ViewBase = ViewBase>(view: T, criterion: string | {
+88|    new (): any;
+89|}): T;
+90|/**
+91| * Gets a child view by id.
+92| * @param view - The parent (container) view of the view to look for.
+93| * @param id - The id of the view to look for.
+94| * Returns an instance of a view (if found), otherwise undefined.
+95| */
+96|export declare function getViewById(view: ViewBase, id: string): ViewBase;
+97|/**
+98| * Gets a child view by domId.
+99| * @param view - The parent (container) view of the view to look for.
+100| * @param domId - The id of the view to look for.
+101| * Returns an instance of a view (if found), otherwise undefined.
+102| */
+103|export declare function getViewByDomId(view: ViewBase, domId: number): ViewBase;
+104|/**
+105| * Gets a child view by selector.
+106| * @param view - The parent (container) view of the view to look for.
+107| * @param selector - The selector of the view to look for.
+108| * Returns an instance of a view (if found), otherwise undefined.
+109| */
+110|export declare function querySelectorAll(view: ViewBase, selector: string): Array<ViewBase>;
+111|/**
+112| * Iterates through all child views (via visual tree) and executes a function.
+113| * @param view - Starting view (parent container).
+114| * @param callback - A function to execute on every child. If function returns false it breaks the iteration.
+115| */
+116|export declare function eachDescendant(view: ViewBase, callback: (child: ViewBase) => boolean): void;
+117|declare enum SuspendType {

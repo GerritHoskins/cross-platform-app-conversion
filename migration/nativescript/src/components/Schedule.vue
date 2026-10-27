@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { $navigateTo, computed, onMounted } from 'nativescript-vue';
+import { $navigateTo, $showModal, computed, onMounted } from 'nativescript-vue';
 import { Dialogs, type EventData, type SearchBar, type SegmentedBar, type View } from '@nativescript/core';
 import SessionDetail from './SessionDetail.vue';
+import TrackFilter from './TrackFilter.vue';
+import { applyFilterResult } from '../state/track-filter';
 import { useConferenceStore } from '../state/conference-store';
 import { listFavoriteAction } from '../state/session-detail';
 import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
@@ -14,6 +16,13 @@ const emptyMessage = computed(() => store.state.selection?.mode === 'favorites' 
   ? 'No favorite sessions.'
   : 'No sessions match your search or filters.');
 const templateFor = ({ item }: { item: ScheduleRow }) => item.kind;
+
+function openFilter() {
+  $showModal(TrackFilter, {
+    fullscreen: true,
+    closeCallback: (result: unknown) => applyFilterResult(store, result),
+  });
+}
 
 function openSession(event: EventData, id: number) {
   $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
@@ -72,19 +81,30 @@ onMounted(() => {
         @textChange="changeSearch"
         @loaded="clearLaunchFocus"
       />
-      <SegmentedBar
-        row="1"
-        :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
-        :isEnabled="ready"
-        color="#111111"
-        backgroundColor="#eeeeee"
-        selectedBackgroundColor="#c5ddf4"
-        margin="8,12"
-        @selectedIndexChange="changeMode"
-      >
-        <SegmentedBarItem title="All sessions" />
-        <SegmentedBarItem title="Favorite sessions" />
-      </SegmentedBar>
+      <GridLayout row="1" columns="*,auto">
+        <SegmentedBar
+          col="0"
+          :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
+          :isEnabled="ready"
+          color="#111111"
+          backgroundColor="#eeeeee"
+          selectedBackgroundColor="#c5ddf4"
+          margin="8,12"
+          @selectedIndexChange="changeMode"
+        >
+          <SegmentedBarItem title="All sessions" />
+          <SegmentedBarItem title="Favorite sessions" />
+        </SegmentedBar>
+        <Button
+          col="1"
+          text="Filter"
+          automationText="Filter sessions"
+          accessibilityLabel="Filter sessions"
+          :isEnabled="ready"
+          margin="8,12,8,0"
+          @tap="openFilter"
+        />
+      </GridLayout>
       <StackLayout v-if="loading" row="2" verticalAlignment="center" margin="24">
         <ActivityIndicator :busy="true" color="#245a91" />
         <Label text="Loading sessions…" textAlignment="center" color="#111111" />

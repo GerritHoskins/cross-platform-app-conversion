@@ -273,6 +273,72 @@ describe('NS04 favorite mutations and detail getters', () => {
   });
 });
 
+describe('NS05 track options', () => {
+  const sortedNames = ['Communication', 'Design', 'Documentation', 'Food', 'Ionic', 'Navigation', 'Services', 'Tooling', 'Vue', 'Workshop'];
+
+  test('returns empty options before load, while loading and after an error', () => {
+    const store = createConferenceStore();
+    expect(store.getters.trackOptions).toEqual([]);
+    store.commit('loadStarted');
+    expect(store.getters.trackOptions).toEqual([]);
+    store.commit('loadFailed', 'offline');
+    expect(store.getters.trackOptions).toEqual([]);
+  });
+
+  test('all ten options are sorted and checked after the real load', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: true })));
+    expect([...store.state.selection!.selectedTracks].sort()).toEqual(sortedNames);
+    expect(store.state.conference!.tracks.map((track: { name: string }) => track.name).sort()).toEqual(sortedNames);
+  });
+
+  test('mirrors only Ionic after replacing the applied selection', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    store.commit('setSelectedTracks', ['Ionic']);
+    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: name === 'Ionic' })));
+  });
+
+  test('an empty applied selection leaves all options unchecked', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    store.commit('setSelectedTracks', []);
+    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: false })));
+  });
+
+  test('every read returns fresh options and changing them cannot affect state or later reads', async () => {
+    const store = createConferenceStore();
+    const idle = store.getters.trackOptions;
+    expect(store.getters.trackOptions).not.toBe(idle);
+    await store.dispatch('load');
+    const before = freezeState(store.state);
+    const first = store.getters.trackOptions;
+    const second = store.getters.trackOptions;
+    expect(second).not.toBe(first);
+    expect(second[0]).not.toBe(first[0]);
+    first[0].checked = false;
+    first[0].name = 'Changed draft';
+    first.pop();
+    expect(store.getters.trackOptions).toEqual(sortedNames.map(name => ({ name, checked: true })));
+    expect(toRaw(store.state)).toBe(before);
+  });
+
+  test('requires ready status, conference and selection, including during a reload', async () => {
+    const store = createConferenceStore();
+    await store.dispatch('load');
+    const ready = store.state;
+    store.commit('loadStarted');
+    expect(store.getters.trackOptions).toEqual([]);
+    store.commit('loadFailed', 'offline');
+    expect(store.getters.trackOptions).toEqual([]);
+    store.replaceState({ ...ready, conference: null });
+    expect(store.getters.trackOptions).toEqual([]);
+    store.replaceState({ ...ready, selection: null });
+    expect(store.getters.trackOptions).toEqual([]);
+  });
+});
+
 describe('controlled loader lifecycle', () => {
   test('pending load starts synchronously but calls the loader behind a promise boundary', async () => {
     const pending = deferred<Conference>();

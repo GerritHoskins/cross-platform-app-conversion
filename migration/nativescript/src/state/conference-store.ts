@@ -6,6 +6,7 @@ import {
   groupSessions,
   removeFavorite,
   selectSessions,
+  sortTracksByName,
   type Conference,
   type ScheduleMode,
   type Selection,
@@ -21,10 +22,16 @@ export interface ConferenceState {
   error: string | null;
 }
 
+export interface TrackOption {
+  name: string;
+  checked: boolean;
+}
+
 export type ConferenceLoader = () => Conference | Promise<Conference>;
 export type ConferenceStore = Omit<Store<ConferenceState>, 'getters'> & {
   readonly getters: {
     readonly scheduleGroups: SessionGroup[];
+    readonly trackOptions: TrackOption[];
     readonly sessionById: (id: number) => Session | undefined;
     readonly isFavorite: (id: number) => boolean;
   };
@@ -113,6 +120,19 @@ export function createConferenceStore(loader: ConferenceLoader = loadConference)
       retry({ dispatch }) {
         return dispatch('load');
       },
+    },
+  });
+  // Vuex caches registered getters. This read-only accessor deliberately derives
+  // fresh options on every read so a modal draft cannot mutate a cached result.
+  Object.defineProperty(store.getters, 'trackOptions', {
+    enumerable: true,
+    get(): TrackOption[] {
+      const { status, conference, selection } = store.state;
+      if (status !== 'ready' || !conference || !selection) return [];
+      return sortTracksByName(conference.tracks).map(track => ({
+        name: track.name,
+        checked: selection.selectedTracks.includes(track.name),
+      }));
     },
   });
   return store as ConferenceStore;
