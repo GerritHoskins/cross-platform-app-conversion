@@ -1,0 +1,31 @@
+file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f3-20261028/f3-runner.mjs:36
+export function need(p) { if (p.exitCode !== 0) throw new Error(`${p.id}: exit ${p.exitCode}: ${p.stderr.toString().slice(-4000)}`); return p; }
+                                                      ^
+
+Error: core-json-test: exit 7: node:internal/test_runner/harness:124
+      throw err;
+      ^
+
+Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'c:'
+    at throwIfUnsupportedURLScheme (node:internal/modules/esm/load:193:11)
+    at defaultLoadSync (node:internal/modules/esm/load:146:3)
+    at #loadAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:802:12)
+    at #loadSync (node:internal/modules/esm/loader:834:53)
+    at ModuleLoader.load (node:internal/modules/esm/loader:783:26)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:494:31)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at node:internal/modules/esm/loader:632:32 {
+  code: 'ERR_UNSUPPORTED_ESM_URL_SCHEME'
+}
+
+Node.js v24.19.0
+
+    at need (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f3-20261028/f3-runner.mjs:36:55)
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f3-20261028/f3-checks.mjs:44:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

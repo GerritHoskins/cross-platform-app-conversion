@@ -1,0 +1,277 @@
+{
+  "decisions": [
+    {
+      "id": "D1",
+      "summary": "- **D1:** fresh debug APK built in phase A from the gated HEAD; every device phase installs exactly that hash; a fix makes a new candidate.",
+      "source": [
+        "migration/work-packages/NS07.md:63"
+      ]
+    },
+    {
+      "id": "D2",
+      "summary": "- **D2:** `adb shell input text` only for `IOnic`, `zzz-no-such-session` and a single space, into the SearchBar; clearing through its own clear control; the human copies a harmless host clipboard string before phase B; no `dumpsys input_method`; coordinator privacy check and redaction before freeze.",
+      "source": [
+        "migration/work-packages/NS07.md:64"
+      ]
+    },
+    {
+      "id": "D3",
+      "summary": "- **D3:** Back only for D02, D05, E07, G01; HOME only for C08, G09; each after fresh XML confirmation.",
+      "source": [
+        "migration/work-packages/NS07.md:65"
+      ]
+    },
+    {
+      "id": "D4",
+      "summary": "- **D4:** font scale 1.3 and largest ≥ 1.5, display size, dark mode (incl. one live switch), `show_ime_with_hard_keyboard 1`; each recorded, changed, tested, restored; nothing else.",
+      "source": [
+        "migration/work-packages/NS07.md:66"
+      ]
+    },
+    {
+      "id": "D5",
+      "summary": "- **D5:** no TalkBack; G03 LIMITED from an offline accessibility-tree audit of NS07 XML; G04 BLOCKED (automation limit); manual walkthrough as follow-up.",
+      "source": [
+        "migration/work-packages/NS07.md:67"
+      ]
+    },
+    {
+      "id": "D6",
+      "summary": "- **D6:** D03/D04 through NS04's `__DEV__` launch-extra harness.",
+      "source": [
+        "migration/work-packages/NS07.md:68"
+      ]
+    },
+    {
+      "id": "D7",
+      "summary": "- **D7:** fix policy as written; no pre-identified fix.",
+      "source": [
+        "migration/work-packages/NS07.md:69"
+      ]
+    }
+  ],
+  "phaseF": [
+    {
+      "id": "F1 — fix run (no device):",
+      "summary": "- **F1 — fix run (no device):** the smallest `src/components/*.vue` (and, only if logic is added, `src/state/*.ts` plus tests) change so that at font scale 2.0 the mode labels and row action buttons are not clipped or overflowing, and the status-bar icons stay visible on every page (schedule, detail, filter modal) in light and dark system mode. The app keeps its light pages. Accessible names, the visible label text, the selected-mode state exposed to accessibility, and the `favorite-<id>` / `remove-<id>` / `swipe-action-<id>` automation ids stay as they are. Then the full check commands and `npm run build:android` produce candidate 2; the fix diff, candidate hash and gate evidence go to `migration/evidence/NS07/f-fix/`.",
+      "source": [
+        "migration/work-packages/NS07.md:78"
+      ]
+    },
+    {
+      "id": "F2 — device rerun on candidate 2",
+      "summary": "- **F2 — device rerun on candidate 2** (new run-id, after the human confirms the host clipboard holds a harmless string): install candidate 2; G05 (default, 1.3, 2.0) and G07 (light, dark cold, live switch) on the representative flows; one more full-keyboard attempt for G01/G02/G08 using Gboard's own floating-toolbar menu (More → \"Show on-screen keyboard\", the RN07 method), recording the Gboard state before and letting it return to the floating toolbar afterwards, with no other IME or settings change; and a short phase B regression subset (schedule, search `IOnic`, mode switch, detail and back, filter Done, favorite add/already-added/remove, swipe reveal). D2–D5 and the device input rules still apply; any keyboard frame gets the coordinator privacy check.",
+      "source": [
+        "migration/work-packages/NS07.md:79"
+      ]
+    },
+    {
+      "id": "F1 result (coordinator check, 2026-10-28):",
+      "summary": "- **F1 result (coordinator check, 2026-10-28):** CHECKPOINTED (`migration/handoffs/NS07-checkpoint-f.md`). Only `Schedule.vue`, `SessionDetail.vue` and `TrackFilter.vue` changed: the mode `SegmentedBar` became two wrapping Buttons with the same labels, `accessibilityState` selected and the same `setMode` commit (G05-1); the row action Button got `textWrap` and padding (G05-2); the three pages set `statusBarStyle=\"dark\"` and a white `androidStatusBarBackground` (G07-1; on API 30+ the installed core maps `dark` to `APPEARANCE_LIGHT_STATUS_BARS`, i.e. dark icons). Core 53 and NativeScript 7 files / 115 tests passed twice; candidate 2 is 117668721 bytes, sha256 `5f9f7d1abee8fc49989d666ef1aefce460fc4f8a95c611d6be186e82362d2409` (hash rechecked by the coordinator). Visual acceptance comes from F2 and the coordinator pixel inspection.",
+      "source": [
+        "migration/work-packages/NS07.md:80"
+      ]
+    },
+    {
+      "id": "F2 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F2 result (coordinator grade, 2026-10-28):** BLOCKED checkpoint (`migration/handoffs/NS07-checkpoint-f2.md`, evidence `f-device/`); candidate 2 installed and hash-verified; settings restored; regression subset PASS. Pixel inspection (`pixel-inspection-coordinator.md`, section \"Phase F2\"): G05-1 and G05-2 fixed at 1.0/1.3/2.0; G07-1 fixed for a dark cold launch. Still failing: (1) **G05 accessibility** — both mode Buttons expose `selected=\"true\"` after switching (an F1 regression: a Button's `accessibilityState` never returns to unselected); (2) **G07-1 live switch** — turning night mode on with a page open leaves the status-bar icons invisible on schedule, detail and filter until the next navigation; (3) **G05-3 (new)** — at font scale 2.0 the revealed 96 dp swipe-action strip is narrower than its \"Favorite\" text. G01/G02/G08 stay BLOCKED: the executor cannot view images; the coordinator located Gboard's floating-toolbar menu at about (95, 1513) px. Privacy: 2 frames showed a clipboard paste chip and were redacted (`redaction-f2/record.json`).",
+      "source": [
+        "migration/work-packages/NS07.md:81"
+      ]
+    },
+    {
+      "id": "F3 / F4 decision (human, 2026-10-28):",
+      "summary": "- **F3 / F4 decision (human, 2026-10-28):** approved a second fix run **F3** (no device; evidence `f-fix2/`, checkpoint `NS07-checkpoint-f3.md`, candidate 3) for: the mode Buttons' selected accessibility state (exactly one selected, updating on every switch); the status-bar icons after a live light/dark switch on schedule, detail and filter; and **G05-3**, where the swipe-action strip may grow beyond 96 dp at large font scales so that its text fits, keeping `swipe-action-<id>`, the A1 visibility rule (visible only while its row is open) and a row translation equal to the strip width. Same fix policy and check commands. Then a device rerun **F4** on candidate 3 (new run-id, after the human confirms a harmless host clipboard): G05 and G07 as in F2, the regression subset, and one full-keyboard attempt in which the executor taps Gboard's floating-toolbar menu at the coordinator-supplied point (about x 95, y 1513 px; a single tap, allowed inside the 100 px edge zone as an exception to the gesture rule) and then chooses \"Show on-screen keyboard\".",
+      "source": [
+        "migration/work-packages/NS07.md:82"
+      ]
+    },
+    {
+      "id": "F3 result (coordinator check, 2026-10-28):",
+      "summary": "- **F3 result (coordinator check, 2026-10-28):** CHECKPOINTED (`migration/handoffs/NS07-checkpoint-f3.md`, `f-fix2/`). Again only the three components changed (`f-fix2/fix-f3-delta.diff`): mode Buttons use `accessibilityRole=\"radioButton\"` with an always-defined `checked`/`unchecked` state (cause: nativescript-vue deletes rather than sets a property bound to `undefined`, so the old state stayed); each page re-applies `updateStatusBarStyle('dark')` on `Application.systemAppearanceChangedEvent`, registered on load and removed on unload; the swipe strip is `width=\"auto\"` with `minWidth=\"96\"` and the open row's `translateX` uses its measured width. Beyond the three listed fixes, the SessionDetail favorite Button's identical `undefined` state reset became `'unchecked'` (same root cause, one word; recorded in the checkpoint; F4 verifies it). Core 53 and NativeScript 7 files / 115 tests passed twice; candidate 3 is 117669928 bytes, sha256 `0d4c089755b895d09c80fd406aa6c671947691b6124ad9e399d9ff3025cca50e` (hash rechecked by the coordinator).",
+      "source": [
+        "migration/work-packages/NS07.md:83"
+      ]
+    },
+    {
+      "id": "Keyboard reconnaissance for F4 (coordinator, 2026-10-28):",
+      "summary": "- **Keyboard reconnaissance for F4 (coordinator, 2026-10-28):** on candidate 2, the coordinator focused the SearchBar, tapped the toolbar menu at (95, 1513) and read the menu (Settings, Try handwriting demo, Show clipboard, Show translate, Show on-screen keyboard, Switch to horizontal toolbar); \"Show on-screen keyboard\" is at about (558, 1380). Back closed the menu without choosing anything. The scratch frames were not kept as evidence; the frame showing the current clipboard chip was deleted. Two clipboard-free reference crops for F4's pixel guards are in the F4 run directory.",
+      "source": [
+        "migration/work-packages/NS07.md:84"
+      ]
+    },
+    {
+      "id": "F4 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F4 result (coordinator grade, 2026-10-28):** executor status BLOCKED (`NS07-checkpoint-f4.md`, `f-device2/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged, source diff still equal to `f-fix2/fix.diff`. Candidate 3 installed once, hash verified. **Fixed:** G05 accessibility (both mode Buttons are `RadioButton`, enabled, checkable, exactly one checked after every switch at 1.0/1.3/2.0; detail favorite selected after add, not after remove) and **G05-3** (strip 252/260/327 px at 1.0/1.3/2.0, text on one line inside it, no overlap or gap). **Keyboard:** both pixel guards matched (difference 0); the full floating keyboard appeared and took `IOnic`; Back dismissed it; G01 PASS; G02/G08 LIMITED (floating keys cover the list without inset; no docked keyboard on this AVD). **Still failing, G07-1 live:** full-resolution status bars are pure white (no icons) after 3 of 6 live switches (Schedule → light, SessionDetail → light, TrackFilter → dark) and stay white after the modal closes; the other three switches and every cold launch or navigation show dark icons, so the F3 re-apply races core's own refresh. **BLOCKED by the F4 prompt, not the product:** dark detail toolbar Back (centre x 74) and the SearchBar clear control (centre x 1007) were not tapped because the prompt treated any edge-zone tap as an exception to the gesture rule; NS07.md's rule covers gestures, and phase B tapped the same clear control at (1006, 336). **Privacy:** one invalid original 1.3 frame showed Gboard's clipboard-history list (earlier personal host clipboard items, not the harmless string); redacted with its raw receipt, and the F2 redaction's two missed raw receipts were fixed (`redaction-f4/record.json`). Incident: overlapping helpers during the first 1.3 pass; eleven frames marked invalid and the flow rerun under `-1.3-rerun-`.",
+      "source": [
+        "migration/work-packages/NS07.md:85"
+      ]
+    },
+    {
+      "id": "F5 / F6 decision (human, 2026-10-28):",
+      "summary": "- **F5 / F6 decision (human, 2026-10-28):** approved a third fix run **F5** (no device; evidence `f-fix3/`, checkpoint `NS07-checkpoint-f5.md`, candidate 4) for the intermittent live light/dark status-bar race on Schedule, SessionDetail and TrackFilter only; same fix policy and check commands. Then a device rerun **F6** on candidate 4 (evidence `f-device3/`) in which **taps on app controls at their XML bounds are allowed inside the 100 px edge zone; gestures still are not**. F6 covers repeated live switches in both directions on all three pages, the dark-mode detail toolbar Back, the SearchBar's own clear control, a G05/G07 spot check and the regression subset. Before F6 the human clears Gboard's clipboard history on the emulator.",
+      "source": [
+        "migration/work-packages/NS07.md:86"
+      ]
+    },
+    {
+      "id": "F5 result (coordinator check, 2026-10-28):",
+      "summary": "- **F5 result (coordinator check, 2026-10-28):** CHECKPOINTED (`NS07-checkpoint-f5.md`, `f-fix3/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged; only Schedule.vue, SessionDetail.vue and TrackFilter.vue changed, and `git diff -- migration/nativescript` equals `f-fix3/fix.diff`. Change: the F3 appearance-event handler and its single `post()` are replaced, in each of the three pages, by a per-Page `ViewTreeObserver.OnPreDrawListener` (API 30+, registered on Page loaded, removed on unloaded) that reads the page's own window (`getClosestWindow()`, the dialog window for the modal) and calls `updateStatusBarStyle('dark')` only when `APPEARANCE_LIGHT_STATUS_BARS` has been cleared, so the repair runs before the next frame after any core rewrite instead of racing it. Core 53, NativeScript 7 files / 115 tests twice, typecheck, verify:core and build passed. Candidate 4: 118191269 bytes, sha256 `68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44`. Open point for phase C: `f-fix3/` holds seven extracted AndroidX/widgets `classes.jar` files (about 5 MB) used for bytecode reading; whether to commit them is decided at freeze.",
+      "source": [
+        "migration/work-packages/NS07.md:87"
+      ]
+    },
+    {
+      "id": "F6 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F6 result (coordinator grade, 2026-10-28):** executor status CHECKPOINTED with A06 FAIL (`NS07-checkpoint-f6.md`, `f-device3/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged. Candidate 4 installed once, hash verified. **Fixed: G07-1 live** — all 36 live-switch frames (three cycles per page, 3 s and 8 s) and the post-modal, dark cold and dark navigation frames show dark status-bar icons at full resolution; `statusBarInk` 3779–3837 everywhere. **G05** spot check at 1.0/2.0 PASS (one checked mode, detail selected state, strip 252/327 px with text inside). **R02 own clear** and **dark detail toolbar Back** PASS with XML-bound taps; regression subset PASS. **New, A06 FAIL:** in the two process windows spanning a font-scale change, F5's `pageUnloaded` throws \"Attempt to use cleared object reference\" on its cached `android/view/ViewTreeObserver` (stack at `pageUnloaded`, bundle.mjs:586); a font-scale change recreates the activity (fontScale is not in configChanges), so the native observer is released before the page unloads; Vue's error handler catches it and the app continues. **Privacy:** three R02 frames showed the current host clipboard chip; redacted with their raw receipts (`redaction-f6/record.json`); no history items appeared after the human cleared Gboard's clipboard history.",
+      "source": [
+        "migration/work-packages/NS07.md:88"
+      ]
+    },
+    {
+      "id": "F7 / F8 decision (human, 2026-10-28):",
+      "summary": "- **F7 / F8 decision (human, 2026-10-28):** approved a fourth fix run **F7** (no device; evidence `f-fix4/`, checkpoint `NS07-checkpoint-f7.md`, candidate 5): fix the `pageUnloaded` cleared-`ViewTreeObserver` error in Schedule, SessionDetail and TrackFilter without changing the F5 behaviour; same fix policy and check commands. Then a short device check **F8** on candidate 5 (evidence `f-device4/`): font-scale changes with clean A06 logs, a G07 live spot check and the regression subset, under the F6 input rules.",
+      "source": [
+        "migration/work-packages/NS07.md:89"
+      ]
+    },
+    {
+      "id": "F7 result (coordinator check, 2026-10-28):",
+      "summary": "- **F7 result (coordinator check, 2026-10-28):** CHECKPOINTED (`NS07-checkpoint-f7.md`, `f-fix4/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged; only the three fix files changed, and `git diff -- migration/nativescript` equals `f-fix4/fix.diff`. Change (identical lines in all three components): the cached `ViewTreeObserver` is removed; an `OnAttachStateChangeListener` on the Page's native view adds the F5 pre-draw listener on attach and removes it in `onViewDetachedFromWindow`, each time through a fresh `getViewTreeObserver()`; `pageUnloaded` removes it only if still registered and drops the attach listener. F5's pre-draw callback is unchanged. Executor source correction: the F6 error occurs during `Activity.onStop`, before `onDestroy`; the exact release instant is not proved. Core 53, NativeScript 7 files / 115 tests twice, 45 lifecycle probes, typecheck, verify:core and build passed; no binaries copied into evidence. Candidate 5: 118191268 bytes, sha256 `f6afb8fd0c5cac73515af4c9ffad26c4ab95cdaa9e22a0810ab8874554a94363`.",
+      "source": [
+        "migration/work-packages/NS07.md:90"
+      ]
+    },
+    {
+      "id": "F8 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F8 result (coordinator grade, 2026-10-28):** executor status BLOCKED (`NS07-checkpoint-f8.md`, `f-device4/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged. Candidate 5 installed once, hash verified. **Font-scale transitions on Schedule and SessionDetail PASS:** 1.0 → 1.3 → 2.0 → restore → navigation, with none of the F6 error patterns in 15 bounded log windows, and exactly one checked mode after every transition. **BLOCKED by the emulator, not the product:** three later cold launches ended in startup ANRs (\"failed to complete startup\"); class verification ran at 7–1,200 bytecodes/s while the NativeScript runtime itself was being verified, before any app JavaScript ran, and the coordinator's read-only check right after showed load average 10.7, 134 MB of 2 GB RAM free with 1 GB swap used, Play Store processes over 200% CPU and 26 h uptime. Not run: TrackFilter transitions, G07 spot check, regression subset; final foreground was the launcher. All settings restored. Privacy: no clipboard or personal content in the 11 frames.",
+      "source": [
+        "migration/work-packages/NS07.md:91"
+      ]
+    },
+    {
+      "id": "F9 decision (human, 2026-10-28):",
+      "summary": "- **F9 decision (human, 2026-10-28):** the coordinator cold-boots the emulator without its snapshot and waits for it to settle (boot complete, low load, Play Store idle); then **F9** repeats the full F8 device check on candidate 5 under the same rules (evidence `f-device5/`, checkpoint `NS07-checkpoint-f9.md`), so A06 is shown in one complete run.",
+      "source": [
+        "migration/work-packages/NS07.md:92"
+      ]
+    },
+    {
+      "id": "F9 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F9 result (coordinator grade, 2026-10-28):** emulator cold-booted without snapshot and settled (load average 0.76, Play Store idle) before launch; executor status CHECKPOINTED with TrackFilter FAIL (`NS07-checkpoint-f9.md`, `f-device5/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged; candidate 5 hash verified, no install. **A06 PASS:** none of the F6 error patterns in 23 log windows, no startup ANR. **PASS:** font-scale transitions on Schedule and SessionDetail, G07 live spot check on all three pages (`statusBarInk` 3746–4004), regression subset including own clear and the 20-session list. **New FAIL (TrackFilter font change):** with the filter modal open, changing font_scale to 1.3 recreates the activity (fontScale is not in configChanges) and returns to the schedule without navigation; after restore the Filter button does not reopen the modal until the next cold launch. First exercised in F9; cause not established. **Privacy:** after the cold boot Gboard showed its docked keyboard with a clipboard chip in 14 frames; redacted with their raw receipts (`redaction-f9/record.json`); the originals were not retained because the backup move failed.",
+      "source": [
+        "migration/work-packages/NS07.md:93"
+      ]
+    },
+    {
+      "id": "F10 / F11 decision (human, 2026-10-28):",
+      "summary": "- **F10 / F11 decision (human, 2026-10-28):** approved a fifth fix run **F10** (no device; evidence `f-fix5/`, checkpoint `NS07-checkpoint-f10.md`, candidate 6): find why the TrackFilter modal closes on a font-scale change and why Filter then stops working, and fix it in the components; if only a manifest `configChanges` change can fix it, stop BLOCKED and report (no manifest edit). Same fix policy and check commands. Then a device check **F11** on the new candidate (evidence `f-device6/`).",
+      "source": [
+        "migration/work-packages/NS07.md:94"
+      ]
+    },
+    {
+      "id": "F10 result (coordinator check, 2026-10-28):",
+      "summary": "- **F10 result (coordinator check, 2026-10-28):** CHECKPOINTED (`NS07-checkpoint-f10.md`, `f-fix5/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged; only TrackFilter.vue changed, and `git diff -- migration/nativescript` equals `f-fix5/fix.diff`. Cause (executor, from sources): the activity recreation removed the modal's dialog without clearing nativescript-vue's modal stack, so the next `$showModal` targeted the detached Frame and failed. Change: TrackFilter listens for `activityStoppedEvent`; when its own activity stops for a configuration change, it calls `frame.closeModal()` with no result, which discards the draft and clears the modal stack before teardown; the listener is added on mount and removed on unmount. Disclosed library limit, not patched: core's internal `modalMap` can keep one entry after a dismissal during a configuration change; it does not choose Vue's next modal target. Core 53, NativeScript 7 files / 115 tests twice, 99 lifecycle probes, typecheck, verify:core and build passed; no binaries in evidence. Candidate 6: 118191268 bytes, sha256 `ca575f8091724a05783bfbbfb086e71a3f2f9ce454a6f2d60d447a6380766593`.",
+      "source": [
+        "migration/work-packages/NS07.md:95"
+      ]
+    },
+    {
+      "id": "Correction to the F9 grade (coordinator, 2026-10-28):",
+      "summary": "- **Correction to the F9 grade (coordinator, 2026-10-28):** F9's A06 is not a clean PASS. `f-device5/F9-FS-filter-recovery-window-logcat.txt` lines 169–170 record a debug-priority `Unhandled promise rejection` with a `java.lang.NullPointerException` (FragmentTransaction) from `openFilter`, at the failed Filter tap. The six A06 patterns did not match it and the coordinator's review covered only E/F-priority lines. It belongs to the TrackFilter FAIL that F10 addresses; from F11 on, the A06 scan covers all priorities and these patterns.",
+      "source": [
+        "migration/work-packages/NS07.md:96"
+      ]
+    },
+    {
+      "id": "F11 result (coordinator grade, 2026-10-28):",
+      "summary": "- **F11 result (coordinator grade, 2026-10-28):** CHECKPOINTED (`NS07-checkpoint-f11.md`, `f-device6/`); monitor verification normal completion, `disallowed` empty, HEAD and index unchanged; candidate 6 installed once and its installed hash verified; source diff still equals `f-fix5/fix.diff`. Grade from the coordinator's inspection of all 78 frames (66 distinct) and 84 raw receipts (`pixel-inspection-coordinator.md`, \"Phase F11\"): **TrackFilter after a font change PASS**: in parts a–d (PID 9013, no cold launch) the open filter closes on recreation at 1.3 and 2.0, one Filter tap reopens it after the font is restored, a changed draft is discarded (the reopened modal is byte-identical to the frame before the draft), and normal apply and Select All work afterwards. **A06 PASS**: 36 windows, all priorities, eleven patterns, 0 matches (coordinator re-scan agrees). Font-scale transitions on Schedule and SessionDetail, G07 spot check (`statusBarInk` 3897–4020) and the regression subset PASS. Settings restored to the step-1 values. Privacy: Gboard showed only its collapsed toolbar, with no clipboard chip; no redaction needed. A resolved tooling BLOCKED (wrong Close label in the executor's helper, no tap sent) is recorded in the checkpoint. Not graded: after a recreation the SearchBar takes focus and the keyboard toolbar appears, as in F9.",
+      "source": [
+        "migration/work-packages/NS07.md:97"
+      ]
+    }
+  ],
+  "dispositions": [
+    {
+      "id": "1",
+      "summary": "Phase A candidate1 and phase B default settings. The initial stale-APK freshness assertion was retained and resolved by an ignored-output rebuild in A; phase B D2 clipboard-history privacy finding was redacted, not denied.",
+      "source": [
+        "migration/work-packages/NS07.md:70",
+        "migration/handoffs/NS07-checkpoint-a.md",
+        "migration/handoffs/NS07-checkpoint-b.md",
+        "migration/evidence/NS07/redaction/record.json"
+      ]
+    },
+    {
+      "id": "2",
+      "summary": "G run1 stopped at entry on unrelated root package-lock.json. Human chose to leave it unchanged and allow G run2 (g-settings2). G2 privacy chip redaction is retained; all G2 settings restored.",
+      "source": [
+        "migration/work-packages/NS07.md:71",
+        "migration/handoffs/NS07-checkpoint-g.md",
+        "migration/handoffs/NS07-checkpoint-g2.md",
+        "migration/evidence/NS07/redaction-g2/record.json"
+      ]
+    },
+    {
+      "id": "3",
+      "summary": "Coordinator G2 grade: G05 FAIL (G05-1 clipped mode tabs, G05-2 overflowing row label); G07 FAIL (G07-1 invisible status icons); G06/G09 no defect; G01/G02/G08 BLOCKED, floating toolbar only.",
+      "source": [
+        "migration/work-packages/NS07.md:72",
+        "migration/evidence/NS07/pixel-inspection-coordinator.md:13-22"
+      ]
+    },
+    {
+      "id": "4",
+      "summary": "F1/F3/F5/F7/F10 built candidates2/3/4/5/6; device F2/F4/F6/F8/F9/F11 retain their own outcomes. Full decisions/results below are transcribed from NS07.md. F4 prompt-rule edge taps BLOCKED, human F5/F6 decision permits XML-bound app taps inside edge zone but not gestures; F6 clear/dark Back PASS. F8 emulator ANR BLOCKED; coordinator cold boot then F9. F9 A06 original six-pattern PASS corrected to unhandled-promise FAIL. F11 resolves product failures and same-process wrong-Close-label tooling BLOCKED.",
+      "source": [
+        "migration/work-packages/NS07.md:74-98",
+        "migration/evidence/NS07/pixel-inspection-coordinator.md",
+        "migration/handoffs/NS07-checkpoint-f4.md",
+        "migration/handoffs/NS07-checkpoint-f8.md",
+        "migration/handoffs/NS07-checkpoint-f9.md",
+        "migration/handoffs/NS07-checkpoint-f11.md"
+      ]
+    },
+    {
+      "id": "5",
+      "summary": "Privacy redactions F2/F4/F6/F9 preserved with original records; F4 also corrected two missed F2 raw receipts; F9 originals NOT RETAINED after failed backup moves. F11 no redaction needed. Pre-redaction indexes/receipts remain immutable; redaction sha256After is authoritative.",
+      "source": [
+        "migration/evidence/NS07/redaction-f2/record.json",
+        "migration/evidence/NS07/redaction-f4/record.json",
+        "migration/evidence/NS07/redaction-f6/record.json",
+        "migration/evidence/NS07/redaction-f9/record.json",
+        "migration/work-packages/NS07.md:97",
+        "migration/evidence/NS07/pixel-inspection-coordinator.md"
+      ]
+    },
+    {
+      "id": "6",
+      "summary": "Human Phase C freeze decision2026-10-28: seven third-party AndroidX jars extracted in f-fix3 excluded from submission and eventual commit, paths/sizes/SHA256 in immutable evidence-exclusions.json. All other NS07 evidence is intended to be committed (about790 MB); executor performs no staging/commit.",
+      "source": [
+        "migration/evidence/NS07/evidence-exclusions.json"
+      ]
+    },
+    {
+      "id": "7",
+      "summary": "G03 LIMITED/G04 BLOCKED D5 manual TalkBack follow-up; G02/G08 LIMITED floating keyboard/no established docked-insets acceptance (F9 incidental docked surface ungraded); E08 N/A full-screen modal. D6 __DEV__ cold harness, no release build. fontScale absent from configChanges, unchanged: recreation closes/discards filter draft by F10 design. Core modalMap can retain an internal entry after configuration dismissal, disclosed library limit. SearchBar focuses after recreation, observation not graded. NS06 discrete96dp reveal at default (F3 grows strip at large scale), duplicate revealed label hidden from assistive technology.",
+      "source": [
+        "migration/work-packages/NS07.md:20-57",
+        "migration/work-packages/NS07.md:95",
+        "migration/work-packages/NS07.md:97",
+        "migration/handoffs/NS07-checkpoint-f10.md",
+        "migration/evidence/NS07/pixel-inspection-coordinator.md:967"
+      ]
+    },
+    {
+      "id": "8",
+      "summary": "Phase C run1 tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/ (outside packet) stopped BLOCKED before migration writes: earlier coordinator prompt demanded NS06 zero-problem manifest after NS07 fixes. Exact five expected mismatches (components3, rebuilt APK, unrelated root lockfile) remain in its gate. No scope change. This is C2; explicit amended gate accepts exactly those five and no others.",
+      "source": [
+        "tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/entry-gate.json",
+        "migration/evidence/NS07/c-freeze/entry-gate.json",
+        "migration/evidence/NS07/c-freeze/entry-ns06-manifest.stdout.log"
+      ]
+    }
+  ],
+  "evidenceExclusion": "migration/evidence/NS07/evidence-exclusions.json"
+}

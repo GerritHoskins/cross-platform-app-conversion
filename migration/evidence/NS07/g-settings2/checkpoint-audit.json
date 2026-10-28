@@ -1,0 +1,85 @@
+{
+  "branch": "migration/slice-1\n",
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c\n",
+  "indexEmpty": true,
+  "unexpectedPorcelain": [],
+  "nativeTrackedChanges": "",
+  "coordinatorCommitPaths": [
+    "README.md",
+    "docs/screenshots/ns-already-favorite.png",
+    "docs/screenshots/ns-detail.png",
+    "docs/screenshots/ns-filter.png",
+    "docs/screenshots/ns-schedule.png",
+    "docs/screenshots/ns-swipe.png",
+    "docs/screenshots/rn-already-favorite.png",
+    "docs/screenshots/rn-detail.png",
+    "docs/screenshots/rn-filter.png",
+    "docs/screenshots/rn-schedule.png",
+    "docs/screenshots/rn-swipe.png"
+  ],
+  "immutableBaselineFiles": 8001,
+  "immutableChanged": [],
+  "immutableEvidencePathSetsEqual": true,
+  "captureCount": 169,
+  "windowCount": 15,
+  "resultsCount": 22,
+  "mainStatuses": {
+    "G01": "BLOCKED",
+    "G02": "BLOCKED",
+    "G03": "LIMITED",
+    "G04": "BLOCKED",
+    "G05": "LIMITED",
+    "G06": "LIMITED",
+    "G07": "LIMITED",
+    "G08": "BLOCKED",
+    "G09": "PASS"
+  },
+  "keys": [
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "3"
+      ],
+      "receipt": "1055-G09-schedule-home.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "keyevent",
+        "3"
+      ],
+      "receipt": "1080-G09-detail-home.stdout.log"
+    }
+  ],
+  "text": [
+    {
+      "value": "IOnic",
+      "receipt": "0038-G01-query-input.stdout.log"
+    },
+    {
+      "value": "zzz-no-such-session",
+      "receipt": "1011-G08-query-input.stdout.log"
+    },
+    {
+      "value": "IOnic",
+      "receipt": "1047-G09-query-input.stdout.log"
+    }
+  ],
+  "adbCommandCount": 1149,
+  "settingsRestored": true,
+  "allPngXmlValidated": true,
+  "helperIncidents": [
+    "probe initially named inspect.py shadowed stdlib; renamed before further device action",
+    "Default filter had no scrollable XML node; stopped before gesture, corrected target handling",
+    "Initial font2 detail predicate required offscreen favorite-toggle; stopped and restored, corrected with unique retry frames",
+    "Helper Pyright union inference diagnostics; executed helpers succeeded except preserved incidents"
+  ],
+  "scope": "No product/test/config edits, lockfile contents/diff, IDEA.md contents, install, IME mode changes, TalkBack, rebuild, fixes, handoff/submission/freeze, delegation or git writes"
+}

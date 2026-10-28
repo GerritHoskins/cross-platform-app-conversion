@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+  "headTree": "bafe300bc4fb02599478f74610c0b012a999dd25",
+  "errors": [],
+  "checks": [
+    {
+      "id": "entry-branch",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-branch.receipt.json"
+    },
+    {
+      "id": "entry-head",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-head.receipt.json"
+    },
+    {
+      "id": "entry-tree",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-tree.receipt.json"
+    },
+    {
+      "id": "entry-index",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-index.receipt.json"
+    },
+    {
+      "id": "entry-porcelain",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-porcelain.receipt.json"
+    },
+    {
+      "id": "entry-ancestor",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-ancestor.receipt.json"
+    },
+    {
+      "id": "entry-ns06-review",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-ns06-review.receipt.json"
+    },
+    {
+      "id": "entry-source-diff",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-source-diff.receipt.json"
+    },
+    {
+      "id": "entry-unchanged-package.json",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-unchanged-package.json.receipt.json"
+    },
+    {
+      "id": "entry-unchanged-package-lock.json",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-unchanged-package-lock.json.receipt.json"
+    },
+    {
+      "id": "entry-unchanged-rn07-android-acceptance-checklist.md",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-unchanged-rn07-android-acceptance-checklist.md.receipt.json"
+    },
+    {
+      "id": "entry-ns06-manifest",
+      "exitCode": 1,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c2-20261028/gate-confirmed/entry-ns06-manifest.receipt.json"
+    }
+  ],
+  "expectedBaselineMismatches": [
+    "MISMATCH e58c43978bb5 C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "MISMATCH 01921ee8b98e migration/nativescript/src/components/SessionDetail.vue",
+    "MISMATCH dfb8abe45579 migration/nativescript/src/components/TrackFilter.vue",
+    "MISMATCH ca8851075cf3 package-lock.json",
+    "MISMATCH b1e2d1d9f259 migration/nativescript/src/components/Schedule.vue"
+  ],
+  "evidenceFiles": 38101
+}

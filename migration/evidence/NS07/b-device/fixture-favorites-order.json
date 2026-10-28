@@ -1,0 +1,44 @@
+{
+  "id": "favorites-order",
+  "description": "Favorite list [20, 1] built in reverse chronological order (20 starts 3:30 pm, 1 starts 8:00 am): groupedByStartTime re-sorts by timeStart, so the 8:00 am section renders before the 3:00 pm section (SessionList.vue:269-291); input order of the favorite list does not affect display order.",
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [
+      20,
+      1
+    ],
+    "mode": "favorites"
+  },
+  "expected": {
+    "sessionIds": [
+      1,
+      20
+    ],
+    "groups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          20
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-device.mjs:18
+export function poll(label,predicate){const deadline=Date.now()+10000;do{const x=xml(label+'-poll',deadline);if(predicate(x.nodes))return x;if(Date.now()+350>deadline)break;sleep(350);}while(Date.now()<deadline);throw new Error('Expected state timeout '+label);}
+                                                                                                                                                                                                                          ^
+
+Error: Expected state timeout F9-FS-filter-recovery-open
+    at poll (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-device.mjs:18:219)
+    at tap (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-device.mjs:25:591)
+    at tapId (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-device.mjs:26:69)
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-supplement.mjs:11:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

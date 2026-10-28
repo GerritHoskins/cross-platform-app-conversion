@@ -1,0 +1,52 @@
+{
+  "status": "CHECKPOINTED",
+  "fix": "F10-FILTER-RECREATE",
+  "apk": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118191268,
+    "sha256": "ca575f8091724a05783bfbbfb086e71a3f2f9ce454a6f2d60d447a6380766593"
+  },
+  "checks": 31,
+  "testCounts": {
+    "core": {
+      "success": true,
+      "counts": {
+        "tests": 53,
+        "failed": 0,
+        "passed": 53,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 53,
+        "suites": 0
+      },
+      "duration_ms": 97.5784
+    },
+    "first": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    },
+    "second": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    },
+    "lifecycleProbes": {
+      "assertions": 99,
+      "pass": true,
+      "nativeProof": false
+    }
+  },
+  "unresolved": [
+    "F11 device confirmation of repeated open-filter font transitions at 1.3/2.0/back, changed-draft discard, one-tap reopen, Done/Close and once-only effects; native restoration timing is not established by software probes.",
+    "NativeScript internal modalMap may retain closed owner options during configuration dismissal; not patched or claimed leak-free. F11 must check for stray restored dialogs/errors.",
+    "Existing npm audit findings/pending script approvals and upstream DEP0190 retained; no dependency changes."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "revision": 2,
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+  "headTree": "bafe300bc4fb02599478f74610c0b012a999dd25",
+  "resultCounts": {
+    "checklist": {
+      "PASS": 45,
+      "FAIL": 0,
+      "BLOCKED": 1,
+      "NOT RUN": 0,
+      "N/A": 1,
+      "LIMITED": 3
+    },
+    "subcases": {
+      "PASS": 151,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 2,
+      "LIMITED": 2
+    },
+    "history": {
+      "PASS": 486,
+      "FAIL": 22,
+      "BLOCKED": 74,
+      "NOT RUN": 0,
+      "N/A": 1,
+      "LIMITED": 175
+    },
+    "authoritativeHistory": {
+      "PASS": 0,
+      "FAIL": 10,
+      "BLOCKED": 1,
+      "NOT RUN": 0,
+      "N/A": 0,
+      "LIMITED": 0
+    },
+    "supplemental": {
+      "PASS": 21,
+      "FAIL": 1,
+      "BLOCKED": 1,
+      "NOT RUN": 0,
+      "N/A": 0,
+      "LIMITED": 0
+    },
+    "all": {
+      "PASS": 703,
+      "FAIL": 33,
+      "BLOCKED": 77,
+      "NOT RUN": 0,
+      "N/A": 4,
+      "LIMITED": 180
+    }
+  },
+  "ledgerEntries": 997,
+  "evidenceReferences": 7223,
+  "privacyStatementsCorrected": [
+    "Privacy.redaction",
+    "Privacy.redaction-g2",
+    "Privacy.redaction-f2",
+    "Privacy.redaction-f4",
+    "Privacy.redaction-f6",
+    "Privacy.redaction-f9"
+  ],
+  "historyUnchanged": true,
+  "immutableEvidenceTree": {
+    "fileCount": 38249,
+    "bytes": 756263355,
+    "algorithm": "SHA-256 of sorted UTF-8 path + NUL + size + NUL + file SHA-256 + LF",
+    "aggregateDigest": "96286d9cf71250d5433c9c191c5a6acce5d2e2c07d7c192a640c4c578c4e51fa"
+  },
+  "sourceFiles": [
+    "migration/nativescript/src/components/Schedule.vue",
+    "migration/nativescript/src/components/SessionDetail.vue",
+    "migration/nativescript/src/components/TrackFilter.vue"
+  ],
+  "handoffFiles": 17,
+  "checks": [
+    {
+      "id": "prefreeze-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-branch.receipt.json"
+    },
+    {
+      "id": "prefreeze-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-head.receipt.json"
+    },
+    {
+      "id": "prefreeze-tree",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-tree.receipt.json"
+    },
+    {
+      "id": "prefreeze-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-index.receipt.json"
+    },
+    {
+      "id": "prefreeze-diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-diff-check.receipt.json"
+    },
+    {
+      "id": "prefreeze-source-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-source-diff.receipt.json"
+    },
+    {
+      "id": "prefreeze-porcelain",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/prefreeze-porcelain.receipt.json"
+    },
+    {
+      "id": "scope-changed",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/scope-changed.receipt.json"
+    },
+    {
+      "id": "scope-new",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/scope-new.receipt.json"
+    }
+  ],
+  "scope": "Before checkpoint/status/final scan/manifest; final frozen scope verified again in run-only post-freeze receipts."
+}

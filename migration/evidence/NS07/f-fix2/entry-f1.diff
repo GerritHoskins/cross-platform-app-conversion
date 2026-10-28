@@ -1,0 +1,113 @@
+diff --git a/migration/nativescript/src/components/Schedule.vue b/migration/nativescript/src/components/Schedule.vue
+index fed33fc8..0111452e 100644
+--- a/migration/nativescript/src/components/Schedule.vue
++++ b/migration/nativescript/src/components/Schedule.vue
+@@ -1,6 +1,6 @@
+ <script lang="ts" setup>
+ import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
+-import { Dialogs, SwipeDirection, type EventData, type SearchBar, type SegmentedBar, type SwipeGestureEventData, type View } from '@nativescript/core';
++import { Dialogs, SwipeDirection, type EventData, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
+ import SessionDetail from './SessionDetail.vue';
+ import TrackFilter from './TrackFilter.vue';
+ import { applyFilterResult } from '../state/track-filter';
+@@ -68,10 +68,6 @@ function changeSearch(event: EventData) {
+   store.commit('setSearchText', (event.object as SearchBar).text);
+ }
+ 
+-function changeMode(event: EventData) {
+-  store.commit('setMode', (event.object as SegmentedBar).selectedIndex === 1 ? 'favorites' : 'all');
+-}
+-
+ function clearLaunchFocus(event: EventData) {
+   const search = event.object as SearchBar;
+   if (search.android) {
+@@ -92,7 +88,7 @@ onMounted(() => {
+ </script>
+ 
+ <template>
+-  <Page class="conference-page">
++  <Page class="conference-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff">
+     <ActionBar title="Conference" class="conference-action-bar" />
+     <GridLayout rows="auto,auto,*">
+       <SearchBar
+@@ -108,19 +104,32 @@ onMounted(() => {
+         @loaded="clearLaunchFocus"
+       />
+       <GridLayout row="1" columns="*,auto">
+-        <SegmentedBar
+-          col="0"
+-          :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
+-          :isEnabled="ready"
+-          color="#111111"
+-          backgroundColor="#eeeeee"
+-          selectedBackgroundColor="#c5ddf4"
+-          margin="8,12"
+-          @selectedIndexChange="changeMode"
+-        >
+-          <SegmentedBarItem title="All sessions" />
+-          <SegmentedBarItem title="Favorite sessions" />
+-        </SegmentedBar>
++        <StackLayout col="0" margin="8,12">
++          <Button
++            text="All sessions"
++            accessibilityLabel="All sessions"
++            :accessibilityState="!ready ? 'disabled' : store.state.selection?.mode !== 'favorites' ? 'selected' : undefined"
++            :isEnabled="ready"
++            textWrap="true"
++            minHeight="48"
++            padding="8,12"
++            color="#111111"
++            :backgroundColor="store.state.selection?.mode !== 'favorites' ? '#c5ddf4' : '#eeeeee'"
++            @tap="store.commit('setMode', 'all')"
++          />
++          <Button
++            text="Favorite sessions"
++            accessibilityLabel="Favorite sessions"
++            :accessibilityState="!ready ? 'disabled' : store.state.selection?.mode === 'favorites' ? 'selected' : undefined"
++            :isEnabled="ready"
++            textWrap="true"
++            minHeight="48"
++            padding="8,12"
++            color="#111111"
++            :backgroundColor="store.state.selection?.mode === 'favorites' ? '#c5ddf4' : '#eeeeee'"
++            @tap="store.commit('setMode', 'favorites')"
++          />
++        </StackLayout>
+         <Button
+           col="1"
+           text="Filter"
+@@ -187,6 +196,8 @@ onMounted(() => {
+               :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
+               :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
+               :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
++              textWrap="true"
++              padding="8,16"
+               verticalAlignment="center"
+               margin="8"
+               @tap="changeFavorite(item.session.id)"
+diff --git a/migration/nativescript/src/components/SessionDetail.vue b/migration/nativescript/src/components/SessionDetail.vue
+index 41cad1db..15a4d96c 100644
+--- a/migration/nativescript/src/components/SessionDetail.vue
++++ b/migration/nativescript/src/components/SessionDetail.vue
+@@ -24,7 +24,7 @@ onMounted(() => {
+ </script>
+ 
+ <template>
+-  <Page class="session-page">
++  <Page class="session-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff">
+     <ActionBar title="Session" class="session-action-bar">
+       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack()" />
+     </ActionBar>
+diff --git a/migration/nativescript/src/components/TrackFilter.vue b/migration/nativescript/src/components/TrackFilter.vue
+index 03624c76..ba6fa835 100644
+--- a/migration/nativescript/src/components/TrackFilter.vue
++++ b/migration/nativescript/src/components/TrackFilter.vue
+@@ -19,7 +19,7 @@ function changeTrack(event: EventData, name: string) {
+ 
+ <template>
+   <Frame>
+-    <Page class="filter-page">
++    <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff">
+       <ActionBar title="Filter Sessions" class="filter-action-bar">
+         <NavigationButton
+           text="Close"

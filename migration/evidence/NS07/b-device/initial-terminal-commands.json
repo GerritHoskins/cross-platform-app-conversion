@@ -1,0 +1,25 @@
+{
+  "commands": [
+    {
+      "command": "git branch --show-current; git rev-parse HEAD; git diff --cached --name-status; git status --porcelain=v1; test ! -e migration/evidence/NS07/b-device && printf 'B_DEVICE_ABSENT\\n'; wc -c < migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk; sha256sum migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+      "args": [],
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": null,
+      "durationMs": null,
+      "stdout": "Supervisor stream retains original tool output; not fabricated here.",
+      "note": "Read-only invocation before any migration writes; repeated measured gate receipts in commands.jsonl."
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all; git diff --cached --quiet; printf 'INDEX_CHECK_EXIT=%s\\n' \"$?\"",
+      "args": [],
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "exitCode": 0,
+      "startedAt": null,
+      "durationMs": null,
+      "stdout": "Supervisor stream retains original tool output; not fabricated here.",
+      "note": "Read-only invocation before any migration writes; repeated measured gate receipts in commands.jsonl."
+    }
+  ],
+  "outerToolNote": "Subsequent outer Python launcher commands and read/search/write tool calls are preserved by supervisor stream; commands.jsonl measures all subprocess child commands. Outer tool timing is not available to the child."
+}

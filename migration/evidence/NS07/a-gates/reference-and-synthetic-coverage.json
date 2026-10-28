@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "referenceCases": [
+    {
+      "id": "default-all",
+      "passed": true
+    },
+    {
+      "id": "no-tracks",
+      "passed": true
+    },
+    {
+      "id": "single-track",
+      "passed": true
+    },
+    {
+      "id": "search-case-insensitive",
+      "passed": true
+    },
+    {
+      "id": "search-no-match",
+      "passed": true
+    },
+    {
+      "id": "search-plus-track",
+      "passed": true
+    },
+    {
+      "id": "favorites-empty",
+      "passed": true
+    },
+    {
+      "id": "favorites-some",
+      "passed": true
+    },
+    {
+      "id": "favorites-order",
+      "passed": true
+    },
+    {
+      "id": "add-duplicate",
+      "passed": true
+    },
+    {
+      "id": "remove-absent",
+      "passed": true
+    }
+  ],
+  "syntheticCases": [
+    {
+      "name": "all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected",
+      "passed": true
+    },
+    {
+      "name": "all-tracks rule holds in favorites mode too",
+      "passed": true
+    }
+  ],
+  "syntheticSource": "migration/core/test/algorithms.test.ts:16-18,24-26,68-91",
+  "evidence": "core-reporter.jsonl",
+  "disclosure": "Synthetic two-track session 103 is automated coverage only; not a real bundled fixture or device case."
+}

@@ -1,0 +1,12 @@
+file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f8-20261028/f8-receipts.mjs:21
+export function result(id,status,expected,observed,evidence=[]){const f=path.join(out,'results-f8.json'),a=fs.existsSync(f)?JSON.parse(fs.readFileSync(f)):[];if(a.some(r=>r.case===id))throw new Error('Duplicate result '+id);a.push({case:id,status,run:'f-device4',expected,observed,evidence,observer:'Hermes GPT-6.1 Sol high (device)'});save('results-f8.json',a);}
+                                                                                                                                                                                              ^
+
+Error: Duplicate result FS.filter.execution
+    at result (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f8-20261028/f8-receipts.mjs:21:191)
+    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f8-20261028/f8-font.mjs:30:74
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

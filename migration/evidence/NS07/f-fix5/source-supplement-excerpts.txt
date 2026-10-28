@@ -1,0 +1,184 @@
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/app/ActivityThread.java:6189-6196
+6189|        r.activity.mConfigChangeFlags |= configChanges;
+6190|        r.mPreserveWindow = tmp.mPreserveWindow;
+6191|
+6192|        r.activity.mChangingConfigurations = true;
+6193|
+6194|        handleRelaunchActivityInner(r, tmp.pendingResults, tmp.pendingIntents,
+6195|                pendingActions, tmp.startsNotResumed, tmp.overrideConfig, tmp.mActivityWindowInfo,
+6196|                "handleRelaunchActivity");
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/app/ActivityThread.java:6263-6303
+6263|    private void handleRelaunchActivityInner(@NonNull ActivityClientRecord r,
+6264|            @Nullable List<ResultInfo> pendingResults,
+6265|            @Nullable List<ReferrerIntent> pendingIntents,
+6266|            @NonNull PendingTransactionActions pendingActions, boolean startsNotResumed,
+6267|            @NonNull Configuration overrideConfig, @NonNull ActivityWindowInfo activityWindowInfo,
+6268|            @NonNull String reason) {
+6269|        // Preserve last used intent, it may be set from Activity#setIntent().
+6270|        final Intent customIntent = r.activity.mIntent;
+6271|        // Need to ensure state is saved.
+6272|        if (!r.paused) {
+6273|            performPauseActivity(r, false, reason, null /* pendingActions */);
+6274|        }
+6275|        if (!r.stopped) {
+6276|            callActivityOnStop(r, true /* saveState */, reason);
+6277|        }
+6278|
+6279|        handleDestroyActivity(r, false /* finishing */, true /* getNonConfigInstance */, reason);
+6280|
+6281|        r.activity = null;
+6282|        r.window = null;
+6283|        r.hideForNow = false;
+6284|        // Merge any pending results and pending intents; don't just replace them
+6285|        if (pendingResults != null) {
+6286|            if (r.pendingResults == null) {
+6287|                r.pendingResults = pendingResults;
+6288|            } else {
+6289|                r.pendingResults.addAll(pendingResults);
+6290|            }
+6291|        }
+6292|        if (pendingIntents != null) {
+6293|            if (r.pendingIntents == null) {
+6294|                r.pendingIntents = pendingIntents;
+6295|            } else {
+6296|                r.pendingIntents.addAll(pendingIntents);
+6297|            }
+6298|        }
+6299|        r.startsNotResumed = startsNotResumed;
+6300|        r.overrideConfig = overrideConfig;
+6301|        r.mActivityWindowInfo.set(activityWindowInfo);
+6302|
+6303|        handleLaunchActivity(r, pendingActions, mLastReportedDeviceId, customIntent);
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/app/Activity.java:7249-7259
+7249|    /**
+7250|     * Check to see whether this activity is in the process of being destroyed in order to be
+7251|     * recreated with a new configuration. This is often used in
+7252|     * {@link #onStop} to determine whether the state needs to be cleaned up or will be passed
+7253|     * on to the next instance of the activity via {@link #onRetainNonConfigurationInstance()}.
+7254|     *
+7255|     * @return If the activity is being torn down in order to be recreated with a new configuration,
+7256|     * returns true; else returns false.
+7257|     */
+7258|    public boolean isChangingConfigurations() {
+7259|        return mChangingConfigurations;
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js:184-206
+184|    _removeEntry(removed) {
+185|        const page = removed.resolvedPage;
+186|        if (page) {
+187|            const frame = page.frame;
+188|            if (frame) {
+189|                frame._removeView(page);
+190|            }
+191|            else {
+192|                page._tearDownUI(true);
+193|            }
+194|        }
+195|        else {
+196|            if (Trace.isEnabled()) {
+197|                Trace.write(`_removeEntry: backstack entry missing page`, Trace.categories.Navigation);
+198|            }
+199|        }
+200|        removed.resolvedPage = null;
+201|    }
+202|    _disposeBackstackEntry(entry) {
+203|        const page = entry.resolvedPage;
+204|        if (page) {
+205|            page._tearDownUI(true);
+206|        }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js:449-454
+449|    get currentPage() {
+450|        if (this._currentEntry) {
+451|            return this._currentEntry.resolvedPage;
+452|        }
+453|        return null;
+454|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:593-603
+593|    onLoaded() {
+594|        this._manager = null;
+595|        this._rootManager = null;
+596|        super.onLoaded();
+597|        this.setOnTouchListener();
+598|    }
+599|    onUnloaded() {
+600|        this._manager = null;
+601|        this._rootManager = null;
+602|        super.onUnloaded();
+603|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view-base/index.d.ts:245-251
+245|     * @nsProperty
+246|     */
+247|    defaultVisualState: string;
+248|    _domId: number;
+249|    _context: any;
+250|    _isAddedToNativeVisualTree: boolean;
+251|    _cssState: CssState;
+
+migration/nativescript/node_modules/@nativescript/core/package.json:1-5
+1|{
+2|  "name": "@nativescript/core",
+3|  "version": "9.1.3",
+4|  "description": "A JavaScript library providing an easy to use api for interacting with iOS and Android platform APIs.",
+5|  "type": "module",
+
+migration/nativescript/node_modules/nativescript-vue/package.json:1-5
+1|{
+2|  "name": "nativescript-vue",
+3|  "version": "3.1.2",
+4|  "description": "Vue 3 renderer for NativeScript",
+5|  "license": "MIT",
+
+migration/evidence/NS07/f-device5/F9-FS-filter-recovery-open-tap.json:1-33
+1|{
+2|  "label": "F9-FS-filter-recovery-open",
+3|  "target": {
+4|    "index": "1",
+5|    "text": "Filter",
+6|    "resource-id": "Filter sessions",
+7|    "class": "android.widget.Button",
+8|    "package": "dev.translationtest.ns",
+9|    "content-desc": "Filter sessions. Filter",
+10|    "checkable": "false",
+11|    "checked": "false",
+12|    "clickable": "true",
+13|    "enabled": "true",
+14|    "focusable": "true",
+15|    "focused": "false",
+16|    "scrollable": "false",
+17|    "long-clickable": "false",
+18|    "password": "false",
+19|    "selected": "false",
+20|    "bounds": "[817,422][1048,674]",
+21|    "drawing-order": "2",
+22|    "hint": ""
+23|  },
+24|  "bounds": {
+25|    "x1": 817,
+26|    "y1": 422,
+27|    "x2": 1048,
+28|    "y2": 674,
+29|    "cx": 933,
+30|    "cy": 548,
+31|    "width": 231,
+32|    "height": 252
+33|  },
+
+migration/evidence/NS07/f-device5/F9-FS-filter-recovery-open-tap.json:35-41
+35|  "edgeZone": false,
+36|  "point": [
+37|    933,
+38|    548
+39|  ],
+40|  "rule": "F5/F6 XML-bound app-control taps allowed anywhere"
+41|}
+
+migration/evidence/NS07/f-device5/F9-FS-filter-exception.json:1-4
+1|{
+2|  "message": "Target page not retained after restore; navigation not guessed",
+3|  "stack": "Error: Target page not retained after restore; navigation not guessed\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f9-20261028/f9-font.mjs:21:21\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+4|}

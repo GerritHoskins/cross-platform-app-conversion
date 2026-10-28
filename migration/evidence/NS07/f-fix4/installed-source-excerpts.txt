@@ -1,0 +1,572 @@
+
+migration/nativescript/App_Resources/Android/src/main/AndroidManifest.xml
+25|		<activity
+26|			android:name="com.tns.NativeScriptActivity"
+27|			android:label="@string/title_activity_kimera"
+28|			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"
+29|			android:theme="@style/LaunchScreenTheme"
+30|			android:hardwareAccelerated="true"
+31|      		android:launchMode="singleTask"
+32|			android:exported="true">
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/activity.android.js
+32|        onStart() {
+33|            this._callbacks.onStart(this, superProto.onStart);
+34|        },
+35|        onStop() {
+36|            this._callbacks.onStop(this, superProto.onStop);
+37|        },
+38|        onDestroy() {
+39|            this._callbacks.onDestroy(this, superProto.onDestroy);
+40|        },
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js
+748|        superFunc.call(activity);
+749|        if (Trace.isEnabled()) {
+750|            Trace.write('NativeScriptActivity.onStart();', Trace.categories.NativeLifecycle);
+751|        }
+752|        const rootView = this._rootView;
+753|        if (rootView && !rootView.isLoaded && !isEmbedded()) {
+754|            rootView.callLoaded();
+755|        }
+756|    }
+757|    onStop(activity, superFunc) {
+758|        superFunc.call(activity);
+759|        if (Trace.isEnabled()) {
+760|            Trace.write('NativeScriptActivity.onStop();', Trace.categories.NativeLifecycle);
+761|        }
+762|        const rootView = this._rootView;
+763|        if (rootView && rootView.isLoaded && !isEmbedded()) {
+764|            rootView.callUnloaded();
+765|        }
+766|    }
+767|    onPostResume(activity, superFunc) {
+768|        superFunc.call(activity);
+769|        if (Trace.isEnabled()) {
+770|            Trace.write('NativeScriptActivity.onPostResume();', Trace.categories.NativeLifecycle);
+771|        }
+772|        // NOTE: activity.onPostResume() is called when activity resume is complete and we can
+773|        // safely raise the application resume event;
+774|        // onActivityResumed(...) lifecycle callback registered in application is called too early
+775|        // and raising the application resume event there causes issues like
+776|        // https://github.com/NativeScript/NativeScript/issues/6708
+777|        if (activity.isNativeScriptActivity) {
+778|            Application.android._setWindowActive(Application.android._getWindowForActivity(activity), true, activity);
+779|        }
+780|    }
+781|    onDestroy(activity, superFunc) {
+782|        try {
+783|            if (Trace.isEnabled()) {
+784|                Trace.write('NativeScriptActivity.onDestroy();', Trace.categories.NativeLifecycle);
+785|            }
+786|            const rootView = this._rootView;
+787|            if (rootView) {
+788|                rootView._tearDownUI(true);
+789|            }
+790|        }
+791|        finally {
+792|            superFunc.call(activity);
+793|        }
+794|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view-base/index.js
+241|    get nativeView() {
+242|        // this._disableNativeViewRecycling = true;
+243|        return this.nativeViewProtected;
+244|    }
+245|    set nativeView(value) {
+246|        this.setNativeView(value);
+273|    get android() {
+274|        // this._disableNativeViewRecycling = true;
+275|        return this._androidView;
+276|    }
+343|        if (!this.domNode) {
+344|            this.domNode = new DOMNode(this);
+345|        }
+346|    }
+347|    // Overridden so we don't raise `propertyChange`
+348|    // The property will raise its own event.
+349|    set(name, value) {
+350|        this[name] = WrappedValue.unwrap(value);
+351|    }
+352|    onLoaded() {
+353|        this.setFlag(Flags.superOnLoadedCalled, true);
+354|        if (this._isLoaded) {
+355|            return;
+356|        }
+357|        this._isLoaded = true;
+358|        this._cssState.onLoaded();
+359|        this._resumeNativeUpdates(SuspendType.Loaded);
+360|        this.eachChild((child) => {
+361|            this.loadView(child);
+362|            return true;
+363|        });
+364|        this._emit('loaded');
+365|    }
+366|    onUnloaded() {
+367|        this.setFlag(Flags.superOnUnloadedCalled, true);
+368|        if (!this._isLoaded) {
+369|            return;
+370|        }
+371|        this._suspendNativeUpdates(SuspendType.Loaded);
+372|        this.eachChild((child) => {
+373|            this.unloadView(child);
+374|            return true;
+375|        });
+376|        this._isLoaded = false;
+377|        this._cssState.onUnloaded();
+378|        this._emit('unloaded');
+379|    }
+655|            this.domNode.onChildRemoved(view);
+656|        }
+657|        this._removeViewCore(view);
+658|        view.parent = undefined;
+659|        view._parentChanged(this);
+660|    }
+661|    /**
+662|     * Method is intended to be overridden by inheritors and used as "protected"
+663|     */
+664|    _removeViewCore(view) {
+665|        this.unloadView(view);
+666|        if (view._context) {
+667|            view._tearDownUI();
+668|        }
+669|    }
+758|        if (__ANDROID__) {
+759|            // this check is also unecessary as this code should never be reached with _androidView != null unless reusable = true
+760|            // also adding this check for feature flag safety
+761|            if (this._androidView !== nativeView || !this.reusable) {
+762|                this._androidView = nativeView;
+763|                if (nativeView) {
+764|                    const className = this.constructor.name;
+765|                    if (this._isPaddingRelative === undefined) {
+766|                        this._isPaddingRelative = nativeView.isPaddingRelative();
+767|                    }
+768|                    let result /* android.graphics.Rect */ = DEFAULT_VIEW_PADDINGS.get(className) || nativeView.defaultPaddings;
+769|                    if (result === undefined) {
+770|                        DEFAULT_VIEW_PADDINGS.set(className, org.nativescript.widgets.ViewHelper.getPadding(nativeView));
+771|                        nativeView.defaultPaddings = DEFAULT_VIEW_PADDINGS.get(className);
+772|                        result = DEFAULT_VIEW_PADDINGS.get(className);
+773|                    }
+774|                    if (!nativeView.defaultPaddings) {
+775|                        nativeView.defaultPaddings = DEFAULT_VIEW_PADDINGS.get(className);
+776|                    }
+777|                    this._setDefaultPaddings(result);
+778|                }
+779|            }
+780|        }
+781|        else {
+782|            this._iosView = nativeView;
+783|        }
+784|        this.setNativeView(nativeView);
+797|     * Use in cases where the createNativeView is not suitable.
+798|     * As an example use in item controls where the native parent view will create the native views for child items.
+799|     */
+800|    setNativeView(value) {
+801|        if (this.__nativeView === value) {
+802|            return;
+803|        }
+804|        if (this.__nativeView) {
+805|            this._suspendNativeUpdates(SuspendType.NativeView);
+806|            // We may do a `this.resetNativeView()` here?
+807|        }
+808|        this.__nativeView = this.nativeViewProtected = value;
+809|        if (this.__nativeView) {
+810|            this._suspendedUpdates = undefined;
+811|            this.initNativeView();
+812|            this._resumeNativeUpdates(SuspendType.NativeView);
+813|        }
+814|    }
+815|    /**
+829|    _tearDownUI(force) {
+830|        // No context means we are already teared down.
+831|        if (!this._context) {
+832|            return;
+833|        }
+834|        const preserveNativeView = this.reusable && !force;
+835|        this.resetNativeViewInternal();
+836|        if (!preserveNativeView) {
+837|            this.eachChild((child) => {
+838|                // if we decided to tear down the current view, we should also tear down the children, even if they are reusable
+839|                // the developer is responsible to detach them if they need to reuse them somewhere else
+840|                child._tearDownUI(true);
+841|                return true;
+842|            });
+843|        }
+844|        if (this.parent) {
+845|            this.parent._removeViewFromNativeVisualTree(this);
+846|        }
+864|        if (!preserveNativeView) {
+865|            this.disposeNativeView();
+866|            this._suspendNativeUpdates(SuspendType.UISetup);
+867|            this.setNativeView(null);
+868|            this._androidView = null;
+869|            this._iosView = null;
+870|            this._context = null;
+871|        }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js
+214|        DialogFragmentImpl.prototype.onStart = function () {
+215|            _super.prototype.onStart.call(this);
+216|            if (this._fullscreen) {
+217|                var window = this.getDialog().getWindow();
+218|                var length = android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+219|                window.setLayout(length, length);
+220|                window.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+221|            }
+222|            var owner = this.owner;
+223|            if (owner && !owner.isLoaded) {
+224|                owner.callLoaded();
+225|            }
+226|            this._shownCallback();
+227|        };
+248|        DialogFragmentImpl.prototype.onDismiss = function (dialog) {
+249|            var _a;
+250|            _super.prototype.onDismiss.call(this, dialog);
+251|            var manager = this.getFragmentManager();
+252|            var activity = (_a = this.activity) === null || _a === void 0 ? void 0 : _a.get();
+253|            if (manager && !(activity === null || activity === void 0 ? void 0 : activity.isChangingConfigurations())) {
+254|                removeModal(this.owner._domId);
+255|                this._dismissCallback();
+256|            }
+257|            var owner = this.owner;
+258|            if (owner && owner.isLoaded) {
+259|                owner.callUnloaded();
+260|            }
+261|        };
+262|        DialogFragmentImpl.prototype.onDestroy = function () {
+263|            var _a;
+264|            _super.prototype.onDestroy.call(this);
+265|            var owner = this.owner;
+266|            var activity = (_a = this.activity) === null || _a === void 0 ? void 0 : _a.get();
+267|            if (!(activity === null || activity === void 0 ? void 0 : activity.isChangingConfigurations())) {
+268|                this.activity = null;
+269|            }
+270|            if (owner) {
+271|                if (owner.isLoaded) {
+272|                    owner.callUnloaded();
+273|                }
+274|                owner._isAddedToNativeVisualTree = false;
+275|                owner._tearDownUI(true);
+276|            }
+1084|    updateStatusBarStyle(value) {
+1085|        if (SDK_VERSION < 21)
+1086|            return; // nothing we can do
+1087|        const window = this.getClosestWindow();
+1088|        // Ensure the window draws system bar backgrounds (required to color status bar)
+1089|        window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+1090|        window.addFlags(android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+1091|        const decorView = window.getDecorView();
+1092|        // API 30+ path (preferred)
+1093|        if (SDK_VERSION >= 30) {
+1094|            const controller = window.getInsetsController?.();
+1095|            if (controller) {
+1096|                const APPEARANCE_LIGHT_STATUS_BARS = android.view.WindowInsetsController?.APPEARANCE_LIGHT_STATUS_BARS;
+1097|                if (typeof value === 'string') {
+1098|                    this.style.statusBarStyle = value;
+1099|                    if (value === 'light') {
+1100|                        // light icons/text
+1101|                        controller.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS);
+1102|                    }
+1103|                    else {
+1104|                        // dark icons/text
+1105|                        controller.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS);
+1106|                    }
+1107|                }
+1108|                else {
+1148|    getClosestWindow() {
+1149|        // When it comes to modals, check parent as it may not be the modal root view itself
+1150|        const view = this.parent ?? this;
+1151|        const dialogFragment = view._dialogFragment;
+1152|        if (dialogFragment) {
+1153|            const dialog = dialogFragment.getDialog();
+1154|            if (dialog) {
+1155|                return dialog.getWindow();
+1156|            }
+1157|        }
+1158|        return this._context.getWindow();
+1159|    }
+1160|    setAccessibilityIdentifier(view, value) {
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js
+301|    raiseCurrentPageNavigatedEvents(isBack) {
+302|        const page = this.currentPage;
+303|        if (page) {
+304|            if (page.isLoaded) {
+305|                // Forward navigation does not remove page from frame so we raise unloaded manually.
+306|                page.callUnloaded();
+307|            }
+308|            page.onNavigatedFrom(isBack);
+309|        }
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/app/ActivityThread.java
+5923|    void performDestroyActivity(ActivityClientRecord r, boolean finishing,
+5924|            boolean getNonConfigInstance, String reason) {
+5925|        Class<? extends Activity> activityClass;
+5926|        if (localLOGV) Slog.v(TAG, "Performing finish of " + r);
+5927|        activityClass = r.activity.getClass();
+5928|        if (finishing) {
+5929|            r.activity.mFinished = true;
+5930|        }
+5931|
+5932|        performPauseActivityIfNeeded(r, "destroy");
+5933|
+5934|        if (!r.stopped) {
+5935|            callActivityOnStop(r, false /* saveState */, "destroy");
+5936|        }
+5937|        if (getNonConfigInstance) {
+5938|            try {
+5939|                r.lastNonConfigurationInstances = r.activity.retainNonConfigurationInstances();
+5940|            } catch (Exception e) {
+5941|                if (!mInstrumentation.onException(r.activity, e)) {
+5942|                    throw new RuntimeException("Unable to retain activity "
+5943|                            + r.intent.getComponent().toShortString() + ": " + e.toString(), e);
+5944|                }
+5945|            }
+5946|        }
+5947|        try {
+5948|            r.activity.mCalled = false;
+5949|            mInstrumentation.callActivityOnDestroy(r.activity);
+5950|            if (!r.activity.mCalled) {
+5951|                throw new SuperNotCalledException("Activity " + safeToComponentShortString(r.intent)
+5952|                        + " did not call through to super.onDestroy()");
+5953|            }
+5954|            if (r.window != null) {
+5955|                r.window.closeAllPanels();
+5992|    public void handleDestroyActivity(ActivityClientRecord r, boolean finishing,
+5993|            boolean getNonConfigInstance, String reason) {
+5994|        performDestroyActivity(r, finishing, getNonConfigInstance, reason);
+5995|        cleanUpPendingRemoveWindows(r, finishing);
+5996|        WindowManager wm = r.activity.getWindowManager();
+5997|        View v = r.activity.mDecor;
+5998|        if (v != null) {
+5999|            if (r.activity.mVisibleFromServer) {
+6000|                mNumVisibleActivities--;
+6001|            }
+6002|            IBinder wtoken = v.getWindowToken();
+6003|            if (r.activity.mWindowAdded) {
+6004|                if (r.mPreserveWindow) {
+6005|                    // Hold off on removing this until the new activity's window is being added.
+6006|                    r.mPendingRemoveWindow = r.window;
+6007|                    r.mPendingRemoveWindowManager = wm;
+6008|                    // We can only keep the part of the view hierarchy that we control,
+6009|                    // everything else must be removed, because it might not be able to
+6010|                    // behave properly when activity is relaunching.
+6011|                    r.window.clearContentView();
+6012|                } else {
+6013|                    final ViewRootImpl viewRoot = v.getViewRootImpl();
+6014|                    if (viewRoot != null) {
+6015|                        // Clear callbacks to avoid the destroyed activity from receiving
+6016|                        // configuration or camera compat changes that are no longer effective.
+6017|                        viewRoot.setActivityConfigCallback(null);
+6018|                    }
+6019|                    wm.removeViewImmediate(v);
+6020|                }
+6021|            }
+6022|            if (wtoken != null && r.mPendingRemoveWindow == null) {
+6023|                WindowManagerGlobal.getInstance().closeAll(wtoken,
+6024|                        r.activity.getClass().getName(), "Activity");
+6025|            } else if (r.mPendingRemoveWindow != null) {
+6026|                // We're preserving only one window, others should be closed so app views
+6027|                // will be detached before the final tear down. It should be done now because
+6028|                // some components (e.g. WebView) rely on detach callbacks to perform receiver
+6029|                // unregister and other cleanup.
+6030|                WindowManagerGlobal.getInstance().closeAllExceptView(r.token, v,
+6031|                        r.activity.getClass().getName(), "Activity");
+6032|            }
+6033|            r.activity.mDecor = null;
+6263|    private void handleRelaunchActivityInner(@NonNull ActivityClientRecord r,
+6264|            @Nullable List<ResultInfo> pendingResults,
+6265|            @Nullable List<ReferrerIntent> pendingIntents,
+6266|            @NonNull PendingTransactionActions pendingActions, boolean startsNotResumed,
+6267|            @NonNull Configuration overrideConfig, @NonNull ActivityWindowInfo activityWindowInfo,
+6268|            @NonNull String reason) {
+6269|        // Preserve last used intent, it may be set from Activity#setIntent().
+6270|        final Intent customIntent = r.activity.mIntent;
+6271|        // Need to ensure state is saved.
+6272|        if (!r.paused) {
+6273|            performPauseActivity(r, false, reason, null /* pendingActions */);
+6274|        }
+6275|        if (!r.stopped) {
+6276|            callActivityOnStop(r, true /* saveState */, reason);
+6277|        }
+6278|
+6279|        handleDestroyActivity(r, false /* finishing */, true /* getNonConfigInstance */, reason);
+6280|
+6281|        r.activity = null;
+6282|        r.window = null;
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/view/View.java
+22861|     *        this view
+22862|     */
+22863|    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.P)
+22864|    void dispatchAttachedToWindow(AttachInfo info, int visibility) {
+22865|        mAttachInfo = info;
+22866|        if (mOverlay != null) {
+22867|            mOverlay.getOverlayView().dispatchAttachedToWindow(info, visibility);
+22868|        }
+22869|        mWindowAttachCount++;
+22870|        // We will need to evaluate the drawable state at least once.
+22871|        mPrivateFlags |= PFLAG_DRAWABLE_STATE_DIRTY;
+22872|        if (mFloatingTreeObserver != null) {
+22873|            info.mTreeObserver.merge(mFloatingTreeObserver);
+22874|            mFloatingTreeObserver = null;
+22875|        }
+22934|    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.P)
+22935|    void dispatchDetachedFromWindow() {
+22936|        AttachInfo info = mAttachInfo;
+22937|        if (info != null) {
+22938|            int vis = info.mWindowVisibility;
+22939|            if (vis != GONE) {
+22940|                onWindowVisibilityChanged(GONE);
+22941|                if (isShown()) {
+22942|                    // Invoking onVisibilityAggregated directly here since the subtree
+22943|                    // will also receive detached from window
+22944|                    onVisibilityAggregated(false);
+22945|                } else {
+22946|                    notifyAutofillManagerViewVisibilityChanged(false);
+22947|                }
+22948|            }
+22949|        }
+22950|
+22951|        onDetachedFromWindow();
+22952|        onDetachedFromWindowInternal();
+22953|
+22954|        if (info != null) {
+22955|            info.mViewRootImpl.getImeFocusController().onViewDetachedFromWindow(this);
+22956|        }
+22957|
+22958|        ListenerInfo li = mListenerInfo;
+22959|        final CopyOnWriteArrayList<OnAttachStateChangeListener> listeners =
+22960|                li != null ? li.mOnAttachStateChangeListeners : null;
+22961|        if (listeners != null && listeners.size() > 0) {
+22962|            // NOTE: because of the use of CopyOnWriteArrayList, we *must* use an iterator to
+22963|            // perform the dispatching. The iterator is a safe guard against listeners that
+22964|            // could mutate the list by calling the various add/remove methods. This prevents
+22965|            // the array from being modified while we iterate it.
+22966|            for (OnAttachStateChangeListener listener : listeners) {
+22967|                listener.onViewDetachedFromWindow(this);
+22968|            }
+22969|        }
+22970|
+22971|        if ((mPrivateFlags & PFLAG_SCROLL_CONTAINER_ADDED) != 0) {
+22972|            mAttachInfo.mScrollContainers.remove(this);
+22973|            mPrivateFlags &= ~PFLAG_SCROLL_CONTAINER_ADDED;
+22974|        }
+22975|
+22976|        notifyAppearedOrDisappearedForContentCaptureIfNeeded(false);
+22977|        updateSensitiveViewsCountIfNeeded(false);
+22978|
+22979|        mAttachInfo = null;
+27242|     * observer can be used to get notifications when global events, like
+27243|     * layout, happen.
+27244|     *
+27245|     * The returned ViewTreeObserver observer is not guaranteed to remain
+27246|     * valid for the lifetime of this View. If the caller of this method keeps
+27247|     * a long-lived reference to ViewTreeObserver, it should always check for
+27248|     * the return value of {@link ViewTreeObserver#isAlive()}.
+27249|     *
+27250|     * @return The ViewTreeObserver for this view's hierarchy.
+27251|     */
+27252|    public ViewTreeObserver getViewTreeObserver() {
+27253|        if (mAttachInfo != null) {
+27254|            return mAttachInfo.mTreeObserver;
+27255|        }
+27256|        if (mFloatingTreeObserver == null) {
+27257|            mFloatingTreeObserver = new ViewTreeObserver(mContext);
+27258|        }
+27259|        return mFloatingTreeObserver;
+27260|    }
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/view/ViewTreeObserver.java
+382|    /**
+383|     * Merges all the listeners registered on the specified observer with the listeners
+384|     * registered on this object. After this method is invoked, the specified observer
+385|     * will return false in {@link #isAlive()} and should not be used anymore.
+386|     *
+387|     * @param observer The ViewTreeObserver whose listeners must be added to this observer
+388|     */
+389|    void merge(ViewTreeObserver observer) {
+430|        if (observer.mOnPreDrawListeners != null) {
+431|            if (mOnPreDrawListeners != null) {
+432|                mOnPreDrawListeners.addAll(observer.mOnPreDrawListeners);
+433|            } else {
+434|                mOnPreDrawListeners = observer.mOnPreDrawListeners;
+435|            }
+436|        }
+455|            if (mOnTouchModeChangeListeners != null) {
+456|                mOnTouchModeChangeListeners.addAll(observer.mOnTouchModeChangeListeners);
+457|            } else {
+458|                mOnTouchModeChangeListeners = observer.mOnTouchModeChangeListeners;
+459|            }
+460|        }
+461|
+462|        if (observer.mOnComputeInternalInsetsListeners != null) {
+463|            if (mOnComputeInternalInsetsListeners != null) {
+464|                mOnComputeInternalInsetsListeners.addAll(observer.mOnComputeInternalInsetsListeners);
+465|            } else {
+466|                mOnComputeInternalInsetsListeners = observer.mOnComputeInternalInsetsListeners;
+467|            }
+468|        }
+691|    /**
+692|     * Register a callback to be invoked when the view tree is about to be drawn
+693|     *
+694|     * @param listener The callback to add
+695|     *
+696|     * @throws IllegalStateException If {@link #isAlive()} returns false
+697|     */
+698|    public void addOnPreDrawListener(OnPreDrawListener listener) {
+699|        checkIsAlive();
+700|
+701|        if (mOnPreDrawListeners == null) {
+702|            mOnPreDrawListeners = new CopyOnWriteArray<OnPreDrawListener>();
+703|        }
+704|
+705|        mOnPreDrawListeners.add(listener);
+706|    }
+707|
+708|    /**
+709|     * Remove a previously installed pre-draw callback
+710|     *
+711|     * @param victim The callback to remove
+712|     *
+713|     * @throws IllegalStateException If {@link #isAlive()} returns false
+714|     *
+715|     * @see #addOnPreDrawListener(OnPreDrawListener)
+716|     */
+717|    public void removeOnPreDrawListener(OnPreDrawListener victim) {
+718|        checkIsAlive();
+719|        if (mOnPreDrawListeners == null) {
+720|            return;
+721|        }
+722|        mOnPreDrawListeners.remove(victim);
+1027|    private void checkIsAlive() {
+1028|        if (!mAlive) {
+1029|            throw new IllegalStateException("This ViewTreeObserver is not alive, call "
+1030|                    + "getViewTreeObserver() again");
+1031|        }
+1032|    }
+1033|
+1034|    /**
+1035|     * Indicates whether this ViewTreeObserver is alive. When an observer is not alive,
+1036|     * any call to a method (except this one) will throw an exception.
+1037|     *
+1038|     * If an application keeps a long-lived reference to this ViewTreeObserver, it should
+1039|     * always check for the result of this method before calling any other method.
+1040|     *
+1041|     * @return True if this object is alive and be used, false otherwise.
+1042|     */
+1043|    public boolean isAlive() {
+1044|        return mAlive;
+1045|    }
+1046|
+1047|    /**
+1048|     * Marks this ViewTreeObserver as not alive. After invoking this method, invoking
+1049|     * any other method but {@link #isAlive()} and {@link #kill()} will throw an Exception.
+1050|     *
+1051|     * @hide
+1052|     */
+1053|    private void kill() {
+1054|        mAlive = false;
+1055|    }
+1056|

@@ -1,0 +1,235 @@
+{
+  "kind": "Software lifecycle models, not Android/ART/device verification",
+  "passed": 42,
+  "failed": 3,
+  "results": [
+    {
+      "file": "Schedule",
+      "name": "non-lifecycle code is byte-identical to F5",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "F5 pre-draw body is byte-identical",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "identical lifecycle structure on all three Pages",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "attached unload removes listener and is idempotent",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "floating observer merges, cached proxy clears, unload uses current tree",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "detach before unload leaves no listener on live former tree",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "unload before detach removes attach callback",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "detach reattach while loaded re-registers exactly once",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "stop/unload then restart/load makes one new callback",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "destroyed native view after detached unload is harmless",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at Object.noListeners (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:29:707)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:136\n    at check (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:11:34)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:2\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+    },
+    {
+      "file": "Schedule",
+      "name": "API below 30 registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "no Android view registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "F5 repair remains conditional over repeated flag clears",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "stale callbacks after unload do not touch native windows",
+      "status": "PASS"
+    },
+    {
+      "file": "Schedule",
+      "name": "loaded-state guard prevents repair during unload dispatch",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "non-lifecycle code is byte-identical to F5",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "F5 pre-draw body is byte-identical",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "identical lifecycle structure on all three Pages",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "attached unload removes listener and is idempotent",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "floating observer merges, cached proxy clears, unload uses current tree",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "detach before unload leaves no listener on live former tree",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "unload before detach removes attach callback",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "detach reattach while loaded re-registers exactly once",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "stop/unload then restart/load makes one new callback",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "destroyed native view after detached unload is harmless",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at Object.noListeners (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:29:707)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:136\n    at check (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:11:34)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:2\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "API below 30 registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "no Android view registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "F5 repair remains conditional over repeated flag clears",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "stale callbacks after unload do not touch native windows",
+      "status": "PASS"
+    },
+    {
+      "file": "SessionDetail",
+      "name": "loaded-state guard prevents repair during unload dispatch",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "non-lifecycle code is byte-identical to F5",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "F5 pre-draw body is byte-identical",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "identical lifecycle structure on all three Pages",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "attached unload removes listener and is idempotent",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "floating observer merges, cached proxy clears, unload uses current tree",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "detach before unload leaves no listener on live former tree",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "unload before detach removes attach callback",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "detach reattach while loaded re-registers exactly once",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "stop/unload then restart/load makes one new callback",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "destroyed native view after detached unload is harmless",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at Object.noListeners (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:29:707)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:136\n    at check (file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:11:34)\n    at file:///C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/tools/qwen-supervisor/.runs/sol-ns07-r1-f7-20261028/f7-lifecycle-probes.mjs:37:2\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "API below 30 registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "no Android view registers nothing",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "F5 repair remains conditional over repeated flag clears",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "stale callbacks after unload do not touch native windows",
+      "status": "PASS"
+    },
+    {
+      "file": "TrackFilter",
+      "name": "loaded-state guard prevents repair during unload dispatch",
+      "status": "PASS"
+    }
+  ]
+}

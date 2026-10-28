@@ -1,0 +1,79 @@
+[
+  {
+    "name": "installed set-value deletes undefined without invoking inherited setter; defined state resets",
+    "status": "PASS"
+  },
+  {
+    "name": "Schedule: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+    "status": "PASS"
+  },
+  {
+    "name": "SessionDetail: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+    "status": "PASS"
+  },
+  {
+    "name": "TrackFilter: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+    "status": "PASS"
+  },
+  {
+    "name": "mode bindings: checked/unchecked defined through cold readiness and repeated bidirectional switches; labels/layout/commit unchanged",
+    "status": "PASS"
+  },
+  {
+    "name": "no accessibility binding contains undefined/null in any fix component",
+    "status": "PASS"
+  },
+  {
+    "name": "swipe measures each actual positive visible width; translation follows it and returns to zero when closed",
+    "status": "PASS"
+  },
+  {
+    "name": "A1/automation/gesture/action contracts and entire column-1 Button preserved",
+    "status": "PASS"
+  }
+]
+{
+  "candidate": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117669928,
+    "sha256": "0d4c089755b895d09c80fd406aa6c671947691b6124ad9e399d9ff3025cca50e"
+  },
+  "bundle": {
+    "path": "assets/app/bundle.mjs",
+    "present": true,
+    "size": 152533,
+    "sha256": "c38947e4818e27f1098be797a346cf3a42bd5e5c501d0ecca1dfb5291dc0aa55",
+    "markers": [
+      {
+        "text": "swipe-action-",
+        "present": true,
+        "context": "),\n                                                            automationText: `swipe-action-${item.session.id}`,\n                                                            visibility: $setup."
+      },
+      {
+        "text": "Filter Sessions",
+        "present": true,
+        "context": "MODULE_0__.createVNode)(_component_ActionBar, {\n                        title: \"Filter Sessions\",\n                        class: \"filter-action-bar\"\n                    }, {\n                     "
+      },
+      {
+        "text": "ns04SessionId",
+        "present": true,
+        "context": "RTED_MODULE_1__.Application.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');\n                const sessionId = (0,_state_session_detail__WEBPACK_IMPORTED_MODULE_4__.directEn"
+      },
+      {
+        "text": "radioButton",
+        "present": true,
+        "context": "el: \"All sessions\",\n                                        accessibilityRole: \"radioButton\",\n                                        accessibilityState: $setup.store.state.selection?.mode !="
+      },
+      {
+        "text": "systemAppearanceChangedEvent",
+        "present": true,
+        "context": "_1__.Application.on(_nativescript_core__WEBPACK_IMPORTED_MODULE_1__.Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);\n        }\n        function pageUnloaded() {\n            _nativescript_core"
+      },
+      {
+        "text": "getActualSize",
+        "present": true,
+        "context": "id) {\n            const action = event.object;\n            const width = action.getActualSize().width;\n            if (action.visibility === 'visible' && width > 0 && swipeActionWidths.value[id"
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+--------- beginning of main
+10-27 14:00:38.277 25707 25707 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-27 14:00:38.300 25707 25707 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-27 14:00:38.303 25707 25707 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-27 14:00:38.303 25707 25707 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-27 14:00:38.321 25707 25707 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-27 14:00:38.860 25707 25707 D nativeloader: Configuring clns-9 for other apk /data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/lib/x86_64:/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-27 14:00:38.883 25707 25707 I nslationtest.ns: AssetManager2(0x738ba900aad8) locale list changing from [] to [en-US]
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment: Currently set values for:
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-27 14:00:38.893 25707 25707 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-27 14:00:38.989 25707 25707 D nativeloader: Load /data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!classes5.dex): ok
+10-27 14:00:38.989 25707 25707 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-27 14:00:39.031 25707 25707 D TNS.Runtime: V8 version 14.9.207.39
+10-27 14:00:39.263 25707 25707 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-27 14:00:39.405 25707 25707 I nslationtest.ns: AssetManager2(0x738ba9007f18) locale list changing from [] to [en-US]
+--------- beginning of system
+10-27 14:00:39.407 25707 25733 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-27 14:00:39.451 25707 25733 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-27 14:00:39.453 25707 25733 I EGL_emulation: Opening libGLESv2_emulation.so
+10-27 14:00:39.460 25707 25733 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-27 14:00:39.468 25707 25707 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-27 14:00:39.469 25707 25707 I nslationtest.ns: AssetManager2(0x738ba900c0b8) locale list changing from [] to [en-US]
+10-27 14:00:39.474 25707 25707 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-27 14:00:39.537 25707 25707 W HWUI    : Image decoding logging dropped!
+10-27 14:00:39.540 25707 25707 W HWUI    : Image decoding logging dropped!
+10-27 14:00:39.575 25707 25707 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-27 14:00:39.576 25707 25707 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-27 14:00:39.637 25707 25707 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-27 14:00:39.826 25707 25707 W HWUI    : Image decoding logging dropped!
+10-27 14:00:39.826 25707 25707 W HWUI    : Image decoding logging dropped!
+10-27 14:00:39.835 25707 25707 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:00:39.874 25707 25707 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-27 14:00:39.921 25707 25707 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:00:39.923 25707 25707 I ImeTracker: dev.translationtest.ns:9ced285c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-27 14:00:39.925 25707 25707 I ImeTracker: dev.translationtest.ns:9ced285c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-27 14:00:39.925 25707 25707 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-27 14:00:39.984 25707 25707 W HWUI    : Unknown dataspace 0
+10-27 14:00:40.008 25707 25707 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:00:40.008 25707 25707 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:00:40.410 25707 25712 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-27 14:00:40.566 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:00:40.567 25707 25707 I ImeTracker: dev.translationtest.ns:2e464f92: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:00:44.900 25707 25781 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-27 14:03:09.944 25707 25707 D CompatChangeReporter: Compat change id reported: 379365266; UID 10216; state: ENABLED
+10-27 14:03:14.515 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@1c147c3
+10-27 14:03:14.573 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:03:14.573 25707 25707 I ImeTracker: dev.translationtest.ns:def971da: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:03:34.819 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@2bf7429
+10-27 14:03:34.892 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:03:34.892 25707 25707 I ImeTracker: dev.translationtest.ns:fc073dbf: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:03:55.320 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@3fc319
+10-27 14:03:55.379 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:03:55.379 25707 25707 I ImeTracker: dev.translationtest.ns:ee6be0c6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:04:15.713 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@1488a7a
+10-27 14:04:15.788 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:04:15.789 25707 25707 I ImeTracker: dev.translationtest.ns:77e3ddef: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:04:31.511 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@b8be610
+10-27 14:04:31.582 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:04:31.582 25707 25707 I ImeTracker: dev.translationtest.ns:90ac63e3: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:04:45.040 25707 25707 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@c86c9b7
+10-27 14:04:45.097 25707 25707 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:04:45.097 25707 25707 I ImeTracker: dev.translationtest.ns:988a0d68: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN

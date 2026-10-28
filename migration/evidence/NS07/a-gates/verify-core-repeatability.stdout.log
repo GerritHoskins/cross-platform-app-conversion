@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "exactStdoutAndStderrMatch": true,
+  "stdoutSha256": "c0000cf54b1caabc3fe3e9beae691f5db9076b4f578c8f2e6b24ba66e98ef10e",
+  "fixtureCount": 20,
+  "sequence": "Core tests -> npm ci -> first verify:core -> repeated core tests and JSON core test -> second verify:core",
+  "evidence": [
+    "verify-core-first.receipt.json",
+    "verify-core-second.receipt.json"
+  ]
+}

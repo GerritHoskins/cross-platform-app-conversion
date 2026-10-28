@@ -1,0 +1,2273 @@
+[
+  {
+    "case": "A05.install",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Exactly one replace-install; installed candidate5 hash",
+    "observed": {
+      "apkPath": "/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk",
+      "sha256": "f6afb8fd0c5cac73515af4c9ffad26c4ab95cdaa9e22a0810ab8874554a94363"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/install-check.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.schedule.baseline",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Cold launch at recorded font and open schedule",
+    "observed": {
+      "fontScale": "1.0",
+      "pid": "28549"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-baseline.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-baseline.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F8-FS-schedule-baseline",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-baseline.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-baseline.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.schedule.1.3",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font 1.3 applied with schedule still usable",
+    "observed": {
+      "page": "schedule",
+      "stage": "1.3",
+      "frame": "F8-FS-schedule-1.3",
+      "fontScale": "1.3",
+      "pidBefore": "28549",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-schedule-baseline",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{eb322a u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{3299a23 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{eb322a u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{eb322a u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{eb322a u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-schedule-1.3",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{dab8767 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "visual": "provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F8-FS-schedule-1.3",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.schedule.2.0",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font 2.0 applied with schedule still usable",
+    "observed": {
+      "page": "schedule",
+      "stage": "2.0",
+      "frame": "F8-FS-schedule-2.0",
+      "fontScale": "2.0",
+      "pidBefore": "28549",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-schedule-1.3",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{dab8767 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{36364dd u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-schedule-2.0",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{656e032 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "visual": "provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F8-FS-schedule-2.0",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.schedule.restored",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font 1.0 applied with schedule still usable",
+    "observed": {
+      "page": "schedule",
+      "stage": "restored",
+      "frame": "F8-FS-schedule-restored",
+      "fontScale": "1.0",
+      "pidBefore": "28549",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-schedule-2.0",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{656e032 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{84c4d15 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-schedule-restored",
+        "pid": "28549",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{2083f14 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{139784093 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t189}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{a8b3b6b u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{2083f14 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{2083f14 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{2083f14 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "visual": "provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F8-FS-schedule-restored",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.schedule.after-nav",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Navigate once after restoring font; usable schedule",
+    "observed": {
+      "schedule": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-after-nav.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-after-nav.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F8-FS-schedule-after-nav",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-after-nav.png",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-after-nav.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.detail.baseline",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Cold launch at recorded font and open detail",
+    "observed": {
+      "fontScale": "1.0",
+      "pid": "28946"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-baseline.png",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-baseline.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.detail.execution",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Complete transitions and after-restore navigation",
+    "observed": {
+      "incident": "F8-FS-detail-1.3-windows: {\"command\":\"C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe\",\"args\":[\"-s\",\"emulator-5554\",\"shell\",\"dumpsys\",\"window\",\"windows\",\"dev.translationtest.ns\"],\"cwd\":\"C:\\\\Users\\\\Gerrit\\\\job-search\\\\POCs\\\\cross-platform-translation-test-app-main\",\"exitCode\":1,\"startedAt\":\"2026-10-28T17:04:22.539Z\",\"durationMs\":21760,\"label\":\"F8-FS-detail-1.3-windows\",\"error\":null,\"stdout\":\"0099-F8-FS-detail-1.3-windows.stdout.log\",\"stderr\":\"0099-F8-FS-detail-1.3-windows.stderr.log\"}",
+      "resolved": true,
+      "explanation": "Completed same detail font flow without repeated frames, navigation or repeated1.3 write after synchronous helper exit, exact process idle check and ADB recovery."
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-exception.json",
+      "migration/evidence/NS07/f-device4/font-detail-execution-resolution.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)",
+    "initialStatus": "BLOCKED"
+  },
+  {
+    "case": "FS.detail.1.3",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font1.3 applied with University detail retained",
+    "observed": {
+      "page": "detail",
+      "stage": "1.3",
+      "frame": "F8-FS-detail-1.3",
+      "fontScale": "1.3",
+      "pidBefore": "28946",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-detail-baseline",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{a0d083c u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{a8b3b6b u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{a0d083c u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{a0d083c u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{a0d083c u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-detail-1.3-recovered",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{9887869 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "transportInterruption": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-1.3.png",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-1.3.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.detail.2.0",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font 2.0 with University detail retained",
+    "observed": {
+      "page": "detail",
+      "stage": "2.0",
+      "frame": "F8-FS-detail-2.0",
+      "fontScale": "2.0",
+      "pidBefore": "28946",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-detail-1.3-recovered",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{9887869 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{90317a7 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-detail-2.0",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-2.0.png",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-2.0.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.detail.restored",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Font 1.0 with University detail retained",
+    "observed": {
+      "page": "detail",
+      "stage": "restored",
+      "frame": "F8-FS-detail-restored",
+      "fontScale": "1.0",
+      "pidBefore": "28946",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true,
+      "identityBefore": {
+        "label": "F8-FS-detail-2.0",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{3c2da06 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "identityAfter": {
+        "label": "F8-FS-detail-restored",
+        "pid": "28946",
+        "activityOrWindowLines": [
+          "  Window #0 Window{ec2cffe u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{41e406f u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{ec61d82 u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,548)(276x704) gr=TOP LEFT CENTER sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{68f6b60 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{53a9b78 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{ff984a1 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{3daeedf u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{981165e u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #8 Window{28daeb2 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{245749070 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t190}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{a38620a u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{69224907 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{dd7b4bd u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{28daeb2 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{28daeb2 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{28daeb2 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{981165e u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-restored.png",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-restored.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.detail.after-nav",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Restored detail toolbar Back returns schedule",
+    "observed": "Schedule returned",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-after-nav.png",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-after-nav.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.execution",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Complete transitions and after-restore navigation",
+    "observed": "XML failed F8-FS-filter-prepare-poll",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Settings.restore",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Every recorded environment value equals step1",
+    "observed": {
+      "model": {
+        "before": "sdk_gphone64_x86_64",
+        "after": "sdk_gphone64_x86_64",
+        "equal": true
+      },
+      "sdk": {
+        "before": "36",
+        "after": "36",
+        "equal": true
+      },
+      "size": {
+        "before": "Physical size: 1080x2400",
+        "after": "Physical size: 1080x2400",
+        "equal": true
+      },
+      "density": {
+        "before": "Physical density: 420",
+        "after": "Physical density: 420",
+        "equal": true
+      },
+      "densityProperty": {
+        "before": "",
+        "after": "",
+        "equal": true
+      },
+      "fontScale": {
+        "before": "1.0",
+        "after": "1.0",
+        "equal": true
+      },
+      "night": {
+        "before": "Night mode: no",
+        "after": "Night mode: no",
+        "equal": true
+      },
+      "accessibilityServices": {
+        "before": "null",
+        "after": "null",
+        "equal": true
+      },
+      "accessibilityEnabled": {
+        "before": "0",
+        "after": "0",
+        "equal": true
+      },
+      "hardKeyboardIme": {
+        "before": "0",
+        "after": "0",
+        "equal": true
+      },
+      "defaultIme": {
+        "before": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+        "after": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+        "equal": true
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Final.foreground",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "App foreground on Schedule, light/default, All, empty search",
+    "observed": {
+      "foregroundSchedule": false,
+      "foregroundPackages": [
+        "com.google.android.apps.nexuslauncher"
+      ],
+      "currentPid": "",
+      "installed": {
+        "apkPath": "/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk",
+        "sha256": "f6afb8fd0c5cac73515af4c9ffad26c4ab95cdaa9e22a0810ab8874554a94363"
+      },
+      "modes": [],
+      "settingsRestored": true,
+      "startupAnrs": [
+        {
+          "timestamp": "2026-10-28 17:13:58.305",
+          "pid": "29788",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=95MB description=bg anr: Process ProcessRecord{668d7ac 29788:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-13-50-020.gz"
+        },
+        {
+          "timestamp": "2026-10-28 17:10:28.562",
+          "pid": "29567",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{fc455bf 29567:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-10-16-983.gz"
+        },
+        {
+          "timestamp": "2026-10-28 17:08:47.571",
+          "pid": "29395",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{2f6c72b 29395:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-08-42-227.gz"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/final-device-state.json",
+      "migration/evidence/NS07/f-device4/F8-final-actual-state.png",
+      "migration/evidence/NS07/f-device4/F8-final-actual-state.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.baseline",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Already-open TrackFilter baseline font check and usable navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.1.3",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Already-open TrackFilter 1.3 font check and usable navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.2.0",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Already-open TrackFilter 2.0 font check and usable navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.restored",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Already-open TrackFilter restored font check and usable navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "FS.filter.after-nav",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Already-open TrackFilter after-nav font check and usable navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-exception.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.schedule.dark.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open schedule; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.schedule.dark.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open schedule; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.schedule.light.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open schedule; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.schedule.light.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open schedule; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.detail.dark.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open detail; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.detail.dark.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open detail; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.detail.light.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open detail; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.detail.light.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open detail; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.filter.dark.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open filter; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.filter.dark.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live dark switch on already-open filter; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.filter.light.3s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open filter; 3s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.filter.light.8s",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Live light switch on already-open filter; 8s PNG/XML and measured statusBarInk",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R01.schedule",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Cold schedule loads Breakfast and University",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.search",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "IOnic case-insensitive name results",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Own XML-bound Clear query restores empty search",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "All -> Favorite -> All; exactly one checked",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-toolbar-back",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "University detail -> toolbar Back -> Schedule",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-system-back",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "University detail -> fresh XML -> one keyevent4 -> Schedule",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R05.filter-Done",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Ten checked track switches; Done returns Schedule",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R06.favorite-add",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Add/acknowledge Breakfast once; Favorite contains it",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R07.already-favorite",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Duplicate dialog and Cancel retain one favorite",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R08.favorite-remove",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Favorite-mode Remove/confirm gives explicit empty state",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-reveal",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "One row opens >=240px by safe XML-bounded swipe",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-action",
+    "status": "BLOCKED",
+    "run": "f-device4",
+    "expected": "Computed revealed-strip action adds once without navigation",
+    "observed": "Startup ANRs prevented an app window after the completed Schedule/detail font flows; no further device changes, fixes, installs or rebuild permitted.",
+    "evidence": [
+      "migration/evidence/NS07/f-device4/startup-anrs.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-schedule-1.3-window-old",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-schedule-1.3-window-old",
+      "PID": "28549",
+      "steps": {
+        "start": "F8-FS-schedule-baseline",
+        "end": "F8-FS-schedule-1.3"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 17,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-schedule-1.3-window-old-logcat.txt",
+        "F8-FS-schedule-1.3-window-old-warnings-errors-verbatim.txt",
+        "F8-FS-schedule-1.3-window-old-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3-window-old-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3-window-old-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-1.3-window-old-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-schedule-2.0-window-old",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-schedule-2.0-window-old",
+      "PID": "28549",
+      "steps": {
+        "start": "F8-FS-schedule-1.3",
+        "end": "F8-FS-schedule-2.0"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 26,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-schedule-2.0-window-old-logcat.txt",
+        "F8-FS-schedule-2.0-window-old-warnings-errors-verbatim.txt",
+        "F8-FS-schedule-2.0-window-old-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0-window-old-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0-window-old-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-2.0-window-old-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-schedule-restored-window-old",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-schedule-restored-window-old",
+      "PID": "28549",
+      "steps": {
+        "start": "F8-FS-schedule-2.0",
+        "end": "F8-FS-schedule-restored"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 36,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-schedule-restored-window-old-logcat.txt",
+        "F8-FS-schedule-restored-window-old-warnings-errors-verbatim.txt",
+        "F8-FS-schedule-restored-window-old-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored-window-old-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored-window-old-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-restored-window-old-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-schedule-page-window",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-schedule-page-window",
+      "PID": "28549",
+      "steps": {
+        "start": "F8-FS-schedule-baseline",
+        "end": "F8-FS-schedule-after-nav"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 69,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-schedule-page-window-logcat.txt",
+        "F8-FS-schedule-page-window-warnings-errors-verbatim.txt",
+        "F8-FS-schedule-page-window-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-page-window-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-page-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-schedule-page-window-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-detail-prepare-previous",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-detail-prepare-previous",
+      "PID": "28549",
+      "steps": {
+        "start": "previous process window",
+        "end": "F8-FS-detail-prepare before force-stop"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 69,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-detail-prepare-previous-logcat.txt",
+        "F8-FS-detail-prepare-previous-warnings-errors-verbatim.txt",
+        "F8-FS-detail-prepare-previous-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-prepare-previous-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-prepare-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-prepare-previous-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-detail-1.3-transport-recovered-window",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-detail-1.3-transport-recovered-window",
+      "PID": "28946",
+      "steps": {
+        "start": "F8-FS-detail-baseline",
+        "end": "F8-FS-detail-1.3 after transport interruption"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 15,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-detail-1.3-transport-recovered-window-logcat.txt",
+        "F8-FS-detail-1.3-transport-recovered-window-warnings-errors-verbatim.txt",
+        "F8-FS-detail-1.3-transport-recovered-window-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-1.3-transport-recovered-window-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-1.3-transport-recovered-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-1.3-transport-recovered-window-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-detail-2.0-window-old",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-detail-2.0-window-old",
+      "PID": "28946",
+      "steps": {
+        "start": "F8-FS-detail-1.3-recovered",
+        "end": "F8-FS-detail-2.0"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 20,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-detail-2.0-window-old-logcat.txt",
+        "F8-FS-detail-2.0-window-old-warnings-errors-verbatim.txt",
+        "F8-FS-detail-2.0-window-old-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-2.0-window-old-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-2.0-window-old-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-2.0-window-old-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-detail-restored-window-old",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-detail-restored-window-old",
+      "PID": "28946",
+      "steps": {
+        "start": "F8-FS-detail-2.0",
+        "end": "F8-FS-detail-restored"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 24,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-detail-restored-window-old-logcat.txt",
+        "F8-FS-detail-restored-window-old-warnings-errors-verbatim.txt",
+        "F8-FS-detail-restored-window-old-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-restored-window-old-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-restored-window-old-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-restored-window-old-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-detail-page-window",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-detail-page-window",
+      "PID": "28946",
+      "steps": {
+        "start": "F8-FS-detail-baseline",
+        "end": "F8-FS-detail-after-nav"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 26,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-detail-page-window-logcat.txt",
+        "F8-FS-detail-page-window-warnings-errors-verbatim.txt",
+        "F8-FS-detail-page-window-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-detail-page-window-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-page-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-detail-page-window-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F8-FS-filter-prepare-previous",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "F8-FS-filter-prepare-previous",
+      "PID": "28946",
+      "steps": {
+        "start": "previous process window",
+        "end": "F8-FS-filter-prepare before force-stop"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 26,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F8-FS-filter-prepare-previous-logcat.txt",
+        "F8-FS-filter-prepare-previous-warnings-errors-verbatim.txt",
+        "F8-FS-filter-prepare-previous-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/F8-FS-filter-prepare-previous-logcat.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-filter-prepare-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/F8-FS-filter-prepare-previous-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.tooling-exited-pid-29567",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "tooling-exited-pid-29567",
+      "PID": "29567",
+      "steps": {
+        "start": "recent package process start (exit-info)",
+        "end": "tooling package diagnosis"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 24,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "tooling-exited-pid-29567-logcat.txt",
+        "tooling-exited-pid-29567-warnings-errors-verbatim.txt",
+        "tooling-exited-pid-29567-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29567-logcat.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29567-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29567-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.tooling-exited-pid-29395",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "tooling-exited-pid-29395",
+      "PID": "29395",
+      "steps": {
+        "start": "recent package process start (exit-info)",
+        "end": "tooling package diagnosis"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 16,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "tooling-exited-pid-29395-logcat.txt",
+        "tooling-exited-pid-29395-warnings-errors-verbatim.txt",
+        "tooling-exited-pid-29395-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29395-logcat.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29395-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-29395-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.tooling-exited-pid-28946",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "tooling-exited-pid-28946",
+      "PID": "28946",
+      "steps": {
+        "start": "recent package process start (exit-info)",
+        "end": "tooling package diagnosis"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 26,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "tooling-exited-pid-28946-logcat.txt",
+        "tooling-exited-pid-28946-warnings-errors-verbatim.txt",
+        "tooling-exited-pid-28946-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28946-logcat.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28946-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28946-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.tooling-exited-pid-28549",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "tooling-exited-pid-28549",
+      "PID": "28549",
+      "steps": {
+        "start": "recent package process start (exit-info)",
+        "end": "tooling package diagnosis"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 69,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "tooling-exited-pid-28549-logcat.txt",
+        "tooling-exited-pid-28549-warnings-errors-verbatim.txt",
+        "tooling-exited-pid-28549-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28549-logcat.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28549-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/tooling-exited-pid-28549-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.final-startup-anr-pid-29788",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No six specified patterns in bounded PID logcat",
+    "observed": {
+      "label": "final-startup-anr-pid-29788",
+      "PID": "29788",
+      "steps": {
+        "start": "F8-tooling-final-startup-attempt",
+        "end": "2026-10-28 17:13:58.305 startup ANR"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 14,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "final-startup-anr-pid-29788-logcat.txt",
+        "final-startup-anr-pid-29788-warnings-errors-verbatim.txt",
+        "final-startup-anr-pid-29788-patterns-verbatim.txt"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/final-startup-anr-pid-29788-logcat.txt",
+      "migration/evidence/NS07/f-device4/final-startup-anr-pid-29788-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device4/final-startup-anr-pid-29788-patterns-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.font-observed",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "No specified unhandled/native-reference patterns across completed font changes on Schedule and SessionDetail",
+    "observed": {
+      "pages": [
+        "schedule",
+        "detail"
+      ],
+      "filter": "BLOCKED",
+      "patternMatches": 0,
+      "limit": "Bounded snapshots overlap; no exhaustive stability or filter claim"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/a06-windows.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06",
+    "status": "FAIL",
+    "run": "f-device4",
+    "expected": "No unhandled errors and usable representative process windows",
+    "observed": {
+      "patternScan": "All specified counts zero in every collected window",
+      "startupAnrs": [
+        {
+          "timestamp": "2026-10-28 17:13:58.305",
+          "pid": "29788",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=95MB description=bg anr: Process ProcessRecord{668d7ac 29788:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-13-50-020.gz"
+        },
+        {
+          "timestamp": "2026-10-28 17:10:28.562",
+          "pid": "29567",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{fc455bf 29567:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-10-16-983.gz"
+        },
+        {
+          "timestamp": "2026-10-28 17:08:47.571",
+          "pid": "29395",
+          "reason": "ANR",
+          "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{2f6c72b 29395:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-08-42-227.gz"
+        }
+      ],
+      "rootCause": "Not established; do not attribute to F7 or host without further evidence",
+      "warnings": "Preserved verbatim in each window warnings/errors file"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/a06-windows.json",
+      "migration/evidence/NS07/f-device4/startup-anrs.json",
+      "migration/evidence/NS07/f-device4/final-package-exit-info.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Preservation",
+    "status": "PASS",
+    "run": "f-device4",
+    "expected": "Earlier records and protected source unchanged; branch/HEAD/index stable",
+    "observed": {
+      "priorFilesChecked": 31768,
+      "changed": [],
+      "branch": "migration/slice-1",
+      "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+      "index": "",
+      "porcelainLines": 32559,
+      "unexpected": [],
+      "sourceDiffMatches": true,
+      "pass": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/checkpoint-audit.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Tooling.outer-provenance",
+    "status": "LIMITED",
+    "run": "f-device4",
+    "expected": "Complete command provenance including outer CLI envelopes",
+    "observed": {
+      "command": "outer CLI envelopes around discovery, bootstrap and helper launcher calls",
+      "args": [],
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "exitCode": null,
+      "startedAt": null,
+      "durationMs": null,
+      "limitation": "The terminal interface exposes exit status/output but not exact outer startedAt/durationMs or separate complete streams. Actual spawned git/adb and launched helper commands have full timed receipts. Initial read-only gate discovery was repeated with full individual receipts before migration writes. No timing values are synthesized."
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device4/outer-envelope-provenance-limitation.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  }
+]

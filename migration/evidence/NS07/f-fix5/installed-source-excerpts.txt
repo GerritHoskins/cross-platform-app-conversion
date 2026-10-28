@@ -1,0 +1,2084 @@
+
+migration/nativescript/node_modules/nativescript-vue/dist/plugins/modals.js:27-47
+27|const modalStack = [];
+28|/** @internal */
+29|export function hasOpenModals() {
+30|    return modalStack.length > 0;
+31|}
+32|export async function $showModal(component, options = {}) {
+33|    // presenting from a view that is already presenting fails on iOS, so a
+34|    // modal opened while another is open is shown from the topmost one
+35|    const modalTarget = resolveModalTarget(options.target ??
+36|        modalStack.at(-1)?.nativeView ??
+37|        Application.getRootView());
+38|    if (!modalTarget) {
+39|        if (__DEV__) {
+40|            warn(`could not open modal because the target does not exist`);
+41|        }
+42|        return;
+43|    }
+44|    return new Promise((resolve, reject) => {
+45|        let isResolved = false;
+46|        let isReloading = false;
+47|        let root = new NSVRoot();
+
+migration/nativescript/node_modules/nativescript-vue/dist/plugins/modals.js:92-162
+92|        let view = createNativeView(component, options.props, {
+93|            reload: reloadModal,
+94|        });
+95|        const closeCallback = (data, ...args) => {
+96|            if (isResolved)
+97|                return;
+98|            if (isReloading) {
+99|                // re-presented from reloadModal once dismissal completes
+100|                return;
+101|            }
+102|            isResolved = true;
+103|            removeFromStack();
+104|            view.unmount();
+105|            view = null;
+106|            // call the closeCallback if it exists with all arguments
+107|            options.closeCallback?.(data, ...args);
+108|            // resolve the promise with the first argument, since Promise.resolve() expects only one argument
+109|            resolve(data);
+110|        };
+111|        const openModal = (additionalOptions) => {
+112|            modalTarget.showModal(view.nativeView, {
+113|                ...options,
+114|                context: null,
+115|                closeCallback,
+116|                ...additionalOptions,
+117|            });
+118|            // core refuses to present (target already presenting, not in the
+119|            // window hierarchy) by tracing an error and returning; a successful
+120|            // presentation always links the modal to its parent synchronously
+121|            if (!view.nativeView._modalParent) {
+122|                throw new Error(`Could not show modal: ${modalTarget.constructor.name} refused to ` +
+123|                    `present it. Close the modal it is already presenting, or pass a ` +
+124|                    `different target.`);
+125|            }
+126|        };
+127|        const removeFromStack = () => {
+128|            const stackIndex = modalStack.indexOf(view);
+129|            if (stackIndex > -1) {
+130|                modalStack.splice(stackIndex, 1);
+131|            }
+132|        };
+133|        const closeModal = (...args) => {
+134|            removeFromStack();
+135|            view?.nativeView?.closeModal(...args);
+136|        };
+137|        // clone the config and globalProperties to avoid mutating the root app's config/globalProperties
+138|        const context = view.context;
+139|        context.config = Object.assign({}, context.config);
+140|        context.config.globalProperties = Object.assign({}, context.config.globalProperties, { $closeModal: closeModal, $modal: { close: closeModal } });
+141|        // a modal that never presented must not keep its app instance alive
+142|        const fail = (err) => {
+143|            isResolved = true;
+144|            removeFromStack();
+145|            view?.unmount();
+146|            view = null;
+147|            reject(err);
+148|        };
+149|        view.mount(root);
+150|        try {
+151|            openModal();
+152|        }
+153|        catch (err) {
+154|            fail(err);
+155|            return;
+156|        }
+157|        modalStack.push(view);
+158|    });
+159|}
+160|export function $closeModal(...args) {
+161|    const view = modalStack.at(-1);
+162|    view?.context.config.globalProperties.$closeModal(...args);
+
+migration/nativescript/node_modules/nativescript-vue/dist/runtimeHelpers.js:21-62
+21|export function createNativeView(component, props, contextOverrides) {
+22|    let isMounted = false;
+23|    let vm;
+24|    nameForDevtools(component);
+25|    let currentApp = renderer.createApp(component, props);
+26|    // Destructure so as not to copy over the root app instance
+27|    const { app, ...rootContext } = rootApp._context;
+28|    const context = { ...rootContext, ...contextOverrides };
+29|    return {
+30|        context,
+31|        get vnode() {
+32|            return vm?.$.vnode;
+33|        },
+34|        get nativeView() {
+35|            return this.vnode?.el.nativeView;
+36|        },
+37|        mount(root = new NSVRoot()) {
+38|            if (isMounted) {
+39|                return this.vnode;
+40|            }
+41|            // Create a NEW app instance for remount (after HMR unmount) as Vue doesn't allow mounting the same app instance twice
+42|            if (!currentApp._instance) {
+43|                currentApp = renderer.createApp(component, props);
+44|            }
+45|            Object.keys(context).forEach((key) => {
+46|                currentApp._context[key] = context[key];
+47|            });
+48|            vm = currentApp.mount(root);
+49|            // Set reload callback on the component instance's appContext, for HMR to work on navigated pages
+50|            if (context.reload && vm && vm.$?.appContext) {
+51|                vm.$.appContext.reload = context.reload;
+52|            }
+53|            isMounted = true;
+54|            return this.vnode;
+55|        },
+56|        unmount() {
+57|            if (!isMounted)
+58|                return;
+59|            vm = null;
+60|            currentApp.unmount();
+61|            isMounted = false;
+62|        },
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:158-179
+158|        DialogFragmentImpl.prototype.onCreate = function (savedInstanceState) {
+159|            var _a;
+160|            _super.prototype.onCreate.call(this, savedInstanceState);
+161|            var ownerId = (_a = this.getArguments()) === null || _a === void 0 ? void 0 : _a.getInt(DOMID);
+162|            var options = getModalOptions(ownerId);
+163|            if (savedInstanceState != null && options === undefined) {
+164|                this.dismissAllowingStateLoss();
+165|            }
+166|        };
+167|        DialogFragmentImpl.prototype.onCreateDialog = function (savedInstanceState) {
+168|            var ownerId = this.getArguments().getInt(DOMID);
+169|            var options = getModalOptions(ownerId);
+170|            this.owner = options.owner;
+171|            this.owner._dialogFragment = this;
+172|            this._fullscreen = options.fullscreen;
+173|            this._animated = options.animated;
+174|            this._cancelable = options.cancelable;
+175|            this._stretched = options.stretched;
+176|            this._dismissCallback = options.dismissCallback;
+177|            this._shownCallback = options.shownCallback;
+178|            this._windowSoftInputMode = options.windowSoftInputMode;
+179|            this.setStyle(androidx.fragment.app.DialogFragment.STYLE_NO_TITLE, 0);
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:200-226
+200|        DialogFragmentImpl.prototype.onCreateView = function (inflater, container, savedInstanceState) {
+201|            var owner = this.owner;
+202|            this.activity = new WeakRef(this.getActivity());
+203|            owner._setupAsRootView(this.getActivity());
+204|            owner._isAddedToNativeVisualTree = true;
+205|            var window = this.getDialog().getWindow();
+206|            if (this._windowSoftInputMode !== undefined) {
+207|                window.setSoftInputMode(this._windowSoftInputMode);
+208|            }
+209|            else {
+210|                window.setSoftInputMode(owner._context.getWindow().getAttributes().softInputMode);
+211|            }
+212|            return owner.nativeViewProtected;
+213|        };
+214|        DialogFragmentImpl.prototype.onStart = function () {
+215|            _super.prototype.onStart.call(this);
+216|            if (this._fullscreen) {
+217|                var window = this.getDialog().getWindow();
+218|                var length = android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+219|                window.setLayout(length, length);
+220|                window.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+221|            }
+222|            var owner = this.owner;
+223|            if (owner && !owner.isLoaded) {
+224|                owner.callLoaded();
+225|            }
+226|            this._shownCallback();
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:248-289
+248|        DialogFragmentImpl.prototype.onDismiss = function (dialog) {
+249|            var _a;
+250|            _super.prototype.onDismiss.call(this, dialog);
+251|            var manager = this.getFragmentManager();
+252|            var activity = (_a = this.activity) === null || _a === void 0 ? void 0 : _a.get();
+253|            if (manager && !(activity === null || activity === void 0 ? void 0 : activity.isChangingConfigurations())) {
+254|                removeModal(this.owner._domId);
+255|                this._dismissCallback();
+256|            }
+257|            var owner = this.owner;
+258|            if (owner && owner.isLoaded) {
+259|                owner.callUnloaded();
+260|            }
+261|        };
+262|        DialogFragmentImpl.prototype.onDestroy = function () {
+263|            var _a;
+264|            _super.prototype.onDestroy.call(this);
+265|            var owner = this.owner;
+266|            var activity = (_a = this.activity) === null || _a === void 0 ? void 0 : _a.get();
+267|            if (!(activity === null || activity === void 0 ? void 0 : activity.isChangingConfigurations())) {
+268|                this.activity = null;
+269|            }
+270|            if (owner) {
+271|                if (owner.isLoaded) {
+272|                    owner.callUnloaded();
+273|                }
+274|                owner._isAddedToNativeVisualTree = false;
+275|                owner._tearDownUI(true);
+276|            }
+277|        };
+278|        return DialogFragmentImpl;
+279|    }(androidx.fragment.app.DialogFragment));
+280|    DialogFragment = DialogFragmentImpl;
+281|}
+282|function saveModal(options) {
+283|    modalMap.set(options.owner._domId, options);
+284|}
+285|function removeModal(domId) {
+286|    modalMap.delete(domId);
+287|}
+288|function getModalOptions(domId) {
+289|    return modalMap.get(domId);
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:517-590
+517|    }
+518|    needsInsetListener() {
+519|        return this.hasListeners(ViewCommon.androidOverflowInsetEvent);
+520|    }
+521|    _getChildFragmentManager() {
+522|        return null;
+523|    }
+524|    _getRootFragmentManager() {
+525|        if (!this._rootManager && this._context) {
+526|            this._rootManager = this._context.getSupportFragmentManager();
+527|        }
+528|        return this._rootManager;
+529|    }
+530|    _getFragmentManager() {
+531|        let manager = this._manager;
+532|        if (!manager) {
+533|            let view = this;
+534|            let frameOrTabViewItemFound = false;
+535|            while (view) {
+536|                // when interacting with nested fragments instead of using getSupportFragmentManager
+537|                // we must always use getChildFragmentManager instead;
+538|                // we have three sources of fragments -- Frame fragments, TabViewItem fragments, and
+539|                // modal dialog fragments
+540|                // modal -> frame / tabview (frame / tabview use modal CHILD fm)
+541|                const dialogFragment = view._dialogFragment;
+542|                if (dialogFragment) {
+543|                    manager = dialogFragment.getChildFragmentManager();
+544|                    break;
+545|                }
+546|                // - frame1 -> frame2 (frame2 uses frame1 CHILD fm)
+547|                // - tabview -> frame1 (frame1 uses tabview item CHILD fm)
+548|                // - frame1 -> tabview (tabview uses frame1 CHILD fm)
+549|                // - frame1 -> tabview -> frame2 (tabview uses frame1 CHILD fm; frame2 uses tabview item CHILD fm)
+550|                if (view._hasFragments) {
+551|                    if (frameOrTabViewItemFound) {
+552|                        manager = view._getChildFragmentManager();
+553|                        break;
+554|                    }
+555|                    frameOrTabViewItemFound = true;
+556|                }
+557|                // the case is needed because _dialogFragment is on View
+558|                // but parent may be ViewBase.
+559|                view = view.parent;
+560|            }
+561|            if (!manager) {
+562|                manager = this._getRootFragmentManager();
+563|            }
+564|            this._manager = manager;
+565|        }
+566|        return manager;
+567|    }
+568|    [androidOverflowEdgeProperty.setNative](value) {
+569|        const nativeView = this.nativeViewProtected;
+570|        if (typeof value !== 'string' || nativeView === null || nativeView == undefined) {
+571|            return;
+572|        }
+573|        if (!('setOverflowEdge' in nativeView)) {
+574|            return;
+575|        }
+576|        switch (value) {
+577|            case 'none':
+578|                nativeView.setOverflowEdge(OverflowEdgeNone);
+579|                break;
+580|            case 'ignore':
+581|                nativeView.setOverflowEdge(OverflowEdgeIgnore);
+582|                break;
+583|            default:
+584|                {
+585|                    const edge = parseEdges(value);
+586|                    if (edge != null) {
+587|                        nativeView.setOverflowEdge(edge);
+588|                    }
+589|                }
+590|                break;
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js:849-901
+849|    _showNativeModalView(parent, options) {
+850|        // if the app is in background while triggering _showNativeModalView
+851|        // then DialogFragment.show will trigger IllegalStateException: Can not perform this action after onSaveInstanceState
+852|        // so if in background we create an event to call _showNativeModalView when loaded (going back in foreground)
+853|        if (isAppInBackground() && !parent.isLoaded) {
+854|            const onLoaded = () => {
+855|                parent.off('loaded', onLoaded);
+856|                this._showNativeModalView(parent, options);
+857|            };
+858|            parent.on('loaded', onLoaded);
+859|            return;
+860|        }
+861|        super._showNativeModalView(parent, options);
+862|        initializeDialogFragment();
+863|        const df = new DialogFragment();
+864|        const args = new android.os.Bundle();
+865|        args.putInt(DOMID, this._domId);
+866|        df.setArguments(args);
+867|        let cancelable = true;
+868|        let windowSoftInputMode;
+869|        if (options.android) {
+870|            if (options.android.cancelable !== undefined) {
+871|                cancelable = !!options.android.cancelable;
+872|                console.log('ShowModalOptions.android.cancelable is deprecated. Use ShowModalOptions.cancelable instead.');
+873|            }
+874|            windowSoftInputMode = options.android.windowSoftInputMode;
+875|        }
+876|        cancelable = options.cancelable !== undefined ? !!options.cancelable : cancelable;
+877|        const dialogOptions = {
+878|            owner: this,
+879|            fullscreen: !!options.fullscreen,
+880|            animated: !!options.animated,
+881|            stretched: !!options.stretched,
+882|            cancelable: cancelable,
+883|            windowSoftInputMode: windowSoftInputMode,
+884|            shownCallback: () => this._raiseShownModallyEvent(),
+885|            dismissCallback: () => this.closeModal(),
+886|        };
+887|        saveModal(dialogOptions);
+888|        this._dialogFragment = df;
+889|        this._raiseShowingModallyEvent();
+890|        this._dialogFragment.show(parent._getRootFragmentManager(), this._domId.toString());
+891|    }
+892|    _hideNativeModalView(parent, whenClosedCallback) {
+893|        if (this._dialogFragment) {
+894|            const manager = this._dialogFragment.getFragmentManager();
+895|            if (manager) {
+896|                this._dialogFragment.dismissAllowingStateLoss();
+897|            }
+898|        }
+899|        this._dialogFragment = null;
+900|        whenClosedCallback();
+901|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/view-common.js:137-159
+137|    _closeAllModalViewsInternal() {
+138|        if (_rootModalViews && _rootModalViews.length > 0) {
+139|            _rootModalViews.forEach((v) => {
+140|                v.closeModal();
+141|            });
+142|            return true;
+143|        }
+144|        return false;
+145|    }
+146|    _getRootModalViews() {
+147|        return _rootModalViews;
+148|    }
+149|    _getRootModalHost() {
+150|        let view = this;
+151|        while (view) {
+152|            // A modal root has no parent, so the chain continues through the view it was
+153|            // presented over; nested modals therefore resolve to the same window root.
+154|            const next = view.parent ?? view._modalParent;
+155|            if (!next) {
+156|                break;
+157|            }
+158|            view = next;
+159|        }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view/view-common.js:323-414
+323|    showModal(...args) {
+324|        const { view, options } = this.getModalOptions(args);
+325|        if (options.transition?.instance) {
+326|            SharedTransition.updateState(options.transition?.instance.id, {
+327|                page: this,
+328|                toPage: view,
+329|            });
+330|        }
+331|        view._showNativeModalView(this, options);
+332|        return view;
+333|    }
+334|    closeModal(...args) {
+335|        const closeCallback = this._closeModalCallback;
+336|        if (closeCallback) {
+337|            closeCallback(...args);
+338|        }
+339|        else {
+340|            const parent = this.parent;
+341|            if (parent) {
+342|                parent.closeModal(...args);
+343|            }
+344|        }
+345|    }
+346|    get modal() {
+347|        return this._modal;
+348|    }
+349|    _showNativeModalView(parent, options) {
+350|        _rootModalViews.push(this);
+351|        this.cssClasses.add(CSSUtils.MODAL_ROOT_VIEW_CSS_CLASS);
+352|        const modalRootViewCssClasses = CSSUtils.getSystemCssClasses();
+353|        modalRootViewCssClasses.forEach((c) => this.cssClasses.add(c));
+354|        // Orientation/appearance/direction are not in the system class list because they
+355|        // differ per window, so they are inherited from the root this modal opens over.
+356|        const host = parent._getRootModalHost();
+357|        if (host) {
+358|            CSSUtils.WINDOW_SCOPED_CSS_CLASSES.forEach((c) => {
+359|                if (host.cssClasses.has(c)) {
+360|                    this.cssClasses.add(c);
+361|                }
+362|            });
+363|        }
+364|        parent._modal = this;
+365|        this.style.fontScaleInternal = getFontScale();
+366|        this._modalParent = parent;
+367|        this._modalContext = options.context;
+368|        this._modalOptions = options;
+369|        this._closeModalCallback = (...originalArgs) => {
+370|            const cleanupModalViews = () => {
+371|                const modalIndex = _rootModalViews.indexOf(this);
+372|                if (modalIndex > -1) {
+373|                    _rootModalViews.splice(modalIndex, 1);
+374|                }
+375|                this._modalParent = null;
+376|                this._modalContext = null;
+377|                this._modalOptions = null;
+378|                this._closeModalCallback = null;
+379|                this._dialogClosed();
+380|                parent._modal = null;
+381|            };
+382|            const whenClosedCallback = () => {
+383|                const transitionState = SharedTransition.getState(this.transitionId);
+384|                if (transitionState?.interactiveBegan) {
+385|                    SharedTransition.updateState(this.transitionId, {
+386|                        interactiveBegan: false,
+387|                    });
+388|                    if (!transitionState?.interactiveCancelled) {
+389|                        cleanupModalViews();
+390|                    }
+391|                }
+392|                if (!transitionState?.interactiveCancelled) {
+393|                    if (typeof options.closeCallback === 'function') {
+394|                        options.closeCallback.apply(undefined, originalArgs);
+395|                    }
+396|                    this._tearDownUI(true);
+397|                    // Native dismissal fully completed (this callback runs in the
+398|                    // platform dismissal completion) — observable counterpart to the
+399|                    // per-show closeCallback. Used by dev tooling (HMR modal
+400|                    // re-present) to know exactly when a new present is safe.
+401|                    this.notify({
+402|                        eventName: ViewCommon.closedModallyEvent,
+403|                        object: this,
+404|                    });
+405|                }
+406|            };
+407|            const transitionState = SharedTransition.getState(this.transitionId);
+408|            if (!transitionState?.interactiveBegan) {
+409|                cleanupModalViews();
+410|            }
+411|            this._hideNativeModalView(parent, whenClosedCallback);
+412|        };
+413|    }
+414|    _hideNativeModalView(parent, whenClosedCallback) { }
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view-base/index.js:354-380
+354|        if (this._isLoaded) {
+355|            return;
+356|        }
+357|        this._isLoaded = true;
+358|        this._cssState.onLoaded();
+359|        this._resumeNativeUpdates(SuspendType.Loaded);
+360|        this.eachChild((child) => {
+361|            this.loadView(child);
+362|            return true;
+363|        });
+364|        this._emit('loaded');
+365|    }
+366|    onUnloaded() {
+367|        this.setFlag(Flags.superOnUnloadedCalled, true);
+368|        if (!this._isLoaded) {
+369|            return;
+370|        }
+371|        this._suspendNativeUpdates(SuspendType.Loaded);
+372|        this.eachChild((child) => {
+373|            this.unloadView(child);
+374|            return true;
+375|        });
+376|        this._isLoaded = false;
+377|        this._cssState.onUnloaded();
+378|        this._emit('unloaded');
+379|    }
+380|    _layoutParent() {
+
+migration/nativescript/node_modules/@nativescript/core/ui/core/view-base/index.js:822-876
+822|        this.unloadView(this);
+823|        this._tearDownUI(forceDestroyChildren);
+824|    }
+825|    /**
+826|     * Tears down the UI for ViewBase and all its children recursively.
+827|     * This method should *not* be overridden by derived views.
+828|     */
+829|    _tearDownUI(force) {
+830|        // No context means we are already teared down.
+831|        if (!this._context) {
+832|            return;
+833|        }
+834|        const preserveNativeView = this.reusable && !force;
+835|        this.resetNativeViewInternal();
+836|        if (!preserveNativeView) {
+837|            this.eachChild((child) => {
+838|                // if we decided to tear down the current view, we should also tear down the children, even if they are reusable
+839|                // the developer is responsible to detach them if they need to reuse them somewhere else
+840|                child._tearDownUI(true);
+841|                return true;
+842|            });
+843|        }
+844|        if (this.parent) {
+845|            this.parent._removeViewFromNativeVisualTree(this);
+846|        }
+847|        // const nativeView = this.nativeViewProtected;
+848|        // if (nativeView && __ANDROID__) {
+849|        //     const recycle = this.recycleNativeView;
+850|        //     let shouldRecycle = false;
+851|        //     if (recycle === "always") {
+852|        //         shouldRecycle = true;
+853|        //     } else if (recycle === "auto" && !this._disableNativeViewRecycling) {
+854|        //         const propertiesSet = Object.getOwnPropertySymbols(this).length + Object.getOwnPropertySymbols(this.style).length / 2;
+855|        //         shouldRecycle = propertiesSet <= this.recyclePropertyCounter;
+856|        //     }
+857|        //     // const nativeParent = __ANDROID__ ? (<android.view.View>nativeView).getParent() : (<UIView>nativeView).superview;
+858|        //     const nativeParent = (<android.view.View>nativeView).getParent();
+859|        //     const animation = (<android.view.View>nativeView).getAnimation();
+860|        //     if (shouldRecycle && !nativeParent && !animation) {
+861|        //         putNativeView(this._context, this);
+862|        //     }
+863|        // }
+864|        if (!preserveNativeView) {
+865|            this.disposeNativeView();
+866|            this._suspendNativeUpdates(SuspendType.UISetup);
+867|            this.setNativeView(null);
+868|            this._androidView = null;
+869|            this._iosView = null;
+870|            this._context = null;
+871|        }
+872|        if (this.domNode) {
+873|            this.domNode.dispose();
+874|            this.domNode = undefined;
+875|        }
+876|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js:130-176
+130|            return;
+131|        }
+132|        // in case the activity is "reset" using resetRootView or disposed we must wait for
+133|        // the attachedToWindow event to make the first navigation or it will crash
+134|        // https://github.com/NativeScript/NativeScript/commit/9dd3e1a8076e5022e411f2f2eeba34aabc68d112
+135|        // though we should not do it on app "start"
+136|        // or it will create a "flash" to activity background color
+137|        if (this._isReset && !this._attachedToWindow) {
+138|            return;
+139|        }
+140|        const animatedEntries = _getAnimatedEntries(this._android.frameId);
+141|        if (animatedEntries) {
+142|            // Wait until animations are completed.
+143|            if (animatedEntries.size > 0) {
+144|                return;
+145|            }
+146|        }
+147|        const manager = this._getFragmentManager();
+148|        const entry = this._currentEntry;
+149|        const isNewEntry = !this._cachedTransitionState || entry !== this._cachedTransitionState.entry;
+150|        if (isNewEntry && entry && manager && !manager.findFragmentByTag(entry.fragmentTag)) {
+151|            // Simulate first navigation (e.g. no animations or transitions)
+152|            // we need to cache the original animation settings so we can restore them later; otherwise as the
+153|            // simulated first navigation is not animated (it is actually a zero duration animator) the "popExit" animation
+154|            // is broken when transaction.setCustomAnimations(...) is used in a scenario with:
+155|            // 1) forward navigation
+156|            // 2) suspend / resume app
+157|            // 3) back navigation -- the exiting fragment is erroneously animated with the exit animator from the
+158|            // simulated navigation (NoTransition, zero duration animator) and thus the fragment immediately disappears;
+159|            // the user only sees the animation of the entering fragment as per its specific enter animation settings.
+160|            // NOTE: we are restoring the animation settings in Frame.setCurrent(...) as navigation completes asynchronously
+161|            const cachedTransitionState = _getTransitionState(this._currentEntry);
+162|            if (cachedTransitionState) {
+163|                this._cachedTransitionState = cachedTransitionState;
+164|                this._currentEntry = null;
+165|                // NavigateCore will eventually call _processNextNavigationEntry again
+166|                this._navigateCore(entry);
+167|                this._currentEntry = entry;
+168|            }
+169|            else {
+170|                super._processNextNavigationEntry();
+171|            }
+172|        }
+173|        else {
+174|            super._processNextNavigationEntry();
+175|        }
+176|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js:382-440
+382|    _disposeBackstackEntry(entry) {
+383|        if (entry.fragment) {
+384|            _clearFragment(entry);
+385|            entry.fragment = null;
+386|        }
+387|        entry.recreated = false;
+388|        super._disposeBackstackEntry(entry);
+389|    }
+390|    createNativeView() {
+391|        // Create native view with available _currentEntry occur in Don't Keep Activities
+392|        // scenario when Activity is recreated on app suspend/resume. Push frame back in frame stack
+393|        // since it was removed in disposeNativeView() method.
+394|        if (this._currentEntry) {
+395|            this._pushInFrameStack();
+396|        }
+397|        return new org.nativescript.widgets.ContentLayout(this._context);
+398|    }
+399|    initNativeView() {
+400|        super.initNativeView();
+401|        const listener = getAttachListener();
+402|        const nativeView = this.nativeViewProtected;
+403|        nativeView.addOnAttachStateChangeListener(listener);
+404|        nativeView[ownerSymbol] = this;
+405|        this._android.rootViewGroup = nativeView;
+406|        if (this._containerViewId < 0) {
+407|            this._containerViewId = android.view.View.generateViewId();
+408|        }
+409|        this._android.rootViewGroup.setId(this._containerViewId);
+410|    }
+411|    disposeNativeView() {
+412|        const nativeView = this.nativeViewProtected;
+413|        const listener = getAttachListener();
+414|        nativeView.removeOnAttachStateChangeListener(listener);
+415|        nativeView[ownerSymbol] = null;
+416|        // There are cases like root view when detach listener is not called before the native view gets disposed
+417|        // so call detach method directly for these views
+418|        if (this._attachedToWindow) {
+419|            this._onDetachedFromWindow();
+420|        }
+421|        this._tearDownPending = !!this._executingContext;
+422|        const current = this._currentEntry;
+423|        const executingEntry = this._executingContext ? this._executingContext.entry : null;
+424|        this.backStack.forEach((entry) => {
+425|            // Don't destroy current and executing entries or UI will look blank.
+426|            // We will do it in setCurrent.
+427|            if (entry !== executingEntry) {
+428|                this._disposeBackstackEntry(entry);
+429|            }
+430|        });
+431|        if (current && !executingEntry) {
+432|            this._disposeBackstackEntry(current);
+433|        }
+434|        // Dispose cached transition and store it again if view ever gets re-used
+435|        this._cachedTransitionState = null;
+436|        // Mark as reset in order to properly re-initialize fragments if view ever gets re-used
+437|        this._isReset = true;
+438|        this._android.rootViewGroup = null;
+439|        this._removeFromFrameStack();
+440|        super.disposeNativeView();
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js:636-725
+636|const activityRootViewsMap = new Map();
+637|const ROOT_VIEW_ID_EXTRA = 'com.tns.activity.rootViewId';
+638|export let moduleLoaded;
+639|export class ActivityCallbacksImplementation {
+640|    getRootView() {
+641|        return this._rootView;
+642|    }
+643|    onCreate(activity, savedInstanceState, intentOrSuperFunc, superFunc) {
+644|        if (Trace.isEnabled()) {
+645|            Trace.write(`Activity.onCreate(${savedInstanceState})`, Trace.categories.NativeLifecycle);
+646|        }
+647|        const intent = superFunc ? intentOrSuperFunc : undefined;
+648|        if (!superFunc) {
+649|            console.log('AndroidActivityCallbacks.onCreate(activity: any, savedInstanceState: any, superFunc: Function) ' + 'is deprecated. Use AndroidActivityCallbacks.onCreate(activity: any, savedInstanceState: any, intent: any, superFunc: Function) instead.');
+650|            superFunc = intentOrSuperFunc;
+651|        }
+652|        // If there is savedInstanceState this call will recreate all fragments that were previously in the navigation.
+653|        // We take care of associating them with a Page from our backstack in the onAttachFragment callback.
+654|        // If there is savedInstanceState and moduleLoaded is false we are restarted but process was killed.
+655|        // For now we treat it like first run (e.g. we are not passing savedInstanceState so no fragments are being restored).
+656|        // When we add support for application save/load state - revise this logic.
+657|        const isRestart = !!savedInstanceState && moduleLoaded;
+658|        superFunc.call(activity, isRestart ? savedInstanceState : null);
+659|        if (isRestart && activity.getSupportFragmentManager) {
+660|            // Remove restored fragments that NativeScript will recreate via _setupUI/createNativeView.
+661|            // NativeScript tears down and rebuilds the entire view tree on activity recreation,
+662|            // so restored fragments (especially from ViewPager2/tabs) become orphaned without views.
+663|            // NativeScript core's own fragments use tags like "fragment{id}[{depth}]" and are
+664|            // handled by _processNextNavigationEntry. We remove all non-NativeScript fragments.
+665|            const fm = activity.getSupportFragmentManager();
+666|            const fragments = fm.getFragments();
+667|            const size = fragments?.size?.() ?? 0;
+668|            if (size > 0) {
+669|                const ft = fm.beginTransaction();
+670|                let removed = false;
+671|                for (let i = size - 1; i >= 0; i--) {
+672|                    const f = fragments.get(i);
+673|                    if (!f)
+674|                        continue;
+675|                    const tag = f.getTag();
+676|                    if (tag && tag.startsWith('fragment')) {
+677|                        continue;
+678|                    }
+679|                    ft.remove(f);
+680|                    removed = true;
+681|                }
+682|                if (removed) {
+683|                    ft.commitNowAllowingStateLoss();
+684|                }
+685|            }
+686|        }
+687|        // Try to get the rootViewId form the saved state in case the activity
+688|        // was destroyed and we are now recreating it.
+689|        if (savedInstanceState) {
+690|            const rootViewId = savedInstanceState.getInt(ROOT_VIEW_ID_EXTRA, -1);
+691|            if (rootViewId !== -1 && activityRootViewsMap.has(rootViewId)) {
+692|                this._rootView = activityRootViewsMap.get(rootViewId)?.get();
+693|            }
+694|        }
+695|        if (intent && intent.getAction()) {
+696|            const nativeWindow = Application.android._getWindowForActivity(activity);
+697|            const newIntentArgs = {
+698|                eventName: NativeWindowEvents.activityNewIntent,
+699|                object: Application.android,
+700|                window: nativeWindow,
+701|                activity,
+702|                intent,
+703|            };
+704|            // Emit on NativeWindow first
+705|            if (nativeWindow) {
+706|                nativeWindow.notify({
+707|                    ...newIntentArgs,
+708|                    object: nativeWindow,
+709|                });
+710|            }
+711|            Application.android.notify(newIntentArgs);
+712|        }
+713|        this.setActivityContent(activity, savedInstanceState, true);
+714|        moduleLoaded = true;
+715|    }
+716|    onSaveInstanceState(activity, outState, superFunc) {
+717|        superFunc.call(activity, outState);
+718|        const rootView = this._rootView;
+719|        if (rootView instanceof Frame) {
+720|            outState.putInt(INTENT_EXTRA, rootView.android.frameId);
+721|            rootView._saveFragmentsState();
+722|        }
+723|        if (rootView) {
+724|            outState.putInt(ROOT_VIEW_ID_EXTRA, rootView._domId);
+725|        }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js:747-793
+747|    onStart(activity, superFunc) {
+748|        superFunc.call(activity);
+749|        if (Trace.isEnabled()) {
+750|            Trace.write('NativeScriptActivity.onStart();', Trace.categories.NativeLifecycle);
+751|        }
+752|        const rootView = this._rootView;
+753|        if (rootView && !rootView.isLoaded && !isEmbedded()) {
+754|            rootView.callLoaded();
+755|        }
+756|    }
+757|    onStop(activity, superFunc) {
+758|        superFunc.call(activity);
+759|        if (Trace.isEnabled()) {
+760|            Trace.write('NativeScriptActivity.onStop();', Trace.categories.NativeLifecycle);
+761|        }
+762|        const rootView = this._rootView;
+763|        if (rootView && rootView.isLoaded && !isEmbedded()) {
+764|            rootView.callUnloaded();
+765|        }
+766|    }
+767|    onPostResume(activity, superFunc) {
+768|        superFunc.call(activity);
+769|        if (Trace.isEnabled()) {
+770|            Trace.write('NativeScriptActivity.onPostResume();', Trace.categories.NativeLifecycle);
+771|        }
+772|        // NOTE: activity.onPostResume() is called when activity resume is complete and we can
+773|        // safely raise the application resume event;
+774|        // onActivityResumed(...) lifecycle callback registered in application is called too early
+775|        // and raising the application resume event there causes issues like
+776|        // https://github.com/NativeScript/NativeScript/issues/6708
+777|        if (activity.isNativeScriptActivity) {
+778|            Application.android._setWindowActive(Application.android._getWindowForActivity(activity), true, activity);
+779|        }
+780|    }
+781|    onDestroy(activity, superFunc) {
+782|        try {
+783|            if (Trace.isEnabled()) {
+784|                Trace.write('NativeScriptActivity.onDestroy();', Trace.categories.NativeLifecycle);
+785|            }
+786|            const rootView = this._rootView;
+787|            if (rootView) {
+788|                rootView._tearDownUI(true);
+789|            }
+790|        }
+791|        finally {
+792|            superFunc.call(activity);
+793|        }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/index.android.js:904-955
+904|    setActivityContent(activity, savedInstanceState, fireLaunchEvent, view) {
+905|        let rootView = view ?? this._rootView;
+906|        if (Trace.isEnabled()) {
+907|            Trace.write(`Frame.setActivityContent rootView: ${rootView} shouldCreateRootFrame: false fireLaunchEvent: ${fireLaunchEvent}`, Trace.categories.NativeLifecycle);
+908|        }
+909|        const intent = activity.getIntent();
+910|        const launchData = {
+911|            // todo: deprecate in favor of args.intent?
+912|            android: intent,
+913|            intent,
+914|            savedInstanceState,
+915|        };
+916|        let nativeWindow = Application.android._getWindowForActivity(activity);
+917|        if (!nativeWindow && isEmbedded()) {
+918|            // When embedded, the host owns the activity and may never install our lifecycle
+919|            // callbacks, so this is the only place the window can come into existence.
+920|            const embeddedWindow = new AndroidNativeWindow(activity, AndroidNativeWindow.newWindowId(), Application.android._getWindows().length === 0, 'embedded');
+921|            Application.android._registerWindow(embeddedWindow);
+922|            embeddedWindow._registerConfigurationCallbacks();
+923|            nativeWindow = embeddedWindow;
+924|        }
+925|        if (!rootView && fireLaunchEvent && nativeWindow) {
+926|            // This method installs the root view on the activity itself, so the resolved view is
+927|            // handed back rather than applied through NativeWindow.setContent(), which would
+928|            // re-enter here through resetActivityContent().
+929|            rootView = Application._resolveWindowContent(nativeWindow, {
+930|                window: nativeWindow,
+931|                isPrimary: nativeWindow.isPrimary,
+932|                data: dataDeserialize(intent?.getExtras()) ?? undefined,
+933|                android: { intent, savedInstanceState },
+934|            }, { install: false, launchData });
+935|        }
+936|        else {
+937|            rootView = Application.createRootView(rootView, fireLaunchEvent, launchData);
+938|        }
+939|        if (!rootView) {
+940|            // no root view created
+941|            return;
+942|        }
+943|        activityRootViewsMap.set(rootView._domId, new WeakRef(rootView));
+944|        // setup view as styleScopeHost
+945|        rootView._setupAsRootView(activity);
+946|        if (isEmbedded()) {
+947|            setEmbeddedView(rootView);
+948|        }
+949|        else {
+950|            activity.setContentView(rootView.nativeViewProtected, new org.nativescript.widgets.CommonLayoutParams());
+951|        }
+952|        this._rootView = rootView;
+953|        // sets root classes once rootView is ready...
+954|        Application.initRootView(rootView, nativeWindow);
+955|        nativeWindow?._adoptRootView(rootView);
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js:80-120
+80|        let parentFrame = getAncestor(top, 'Frame');
+81|        while (parentFrame && !parentFrameCanGoBack) {
+82|            if (parentFrame && parentFrame.canGoBack()) {
+83|                parentFrameCanGoBack = true;
+84|            }
+85|            else {
+86|                parentFrame = getAncestor(parentFrame, 'Frame');
+87|            }
+88|        }
+89|        if (parentFrame && parentFrameCanGoBack) {
+90|            parentFrame.goBack();
+91|            return true;
+92|        }
+93|        return false;
+94|    }
+95|    /**
+96|     * @private
+97|     */
+98|    static reloadPage() {
+99|        // Implemented in plat-specific file - only for android.
+100|    }
+101|    /**
+102|     * @private
+103|     */
+104|    static _stack() {
+105|        return frameStack;
+106|    }
+107|    // TODO: Currently our navigation will not be synchronized in case users directly call native navigation methods like Activity.startActivity.
+108|    _addChildFromBuilder(name, value) {
+109|        throw new Error(`Frame should not have a view. Use 'defaultPage' property instead.`);
+110|    }
+111|    onLoaded() {
+112|        super.onLoaded();
+113|        this._processNextNavigationEntry();
+114|    }
+115|    canGoBack() {
+116|        let backstack = this._backStack.length;
+117|        let previousForwardNotInBackstack = false;
+118|        this._navigationQueue.forEach((item) => {
+119|            const entry = item.entry;
+120|            const isBackNavigation = item.navigationType === NavigationType.back;
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js:301-340
+301|    raiseCurrentPageNavigatedEvents(isBack) {
+302|        const page = this.currentPage;
+303|        if (page) {
+304|            if (page.isLoaded) {
+305|                // Forward navigation does not remove page from frame so we raise unloaded manually.
+306|                page.callUnloaded();
+307|            }
+308|            page.onNavigatedFrom(isBack);
+309|        }
+310|    }
+311|    _processNavigationQueue(page) {
+312|        if (this._navigationQueue.length === 0) {
+313|            // This could happen when showing recreated page after activity has been destroyed.
+314|            return;
+315|        }
+316|        // Entry is undefined for a goBack() queued before performGoBack populates it.
+317|        const entry = this._navigationQueue[0].entry;
+318|        if (entry && page !== entry.resolvedPage) {
+319|            // If the page is not the one that requested navigation - skip it.
+320|            return;
+321|        }
+322|        // remove completed operation.
+323|        this._navigationQueue.shift();
+324|        this._processNextNavigationEntry();
+325|        this._updateActionBar();
+326|    }
+327|    _findEntryForTag(fragmentTag) {
+328|        let entry;
+329|        if (this._currentEntry && this._currentEntry.fragmentTag === fragmentTag) {
+330|            entry = this._currentEntry;
+331|        }
+332|        else {
+333|            entry = this._backStack.find((value) => value.fragmentTag === fragmentTag);
+334|            // on API 26 fragments are recreated lazily after activity is destroyed.
+335|            if (!entry) {
+336|                const navigationItem = this._navigationQueue.find((value) => value.entry.fragmentTag === fragmentTag);
+337|                entry = navigationItem ? navigationItem.entry : undefined;
+338|            }
+339|        }
+340|        return entry;
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-common.js:490-530
+490|        _removeFromFrameStack(this);
+491|    }
+492|    _dialogClosed() {
+493|        // No super call as we do not support nested frames to clean up
+494|        this._removeFromFrameStack();
+495|    }
+496|    _onRootViewReset() {
+497|        super._onRootViewReset();
+498|        this._removeFromFrameStack();
+499|    }
+500|    get _childrenCount() {
+501|        if (this._resolvedPage) {
+502|            return 1;
+503|        }
+504|        return 0;
+505|    }
+506|    eachChildView(callback) {
+507|        const page = this._resolvedPage;
+508|        if (page) {
+509|            callback(page);
+510|        }
+511|    }
+512|    _getIsAnimatedNavigation(entry) {
+513|        if (entry && entry.animated !== undefined) {
+514|            return entry.animated;
+515|        }
+516|        if (this.animated !== undefined) {
+517|            return this.animated;
+518|        }
+519|        return FrameBase_1.defaultAnimatedNavigation;
+520|    }
+521|    _getNavigationTransition(entry) {
+522|        if (entry) {
+523|            if (__APPLE__ && entry.transitioniOS !== undefined) {
+524|                return entry.transitioniOS;
+525|            }
+526|            if (__ANDROID__ && entry.transitionAndroid !== undefined) {
+527|                return entry.transitionAndroid;
+528|            }
+529|            if (entry.transition !== undefined) {
+530|                return entry.transition;
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/activity.android.js:12-43
+12|    androidx.appcompat.app.AppCompatActivity.extend('com.tns.NativeScriptActivity', {
+13|        init() {
+14|            // init must at least be defined
+15|        },
+16|        onCreate(savedInstanceState) {
+17|            Application.android.init(this.getApplication());
+18|            // Set isNativeScriptActivity in onCreate.
+19|            // The JS constructor might not be called because the activity is created from Android.
+20|            this.isNativeScriptActivity = true;
+21|            if (!this._callbacks) {
+22|                setActivityCallbacks(this);
+23|            }
+24|            this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), superProto.onCreate);
+25|        },
+26|        onNewIntent(intent) {
+27|            this._callbacks.onNewIntent(this, intent, superProto.setIntent, superProto.onNewIntent);
+28|        },
+29|        onSaveInstanceState(outState) {
+30|            this._callbacks.onSaveInstanceState(this, outState, superProto.onSaveInstanceState);
+31|        },
+32|        onStart() {
+33|            this._callbacks.onStart(this, superProto.onStart);
+34|        },
+35|        onStop() {
+36|            this._callbacks.onStop(this, superProto.onStop);
+37|        },
+38|        onDestroy() {
+39|            this._callbacks.onDestroy(this, superProto.onDestroy);
+40|        },
+41|        onPostResume() {
+42|            this._callbacks.onPostResume(this, superProto.onPostResume);
+43|        },
+
+migration/nativescript/node_modules/@nativescript/core/application/application.android.js:69-117
+69|        NativeScriptLifecycleCallbacksImpl.prototype.onActivityDestroyed = function (activity) {
+70|            if (activity === Application.android.foregroundActivity) {
+71|                Application.android.setForegroundActivity(undefined);
+72|            }
+73|            if (activity === this.nativescriptActivity) {
+74|                this.nativescriptActivity = undefined;
+75|            }
+76|            if (activity === Application.android.startActivity) {
+77|                Application.android.setStartActivity(undefined);
+78|                if (this.nativescriptActivity) {
+79|                    Application.android.setStartActivity(this.nativescriptActivity);
+80|                }
+81|            }
+82|            var nativeWindow = Application.android._getWindowForActivity(activity);
+83|            if (nativeWindow) {
+84|                Application.android._setWindowActive(nativeWindow, false, activity);
+85|                nativeWindow._surfaceGone = true;
+86|                var isClosing = activity.isFinishing( // console.log('NativeScriptLifecycleCallbacks onActivityCreated');
+87|                );
+88|                if (isClosing) {
+89|                    nativeWindow._notifyEvent(NativeWindowEvents.close);
+90|                }
+91|                nativeWindow.notify({
+92|                    eventName: NativeWindowEvents.activityDestroyed,
+93|                    object: nativeWindow,
+94|                    window: nativeWindow,
+95|                    activity: activity,
+96|                });
+97|                if (isClosing) {
+98|                    Application.android._unregisterWindow(nativeWindow);
+99|                }
+100|                else {
+101|                    nativeWindow._detach();
+102|                }
+103|            }
+104|            Application.android.notify({
+105|                eventName: Application.android.activityDestroyedEvent,
+106|                object: Application.android,
+107|                window: nativeWindow,
+108|                activity: activity,
+109|            });
+110|            if (activity.isFinishing() && Application.android._getWindows().length === 0) {
+111|                Application.android.notify({
+112|                    eventName: Application.exitEvent,
+113|                    object: Application.android,
+114|                    android: activity,
+115|                });
+116|            }
+117|            gc();
+
+migration/nativescript/node_modules/@nativescript/core/application/application.android.js:204-227
+204|        NativeScriptLifecycleCallbacksImpl.prototype.onActivityStopped = function (activity) {
+205|            this.activitiesCount--;
+206|            if (this.activitiesCount === 0) {
+207|                Application.android.setInBackground(true, {
+208|                    android: activity,
+209|                    activity: activity,
+210|                });
+211|            }
+212|            var nativeWindow = Application.android._getWindowForActivity(activity);
+213|            if (nativeWindow) {
+214|                nativeWindow._notifyEvent(NativeWindowEvents.background);
+215|                nativeWindow.notify({
+216|                    eventName: NativeWindowEvents.activityStopped,
+217|                    object: nativeWindow,
+218|                    window: nativeWindow,
+219|                    activity: activity,
+220|                });
+221|            }
+222|            Application.android.notify({
+223|                eventName: Application.android.activityStoppedEvent,
+224|                object: Application.android,
+225|                window: nativeWindow,
+226|                activity: activity,
+227|            });
+
+migration/evidence/NS07/f-device5/F9-FS-filter-1.3-window-old-logcat.txt (bounded saved PID 4956 snapshot; 107 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+
+
+migration/evidence/NS07/f-device5/F9-FS-filter-2.0-window-old-logcat.txt (bounded saved PID 4956 snapshot; 138 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.954  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.981  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@156f474
+10-28 17:58:25.983  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:25.986  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 17:58:25.987  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269029b38) locale list changing from [] to [en-US]
+10-28 17:58:25.988  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690230f8) locale list changing from [] to [en-US]
+10-28 17:58:26.011  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.012  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.018  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.022  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.027  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.106  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.117  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:26.269  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.269  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:26.280  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:26.294  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.300  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:26.511  4956  4956 I ImeTracker: system_server:bf569e8b: onShown
+
+
+migration/evidence/NS07/f-device5/F9-FS-filter-restored-window-old-logcat.txt (bounded saved PID 4956 snapshot; 169 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.954  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.981  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@156f474
+10-28 17:58:25.983  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:25.986  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 17:58:25.987  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269029b38) locale list changing from [] to [en-US]
+10-28 17:58:25.988  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690230f8) locale list changing from [] to [en-US]
+10-28 17:58:26.011  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.012  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.018  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.022  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.027  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.106  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.117  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:26.269  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.269  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:26.280  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:26.294  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.300  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:26.511  4956  4956 I ImeTracker: system_server:bf569e8b: onShown
+10-28 17:58:31.634  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.674  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@d149ed6
+10-28 17:58:31.679  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:31.681  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690194b8) locale list changing from [] to [en-US]
+10-28 17:58:31.682  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901e918) locale list changing from [] to [en-US]
+10-28 17:58:31.714  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.715  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.725  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.734  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.825  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:31.845  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:32.014  4956  4956 I ImeTracker: dev.translationtest.ns:5d8a3936: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:32.014  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.014  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:32.016  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.016  4956  4956 I ImeTracker: dev.translationtest.ns:14eca341: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:32.029  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:32.033  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:32.071  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@f31a8f6
+10-28 17:58:32.248  4956  4956 I ImeTracker: system_server:bcfde0e3: onShown
+
+
+migration/evidence/NS07/f-device5/F9-FS-filter-page-window-logcat.txt (bounded saved PID 4956 snapshot; 169 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.954  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.981  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@156f474
+10-28 17:58:25.983  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:25.986  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 17:58:25.987  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269029b38) locale list changing from [] to [en-US]
+10-28 17:58:25.988  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690230f8) locale list changing from [] to [en-US]
+10-28 17:58:26.011  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.012  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.018  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.022  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.027  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.106  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.117  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:26.269  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.269  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:26.280  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:26.294  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.300  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:26.511  4956  4956 I ImeTracker: system_server:bf569e8b: onShown
+10-28 17:58:31.634  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.674  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@d149ed6
+10-28 17:58:31.679  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:31.681  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690194b8) locale list changing from [] to [en-US]
+10-28 17:58:31.682  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901e918) locale list changing from [] to [en-US]
+10-28 17:58:31.714  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.715  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.725  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.734  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.825  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:31.845  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:32.014  4956  4956 I ImeTracker: dev.translationtest.ns:5d8a3936: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:32.014  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.014  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:32.016  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.016  4956  4956 I ImeTracker: dev.translationtest.ns:14eca341: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:32.029  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:32.033  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:32.071  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@f31a8f6
+10-28 17:58:32.248  4956  4956 I ImeTracker: system_server:bcfde0e3: onShown
+
+
+migration/evidence/NS07/f-device5/F9-FS-filter-recovery-window-logcat.txt (bounded saved PID 4956 snapshot; 186 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.954  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.981  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@156f474
+10-28 17:58:25.983  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:25.986  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 17:58:25.987  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269029b38) locale list changing from [] to [en-US]
+10-28 17:58:25.988  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690230f8) locale list changing from [] to [en-US]
+10-28 17:58:26.011  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.012  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.018  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.022  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.027  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.106  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.117  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:26.269  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.269  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:26.280  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:26.294  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.300  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:26.511  4956  4956 I ImeTracker: system_server:bf569e8b: onShown
+10-28 17:58:31.634  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.674  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@d149ed6
+10-28 17:58:31.679  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:31.681  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690194b8) locale list changing from [] to [en-US]
+10-28 17:58:31.682  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901e918) locale list changing from [] to [en-US]
+10-28 17:58:31.714  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.715  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.725  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.734  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.825  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:31.845  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:32.014  4956  4956 I ImeTracker: dev.translationtest.ns:5d8a3936: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:32.014  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.014  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:32.016  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.016  4956  4956 I ImeTracker: dev.translationtest.ns:14eca341: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:32.029  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:32.033  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:32.071  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@f31a8f6
+10-28 17:58:32.248  4956  4956 I ImeTracker: system_server:bcfde0e3: onShown
+10-28 17:59:43.756  4956  4956 D TNS.Native: Unhandled promise rejection:
+10-28 17:59:43.757  4956  4956 D TNS.Native: Error: java.lang.NullPointerException: Attempt to invoke virtual method 'androidx.fragment.app.FragmentTransaction androidx.fragment.app.FragmentTransaction.add(androidx.fragment.app.Fragment, java.lang.String)' on a null object reference
+10-28 17:59:43.757  4956  4956 D TNS.Native: _showNativeModalView(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:44940:30)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at showModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:46209:14)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at openModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16937:25)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at (file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16976:13)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at $showModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16869:12)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at openFilter(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:643:60)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at callWithErrorHandling(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:5857:19)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at callWithAsyncErrorHandling(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:5864:17)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at invoker(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:17395:87)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:94)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29172:18)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _emit(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29228:14)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at ClickListenerImpl.onClick(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:40100:23)
+10-28 17:59:47.372  4956  4962 W nslationtest.ns: Cleared Reference was only reachable from finalizer (only reported once)
+
+
+migration/evidence/NS07/f-device5/F9-spot-prepare-previous-logcat.txt (bounded saved PID 4956 snapshot; 186 lines)
+--------- beginning of main
+10-28 17:58:06.956  4956  4956 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:58:06.976  4956  4956 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:58:06.976  4956  4956 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:58:06.987  4956  4956 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:58:07.140  4956  4956 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:58:07.147  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Currently set values for:
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:58:07.154  4956  4956 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:58:07.238  4956  4956 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:58:07.238  4956  4956 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:58:07.277  4956  4956 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:58:07.533  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 17:58:07.678  4956  4992 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 17:58:07.680  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 17:58:07.718  4956  4992 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 17:58:07.720  4956  4992 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 17:58:07.744  4956  4992 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 17:58:07.752  4956  4956 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 17:58:07.752  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 17:58:07.757  4956  4956 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 17:58:07.833  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.836  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:07.869  4956  4956 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 17:58:07.871  4956  4956 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 17:58:07.929  4956  4956 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.118  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:08.130  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.142  4956  4956 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 17:58:08.207  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.209  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:08.210  4956  4956 I ImeTracker: dev.translationtest.ns:72788f56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:08.210  4956  4956 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 17:58:08.270  4956  4956 W HWUI    : Unknown dataspace 0
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.282  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:08.501  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:08.502  4956  4956 I ImeTracker: dev.translationtest.ns:2abc7d4a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:08.681  4956  4961 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 17:58:13.028  4956  5017 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 17:58:15.390  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.391  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.392  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.393  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.394  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.395  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.396  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.397  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.398  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.399  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.400  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.401  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.441  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:15.601  4956  4956 D InsetsController: hide(ime(), fromIme=false)
+10-28 17:58:15.601  4956  4956 I ImeTracker: dev.translationtest.ns:512206e0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 17:58:20.338  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@b1b65be
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.353  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.388  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@efa3479
+10-28 17:58:20.391  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@94915f8
+10-28 17:58:20.396  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.404  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:20.411  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 17:58:20.412  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269022ab8) locale list changing from [] to [en-US]
+10-28 17:58:20.439  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.440  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.455  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.456  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:20.457  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.466  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.467  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.468  4956  4956 I ImeTracker: dev.translationtest.ns:97627979: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:20.470  4956  4956 I ImeTracker: dev.translationtest.ns:be4b9a28: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:20.477  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.486  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:20.617  4956  4956 I ImeTracker: dev.translationtest.ns:23dd9609: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:20.617  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:20.618  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:20.817  4956  5115 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 17:58:21.045  4956  4956 I ImeTracker: system_server:96f651d7: onShown
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.953  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.954  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:25.981  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@156f474
+10-28 17:58:25.983  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:25.986  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 17:58:25.987  4956  4956 I nslationtest.ns: AssetManager2(0x7bd269029b38) locale list changing from [] to [en-US]
+10-28 17:58:25.988  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690230f8) locale list changing from [] to [en-US]
+10-28 17:58:26.011  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.012  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.017  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:26.018  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.022  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.023  4956  4956 I ImeTracker: dev.translationtest.ns:f529d12b: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:26.024  4956  4956 I ImeTracker: dev.translationtest.ns:946cf09c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:26.027  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.031  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:26.106  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.117  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:26.269  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.269  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:26.280  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:26.280  4956  4956 I ImeTracker: dev.translationtest.ns:ff3ffaa4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:26.294  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:26.300  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:26.511  4956  4956 I ImeTracker: system_server:bf569e8b: onShown
+10-28 17:58:31.634  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.635  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.674  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@d149ed6
+10-28 17:58:31.679  4956  4956 D ViewRootImpl: Skipping stats log for color mode
+10-28 17:58:31.681  4956  4956 I nslationtest.ns: AssetManager2(0x7bd2690194b8) locale list changing from [] to [en-US]
+10-28 17:58:31.682  4956  4956 I nslationtest.ns: AssetManager2(0x7bd26901e918) locale list changing from [] to [en-US]
+10-28 17:58:31.714  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.715  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.722  4956  4956 W HWUI    : Image decoding logging dropped!
+10-28 17:58:31.725  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.729  4956  4956 I ImeTracker: dev.translationtest.ns:ae61696d: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 17:58:31.731  4956  4956 I ImeTracker: dev.translationtest.ns:af517d29: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 17:58:31.734  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.740  4956  4956 D AutofillManager: view not autofillable - not passing ime action check
+10-28 17:58:31.825  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:31.845  4956  4956 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 17:58:32.014  4956  4956 I ImeTracker: dev.translationtest.ns:5d8a3936: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 17:58:32.014  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.014  4956  4956 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 17:58:32.016  4956  4956 D InsetsController: show(ime(), fromIme=false)
+10-28 17:58:32.016  4956  4956 I ImeTracker: dev.translationtest.ns:14eca341: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 17:58:32.029  4956  4956 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 17:58:32.033  4956  4956 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 17:58:32.071  4956  4956 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@f31a8f6
+10-28 17:58:32.248  4956  4956 I ImeTracker: system_server:bcfde0e3: onShown
+10-28 17:59:43.756  4956  4956 D TNS.Native: Unhandled promise rejection:
+10-28 17:59:43.757  4956  4956 D TNS.Native: Error: java.lang.NullPointerException: Attempt to invoke virtual method 'androidx.fragment.app.FragmentTransaction androidx.fragment.app.FragmentTransaction.add(androidx.fragment.app.Fragment, java.lang.String)' on a null object reference
+10-28 17:59:43.757  4956  4956 D TNS.Native: _showNativeModalView(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:44940:30)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at showModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:46209:14)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at openModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16937:25)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at (file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16976:13)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at $showModal(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:16869:12)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at openFilter(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:643:60)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at callWithErrorHandling(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:5857:19)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at callWithAsyncErrorHandling(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:5864:17)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at invoker(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:17395:87)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:94)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29172:18)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at _emit(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29228:14)
+10-28 17:59:43.757  4956  4956 D TNS.Native: 	at ClickListenerImpl.onClick(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:40100:23)
+10-28 17:59:47.372  4956  4962 W nslationtest.ns: Cleared Reference was only reachable from finalizer (only reported once)
+

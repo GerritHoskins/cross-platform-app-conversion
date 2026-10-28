@@ -1,0 +1,13 @@
+{
+  "note": "All outer tool calls retained in supervisor live stream. First two read-only terminal calls captured gate prior to helper and before migration writes; child commands repeated here with measured receipts. Outer timings unavailable, not invented.",
+  "commands": [
+    {
+      "command": "git branch --show-current; git rev-parse HEAD; git diff --cached --name-status; git status --porcelain=v1; test ! -e migration/evidence/NS07/b-device && printf B_DEVICE_ABSENT; wc -c < APK; sha256sum APK",
+      "exitCode": 0
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all; git diff --cached --quiet; printf INDEX_CHECK_EXIT",
+      "exitCode": 0
+    }
+  ]
+}

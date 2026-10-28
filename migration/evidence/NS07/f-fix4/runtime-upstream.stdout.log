@@ -1,0 +1,503 @@
+
+https://raw.githubusercontent.com/NativeScript/android/v9.1.1/test-app/runtime/src/main/cpp/ObjectManager.cpp
+18|using namespace std;
+19|using namespace tns;
+20|
+21|ObjectManager::ObjectManager(jobject javaRuntimeObject)
+22|    : m_javaRuntimeObject(javaRuntimeObject),
+23|      m_numberOfGC(0),
+24|      m_currentObjectId(0),
+25|      m_cache(NewWeakGlobalRefCallback, DeleteWeakGlobalRefCallback,
+26|              ValidateWeakGlobalRefCallback, 1000, this) {
+27|  JEnv env;
+28|  InitializeJNI();
+29|
+30|  auto runtimeClass = env.FindClass("com/tns/Runtime");
+31|  NS_CHECK(runtimeClass != nullptr);
+32|
+33|  auto useGlobalRefsMethodID =
+34|      env.GetStaticMethodID(runtimeClass, "useGlobalRefs", "()Z");
+35|  NS_CHECK(useGlobalRefsMethodID != nullptr);
+36|
+37|  auto useGlobalRefs =
+49|  if (GET_JAVAOBJECT_BY_ID_METHOD_ID != nullptr) {
+50|    return;
+51|  }
+52|  JEnv env;
+53|  auto runtimeClass = env.FindClass("com/tns/Runtime");
+54|  NS_CHECK(runtimeClass != nullptr);
+55|  GET_JAVAOBJECT_BY_ID_METHOD_ID = env.GetMethodID(
+56|      runtimeClass, "getJavaObjectByID", "(I)Ljava/lang/Object;");
+57|  NS_CHECK(GET_JAVAOBJECT_BY_ID_METHOD_ID != nullptr);
+58|
+59|  GET_OR_CREATE_JAVA_OBJECT_ID_METHOD_ID = env.GetMethodID(
+60|      runtimeClass, "getOrCreateJavaObjectID", "(Ljava/lang/Object;)I");
+61|  NS_CHECK(GET_OR_CREATE_JAVA_OBJECT_ID_METHOD_ID != nullptr);
+62|
+63|  MAKE_INSTANCE_WEAK_BATCH_METHOD_ID = env.GetMethodID(
+64|      runtimeClass, "makeInstanceWeak", "(Ljava/nio/ByteBuffer;IZ)V");
+65|  NS_CHECK(MAKE_INSTANCE_WEAK_BATCH_METHOD_ID != nullptr);
+66|
+67|  MAKE_INSTANCE_WEAK_AND_CHECK_IF_ALIVE_METHOD_ID =
+68|      env.GetMethodID(runtimeClass, "makeInstanceWeakAndCheckIfAlive", "(I)Z");
+69|  NS_CHECK(MAKE_INSTANCE_WEAK_AND_CHECK_IF_ALIVE_METHOD_ID != nullptr);
+70|
+71|  RELEASE_NATIVE_INSTANCE_METHOD_ID =
+72|      env.GetMethodID(runtimeClass, "releaseNativeCounterpart", "(I)V");
+73|  NS_CHECK(RELEASE_NATIVE_INSTANCE_METHOD_ID != nullptr);
+74|
+75|  CHECK_WEAK_OBJECTS_ARE_ALIVE_METHOD_ID =
+76|      env.GetMethodID(runtimeClass, "checkWeakObjectAreAlive",
+77|                      "(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V");
+78|  NS_CHECK(CHECK_WEAK_OBJECTS_ARE_ALIVE_METHOD_ID != nullptr);
+79|
+80|  JAVA_LANG_CLASS = env.FindClass("java/lang/Class");
+81|  NS_CHECK(JAVA_LANG_CLASS != nullptr);
+82|
+83|  GET_NAME_METHOD_ID =
+84|      env.GetMethodID(JAVA_LANG_CLASS, "getName", "()Ljava/lang/String;");
+85|  NS_CHECK(GET_NAME_METHOD_ID != nullptr);
+96|      static_cast<int>(MetadataNodeKeys::END));
+97|  auto context = isolate->GetCurrentContext();
+98|  auto jsWrapperFunc =
+99|      jsWrapperFuncTemplate->GetFunction(context).ToLocalChecked();
+100|  m_poJsWrapperFunc = new Persistent<Function>(isolate, jsWrapperFunc);
+101|}
+102|
+103|JniLocalRef ObjectManager::GetJavaObjectByJsObject(
+104|    const Local<Object>& object) {
+105|  JSInstanceInfo* jsInstanceInfo = GetJSInstanceInfo(object);
+106|
+107|  if (jsInstanceInfo != nullptr) {
+108|    jweak existingObject;
+109|    try {
+110|      existingObject = GetJavaObjectByID(jsInstanceInfo->JavaObjectID);
+111|    } catch (const NativeScriptException& e) {
+112|      // this captures usually the error
+113|      auto className = GetClassName(jsInstanceInfo->ObjectClazz);
+114|      throw NativeScriptException("Failed to get Java object by ID. id=" +
+115|                                  std::to_string(jsInstanceInfo->JavaObjectID) +
+116|                                  ", class=" + className + ". " +
+117|                                  e.GetErrorMessage());
+118|    }
+119|    if (m_useGlobalRefs) {
+120|      JniLocalRef javaObject(existingObject, true);
+121|      return javaObject;
+122|    } else {
+168|
+169|bool ObjectManager::IsJsRuntimeObject(const v8::Local<v8::Object>& object) {
+170|  int internalFieldCount = object->InternalFieldCount();
+171|  const int count = static_cast<int>(MetadataNodeKeys::END);
+172|  return internalFieldCount == count;
+173|}
+174|
+175|jweak ObjectManager::GetJavaObjectByID(uint32_t javaObjectID) {
+176|  jweak obj = m_cache(javaObjectID);
+177|
+178|  return obj;
+179|}
+180|
+181|jobject ObjectManager::GetJavaObjectByIDImpl(uint32_t javaObjectID) {
+182|  JEnv env;
+183|  jobject object = env.CallObjectMethod(
+184|      m_javaRuntimeObject, GET_JAVAOBJECT_BY_ID_METHOD_ID, javaObjectID);
+185|  return object;
+186|}
+187|
+188|void ObjectManager::UpdateCache(int objectID, jobject obj) {
+189|  m_cache.update(objectID, obj);
+190|}
+191|
+192|jclass ObjectManager::GetJavaClass(const Local<Object>& instance) {
+193|  DEBUG_WRITE("GetClass called");
+274|  DEBUG_WRITE("Linking js object: %d and java instance id: %d",
+275|              object->GetIdentityHash(), javaObjectID);
+276|
+277|  auto jsInstanceInfo =
+278|      new JSInstanceInfo(false /*isJavaObjWeak*/, javaObjectID, clazz);
+279|
+280|  auto objectHandle = new Persistent<Object>(isolate, object);
+281|  auto state = new ObjectWeakCallbackState(this, jsInstanceInfo, objectHandle);
+282|
+283|  // subscribe for JS GC event
+284|  if (m_markingMode == JavaScriptMarkingMode::None) {
+285|    objectHandle->SetWeak(state, JSObjectFinalizerStatic,
+286|                          WeakCallbackType::kFinalizer);
+287|  } else {
+288|    objectHandle->SetWeak(state, JSObjectWeakCallbackStatic,
+289|                          WeakCallbackType::kFinalizer);
+290|  }
+291|
+292|  auto jsInfoIdx = static_cast<int>(MetadataNodeKeys::JsInfo);
+293|
+294|  auto jsInfo = External::New(isolate, jsInstanceInfo, v8::kExternalPointerTypeTagDefault);
+295|
+296|  // link
+297|  object->SetInternalField(jsInfoIdx, jsInfo);
+298|
+299|  m_idToObject.emplace(javaObjectID, state);
+300|}
+301|
+331|  string className = ArgConverter::jstringToString(javaCanonicalName);
+332|
+333|  std::replace(className.begin(), className.end(), '.', '/');
+334|
+335|  return className;
+336|}
+337|
+338|void ObjectManager::JSObjectWeakCallbackStatic(
+339|    const WeakCallbackInfo<ObjectWeakCallbackState>& data) {
+340|  ObjectWeakCallbackState* callbackState = data.GetParameter();
+341|
+342|  ObjectManager* thisPtr = callbackState->thisPtr;
+343|
+344|  auto isolate = data.GetIsolate();
+345|
+346|  thisPtr->JSObjectWeakCallback(isolate, callbackState);
+347|}
+348|
+349|void ObjectManager::JSObjectFinalizerStatic(
+350|    const WeakCallbackInfo<ObjectWeakCallbackState>& data) {
+351|  ObjectWeakCallbackState* callbackState = data.GetParameter();
+352|
+353|  ObjectManager* thisPtr = callbackState->thisPtr;
+354|
+355|  auto isolate = data.GetIsolate();
+356|
+357|  thisPtr->JSObjectFinalizer(isolate, callbackState);
+358|}
+359|
+360|void ObjectManager::JSObjectFinalizer(Isolate* isolate,
+361|                                      ObjectWeakCallbackState* callbackState) {
+362|  HandleScope handleScope(m_isolate);
+363|  Persistent<Object>* po = callbackState->target;
+364|  auto jsInstanceInfo = GetJSInstanceInfoFromRuntimeObject(po->Get(m_isolate));
+365|
+366|  if (jsInstanceInfo == nullptr) {
+367|    // The link was already torn down (ReleaseNativeCounterpart); nothing but
+368|    // the registration is left to drop.
+369|    m_idToObject.erase(callbackState->javaObjectID);
+370|    po->Reset();
+371|    delete po;
+372|    delete callbackState;
+373|    return;
+374|  }
+375|
+376|  auto javaObjectID = jsInstanceInfo->JavaObjectID;
+377|  JEnv env;
+378|  jboolean isJavaInstanceAlive = env.CallBooleanMethod(
+379|      m_javaRuntimeObject, MAKE_INSTANCE_WEAK_AND_CHECK_IF_ALIVE_METHOD_ID,
+380|      javaObjectID);
+381|  if (isJavaInstanceAlive) {
+382|    // If the Java instance is alive, keep the JavaScript instance alive.
+383|    po->SetWeak(callbackState, JSObjectFinalizerStatic,
+384|                WeakCallbackType::kFinalizer);
+385|  } else {
+386|    // If the Java instance is dead, this JavaScript instance can be let die.
+387|    delete jsInstanceInfo;
+388|    auto jsInfoIdx = static_cast<int>(MetadataNodeKeys::JsInfo);
+389|    po->Get(m_isolate)->SetInternalField(jsInfoIdx, Undefined(m_isolate));
+390|    po->Reset();
+391|    m_idToObject.erase(javaObjectID);
+392|    delete po;
+393|    delete callbackState;
+394|  }
+395|}
+396|
+397|/*
+398| * When JS GC happens change state of the java counterpart to mirror state of JS
+399| * object and REVIVE the JS object unconditionally "Regular" js objects are
+400| * pushed into the "regular objects" array "Callback" js objects (ones that have
+401| * implementation object) are pushed into two "special objects" array: -ones
+402| * called for the first time which are originally strong in java -ones called
+403| * for the second or next time which are already weak in java too These objects
+404| * are categorized by "regular" and "callback" and saved in different arrays for
+405| * performance optimizations during GC
+406| * */
+407|void ObjectManager::JSObjectWeakCallback(
+408|    Isolate* isolate, ObjectWeakCallbackState* callbackState) {
+409|  HandleScope handleScope(isolate);
+410|
+411|  Persistent<Object>* po = callbackState->target;
+412|
+413|  auto itFound = m_visitedPOs.find(po);
+414|
+415|  if (itFound == m_visitedPOs.end()) {
+416|    m_visitedPOs.insert(po);
+417|
+418|    auto obj = Local<Object>::New(isolate, *po);
+419|    JSInstanceInfo* jsInstanceInfo = GetJSInstanceInfo(obj);
+420|
+421|    if (jsInstanceInfo != nullptr) {
+422|      int javaObjectID = jsInstanceInfo->JavaObjectID;
+423|
+424|      bool hasImplObj = HasImplObject(isolate, obj);
+425|
+426|      DEBUG_WRITE("JSObjectWeakCallback objectId: %d, hasImplObj=%d",
+427|                  javaObjectID, hasImplObj);
+428|
+429|      if (hasImplObj) {
+430|        if (jsInstanceInfo->IsJavaObjectWeak) {
+431|          m_implObjWeak.emplace_back(po, javaObjectID);
+432|        } else {
+433|          m_implObjStrong.emplace(javaObjectID, po);
+434|          jsInstanceInfo->IsJavaObjectWeak = true;
+435|        }
+436|      } else {
+437|        if (m_markedForGC.empty()) {
+438|          // Emulates the behavior in the OnGcStarted callback. Тhis is
+439|          // necessary as the hooking to the V8 GC is done only on the
+440|          // markSweepCompact phase. The JSObjectWeakCallback however is still
+441|          // triggered in other V8 GC phases (scavenger for example). This
+442|          // creates a problem that there is no 'top' on the m_markedForGC
+443|          // stack.
+444|          GarbageCollectionInfo gcInfo(++m_numberOfGC);
+445|          gcInfo.markedForGC.push_back(po);
+446|          m_markedForGC.push(gcInfo);
+447|        } else {
+448|          auto& topGCInfo = m_markedForGC.top();
+449|          topGCInfo.markedForGC.push_back(po);
+450|        }
+451|      }
+452|    }
+453|  }
+454|
+455|  po->SetWeak(callbackState, JSObjectWeakCallbackStatic,
+456|              WeakCallbackType::kFinalizer);
+457|}
+458|
+459|int ObjectManager::GenerateNewObjectID() {
+460|  const int one = 1;
+461|  int oldValue = __sync_fetch_and_add(&m_currentObjectId, one);
+462|
+463|  return oldValue;
+464|}
+465|
+466|void ObjectManager::ReleaseAllRegistered() {
+467|  HandleScope handleScope(m_isolate);
+468|
+469|  auto jsInfoIdx = static_cast<int>(MetadataNodeKeys::JsInfo);
+470|
+471|  // Detached first: nothing below should observe a half-emptied map, and the
+472|  // finalizers these handles were armed with will never run now anyway.
+473|  auto survivors = std::move(m_idToObject);
+474|  m_idToObject.clear();
+475|
+476|  for (auto& entry : survivors) {
+477|    ObjectWeakCallbackState* state = entry.second;
+478|    Persistent<Object>* po = state->target;
+479|
+480|    if (!po->IsEmpty()) {
+481|      auto local = po->Get(m_isolate);
+482|      if (!local.IsEmpty()) {
+483|        // Drop the back-pointer before the JSInstanceInfo goes away.
+484|        local->SetInternalField(jsInfoIdx, Undefined(m_isolate));
+485|      }
+486|      po->Reset();
+487|    }
+488|
+489|    delete po;
+503|  // cache holds a JNI weak global ref per entry (up to its capacity) and only
+504|  // ever evicted them under capacity pressure, so a worker that touched Java
+505|  // objects abandoned the whole cache when it died. ART's weak-global table is
+506|  // bounded, so enough worker cycles turned that leak into an abort.
+507|  m_cache.clear();
+508|}
+509|
+510|void ObjectManager::ReleaseJSInstance(Persistent<Object>* po,
+511|                                      JSInstanceInfo* jsInstanceInfo) {
+512|  int javaObjectID = jsInstanceInfo->JavaObjectID;
+513|
+514|  auto it = m_idToObject.find(javaObjectID);
+515|
+516|  if (it == m_idToObject.end()) {
+517|    stringstream ss;
+518|    ss << "(InternalError): Js object with id: " << javaObjectID
+519|       << " not found";
+520|    throw NativeScriptException(ss.str());
+521|  }
+522|
+523|  NS_DCHECK(po == it->second->target);
+524|
+525|  ObjectWeakCallbackState* callbackState = it->second;
+526|  m_idToObject.erase(it);
+527|  delete callbackState;
+528|  m_released.insert(po, javaObjectID);
+529|  po->Reset();
+530|
+531|  delete po;
+532|  delete jsInstanceInfo;
+533|
+534|  DEBUG_WRITE("ReleaseJSObject instance disposed. id:%d", javaObjectID);
+535|}
+536|
+537|/*
+538| * The "regular" JS objects added on ObjectManager::JSObjectWeakCallback are
+539| * dealt with(released) here.
+540| * */
+541|void ObjectManager::ReleaseRegularObjects() {
+542|  TNSPERF();
+543|
+544|  HandleScope handleScope(m_isolate);
+545|
+546|  auto propName =
+547|      String::NewFromUtf8(m_isolate, "t::gcNum", NewStringType::kNormal)
+548|          .ToLocalChecked();
+549|
+550|  auto& topGCInfo = m_markedForGC.top();
+551|  auto& marked = topGCInfo.markedForGC;
+552|  int numberOfGC = topGCInfo.numberOfGC;
+553|
+554|  for (auto po : marked) {
+555|    if (m_released.contains(po)) {
+556|      continue;
+557|    }
+558|
+559|    auto obj = Local<Object>::New(m_isolate, *po);
+560|
+561|    NS_DCHECK(!obj.IsEmpty());
+562|
+563|    Local<Value> gcNum;
+564|    V8GetPrivateValue(m_isolate, obj, propName, gcNum);
+565|
+566|    bool isReachableFromImplementationObject = false;
+567|
+568|    if (!gcNum.IsEmpty() && gcNum->IsNumber()) {
+569|      double objGcNum = gcNum.As<Number>()->Value();
+570|
+571|      // done so we can release only java objects from this GC stack and pass
+572|      // all objects that will be released in parent GC stacks
+573|      isReachableFromImplementationObject = objGcNum >= numberOfGC;
+574|    }
+575|
+576|    JSInstanceInfo* jsInstanceInfo = GetJSInstanceInfo(obj);
+577|
+578|    if (!isReachableFromImplementationObject) {
+579|      if (!jsInstanceInfo->IsJavaObjectWeak) {
+580|        jsInstanceInfo->IsJavaObjectWeak = true;
+581|
+582|        ReleaseJSInstance(po, jsInstanceInfo);
+583|      }
+584|    }
+585|  }
+586|
+587|  marked.clear();
+588|}
+589|
+590|bool ObjectManager::HasImplObject(Isolate* isolate, const Local<Object>& obj) {
+591|  auto implObject = MetadataNode::GetImplementationObject(isolate, obj);
+592|
+593|  bool hasImplObj = !implObject.IsEmpty();
+594|
+595|  return hasImplObj;
+596|}
+597|
+598|jweak ObjectManager::NewWeakGlobalRefCallback(const int& javaObjectID,
+599|                                              void* state) {
+600|  auto objManager = reinterpret_cast<ObjectManager*>(state);
+601|
+602|  JniLocalRef obj(objManager->GetJavaObjectByIDImpl(javaObjectID));
+603|
+604|  JEnv env;
+605|  jweak weakRef = env.NewWeakGlobalRef(obj);
+606|
+607|  return weakRef;
+608|}
+609|
+610|void ObjectManager::DeleteWeakGlobalRefCallback(const jweak& object,
+611|                                                void* state) {
+612|  JEnv env;
+613|  env.DeleteWeakGlobalRef(object);
+614|}
+615|
+616|bool ObjectManager::ValidateWeakGlobalRefCallback(const int& javaObjectID,
+617|                                                  const jweak& object,
+634|}
+635|
+636|void ObjectManager::JSWrapperConstructorCallback(
+637|    const v8::FunctionCallbackInfo<v8::Value>& info) {
+638|  NS_DCHECK(info.IsConstructCall());
+639|}
+640|
+641|void ObjectManager::ReleaseNativeCounterpart(v8::Local<v8::Object>& object) {
+642|  if (!object->IsObject()) {
+643|    throw NativeScriptException("Argument is not an object!");
+644|  }
+645|
+646|  JSInstanceInfo* jsInstanceInfo = GetJSInstanceInfo(object);
+647|
+648|  if (jsInstanceInfo == nullptr) {
+649|    throw NativeScriptException("Trying to release a non native object!");
+650|  }
+651|
+652|  JEnv env;
+653|  env.CallVoidMethod(m_javaRuntimeObject, RELEASE_NATIVE_INSTANCE_METHOD_ID,
+654|                     jsInstanceInfo->JavaObjectID);
+655|
+656|  // The registration outlives the link: it is dropped by the finalizer once
+657|  // the wrapper is collected. Until then the entry must not point at the
+658|  // JSInstanceInfo being freed here.
+659|  auto it = m_idToObject.find(jsInstanceInfo->JavaObjectID);
+660|  if (it != m_idToObject.end()) {
+661|    it->second->jsInfo = nullptr;
+662|  }
+663|
+664|  delete jsInstanceInfo;
+665|  auto jsInfoIdx = static_cast<int>(MetadataNodeKeys::JsInfo);
+673|jclass ObjectManager::JAVA_LANG_CLASS = nullptr;
+674|jmethodID ObjectManager::GET_NAME_METHOD_ID = nullptr;
+675|jmethodID ObjectManager::GET_JAVAOBJECT_BY_ID_METHOD_ID = nullptr;
+676|jmethodID ObjectManager::GET_OR_CREATE_JAVA_OBJECT_ID_METHOD_ID = nullptr;
+677|jmethodID ObjectManager::MAKE_INSTANCE_WEAK_BATCH_METHOD_ID = nullptr;
+678|jmethodID ObjectManager::MAKE_INSTANCE_WEAK_AND_CHECK_IF_ALIVE_METHOD_ID =
+679|    nullptr;
+680|jmethodID ObjectManager::RELEASE_NATIVE_INSTANCE_METHOD_ID = nullptr;
+681|jmethodID ObjectManager::CHECK_WEAK_OBJECTS_ARE_ALIVE_METHOD_ID = nullptr;
+682|
+
+https://raw.githubusercontent.com/NativeScript/android/v9.1.1/test-app/runtime/src/main/java/com/tns/Runtime.java
+134|
+135|    private boolean initialized;
+136|
+137|    private final static String FAILED_CTOR_RESOLUTION_MSG = "Check the number and type of arguments.\n" +
+138|            "Primitive types need to be manually wrapped in their respective Object wrappers.\n" +
+139|            "If you are creating an instance of an inner class, make sure to always provide reference to the outer `this` as the first argument.";
+140|
+141|    private Map<Integer, Object> strongInstances = new HashMap<>();
+142|
+143|    private Map<Integer, WeakReference<Object>> weakInstances = new HashMap<>();
+144|
+145|    private Map<Object, Integer> strongJavaObjectToID = new NativeScriptHashMap<Object, Integer>();
+146|
+147|    private Map<Object, Integer> weakJavaObjectToID = new NativeScriptWeakHashMap<Object, Integer>();
+148|
+149|    private Map<Class<?>, JavaScriptImplementation> loadedJavaScriptExtends = new HashMap<Class<?>, JavaScriptImplementation>();
+150|
+151|    private final java.lang.Runtime dalvikRuntime = java.lang.Runtime.getRuntime();
+152|
+153|    private final Object keyNotFoundObject = new Object();
+154|    private int currentObjectId = -1;
+155|
+209|     */
+210|    private static volatile Runtime mainRuntime;
+211|    private final static Map<Integer, Runtime> runtimeCache = new ConcurrentHashMap<>();
+212|    public static boolean nativeLibraryLoaded;
+213|
+214|    private static final ClassStorageService classStorageService = new ClassStorageServiceImpl(ClassCacheImpl.INSTANCE, ClassLoadersCollectionImpl.INSTANCE);
+215|
+216|    public Runtime(ClassResolver classResolver, GcListener gcListener, StaticConfiguration config, DynamicConfiguration dynamicConfig, int runtimeId, int workerId, HashMap<Integer, Object> strongInstances, HashMap<Integer, WeakReference<Object>> weakInstances, NativeScriptHashMap<Object, Integer> strongJavaObjectToId, NativeScriptWeakHashMap<Object, Integer> weakJavaObjectToId) {
+217|        this.classResolver = classResolver;
+218|        this.gcListener = gcListener;
+219|        this.config = config;
+220|        this.dynamicConfig = dynamicConfig;
+221|        this.runtimeId = runtimeId;
+222|        this.workerId = workerId;
+223|        this.strongInstances = strongInstances;
+224|        this.weakInstances = weakInstances;
+225|        this.strongJavaObjectToID = strongJavaObjectToId;
+226|        this.weakJavaObjectToID = weakJavaObjectToId;
+227|    }
+228|
+229|    public Runtime(StaticConfiguration config, DynamicConfiguration dynamicConfiguration) {
+230|        synchronized (Runtime.currentRuntime) {
+231|            ManualIn

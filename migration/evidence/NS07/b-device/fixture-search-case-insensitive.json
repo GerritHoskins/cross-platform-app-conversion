@@ -1,0 +1,87 @@
+{
+  "id": "search-case-insensitive",
+  "description": "Mixed-case query \"IOnic\" with all tracks selected: both query and name are lowercased (sessions.ts:202), so 15 sessions whose names contain \"ionic\" render, including \"The Evolution of Ionicons\" (session 7) via substring match. Sessions without the substring (1, 6, 10, 12, 20) are excluded.",
+  "input": {
+    "searchText": "IOnic",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [],
+    "mode": "all"
+  },
+  "expected": {
+    "sessionIds": [
+      4,
+      2,
+      3,
+      5,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "groups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          7,
+          8
+        ]
+      },
+      {
+        "groupTime": "11:00 am",
+        "sessionIds": [
+          9,
+          11
+        ]
+      },
+      {
+        "groupTime": "1:00 pm",
+        "sessionIds": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          19
+        ]
+      }
+    ]
+  }
+}

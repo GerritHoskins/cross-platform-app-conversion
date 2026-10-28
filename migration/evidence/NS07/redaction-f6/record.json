@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "decision": "D2 (privacy safeguard; RN07 D13 precedent)",
+  "phase": "F6 (device rerun, candidate 4)",
+  "redactedBy": "Claude Code coordinator (claude-opus-5-5)",
+  "redactedAt": "2026-10-28T15:19:00Z",
+  "finding": "Gboard showed a clipboard paste-suggestion chip (the current host clipboard item; Gboard's clipboard history had been cleared by the human before the run) above the focused SearchBar in 3 of 66 distinct F6 frames, all in the R02 full-list clear step. The chip text is absent from all UI XML, logs, receipts, the checkpoint, the run stream and the run directory (text search of every non-PNG file found none of it). Each frame's raw screenshot receipt was byte-identical to its PNG and is redacted with it. capture-index.json, commands.jsonl and the receipts keep the executor's pre-redaction hashes; sha256After below is authoritative for the committed files.",
+  "detection": "Coordinator visual inspection of all 66 distinct F6 frames via 6 contact sheets. Every other SearchBar-focused frame (F6-R02-focused, F6-R02-cleared, F6-R02-results, F6-R03-*, F6-R02-full-list-scroll-*) shows only the floating Gboard toolbar or the query with no clipboard content. All 107 raw *.stdout.bin screenshot receipts in f-device3 were byte-compared with the saved PNGs; only the three listed here matched a chip frame.",
+  "originals": "Unredacted originals were moved outside version control to the git-ignored /_backup_ns07_redaction/f-device3/ folder (*.unredacted.png, *.unredacted.stdout.bin); they are never committed.",
+  "files": [
+    {
+      "path": "migration/evidence/NS07/f-device3/F6-R02-full-focused.png",
+      "kind": "png",
+      "sha256Before": "7b4588a9979c0273da28fa2ddf897a8496c6c0fe7ba6e4ccabb37f3d04cf251a",
+      "sha256After": "664e42470a11d998532dc01cab0f418070bf6df7a95ee796431dc86a748b11dc",
+      "bytesBefore": 199012,
+      "bytesAfter": 164305,
+      "regions": [{ "x": 30, "y": 170, "width": 840, "height": 145, "fill": "black", "content": "Gboard clipboard paste-suggestion chip (current host clipboard item)" }],
+      "rawReceipt": "migration/evidence/NS07/f-device3/0827-F6-R02-full-focused-screenshot.stdout.bin (replaced with the redacted PNG bytes)"
+    },
+    {
+      "path": "migration/evidence/NS07/f-device3/F6-R02-full-cleared.png",
+      "kind": "png",
+      "sha256Before": "d690c1482fc75a42e2c0fc890151b7e7dbf8da74fbbd2f53396ea7c342ea1108",
+      "sha256After": "091039fc111d1e4402fc1489791051446220b45169f8bd386c99b9bf0c4b7360",
+      "bytesBefore": 202757,
+      "bytesAfter": 165090,
+      "regions": [{ "x": 30, "y": 170, "width": 840, "height": 145, "fill": "black", "content": "Gboard clipboard paste-suggestion chip (current host clipboard item)" }],
+      "rawReceipt": "migration/evidence/NS07/f-device3/0839-F6-R02-full-cleared-screenshot.stdout.bin (replaced with the redacted PNG bytes)"
+    },
+    {
+      "path": "migration/evidence/NS07/f-device3/F6-R02-full-query.png",
+      "kind": "png",
+      "sha256Before": "c4f604fef51c9ed767be07c195568ce75d20d433ed701f88421510edcc236a36",
+      "sha256After": "87f31253f7dba164a98d760c3df50eef2a1afa0f90164bae6a619699e8cc61de",
+      "bytesBefore": 209196,
+      "bytesAfter": 173374,
+      "regions": [{ "x": 150, "y": 170, "width": 830, "height": 145, "fill": "black", "content": "Gboard clipboard paste-suggestion chip (current host clipboard item)" }],
+      "rawReceipt": "migration/evidence/NS07/f-device3/0831-F6-R02-full-query-screenshot.stdout.bin (replaced with the redacted PNG bytes)"
+    }
+  ]
+}

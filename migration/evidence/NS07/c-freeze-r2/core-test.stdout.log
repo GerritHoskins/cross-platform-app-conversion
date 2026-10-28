@@ -1,0 +1,73 @@
+
+> @migration/core@0.1.0 test
+> npm run build && tsc -p tsconfig.test.json && node --test "build-test/test/*.js"
+
+
+> @migration/core@0.1.0 build
+> npm run clean && tsc -p tsconfig.json
+
+
+> @migration/core@0.1.0 clean
+> node -e "for (const d of ['dist','build-test']) require('fs').rmSync(d,{recursive:true,force:true})"
+
+✔ all-tracks rule: a two-track session is filtered out unless every one of its tracks is selected (2.7403ms)
+✔ all-tracks rule holds in favorites mode too (0.4296ms)
+✔ empty selectedTracks gives no pass even with matching search and a matching favorite (0.2118ms)
+✔ search is a case-insensitive substring on the name (0.2393ms)
+✔ search matches the name only, not description or location (0.3305ms)
+✔ a space is a truthy search text: names containing a space match, names without do not (0.2888ms)
+✔ grouping keeps equal start minutes in input order within their group (0.7767ms)
+✔ input with reverse-time sessions is grouped and sorted chronologically (0.3131ms)
+✔ group order is first-occurrence order after sorting by start time, not the group label order (0.2593ms)
+✔ empty selectedTracks gives no pass and groupSessions of empty input gives [] (0.1945ms)
+✔ addFavorite appends a new id and is a no-op copy for an existing id (0.1888ms)
+✔ removeFavorite removes every occurrence and gives an equal copy for an absent id (0.1602ms)
+✔ outputs are fresh arrays, never the input reference (7.8525ms)
+✔ initialSelectedTracks lists every session track in first-appearance order (0.0789ms)
+✔ every function works on deep-frozen inputs and returns new arrays (0.8457ms)
+✔ groupSessions on a deeply frozen, reverse-chronological input: no throw, chronological groups, input unchanged (0.2249ms)
+✔ selectSessions returns the passing sessions in exactly the deliberately non-chronological input order (0.1268ms)
+✔ sortTracksByName orders by name and leaves the input order untouched (0.099ms)
+✔ createInitialSelection gives empty search, all session tracks in first-appearance order, no favorites, all mode (0.0599ms)
+✔ default-all (1.1579ms)
+✔ no-tracks (0.0871ms)
+✔ single-track (0.1012ms)
+✔ search-case-insensitive (0.0859ms)
+✔ search-no-match (0.0609ms)
+✔ search-plus-track (0.0846ms)
+✔ favorites-empty (0.0507ms)
+✔ favorites-some (0.0532ms)
+✔ favorites-order (0.0795ms)
+✔ add-duplicate (0.1455ms)
+✔ remove-absent (0.1092ms)
+✔ createInitialSelection selects every session track in first-appearance order (0.1404ms)
+✔ fixture data normalizes to the contracted shape (1.8796ms)
+✔ session 1 matches the frozen contract values (0.1479ms)
+✔ every session is finite, ordered, and fully resolved (0.2799ms)
+✔ unresolved speaker names are omitted from speakerIds (0.2357ms)
+✔ missing schedule is reported at path "schedule" (0.3269ms)
+✔ non-numeric session id fails at its path (0.1789ms)
+✔ duplicate session id fails at the second occurrence (0.1683ms)
+✔ missing session name fails at its path (0.1719ms)
+✔ unparseable timeStart fails at its path (0.1994ms)
+✔ non-string description fails at its path (0.2948ms)
+✔ non-array session tracks fails at its path (0.2282ms)
+✔ speaker without id fails at its path (0.1675ms)
+✔ normalization does not mutate its input (0.3126ms)
+✔ mutating one result cannot affect a later normalization of the same input (0.2389ms)
+✔ public package exports are correct (0.6142ms)
+✔ self-reference resolves to the built dist entrypoint (0.6023ms)
+✔ parseTimeToMinutes parses morning and afternoon times (0.749ms)
+✔ parseTimeToMinutes handles noon and midnight (0.1337ms)
+✔ parseTimeToMinutes returns Infinity for malformed values (0.1201ms)
+✔ parseTimeToMinutes tolerates surrounding whitespace and mixed case (0.1032ms)
+✔ compareTimes orders chronologically across noon (0.6976ms)
+✔ compareTimes keeps malformed values last and treats them as equal (0.1491ms)
+ℹ tests 53
+ℹ suites 0
+ℹ pass 53
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 94.0765

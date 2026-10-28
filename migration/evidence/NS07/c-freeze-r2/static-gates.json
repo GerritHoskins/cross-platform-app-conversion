@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "revision": 2,
+  "phase": "C-r2",
+  "checks": [
+    {
+      "id": "node-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/node-version.receipt.json"
+    },
+    {
+      "id": "npm-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/npm-version.receipt.json"
+    },
+    {
+      "id": "verify-core-before-core",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/verify-core-before-core.receipt.json"
+    },
+    {
+      "id": "core-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/core-test.receipt.json"
+    },
+    {
+      "id": "core-json-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/core-json-test.receipt.json"
+    },
+    {
+      "id": "npm-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/npm-ci.receipt.json"
+    },
+    {
+      "id": "post-ci-source-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/post-ci-source-diff.receipt.json"
+    },
+    {
+      "id": "verify-core-after-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/verify-core-after-ci.receipt.json"
+    },
+    {
+      "id": "typecheck",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/typecheck.receipt.json"
+    },
+    {
+      "id": "tests-first",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/tests-first.receipt.json"
+    },
+    {
+      "id": "tests-second",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/tests-second.receipt.json"
+    },
+    {
+      "id": "diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/diff-check.receipt.json"
+    },
+    {
+      "id": "empty-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze-r2/empty-index.receipt.json"
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "success": true,
+      "counts": {
+        "tests": 53,
+        "failed": 0,
+        "passed": 53,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 53,
+        "suites": 0
+      },
+      "duration_ms": 89.3855
+    },
+    "first": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    },
+    "second": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "sourceDiff": "migration/evidence/NS07/f-fix5/fix.diff",
+  "rootLockfile": "Excluded from diff --check to honor prohibition on root-lockfile reads/diffs; known unrelated change retained. NS06 checker sole authorized baseline hash read.",
+  "noBuild": true,
+  "noDeviceInteraction": true,
+  "pinnedNode": "v24.19.0",
+  "verifyCoreIdentical": true
+}

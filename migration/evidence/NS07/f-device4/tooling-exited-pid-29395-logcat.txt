@@ -1,0 +1,35 @@
+--------- beginning of main
+10-28 17:08:13.259 29395 29395 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 17:08:14.173 29395 29395 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 17:08:14.174 29395 29395 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 17:08:14.174 29395 29395 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 17:08:14.882 29395 29395 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 17:08:21.246 29395 29395 D nativeloader: Configuring clns-9 for other apk /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/lib/x86_64:/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 17:08:21.279 29395 29395 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment: Currently set values for:
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 17:08:22.007 29395 29395 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 17:08:23.259 29395 29395 W nslationtest.ns: Verification of java.util.List androidx.lifecycle.ProcessLifecycleInitializer.dependencies() took 236.068ms (21.18 bytecodes/s) (0B arena alloc)
+10-28 17:08:23.534 29395 29395 W nslationtest.ns: Verification of java.util.List kotlin.collections.CollectionsKt__CollectionsJVMKt.build(java.util.List) took 104.717ms (124.14 bytecodes/s) (0B arena alloc)
+10-28 17:08:24.423 29395 29395 W nslationtest.ns: Verification of int kotlin.collections.EmptyList.hashCode() took 276.670ms (7.23 bytecodes/s) (0B arena alloc)
+10-28 17:08:24.641 29395 29395 W nslationtest.ns: Verification of java.util.Iterator kotlin.collections.EmptyList.iterator() took 202.034ms (24.75 bytecodes/s) (0B arena alloc)
+10-28 17:08:25.955 29395 29395 W nslationtest.ns: Verification of void androidx.lifecycle.ProcessLifecycleOwner.attach$lifecycle_process_release(android.content.Context) took 306.974ms (133.56 bytecodes/s) (0B arena alloc)
+10-28 17:08:27.326 29395 29395 W nslationtest.ns: Verification of int androidx.collection.ArraySet.indexOf(java.lang.Object, int) took 126.108ms (602.66 bytecodes/s) (0B arena alloc)
+10-28 17:08:29.137 29395 29395 W nslationtest.ns: Verification of void com.tns.Runtime.<init>(com.tns.ClassResolver, com.tns.GcListener, com.tns.StaticConfiguration, com.tns.DynamicConfiguration, int, int, java.util.HashMap, java.util.HashMap, com.tns.NativeScriptHashMap, com.tns.NativeScriptWeakHashMap) took 199.012ms (412.03 bytecodes/s) (0B arena alloc)
+10-28 17:08:31.301 29395 29395 D nativeloader: Load /data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~iDQGq0D7RqVNd7qXcErg0g==/dev.translationtest.ns-R2qLAMuvdF1hfYjzq1bixQ==/base.apk!classes5.dex): ok
+10-28 17:08:31.307 29395 29395 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 17:08:32.881 29395 29395 W nslationtest.ns: Verification of androidx.appcompat.app.AppCompatActivity com.tns.ErrorReport.-$$Nest$sfgetactivity() took 700.355ms (4.28 bytecodes/s) (0B arena alloc)
+10-28 17:08:33.341 29395 29395 W nslationtest.ns: Verification of void com.tns.ErrorReport.buildUI() took 259.375ms (840.48 bytecodes/s) (0B arena alloc)
+10-28 17:08:34.055 29395 29395 W nslationtest.ns: Verification of long androidx.core.content.pm.PackageInfoCompat.getLongVersionCode(android.content.pm.PackageInfo) took 216.028ms (69.44 bytecodes/s) (0B arena alloc)
+10-28 17:08:35.249 29395 29395 W nslationtest.ns: Verification of java.util.Set com.tns.NativeScriptAbstractMap.keySet() took 109.649ms (127.68 bytecodes/s) (0B arena alloc)
+10-28 17:08:35.615 29395 29395 W nslationtest.ns: Verification of void com.tns.NativeScriptWeakHashMap.<init>(int) took 116.721ms (505.48 bytecodes/s) (0B arena alloc)
+10-28 17:08:36.027 29395 29395 W nslationtest.ns: Verification of void com.tns.GcListener.<init>(int, int, double) took 138.458ms (635.57 bytecodes/s) (0B arena alloc)
+10-28 17:08:38.287 29395 29395 D TNS.Runtime: V8 version 14.9.207.39
+10-28 17:08:40.223 29395 29395 W nslationtest.ns: Verification of void fi.iki.elonen.NanoHTTPD$ServerRunnable.run(java.lang.String) took 140.273ms (570.31 bytecodes/s) (0B arena alloc)
+10-28 17:08:41.623 29395 29396 I nslationtest.ns: Thread[2,tid=29396,WaitingInMainSignalCatcherLoop,Thread*=0x738d4900a380,peer=0x2130020,"Signal Catcher"]: reacting to signal 3
+10-28 17:08:41.623 29395 29396 I nslationtest.ns: 
+10-28 17:08:46.236 29395 29396 I nslationtest.ns: Wrote stack traces to tombstoned

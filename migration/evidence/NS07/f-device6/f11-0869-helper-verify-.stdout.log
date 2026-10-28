@@ -1,0 +1,124 @@
+{
+  "audit": {
+    "branch": "migration/slice-1",
+    "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+    "index": "",
+    "changed": [],
+    "unexpected": [],
+    "missing": [],
+    "captureCount": 78,
+    "g07Count": 12,
+    "windowCount": 36,
+    "commandCount": 868,
+    "problems": [],
+    "sourceDiffMatches": true,
+    "earlierFilesChecked": 35013,
+    "pass": true
+  },
+  "failures": [
+    {
+      "case": "FF.b.execution",
+      "status": "BLOCKED",
+      "expected": "Complete filter recreation subcase without cold recovery",
+      "observed": "F11-FF-b-Close target count 0",
+      "evidence": [
+        "migration/evidence/NS07/f-device6/filter-font-exception.json"
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "part": "a",
+      "pid": "9013",
+      "status": "PASS"
+    },
+    {
+      "part": "b",
+      "pid": "9013",
+      "status": "PASS"
+    },
+    {
+      "part": "c",
+      "pid": "9013",
+      "status": "PASS"
+    },
+    {
+      "part": "d",
+      "pid": "9013",
+      "status": "PASS"
+    }
+  ],
+  "regression": [
+    {
+      "case": "R01.schedule",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.search",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear-full-list",
+      "status": "PASS"
+    },
+    {
+      "case": "R03.mode-switch",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-toolbar-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-system-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R05.filter-Done",
+      "status": "PASS"
+    },
+    {
+      "case": "R06.favorite-add",
+      "status": "PASS"
+    },
+    {
+      "case": "R07.already-favorite",
+      "status": "PASS"
+    },
+    {
+      "case": "R08.favorite-remove",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-reveal",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-action",
+      "status": "PASS"
+    }
+  ],
+  "settingsRestored": true,
+  "allRequiredPatternsZero": true,
+  "uniqueErrors": [
+    "10-28 20:27:38.594  9013  9013 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:27:58.724  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:28:29.412  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:29:44.097  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:30:36.704 10434 10434 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:30:51.120 10434 10434 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:30:56.901 10434 10434 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:31:15.071 10865 10865 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:32:01.461 11279 11279 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:33:36.269 11974 11974 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:34:44.974 11974 11974 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240"
+  ],
+  "modeChecks": 13,
+  "modeChecksAllValid": true,
+  "tapCount": 49,
+  "gestureCount": 6
+}

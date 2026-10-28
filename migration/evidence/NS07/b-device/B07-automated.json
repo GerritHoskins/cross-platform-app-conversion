@@ -1,0 +1,80 @@
+{
+  "source": "migration/nativescript/__tests__/conference-store.test.ts:342-453",
+  "expectedNames": [
+    "pending load starts synchronously but calls the loader behind a promise boundary",
+    "throw is captured and retry success clears the error",
+    "reject is captured and retry success clears the error",
+    "a failed retry retains earlier data/selection and a later retry keeps selection",
+    "stale earlier resolve cannot overwrite a newer retry",
+    "stale earlier reject cannot overwrite a newer retry",
+    "a stale success leaves a newer pending request loading"
+  ],
+  "reports": [
+    {
+      "report": "tests-first",
+      "matches": [
+        {
+          "name": "controlled loader lifecycle pending load starts synchronously but calls the loader behind a promise boundary",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle throw is captured and retry success clears the error",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle reject is captured and retry success clears the error",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a failed retry retains earlier data/selection and a later retry keeps selection",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier resolve cannot overwrite a newer retry",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier reject cannot overwrite a newer retry",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a stale success leaves a newer pending request loading",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "report": "tests-second",
+      "matches": [
+        {
+          "name": "controlled loader lifecycle pending load starts synchronously but calls the loader behind a promise boundary",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle throw is captured and retry success clears the error",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle reject is captured and retry success clears the error",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a failed retry retains earlier data/selection and a later retry keeps selection",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier resolve cannot overwrite a newer retry",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle stale earlier reject cannot overwrite a newer retry",
+          "status": "passed"
+        },
+        {
+          "name": "controlled loader lifecycle a stale success leaves a newer pending request loading",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

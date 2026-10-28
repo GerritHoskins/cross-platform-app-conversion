@@ -1,0 +1,16 @@
+{
+  "command": "terminal/bash",
+  "args": [
+    "pwd && git branch --show-current && git rev-parse HEAD && git diff --cached --name-status && git status --porcelain=v1 --untracked-files=all"
+  ],
+  "exitCode": 0,
+  "note": "Read-only bootstrap; full raw gate recaptured before migration writes.",
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "startedAt": null,
+  "durationMs": null,
+  "label": "outer-001",
+  "source": "Observed terminal tool invocation; tool does not expose exact execution timing. Null is deliberate, not fabricated.",
+  "receiptClass": "outer-tool-provenance",
+  "stdout": "outer-001.stdout.log",
+  "stderr": "outer-001.stderr.log"
+}

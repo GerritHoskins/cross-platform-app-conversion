@@ -1,0 +1,34 @@
+{
+  "id": "single-track",
+  "description": "Only the \"Ionic\" track selected: every session track must be included in the selection (sessions.ts:198), so only the single-track \"Ionic\" sessions 2, 4, 5 remain; session 3 (\"Ionic Tooling\", a \"Tooling\" session) is excluded despite matching the text. Fixture note: every session in this data.json is single-track [derived], so the multi-track exclusion branch of the rule is encoded but not separately exercised by any fixture.",
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Ionic"
+    ],
+    "favoriteIds": [],
+    "mode": "all"
+  },
+  "expected": {
+    "sessionIds": [
+      4,
+      2,
+      5
+    ],
+    "groups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5
+        ]
+      }
+    ]
+  }
+}

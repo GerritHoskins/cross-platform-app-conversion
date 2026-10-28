@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "decision": "Revision 2 privacy correction (human, 2026-10-28) after migration/reviews/NS07-r1.md CHANGES_REQUIRED (P1)",
+  "phase": "B and G run 2 (correction applied before revision 2 freeze)",
+  "redactedBy": "Claude Code coordinator (claude-opus-5-5)",
+  "redactedAt": "2026-10-28T21:41:35Z",
+  "finding": "Phase B and G run 2 stored each raw screencap receipt as *-screencap.stdout.log / *-screenshot.stdout.log containing the PNG bytes. The phase B and G2 redactions covered only the PNGs, and the coordinator's F4 receipt fix searched only *.stdout.bin, so ten raw receipts kept the unredacted clipboard images. Their SHA-256 values equal the sha256Before values in redaction/record.json and redaction-g2/record.json. The statements in those two records that the clipboard content is absent from all receipts were wrong for these ten files; the records themselves are kept unchanged as history and are corrected by this record.",
+  "detection": "Independent reviewer (migration/reviews/NS07-r1.md), then a coordinator scan of every file under migration/evidence/NS07/ by file signature (first bytes), not extension: 2,400 PNG payloads (1,200 .png, 766 .stdout.bin, 434 .stdout.log); exactly these ten held a recorded sha256Before digest.",
+  "correction": "Each of the ten files was replaced by the bytes of its already-redacted paired PNG; each original was first copied to the git-ignored /_backup_ns07_redaction/<run>/receipts-r2/<name>.unredacted.bin and its SHA-256 verified there. Originals are never committed.",
+  "verificationAfter": "Signature scan after the correction: 2,400 PNG payloads; 0 files hold any of the 30 distinct sha256Before digests recorded in redaction, redaction-g2, redaction-f2, redaction-f4, redaction-f6 and redaction-f9; 0 non-.png PNG payloads differ from a committed PNG; no JPEG/GIF/WebP/ZIP/GZIP/PDF/ELF/DEX signatures; no base64 image data in text files.",
+  "files": [
+    {
+      "path": "migration/evidence/NS07/b-device/0129-B03-query-focused-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B03-query-focused.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "158b094183143a2099c421fc06bf6edf2055be62bd2c735446703243f620ec35",
+      "bytesBefore": 215121,
+      "sha256After": "1ad641416063ee0232b85049da13bb48ea7474362d2df1d632d587b77c5854bb",
+      "bytesAfter": 179747,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/0134-B03-query-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B03-query.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "799a5286f7d331b14a909582d55736b97aa31d9dec6374bd6eed0496fdcef52a",
+      "bytesBefore": 215829,
+      "sha256After": "d285f51e662e4415ec18d3c08a6d59706cec0bd41b2cd960cea5bcd51e504252",
+      "bytesAfter": 176895,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/0208-B04-restored-scroll-1-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B04-restored-scroll-1.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "3d8436f2ce3f1769ca323a7d690dc93148b5c009adb056892d9950da870f30eb",
+      "bytesBefore": 221864,
+      "sha256After": "9e27ea4b3d6231eb1faef63ed4442c9e76997041a88bd45d29d04a99b3664033",
+      "bytesAfter": 181626,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/0245-B05-space-focused-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B05-space-focused.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "3f965e3ea5b146cb8d50e2096d97522a0f17bd6609d72868ebe784480ca214ed",
+      "bytesBefore": 214097,
+      "sha256After": "cc77a51848047e31a395cdeeb3f237489f88fb9e1b8df4724cb2490f847ae51f",
+      "bytesAfter": 177309,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/0250-B05-space-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B05-space.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "33c026dc106e5616dd1c0580826d50a8d18f491cfc9f0e97613573b3a174c94e",
+      "bytesBefore": 221099,
+      "sha256After": "5daaeb394a9f52a7a6bc4e0131864a0de6249d21015017877b1f3e890fe6f5fa",
+      "bytesAfter": 181842,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/0254-B05-results-top-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/B05-results-top.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "588859232bcc190c123137fa2c7c412dae6b9db7be4f6650ac10bc071999a6fb",
+      "bytesBefore": 220861,
+      "sha256After": "92aca706c77d8da8315359bdc4467277ad1e0fd5621bf8acaf80467a24d02ea8",
+      "bytesAfter": 181775,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/1610-E09-close-clear-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/E09-close-clear.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "5bab00a95067feb86968bd57731fb46e751e52ba1bc31032601bef956d05a467",
+      "bytesBefore": 148550,
+      "sha256After": "0ff4914ffe2ebac921c9281a44f212f3b62a3c665bed41d2f1e858578b190b41",
+      "bytesAfter": 126444,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/b-device/1624-E09-final-close-screencap.stdout.log",
+      "pairedPng": "migration/evidence/NS07/b-device/E09-final-close.png",
+      "record": "migration/evidence/NS07/redaction/record.json",
+      "sha256Before": "c7a181f41946a56312c99685c234c1b0c30843319593b41a7cb35fb21e18d999",
+      "bytesBefore": 148624,
+      "sha256After": "00fd6639e67219fdbf10fa80f9f7587946324d407c48bab408db6f54570fe2ec",
+      "bytesAfter": 126488,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/g-settings2/1010-G08-query-focused-screenshot.stdout.log",
+      "pairedPng": "migration/evidence/NS07/g-settings2/G08-query-focused.png",
+      "record": "migration/evidence/NS07/redaction-g2/record.json",
+      "sha256Before": "e27711c187b72732cb6d6f319ce7419ca29a22610b6422e912bb08aedd388cd6",
+      "bytesBefore": 213791,
+      "sha256After": "f3623d39c8d49583b2712b6068702462387ac47388597e0b0f843305d0ccba18",
+      "bytesAfter": 181829,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    },
+    {
+      "path": "migration/evidence/NS07/g-settings2/1014-G08-query-screenshot.stdout.log",
+      "pairedPng": "migration/evidence/NS07/g-settings2/G08-query.png",
+      "record": "migration/evidence/NS07/redaction-g2/record.json",
+      "sha256Before": "c8059008211ee984d2413d2968ab0e774ef420c9179f72394615b1f665e2a1d1",
+      "bytesBefore": 105701,
+      "sha256After": "2e4ae5803dd5ffd25e44e175e48c60e35484efa5a514f9fe0cd5f1934c41ef03",
+      "bytesAfter": 95597,
+      "kind": "raw screenshot receipt (PNG bytes, .stdout.log)",
+      "replacement": "byte-identical copy of the paired PNG at its recorded redacted digest (sha256After of the original record)"
+    }
+  ]
+}

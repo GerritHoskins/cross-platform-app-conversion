@@ -1,0 +1,95 @@
+--------- beginning of main
+10-28 10:36:15.753 31094 31094 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 10:36:15.968 31094 31094 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 10:36:15.974 31094 31094 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 10:36:15.974 31094 31094 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 10:36:16.000 31094 31094 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 10:36:16.433 31094 31094 D nativeloader: Configuring clns-9 for other apk /data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/lib/x86_64:/data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 10:36:16.448 31094 31094 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment: Currently set values for:
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 10:36:16.466 31094 31094 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 10:36:16.467 31094 31094 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 10:36:16.645 31094 31094 D nativeloader: Load /data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk!classes5.dex): ok
+10-28 10:36:16.645 31094 31094 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 10:36:16.829 31094 31094 D TNS.Runtime: V8 version 14.9.207.39
+10-28 10:36:17.489 31094 31094 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-28 10:36:17.673 31094 31094 I Choreographer: Skipped 68 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-28 10:36:17.685 31094 31231 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 10:36:17.713 31094 31094 I nslationtest.ns: AssetManager2(0x738ba9010578) locale list changing from [] to [en-US]
+10-28 10:36:17.817 31094 31231 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 10:36:17.819 31094 31231 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 10:36:17.832 31094 31094 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 10:36:17.833 31094 31094 I nslationtest.ns: AssetManager2(0x738ba900e958) locale list changing from [] to [en-US]
+10-28 10:36:17.843 31094 31094 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 10:36:17.949 31094 31231 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 10:36:18.002 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:18.004 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:18.186 31094 31094 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 10:36:18.188 31094 31094 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 10:36:18.306 31094 31094 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 10:36:18.522 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:18.523 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:18.533 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:18.553 31094 31094 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 10:36:18.649 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:18.651 31094 31094 I ImeTracker: dev.translationtest.ns:98ac855: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 10:36:18.681 31094 31094 I ImeTracker: dev.translationtest.ns:98ac855: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 10:36:18.681 31094 31094 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 10:36:18.767 31094 31094 W HWUI    : Unknown dataspace 0
+10-28 10:36:18.807 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:18.808 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:19.191 31094 31119 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 10:36:19.405 31094 31094 I Choreographer: Skipped 35 frames!  The application may be doing too much work on its main thread.
+10-28 10:36:19.521 31094 31094 D InsetsController: hide(ime(), fromIme=false)
+10-28 10:36:19.521 31094 31094 I ImeTracker: dev.translationtest.ns:f9de0a90: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 10:36:22.931 31094 31276 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 10:36:28.738 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:28.764 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:28.764 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:28.797 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:28.804 31094 31094 I ImeTracker: dev.translationtest.ns:6f245c0e: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_CLOSE_CURRENT_SESSION fromUser false
+10-28 10:36:28.804 31094 31094 D InsetsController: hide(ime(), fromIme=false)
+10-28 10:36:28.805 31094 31094 I ImeTracker: dev.translationtest.ns:6f245c0e: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 10:36:28.961 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:28.961 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:35.380 31094 31094 I ImeTracker: dev.translationtest.ns:ce78e508: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 10:36:35.380 31094 31094 I ImeTracker: dev.translationtest.ns:ce78e508: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 10:36:35.384 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:35.384 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:35.385 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:35.387 31094 31094 D AutofillManager: view not autofillable - not passing ime action check
+10-28 10:36:42.168 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.171 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.172 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.172 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.172 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.173 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.173 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.173 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.174 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.174 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.174 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.175 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.176 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.176 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.177 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.177 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.177 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.177 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.178 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.178 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.178 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.178 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.178 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.179 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.179 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.179 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.179 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.253 31094 31094 W HWUI    : Image decoding logging dropped!
+10-28 10:36:42.539 31094 31094 D InsetsController: hide(ime(), fromIme=false)
+10-28 10:36:42.539 31094 31094 I ImeTracker: dev.translationtest.ns:118ca9b6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN

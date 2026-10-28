@@ -1,0 +1,28 @@
+{
+  "id": "favorites-some",
+  "description": "Favorite list [12, 3] with only [Food] selected: favorite 12 (Lunch, Food) renders; favorite 3 (Ionic Tooling, Tooling) is still excluded by the track filter although it is favorited (sessions.ts:208-224).",
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food"
+    ],
+    "favoriteIds": [
+      12,
+      3
+    ],
+    "mode": "favorites"
+  },
+  "expected": {
+    "sessionIds": [
+      12
+    ],
+    "groups": [
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  }
+}

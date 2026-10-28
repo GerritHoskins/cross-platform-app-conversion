@@ -1,0 +1,402 @@
+--------- beginning of main
+10-28 20:27:37.266  9013  9013 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 20:27:37.348  9013  9013 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 20:27:37.350  9013  9013 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 20:27:37.350  9013  9013 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 20:27:37.414  9013  9013 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 20:27:37.635  9013  9013 D nativeloader: Configuring clns-9 for other apk /data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/lib/x86_64:/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 20:27:37.640  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment: Currently set values for:
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 20:27:37.666  9013  9013 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 20:27:37.667  9013  9013 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 20:27:37.846  9013  9013 D nativeloader: Load /data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!classes5.dex): ok
+10-28 20:27:37.847  9013  9013 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 20:27:38.059  9013  9013 D TNS.Runtime: V8 version 14.9.207.39
+10-28 20:27:38.336  9013  9013 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-28 20:27:38.485  9013  9013 I Choreographer: Skipped 44 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-28 20:27:38.489  9013  9049 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 20:27:38.491  9013  9013 I nslationtest.ns: AssetManager2(0x7bd269016c18) locale list changing from [] to [en-US]
+10-28 20:27:38.559  9013  9049 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 20:27:38.560  9013  9049 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 20:27:38.566  9013  9049 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 20:27:38.566  9013  9049 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 20:27:38.570  9013  9013 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 20:27:38.570  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 20:27:38.594  9013  9013 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 20:27:38.691  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:38.694  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:38.737  9013  9013 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 20:27:38.738  9013  9013 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 20:27:38.816  9013  9013 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 20:27:39.007  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:39.007  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:39.019  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:39.030  9013  9013 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 20:27:39.100  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:39.103  9013  9013 I ImeTracker: dev.translationtest.ns:b844cc85: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:27:39.108  9013  9013 I ImeTracker: dev.translationtest.ns:b844cc85: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:27:39.108  9013  9013 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 20:27:39.186  9013  9013 W HWUI    : Unknown dataspace 0
+10-28 20:27:39.215  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:39.215  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:39.496  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:27:39.496  9013  9013 I ImeTracker: dev.translationtest.ns:7cb27ac2: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:27:39.525  9013  9020 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 20:27:43.992  9013  9092 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 20:27:49.100  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.103  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.104  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.104  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.104  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.105  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.105  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.106  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.107  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.107  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.108  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.108  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.108  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.109  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.109  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.110  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.110  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.111  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.111  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.112  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.113  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.114  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.114  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.114  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.115  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.115  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.116  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.161  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:49.286  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:27:49.286  9013  9013 I ImeTracker: dev.translationtest.ns:1b4cb74f: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:27:52.197  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@795f32b
+10-28 20:27:53.023  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@93b3eeb
+10-28 20:27:53.035  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:27:53.078  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@795f32b
+10-28 20:27:53.085  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.085  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.118  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@4ec0f7a
+10-28 20:27:53.127  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:27:53.140  9013  9013 I nslationtest.ns: AssetManager2(0x7bd2690162b8) locale list changing from [] to [en-US]
+10-28 20:27:53.145  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26901fbd8) locale list changing from [] to [en-US]
+10-28 20:27:53.179  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:53.180  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:53.191  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:53.191  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:53.192  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.215  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.216  9013  9013 I ImeTracker: dev.translationtest.ns:46b83560: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:27:53.217  9013  9013 I ImeTracker: dev.translationtest.ns:46b83560: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:27:53.224  9013  9013 I ImeTracker: dev.translationtest.ns:9a7b1e3: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:27:53.224  9013  9013 I ImeTracker: dev.translationtest.ns:9a7b1e3: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:27:53.232  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.236  9013  9013 I Choreographer: Skipped 69 frames!  The application may be doing too much work on its main thread.
+10-28 20:27:53.239  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.239  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:53.365  9013  9057 I HWUI    : Davey! duration=1275ms; Flags=1, FrameTimelineVsyncId=80454, IntendedVsync=9754725554626, Vsync=9755875554580, InputEventId=0, HandleInputStart=9755888138200, AnimationStart=9755888156300, PerformTraversalsStart=9755888198500, DrawStart=9755993460400, FrameDeadline=9754742221292, FrameStartTime=9755887784200, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=9755995438200, SyncStart=9755997599600, IssueDrawCommandsStart=9755997710000, SwapBuffers=9756001752800, FrameCompleted=9756003323600, DequeueBufferDuration=19300, QueueBufferDuration=1034800, GpuCompleted=9756003245000, SwapBuffersCompleted=9756003323600, DisplayPresentTime=0, CommandSubmissionCompleted=9756001752800, 
+10-28 20:27:53.404  9013  9013 I ImeTracker: dev.translationtest.ns:a918f236: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:27:53.404  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:27:53.405  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:27:53.942  9013  9222 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns
+10-28 20:27:54.144  9013  9013 I ImeTracker: system_server:a80949f6: onShown
+10-28 20:27:58.255  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.260  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.261  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.293  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@7e258f7
+10-28 20:27:58.300  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:27:58.302  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26901ef58) locale list changing from [] to [en-US]
+10-28 20:27:58.303  9013  9013 I nslationtest.ns: AssetManager2(0x7bd269024d18) locale list changing from [] to [en-US]
+10-28 20:27:58.315  9013  9021 W nslationtest.ns: Cleared Reference was only reachable from finalizer (only reported once)
+10-28 20:27:58.345  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:58.348  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:58.360  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:58.360  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:27:58.362  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.367  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.367  9013  9013 I ImeTracker: dev.translationtest.ns:be6cbfd6: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:27:58.368  9013  9013 I ImeTracker: dev.translationtest.ns:be6cbfd6: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:27:58.370  9013  9013 I ImeTracker: dev.translationtest.ns:a025a34c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:27:58.370  9013  9013 I ImeTracker: dev.translationtest.ns:a025a34c: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:27:58.374  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.384  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.384  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:27:58.507  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:27:58.528  9013  9013 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 20:27:58.693  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:27:58.693  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:27:58.703  9013  9013 I ImeTracker: dev.translationtest.ns:bab100a5: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:27:58.703  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:27:58.703  9013  9013 I ImeTracker: dev.translationtest.ns:bab100a5: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 20:27:58.716  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:27:58.724  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 20:27:58.801  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@510ae3
+10-28 20:27:58.927  9013  9013 I ImeTracker: system_server:442cd1cd: onShown
+10-28 20:28:06.159  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.160  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.166  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.166  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.167  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.167  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.168  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.169  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.170  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.170  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.171  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.171  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.171  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.171  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.172  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.172  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.173  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.173  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.174  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.174  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.175  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.178  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.178  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.178  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.179  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.179  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.180  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.202  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:06.277  9013  9013 I ImeTracker: system_server:3ae01131: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-28 20:28:06.322  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@510ae3
+10-28 20:28:06.349  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:28:06.350  9013  9013 I ImeTracker: dev.translationtest.ns:d8f54c9: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:28:06.366  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:28:06.382  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@9f08f2a
+10-28 20:28:06.438  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@9f08f2a
+10-28 20:28:10.948  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@e213872
+10-28 20:28:10.951  9013  9049 D HWUI    : endAllActiveAnimators on 0x7bd3490a9b30 (RippleDrawable) with handle 0x7bd3090d6a60
+10-28 20:28:10.999  9013  9013 I ImeTracker: dev.translationtest.ns:64caa829: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:28:10.999  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:28:11.000  9013  9013 I ImeTracker: dev.translationtest.ns:64caa829: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:28:11.000  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:28:11.000  9013  9013 I ImeTracker: dev.translationtest.ns:6e64eaf5: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:28:11.360  9013  9013 I ImeTracker: system_server:b9969a28: onShown
+10-28 20:28:16.047  9013  9013 I ImeTracker: system_server:2f9a209a: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-28 20:28:16.099  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@510ae3
+10-28 20:28:16.132  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:28:16.132  9013  9013 I ImeTracker: dev.translationtest.ns:ba1e7238: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:28:16.152  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:28:16.182  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@7dad786
+10-28 20:28:16.242  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@7dad786
+10-28 20:28:23.252  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@a915dd5
+10-28 20:28:23.269  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@74c0014
+10-28 20:28:23.277  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:28:23.284  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@a915dd5
+10-28 20:28:23.286  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.287  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.287  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.324  9013  9021 I nslationtest.ns: Background concurrent mark compact GC freed 2553KB AllocSpace bytes, 30(600KB) LOS objects, 49% free, 5940KB/11MB, paused 5.696ms,1.279ms total 54.047ms
+10-28 20:28:23.327  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@de1328c
+10-28 20:28:23.336  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:28:23.340  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26902b758) locale list changing from [] to [en-US]
+10-28 20:28:23.342  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26901dc98) locale list changing from [] to [en-US]
+10-28 20:28:23.369  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:23.370  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:23.377  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:23.377  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:23.378  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.381  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.382  9013  9013 I ImeTracker: dev.translationtest.ns:bad02fee: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:28:23.382  9013  9013 I ImeTracker: dev.translationtest.ns:bad02fee: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:28:23.386  9013  9013 I ImeTracker: dev.translationtest.ns:2e0329ce: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:28:23.386  9013  9013 I ImeTracker: dev.translationtest.ns:2e0329ce: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:28:23.392  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.396  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.396  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:23.574  9013  9013 I ImeTracker: dev.translationtest.ns:c25102c2: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:28:23.574  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:28:23.574  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:28:23.977  9013  9013 I ImeTracker: system_server:f106828c: onShown
+10-28 20:28:29.059  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.059  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.059  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.105  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@410e48e
+10-28 20:28:29.109  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:28:29.112  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26902ec78) locale list changing from [] to [en-US]
+10-28 20:28:29.113  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26902a178) locale list changing from [] to [en-US]
+10-28 20:28:29.138  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:29.139  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:29.144  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:29.144  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:29.145  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.149  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.149  9013  9013 I ImeTracker: dev.translationtest.ns:d973d263: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:28:29.150  9013  9013 I ImeTracker: dev.translationtest.ns:d973d263: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:28:29.151  9013  9013 I ImeTracker: dev.translationtest.ns:2395f805: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:28:29.151  9013  9013 I ImeTracker: dev.translationtest.ns:2395f805: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:28:29.155  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.162  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.162  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:28:29.247  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:28:29.251  9013  9013 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 20:28:29.389  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:28:29.389  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:28:29.395  9013  9013 I ImeTracker: dev.translationtest.ns:5476c154: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:28:29.395  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:28:29.395  9013  9013 I ImeTracker: dev.translationtest.ns:5476c154: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 20:28:29.395  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:28:29.412  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 20:28:29.471  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@ba15be3
+10-28 20:28:29.626  9013  9013 I ImeTracker: system_server:d627e6e7: onShown
+10-28 20:28:36.840  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.840  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.841  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.841  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.841  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.841  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.842  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.842  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.848  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.848  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.849  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.849  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.850  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.850  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.850  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.850  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.851  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.851  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.851  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.852  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.852  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.852  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.852  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.852  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.853  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.853  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.853  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:28:36.943  9013  9013 I ImeTracker: system_server:1c75c42a: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-28 20:28:36.983  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@ba15be3
+10-28 20:28:36.985  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:28:36.985  9013  9013 I ImeTracker: dev.translationtest.ns:c828aba6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:28:37.015  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:28:37.033  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@12ae1c9
+10-28 20:28:37.056  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@12ae1c9
+10-28 20:29:29.913  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c0de6b1
+10-28 20:29:29.916  9013  9049 D HWUI    : endAllActiveAnimators on 0x7bd349122000 (RippleDrawable) with handle 0x7bd3090fa490
+10-28 20:29:29.955  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:29.956  9013  9013 I ImeTracker: dev.translationtest.ns:bab63a0b: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:29:29.966  9013  9013 I ImeTracker: dev.translationtest.ns:a728b82a: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:29:29.966  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:29.966  9013  9013 I ImeTracker: dev.translationtest.ns:a728b82a: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:29:30.344  9013  9013 I ImeTracker: system_server:c39f2337: onShown
+10-28 20:29:35.015  9013  9013 I ImeTracker: system_server:813830cf: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-28 20:29:35.065  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@ba15be3
+10-28 20:29:35.099  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:29:35.099  9013  9013 I ImeTracker: dev.translationtest.ns:c4a6b3ae: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:29:35.118  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:29:35.150  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@16b51ed
+10-28 20:29:35.202  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@16b51ed
+10-28 20:29:37.844  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@39126d5
+10-28 20:29:37.849  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@ab5ded3
+10-28 20:29:37.862  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:29:37.871  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@39126d5
+10-28 20:29:37.873  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:37.876  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:37.878  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:37.922  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@94e7f8c
+10-28 20:29:37.926  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:29:37.929  9013  9013 I nslationtest.ns: AssetManager2(0x7bd2690217f8) locale list changing from [] to [en-US]
+10-28 20:29:37.930  9013  9013 I nslationtest.ns: AssetManager2(0x7bd26901b718) locale list changing from [] to [en-US]
+10-28 20:29:37.930  9013  9013 I nslationtest.ns: AssetManager2(0x7bd269023d78) locale list changing from [] to [en-US]
+10-28 20:29:37.966  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:37.968  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:37.982  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:37.983  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:37.983  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:37.990  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:37.990  9013  9013 I ImeTracker: dev.translationtest.ns:4d016ca0: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:29:37.990  9013  9013 I ImeTracker: dev.translationtest.ns:4d016ca0: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:29:37.993  9013  9013 I ImeTracker: dev.translationtest.ns:c1ce0a48: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:29:37.993  9013  9013 I ImeTracker: dev.translationtest.ns:c1ce0a48: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:29:37.997  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:38.003  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:38.003  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:38.163  9013  9013 I ImeTracker: dev.translationtest.ns:ae461c42: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:29:38.163  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:38.163  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:29:38.614  9013  9013 I ImeTracker: system_server:59ce3170: onShown
+10-28 20:29:43.771  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.771  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.771  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.813  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@13205a
+10-28 20:29:43.816  9013  9013 D ViewRootImpl: Skipping stats log for color mode
+10-28 20:29:43.819  9013  9013 I nslationtest.ns: AssetManager2(0x7bd2690243b8) locale list changing from [] to [en-US]
+10-28 20:29:43.840  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:43.842  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:43.849  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:43.850  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:43.851  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.854  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.855  9013  9013 I ImeTracker: dev.translationtest.ns:837c5050: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:29:43.855  9013  9013 I ImeTracker: dev.translationtest.ns:837c5050: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:29:43.856  9013  9013 I ImeTracker: dev.translationtest.ns:35ca49b9: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:29:43.856  9013  9013 I ImeTracker: dev.translationtest.ns:35ca49b9: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:29:43.860  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.865  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.865  9013  9013 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:29:43.947  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:29:43.963  9013  9013 W RemoteInputConnectionImpl: getSurroundingText on inactive InputConnection
+10-28 20:29:44.062  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:44.062  9013  9013 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+10-28 20:29:44.078  9013  9013 I ImeTracker: dev.translationtest.ns:30672e84: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:29:44.078  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:44.079  9013  9013 I ImeTracker: dev.translationtest.ns:30672e84: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+10-28 20:29:44.079  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:29:44.097  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240
+10-28 20:29:44.327  9013  9013 I ImeTracker: system_server:902f8bb4: onShown
+10-28 20:29:51.720  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.722  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.722  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.722  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.722  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.722  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.723  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.723  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.723  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.723  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.724  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.724  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.724  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.725  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.725  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.726  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.726  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.726  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.726  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.727  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.727  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.727  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.728  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.728  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.728  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.728  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.729  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.752  9013  9013 W HWUI    : Image decoding logging dropped!
+10-28 20:29:51.865  9013  9013 I ImeTracker: system_server:5e0e62b0: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-28 20:29:51.916  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@bf9dd90
+10-28 20:29:51.950  9013  9013 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:29:51.950  9013  9013 I ImeTracker: dev.translationtest.ns:b3fad3e8: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:29:51.971  9013  9013 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-28 20:29:51.999  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@4b71a5a
+10-28 20:29:52.056  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@4b71a5a
+10-28 20:29:56.496  9013  9013 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@de86708
+10-28 20:29:56.499  9013  9049 D HWUI    : endAllActiveAnimators on 0x7bd349071c60 (RippleDrawable) with handle 0x7bd3090e9330
+10-28 20:29:56.540  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:56.540  9013  9013 I ImeTracker: dev.translationtest.ns:2db04646: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:29:56.551  9013  9013 I ImeTracker: dev.translationtest.ns:17dc17ea: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-28 20:29:56.551  9013  9013 D InsetsController: show(ime(), fromIme=false)
+10-28 20:29:56.552  9013  9013 I ImeTracker: dev.translationtest.ns:17dc17ea: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-28 20:29:56.927  9013  9013 I ImeTracker: system_server:ca63382b: onShown

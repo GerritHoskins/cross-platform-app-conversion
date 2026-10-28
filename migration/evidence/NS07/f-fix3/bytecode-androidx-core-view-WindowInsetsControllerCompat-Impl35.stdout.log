@@ -1,0 +1,118 @@
+Compiled from "WindowInsetsControllerCompat.java"
+class androidx.core.view.WindowInsetsControllerCompat$Impl35 extends androidx.core.view.WindowInsetsControllerCompat$Impl31 {
+  androidx.core.view.WindowInsetsControllerCompat$Impl35(android.view.Window, androidx.core.view.WindowInsetsControllerCompat, androidx.core.view.SoftwareKeyboardControllerCompat);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: invokespecial #1                  // Method androidx/core/view/WindowInsetsControllerCompat$Impl31."<init>":(Landroid/view/Window;Landroidx/core/view/WindowInsetsControllerCompat;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V
+       7: return
+    LineNumberTable:
+      line 899: 0
+      line 900: 7
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       8     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+          0       8     1 window   Landroid/view/Window;
+          0       8     2 compatController   Landroidx/core/view/WindowInsetsControllerCompat;
+          0       8     3 softwareKeyboardControllerCompat   Landroidx/core/view/SoftwareKeyboardControllerCompat;
+
+  androidx.core.view.WindowInsetsControllerCompat$Impl35(android.view.WindowInsetsController, androidx.core.view.WindowInsetsControllerCompat, androidx.core.view.SoftwareKeyboardControllerCompat);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: invokespecial #7                  // Method androidx/core/view/WindowInsetsControllerCompat$Impl31."<init>":(Landroid/view/WindowInsetsController;Landroidx/core/view/WindowInsetsControllerCompat;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V
+       7: return
+    LineNumberTable:
+      line 905: 0
+      line 906: 7
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       8     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+          0       8     1 insetsController   Landroid/view/WindowInsetsController;
+          0       8     2 compatController   Landroidx/core/view/WindowInsetsControllerCompat;
+          0       8     3 softwareKeyboardControllerCompat   Landroidx/core/view/SoftwareKeyboardControllerCompat;
+
+  public boolean isAppearanceLightStatusBars();
+    Code:
+       0: aload_0
+       1: getfield      #10                 // Field mInsetsController:Landroid/view/WindowInsetsController;
+       4: invokeinterface #16,  1           // InterfaceMethod android/view/WindowInsetsController.getSystemBarsAppearance:()I
+       9: bipush        8
+      11: iand
+      12: ifeq          19
+      15: iconst_1
+      16: goto          20
+      19: iconst_0
+      20: ireturn
+    LineNumberTable:
+      line 910: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      21     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+
+  public boolean isAppearanceLightNavigationBars();
+    Code:
+       0: aload_0
+       1: getfield      #10                 // Field mInsetsController:Landroid/view/WindowInsetsController;
+       4: invokeinterface #16,  1           // InterfaceMethod android/view/WindowInsetsController.getSystemBarsAppearance:()I
+       9: bipush        16
+      11: iand
+      12: ifeq          19
+      15: iconst_1
+      16: goto          20
+      19: iconst_0
+      20: ireturn
+    LineNumberTable:
+      line 916: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      21     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+
+  public void setAppearanceLightStatusBars(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #10                 // Field mInsetsController:Landroid/view/WindowInsetsController;
+       4: iload_1
+       5: ifeq          13
+       8: bipush        8
+      10: goto          14
+      13: iconst_0
+      14: bipush        8
+      16: invokeinterface #22,  3           // InterfaceMethod android/view/WindowInsetsController.setSystemBarsAppearance:(II)V
+      21: return
+    LineNumberTable:
+      line 922: 0
+      line 923: 4
+      line 922: 16
+      line 925: 21
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      22     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+          0      22     1 isLight   Z
+
+  public void setAppearanceLightNavigationBars(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #10                 // Field mInsetsController:Landroid/view/WindowInsetsController;
+       4: iload_1
+       5: ifeq          13
+       8: bipush        16
+      10: goto          14
+      13: iconst_0
+      14: bipush        16
+      16: invokeinterface #22,  3           // InterfaceMethod android/view/WindowInsetsController.setSystemBarsAppearance:(II)V
+      21: return
+    LineNumberTable:
+      line 929: 0
+      line 930: 4
+      line 929: 16
+      line 932: 21
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      22     0  this   Landroidx/core/view/WindowInsetsControllerCompat$Impl35;
+          0      22     1 isLight   Z
+}

@@ -1,0 +1,105 @@
+Compiled from "EdgeToEdge.kt"
+class androidx.activity.EdgeToEdgeApi29 extends androidx.activity.EdgeToEdgeApi28 {
+  public androidx.activity.EdgeToEdgeApi29();
+    Code:
+       0: aload_0
+       1: invokespecial #8                  // Method androidx/activity/EdgeToEdgeApi28."<init>":()V
+       4: return
+    LineNumberTable:
+      line 308: 0
+      line 307: 4
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Landroidx/activity/EdgeToEdgeApi29;
+
+  public void setUp(androidx.activity.SystemBarStyle, androidx.activity.SystemBarStyle, android.view.Window, android.view.View, boolean, boolean);
+    Code:
+       0: aload_1
+       1: ldc           #16                 // String statusBarStyle
+       3: invokestatic  #22                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #24                 // String navigationBarStyle
+       9: invokestatic  #22                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_3
+      13: ldc           #26                 // String window
+      15: invokestatic  #22                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      18: aload         4
+      20: ldc           #28                 // String view
+      22: invokestatic  #22                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      25: aload_3
+      26: iconst_0
+      27: invokestatic  #34                 // Method androidx/core/view/WindowCompat.setDecorFitsSystemWindows:(Landroid/view/Window;Z)V
+      30: aload_3
+      31: aload_1
+      32: iload         5
+      34: invokevirtual #40                 // Method androidx/activity/SystemBarStyle.getScrimWithEnforcedContrast$activity_release:(Z)I
+      37: invokevirtual #46                 // Method android/view/Window.setStatusBarColor:(I)V
+      40: aload_3
+      41: aload_2
+      42: iload         6
+      44: invokevirtual #40                 // Method androidx/activity/SystemBarStyle.getScrimWithEnforcedContrast$activity_release:(Z)I
+      47: invokevirtual #49                 // Method android/view/Window.setNavigationBarColor:(I)V
+      50: aload_3
+      51: iconst_0
+      52: invokevirtual #53                 // Method android/view/Window.setStatusBarContrastEnforced:(Z)V
+      55: aload_3
+      56: aload_2
+      57: invokevirtual #57                 // Method androidx/activity/SystemBarStyle.getNightMode$activity_release:()I
+      60: ifne          67
+      63: iconst_1
+      64: goto          68
+      67: iconst_0
+      68: invokevirtual #60                 // Method android/view/Window.setNavigationBarContrastEnforced:(Z)V
+      71: new           #62                 // class androidx/core/view/WindowInsetsControllerCompat
+      74: dup
+      75: aload_3
+      76: aload         4
+      78: invokespecial #65                 // Method androidx/core/view/WindowInsetsControllerCompat."<init>":(Landroid/view/Window;Landroid/view/View;)V
+      81: astore        7
+      83: iconst_0
+      84: istore        8
+      86: aload         7
+      88: iload         5
+      90: ifne          97
+      93: iconst_1
+      94: goto          98
+      97: iconst_0
+      98: invokevirtual #68                 // Method androidx/core/view/WindowInsetsControllerCompat.setAppearanceLightStatusBars:(Z)V
+     101: aload         7
+     103: iload         6
+     105: ifne          112
+     108: iconst_1
+     109: goto          113
+     112: iconst_0
+     113: invokevirtual #71                 // Method androidx/core/view/WindowInsetsControllerCompat.setAppearanceLightNavigationBars:(Z)V
+     116: nop
+     117: nop
+     118: return
+    LineNumberTable:
+      line 320: 25
+      line 321: 30
+      line 322: 40
+      line 323: 41
+      line 322: 47
+      line 324: 50
+      line 325: 55
+      line 326: 56
+      line 325: 68
+      line 327: 71
+      line 328: 86
+      line 329: 101
+      line 330: 116
+      line 327: 117
+      line 331: 118
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+         86      31     8 $i$a$-run-EdgeToEdgeApi29$setUp$1   I
+         83      34     7 $this$setUp_u24lambda_u240   Landroidx/core/view/WindowInsetsControllerCompat;
+          0     119     0  this   Landroidx/activity/EdgeToEdgeApi29;
+          0     119     1 statusBarStyle   Landroidx/activity/SystemBarStyle;
+          0     119     2 navigationBarStyle   Landroidx/activity/SystemBarStyle;
+          0     119     3 window   Landroid/view/Window;
+          0     119     4  view   Landroid/view/View;
+          0     119     5 statusBarIsDark   Z
+          0     119     6 navigationBarIsDark   Z
+}

@@ -1,0 +1,2867 @@
+[
+  {
+    "case": "A05.install",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "One replace-install; installed candidate 3 SHA-256",
+    "observed": {
+      "apkPath": "/data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/base.apk",
+      "sha256": "0d4c089755b895d09c80fd406aa6c671947691b6124ad9e399d9ff3025cca50e"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/install-check.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-cold-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-cold-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-cold-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-empty-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-empty-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-empty-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-empty-return-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-empty-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-empty-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-favorite-top",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-all-return",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-return.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-recycle-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycle-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycle-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-recycle-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycle-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycle-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-close-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-close-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-close-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.0-close-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-close-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-close-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.strip-geometry",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Measured translation equals revealed strip; 252 px at 1.0; >=252 at larger scales; closed action absent",
+    "observed": {
+      "fontScale": "1.0",
+      "favoriteStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 807,
+          "y2": 1065,
+          "cx": 404,
+          "cy": 941,
+          "width": 807,
+          "height": 249
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 555,
+          "y2": 1065,
+          "cx": 278,
+          "cy": 941,
+          "width": 555,
+          "height": 249
+        },
+        "stripWidthPx": 252,
+        "strip": {
+          "x1": 555,
+          "x2": 807,
+          "y1": 816,
+          "y2": 1065
+        },
+        "xmlAction": null
+      },
+      "removeStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 807,
+          "y2": 1065,
+          "cx": 404,
+          "cy": 941,
+          "width": 807,
+          "height": 249
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 555,
+          "y2": 1065,
+          "cx": 278,
+          "cy": 941,
+          "width": 555,
+          "height": 249
+        },
+        "stripWidthPx": 252,
+        "strip": {
+          "x1": 555,
+          "x2": 807,
+          "y1": 816,
+          "y2": 1065
+        },
+        "xmlAction": null
+      },
+      "recycledStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 807,
+          "y2": 1065,
+          "cx": 404,
+          "cy": 941,
+          "width": 807,
+          "height": 249
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 555,
+          "y2": 1065,
+          "cx": 278,
+          "cy": 941,
+          "width": 555,
+          "height": 249
+        },
+        "stripWidthPx": 252,
+        "strip": {
+          "x1": 555,
+          "x2": 807,
+          "y1": 816,
+          "y2": 1065
+        },
+        "xmlAction": null
+      },
+      "closedRow": {
+        "index": "0",
+        "text": "",
+        "resource-id": "session-1",
+        "class": "android.view.ViewGroup",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Breakfast",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,816][807,1065]",
+        "drawing-order": "1",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-remove-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycled-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-recycled-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-closed-action.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-closed-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.detail-selected",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Detail favorite selected=true after add and false after remove",
+    "observed": {
+      "afterAdd": {
+        "index": "1",
+        "text": "Remove from favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "true",
+        "bounds": "[63,1144][1017,1270]",
+        "drawing-order": "8",
+        "hint": ""
+      },
+      "afterRemove": {
+        "index": "1",
+        "text": "Add to favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[63,1144][1017,1270]",
+        "drawing-order": "8",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-added.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-added.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-removed.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-removed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.visual",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Readable unclipped representative flows, Favorite and Remove strips, detail and bottom controls",
+    "observed": {
+      "fontScale": "1.0",
+      "coordinatorPixelInspection": "pending",
+      "favoriteStripWidthPx": 252,
+      "removeStripWidthPx": 252,
+      "detailBottomReached": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-all-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-filter.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-filter.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-dialog.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-dialog.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-bottom.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-detail-bottom.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.0-remove-strip.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-cold-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-cold-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-cold-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.execution",
+    "status": "BLOCKED",
+    "run": "f-device2",
+    "expected": "Complete assigned representative scale flow",
+    "observed": "Frame collision F4-G05-1.3-cold-all",
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-empty-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-empty-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-empty-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-empty-return-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-empty-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-empty-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-cold-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-cold-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-cold-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-empty-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-empty-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-empty-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-empty-return-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-empty-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-empty-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-favorite-top",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-all-return",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-return.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-recycle-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycle-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycle-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-recycle-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycle-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycle-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-close-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-close-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-close-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-1.3-rerun-close-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-close-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-close-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.strip-geometry",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Measured translation equals revealed strip; 252 px at 1.0; >=252 at larger scales; closed action absent",
+    "observed": {
+      "fontScale": "1.3",
+      "favoriteStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 798,
+          "x2": 778,
+          "y2": 1100,
+          "cx": 389,
+          "cy": 949,
+          "width": 778,
+          "height": 302
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 798,
+          "x2": 518,
+          "y2": 1100,
+          "cx": 259,
+          "cy": 949,
+          "width": 518,
+          "height": 302
+        },
+        "stripWidthPx": 260,
+        "strip": {
+          "x1": 518,
+          "x2": 778,
+          "y1": 798,
+          "y2": 1100
+        },
+        "xmlAction": null
+      },
+      "removeStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 798,
+          "x2": 777,
+          "y2": 1100,
+          "cx": 389,
+          "cy": 949,
+          "width": 777,
+          "height": 302
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 798,
+          "x2": 516,
+          "y2": 1100,
+          "cx": 258,
+          "cy": 949,
+          "width": 516,
+          "height": 302
+        },
+        "stripWidthPx": 261,
+        "strip": {
+          "x1": 516,
+          "x2": 777,
+          "y1": 798,
+          "y2": 1100
+        },
+        "xmlAction": null
+      },
+      "recycledStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 803,
+          "x2": 778,
+          "y2": 1105,
+          "cx": 389,
+          "cy": 954,
+          "width": 778,
+          "height": 302
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 803,
+          "x2": 518,
+          "y2": 1105,
+          "cx": 259,
+          "cy": 954,
+          "width": 518,
+          "height": 302
+        },
+        "stripWidthPx": 260,
+        "strip": {
+          "x1": 518,
+          "x2": 778,
+          "y1": 803,
+          "y2": 1105
+        },
+        "xmlAction": null
+      },
+      "closedRow": {
+        "index": "0",
+        "text": "",
+        "resource-id": "session-1",
+        "class": "android.view.ViewGroup",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Breakfast",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,803][778,1105]",
+        "drawing-order": "1",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-remove-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycled-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-recycled-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-closed-action.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-closed-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.detail-selected",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Detail favorite selected=true after add and false after remove",
+    "observed": {
+      "afterAdd": {
+        "index": "1",
+        "text": "Remove from favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "true",
+        "bounds": "[63,1578][1017,1704]",
+        "drawing-order": "8",
+        "hint": ""
+      },
+      "afterRemove": {
+        "index": "1",
+        "text": "Add to favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[63,1578][1017,1704]",
+        "drawing-order": "8",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-added.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-added.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-removed.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-removed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.visual",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Readable unclipped representative flows, Favorite and Remove strips, detail and bottom controls",
+    "observed": {
+      "fontScale": "1.3",
+      "coordinatorPixelInspection": "pending",
+      "favoriteStripWidthPx": 260,
+      "removeStripWidthPx": 261,
+      "detailBottomReached": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-all-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-filter.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-filter.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-dialog.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-dialog.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-bottom.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-detail-bottom.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-1.3-rerun-remove-strip.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-cold-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-cold-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-cold-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-empty-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-empty-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-empty-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-empty-return-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-empty-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-empty-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-favorite-top",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-all-return",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-return.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-recycle-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycle-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycle-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-recycle-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycle-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycle-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-close-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-close-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-close-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-G05-2.0-close-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-close-all.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-close-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.strip-geometry",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Measured translation equals revealed strip; 252 px at 1.0; >=252 at larger scales; closed action absent",
+    "observed": {
+      "fontScale": "2.0",
+      "favoriteStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 852,
+          "x2": 711,
+          "y2": 1248,
+          "cx": 356,
+          "cy": 1050,
+          "width": 711,
+          "height": 396
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 852,
+          "x2": 384,
+          "y2": 1248,
+          "cx": 192,
+          "cy": 1050,
+          "width": 384,
+          "height": 396
+        },
+        "stripWidthPx": 327,
+        "strip": {
+          "x1": 384,
+          "x2": 711,
+          "y1": 852,
+          "y2": 1248
+        },
+        "xmlAction": null
+      },
+      "removeStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 852,
+          "x2": 708,
+          "y2": 1248,
+          "cx": 354,
+          "cy": 1050,
+          "width": 708,
+          "height": 396
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 852,
+          "x2": 378,
+          "y2": 1248,
+          "cx": 189,
+          "cy": 1050,
+          "width": 378,
+          "height": 396
+        },
+        "stripWidthPx": 330,
+        "strip": {
+          "x1": 378,
+          "x2": 708,
+          "y1": 852,
+          "y2": 1248
+        },
+        "xmlAction": null
+      },
+      "recycledStrip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 850,
+          "x2": 711,
+          "y2": 1246,
+          "cx": 356,
+          "cy": 1048,
+          "width": 711,
+          "height": 396
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 850,
+          "x2": 384,
+          "y2": 1246,
+          "cx": 192,
+          "cy": 1048,
+          "width": 384,
+          "height": 396
+        },
+        "stripWidthPx": 327,
+        "strip": {
+          "x1": 384,
+          "x2": 711,
+          "y1": 850,
+          "y2": 1246
+        },
+        "xmlAction": null
+      },
+      "closedRow": {
+        "index": "0",
+        "text": "",
+        "resource-id": "session-1",
+        "class": "android.view.ViewGroup",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Breakfast",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,850][711,1246]",
+        "drawing-order": "1",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-remove-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycled-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-recycled-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-closed-action.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-closed-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.detail-selected",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Detail favorite selected=true after add and false after remove",
+    "observed": {
+      "afterAdd": {
+        "index": "1",
+        "text": "Remove from favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "true",
+        "bounds": "[63,1991][1017,2117]",
+        "drawing-order": "8",
+        "hint": ""
+      },
+      "afterRemove": {
+        "index": "1",
+        "text": "Add to favorites",
+        "resource-id": "favorite-toggle",
+        "class": "android.widget.Button",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[63,1991][1017,2117]",
+        "drawing-order": "8",
+        "hint": ""
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-added.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-added.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-removed.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-removed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.visual",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Readable unclipped representative flows, Favorite and Remove strips, detail and bottom controls",
+    "observed": {
+      "fontScale": "2.0",
+      "coordinatorPixelInspection": "pending",
+      "favoriteStripWidthPx": 327,
+      "removeStripWidthPx": 330,
+      "detailBottomReached": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-all-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-top.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-top.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-scrolled.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-scrolled.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-filter.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-filter.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-dialog.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-dialog.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-bottom.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-detail-bottom.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-favorite-strip.xml",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-remove-strip.png",
+      "migration/evidence/NS07/f-device2/F4-G05-2.0-remove-strip.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.schedule",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "no"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-cold.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.filter",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "no"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-baseline.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-baseline.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.detail",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "no"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-baseline.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-baseline.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.schedule",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "yes"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-cold.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.filter",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "yes"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-cold.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.detail",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "mode": "yes"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-cold.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.schedule.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17474",
+      "pidAfter": "17474",
+      "page": "schedule"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.schedule.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17474",
+      "pidAfter": "17474",
+      "mode": "yes",
+      "page": "schedule",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-schedule-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.schedule.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17474",
+      "pidAfter": "17474",
+      "page": "schedule"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.schedule.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17474",
+      "pidAfter": "17474",
+      "mode": "no",
+      "page": "schedule",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-schedule-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.detail.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17651",
+      "pidAfter": "17651",
+      "page": "detail"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.detail.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17651",
+      "pidAfter": "17651",
+      "mode": "yes",
+      "page": "detail",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.detail.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17651",
+      "pidAfter": "17651",
+      "page": "detail"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.detail.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17651",
+      "pidAfter": "17651",
+      "mode": "no",
+      "page": "detail",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-detail-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.filter.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17895",
+      "pidAfter": "17895",
+      "page": "filter"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.filter.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17895",
+      "pidAfter": "17895",
+      "mode": "yes",
+      "page": "filter",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-filter-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.filter.process",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Live appearance switch retains same process and page without navigation",
+    "observed": {
+      "pidBefore": "17895",
+      "pidAfter": "17895",
+      "page": "filter"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.filter.live",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Status-bar icons and content readable; coordinator pixel grading required",
+    "observed": {
+      "pidBefore": "17895",
+      "pidAfter": "17895",
+      "mode": "no",
+      "page": "filter",
+      "navigationBetweenSwitchAndFrame": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-live.png",
+      "migration/evidence/NS07/f-device2/F4-G07-light-filter-live.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.navigation-back",
+    "status": "BLOCKED",
+    "run": "f-device2",
+    "expected": "One dark detail navigation into and back without cold relaunch",
+    "observed": {
+      "opened": true,
+      "returned": false,
+      "reason": "Toolbar Back centre inside prohibited edge zone; key restricted to later regression step"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-navigation.png",
+      "migration/evidence/NS07/f-device2/F4-G07-dark-detail-navigation.xml",
+      "migration/evidence/NS07/f-device2/F4-G07-navigation-back-restriction.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G02.query",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "IOnic entered with key surface shown produces name matches",
+    "observed": {
+      "visibleRows": [
+        {
+          "id": "session-4",
+          "name": "University of Ionic"
+        },
+        {
+          "id": "session-2",
+          "name": "Getting Started with Ionic"
+        },
+        {
+          "id": "session-3",
+          "name": "Ionic Tooling"
+        },
+        {
+          "id": "session-5",
+          "name": "Migrating to Ionic"
+        },
+        {
+          "id": "session-7",
+          "name": "The Evolution of Ionicons"
+        },
+        {
+          "id": "session-8",
+          "name": "Ionic Pro"
+        }
+      ],
+      "keyboardDecision": "full floating key surface; provisional pixels"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-query-results.png",
+      "migration/evidence/NS07/f-device2/F4-K-query-results.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G01",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "One Back dismisses full key surface, keeps query and schedule",
+    "observed": {
+      "queryPreserved": true,
+      "imeVisibleAfter": false,
+      "expandedKeyAreaAfter": false,
+      "pixels": {
+        "toolbarReferenceMad": 42.16612794612794,
+        "keyAreaDifferenceFromFocused": 15.196084867225807
+      },
+      "visualConfirmation": "provisional coordinator pixels"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-before-Back.png",
+      "migration/evidence/NS07/f-device2/F4-K-before-Back.xml",
+      "migration/evidence/NS07/f-device2/F4-K-after-Back.png",
+      "migration/evidence/NS07/f-device2/F4-K-after-Back.xml",
+      "migration/evidence/NS07/f-device2/F4-K-Back-key.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G08.keyboard",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Compare header/list bounds and actual keyboard coverage",
+    "observed": {
+      "searchAndListBounds": {
+        "baseline": [
+          {
+            "class": "android.widget.AutoCompleteTextView",
+            "id": "dev.translationtest.ns:id/search_src_text",
+            "bounds": "[21,289][954,384]"
+          },
+          {
+            "class": "android.widget.ListView",
+            "id": "",
+            "bounds": "[0,695][1080,2337]"
+          }
+        ],
+        "focused": [
+          {
+            "class": "android.widget.AutoCompleteTextView",
+            "id": "dev.translationtest.ns:id/search_src_text",
+            "bounds": "[21,289][954,384]"
+          },
+          {
+            "class": "android.widget.ListView",
+            "id": "",
+            "bounds": "[0,695][1080,2337]"
+          }
+        ],
+        "afterChoice": [
+          {
+            "class": "android.widget.AutoCompleteTextView",
+            "id": "dev.translationtest.ns:id/search_src_text",
+            "bounds": "[21,289][954,384]"
+          },
+          {
+            "class": "android.widget.ListView",
+            "id": "",
+            "bounds": "[0,695][1080,2337]"
+          }
+        ],
+        "lowerRegionMeanAbsoluteRgbDifference": 5.688218106995885,
+        "guards": {
+          "toolbar": 0,
+          "choice": 0
+        },
+        "keyboardNodes": [],
+        "classification": "Pending examination of XML bounds, lower-screen difference and window dump; coordinator pixel confirmation required"
+      },
+      "observed": "No resize: SearchBar and ListView bounds unchanged. Floating IME touchable key area overlaps list at x186..1080,y915..1692; content is covered, not inset. Docked full-width keyboard not produced; visual severity and usability grade require coordinator pixels."
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-baseline.png",
+      "migration/evidence/NS07/f-device2/F4-K-baseline.xml",
+      "migration/evidence/NS07/f-device2/F4-K-focused.png",
+      "migration/evidence/NS07/f-device2/F4-K-focused.xml",
+      "migration/evidence/NS07/f-device2/F4-K-after-choice.png",
+      "migration/evidence/NS07/f-device2/F4-K-after-choice.xml",
+      "migration/evidence/NS07/f-device2/F4-K-after-choice-window.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-K-favorite-mode",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-favorite-mode.png",
+      "migration/evidence/NS07/f-device2/F4-K-favorite-mode.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-K-all-mode",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-all-mode.png",
+      "migration/evidence/NS07/f-device2/F4-K-all-mode.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G02.controls",
+    "status": "LIMITED",
+    "run": "f-device2",
+    "expected": "Modes/list/filter remain usable with keyboard surface",
+    "observed": {
+      "modesAndFilterReached": true,
+      "queryPreserved": true,
+      "listActionNotAttempted": "Floating keyboard covers centre of first list row; no covered-coordinate blind tap",
+      "keyboardSurfaceOnReturn": {
+        "toolbarReferenceMad": 0,
+        "keyAreaDifferenceFromFocused": 14.206641444896478
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-K-return.png",
+      "migration/evidence/NS07/f-device2/F4-K-return.xml",
+      "migration/evidence/NS07/f-device2/F4-K-favorite-mode.png",
+      "migration/evidence/NS07/f-device2/F4-K-favorite-mode.xml",
+      "migration/evidence/NS07/f-device2/F4-K-all-mode.png",
+      "migration/evidence/NS07/f-device2/F4-K-all-mode.xml",
+      "migration/evidence/NS07/f-device2/F4-K-filter.png",
+      "migration/evidence/NS07/f-device2/F4-K-filter.xml",
+      "migration/evidence/NS07/f-device2/F4-K-filter-return.png",
+      "migration/evidence/NS07/f-device2/F4-K-filter-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R01.schedule",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Cold schedule begins Breakfast and University of Ionic",
+    "observed": {
+      "visibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "scope": "short load subset, not full B01"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R01-cold.png",
+      "migration/evidence/NS07/f-device2/F4-R01-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.search",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "IOnic yields visible case-insensitive name matches",
+    "observed": {
+      "rows": [
+        {
+          "id": "session-4",
+          "name": "University of Ionic"
+        },
+        {
+          "id": "session-2",
+          "name": "Getting Started with Ionic"
+        },
+        {
+          "id": "session-3",
+          "name": "Ionic Tooling"
+        },
+        {
+          "id": "session-5",
+          "name": "Migrating to Ionic"
+        },
+        {
+          "id": "session-7",
+          "name": "The Evolution of Ionicons"
+        },
+        {
+          "id": "session-8",
+          "name": "Ionic Pro"
+        }
+      ],
+      "scope": "mounted results only"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R02-results.png",
+      "migration/evidence/NS07/f-device2/F4-R02-results.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear",
+    "status": "BLOCKED",
+    "run": "f-device2",
+    "expected": "Own SearchBar clear centre can be tapped under edge restriction",
+    "observed": {
+      "target": {
+        "index": "1",
+        "text": "",
+        "resource-id": "dev.translationtest.ns:id/search_close_btn",
+        "class": "android.widget.ImageView",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Clear query",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[954,275][1059,398]",
+        "drawing-order": "4",
+        "hint": ""
+      },
+      "bounds": {
+        "x1": 954,
+        "y1": 275,
+        "x2": 1059,
+        "y2": 398,
+        "cx": 1007,
+        "cy": 337,
+        "width": 105,
+        "height": 123
+      },
+      "tapSent": false,
+      "reason": "Centre x1007 is inside prohibited 100px edge zone. No exception authorized for this control. Cold reset is not counted as own-control clear."
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R02-results.png",
+      "migration/evidence/NS07/f-device2/F4-R02-results.xml",
+      "migration/evidence/NS07/f-device2/F4-R02-clear-target.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R03-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R03-all.png",
+      "migration/evidence/NS07/f-device2/F4-R03-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R03-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R03-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-R03-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R03-return-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R03-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-R03-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "All -> Favorite -> All changes dataset and checked state",
+    "observed": {
+      "favoriteEmpty": true,
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "false",
+          "selected": "false"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "true",
+          "selected": "false"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "true",
+          "selected": "false"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "false",
+          "selected": "false"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R03-all.png",
+      "migration/evidence/NS07/f-device2/F4-R03-all.xml",
+      "migration/evidence/NS07/f-device2/F4-R03-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-R03-favorite.xml",
+      "migration/evidence/NS07/f-device2/F4-R03-return-all.png",
+      "migration/evidence/NS07/f-device2/F4-R03-return-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-back",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Correct detail opens; one system Back returns to schedule",
+    "observed": {
+      "returnedSchedule": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R04-detail.png",
+      "migration/evidence/NS07/f-device2/F4-R04-detail.xml",
+      "migration/evidence/NS07/f-device2/F4-R04-return.png",
+      "migration/evidence/NS07/f-device2/F4-R04-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R05.filter-Done",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Ten checked tracks; Done returns unchanged",
+    "observed": {
+      "switches": [
+        {
+          "name": "Communication",
+          "checked": "true"
+        },
+        {
+          "name": "Design",
+          "checked": "true"
+        },
+        {
+          "name": "Documentation",
+          "checked": "true"
+        },
+        {
+          "name": "Food",
+          "checked": "true"
+        },
+        {
+          "name": "Ionic",
+          "checked": "true"
+        },
+        {
+          "name": "Navigation",
+          "checked": "true"
+        },
+        {
+          "name": "Services",
+          "checked": "true"
+        },
+        {
+          "name": "Tooling",
+          "checked": "true"
+        },
+        {
+          "name": "Vue",
+          "checked": "true"
+        },
+        {
+          "name": "Workshop",
+          "checked": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R05-filter.png",
+      "migration/evidence/NS07/f-device2/F4-R05-filter.xml",
+      "migration/evidence/NS07/f-device2/F4-R05-return.png",
+      "migration/evidence/NS07/f-device2/F4-R05-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R06-favorite-added",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R06-favorite-added.png",
+      "migration/evidence/NS07/f-device2/F4-R06-favorite-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R06.favorite-add",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Add Breakfast immediately once; Favorite mode shows only Breakfast",
+    "observed": {
+      "rows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R06-add-alert.png",
+      "migration/evidence/NS07/f-device2/F4-R06-add-alert.xml",
+      "migration/evidence/NS07/f-device2/F4-R06-add-acknowledged.png",
+      "migration/evidence/NS07/f-device2/F4-R06-add-acknowledged.xml",
+      "migration/evidence/NS07/f-device2/F4-R06-favorite-added.png",
+      "migration/evidence/NS07/f-device2/F4-R06-favorite-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R07-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R07-all.png",
+      "migration/evidence/NS07/f-device2/F4-R07-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R07-favorite-preserved",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R07-favorite-preserved.png",
+      "migration/evidence/NS07/f-device2/F4-R07-favorite-preserved.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R07.already-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Duplicate favorite dialog Cancel preserves single Breakfast",
+    "observed": {
+      "rows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R07-already-added.png",
+      "migration/evidence/NS07/f-device2/F4-R07-already-added.xml",
+      "migration/evidence/NS07/f-device2/F4-R07-favorite-preserved.png",
+      "migration/evidence/NS07/f-device2/F4-R07-favorite-preserved.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R08.favorite-remove",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Favorite-mode Remove confirms, removes and shows empty",
+    "observed": {
+      "rows": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R08-confirm.png",
+      "migration/evidence/NS07/f-device2/F4-R08-confirm.xml",
+      "migration/evidence/NS07/f-device2/F4-R08-empty.png",
+      "migration/evidence/NS07/f-device2/F4-R08-empty.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R09-all",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R09-all.png",
+      "migration/evidence/NS07/f-device2/F4-R09-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-reveal",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "One row reveals its action, default width252 px",
+    "observed": {
+      "strip": {
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 807,
+          "y2": 1065,
+          "cx": 404,
+          "cy": 941,
+          "width": 807,
+          "height": 249
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 555,
+          "y2": 1065,
+          "cx": 278,
+          "cy": 941,
+          "width": 555,
+          "height": 249
+        },
+        "stripWidthPx": 252,
+        "strip": {
+          "x1": 555,
+          "x2": 807,
+          "y1": 816,
+          "y2": 1065
+        },
+        "xmlAction": null
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-reveal.png",
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-reveal.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F4-R09-swipe-action-favorite",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-action",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Computed revealed-strip centre invokes one Breakfast favorite without detail navigation",
+    "observed": {
+      "rows": [
+        "session-1"
+      ],
+      "detailVisible": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-alert.png",
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-alert.xml",
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-favorite.png",
+      "migration/evidence/NS07/f-device2/F4-R09-swipe-action-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "No detected fatal/unhandled exception or PID change inside bounded windows",
+    "observed": {
+      "windows": 28,
+      "badWindows": [],
+      "scope": "bounded; warnings/errors retained verbatim"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/A06-log-review.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "settings.restore",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Every recorded setting/environment field equals step-1 value",
+    "observed": {
+      "settingsRestored": true,
+      "comparison": {
+        "model": {
+          "before": "sdk_gphone64_x86_64",
+          "after": "sdk_gphone64_x86_64",
+          "equal": true
+        },
+        "sdk": {
+          "before": "36",
+          "after": "36",
+          "equal": true
+        },
+        "size": {
+          "before": "Physical size: 1080x2400",
+          "after": "Physical size: 1080x2400",
+          "equal": true
+        },
+        "density": {
+          "before": "Physical density: 420",
+          "after": "Physical density: 420",
+          "equal": true
+        },
+        "densityProperty": {
+          "before": "",
+          "after": "",
+          "equal": true
+        },
+        "fontScale": {
+          "before": "1.0",
+          "after": "1.0",
+          "equal": true
+        },
+        "night": {
+          "before": "Night mode: no",
+          "after": "Night mode: no",
+          "equal": true
+        },
+        "accessibilityServices": {
+          "before": "null",
+          "after": "null",
+          "equal": true
+        },
+        "accessibilityEnabled": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "hardKeyboardIme": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "defaultIme": {
+          "before": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "after": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "equal": true
+        }
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "preservation",
+    "status": "PASS",
+    "run": "f-device2",
+    "expected": "Prior history, redactions, refs, package/checklist and source diff unchanged",
+    "observed": {
+      "protectedFiles": 20807,
+      "changed": [],
+      "diffByteEqual": true,
+      "indexEmpty": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device2/preservation-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  }
+]

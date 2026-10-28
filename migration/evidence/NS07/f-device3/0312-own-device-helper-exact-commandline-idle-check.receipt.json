@@ -1,0 +1,17 @@
+{
+  "command": "powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$ErrorActionPreference='Stop'; $p=@(Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' -and $_.CommandLine -match 'sol-ns07-r1-f6-20261028[\\\\/]f6-(live|dark|scales|regression|install|continue|finish)\\.mjs' } | Select-Object ProcessId,ParentProcessId,CommandLine); ConvertTo-Json -InputObject $p -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-28T14:55:41.438Z",
+  "durationMs": 557,
+  "label": "own-device-helper-exact-commandline-idle-check",
+  "error": null,
+  "stdout": "0312-own-device-helper-exact-commandline-idle-check.stdout.log",
+  "stderr": "0312-own-device-helper-exact-commandline-idle-check.stderr.log"
+}

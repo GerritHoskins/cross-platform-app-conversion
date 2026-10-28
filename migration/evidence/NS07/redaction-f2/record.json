@@ -1,0 +1,49 @@
+{
+    "version":  1,
+    "package":  "NS07",
+    "decision":  "D2 (privacy safeguard; RN07 D13 precedent)",
+    "phase":  "F2 (device rerun, candidate 2)",
+    "redactedBy":  "Claude Code coordinator (claude-opus-5-5)",
+    "redactedAt":  "2026-10-28T11:03:17.4001873Z",
+    "finding":  "Gboard showed a clipboard paste-suggestion chip (the current system clipboard item; the host clipboard changed during the run, so the two chips show different items) above the SearchBar in 2 of 210 distinct F2 frames. The chip is absent from all UI XML, logs, receipts, the checkpoint and the run stream (text search of every non-PNG file found no clipboard content). capture-index.json keeps the executor\u0027s pre-redaction hashes; sha256After below is authoritative for the committed PNGs.",
+    "detection":  "Coordinator visual inspection of all 210 distinct F2 frames via 18 contact sheets, then full-resolution crops of y 150-350 px for the two chip frames. All other frames, including every other SearchBar-focused frame (F2-K-*, F2-R02-*, F2-R03-*, *-settled*-enter, *-return-top), show only the floating Gboard toolbar with no clipboard content.",
+    "originals":  "Unredacted originals were moved outside version control to the git-ignored /_backup_ns07_redaction/f-device/ folder (*.unredacted.png); they are never committed.",
+    "files":  [
+                  {
+                      "path":  "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-return-top.png",
+                      "kind":  "png",
+                      "sha256Before":  "1771359cb4a0b71fc53200494f465bd80931f7198af2c900db613bdaaa723cfe",
+                      "sha256After":  "0ecafb73f33ae55cf1f305f1442eb795376a4847fede5f799601296e60357ce0",
+                      "bytesBefore":  207438,
+                      "bytesAfter":  166411,
+                      "regions":  [
+                                      {
+                                          "x":  45,
+                                          "y":  180,
+                                          "width":  805,
+                                          "height":  118,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard paste-suggestion chip (current system clipboard item)"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/f-device/F2-G05-1.3-settled-all-return-top-up-0.png",
+                      "kind":  "png",
+                      "sha256Before":  "0762a99791239d9ad6b76cc8f0e81290fe647c707da29cf508b67894945f854c",
+                      "sha256After":  "fed6c15ab85cc1f389b8eefaeb3dc5252e31a7c7075b95f72e6ed78e78399c32",
+                      "bytesBefore":  204092,
+                      "bytesAfter":  174934,
+                      "regions":  [
+                                      {
+                                          "x":  45,
+                                          "y":  172,
+                                          "width":  805,
+                                          "height":  118,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard paste-suggestion chip (current system clipboard item)"
+                                      }
+                                  ]
+                  }
+              ]
+}

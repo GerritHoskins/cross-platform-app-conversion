@@ -1,0 +1,67 @@
+diff --git "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix4\\SessionDetail.f5.txt" b/migration/nativescript/src/components/SessionDetail.vue
+index 8728db03..7d0d7ca2 100644
+--- "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix4\\SessionDetail.f5.txt"
++++ b/migration/nativescript/src/components/SessionDetail.vue
+@@ -7,15 +7,25 @@ import { parseSessionId } from '../state/session-detail';
+ const props = defineProps<{ sessionId: string }>();
+ const store = useConferenceStore();
+ let statusBarPage: Page | undefined;
+-let statusBarObserver: android.view.ViewTreeObserver | undefined;
+ let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
++let statusBarAttachState: android.view.View.OnAttachStateChangeListener | undefined;
++let statusBarPreDrawRegistered = false;
++
++function setStatusBarPreDraw(view: android.view.View, registered: boolean) {
++  if (!statusBarPreDraw || statusBarPreDrawRegistered === registered) return;
++  // F7: obtain the current observer while its view still owns it; never cache it.
++  const observer = view.getViewTreeObserver();
++  if (registered) observer.addOnPreDrawListener(statusBarPreDraw);
++  else observer.removeOnPreDrawListener(statusBarPreDraw);
++  statusBarPreDrawRegistered = registered;
++}
+ 
+ function pageLoaded(event: EventData) {
+   if (statusBarPage) return;
+   const page = event.object as Page;
+-  if (!page.android || android.os.Build.VERSION.SDK_INT < 30) return;
++  const view = page.android;
++  if (!view || android.os.Build.VERSION.SDK_INT < 30) return;
+   statusBarPage = page;
+-  statusBarObserver = page.android.getViewTreeObserver();
+   statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
+     onPreDraw() {
+       if (statusBarPage !== page || !page.isLoaded) return true;
+@@ -28,15 +38,29 @@ function pageLoaded(event: EventData) {
+       return true;
+     },
+   });
+-  statusBarObserver?.addOnPreDrawListener(statusBarPreDraw);
++  statusBarAttachState = new android.view.View.OnAttachStateChangeListener({
++    onViewAttachedToWindow(view) {
++      if (statusBarPage === page && page.isLoaded) setStatusBarPreDraw(view, true);
++    },
++    onViewDetachedFromWindow(view) {
++      // Android still exposes the attached tree here, before clearing AttachInfo.
++      if (statusBarPage === page) setStatusBarPreDraw(view, false);
++    },
++  });
++  view.addOnAttachStateChangeListener(statusBarAttachState);
++  setStatusBarPreDraw(view, true);
+ }
+ 
+ function pageUnloaded() {
+-  const observer = statusBarObserver?.isAlive() ? statusBarObserver : statusBarPage?.android?.getViewTreeObserver();
+-  if (observer?.isAlive() && statusBarPreDraw) observer.removeOnPreDrawListener(statusBarPreDraw);
++  const view = statusBarPage?.android;
++  if (view) {
++    setStatusBarPreDraw(view, false);
++    if (statusBarAttachState) view.removeOnAttachStateChangeListener(statusBarAttachState);
++  }
+   statusBarPage = undefined;
+-  statusBarObserver = undefined;
+   statusBarPreDraw = undefined;
++  statusBarAttachState = undefined;
++  statusBarPreDrawRegistered = false;
+ }
+ 
+ const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');

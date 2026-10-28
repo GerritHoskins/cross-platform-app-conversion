@@ -1,0 +1,157 @@
+{
+    "version":  1,
+    "package":  "NS07",
+    "decision":  "D2 (privacy safeguard; RN07 D13 precedent)",
+    "phase":  "B",
+    "redactedBy":  "Claude Code coordinator (claude-opus-5-5)",
+    "redactedAt":  "2026-10-27T14:38:14.2312823Z",
+    "finding":  "Gboard showed clipboard-history suggestion chips (earlier host clipboard items, not the string the human copied before phase B) above the SearchBar in 8 frames. The chips are absent from all UI XML, logs and receipts (text search of every non-PNG phase B file found no clipboard content).",
+    "detection":  "Full-width scan of every phase B PNG (265 files) for the chip border in y 150-330 px; 10 hits, of which 2 are launcher wallpaper (C08-home, D05-root-back, no chip). Coordinator visually confirmed the 8 chip frames and every other frame via contact sheets.",
+    "originals":  "Unredacted originals were moved outside version control to the git-ignored /_backup_ns07_redaction/ folder (*.unredacted.png); they are never committed.",
+    "files":  [
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B03-query.png",
+                      "kind":  "png",
+                      "sha256Before":  "799a5286f7d331b14a909582d55736b97aa31d9dec6374bd6eed0496fdcef52a",
+                      "sha256After":  "d285f51e662e4415ec18d3c08a6d59706cec0bd41b2cd960cea5bcd51e504252",
+                      "bytesBefore":  215829,
+                      "bytesAfter":  176895,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B03-query-focused.png",
+                      "kind":  "png",
+                      "sha256Before":  "158b094183143a2099c421fc06bf6edf2055be62bd2c735446703243f620ec35",
+                      "sha256After":  "1ad641416063ee0232b85049da13bb48ea7474362d2df1d632d587b77c5854bb",
+                      "bytesBefore":  215121,
+                      "bytesAfter":  179747,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B04-restored-scroll-1.png",
+                      "kind":  "png",
+                      "sha256Before":  "3d8436f2ce3f1769ca323a7d690dc93148b5c009adb056892d9950da870f30eb",
+                      "sha256After":  "9e27ea4b3d6231eb1faef63ed4442c9e76997041a88bd45d29d04a99b3664033",
+                      "bytesBefore":  221864,
+                      "bytesAfter":  181626,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B05-results-top.png",
+                      "kind":  "png",
+                      "sha256Before":  "588859232bcc190c123137fa2c7c412dae6b9db7be4f6650ac10bc071999a6fb",
+                      "sha256After":  "92aca706c77d8da8315359bdc4467277ad1e0fd5621bf8acaf80467a24d02ea8",
+                      "bytesBefore":  220861,
+                      "bytesAfter":  181775,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B05-space.png",
+                      "kind":  "png",
+                      "sha256Before":  "33c026dc106e5616dd1c0580826d50a8d18f491cfc9f0e97613573b3a174c94e",
+                      "sha256After":  "5daaeb394a9f52a7a6bc4e0131864a0de6249d21015017877b1f3e890fe6f5fa",
+                      "bytesBefore":  221099,
+                      "bytesAfter":  181842,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/B05-space-focused.png",
+                      "kind":  "png",
+                      "sha256Before":  "3f965e3ea5b146cb8d50e2096d97522a0f17bd6609d72868ebe784480ca214ed",
+                      "sha256After":  "cc77a51848047e31a395cdeeb3f237489f88fb9e1b8df4724cb2490f847ae51f",
+                      "bytesBefore":  214097,
+                      "bytesAfter":  177309,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/E09-close-clear.png",
+                      "kind":  "png",
+                      "sha256Before":  "5bab00a95067feb86968bd57731fb46e751e52ba1bc31032601bef956d05a467",
+                      "sha256After":  "0ff4914ffe2ebac921c9281a44f212f3b62a3c665bed41d2f1e858578b190b41",
+                      "bytesBefore":  148550,
+                      "bytesAfter":  126444,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/b-device/E09-final-close.png",
+                      "kind":  "png",
+                      "sha256Before":  "c7a181f41946a56312c99685c234c1b0c30843319593b41a7cb35fb21e18d999",
+                      "sha256After":  "00fd6639e67219fdbf10fa80f9f7587946324d407c48bab408db6f54570fe2ec",
+                      "bytesBefore":  148624,
+                      "bytesAfter":  126488,
+                      "regions":  [
+                                      {
+                                          "x":  36,
+                                          "y":  176,
+                                          "width":  930,
+                                          "height":  130,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard-history suggestion chip"
+                                      }
+                                  ]
+                  }
+              ]
+}

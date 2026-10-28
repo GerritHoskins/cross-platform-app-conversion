@@ -1,0 +1,108 @@
+--------- beginning of main
+10-28 13:12:37.430 17895 17895 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 13:12:37.449 17895 17895 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 13:12:37.449 17895 17895 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 13:12:37.449 17895 17895 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 13:12:37.460 17895 17895 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 13:12:37.645 17895 17895 D nativeloader: Configuring clns-9 for other apk /data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/lib/x86_64:/data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 13:12:37.651 17895 17895 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-28 13:12:37.660 17895 17895 V GraphicsEnvironment: Currently set values for:
+10-28 13:12:37.660 17895 17895 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 13:12:37.660 17895 17895 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 13:12:37.660 17895 17895 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 13:12:37.661 17895 17895 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 13:12:37.661 17895 17895 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 13:12:37.661 17895 17895 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 13:12:37.768 17895 17895 D nativeloader: Load /data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~hnq9D21zWvoTtq-gGv25sw==/dev.translationtest.ns-0hlAg5rfFO7u7Kp9NBiAHA==/base.apk!classes5.dex): ok
+10-28 13:12:37.768 17895 17895 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 13:12:37.819 17895 17895 D TNS.Runtime: V8 version 14.9.207.39
+10-28 13:12:38.076 17895 17895 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-28 13:12:38.229 17895 17895 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-28 13:12:38.233 17895 17924 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 13:12:38.237 17895 17895 I nslationtest.ns: AssetManager2(0x738ba9013138) locale list changing from [] to [en-US]
+10-28 13:12:38.281 17895 17924 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 13:12:38.282 17895 17924 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 13:12:38.289 17895 17924 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 13:12:38.301 17895 17895 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 13:12:38.301 17895 17895 I nslationtest.ns: AssetManager2(0x738ba900d378) locale list changing from [] to [en-US]
+10-28 13:12:38.311 17895 17895 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 13:12:38.393 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:38.396 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:38.436 17895 17895 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 13:12:38.437 17895 17895 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 13:12:38.505 17895 17895 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 13:12:38.697 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:38.698 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:38.706 17895 17895 D AutofillManager: view not autofillable - not passing ime action check
+10-28 13:12:38.719 17895 17895 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 13:12:38.789 17895 17895 D AutofillManager: view not autofillable - not passing ime action check
+10-28 13:12:38.790 17895 17895 I ImeTracker: dev.translationtest.ns:d2a2e016: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 13:12:38.793 17895 17895 I ImeTracker: dev.translationtest.ns:d2a2e016: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 13:12:38.793 17895 17895 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 13:12:38.855 17895 17895 W HWUI    : Unknown dataspace 0
+10-28 13:12:38.882 17895 17895 D AutofillManager: view not autofillable - not passing ime action check
+10-28 13:12:38.882 17895 17895 D AutofillManager: view not autofillable - not passing ime action check
+10-28 13:12:39.490 17895 17895 D InsetsController: hide(ime(), fromIme=false)
+10-28 13:12:39.491 17895 17895 I ImeTracker: dev.translationtest.ns:ab7772bc: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 13:12:39.744 17895 17899 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 13:12:43.815 17895 17981 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 13:12:44.199 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.200 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.200 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.201 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.201 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.201 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.202 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.203 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.203 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.203 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.204 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.205 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.205 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.206 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.206 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.206 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.207 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.208 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.209 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.211 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.211 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.214 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.214 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.215 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.216 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.217 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.218 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.285 17895 17895 W HWUI    : Image decoding logging dropped!
+10-28 13:12:44.522 17895 17895 D InsetsController: hide(ime(), fromIme=false)
+10-28 13:12:44.522 17895 17895 I ImeTracker: dev.translationtest.ns:5cc9e8a7: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 13:12:48.831 17895 17895 I nslationtest.ns: AssetManager2(0x738ba901c0f8) locale list changing from [] to [en-US]
+10-28 13:12:48.855 17895 17895 D TNS.Native: Error: Cannot convert object to Ljava/lang/Runnable; at index 0
+10-28 13:12:48.855 17895 17895 D TNS.Native: reapplyStatusBarStyle(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:564:28)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:94)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29179:22)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:24960:14)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:25582:15)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at onWindowSystemAppearanceChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:24694:14)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:60)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29172:18)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _notifyValueChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35458:14)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at _setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35440:14)
+10-28 13:12:48.855 17895 17895 D TNS.Native: 	at onConfigurationChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35683:22)
+10-28 13:12:54.423 17895 17895 D TNS.Native: Error: Cannot convert object to Ljava/lang/Runnable; at index 0
+10-28 13:12:54.423 17895 17895 D TNS.Native: reapplyStatusBarStyle(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:564:28)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:94)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29179:22)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:24960:14)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:25582:15)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at onWindowSystemAppearanceChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:24694:14)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _handleListenerEntry(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29194:60)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _fireEvent(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29172:18)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at notify(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:29154:28)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _notifyValueChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35458:14)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at _setSystemAppearance(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35440:14)
+10-28 13:12:54.423 17895 17895 D TNS.Native: 	at onConfigurationChanged(file:///data/data/dev.translationtest.ns/files/app/vendor.mjs:35683:22)

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "capturedAt": "2026-10-28T21:45:50.569Z",
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+  "headTree": "bafe300bc4fb02599478f74610c0b012a999dd25",
+  "branch": "migration/slice-1",
+  "indexEmpty": true,
+  "porcelainLines": 38275,
+  "errors": [],
+  "checks": [
+    {
+      "id": "entry-branch",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-branch.receipt.json"
+    },
+    {
+      "id": "entry-head",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-head.receipt.json"
+    },
+    {
+      "id": "entry-index",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-index.receipt.json"
+    },
+    {
+      "id": "entry-porcelain",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-porcelain.receipt.json"
+    },
+    {
+      "id": "entry-tree",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-tree.receipt.json"
+    },
+    {
+      "id": "entry-ancestor",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-ancestor.receipt.json"
+    },
+    {
+      "id": "entry-ns06-review",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-ns06-review.receipt.json"
+    },
+    {
+      "id": "entry-source-diff",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-source-diff.receipt.json"
+    },
+    {
+      "id": "entry-head-bytes-package.json",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-head-bytes-package.json.receipt.json"
+    },
+    {
+      "id": "entry-head-bytes-package-lock.json",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-head-bytes-package-lock.json.receipt.json"
+    },
+    {
+      "id": "entry-head-bytes-rn07-android-acceptance-checklist.md",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-head-bytes-rn07-android-acceptance-checklist.md.receipt.json"
+    },
+    {
+      "id": "entry-ns06-manifest",
+      "exitCode": 1,
+      "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r2-c-20261028/gate-01/entry-ns06-manifest.receipt.json"
+    }
+  ],
+  "candidate": {
+    "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118191268,
+    "digest": "ca575f8091724a05783bfbbfb086e71a3f2f9ce454a6f2d60d447a6380766593"
+  },
+  "expectedBaselineMismatches": [
+    "MISMATCH e58c43978bb5 C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "MISMATCH 01921ee8b98e migration/nativescript/src/components/SessionDetail.vue",
+    "MISMATCH dfb8abe45579 migration/nativescript/src/components/TrackFilter.vue",
+    "MISMATCH ca8851075cf3 package-lock.json",
+    "MISMATCH b1e2d1d9f259 migration/nativescript/src/components/Schedule.vue"
+  ],
+  "evidenceFiles": 38251,
+  "rootLockfilePolicy": "Never read or diffed directly. Sole authorized baseline tool hashes it as explicitly required; known unrelated modification retained."
+}

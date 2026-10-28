@@ -1,0 +1,45 @@
+
+> nativescript@1.0.0 build:android
+> npx --yes nativescript@9.1.2 build android
+
+Preparing project...
+asset [1m[32mvendor.mjs[39m[22m 3.89 MiB [1m[33m[compared for emit][39m[22m [javascript module] (name: vendor) (id hint: vendor) 1 related asset
+asset [1m[32mbundle.mjs[39m[22m 155 KiB [1m[32m[emitted][39m[22m [javascript module] (name: bundle) 1 related asset
+asset [1m[32mruntime.mjs[39m[22m 5.98 KiB [1m[33m[compared for emit][39m[22m [javascript module] (name: runtime) 1 related asset
+asset [1m[32mtns_modules/inspector_modules.mjs[39m[22m 778 bytes [1m[33m[compared for emit][39m[22m [javascript module] (name: tns_modules/inspector_modules) 1 related asset
+Entrypoint [1mbundle[39m[22m 4.05 MiB (3.97 MiB) = [1m[32mruntime.mjs[39m[22m 5.98 KiB [1m[32mvendor.mjs[39m[22m 3.89 MiB [1m[32mbundle.mjs[39m[22m 155 KiB 3 auxiliary assets
+Entrypoint [1mtns_modules/inspector_modules[39m[22m 3.9 MiB (3.82 MiB) = [1m[32mruntime.mjs[39m[22m 5.98 KiB [1m[32mvendor.mjs[39m[22m 3.89 MiB [1m[32mtns_modules/inspector_modules.mjs[39m[22m 778 bytes 3 auxiliary assets
+orphan modules 21.5 KiB [1m[33m[orphan][39m[22m 15 modules
+runtime modules 3.09 KiB 7 modules
+modules by path [1m./node_modules/[39m[22m 3.16 MiB 420 modules
+modules by path [1m./src/[39m[22m 101 KiB
+  modules by path [1m./src/components/*.vue[39m[22m 68.3 KiB 26 modules
+  modules by path [1m./src/state/*.ts[39m[22m 6.83 KiB 5 modules
+  modules by path [1m./src/data/[39m[22m 18.1 KiB 2 modules
+  + 2 modules
+modules by path [1m../core/dist/*.js[39m[22m 16.9 KiB
+  [1m../core/dist/index.js[39m[22m 2.12 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../core/dist/time.js[39m[22m 1.05 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../core/dist/normalize.js[39m[22m 9.26 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../core/dist/favorites.js[39m[22m 904 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  + 2 modules
+[1mexternal "~/package.json"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.112.2 compiled [1m[32msuccessfully[39m[22m in 3533 ms
+Webpack compilation complete.
+	 ~ applying user-defined configuration from C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\App_Resources\Android\before-plugins.gradle
+Built aar for @nativescript/core
+Updating runtime package.json with configuration values...
+Project successfully prepared (android)
+Building project...
+Gradle build...
+	 + applying user-defined configuration from C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\App_Resources\Android\before-plugins.gradle
+	 + applying user-defined configuration from C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\App_Resources\Android\before-plugins.gradle
+	 + setting applicationId
+	 + applying user-defined configuration from C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\App_Resources\Android\app.gradle
+	 + adding nativescript runtime package dependency: nativescript-optimized-with-inspector
+	 + adding aar plugin dependency: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\node_modules\@nativescript\core\platforms\android\core.aar
+	 + adding aar plugin dependency: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\node_modules\@nativescript\core\platforms\android\widgets-release.aar
+	 + adding aar plugin dependency: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\node_modules\@nativescript\core\platforms\android\winter_tc-release.aar
+Project successfully built.
+Build time: 14.196 s.
+The build result is located at: C:\Users\Gerrit\job-search\POCs\cross-platform-translation-test-app-main\migration\nativescript\platforms\android\app\build\outputs\apk\debug\app-debug.apk

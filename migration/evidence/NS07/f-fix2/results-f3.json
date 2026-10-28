@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "phase": "F3",
+  "status": "CHECKPOINTED",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "boundary": "Software-only implementation checkpoint. No device, visual, native accessibility-service or TalkBack confirmation; F4 and coordinator pixel inspection required.",
+  "gate": {
+    "status": "PASS",
+    "checks": [
+      { "id": "branch", "exitCode": 0, "expected": "migration/slice-1", "receipt": "entry-branch.receipt.json" },
+      { "id": "HEAD", "exitCode": 0, "expected": "d7a4067e7849f119b937fd3723c389b7b834c71c", "receipt": "entry-head.receipt.json" },
+      { "id": "empty-index", "exitCode": 0, "receipt": "entry-index.receipt.json" },
+      { "id": "porcelain-allowlist", "exitCode": 0, "receipt": "entry-porcelain.receipt.json", "evidence": "entry-gate.json" },
+      { "id": "F1-diff-byte-equality", "exitCode": 0, "receipt": "entry-diff.receipt.json", "evidence": "entry-gate.json" },
+      { "id": "new-evidence-directory-absent-before-gate", "exitCode": 0, "evidence": "entry-gate.json" },
+      { "id": "candidate-2-sha256", "exitCode": 0, "evidence": "entry-gate.json" }
+    ],
+    "candidate2": {
+      "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+      "size": 117668721,
+      "sha256": "5f9f7d1abee8fc49989d666ef1aefce460fc4f8a95c611d6be186e82362d2409"
+    }
+  },
+  "fixes": [
+    {
+      "id": "F3-A11Y",
+      "case": "G05 accessibility; F2 both modes selected and cold Favorite enabled=false",
+      "cause": "undefined reaches set-value's deleteProperty branch instead of the NativeScript accessor; stale selected/disabled state persists. The core Button delegate derives selected/enabled from that stale state.",
+      "change": "Mode Buttons retain visible layout/labels/colours/setMode commits and use radioButton role with always-defined checked/unchecked. isEnabled remains ready. Replace the same undefined reset on the existing detail favorite Button with unchecked, keeping its Button-role selected behavior.",
+      "files": ["migration/nativescript/src/components/Schedule.vue", "migration/nativescript/src/components/SessionDetail.vue"],
+      "diffHunkRef": ["fix-f3-delta.diff:59", "fix-f3-delta.diff:69", "fix-f3-delta.diff:147"],
+      "status": "IMPLEMENTED",
+      "softwareEvidence": ["analysis.md", "software-probes.json", "tests-first.json", "tests-second.json", "bundle-evidence.json"],
+      "F4": "Cold ready and repeated bidirectional mode switches at 1.0/1.3/2.0: XML class android.widget.RadioButton, both enabled=true/checkable=true, exactly one checked=true following the active mode. Read checked, not selected, for modes. Confirm detail favorite selected resets; manual TalkBack remains follow-up."
+    },
+    {
+      "id": "F3-G07-LIVE",
+      "case": "G07-1 live night-mode switch on Schedule, SessionDetail and TrackFilter",
+      "cause": "Handled uiMode preserves the activity/Page. Core emits the appearance event before edge-to-edge refresh overwrites status icons; the modal also refreshes its window on configuration change. F1's Page load reapply is not invoked.",
+      "change": "One per-Page loaded/unloaded Application appearance subscription; post guarded updateStatusBarStyle('dark') on that native Page so it follows core refresh. Keep F1 Page attributes, white pages and navigation behavior.",
+      "files": ["migration/nativescript/src/components/Schedule.vue", "migration/nativescript/src/components/SessionDetail.vue", "migration/nativescript/src/components/TrackFilter.vue"],
+      "diffHunkRef": ["fix-f3-delta.diff:13", "fix-f3-delta.diff:50", "fix-f3-delta.diff:105", "fix-f3-delta.diff:138", "fix-f3-delta.diff:160", "fix-f3-delta.diff:193"],
+      "status": "IMPLEMENTED",
+      "softwareEvidence": ["analysis.md", "software-probes.json", "bundle-evidence.json"],
+      "F4": "Switch night on and off with each of the three surfaces already open, without navigation/reopening. After settling, inspect full-resolution clock/icons; retain dark readable icons and same PID. Repeat cold dark/light launch and navigation/modal/dialog regressions. XML is not icon-colour evidence."
+    },
+    {
+      "id": "F3-G05-3",
+      "case": "G05-3 revealed swipe strip at font scale 2.0",
+      "cause": "Fixed 96 dp strip and -96 translation cannot accommodate native scaled Favorite text; F2 measured the same 252 px strip at all scales.",
+      "change": "Auto-width, minimum-96-dp, padded single-line swipe Button; record positive visible actual width per row on loaded/layoutChanged and translate the open content by it. Preserve A1 visibility, accessibilityHidden, automation ID, label function, handlers/gestures and entire column-1 Button.",
+      "files": ["migration/nativescript/src/components/Schedule.vue"],
+      "diffHunkRef": ["fix-f3-delta.diff:13", "fix-f3-delta.diff:79"],
+      "status": "IMPLEMENTED",
+      "softwareEvidence": ["analysis.md", "software-probes.json", "bundle-evidence.json"],
+      "F4": "At 1.0/1.3/2.0 reveal fully visible Favorite and Remove rows, also after recycling: inspect text fit/no word break/no gap or overlap. Closed minus settled-open session-<id> XML right-edge displacement is strip width in px; divide by recorded density for dp. Expect 96 dp at 1.0, permit growth at large scale. Closed strips must collapse and stay accessibility-hidden."
+    }
+  ],
+  "checks": [
+    { "id": "core-test", "exitCode": 0, "receipt": "core-test.receipt.json" },
+    { "id": "npm-ci", "exitCode": 0, "receipt": "npm-ci.receipt.json", "evidence": "dependencies-after-ci.json" },
+    { "id": "verify-core-first", "exitCode": 0, "receipt": "verify-core-first.receipt.json" },
+    { "id": "core-test-repeat", "exitCode": 0, "receipt": "core-test-repeat.receipt.json" },
+    { "id": "verify-core-second", "exitCode": 0, "receipt": "verify-core-second.receipt.json", "evidence": "verify-core-repeatability.json" },
+    { "id": "core-json-test-retry", "exitCode": 0, "receipt": "core-json-test-retry.receipt.json" },
+    { "id": "typecheck", "exitCode": 0, "receipt": "typecheck.receipt.json" },
+    { "id": "tests-first", "exitCode": 0, "receipt": "tests-first.receipt.json" },
+    { "id": "tests-second", "exitCode": 0, "receipt": "tests-second.receipt.json" },
+    { "id": "build-android", "exitCode": 0, "receipt": "build-android.receipt.json" },
+    { "id": "software-probes", "exitCode": 0, "receipt": "software-probes.receipt.json" },
+    { "id": "save-diffs", "exitCode": 0, "receipt": "save-diffs.receipt.json" },
+    { "id": "preservation-check", "exitCode": 0, "receipt": "preservation-check.receipt.json", "evidence": "preservation-final.json" },
+    { "id": "git-diff-check", "exitCode": 0, "receipt": "final-diff-check.receipt.json" },
+    { "id": "git-empty-index", "exitCode": 0, "receipt": "final-index.receipt.json" }
+  ],
+  "testCounts": {
+    "source": "JSON reporters only",
+    "core": { "passed": 53, "failed": 0, "skipped": 0 },
+    "target": [
+      { "run": "first", "files": 7, "tests": 115, "passed": 115, "failed": 0, "pending": 0 },
+      { "run": "second", "files": 7, "tests": 115, "passed": 115, "failed": 0, "pending": 0 }
+    ],
+    "additionalSoftwareProbes": 8,
+    "productTestsAdded": 0
+  },
+  "candidate3": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 117669928,
+    "sha256": "0d4c089755b895d09c80fd406aa6c671947691b6124ad9e399d9ff3025cca50e"
+  },
+  "preservation": { "nativeTrackedFiles": 89, "changedOnly": ["Schedule.vue", "SessionDetail.vue", "TrackFilter.vue"], "protectedFiles": 50862, "protectedUnchanged": true, "evidence": "preservation-final.json" },
+  "incidents": [
+    { "id": "core-json-test", "exitCode": 7, "receipt": "core-json-test.receipt.json", "cause": "Windows ESM reporter requires file URL", "resolvedBy": "core-json-test-retry" },
+    { "id": "software-checks", "exitCode": 1, "receipt": "software-checks.receipt.json", "cause": "wrapper stopped on supplemental reporter loading error", "resolvedBy": "software-checks-resume" }
+  ],
+  "warnings": ["Initial read-only terminal discovery lacks exposed execution timing; bootstrap-provenance.json records it. All gate commands independently recaptured before the first migration write.", "npm ci reports 8 vulnerabilities (2 low, 5 moderate, 1 high), deprecations and 3 pending script approvals; no dependency/policy change", "Upstream NativeScript build DEP0190 shell-option warning; authored helpers use shell:false"],
+  "unresolved": ["F4 native XML/touch confirmation and coordinator pixel acceptance for all three fixes", "Manual TalkBack speech/focus follow-up", "Assigned F4 regression subset and G01/G02/G08 keyboard-menu attempt remain outside F3"]
+}
