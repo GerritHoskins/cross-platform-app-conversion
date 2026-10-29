@@ -1,0 +1,1468 @@
+FAIL __tests__/speakers-screen.test.tsx
+  ● waits for both loaders with the schedule loading wording
+
+    Unable to find an element with role: progressbar, name: Loading sessions
+
+    [36m<View>[39m
+      [36m<View[39m
+        [33maccessibilityLabel[39m=[32m"Loading sessions"[39m
+        [33maccessibilityRole[39m=[32m"progressbar"[39m
+      [36m>[39m
+        [36m<ActivityIndicator />[39m
+        [36m<Text>[39m
+          [0mLoading sessions…[0m
+        [36m</Text>[39m
+      [36m</View>[39m
+    [36m</View>[39m
+
+      72 |   const view = await render(<ConferenceProvider loader={loader} speakerProfilesLoader={speakerProfilesLoader}><SpeakersScreen /></ConferenceProvider>);
+      73 |   expect(screen.getByText('Loading sessions…')).toBeTruthy();
+    > 74 |   expect(screen.getByRole('progressbar', { name: 'Loading sessions' })).toBeTruthy();
+         |                 ^
+      75 |   await act(async () => { conference.resolve(loadConference()); });
+      76 |   expect(screen.getByText('Loading sessions…')).toBeTruthy();
+      77 |   expect(screen.queryAllByTestId(/^speaker-\d+$/)).toHaveLength(0);
+
+      at Object.getByRole (__tests__/speakers-screen.test.tsx:74:17)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● conference throws uses the schedule error wording and provider Retry recovers
+
+    Unable to find an element with role: alert
+
+    [36m<View>[39m
+      [36m<View[39m
+        [33maccessibilityRole[39m=[32m"alert"[39m
+      [36m>[39m
+        [36m<Text>[39m
+          [0mUnable to load sessions.[0m
+        [36m</Text>[39m
+        [36m<Text>[39m
+          [0mspeaker-load-failed[0m
+        [36m</Text>[39m
+        [36m<View[39m
+          [33maccessibilityLabel[39m=[32m"Retry"[39m
+          [33maccessibilityRole[39m=[32m"button"[39m
+          [33maccessible[39m=[32m{true}[39m
+        [36m>[39m
+          [36m<Text>[39m
+            [0mRetry[0m
+          [36m</Text>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</View>[39m
+
+      91 |   else profiles.mockImplementationOnce(() => Promise.reject(new Error('speaker-load-failed')));
+      92 |   const view = await render(<ConferenceProvider loader={loader} speakerProfilesLoader={profiles}><SpeakersScreen /></ConferenceProvider>);
+    > 93 |   expect(await screen.findByRole('alert')).toBeTruthy();
+         |                       ^
+      94 |   expect(screen.getByText('Unable to load sessions.')).toBeTruthy();
+      95 |   expect(screen.getByText('speaker-load-failed')).toBeTruthy();
+      96 |   expect(screen.queryAllByTestId(/^speaker-\d+$/)).toHaveLength(0);
+
+      at findByRole (__tests__/speakers-screen.test.tsx:93:23)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● profiles throw uses the schedule error wording and provider Retry recovers
+
+    Unable to find an element with role: alert
+
+    [36m<View>[39m
+      [36m<View[39m
+        [33maccessibilityRole[39m=[32m"alert"[39m
+      [36m>[39m
+        [36m<Text>[39m
+          [0mUnable to load sessions.[0m
+        [36m</Text>[39m
+        [36m<Text>[39m
+          [0mspeaker-load-failed[0m
+        [36m</Text>[39m
+        [36m<View[39m
+          [33maccessibilityLabel[39m=[32m"Retry"[39m
+          [33maccessibilityRole[39m=[32m"button"[39m
+          [33maccessible[39m=[32m{true}[39m
+        [36m>[39m
+          [36m<Text>[39m
+            [0mRetry[0m
+          [36m</Text>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</View>[39m
+
+      91 |   else profiles.mockImplementationOnce(() => Promise.reject(new Error('speaker-load-failed')));
+      92 |   const view = await render(<ConferenceProvider loader={loader} speakerProfilesLoader={profiles}><SpeakersScreen /></ConferenceProvider>);
+    > 93 |   expect(await screen.findByRole('alert')).toBeTruthy();
+         |                       ^
+      94 |   expect(screen.getByText('Unable to load sessions.')).toBeTruthy();
+      95 |   expect(screen.getByText('speaker-load-failed')).toBeTruthy();
+      96 |   expect(screen.queryAllByTestId(/^speaker-\d+$/)).toHaveLength(0);
+
+      at findByRole (__tests__/speakers-screen.test.tsx:93:23)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● profiles reject uses the schedule error wording and provider Retry recovers
+
+    Unable to find an element with role: alert
+
+    [36m<View>[39m
+      [36m<View[39m
+        [33maccessibilityRole[39m=[32m"alert"[39m
+      [36m>[39m
+        [36m<Text>[39m
+          [0mUnable to load sessions.[0m
+        [36m</Text>[39m
+        [36m<Text>[39m
+          [0mspeaker-load-failed[0m
+        [36m</Text>[39m
+        [36m<View[39m
+          [33maccessibilityLabel[39m=[32m"Retry"[39m
+          [33maccessibilityRole[39m=[32m"button"[39m
+          [33maccessible[39m=[32m{true}[39m
+        [36m>[39m
+          [36m<Text>[39m
+            [0mRetry[0m
+          [36m</Text>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</View>[39m
+
+      91 |   else profiles.mockImplementationOnce(() => Promise.reject(new Error('speaker-load-failed')));
+      92 |   const view = await render(<ConferenceProvider loader={loader} speakerProfilesLoader={profiles}><SpeakersScreen /></ConferenceProvider>);
+    > 93 |   expect(await screen.findByRole('alert')).toBeTruthy();
+         |                       ^
+      94 |   expect(screen.getByText('Unable to load sessions.')).toBeTruthy();
+      95 |   expect(screen.getByText('speaker-load-failed')).toBeTruthy();
+      96 |   expect(screen.queryAllByTestId(/^speaker-\d+$/)).toHaveLength(0);
+
+      at findByRole (__tests__/speakers-screen.test.tsx:93:23)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+FAIL __tests__/tabs-navigation.test.tsx
+  ● Console
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (nod
+[bounded: middle omitted]
+[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View />[39m
+                                        [36m<View>[39m
+                                          [36m<Text>[39m
+                                            [0m10:00 am[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-5"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Migrating to Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mMigrating to Ionic[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m10:00 am[0m
+                                                  [0m–[0m
+                                                  [0m10:15 am[0m
+                                                  [0m · [0m
+                                                  [0mHall 1[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mIonic[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite Migrating to Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-5"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View />[39m
+                                      [36m</View>[39m
+                                    [36m</RCTScrollView>[39m
+                                  [36m</View>[39m
+                                [36m</RNSScreenContentWrapper>[39m
+                                [36m<RNSScreenStackHeaderConfig[39m
+                                  [33mpointerEvents[39m=[32m"box-none"[39m
+                                  [33mtitle[39m=[32m"Conference"[39m
+                                [36m/>[39m
+                              [36m</RNSScreen>[39m
+                              [36m<RNSScreen[39m
+                                [33maria-hidden[39m=[32m{false}[39m
+                              [36m>[39m
+                                [36m<RNSScreenContentWrapper>[39m
+                                  [36m<RCTScrollView>[39m
+                                    [36m<View>[39m
+                                      [36m<View>[39m
+                                        [36m<Text[39m
+                                          [33maccessibilityRole[39m=[32m"header"[39m
+                                        [36m>[39m
+                                          [0mIonic Tooling[0m
+                                        [36m</Text>[39m
+                                        [36m<Text>[39m
+                                          [0mTooling[0m
+                                        [36m</Text>[39m
+                                        [36m<Text>[39m
+                                          [0mMobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Vue, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Vue.[0m
+                                        [36m</Text>[39m
+                                        [36m<Text>[39m
+                                          [0m9:45 am[0m
+                                          [0m – [0m
+                                          [0m10:00 am[0m
+                                        [36m</Text>[39m
+                                        [36m<Text>[39m
+                                          [0mExecutive Ballroom[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Add to favorites"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": false,
+                                            "selected": false,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0m☆ Add to favorites[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Share"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mShare[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Watch"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mWatch[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Add to Calendar"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mAdd to Calendar[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Mark as Unwatched"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mMark as Unwatched[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Download Video"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mDownload Video[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Leave Feedback"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": true,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mLeave Feedback[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                    [36m</View>[39m
+                                  [36m</RCTScrollView>[39m
+                                [36m</RNSScreenContentWrapper>[39m
+                                [36m<RNSScreenStackHeaderConfig[39m
+                                  [33mpointerEvents[39m=[32m"box-none"[39m
+                                  [33mtitle[39m=[32m"Session"[39m
+                                [36m/>[39m
+                              [36m</RNSScreen>[39m
+                            [36m</RNSScreenStack>[39m
+                          [36m</View>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</RNSScreen>[39m
+                  [36m</RNSScreenNavigationContainer>[39m
+                  [36m<View>[39m
+                    [36m<View />[39m
+                    [36m<View[39m
+                      [33mrole[39m=[32m"tablist"[39m
+                    [36m>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Schedule"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": true,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View />[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSchedule[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Speakers"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": false,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                            [36m<View />[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSpeakers[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</View>[39m
+                  [36m</View>[39m
+                [36m</View>[39m
+              [36m</RNSScreenContentWrapper>[39m
+              [36m<RNSScreenStackHeaderConfig[39m
+                [33mpointerEvents[39m=[32m"box-none"[39m
+                [33mtitle[39m=[32m"(tabs)"[39m
+              [36m/>[39m
+            [36m</RNSScreen>[39m
+          [36m</RNSScreenStack>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</RNCSafeAreaProvider>[39m
+
+      27 |
+      28 | async function pressTab(name: 'Schedule' | 'Speakers') {
+    > 29 |   await fireEvent.press(screen.getByRole('tab', { name }));
+         |                                ^
+      30 | }
+      31 |
+      32 | async function filterToFood() {
+
+      at getByRole (__tests__/tabs-navigation.test.tsx:29:32)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+      at node_modules/@babel/runtime/helpers/asyncToGenerator.js:22:7
+      at node_modules/@babel/runtime/helpers/asyncToGenerator.js:14:12
+      at apply (__tests__/tabs-navigation.test.tsx:28:24)
+      at Object.pressTab (__tests__/tabs-navigation.test.tsx:91:9)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● filter is still the root modal at /filter and Done and Back return to the schedule
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "filter"
+    Received: "__root"
+
+      107 |   expect(screen.getByRole('header', { name: 'Tracks' })).toBeTruthy();
+      108 |   const state = view.getRouterState();
+    > 109 |   expect(state?.routes[state.index ?? 0].name).toBe('filter');
+          |                                                ^
+      110 |   await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
+      111 |   expect(view.getPathname()).toBe('/');
+      112 |   await fireEvent.press(screen.getByRole('button', { name: 'Filter sessions' }));
+
+      at Object.toBe (__tests__/tabs-navigation.test.tsx:109:48)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● default firstRoute tab Back returns from Speakers root to Schedule
+
+    Unable to find an element with role: tab, name: Speakers
+
+    [36m<RNCSafeAreaProvider>[39m
+      [36m<View>[39m
+        [36m<View>[39m
+          [36m<RNSScreenStack>[39m
+            [36m<RNSScreen[39m
+              [33maria-hidden[39m=[32m{false}[39m
+            [36m>[39m
+              [36m<RNSScreenContentWrapper>[39m
+                [36m<View>[39m
+                  [36m<RNSScreenNavigationContainer>[39m
+                    [36m<RNSScreen>[39m
+                      [36m<View[39m
+                        [33maria-hidden[39m=[32m{false}[39m
+                      [36m>[39m
+                        [36m<View>[39m
+                          [36m<View>[39m
+                            [36m<RNSScreenStack>[39m
+                              [36m<RNSScreen[39m
+                                [33maria-hidden[39m=[32m{false}[39m
+                              [36m>[39m
+                                [36m<RNSScreenContentWrapper>[39m
+                                  [36m<View>[39m
+                                    [36m<Text[39m
+                                      [33maccessibilityRole[39m=[32m"header"[39m
+                                    [36m>[39m
+                                      [0mConference[0m
+                                    [36m</Text>[39m
+                                    [36m<View>[39m
+                                      [36m<TextInput[39m
+                                        [33maccessibilityLabel[39m=[32m"Search sessions"[39m
+                                        [33maccessibilityRole[39m=[32m"search"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": false,
+                                          }
+                                        }[39m
+                                        [33meditable[39m=[32m{true}[39m
+                                        [33mplaceholder[39m=[32m"Search sessions"[39m
+                                        [33mvalue[39m=[32m""[39m
+                                      [36m/>[39m
+                                      [36m<View>[39m
+                                        [36m<View[39m
+                                          [33maccessibilityLabel[39m=[32m"All sessions"[39m
+                                          [33maccessibilityRole[39m=[32m"button"[39m
+                                          [33maccessibilityState[39m=[32m{
+                                            {
+                                              "disabled": false,
+                                              "selected": true,
+                                            }
+                                          }[39m
+                                          [33maccessible[39m=[32m{true}[39m
+                                          [33mtestID[39m=[32m"mode-all"[39m
+                                        [36m>[39m
+                                          [36m<Text>[39m
+                                            [0mAll sessions[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                        [36m<View[39m
+                                          [33maccessibilityLabel[39m=[32m"Favorite sessions"[39m
+                                          [33maccessibilityRole[39m=[32m"button"[39m
+                                          [33maccessibilityState[39m=[32m{
+                                            {
+                                              "disabled": false,
+                                              "selected": false,
+                                            }
+                                          }[39m
+                                          [33maccessible[39m=[32m{true}[39m
+                                          [33mtestID[39m=[32m"mode-favorites"[39m
+                                        [36m>[39m
+                                          [36m<Text>[39m
+                                            [0mFavorite sessions[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                      [36m</View>[39m
+                                      [36m<View[39m
+                                        [33maccessibilityLabel[39m=[32m"Filter sessions"[39m
+                                        [33maccessibilityRole[39m=[32m"button"[39m
+                                        [33maccessibilityState[39m=[32m{
+                                          {
+                                            "disabled": false,
+                                          }
+                                        }[39m
+                                        [33maccessible[39m=[32m{true}[39m
+                                      [36m>[39m
+                                        [36m<Text>[39m
+                                          [0mFilter[0m
+                                        [36m</Text>[39m
+                                      [36m</View>[39m
+                                    [36m</View>[39m
+                                    [36m<RCTScrollView[39m
+                                      [33maccessibilityRole[39m=[32m"list"[39m
+                                    [36m>[39m
+                                      [36m<View>[39m
+                                        [36m<View>[39m
+                                          [36m<Text>[39m
+                                            [0m8:00 am[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-1"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Breakfast"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mBreakfast[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m8:00 am[0m
+                                                  [0m–[0m
+                                                  [0m9:00 am[0m
+                                                  [0m · [0m
+                                                  [0mDining Hall[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mFood[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite Breakfast"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-1"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View />[39m
+                                        [36m<View>[39m
+                                          [36m<Text>[39m
+                                            [0m9:15 am[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-4"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"University of Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mUniversity of Ionic[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m9:15 am[0m
+                                                  [0m–[0m
+                                                  [0m9:30 am[0m
+                                                  [0m · [0m
+                                                  [0mHall 3[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mIonic[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite University of Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-4"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-2"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Getting Started with Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mGetting Started with Ionic[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m9:30 am[0m
+                                                  [0m–[0m
+                                                  [0m9:45 am[0m
+                                                  [0m · [0m
+                                                  [0mHall 2[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mIonic[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite Getting Started with Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-2"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-3"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Ionic Tooling"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mIonic Tooling[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m9:45 am[0m
+                                                  [0m–[0m
+                                                  [0m10:00 am[0m
+                                                  [0m · [0m
+                                                  [0mExecutive Ballroom[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mTooling[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite Ionic Tooling"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-3"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View />[39m
+                                        [36m<View>[39m
+                                          [36m<Text>[39m
+                                            [0m10:00 am[0m
+                                          [36m</Text>[39m
+                                        [36m</View>[39m
+                                        [36m<View>[39m
+                                          [36m<View>[39m
+                                            [36m<View[39m
+                                              [33mtestID[39m=[32m"session-5"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Migrating to Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"link"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text[39m
+                                                  [33maccessibilityRole[39m=[32m"header"[39m
+                                                [36m>[39m
+                                                  [0mMigrating to Ionic[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0m10:00 am[0m
+                                                  [0m–[0m
+                                                  [0m10:15 am[0m
+                                                  [0m · [0m
+                                                  [0mHall 1[0m
+                                                [36m</Text>[39m
+                                                [36m<Text>[39m
+                                                  [0mIonic[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                              [36m<View[39m
+                                                [33maccessibilityLabel[39m=[32m"Favorite Migrating to Ionic"[39m
+                                                [33maccessibilityRole[39m=[32m"button"[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                            [36m<View[39m
+                                              [33maccessibilityElementsHidden[39m=[32m{true}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"swipe-action-5"[39m
+                                            [36m>[39m
+                                              [36m<View[39m
+                                                [33maccessible[39m=[32m{true}[39m
+                                              [36m>[39m
+                                                [36m<Text>[39m
+                                                  [0mFavorite[0m
+                                                [36m</Text>[39m
+                                              [36m</View>[39m
+                                            [36m</View>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View />[39m
+                                      [36m</View>[39m
+                                    [36m</RCTScrollView>[39m
+                                  [36m</View>[39m
+                                [36m</RNSScreenContentWrapper>[39m
+                                [36m<RNSScreenStackHeaderConfig[39m
+                                  [33mpointerEvents[39m=[32m"box-none"[39m
+                                  [33mtitle[39m=[32m"Conference"[39m
+                                [36m/>[39m
+                              [36m</RNSScreen>[39m
+                            [36m</RNSScreenStack>[39m
+                          [36m</View>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</RNSScreen>[39m
+                  [36m</RNSScreenNavigationContainer>[39m
+                  [36m<View>[39m
+                    [36m<View />[39m
+                    [36m<View[39m
+                      [33mrole[39m=[32m"tablist"[39m
+                    [36m>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Schedule"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": true,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View />[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSchedule[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Speakers"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": false,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                            [36m<View />[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSpeakers[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</View>[39m
+                  [36m</View>[39m
+                [36m</View>[39m
+              [36m</RNSScreenContentWrapper>[39m
+              [36m<RNSScreenStackHeaderConfig[39m
+                [33mpointerEvents[39m=[32m"box-none"[39m
+                [33mtitle[39m=[32m"(tabs)"[39m
+              [36m/>[39m
+            [36m</RNSScreen>[39m
+          [36m</RNSScreenStack>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</RNCSafeAreaProvider>[39m
+
+      27 |
+      28 | async function pressTab(name: 'Schedule' | 'Speakers') {
+    > 29 |   await fireEvent.press(screen.getByRole('tab', { name }));
+         |                                ^
+      30 | }
+      31 |
+      32 | async function filterToFood() {
+
+      at getByRole (__tests__/tabs-navigation.test.tsx:29:32)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+      at node_modules/@babel/runtime/helpers/asyncToGenerator.js:22:7
+      at node_modules/@babel/runtime/helpers/asyncToGenerator.js:14:12
+      at apply (__tests__/tabs-navigation.test.tsx:28:24)
+      at Object.pressTab (__tests__/tabs-navigation.test.tsx:121:9)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+
+Test Suites: 2 failed, 7 passed, 9 total
+Tests:       9 failed, 105 passed, 114 total
+Snapshots:   0 total
+Time:        12.682 s, estimated 30 s
+Ran all test suites.
+Test results written to: ..\..\tools\qwen-supervisor\.runs\sol-rn08-r1-a-20261029\jest-initial.json

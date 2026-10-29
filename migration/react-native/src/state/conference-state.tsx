@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useReducer,
   useRef,
+  useState,
 } from 'react';
 
 import type {
@@ -14,10 +15,11 @@ import type {
   Selection,
   Session,
   SessionGroup,
+  SpeakerProfile,
 } from '@migration/core';
 import { addFavorite, createInitialSelection, groupSessions, removeFavorite, selectSessions, sortTracksByName } from '@migration/core';
 
-import { loadConference } from '../data/load-conference';
+import { loadConference, loadSpeakerProfiles } from '../data/load-conference';
 
 export type ConferenceStatus = 'idle' | 'loading' | 'ready' | 'error';
 
@@ -161,12 +163,14 @@ export function selectTrackOptions(state: ConferenceState): TrackOption[] {
 }
 
 export type ConferenceLoader = () => Conference | Promise<Conference>;
+export type SpeakerProfilesLoader = () => SpeakerProfile[] | Promise<SpeakerProfile[]>;
 
 export interface ConferenceContextValue {
   state: ConferenceState;
   dispatch: React.Dispatch<ConferenceAction>;
   retry: () => void;
   groups: SessionGroup[];
+  speakerProfiles: SpeakerProfile[];
 }
 
 const ConferenceContext = createContext<ConferenceContextValue | null>(null);
@@ -175,13 +179,17 @@ export interface ConferenceProviderProps {
   children: React.ReactNode;
   /** Must be referentially stable across renders. */
   loader?: ConferenceLoader;
+  /** Must be referentially stable across renders. */
+  speakerProfilesLoader?: SpeakerProfilesLoader;
 }
 
 export function ConferenceProvider({
   children,
   loader = loadConference,
+  speakerProfilesLoader = loadSpeakerProfiles,
 }: ConferenceProviderProps) {
   const [state, dispatch] = useReducer(conferenceReducer, undefined, createConferenceState);
+  const [speakerProfiles, setSpeakerProfiles] = useState<SpeakerProfile[]>([]);
 
   // Request-generation marker: incrementing invalidates any in-flight completion,
   // so stale completions (superseded retries, dev-effect replays, unmount) never
@@ -191,14 +199,17 @@ export function ConferenceProvider({
   const runLoad = useCallback(() => {
     const generation = ++requestRef.current;
     dispatch({ type: 'loadStarted' });
-    // Async promise boundary: catches both a synchronously throwing loader and a
-    // rejected promise. The loader is never invoked during render.
-    Promise.resolve()
-      .then(() => loader())
-      .then((conference) => {
+    // Both loaders run beyond the render boundary; profile failures use the
+    // same error/retry lifecycle, and superseded pairs cannot publish stale data.
+    Promise.all([
+      Promise.resolve().then(() => loader()),
+      Promise.resolve().then(() => speakerProfilesLoader()),
+    ])
+      .then(([conference, profiles]) => {
         if (requestRef.current !== generation) {
           return;
         }
+        setSpeakerProfiles(profiles);
         dispatch({ type: 'loadSucceeded', conference });
       })
       .catch((error: unknown) => {
@@ -207,7 +218,7 @@ export function ConferenceProvider({
         }
         dispatch({ type: 'loadFailed', error: toErrorMessage(error) });
       });
-  }, [loader]);
+  }, [loader, speakerProfilesLoader]);
 
   useEffect(() => {
     runLoad();
@@ -219,8 +230,8 @@ export function ConferenceProvider({
   const groups = useMemo(() => selectScheduleGroups(state), [state]);
 
   const value = useMemo<ConferenceContextValue>(
-    () => ({ state, dispatch, retry: runLoad, groups }),
-    [state, dispatch, runLoad, groups],
+    () => ({ state, dispatch, retry: runLoad, groups, speakerProfiles }),
+    [state, dispatch, runLoad, groups, speakerProfiles],
   );
 
   return <ConferenceContext.Provider value={value}>{children}</ConferenceContext.Provider>;

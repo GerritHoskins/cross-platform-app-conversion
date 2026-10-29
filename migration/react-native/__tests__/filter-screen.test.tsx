@@ -7,14 +7,27 @@ import { act, fireEvent, renderRouter, screen, testRouter } from 'expo-router/te
 import type { Conference } from '@migration/core';
 import expectedCases from '../../reference/expected-cases.json';
 import * as RootLayout from '../src/app/_layout';
-import * as IndexRoute from '../src/app/index';
+import * as IndexRoute from '../src/app/(tabs)/(schedule)/index';
 import * as FilterRoute from '../src/app/filter';
-import * as DetailRoute from '../src/app/session/[sessionId]';
+import * as DetailRoute from '../src/app/(tabs)/(schedule)/session/[sessionId]';
+import * as TabsLayout from '../src/app/(tabs)/_layout';
+import * as ScheduleLayout from '../src/app/(tabs)/(schedule)/_layout';
+import * as SpeakersLayout from '../src/app/(tabs)/speakers/_layout';
+import * as SpeakersRoute from '../src/app/(tabs)/speakers/index';
 import * as conferenceData from '../src/data/load-conference';
 import type { ConferenceLoader } from '../src/state/conference-state';
 
 const conference = conferenceData.loadConference();
-const routes = { _layout: RootLayout, index: IndexRoute, filter: FilterRoute, 'session/[sessionId]': DetailRoute };
+const routes = {
+  _layout: RootLayout,
+  '(tabs)/_layout': TabsLayout,
+  '(tabs)/(schedule)/_layout': ScheduleLayout,
+  '(tabs)/(schedule)/index': IndexRoute,
+  '(tabs)/(schedule)/session/[sessionId]': DetailRoute,
+  '(tabs)/speakers/_layout': SpeakersLayout,
+  '(tabs)/speakers/index': SpeakersRoute,
+  filter: FilterRoute,
+};
 const trackNames = [
   'Communication', 'Design', 'Documentation', 'Food', 'Ionic',
   'Navigation', 'Services', 'Tooling', 'Vue', 'Workshop',

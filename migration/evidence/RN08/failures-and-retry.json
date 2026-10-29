@@ -1,0 +1,22 @@
+{
+  "initialJest": {
+    "receipt": "migration/evidence/RN08/receipts/jest-initial.receipt.json",
+    "passed": 105,
+    "failed": 9,
+    "existing99Passed": true
+  },
+  "corrections": [
+    "Expose the new loading progressbar as accessible.",
+    "Check error wording and Retry rather than treating a non-accessible container as a queryable alert.",
+    "Select the installed Android Platform implementation for tab-role tests instead of the Jest iOS default.",
+    "Inspect the root Stack beneath Expo synthetic __root in the new modal-state assertion."
+  ],
+  "processInspection": "tools/qwen-supervisor/.runs/sol-rn08-r1-a-20261029/receipts/post-initial-jest-process-inspection.receipt.json",
+  "noEarlierRelevantChildren": true,
+  "coordinatorMonitorAndViewerExcluded": true,
+  "finalRuns": [
+    "migration/evidence/RN08/receipts/jest-1.receipt.json",
+    "migration/evidence/RN08/receipts/jest-2.receipt.json"
+  ],
+  "gateRerun": false
+}

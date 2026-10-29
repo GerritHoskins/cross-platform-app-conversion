@@ -1,0 +1,500 @@
+{
+  "source": "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/rn-tests.json",
+  "names": [
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen Filter control is labeled, disabled while loading, enabled when ready and pushes /filter",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) pending loader shows loading, controls disabled; resolution shows the ready schedule",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) a synchronously throwing loader shows the error UI and retry recovers",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) a rejected loader promise shows the error UI and retry recovers",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) a stale first completion never overwrites a later retry result",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) replaying the load effect supersedes the previous request",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen lifecycle (provider-driven) resolving a pending loader after unmount does not leak work or errors",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen favorite controls adds before OK is invoked and its sibling button does not navigate",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen favorite controls already-favorite quirk confirms removal: Cancel keeps, Remove removes",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen favorite controls favorites-mode removal keeps the row on Cancel and removes it on Remove",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen RN07 regressions F-1 keeps handled row and favorite taps available with the keyboard open",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen RN07 regressions F-2 scrolls to top for tracks, search and mode, not favorites, without remounting a nonempty list",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen RN07 regressions F-3 lets the search field grow with font scale instead of fixing its height",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen behavior (ready state) search filters live, shows the generic empty message, and restores on clear",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-screen.test.tsx",
+      "name": "ScheduleScreen behavior (ready state) mode switching preserves search and selection; favorite-empty and restore work",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider opens from schedule with ten sorted, checked rows and labeled controls",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider toggle Ionic changes only the local draft; closing leaves full schedule intact",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider Deselect All changes only the local draft; closing leaves full schedule intact",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider Select All changes only the local draft; closing leaves full schedule intact",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider Reset changes only the local draft; closing leaves full schedule intact",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider Done applies only Ionic, matching every frozen single-track group and row",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider Ionic and Design intersect with search, which survives another apply",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider zero tracks applies the general empty state; reopening then Select All restores default-all",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider closing a changed draft dispatches nothing; reopening mirrors the applied Ionic selection",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider favorites 12 and 3 plus Food match favorites-some, preserving mode, search and favorites without reloading",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider cold filter waits for readiness, initializes once, and Done remains disabled while loading",
+      "status": "passed"
+    },
+    {
+      "file": "filter-screen.test.tsx",
+      "name": "filter modal with real Expo routes and shared root provider cold filter load error shows message and labeled Retry; recovery initializes the draft",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider cold entry shows loading before data, then complete session content, loading only once",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider unknown route ID 9999 disables the toggle and cannot favorite",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider unknown route ID abc disables the toggle and cannot favorite",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider unknown route ID 3abc disables the toggle and cannot favorite",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider detail toggle adds/removes immediately with selected state and no alert; placeholders disabled",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider schedule → detail → back preserves the mounted search/mode and reflects changed favorites without reloading",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider cold detail entry has schedule beneath it and back lands there without another load",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "session detail with real Expo routes and root provider cold entry loader rejection shows error, not not-found; Retry recovers",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \"\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \"-1\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \"3.0\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \" 3\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \"３\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator rejects non-ASCII-decimal raw ID \"3\\n\"",
+      "status": "passed"
+    },
+    {
+      "file": "session-detail-screen.test.tsx",
+      "name": "raw detail ID validation independent of navigator decimal digits with leading zeros resolve; empty description paragraph is omitted",
+      "status": "passed"
+    },
+    {
+      "file": "root-layout.test.tsx",
+      "name": "F-4 follows dark and light schemes for native headers, content and the automatic status bar",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) each mounted row has right-only mode actions, proposed thresholds, hidden panel and unchanged keys/buttons",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) adds immediately before informational OK, without closing for the favorite change",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) already-favorite all-mode quirk: Cancel settles and closes only on the alert button",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) already-favorite all-mode quirk: Remove settles and closes only on the alert button",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) favorites-mode Cancel keeps/removes the row with the same confirmation",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) favorites-mode Remove keeps/removes the row with the same confirmation",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) button/action alert presentation and all state transitions match: new",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) button/action alert presentation and all state transitions match: already-favorite",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) button/action alert presentation and all state transitions match: favorites-mode",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) every action flow preserves search/mode/tracks, navigation and loader count: new",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) every action flow preserves search/mode/tracks, navigation and loader count: already-favorite",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) every action flow preserves search/mode/tracks, navigation and loader count: favorites-mode",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) opening-row link closes without navigation; after close callback the ordinary link navigates",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) opening a different row closes only the prior row; late close does not clear the new row",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) search changes close the open row, unlike favorites",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) mode changes close the open row, unlike favorites",
+      "status": "passed"
+    },
+    {
+      "file": "schedule-swipe.test.tsx",
+      "name": "schedule swipe wiring (A2 double; real provider/core/SectionList) tracks changes close the open row, unlike favorites",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "createConferenceState creates an independent initial state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "createConferenceState selectScheduleGroups is empty in the initial state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer loading lifecycle idle -> loading -> ready with exact initial selection via createInitialSelection",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer loading lifecycle a later load preserves the existing selection while updating the conference",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer loading lifecycle failure preserves data and selection, records the error, and later success clears it",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer loading lifecycle loadStarted clears any prior error while preserving data and selection",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer selection field isolation each action changes only its own field",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer selection field isolation mode switching preserves the search text and every other selection field",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer selection field isolation selection actions before a selection exists are no-ops",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer selection field isolation selection actions also no-op while loading without a selection",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer immutability never mutates a deeply frozen prior state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "conferenceReducer immutability copies incoming array payloads so later caller mutation cannot change stored state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors adds/removes immutably, tolerates duplicate/absent IDs, and preserves all other fields",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors both favorite actions are no-ops before selection exists",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors consecutive favorite dispatches compose in order from current reducer state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors session and favorite selectors handle known, unknown, and pre-load states",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors favorite actions reproduce frozen favorites-some groups",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "favorite actions and selectors favorite actions reproduce frozen favorites-order groups",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "selectTrackOptions returns no options before readiness or without conference/selection",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "selectTrackOptions initially checks all ten sorted tracks; top-level and session track sets agree",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "selectTrackOptions mirrors only Ionic after replacement",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "selectTrackOptions mirrors an empty applied selection",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "selectTrackOptions returns fresh arrays and objects without mutating the frozen state",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) the case list is the 11-case frozen fixture",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: default-all",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: no-tracks",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: single-track",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-case-insensitive",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-no-match",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: search-plus-track",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-empty",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-some",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: favorites-order",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: add-duplicate",
+      "status": "passed"
+    },
+    {
+      "file": "conference-state.test.ts",
+      "name": "frozen reference cases (expected-cases.json) reproduces frozen case: remove-absent",
+      "status": "passed"
+    },
+    {
+      "file": "shell-screen.test.tsx",
+      "name": "loadConference: real core and bundled fixture returns the normalized conference with the expected session count",
+      "status": "passed"
+    },
+    {
+      "file": "shell-screen.test.tsx",
+      "name": "loadConference: real core and bundled fixture first session matches the fixed contract (not raw JSON)",
+      "status": "passed"
+    },
+    {
+      "file": "shell-screen.test.tsx",
+      "name": "loadConference: real core and bundled fixture separate calls return independent objects",
+      "status": "passed"
+    },
+    {
+      "file": "shell-screen.test.tsx",
+      "name": "renders the accessible Conference heading and actual diagnostic body",
+      "status": "passed"
+    }
+  ]
+}

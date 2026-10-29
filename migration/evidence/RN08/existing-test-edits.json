@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+      "imports": "Moved schedule routes and added layout/speakers route modules used only by renderRouter map",
+      "routeMap": "Real tabs, Schedule stack and Speakers stack; existing URLs unchanged",
+      "unchangedBeyondRouteMap": true
+    },
+    {
+      "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+      "imports": "Moved schedule routes and added layout/speakers route modules used only by renderRouter map",
+      "routeMap": "Real tabs, Schedule stack and Speakers stack; existing URLs unchanged",
+      "unchangedBeyondRouteMap": true
+    }
+  ],
+  "untouchedTests": [
+    "schedule-screen.test.tsx",
+    "root-layout.test.tsx",
+    "schedule-swipe.test.tsx",
+    "conference-state.test.ts",
+    "shell-screen.test.tsx"
+  ],
+  "assertionsExpectationsAndNamesUnchanged": true
+}
