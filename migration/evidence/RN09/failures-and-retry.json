@@ -1,0 +1,40 @@
+{
+  "entryGateReevaluated": false,
+  "failures": [
+    {
+      "step": "typecheck",
+      "exitCode": 2,
+      "cause": "Stale ignored .expo route types and unsupported new-test renderer inspection API.",
+      "retry": "Regenerate ignored route declarations with installed Expo generator; use supported test-ID queries; final typecheck receipt."
+    },
+    {
+      "step": "jest-initial",
+      "exitCode": 1,
+      "passed": 181,
+      "failed": 13,
+      "cause": "New test used unavailable UNSAFE_getAllByType API; all 114 baseline tests passed with A1 description mapping.",
+      "retry": "New decorative-photo test uses supported test-ID queries; two complete final Jest runs."
+    },
+    {
+      "step": "diagnostics-helper",
+      "exitCode": 1,
+      "cause": "Assumed @expo/cli folder not present at direct node_modules path.",
+      "retry": "Resolve installed module via createRequire; no entry gate rerun."
+    },
+    {
+      "step": "locate-generator-first",
+      "exitCode": 1,
+      "cause": "@expo/cli is nested inside expo; direct RN resolution failed.",
+      "retry": "Resolved relative to installed expo/package.json; setupTypedRoutes called with no server or Metro."
+    },
+    {
+      "step": "jest-1",
+      "exitCode": 1,
+      "passed": 181,
+      "failed": 13,
+      "cause": "New decorative-photo query correctly excluded accessibility-hidden photos.",
+      "retry": "Query with includeHiddenElements solely to inspect hidden decorative image props; both final runs passed."
+    }
+  ],
+  "processInspection": "Run-directory receipts/child-process-check: exact Win32_Process command-line filter for executor check/npm/Jest/export, excluding monitor/viewer/query; no matches. Earlier spawned children returned exit codes before retries."
+}

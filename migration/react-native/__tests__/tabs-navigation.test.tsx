@@ -14,6 +14,8 @@ import * as ScheduleRoute from '../src/app/(tabs)/(schedule)/index';
 import * as SessionRoute from '../src/app/(tabs)/(schedule)/session/[sessionId]';
 import * as SpeakersLayout from '../src/app/(tabs)/speakers/_layout';
 import * as SpeakersRoute from '../src/app/(tabs)/speakers/index';
+import * as SpeakerDetailRoute from '../src/app/(tabs)/speakers/speaker/[speakerId]';
+import * as SpeakerSessionRoute from '../src/app/(tabs)/speakers/session/[sessionId]';
 import * as FilterRoute from '../src/app/filter';
 import * as conferenceData from '../src/data/load-conference';
 import { useConference } from '../src/state/conference-state';
@@ -26,6 +28,8 @@ const routes = {
   '(tabs)/(schedule)/session/[sessionId]': SessionRoute,
   '(tabs)/speakers/_layout': SpeakersLayout,
   '(tabs)/speakers/index': SpeakersRoute,
+  '(tabs)/speakers/speaker/[speakerId]': SpeakerDetailRoute,
+  '(tabs)/speakers/session/[sessionId]': SpeakerSessionRoute,
   filter: FilterRoute,
 };
 

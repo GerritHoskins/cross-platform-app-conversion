@@ -1,0 +1,449 @@
+FAIL __tests__/speaker-detail-screen.test.tsx (7.653 s)
+  ● Console
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_module
+[bounded capture: middle omitted]
+[39m=[32m"Ionic in the Enterprise"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-11-session-13"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mIonic in the Enterprise[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"About Paul Puppy"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-11-about"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mAbout [0m
+                                              [0mPaul Puppy[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View[39m
+                                          [33mtestID[39m=[32m"speaker-12"[39m
+                                        [36m>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Rachel Rabbit"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                          [36m>[39m
+                                            [36m<Image[39m
+                                              [33maccessible[39m=[32m{false}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"speaker-photo-12"[39m
+                                            [36m/>[39m
+                                            [36m<Text[39m
+                                              [33maccessibilityRole[39m=[32m"header"[39m
+                                            [36m>[39m
+                                              [0mRachel Rabbit[0m
+                                            [36m</Text>[39m
+                                            [36m<Text>[39m
+                                              [0mSenior Software Engineer[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Ionic Tooling"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-12-session-3"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mIonic Tooling[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"What's New in Vue"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-12-session-6"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mWhat's New in Vue[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Navigation in Ionic"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-12-session-11"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mNavigation in Ionic[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Mobile States"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-12-session-20"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mMobile States[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"About Rachel Rabbit"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-12-about"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mAbout [0m
+                                              [0mRachel Rabbit[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                        [36m<View[39m
+                                          [33mtestID[39m=[32m"speaker-13"[39m
+                                        [36m>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Ted Turtle"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                          [36m>[39m
+                                            [36m<Image[39m
+                                              [33maccessible[39m=[32m{false}[39m
+                                              [33mimportantForAccessibility[39m=[32m"no-hide-descendants"[39m
+                                              [33mtestID[39m=[32m"speaker-photo-13"[39m
+                                            [36m/>[39m
+                                            [36m<Text[39m
+                                              [33maccessibilityRole[39m=[32m"header"[39m
+                                            [36m>[39m
+                                              [0mTed Turtle[0m
+                                            [36m</Text>[39m
+                                            [36m<Text>[39m
+                                              [0mSoftware Engineer[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Getting Started with Ionic"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-13-session-2"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mGetting Started with Ionic[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"Building with Ionic and Vue"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-13-session-19"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mBuilding with Ionic and Vue[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                          [36m<View[39m
+                                            [33maccessibilityLabel[39m=[32m"About Ted Turtle"[39m
+                                            [33maccessibilityRole[39m=[32m"button"[39m
+                                            [33maccessible[39m=[32m{true}[39m
+                                            [33mtestID[39m=[32m"speaker-13-about"[39m
+                                          [36m>[39m
+                                            [36m<Text>[39m
+                                              [0mAbout [0m
+                                              [0mTed Turtle[0m
+                                            [36m</Text>[39m
+                                          [36m</View>[39m
+                                        [36m</View>[39m
+                                      [36m</View>[39m
+                                    [36m</RCTScrollView>[39m
+                                  [36m</View>[39m
+                                [36m</RNSScreenContentWrapper>[39m
+                                [36m<RNSScreenStackHeaderConfig[39m
+                                  [33mpointerEvents[39m=[32m"box-none"[39m
+                                  [33mtitle[39m=[32m"Speakers"[39m
+                                [36m/>[39m
+                              [36m</RNSScreen>[39m
+                            [36m</RNSScreenStack>[39m
+                          [36m</View>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</RNSScreen>[39m
+                  [36m</RNSScreenContainer>[39m
+                  [36m<View>[39m
+                    [36m<View />[39m
+                    [36m<View[39m
+                      [33mrole[39m=[32m"tablist"[39m
+                    [36m>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Schedule"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": false,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"tab"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                            [36m<View />[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSchedule[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                      [36m<View>[39m
+                        [36m<View[39m
+                          [33maccessibilityLabel[39m=[32m"Speakers"[39m
+                          [33maccessibilityState[39m=[32m{
+                            {
+                              "selected": true,
+                            }
+                          }[39m
+                          [33maccessible[39m=[32m{true}[39m
+                          [33mrole[39m=[32m"tab"[39m
+                        [36m>[39m
+                          [36m<View[39m
+                            [33mstyle[39m=[32m{
+                              {
+                                "display": "none",
+                              }
+                            }[39m
+                          [36m>[39m
+                            [36m<View />[39m
+                            [36m<View[39m
+                              [33mstyle[39m=[32m{
+                                {
+                                  "opacity": 0,
+                                }
+                              }[39m
+                            [36m/>[39m
+                          [36m</View>[39m
+                          [36m<Text>[39m
+                            [0mSpeakers[0m
+                          [36m</Text>[39m
+                        [36m</View>[39m
+                      [36m</View>[39m
+                    [36m</View>[39m
+                  [36m</View>[39m
+                [36m</View>[39m
+              [36m</RNSScreenContentWrapper>[39m
+              [36m<RNSScreenStackHeaderConfig[39m
+                [33mpointerEvents[39m=[32m"box-none"[39m
+                [33mtitle[39m=[32m"(tabs)"[39m
+              [36m/>[39m
+            [36m</RNSScreen>[39m
+          [36m</RNSScreenStack>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</RNCSafeAreaProvider>[39m
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = screen.getAllByTestId(/^speaker-photo-\d+$/);
+         |                             ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   for (const image of decorative) {
+      87 |     expect(image.props.accessible).toBe(false);
+
+      at getAllByTestId (__tests__/speaker-detail-screen.test.tsx:84:29)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+
+Test Suites: 1 failed, 10 passed, 11 total
+Tests:       13 failed, 181 passed, 194 total
+Snapshots:   0 total
+Time:        15.441 s
+Ran all test suites.
+Test results written to: ..\..\tools\qwen-supervisor\.runs\sol-rn09-r1-b-20261029\jest-1.json

@@ -1,0 +1,63 @@
+{
+  "amendment": "A1",
+  "exactBeforeLines42to44": [
+    "    expect(card.queryAllByRole('button')).toHaveLength(0);",
+    "    expect(card.queryAllByRole('link')).toHaveLength(0);",
+    "    for (const row of [...rows, about]) expect(row.props.onPress).toBeUndefined();"
+  ],
+  "exactAfterLines42to44": [
+    "    expect(card.getByRole('button', { name: speaker.name })).toBeTruthy();",
+    "    for (const name of sessions.sessionNames) expect(card.getByRole('button', { name })).toBeTruthy();",
+    "    expect(card.getByRole('button', { name: `About ${speaker.name}` })).toBeTruthy();"
+  ],
+  "descriptionBefore": "renders all real bundled profiles, titles, ordered 26 session rows and About rows without navigation or photos",
+  "descriptionAfter": "renders all real bundled profiles, titles, ordered 26 session rows and About rows as navigation buttons with decorative photos",
+  "realNavigationEvidence": "speaker-detail-screen.test.tsx presses all 13 headers, all 13 About rows and all 26 session rows with the real route tree",
+  "results": [
+    {
+      "path": "migration/react-native/__tests__/conference-state.test.ts",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/root-layout.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/schedule-swipe.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+      "unchanged": true,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/speakers-screen.test.tsx",
+      "unchanged": false,
+      "onlyAuthorizedEdits": true
+    },
+    {
+      "path": "migration/react-native/__tests__/tabs-navigation.test.tsx",
+      "unchanged": false,
+      "onlyAuthorizedEdits": true
+    }
+  ]
+}

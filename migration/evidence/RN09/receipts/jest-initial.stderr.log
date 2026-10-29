@@ -1,0 +1,444 @@
+FAIL __tests__/speaker-detail-screen.test.tsx (7.596 s)
+  ● Console
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:93:10)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_modules/react-reconciler/cjs/react-reconciler.development.js:6190:22)
+      at Object.useState (node_modules/react-reconciler/cjs/react-reconciler.development.js:19551:18)
+      at Object.process.env.NODE_ENV.exports.useState (node_modules/react/cjs/react.development.js:1309:34)
+      at useState (node_modules/expo-router/build/fork/fork/NavigationContainer.tsx:81:32)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:88:52)
+      at createSeededNavigationState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:255:11)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:250:33)
+      at createSeededState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:31:10)
+      at node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:56
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at collectMissingLayouts (node_modules/expo-router/build/layoutAnchor.ts:123:30)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:118:28)
+      at createInitialState (node_modules/expo-router/build/fork/fork/useLinking.native.ts:126:12)
+      at mountStateImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:6169:24)
+      at mountState (node_module
+[bounded capture: middle omitted]
+664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+    console.warn
+      `unstable_settings.initialRouteName` is deprecated. Use `unstable_settings.anchor` instead.
+
+      at warn (node_modules/expo-router/build/layoutAnchor.ts:176:13)
+      at warnIfInitialRouteNameIsUsed (node_modules/expo-router/build/layoutAnchor.ts:137:7)
+      at readAnchor (node_modules/expo-router/build/layoutAnchor.ts:30:18)
+      at getValidInitialRouteName (node_modules/expo-router/build/routeNode.ts:38:25)
+      at node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:170:54
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:155:31)
+      at completeExistingState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:175:9)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:155:31)
+      at completeExistingState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:175:9)
+          at Array.map (<anonymous>)
+      at map (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:155:31)
+      at completeExistingState (node_modules/expo-router/build/global-state/global-state/createSeededNavigationState.ts:45:10)
+      at reduceTree (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:359:34)
+      at reduceTree (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:250:16)
+      at reduceOperation (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:219:11)
+      at fn (node_modules/expo-router/build/layoutAnchor.ts:53:21)
+      at reduceQueuedOperation (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:218:51)
+      at reduceQueuedOperation (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:186:12)
+      at navigationTreeReducer (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:502:7)
+      at updateReducerImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:5949:17)
+      at updateReducer (node_modules/react-reconciler/cjs/react-reconciler.development.js:5869:14)
+      at Object.useReducer (node_modules/react-reconciler/cjs/react-reconciler.development.js:19803:18)
+      at Object.process.env.NODE_ENV.exports.useReducer (node_modules/react/cjs/react.development.js:1303:34)
+      at useReducer (node_modules/expo-router/build/global-state/global-state/useNavigationTreeReducer.ts:500:41)
+      at BaseNavigationContainer (node_modules/expo-router/build/react-navigation/core/react-navigation/core/BaseNavigationContainer.tsx:107:31)
+      at Object.react_stack_bottom_frame (node_modules/react-reconciler/cjs/react-reconciler.development.js:19204:20)
+      at renderWithHooks (node_modules/react-reconciler/cjs/react-reconciler.development.js:5549:22)
+      at updateFunctionComponent (node_modules/react-reconciler/cjs/react-reconciler.development.js:7969:19)
+      at beginWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:9591:18)
+      at runWithFiberInDEV (node_modules/react-reconciler/cjs/react-reconciler.development.js:2663:13)
+      at performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:16674:22)
+      at workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16500:41)
+      at renderRootSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:16481:11)
+      at performWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:15540:11)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-reconciler/cjs/react-reconciler.development.js:3520:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:664:34)
+      at node_modules/react/cjs/react.development.js:923:21
+
+  ● header and About buttons for Burt Bear navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Charlie Cheetah navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Donald Duck navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Ellie Elephant navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Eva Eagle navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Gino Giraffe navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Isabella Iguana navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Karl Kitten navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Lionel Lion navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Molly Mouse navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Paul Puppy navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Rachel Rabbit navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+  ● header and About buttons for Ted Turtle navigate to its full profile and Back to Speakers
+
+    TypeError: view.UNSAFE_getAllByType is not a function
+
+      82 |   await screen.findByTestId(`speaker-${speaker.id}`);
+      83 |   const card = screen.getByTestId(`speaker-${speaker.id}`);
+    > 84 |   const decorative = view.UNSAFE_getAllByType(Image).filter(image => image.props.accessible === false);
+         |                           ^
+      85 |   expect(decorative).toHaveLength(13);
+      86 |   expect(within(card).queryAllByRole('image')).toHaveLength(0);
+      87 |   for (const label of [speaker.name, `About ${speaker.name}`]) {
+
+      at UNSAFE_getAllByType (__tests__/speaker-detail-screen.test.tsx:84:27)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+
+Test Suites: 1 failed, 10 passed, 11 total
+Tests:       13 failed, 181 passed, 194 total
+Snapshots:   0 total
+Time:        15.177 s, estimated 31 s
+Ran all test suites.
+Test results written to: ..\..\tools\qwen-supervisor\.runs\sol-rn09-r1-b-20261029\jest-initial.json

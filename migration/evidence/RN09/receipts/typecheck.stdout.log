@@ -1,0 +1,9 @@
+
+> conference-migration-rn@1.0.0 typecheck
+> tsc --noEmit
+
+__tests__/speaker-detail-screen.test.tsx(84,27): error TS2339: Property 'UNSAFE_getAllByType' does not exist on type 'RenderRouterResult'.
+__tests__/speaker-detail-screen.test.tsx(84,61): error TS7006: Parameter 'image' implicitly has an 'any' type.
+src/screens/speakers-screen.tsx(52,114): error TS2345: Argument of type '`/speakers/speaker/${number}`' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/filter" | `/filter?${string}` | `/filter#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | { ...; } | `/session/${string}` | { ...; }'.
+src/screens/speakers-screen.tsx(58,188): error TS2345: Argument of type '`/speakers/session/${number}`' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/filter" | `/filter?${string}` | `/filter#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | { ...; } | `/session/${string}` | { ...; }'.
+src/screens/speakers-screen.tsx(62,164): error TS2345: Argument of type '`/speakers/speaker/${number}`' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/filter" | `/filter?${string}` | `/filter#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | { ...; } | `/session/${string}` | { ...; }'.

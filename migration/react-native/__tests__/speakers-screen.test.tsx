@@ -39,9 +39,9 @@ function expectCards() {
     expect(rows.map(row => within(row).getByText(/./).props.children)).toEqual(sessions.sessionNames);
     const about = card.getByTestId(`speaker-${speaker.id}-about`);
     expect(within(about).getByText(`About ${speaker.name}`)).toBeTruthy();
-    expect(card.queryAllByRole('button')).toHaveLength(0);
-    expect(card.queryAllByRole('link')).toHaveLength(0);
-    for (const row of [...rows, about]) expect(row.props.onPress).toBeUndefined();
+    expect(card.getByRole('button', { name: speaker.name })).toBeTruthy();
+    for (const name of sessions.sessionNames) expect(card.getByRole('button', { name })).toBeTruthy();
+    expect(card.getByRole('button', { name: `About ${speaker.name}` })).toBeTruthy();
     total += rows.length;
   }
   expect(total).toBe(26);
@@ -54,7 +54,7 @@ test('guards the frozen P02 fixture SHA-256', () => {
   expect(createHash('sha256').update(fixtureBytes).digest('hex')).toBe('421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e');
 });
 
-test('renders all real bundled profiles, titles, ordered 26 session rows and About rows without navigation or photos', async () => {
+test('renders all real bundled profiles, titles, ordered 26 session rows and About rows as navigation buttons with decorative photos', async () => {
   const view = await render(<ConferenceProvider><SpeakersScreen /></ConferenceProvider>);
   await screen.findByTestId('speaker-1');
   expectCards();

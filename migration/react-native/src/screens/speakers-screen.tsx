@@ -1,6 +1,8 @@
 import { sessionsForSpeaker, sortSpeakers } from '@migration/core';
+import { router } from 'expo-router';
 import {
   ActivityIndicator,
+  Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -9,6 +11,7 @@ import {
   View,
 } from 'react-native';
 
+import { speakerPhoto } from '../data/speaker-photos';
 import { useConference } from '../state/conference-state';
 
 const PALETTES = {
@@ -46,18 +49,19 @@ export default function SpeakersScreen() {
         <ScrollView contentContainerStyle={styles.list}>
           {sortSpeakers(speakerProfiles).map((speaker) => (
             <View key={speaker.id} testID={`speaker-${speaker.id}`} style={[styles.card, { backgroundColor: palette.surface, borderColor: palette.border }]}>
-              <View style={styles.header}>
+              <Pressable accessibilityRole="button" accessibilityLabel={speaker.name} onPress={() => router.push(`/speakers/speaker/${speaker.id}`)} style={styles.header}>
+                {speakerPhoto(speaker.profilePic) !== undefined ? <Image testID={`speaker-photo-${speaker.id}`} source={speakerPhoto(speaker.profilePic)} accessible={false} importantForAccessibility="no-hide-descendants" style={styles.photo} /> : null}
                 <Text accessibilityRole="header" style={[styles.name, { color: palette.text }]}>{speaker.name}</Text>
                 <Text style={{ color: palette.subtle }}>{speaker.title}</Text>
-              </View>
+              </Pressable>
               {sessionsForSpeaker(state.conference!.sessions, speaker.id).map((session) => (
-                <View key={session.id} testID={`speaker-${speaker.id}-session-${session.id}`} style={[styles.row, { borderColor: palette.border }]}>
+                <Pressable key={session.id} testID={`speaker-${speaker.id}-session-${session.id}`} accessibilityRole="button" accessibilityLabel={session.name} onPress={() => router.push(`/speakers/session/${session.id}`)} style={[styles.row, { borderColor: palette.border }]}>
                   <Text style={[styles.rowText, { color: palette.text }]}>{session.name}</Text>
-                </View>
+                </Pressable>
               ))}
-              <View testID={`speaker-${speaker.id}-about`} style={[styles.row, { borderColor: palette.border }]}>
+              <Pressable testID={`speaker-${speaker.id}-about`} accessibilityRole="button" accessibilityLabel={`About ${speaker.name}`} onPress={() => router.push(`/speakers/speaker/${speaker.id}`)} style={[styles.row, { borderColor: palette.border }]}>
                 <Text style={[styles.rowText, { color: palette.text }]}>About {speaker.name}</Text>
-              </View>
+              </Pressable>
             </View>
           ))}
         </ScrollView>
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
   list: { padding: 16, gap: 12 },
   card: { borderWidth: 1, borderRadius: 12, overflow: 'hidden' },
   header: { padding: 16, gap: 4 },
+  photo: { width: 64, height: 64, borderRadius: 32 },
   name: { fontSize: 20, fontWeight: '600' },
   row: { padding: 16, borderTopWidth: 1 },
   rowText: { fontSize: 16 },

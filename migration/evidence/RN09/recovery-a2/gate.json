@@ -1,0 +1,1088 @@
+{
+  "version": 1,
+  "package": "RN09",
+  "revision": 1,
+  "phase": "c",
+  "amendment": "A2",
+  "evaluatedOnce": true,
+  "recordedAt": "2026-10-29T15:05:23.565Z",
+  "status": "PASS",
+  "checks": {
+    "branch": true,
+    "head": true,
+    "indexEmpty": true,
+    "rawPorcelainEqualAfterLineEndingNormalizationOnly": true,
+    "all151DraftHashesMatch": true,
+    "pinnedNode": true
+  },
+  "branch": "migration/slice-2\n",
+  "head": "35e7bf2d23a2d6adb2890f7c2f025e143b0251e7\n",
+  "index": "",
+  "porcelain": " M migration/react-native/__tests__/speakers-screen.test.tsx\n M migration/react-native/__tests__/tabs-navigation.test.tsx\n M migration/react-native/src/app/(tabs)/speakers/_layout.tsx\n M migration/react-native/src/screens/speakers-screen.tsx\n M package-lock.json\n?? migration/evidence/RN09/android-bundle-inventory.json\n?? migration/evidence/RN09/commands.jsonl\n?? migration/evidence/RN09/entry.json\n?? migration/evidence/RN09/existing-test-edits.json\n?? migration/evidence/RN09/failures-and-retry.json\n?? migration/evidence/RN09/initial-jest-failures.json\n?? migration/evidence/RN09/jest-summary.json\n?? migration/evidence/RN09/lf-check.json\n?? migration/evidence/RN09/photos.json\n?? migration/evidence/RN09/privacy-scan.json\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.receipt.json\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stderr.log\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stdout.log\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-test-paths.receipt.json\n?? migration/evidence/RN09/receipts/baseline-test-paths.stderr.log\n?? migration/evidence/RN09/receipts/baseline-test-paths.stdout.log\n?? migration/evidence/RN09/receipts/bundle-android.receipt.json\n?? migration/evidence/RN09/receipts/bundle-android.stderr.log\n?? migration/evidence/RN09/receipts/bundle-android.stdout.log\n?? migration/evidence/RN09/receipts/core-integration.receipt.json\n?? migration/evidence/RN09/receipts/core-integration.stderr.log\n?? migration/evidence/RN09/receipts/core-integration.stdout.log\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.receipt.json\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.stderr.log\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.stdout.log\n?? migration/evidence/RN09/receipts/final-index.receipt.json\n?? migration/evidence/RN09/receipts/final-index.stderr.log\n?? migration/evidence/RN09/receipts/final-index.stdout.log\n?? migration/evidence/RN09/receipts/final-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/final-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/final-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/gate-branch.receipt.json\n?? migration/evidence/RN09/receipts/gate-branch.stderr.log\n?? migration/evidence/RN09/receipts/gate-branch.stdout.log\n?? migration/evidence/RN09/receipts/gate-head.receipt.json\n?? migration/evidence/RN09/receipts/gate-head.stderr.log\n?? migration/evidence/RN09/receipts/gate-head.stdout.log\n?? migration/evidence/RN09/receipts/gate-index.receipt.json\n?? migration/evidence/RN09/receipts/gate-index.stderr.log\n?? migration/evidence/RN09/receipts/gate-index.stdout.log\n?? migration/evidence/RN09/receipts/gate-node.receipt.json\n?? migration/evidence/RN09/receipts/gate-node.stderr.log\n?? migration/evidence/RN09/receipts/gate-node.stdout.log\n?? migration/evidence/RN09/receipts/gate-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/gate-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/gate-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/gate-tree.receipt.json\n?? migration/evidence/RN09/receipts/gate-tree.stderr.log\n?? migration/evidence/RN09/receipts/gate-tree.stdout.log\n?? migration/evidence/RN09/receipts/jest-1.receipt.json\n?? migration/evidence/RN09/receipts/jest-1.stderr.log\n?? migration/evidence/RN09/receipts/jest-1.stdout.log\n?? migration/evidence/RN09/receipts/jest-final-1.receipt.json\n?? migration/evidence/RN09/receipts/jest-final-1.stderr.log\n?? migration/evidence/RN09/receipts/jest-final-1.stdout.log\n?? migration/evidence/RN09/receipts/jest-final-2.receipt.json\n?? migration/evidence/RN09/receipts/jest-final-2.stderr.log\n?? migration/evidence/RN09/receipts/jest-final-2.stdout.log\n?? migration/evidence/RN09/receipts/jest-initial.receipt.json\n?? migration/evidence/RN09/receipts/jest-initial.stderr.log\n?? migration/evidence/RN09/receipts/jest-initial.stdout.log\n?? migration/evidence/RN09/receipts/packet-index.receipt.json\n?? migration/evidence/RN09/receipts/packet-index.stderr.log\n?? migration/evidence/RN09/receipts/packet-index.stdout.log\n?? migration/evidence/RN09/receipts/packet-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/packet-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/packet-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/packet-rn-tracked.receipt.json\n?? migration/evidence/RN09/receipts/packet-rn-tracked.stderr.log\n?? migration/evidence/RN09/receipts/packet-rn-tracked.stdout.log\n?? migration/evidence/RN09/receipts/packet-rn-untracked.receipt.json\n?? migration/evidence/RN09/receipts/packet-rn-untracked.stderr.log\n?? migration/evidence/RN09/receipts/packet-rn-untracked.stdout.log\n?? migration/evidence/RN09/receipts/protected-path-diff.receipt.json\n?? migration/evidence/RN09/receipts/protected-path-diff.stderr.log\n?? migration/evidence/RN09/receipts/protected-path-diff.stdout.log\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.receipt.json\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.stderr.log\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.stdout.log\n?? migration/evidence/RN09/receipts/submission-branch.receipt.json\n?? migration/evidence/RN09/receipts/submission-branch.stderr.log\n?? migration/evidence/RN09/receipts/submission-branch.stdout.log\n?? migration/evidence/RN09/receipts/submission-head.receipt.json\n?? migration/evidence/RN09/receipts/submission-head.stderr.log\n?? migration/evidence/RN09/receipts/submission-head.stdout.log\n?? migration/evidence/RN09/receipts/submission-tree.receipt.json\n?? migration/evidence/RN09/receipts/submission-tree.stderr.log\n?? migration/evidence/RN09/receipts/submission-tree.stdout.log\n?? migration/evidence/RN09/receipts/typecheck-final.receipt.json\n?? migration/evidence/RN09/receipts/typecheck-final.stderr.log\n?? migration/evidence/RN09/receipts/typecheck-final.stdout.log\n?? migration/evidence/RN09/receipts/typecheck-verified.receipt.json\n?? migration/evidence/RN09/receipts/typecheck-verified.stderr.log\n?? migration/evidence/RN09/receipts/typecheck-verified.stdout.log\n?? migration/evidence/RN09/receipts/typecheck.receipt.json\n?? migration/evidence/RN09/receipts/typecheck.stderr.log\n?? migration/evidence/RN09/receipts/typecheck.stdout.log\n?? migration/evidence/RN09/receipts/whitespace-diff.receipt.json\n?? migration/evidence/RN09/receipts/whitespace-diff.stderr.log\n?? migration/evidence/RN09/receipts/whitespace-diff.stdout.log\n?? migration/evidence/RN09/scope-checks.json\n?? migration/handoffs/RN09.md\n?? migration/react-native/__tests__/speaker-detail-screen.test.tsx\n?? migration/react-native/__tests__/speaker-photos.test.ts\n?? migration/react-native/assets/images/speakers/bear.jpg\n?? migration/react-native/assets/images/speakers/cheetah.jpg\n?? migration/react-native/assets/images/speakers/duck.jpg\n?? migration/react-native/assets/images/speakers/eagle.jpg\n?? migration/react-native/assets/images/speakers/elephant.jpg\n?? migration/react-native/assets/images/speakers/giraffe.jpg\n?? migration/react-native/assets/images/speakers/iguana.jpg\n?? migration/react-native/assets/images/speakers/kitten.jpg\n?? migration/react-native/assets/images/speakers/lion.jpg\n?? migration/react-native/assets/images/speakers/mouse.jpg\n?? migration/react-native/assets/images/speakers/puppy.jpg\n?? migration/react-native/assets/images/speakers/rabbit.jpg\n?? migration/react-native/assets/images/speakers/turtle.jpg\n?? migration/react-native/src/app/(tabs)/speakers/session/[sessionId].tsx\n?? migration/react-native/src/app/(tabs)/speakers/speaker/[speakerId].tsx\n?? migration/react-native/src/data/speaker-photos.ts\n?? migration/react-native/src/screens/speaker-detail-screen.tsx\n?? migration/submissions/RN09-r1.json\n?? migration/work-packages/RN09.md\n",
+  "expectedPorcelain": " M migration/react-native/__tests__/speakers-screen.test.tsx\n M migration/react-native/__tests__/tabs-navigation.test.tsx\n M migration/react-native/src/app/(tabs)/speakers/_layout.tsx\n M migration/react-native/src/screens/speakers-screen.tsx\n M package-lock.json\n?? migration/evidence/RN09/android-bundle-inventory.json\n?? migration/evidence/RN09/commands.jsonl\n?? migration/evidence/RN09/entry.json\n?? migration/evidence/RN09/existing-test-edits.json\n?? migration/evidence/RN09/failures-and-retry.json\n?? migration/evidence/RN09/initial-jest-failures.json\n?? migration/evidence/RN09/jest-summary.json\n?? migration/evidence/RN09/lf-check.json\n?? migration/evidence/RN09/photos.json\n?? migration/evidence/RN09/privacy-scan.json\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.receipt.json\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stderr.log\n?? migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stdout.log\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.receipt.json\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stderr.log\n?? migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stdout.log\n?? migration/evidence/RN09/receipts/baseline-test-paths.receipt.json\n?? migration/evidence/RN09/receipts/baseline-test-paths.stderr.log\n?? migration/evidence/RN09/receipts/baseline-test-paths.stdout.log\n?? migration/evidence/RN09/receipts/bundle-android.receipt.json\n?? migration/evidence/RN09/receipts/bundle-android.stderr.log\n?? migration/evidence/RN09/receipts/bundle-android.stdout.log\n?? migration/evidence/RN09/receipts/core-integration.receipt.json\n?? migration/evidence/RN09/receipts/core-integration.stderr.log\n?? migration/evidence/RN09/receipts/core-integration.stdout.log\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.receipt.json\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.stderr.log\n?? migration/evidence/RN09/receipts/existing-test-edit-diff.stdout.log\n?? migration/evidence/RN09/receipts/final-index.receipt.json\n?? migration/evidence/RN09/receipts/final-index.stderr.log\n?? migration/evidence/RN09/receipts/final-index.stdout.log\n?? migration/evidence/RN09/receipts/final-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/final-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/final-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/gate-branch.receipt.json\n?? migration/evidence/RN09/receipts/gate-branch.stderr.log\n?? migration/evidence/RN09/receipts/gate-branch.stdout.log\n?? migration/evidence/RN09/receipts/gate-head.receipt.json\n?? migration/evidence/RN09/receipts/gate-head.stderr.log\n?? migration/evidence/RN09/receipts/gate-head.stdout.log\n?? migration/evidence/RN09/receipts/gate-index.receipt.json\n?? migration/evidence/RN09/receipts/gate-index.stderr.log\n?? migration/evidence/RN09/receipts/gate-index.stdout.log\n?? migration/evidence/RN09/receipts/gate-node.receipt.json\n?? migration/evidence/RN09/receipts/gate-node.stderr.log\n?? migration/evidence/RN09/receipts/gate-node.stdout.log\n?? migration/evidence/RN09/receipts/gate-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/gate-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/gate-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/gate-tree.receipt.json\n?? migration/evidence/RN09/receipts/gate-tree.stderr.log\n?? migration/evidence/RN09/receipts/gate-tree.stdout.log\n?? migration/evidence/RN09/receipts/jest-1.receipt.json\n?? migration/evidence/RN09/receipts/jest-1.stderr.log\n?? migration/evidence/RN09/receipts/jest-1.stdout.log\n?? migration/evidence/RN09/receipts/jest-final-1.receipt.json\n?? migration/evidence/RN09/receipts/jest-final-1.stderr.log\n?? migration/evidence/RN09/receipts/jest-final-1.stdout.log\n?? migration/evidence/RN09/receipts/jest-final-2.receipt.json\n?? migration/evidence/RN09/receipts/jest-final-2.stderr.log\n?? migration/evidence/RN09/receipts/jest-final-2.stdout.log\n?? migration/evidence/RN09/receipts/jest-initial.receipt.json\n?? migration/evidence/RN09/receipts/jest-initial.stderr.log\n?? migration/evidence/RN09/receipts/jest-initial.stdout.log\n?? migration/evidence/RN09/receipts/packet-index.receipt.json\n?? migration/evidence/RN09/receipts/packet-index.stderr.log\n?? migration/evidence/RN09/receipts/packet-index.stdout.log\n?? migration/evidence/RN09/receipts/packet-porcelain.receipt.json\n?? migration/evidence/RN09/receipts/packet-porcelain.stderr.log\n?? migration/evidence/RN09/receipts/packet-porcelain.stdout.log\n?? migration/evidence/RN09/receipts/packet-rn-tracked.receipt.json\n?? migration/evidence/RN09/receipts/packet-rn-tracked.stderr.log\n?? migration/evidence/RN09/receipts/packet-rn-tracked.stdout.log\n?? migration/evidence/RN09/receipts/packet-rn-untracked.receipt.json\n?? migration/evidence/RN09/receipts/packet-rn-untracked.stderr.log\n?? migration/evidence/RN09/receipts/packet-rn-untracked.stdout.log\n?? migration/evidence/RN09/receipts/protected-path-diff.receipt.json\n?? migration/evidence/RN09/receipts/protected-path-diff.stderr.log\n?? migration/evidence/RN09/receipts/protected-path-diff.stdout.log\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.receipt.json\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.stderr.log\n?? migration/evidence/RN09/receipts/regenerate-ignored-route-types.stdout.log\n?? migration/evidence/RN09/receipts/submission-branch.receipt.json\n?? migration/evidence/RN09/receipts/submission-branch.stderr.log\n?? migration/evidence/RN09/receipts/submission-branch.stdout.log\n?? migration/evidence/RN09/receipts/submission-head.receipt.json\n?? migration/evidence/RN09/receipts/submission-head.stderr.log\n?? migration/evidence/RN09/receipts/submission-head.stdout.log\n?? migration/evidence/RN09/receipts/submission-tree.receipt.json\n?? migration/evidence/RN09/receipts/submission-tree.stderr.log\n?? migration/evidence/RN09/receipts/submission-tree.stdout.log\n?? migration/evidence/RN09/receipts/typecheck-final.receipt.json\n?? migration/evidence/RN09/receipts/typecheck-final.stderr.log\n?? migration/evidence/RN09/receipts/typecheck-final.stdout.log\n?? migration/evidence/RN09/receipts/typecheck-verified.receipt.json\n?? migration/evidence/RN09/receipts/typecheck-verified.stderr.log\n?? migration/evidence/RN09/receipts/typecheck-verified.stdout.log\n?? migration/evidence/RN09/receipts/typecheck.receipt.json\n?? migration/evidence/RN09/receipts/typecheck.stderr.log\n?? migration/evidence/RN09/receipts/typecheck.stdout.log\n?? migration/evidence/RN09/receipts/whitespace-diff.receipt.json\n?? migration/evidence/RN09/receipts/whitespace-diff.stderr.log\n?? migration/evidence/RN09/receipts/whitespace-diff.stdout.log\n?? migration/evidence/RN09/scope-checks.json\n?? migration/handoffs/RN09.md\n?? migration/react-native/__tests__/speaker-detail-screen.test.tsx\n?? migration/react-native/__tests__/speaker-photos.test.ts\n?? migration/react-native/assets/images/speakers/bear.jpg\n?? migration/react-native/assets/images/speakers/cheetah.jpg\n?? migration/react-native/assets/images/speakers/duck.jpg\n?? migration/react-native/assets/images/speakers/eagle.jpg\n?? migration/react-native/assets/images/speakers/elephant.jpg\n?? migration/react-native/assets/images/speakers/giraffe.jpg\n?? migration/react-native/assets/images/speakers/iguana.jpg\n?? migration/react-native/assets/images/speakers/kitten.jpg\n?? migration/react-native/assets/images/speakers/lion.jpg\n?? migration/react-native/assets/images/speakers/mouse.jpg\n?? migration/react-native/assets/images/speakers/puppy.jpg\n?? migration/react-native/assets/images/speakers/rabbit.jpg\n?? migration/react-native/assets/images/speakers/turtle.jpg\n?? migration/react-native/src/app/(tabs)/speakers/session/[sessionId].tsx\n?? migration/react-native/src/app/(tabs)/speakers/speaker/[speakerId].tsx\n?? migration/react-native/src/data/speaker-photos.ts\n?? migration/react-native/src/screens/speaker-detail-screen.tsx\n?? migration/submissions/RN09-r1.json\n?? migration/work-packages/RN09.md\n",
+  "nodeVersion": "v24.19.0\n",
+  "draftChecks": {
+    "count": 151,
+    "allMatch": true,
+    "excludedAuthorizedEdits": [],
+    "files": [
+      {
+        "path": "migration/evidence/RN09/android-bundle-inventory.json",
+        "expectedSha256": "e138698231f24e7627ec519759dd48e58f3f6e7a6a5601f9c03b49115bf2c81a",
+        "exists": true,
+        "actualSha256": "e138698231f24e7627ec519759dd48e58f3f6e7a6a5601f9c03b49115bf2c81a",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/commands.jsonl",
+        "expectedSha256": "366c2c1ec2a35e9e1d5cdd898837992ca27ffa02f7396b61bda45ec5796cebe0",
+        "exists": true,
+        "actualSha256": "366c2c1ec2a35e9e1d5cdd898837992ca27ffa02f7396b61bda45ec5796cebe0",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/entry.json",
+        "expectedSha256": "09158cb09e0d07b4b75866628c522627c50556399f5ab19f7bbf32f2aa9d040e",
+        "exists": true,
+        "actualSha256": "09158cb09e0d07b4b75866628c522627c50556399f5ab19f7bbf32f2aa9d040e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/existing-test-edits.json",
+        "expectedSha256": "c9dfab1715f6cc200e7f71f177da6dc2ab4dc79dd2a55f67f7e0c816dcfd300b",
+        "exists": true,
+        "actualSha256": "c9dfab1715f6cc200e7f71f177da6dc2ab4dc79dd2a55f67f7e0c816dcfd300b",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/failures-and-retry.json",
+        "expectedSha256": "521fb1097f5da05dd7e8139b2e71b2f26cc082b48af0b3eeed8614d37a468f96",
+        "exists": true,
+        "actualSha256": "521fb1097f5da05dd7e8139b2e71b2f26cc082b48af0b3eeed8614d37a468f96",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/initial-jest-failures.json",
+        "expectedSha256": "d277f3ec43af11989a57c569b5ea0e39d4e429c69b8f97956e06311de1d3be8a",
+        "exists": true,
+        "actualSha256": "d277f3ec43af11989a57c569b5ea0e39d4e429c69b8f97956e06311de1d3be8a",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/jest-summary.json",
+        "expectedSha256": "55fc09c624a6ec1f0be081fa37d3b61afdd4f21c24ca6e5a704fc896ca716f7b",
+        "exists": true,
+        "actualSha256": "55fc09c624a6ec1f0be081fa37d3b61afdd4f21c24ca6e5a704fc896ca716f7b",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/lf-check.json",
+        "expectedSha256": "1b22ec271f0c3a855096dd4ce2748532e895ffd7ff23374d1a4b86532523b599",
+        "exists": true,
+        "actualSha256": "1b22ec271f0c3a855096dd4ce2748532e895ffd7ff23374d1a4b86532523b599",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/photos.json",
+        "expectedSha256": "ed3dd4e999e78aac6d95c6065fb0555cadf733573c46555b87be41da33a52f45",
+        "exists": true,
+        "actualSha256": "ed3dd4e999e78aac6d95c6065fb0555cadf733573c46555b87be41da33a52f45",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/privacy-scan.json",
+        "expectedSha256": "806317b187a35b6e12c449ddcd2ba1a76bf7619530b79b7f15f5349faf5f5a04",
+        "exists": true,
+        "actualSha256": "806317b187a35b6e12c449ddcd2ba1a76bf7619530b79b7f15f5349faf5f5a04",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.receipt.json",
+        "expectedSha256": "7b4aaf963e0819d829712228ddec77bc49385131963eb4c26a2a07fdca5c35c8",
+        "exists": true,
+        "actualSha256": "7b4aaf963e0819d829712228ddec77bc49385131963eb4c26a2a07fdca5c35c8",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stdout.log",
+        "expectedSha256": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+        "exists": true,
+        "actualSha256": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.receipt.json",
+        "expectedSha256": "b627bc3b7a10e6aaad61ff2769da366fd9e6a163cdc6a3fdcc3b1149203140cc",
+        "exists": true,
+        "actualSha256": "b627bc3b7a10e6aaad61ff2769da366fd9e6a163cdc6a3fdcc3b1149203140cc",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stdout.log",
+        "expectedSha256": "a9ef86bbfde3db22e47ec558f74a5e1a8aecea69a1ee0c30e2213a6ab82e6a5d",
+        "exists": true,
+        "actualSha256": "a9ef86bbfde3db22e47ec558f74a5e1a8aecea69a1ee0c30e2213a6ab82e6a5d",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.receipt.json",
+        "expectedSha256": "61555662c237978fd0963e1e1e776c1a172e067211e6f0eeab7496afc9c83a0e",
+        "exists": true,
+        "actualSha256": "61555662c237978fd0963e1e1e776c1a172e067211e6f0eeab7496afc9c83a0e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stdout.log",
+        "expectedSha256": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f",
+        "exists": true,
+        "actualSha256": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.receipt.json",
+        "expectedSha256": "2edc7b6928610a3a9fbefab5415322083201e80c7fbaeeda4fa75f8e8d7699fb",
+        "exists": true,
+        "actualSha256": "2edc7b6928610a3a9fbefab5415322083201e80c7fbaeeda4fa75f8e8d7699fb",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stdout.log",
+        "expectedSha256": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348",
+        "exists": true,
+        "actualSha256": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.receipt.json",
+        "expectedSha256": "02d5ed4842a77930ae7423981c2a8119df70d466bc303338d61e41c34cae8613",
+        "exists": true,
+        "actualSha256": "02d5ed4842a77930ae7423981c2a8119df70d466bc303338d61e41c34cae8613",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stdout.log",
+        "expectedSha256": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9",
+        "exists": true,
+        "actualSha256": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.receipt.json",
+        "expectedSha256": "20361ad83e71ff9e631306170ec5f31a0a4b1f9bb4fb8bb9a3581e50255ba306",
+        "exists": true,
+        "actualSha256": "20361ad83e71ff9e631306170ec5f31a0a4b1f9bb4fb8bb9a3581e50255ba306",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stdout.log",
+        "expectedSha256": "6ad2dda92628c60a6ea098006a7b58b71e0a8a337a33e88108ce121ce0baba54",
+        "exists": true,
+        "actualSha256": "6ad2dda92628c60a6ea098006a7b58b71e0a8a337a33e88108ce121ce0baba54",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.receipt.json",
+        "expectedSha256": "fdcd11357ea4bbf0017dc0ea6700fdbc98a13dc6d040102d26d8b5695aa22657",
+        "exists": true,
+        "actualSha256": "fdcd11357ea4bbf0017dc0ea6700fdbc98a13dc6d040102d26d8b5695aa22657",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stdout.log",
+        "expectedSha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1",
+        "exists": true,
+        "actualSha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.receipt.json",
+        "expectedSha256": "919bd9132c8be4fd5a7bb66f3d930120169c6f5fe90df588e85bcc3f43b43254",
+        "exists": true,
+        "actualSha256": "919bd9132c8be4fd5a7bb66f3d930120169c6f5fe90df588e85bcc3f43b43254",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stdout.log",
+        "expectedSha256": "1aacab2411f7e7858d72cc5e7959d40eb27473ccac98f84b4c8e55a6a7b83eec",
+        "exists": true,
+        "actualSha256": "1aacab2411f7e7858d72cc5e7959d40eb27473ccac98f84b4c8e55a6a7b83eec",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.receipt.json",
+        "expectedSha256": "04043def80ba10c96c1337dd68fd5649643313e04d8cb3a2f7d5a9bae6a730b5",
+        "exists": true,
+        "actualSha256": "04043def80ba10c96c1337dd68fd5649643313e04d8cb3a2f7d5a9bae6a730b5",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stdout.log",
+        "expectedSha256": "fb4f206cd8d63a6287016ed39ded7985a6d2b4aa55eae6cf74cb0f648b34c98e",
+        "exists": true,
+        "actualSha256": "fb4f206cd8d63a6287016ed39ded7985a6d2b4aa55eae6cf74cb0f648b34c98e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-test-paths.receipt.json",
+        "expectedSha256": "6022184565012564ade75ecf3c53d21e108519309f10a869c5d2cf81a2f2ecf6",
+        "exists": true,
+        "actualSha256": "6022184565012564ade75ecf3c53d21e108519309f10a869c5d2cf81a2f2ecf6",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-test-paths.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/baseline-test-paths.stdout.log",
+        "expectedSha256": "54d462b44730bd28ad3d347b6216bd54c38a68242f17dcc7eeadff1568af0090",
+        "exists": true,
+        "actualSha256": "54d462b44730bd28ad3d347b6216bd54c38a68242f17dcc7eeadff1568af0090",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/bundle-android.receipt.json",
+        "expectedSha256": "a4ba0181861044171fcc141c6a0c96ba84ca8e85f9e2111fae0eb3fe61c33ad1",
+        "exists": true,
+        "actualSha256": "a4ba0181861044171fcc141c6a0c96ba84ca8e85f9e2111fae0eb3fe61c33ad1",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/bundle-android.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/bundle-android.stdout.log",
+        "expectedSha256": "e3678bf2ec1a604789a846bb2e76f0d9f82fe9c4a251d00c6d6cf80db8cd444e",
+        "exists": true,
+        "actualSha256": "e3678bf2ec1a604789a846bb2e76f0d9f82fe9c4a251d00c6d6cf80db8cd444e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/core-integration.receipt.json",
+        "expectedSha256": "26553b98ddb4f7cee8505238483534fb5fb91eedcb9a38d73b61520284abb9cc",
+        "exists": true,
+        "actualSha256": "26553b98ddb4f7cee8505238483534fb5fb91eedcb9a38d73b61520284abb9cc",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/core-integration.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/core-integration.stdout.log",
+        "expectedSha256": "521fd337fbe0bee38ea29fc33511e548817da02511fb514bbc8b5e6dba1d640e",
+        "exists": true,
+        "actualSha256": "521fd337fbe0bee38ea29fc33511e548817da02511fb514bbc8b5e6dba1d640e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.receipt.json",
+        "expectedSha256": "e25df7c74559f5a90df8e958d6542bbb428db568db244f79526b130169b00aab",
+        "exists": true,
+        "actualSha256": "e25df7c74559f5a90df8e958d6542bbb428db568db244f79526b130169b00aab",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.stdout.log",
+        "expectedSha256": "8f1ef4a222fdaa90c6bc436ae6db23130f479dc3be59db47bd0d2ee23d11f585",
+        "exists": true,
+        "actualSha256": "8f1ef4a222fdaa90c6bc436ae6db23130f479dc3be59db47bd0d2ee23d11f585",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-index.receipt.json",
+        "expectedSha256": "4a5025c2880b874394c02c5b2d4a5cbd374620048875084ef8b3263dab909a8d",
+        "exists": true,
+        "actualSha256": "4a5025c2880b874394c02c5b2d4a5cbd374620048875084ef8b3263dab909a8d",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-index.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-index.stdout.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-porcelain.receipt.json",
+        "expectedSha256": "c5a13e34130718492402d917d3f7a608d76aab9db5ea03830503fb21fbabc596",
+        "exists": true,
+        "actualSha256": "c5a13e34130718492402d917d3f7a608d76aab9db5ea03830503fb21fbabc596",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-porcelain.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/final-porcelain.stdout.log",
+        "expectedSha256": "adb3d844e718ea92518698105dd443fa52a2f4fca6d2a62ec25a4d4f284029d6",
+        "exists": true,
+        "actualSha256": "adb3d844e718ea92518698105dd443fa52a2f4fca6d2a62ec25a4d4f284029d6",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-branch.receipt.json",
+        "expectedSha256": "2ca8cb28a869e5d382acc4c51a555d4c45d1c9ce65108e743973bd6b384a4698",
+        "exists": true,
+        "actualSha256": "2ca8cb28a869e5d382acc4c51a555d4c45d1c9ce65108e743973bd6b384a4698",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-branch.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-branch.stdout.log",
+        "expectedSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+        "exists": true,
+        "actualSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-head.receipt.json",
+        "expectedSha256": "08245e668ecd51302e8ec4fee6f365d92f070f527b00b2c42a2f58fe67b1092b",
+        "exists": true,
+        "actualSha256": "08245e668ecd51302e8ec4fee6f365d92f070f527b00b2c42a2f58fe67b1092b",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-head.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-head.stdout.log",
+        "expectedSha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9",
+        "exists": true,
+        "actualSha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-index.receipt.json",
+        "expectedSha256": "ff269c608e20b36c180f0053a9fd7f064a028214cc36e4319da4550c87e996ee",
+        "exists": true,
+        "actualSha256": "ff269c608e20b36c180f0053a9fd7f064a028214cc36e4319da4550c87e996ee",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-index.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-index.stdout.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-node.receipt.json",
+        "expectedSha256": "3da996cc7eb777c684df6e15f17028647e1a45c3c64aeebd65cea7f5bf714c82",
+        "exists": true,
+        "actualSha256": "3da996cc7eb777c684df6e15f17028647e1a45c3c64aeebd65cea7f5bf714c82",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-node.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-node.stdout.log",
+        "expectedSha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+        "exists": true,
+        "actualSha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-porcelain.receipt.json",
+        "expectedSha256": "fe204b3f5dedda493ce01d735b5e13c3afad0e1632c1e59d5a65afbcdaad2552",
+        "exists": true,
+        "actualSha256": "fe204b3f5dedda493ce01d735b5e13c3afad0e1632c1e59d5a65afbcdaad2552",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-porcelain.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-porcelain.stdout.log",
+        "expectedSha256": "8f9413badf2bdd02e664bc761278e1f32385154694b23a77e57470b62a6bf83f",
+        "exists": true,
+        "actualSha256": "8f9413badf2bdd02e664bc761278e1f32385154694b23a77e57470b62a6bf83f",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-tree.receipt.json",
+        "expectedSha256": "a505aa91e5489b072af3ff38eb3b3f84f1fae44a136f9e228cd873b1797a4ee2",
+        "exists": true,
+        "actualSha256": "a505aa91e5489b072af3ff38eb3b3f84f1fae44a136f9e228cd873b1797a4ee2",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-tree.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/gate-tree.stdout.log",
+        "expectedSha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed",
+        "exists": true,
+        "actualSha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-1.receipt.json",
+        "expectedSha256": "505cdb90866032688abe36fd1a184e51b3b0df564240dea2a6c75d30f3e3c4fa",
+        "exists": true,
+        "actualSha256": "505cdb90866032688abe36fd1a184e51b3b0df564240dea2a6c75d30f3e3c4fa",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-1.stderr.log",
+        "expectedSha256": "276a3d418cdac64b3f9051f392513714986523acf0eeebb2de28f0c39ee63853",
+        "exists": true,
+        "actualSha256": "276a3d418cdac64b3f9051f392513714986523acf0eeebb2de28f0c39ee63853",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-1.stdout.log",
+        "expectedSha256": "016b820c6501473eb337ad818dd5a77e2517f9363342e4456c40559d2bbd73b3",
+        "exists": true,
+        "actualSha256": "016b820c6501473eb337ad818dd5a77e2517f9363342e4456c40559d2bbd73b3",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-1.receipt.json",
+        "expectedSha256": "ecf861ee2f05d3e930a916a0ae1f06f3cdde77c315dcc1f7b529783179483078",
+        "exists": true,
+        "actualSha256": "ecf861ee2f05d3e930a916a0ae1f06f3cdde77c315dcc1f7b529783179483078",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-1.stderr.log",
+        "expectedSha256": "321ec27b4c0c1f75a6779258698dad7686cec6b10ae9b5609a3cf863fca0233f",
+        "exists": true,
+        "actualSha256": "321ec27b4c0c1f75a6779258698dad7686cec6b10ae9b5609a3cf863fca0233f",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-1.stdout.log",
+        "expectedSha256": "ca6c4f5286db97dd0943454dafd20f591cbaf7de8db766d138d96c271ca55fb5",
+        "exists": true,
+        "actualSha256": "ca6c4f5286db97dd0943454dafd20f591cbaf7de8db766d138d96c271ca55fb5",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-2.receipt.json",
+        "expectedSha256": "c89b4b786d721d458436271613422dcf7a726713a30e6481973cab60939dee39",
+        "exists": true,
+        "actualSha256": "c89b4b786d721d458436271613422dcf7a726713a30e6481973cab60939dee39",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-2.stderr.log",
+        "expectedSha256": "d85a42db50eca22cadc36e5ef0591a00c92654798178f3bbf0656caed295e716",
+        "exists": true,
+        "actualSha256": "d85a42db50eca22cadc36e5ef0591a00c92654798178f3bbf0656caed295e716",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-final-2.stdout.log",
+        "expectedSha256": "600a07bde96baebae69f3b3b4623efe09e7e34fd90652cf466a21a86f6bc0fe5",
+        "exists": true,
+        "actualSha256": "600a07bde96baebae69f3b3b4623efe09e7e34fd90652cf466a21a86f6bc0fe5",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-initial.receipt.json",
+        "expectedSha256": "e05f1cd37a3644faa747342fd289311346b7bafd273ed59e6af076e27d4d975e",
+        "exists": true,
+        "actualSha256": "e05f1cd37a3644faa747342fd289311346b7bafd273ed59e6af076e27d4d975e",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-initial.stderr.log",
+        "expectedSha256": "8126ccebe4b1906b4d02cb2f9dcafda58631997a99b45ae036375b827c974707",
+        "exists": true,
+        "actualSha256": "8126ccebe4b1906b4d02cb2f9dcafda58631997a99b45ae036375b827c974707",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/jest-initial.stdout.log",
+        "expectedSha256": "05cea5ee751d7891afad1432a5295dfac68dd839fb223e86a0d8e36ff47cab21",
+        "exists": true,
+        "actualSha256": "05cea5ee751d7891afad1432a5295dfac68dd839fb223e86a0d8e36ff47cab21",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-index.receipt.json",
+        "expectedSha256": "773efde2fd292ed56dba0f060cb35d5e1c17d4c92648b2be5a83348d0a17ad68",
+        "exists": true,
+        "actualSha256": "773efde2fd292ed56dba0f060cb35d5e1c17d4c92648b2be5a83348d0a17ad68",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-index.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-index.stdout.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-porcelain.receipt.json",
+        "expectedSha256": "a1eea2423df1ee6ec3856f5865a7a32328fc9619e176f171e3a1db3c4d8456f2",
+        "exists": true,
+        "actualSha256": "a1eea2423df1ee6ec3856f5865a7a32328fc9619e176f171e3a1db3c4d8456f2",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-porcelain.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-porcelain.stdout.log",
+        "expectedSha256": "d77573f95fbdc6c977f648a119c6d35a80ad3d46752bf8db3bc5d1803645e2b8",
+        "exists": true,
+        "actualSha256": "d77573f95fbdc6c977f648a119c6d35a80ad3d46752bf8db3bc5d1803645e2b8",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-tracked.receipt.json",
+        "expectedSha256": "73d2c026f59e9015341481ce302c8b5db72033ebddad50dc0a459ca523968937",
+        "exists": true,
+        "actualSha256": "73d2c026f59e9015341481ce302c8b5db72033ebddad50dc0a459ca523968937",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-tracked.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-tracked.stdout.log",
+        "expectedSha256": "e2ea4c52ae78e1eac9fffd76d7cb00e9704c892e82fdca00b3f6d8e916139808",
+        "exists": true,
+        "actualSha256": "e2ea4c52ae78e1eac9fffd76d7cb00e9704c892e82fdca00b3f6d8e916139808",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-untracked.receipt.json",
+        "expectedSha256": "7d4447721c6836027e2b028b4309a1866cef486717a8b2425b580087641c9809",
+        "exists": true,
+        "actualSha256": "7d4447721c6836027e2b028b4309a1866cef486717a8b2425b580087641c9809",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-untracked.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/packet-rn-untracked.stdout.log",
+        "expectedSha256": "7f2523242c3b6591e58023e427bcf500e459aa411c504f3c4456bf54f8117e1d",
+        "exists": true,
+        "actualSha256": "7f2523242c3b6591e58023e427bcf500e459aa411c504f3c4456bf54f8117e1d",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/protected-path-diff.receipt.json",
+        "expectedSha256": "05330c69734ba0438609bcfaa6deda5d090d1af979ed3662980fbeacc01cc228",
+        "exists": true,
+        "actualSha256": "05330c69734ba0438609bcfaa6deda5d090d1af979ed3662980fbeacc01cc228",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/protected-path-diff.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/protected-path-diff.stdout.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.receipt.json",
+        "expectedSha256": "3b86ec498daaeafba7ff3b04a2ff619e325a61a5a3f2cba21d63b8c68a798675",
+        "exists": true,
+        "actualSha256": "3b86ec498daaeafba7ff3b04a2ff619e325a61a5a3f2cba21d63b8c68a798675",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.stdout.log",
+        "expectedSha256": "fef0f07ab95ee106f56d30da05bbde1c72a7b4e0a03f93bc8e6fbf7adff38b5c",
+        "exists": true,
+        "actualSha256": "fef0f07ab95ee106f56d30da05bbde1c72a7b4e0a03f93bc8e6fbf7adff38b5c",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-branch.receipt.json",
+        "expectedSha256": "c0024a3cf0d4a13fd13d64ae77f4141de89584666ea8df9e6770987bdb60e772",
+        "exists": true,
+        "actualSha256": "c0024a3cf0d4a13fd13d64ae77f4141de89584666ea8df9e6770987bdb60e772",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-branch.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-branch.stdout.log",
+        "expectedSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+        "exists": true,
+        "actualSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-head.receipt.json",
+        "expectedSha256": "52458b3be451258fdb2bc431bcfdfb7f1f2eb9775e58668d1609ce3c6b1044a3",
+        "exists": true,
+        "actualSha256": "52458b3be451258fdb2bc431bcfdfb7f1f2eb9775e58668d1609ce3c6b1044a3",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-head.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-head.stdout.log",
+        "expectedSha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9",
+        "exists": true,
+        "actualSha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-tree.receipt.json",
+        "expectedSha256": "42805057be59735c36d1e555716a4c99ab3914f566fc0dd7c173b1fe58b30d36",
+        "exists": true,
+        "actualSha256": "42805057be59735c36d1e555716a4c99ab3914f566fc0dd7c173b1fe58b30d36",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-tree.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/submission-tree.stdout.log",
+        "expectedSha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed",
+        "exists": true,
+        "actualSha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-final.receipt.json",
+        "expectedSha256": "b328d764f18892371670937afee2115d365d903fa32b5645f859d48720c75bac",
+        "exists": true,
+        "actualSha256": "b328d764f18892371670937afee2115d365d903fa32b5645f859d48720c75bac",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-final.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-final.stdout.log",
+        "expectedSha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+        "exists": true,
+        "actualSha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-verified.receipt.json",
+        "expectedSha256": "3d16d4ae5466994d855b49f3daada25fc73de87fb827d4e538f56ca53a15450b",
+        "exists": true,
+        "actualSha256": "3d16d4ae5466994d855b49f3daada25fc73de87fb827d4e538f56ca53a15450b",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-verified.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck-verified.stdout.log",
+        "expectedSha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+        "exists": true,
+        "actualSha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck.receipt.json",
+        "expectedSha256": "645af25145ab04d99b5f3ffc9f268e091ed94cf221b5bab7df79b5a1c57a45f7",
+        "exists": true,
+        "actualSha256": "645af25145ab04d99b5f3ffc9f268e091ed94cf221b5bab7df79b5a1c57a45f7",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/typecheck.stdout.log",
+        "expectedSha256": "79f692dd0b2564627898e322be2a2b8e9e9d66fe7b2871cbd06842fcffca18d6",
+        "exists": true,
+        "actualSha256": "79f692dd0b2564627898e322be2a2b8e9e9d66fe7b2871cbd06842fcffca18d6",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/whitespace-diff.receipt.json",
+        "expectedSha256": "ca59425b2070da4f2d5c8ac19423eb608ba63b1eeb23e0d1fa3cdffde254f568",
+        "exists": true,
+        "actualSha256": "ca59425b2070da4f2d5c8ac19423eb608ba63b1eeb23e0d1fa3cdffde254f568",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/whitespace-diff.stderr.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/receipts/whitespace-diff.stdout.log",
+        "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exists": true,
+        "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "migration/evidence/RN09/scope-checks.json",
+        "expectedSha256": "6b7d6ac1d2e80361dfa2643ff3740ffcfbf27bff8d37ce708d27747488a892ed",
+        "exists": true,
+        "actualSha256": "6b7d6ac1d2e80361dfa2643ff3740ffcfbf27bff8d37ce708d27747488a892ed",
+        "matches": true
+      },
+      {
+        "path": "migration/handoffs/RN09.md",
+        "expectedSha256": "eddfb26243f30ea816e2035bd98bc3d806102c125535f82636f3bb34f8dd3860",
+        "exists": true,
+        "actualSha256": "eddfb26243f30ea816e2035bd98bc3d806102c125535f82636f3bb34f8dd3860",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/__tests__/speaker-detail-screen.test.tsx",
+        "expectedSha256": "cad3af80234da2665e70e7c4d444b9a200174489aa6a2d66e5baf1f15d853202",
+        "exists": true,
+        "actualSha256": "cad3af80234da2665e70e7c4d444b9a200174489aa6a2d66e5baf1f15d853202",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/__tests__/speaker-photos.test.ts",
+        "expectedSha256": "6277dde8b2aaad5ac0bf2eb23c6b59dbcbb3d12a59251541729eb384668a5118",
+        "exists": true,
+        "actualSha256": "6277dde8b2aaad5ac0bf2eb23c6b59dbcbb3d12a59251541729eb384668a5118",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/__tests__/speakers-screen.test.tsx",
+        "expectedSha256": "794a9bcbafb34a70683ec6ccad861b61165b6af08a42bda31d5b466206778a92",
+        "exists": true,
+        "actualSha256": "794a9bcbafb34a70683ec6ccad861b61165b6af08a42bda31d5b466206778a92",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/__tests__/tabs-navigation.test.tsx",
+        "expectedSha256": "2cc4977cf59e6c7e210f293b43a108cf1dfb1e116a4f9ee03aebea7d71c6f595",
+        "exists": true,
+        "actualSha256": "2cc4977cf59e6c7e210f293b43a108cf1dfb1e116a4f9ee03aebea7d71c6f595",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/bear.jpg",
+        "expectedSha256": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b",
+        "exists": true,
+        "actualSha256": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/cheetah.jpg",
+        "expectedSha256": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e",
+        "exists": true,
+        "actualSha256": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/duck.jpg",
+        "expectedSha256": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0",
+        "exists": true,
+        "actualSha256": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/eagle.jpg",
+        "expectedSha256": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a",
+        "exists": true,
+        "actualSha256": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/elephant.jpg",
+        "expectedSha256": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0",
+        "exists": true,
+        "actualSha256": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/giraffe.jpg",
+        "expectedSha256": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de",
+        "exists": true,
+        "actualSha256": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/iguana.jpg",
+        "expectedSha256": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b",
+        "exists": true,
+        "actualSha256": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/kitten.jpg",
+        "expectedSha256": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f",
+        "exists": true,
+        "actualSha256": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/lion.jpg",
+        "expectedSha256": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca",
+        "exists": true,
+        "actualSha256": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/mouse.jpg",
+        "expectedSha256": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9",
+        "exists": true,
+        "actualSha256": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/puppy.jpg",
+        "expectedSha256": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac",
+        "exists": true,
+        "actualSha256": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/rabbit.jpg",
+        "expectedSha256": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2",
+        "exists": true,
+        "actualSha256": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/assets/images/speakers/turtle.jpg",
+        "expectedSha256": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf",
+        "exists": true,
+        "actualSha256": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/app/(tabs)/speakers/_layout.tsx",
+        "expectedSha256": "238c0d70287c14cb12ca7326b6b45461d1d52ee7d63b54740941019ad0cf5522",
+        "exists": true,
+        "actualSha256": "238c0d70287c14cb12ca7326b6b45461d1d52ee7d63b54740941019ad0cf5522",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/app/(tabs)/speakers/session/[sessionId].tsx",
+        "expectedSha256": "ee36ac0796e73f3b5476e112d03cd4cbbd36b6f31a693762ad754ddc0cfe07e6",
+        "exists": true,
+        "actualSha256": "ee36ac0796e73f3b5476e112d03cd4cbbd36b6f31a693762ad754ddc0cfe07e6",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/app/(tabs)/speakers/speaker/[speakerId].tsx",
+        "expectedSha256": "20f8d90301028f0601cc4bc3d7063b0b27125937999c89217d3ba6af261c5c4f",
+        "exists": true,
+        "actualSha256": "20f8d90301028f0601cc4bc3d7063b0b27125937999c89217d3ba6af261c5c4f",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/data/speaker-photos.ts",
+        "expectedSha256": "3c2beb0131d9ba944327346ba2c0a5d7ab915b08326185100acd0d25807766c3",
+        "exists": true,
+        "actualSha256": "3c2beb0131d9ba944327346ba2c0a5d7ab915b08326185100acd0d25807766c3",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/screens/speaker-detail-screen.tsx",
+        "expectedSha256": "217058c16d646102965af1ad9914d2b4853f02c636f565eee12dbed7524229ca",
+        "exists": true,
+        "actualSha256": "217058c16d646102965af1ad9914d2b4853f02c636f565eee12dbed7524229ca",
+        "matches": true
+      },
+      {
+        "path": "migration/react-native/src/screens/speakers-screen.tsx",
+        "expectedSha256": "7e1ba8dd99475aa51c0c0520cbdbfa9523db511ff3643760c578798961c85ab7",
+        "exists": true,
+        "actualSha256": "7e1ba8dd99475aa51c0c0520cbdbfa9523db511ff3643760c578798961c85ab7",
+        "matches": true
+      },
+      {
+        "path": "migration/submissions/RN09-r1.json",
+        "expectedSha256": "05aa1c399613f8be07b54050aeb95a994f5662081ae850369870d96089547b6d",
+        "exists": true,
+        "actualSha256": "05aa1c399613f8be07b54050aeb95a994f5662081ae850369870d96089547b6d",
+        "matches": true
+      },
+      {
+        "path": "migration/work-packages/RN09.md",
+        "expectedSha256": "243c792b49d724bb4bd3ae26f565ca4cb11280b8c0b2addf66e114e15f6346dc",
+        "exists": true,
+        "actualSha256": "243c792b49d724bb4bd3ae26f565ca4cb11280b8c0b2addf66e114e15f6346dc",
+        "matches": true
+      }
+    ]
+  }
+}

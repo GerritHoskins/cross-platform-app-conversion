@@ -1,0 +1,877 @@
+{
+  "version": 1,
+  "package": "RN09",
+  "revision": 1,
+  "status": "READY_FOR_REVIEW",
+  "phases": [
+    {
+      "phase": "a",
+      "status": "BLOCKED",
+      "runDirectory": "tools/qwen-supervisor/.runs/sol-rn09-r1-a-20261029/",
+      "disposition": "Stopped before implementation because RN08 inert-row assertions contradicted RN09 navigation while existing assertions were immutable; human Amendment A1 authorized only the documented replacement."
+    },
+    {
+      "phase": "b",
+      "status": "BLOCKED",
+      "stage": "freeze",
+      "runDirectory": "tools/qwen-supervisor/.runs/sol-rn09-r1-b-20261029/",
+      "disposition": "Implemented RN09 and passed every automated check; stopped before official manifest write because mandatory byte-identical JPEGs contain binary CR bytes. Receipts retained unchanged."
+    },
+    {
+      "phase": "c",
+      "status": "RECOVERY_UNDER_A2",
+      "runDirectory": "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/",
+      "disposition": "Human-approved A2 recovery gates once on exact porcelain and all 151 draft hashes, rescans the final packet, preserves every immutable draft, and performs the official manifest write/check without implementation or automated-check reruns.",
+      "gate": "migration/evidence/RN09/recovery-a2/gate.json",
+      "freezeResult": "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/result.json"
+    }
+  ],
+  "crRuleScope": {
+    "authority": "Human Amendment A2 in migration/work-packages/RN09.md",
+    "text": "Every text file in final files[] must contain no CR byte; captured child output is LF-normalized at capture time.",
+    "binary": "Exactly the 13 JPEG photos under migration/react-native/assets/images/speakers/ are exempt from text LF/no-CR only after source byte identity and /speakerDetails SHA-256/size checks pass.",
+    "privacy": "PNG/JPEG/GIF base64 markers are never exempt; only those 13 verified photos may carry the JPEG file-start signature.",
+    "evidence": "migration/evidence/RN09/recovery-a2/text-lf-check.json"
+  },
+  "checkProvenance": "Implementation, Jest, typecheck, core integration, Android export and earlier scope checks are attempt b receipts, not phase c reruns. Phase c performs only recovery gate, draft preservation, photo identity, LF/privacy scans and official manifest freeze checks.",
+  "head": "35e7bf2d23a2d6adb2890f7c2f025e143b0251e7",
+  "headTree": "882687d072130fa59bdb34837b3474e9c1126ebc",
+  "branch": "migration/slice-2",
+  "priorApprovedBaseline": {
+    "package": "RN08",
+    "commit": "35e7bf2d23a2d6adb2890f7c2f025e143b0251e7"
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": []
+  },
+  "preExistingChanges": [
+    {
+      "porcelain": " M package-lock.json",
+      "partOfRN09": false,
+      "policy": "Excluded; never read, hash, diff, edit, revert, restore, stage or commit."
+    }
+  ],
+  "files": [
+    {
+      "path": "migration/evidence/RN09/android-bundle-inventory.json",
+      "sha256": "e138698231f24e7627ec519759dd48e58f3f6e7a6a5601f9c03b49115bf2c81a"
+    },
+    {
+      "path": "migration/evidence/RN09/commands.jsonl",
+      "sha256": "366c2c1ec2a35e9e1d5cdd898837992ca27ffa02f7396b61bda45ec5796cebe0"
+    },
+    {
+      "path": "migration/evidence/RN09/entry.json",
+      "sha256": "09158cb09e0d07b4b75866628c522627c50556399f5ab19f7bbf32f2aa9d040e"
+    },
+    {
+      "path": "migration/evidence/RN09/existing-test-edits.json",
+      "sha256": "c9dfab1715f6cc200e7f71f177da6dc2ab4dc79dd2a55f67f7e0c816dcfd300b"
+    },
+    {
+      "path": "migration/evidence/RN09/failures-and-retry.json",
+      "sha256": "521fb1097f5da05dd7e8139b2e71b2f26cc082b48af0b3eeed8614d37a468f96"
+    },
+    {
+      "path": "migration/evidence/RN09/initial-jest-failures.json",
+      "sha256": "d277f3ec43af11989a57c569b5ea0e39d4e429c69b8f97956e06311de1d3be8a"
+    },
+    {
+      "path": "migration/evidence/RN09/jest-summary.json",
+      "sha256": "55fc09c624a6ec1f0be081fa37d3b61afdd4f21c24ca6e5a704fc896ca716f7b"
+    },
+    {
+      "path": "migration/evidence/RN09/lf-check.json",
+      "sha256": "1b22ec271f0c3a855096dd4ce2748532e895ffd7ff23374d1a4b86532523b599"
+    },
+    {
+      "path": "migration/evidence/RN09/photos.json",
+      "sha256": "ed3dd4e999e78aac6d95c6065fb0555cadf733573c46555b87be41da33a52f45"
+    },
+    {
+      "path": "migration/evidence/RN09/privacy-scan.json",
+      "sha256": "806317b187a35b6e12c449ddcd2ba1a76bf7619530b79b7f15f5349faf5f5a04"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.receipt.json",
+      "sha256": "7b4aaf963e0819d829712228ddec77bc49385131963eb4c26a2a07fdca5c35c8"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-conference-state-test-ts.stdout.log",
+      "sha256": "d4b363cfe528c59f3aecc02e52f93d1bd68d9d4bd8f84c391fcfeb208cd7ca68"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.receipt.json",
+      "sha256": "b627bc3b7a10e6aaad61ff2769da366fd9e6a163cdc6a3fdcc3b1149203140cc"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-filter-screen-test-tsx.stdout.log",
+      "sha256": "a9ef86bbfde3db22e47ec558f74a5e1a8aecea69a1ee0c30e2213a6ab82e6a5d"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.receipt.json",
+      "sha256": "61555662c237978fd0963e1e1e776c1a172e067211e6f0eeab7496afc9c83a0e"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-root-layout-test-tsx.stdout.log",
+      "sha256": "6af679c64d4b2efee2394aeaf691885e2077d1b1f2b22fd84f551f4a1ae9681f"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.receipt.json",
+      "sha256": "2edc7b6928610a3a9fbefab5415322083201e80c7fbaeeda4fa75f8e8d7699fb"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-screen-test-tsx.stdout.log",
+      "sha256": "bb2d2ad4c01fbaa80d941500182cb77ccc8199880e20c934a7e54416897c4348"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.receipt.json",
+      "sha256": "02d5ed4842a77930ae7423981c2a8119df70d466bc303338d61e41c34cae8613"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-schedule-swipe-test-tsx.stdout.log",
+      "sha256": "8b1a32e43326adc5458648149acc061156a10452899d9550cc00f741dacf7ef9"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.receipt.json",
+      "sha256": "20361ad83e71ff9e631306170ec5f31a0a4b1f9bb4fb8bb9a3581e50255ba306"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-session-detail-screen-test-tsx.stdout.log",
+      "sha256": "6ad2dda92628c60a6ea098006a7b58b71e0a8a337a33e88108ce121ce0baba54"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.receipt.json",
+      "sha256": "fdcd11357ea4bbf0017dc0ea6700fdbc98a13dc6d040102d26d8b5695aa22657"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-shell-screen-test-tsx.stdout.log",
+      "sha256": "f25224fa4d582251dda4cb291494f50c14189416df510819d6f56b4c18eee5f1"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.receipt.json",
+      "sha256": "919bd9132c8be4fd5a7bb66f3d930120169c6f5fe90df588e85bcc3f43b43254"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-speakers-screen-test-tsx.stdout.log",
+      "sha256": "1aacab2411f7e7858d72cc5e7959d40eb27473ccac98f84b4c8e55a6a7b83eec"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.receipt.json",
+      "sha256": "04043def80ba10c96c1337dd68fd5649643313e04d8cb3a2f7d5a9bae6a730b5"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-tabs-navigation-test-tsx.stdout.log",
+      "sha256": "fb4f206cd8d63a6287016ed39ded7985a6d2b4aa55eae6cf74cb0f648b34c98e"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-test-paths.receipt.json",
+      "sha256": "6022184565012564ade75ecf3c53d21e108519309f10a869c5d2cf81a2f2ecf6"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-test-paths.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/baseline-test-paths.stdout.log",
+      "sha256": "54d462b44730bd28ad3d347b6216bd54c38a68242f17dcc7eeadff1568af0090"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/bundle-android.receipt.json",
+      "sha256": "a4ba0181861044171fcc141c6a0c96ba84ca8e85f9e2111fae0eb3fe61c33ad1"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/bundle-android.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/bundle-android.stdout.log",
+      "sha256": "e3678bf2ec1a604789a846bb2e76f0d9f82fe9c4a251d00c6d6cf80db8cd444e"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/core-integration.receipt.json",
+      "sha256": "26553b98ddb4f7cee8505238483534fb5fb91eedcb9a38d73b61520284abb9cc"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/core-integration.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/core-integration.stdout.log",
+      "sha256": "521fd337fbe0bee38ea29fc33511e548817da02511fb514bbc8b5e6dba1d640e"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.receipt.json",
+      "sha256": "e25df7c74559f5a90df8e958d6542bbb428db568db244f79526b130169b00aab"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/existing-test-edit-diff.stdout.log",
+      "sha256": "8f1ef4a222fdaa90c6bc436ae6db23130f479dc3be59db47bd0d2ee23d11f585"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-index.receipt.json",
+      "sha256": "4a5025c2880b874394c02c5b2d4a5cbd374620048875084ef8b3263dab909a8d"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-porcelain.receipt.json",
+      "sha256": "c5a13e34130718492402d917d3f7a608d76aab9db5ea03830503fb21fbabc596"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/final-porcelain.stdout.log",
+      "sha256": "adb3d844e718ea92518698105dd443fa52a2f4fca6d2a62ec25a4d4f284029d6"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-branch.receipt.json",
+      "sha256": "2ca8cb28a869e5d382acc4c51a555d4c45d1c9ce65108e743973bd6b384a4698"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-branch.stdout.log",
+      "sha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-head.receipt.json",
+      "sha256": "08245e668ecd51302e8ec4fee6f365d92f070f527b00b2c42a2f58fe67b1092b"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-head.stdout.log",
+      "sha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-index.receipt.json",
+      "sha256": "ff269c608e20b36c180f0053a9fd7f064a028214cc36e4319da4550c87e996ee"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-node.receipt.json",
+      "sha256": "3da996cc7eb777c684df6e15f17028647e1a45c3c64aeebd65cea7f5bf714c82"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-node.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-node.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-porcelain.receipt.json",
+      "sha256": "fe204b3f5dedda493ce01d735b5e13c3afad0e1632c1e59d5a65afbcdaad2552"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-porcelain.stdout.log",
+      "sha256": "8f9413badf2bdd02e664bc761278e1f32385154694b23a77e57470b62a6bf83f"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-tree.receipt.json",
+      "sha256": "a505aa91e5489b072af3ff38eb3b3f84f1fae44a136f9e228cd873b1797a4ee2"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/gate-tree.stdout.log",
+      "sha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-1.receipt.json",
+      "sha256": "505cdb90866032688abe36fd1a184e51b3b0df564240dea2a6c75d30f3e3c4fa"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-1.stderr.log",
+      "sha256": "276a3d418cdac64b3f9051f392513714986523acf0eeebb2de28f0c39ee63853"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-1.stdout.log",
+      "sha256": "016b820c6501473eb337ad818dd5a77e2517f9363342e4456c40559d2bbd73b3"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-1.receipt.json",
+      "sha256": "ecf861ee2f05d3e930a916a0ae1f06f3cdde77c315dcc1f7b529783179483078"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-1.stderr.log",
+      "sha256": "321ec27b4c0c1f75a6779258698dad7686cec6b10ae9b5609a3cf863fca0233f"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-1.stdout.log",
+      "sha256": "ca6c4f5286db97dd0943454dafd20f591cbaf7de8db766d138d96c271ca55fb5"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-2.receipt.json",
+      "sha256": "c89b4b786d721d458436271613422dcf7a726713a30e6481973cab60939dee39"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-2.stderr.log",
+      "sha256": "d85a42db50eca22cadc36e5ef0591a00c92654798178f3bbf0656caed295e716"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-final-2.stdout.log",
+      "sha256": "600a07bde96baebae69f3b3b4623efe09e7e34fd90652cf466a21a86f6bc0fe5"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-initial.receipt.json",
+      "sha256": "e05f1cd37a3644faa747342fd289311346b7bafd273ed59e6af076e27d4d975e"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-initial.stderr.log",
+      "sha256": "8126ccebe4b1906b4d02cb2f9dcafda58631997a99b45ae036375b827c974707"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/jest-initial.stdout.log",
+      "sha256": "05cea5ee751d7891afad1432a5295dfac68dd839fb223e86a0d8e36ff47cab21"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-index.receipt.json",
+      "sha256": "773efde2fd292ed56dba0f060cb35d5e1c17d4c92648b2be5a83348d0a17ad68"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-porcelain.receipt.json",
+      "sha256": "a1eea2423df1ee6ec3856f5865a7a32328fc9619e176f171e3a1db3c4d8456f2"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-porcelain.stdout.log",
+      "sha256": "d77573f95fbdc6c977f648a119c6d35a80ad3d46752bf8db3bc5d1803645e2b8"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-tracked.receipt.json",
+      "sha256": "73d2c026f59e9015341481ce302c8b5db72033ebddad50dc0a459ca523968937"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-tracked.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-tracked.stdout.log",
+      "sha256": "e2ea4c52ae78e1eac9fffd76d7cb00e9704c892e82fdca00b3f6d8e916139808"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-untracked.receipt.json",
+      "sha256": "7d4447721c6836027e2b028b4309a1866cef486717a8b2425b580087641c9809"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-untracked.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/packet-rn-untracked.stdout.log",
+      "sha256": "7f2523242c3b6591e58023e427bcf500e459aa411c504f3c4456bf54f8117e1d"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/protected-path-diff.receipt.json",
+      "sha256": "05330c69734ba0438609bcfaa6deda5d090d1af979ed3662980fbeacc01cc228"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/protected-path-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/protected-path-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.receipt.json",
+      "sha256": "3b86ec498daaeafba7ff3b04a2ff619e325a61a5a3f2cba21d63b8c68a798675"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/regenerate-ignored-route-types.stdout.log",
+      "sha256": "fef0f07ab95ee106f56d30da05bbde1c72a7b4e0a03f93bc8e6fbf7adff38b5c"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-branch.receipt.json",
+      "sha256": "c0024a3cf0d4a13fd13d64ae77f4141de89584666ea8df9e6770987bdb60e772"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-branch.stdout.log",
+      "sha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-head.receipt.json",
+      "sha256": "52458b3be451258fdb2bc431bcfdfb7f1f2eb9775e58668d1609ce3c6b1044a3"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-head.stdout.log",
+      "sha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-tree.receipt.json",
+      "sha256": "42805057be59735c36d1e555716a4c99ab3914f566fc0dd7c173b1fe58b30d36"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/submission-tree.stdout.log",
+      "sha256": "a611664d5d27c2efb28f4ae6e29571a3db220c88707e0d1eaa7a5abfa6bb45ed"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-final.receipt.json",
+      "sha256": "b328d764f18892371670937afee2115d365d903fa32b5645f859d48720c75bac"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-final.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-verified.receipt.json",
+      "sha256": "3d16d4ae5466994d855b49f3daada25fc73de87fb827d4e538f56ca53a15450b"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-verified.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck-verified.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck.receipt.json",
+      "sha256": "645af25145ab04d99b5f3ffc9f268e091ed94cf221b5bab7df79b5a1c57a45f7"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/typecheck.stdout.log",
+      "sha256": "79f692dd0b2564627898e322be2a2b8e9e9d66fe7b2871cbd06842fcffca18d6"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/whitespace-diff.receipt.json",
+      "sha256": "ca59425b2070da4f2d5c8ac19423eb608ba63b1eeb23e0d1fa3cdffde254f568"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/whitespace-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/receipts/whitespace-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/commands.jsonl",
+      "sha256": "f8b6d03b5c8a4847f2c2f336bec387d74b16fd7251cc28dd4164275acaaec870"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/gate.json",
+      "sha256": "9c25b1095ca95d804777c486723725d8ee11f22353e46e04b2e3e29a1ce8cd1f"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/photo-verification.json",
+      "sha256": "97b08fed1b832f345f459d44dc216881427442c8907cf19fd62ba9dc1e35aa87"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/privacy-scan.json",
+      "sha256": "13deceff9e806a243255b1e6c140dd7cb0249f800ab4b590cab22a3c7c9c3656"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-branch.receipt.json",
+      "sha256": "29668ff931c1ba7aaf2de1438719a1b6d15b00e3ce93060a766cb2c1b4744289"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-branch.stdout.log",
+      "sha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-head.receipt.json",
+      "sha256": "a8656c3ecc33c22564b469e9b4e338e2cfad2b1f74f422401b2e114dde02520e"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-head.stdout.log",
+      "sha256": "1a0752e996948d5cc938ec6c7a9bc71978b58dea22ecc5311365679e6f58f2e9"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-index.receipt.json",
+      "sha256": "256b169178bbfbfb6733b4e247517af7215770c58705bf5f2387cbd3712c3ff5"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-node.receipt.json",
+      "sha256": "f1693963d3e8bbd821d6de290b7cdc3be0272b0d11f927e0444b9f8be7d11f6e"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-node.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-node.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-porcelain.receipt.json",
+      "sha256": "75b72b6b7dbd21ecdcc8556315f73c1990b1bff427447f7dc97b979ec0129ae0"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/gate-porcelain.stdout.log",
+      "sha256": "43cf93fb8fe80ff8a777b8744d802bbe0a3f11c010d200a70b5c84733536cce9"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/photo-verification.receipt.json",
+      "sha256": "6caeab99b230976d8edc39592c81f87ab3065af71b01f94ec8577980bd03f14d"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/photo-verification.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/receipts/photo-verification.stdout.log",
+      "sha256": "51ef01e4057f167df6879520b6f4128df2debe56a214fc88757c3b0c332a7103"
+    },
+    {
+      "path": "migration/evidence/RN09/recovery-a2/text-lf-check.json",
+      "sha256": "aa34a57e618902a02346463a6d1b487a6c4472197b620e78eef6ec1489712d16"
+    },
+    {
+      "path": "migration/evidence/RN09/scope-checks.json",
+      "sha256": "6b7d6ac1d2e80361dfa2643ff3740ffcfbf27bff8d37ce708d27747488a892ed"
+    },
+    {
+      "path": "migration/handoffs/RN09.md",
+      "sha256": "29e717351ea962d6b1af51be8b7a19da564332cd01f464d9a4b3d65841a73f34"
+    },
+    {
+      "path": "migration/react-native/__tests__/speaker-detail-screen.test.tsx",
+      "sha256": "cad3af80234da2665e70e7c4d444b9a200174489aa6a2d66e5baf1f15d853202"
+    },
+    {
+      "path": "migration/react-native/__tests__/speaker-photos.test.ts",
+      "sha256": "6277dde8b2aaad5ac0bf2eb23c6b59dbcbb3d12a59251541729eb384668a5118"
+    },
+    {
+      "path": "migration/react-native/__tests__/speakers-screen.test.tsx",
+      "sha256": "794a9bcbafb34a70683ec6ccad861b61165b6af08a42bda31d5b466206778a92"
+    },
+    {
+      "path": "migration/react-native/__tests__/tabs-navigation.test.tsx",
+      "sha256": "2cc4977cf59e6c7e210f293b43a108cf1dfb1e116a4f9ee03aebea7d71c6f595"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/bear.jpg",
+      "sha256": "4514808fe19fa67dadcb54bac7baa6fd84810f11dc2607e02091559f0b5c853b"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/cheetah.jpg",
+      "sha256": "3b5314a815d55ca2bbab4e3d0d8fd4cc425ce193a1a3d422d178466ac6aee88e"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/duck.jpg",
+      "sha256": "006adf0285edef98062574b2cc686ce7bc2a163e38e1bcf1972b8d7e69cff3f0"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/eagle.jpg",
+      "sha256": "39d4b24ac3da57970d253e09b315e5c64ee9296db7951b61364f006fd2e8566a"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/elephant.jpg",
+      "sha256": "e004e2f5619eaad35bc03036a4f3920ffad4f54bb32056cf1cd26fbb74bc7ae0"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/giraffe.jpg",
+      "sha256": "fbbca67c7913bf0bfaf1464495fd06eaa47eef8fe7d40169048f252caee727de"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/iguana.jpg",
+      "sha256": "ae793606ab3491ca4a46a7a60d12b76206450a26467471ce2babf8ee958ef02b"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/kitten.jpg",
+      "sha256": "f0819b2c72cacc3ee7706c2c4fd940728189dfaf3553760e6a0695e746a36c3f"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/lion.jpg",
+      "sha256": "3b88335cdb8f8faedea6e6c6624787ac36e5121e68019b88b809f2f1717657ca"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/mouse.jpg",
+      "sha256": "4de3b001dc4a976d9139a59fced619b798b5fb7fad439ee0da46d1ba164a19b9"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/puppy.jpg",
+      "sha256": "ab3f67a53e1529a736c4cfafadba34960c2b392b1219395501584dca04b65cac"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/rabbit.jpg",
+      "sha256": "36b4d366fb252993ee561db600b5c566260295b729ef4335297cb6590dd13ec2"
+    },
+    {
+      "path": "migration/react-native/assets/images/speakers/turtle.jpg",
+      "sha256": "8565637b5d8663324ec5ecf16fdca5baf733085cf9ab0049cedc9f5e1fc314bf"
+    },
+    {
+      "path": "migration/react-native/src/app/(tabs)/speakers/_layout.tsx",
+      "sha256": "238c0d70287c14cb12ca7326b6b45461d1d52ee7d63b54740941019ad0cf5522"
+    },
+    {
+      "path": "migration/react-native/src/app/(tabs)/speakers/session/[sessionId].tsx",
+      "sha256": "ee36ac0796e73f3b5476e112d03cd4cbbd36b6f31a693762ad754ddc0cfe07e6"
+    },
+    {
+      "path": "migration/react-native/src/app/(tabs)/speakers/speaker/[speakerId].tsx",
+      "sha256": "20f8d90301028f0601cc4bc3d7063b0b27125937999c89217d3ba6af261c5c4f"
+    },
+    {
+      "path": "migration/react-native/src/data/speaker-photos.ts",
+      "sha256": "3c2beb0131d9ba944327346ba2c0a5d7ab915b08326185100acd0d25807766c3"
+    },
+    {
+      "path": "migration/react-native/src/screens/speaker-detail-screen.tsx",
+      "sha256": "217058c16d646102965af1ad9914d2b4853f02c636f565eee12dbed7524229ca"
+    },
+    {
+      "path": "migration/react-native/src/screens/speakers-screen.tsx",
+      "sha256": "7e1ba8dd99475aa51c0c0520cbdbfa9523db511ff3643760c578798961c85ab7"
+    },
+    {
+      "path": "migration/work-packages/RN09.md",
+      "sha256": "4f2271420018da9062cf8c4b3f77c9e11e6b72fd7d7da10b299d503e26319cc2"
+    }
+  ],
+  "checks": [
+    {
+      "check": "RN typecheck",
+      "command": "npm run typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN09/receipts/typecheck-verified.receipt.json",
+      "ignoredRouteTypes": "Installed Expo one-shot setupTypedRoutes without Metro/server; regeneration receipt."
+    },
+    {
+      "check": "RN Jest run 1",
+      "command": "npm test -- --json --outputFile=<run-directory>/jest-final-1.json",
+      "status": "PASS",
+      "exitCode": 0,
+      "suites": 11,
+      "total": 194,
+      "passed": 194,
+      "failed": 0,
+      "pending": 0,
+      "identicalCountsAndNames": true,
+      "existing114Passed": true,
+      "newCount": 80,
+      "existingTestNamesAndStatuses": "migration/evidence/RN09/jest-summary.json",
+      "amendmentA1": "One authorized description mapping; all original 114 names retained in evidence.",
+      "receipt": "migration/evidence/RN09/receipts/jest-final-1.receipt.json",
+      "reporter": "tools/qwen-supervisor/.runs/sol-rn09-r1-b-20261029/jest-final-1.json"
+    },
+    {
+      "check": "RN Jest run 2",
+      "command": "npm test -- --json --outputFile=<run-directory>/jest-final-2.json",
+      "status": "PASS",
+      "exitCode": 0,
+      "suites": 11,
+      "total": 194,
+      "passed": 194,
+      "failed": 0,
+      "pending": 0,
+      "identicalCountsAndNames": true,
+      "existing114Passed": true,
+      "newCount": 80,
+      "existingTestNamesAndStatuses": "migration/evidence/RN09/jest-summary.json",
+      "amendmentA1": "One authorized description mapping; all original 114 names retained in evidence.",
+      "receipt": "migration/evidence/RN09/receipts/jest-final-2.receipt.json",
+      "reporter": "tools/qwen-supervisor/.runs/sol-rn09-r1-b-20261029/jest-final-2.json"
+    },
+    {
+      "check": "Core integration",
+      "command": "node scripts/verify-core-integration.cjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN09/receipts/core-integration.receipt.json"
+    },
+    {
+      "check": "Android bundle export",
+      "command": "npm run bundle:android",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN09/receipts/bundle-android.receipt.json",
+      "photos": 13,
+      "allExportedPhotoBytesMatchP02": true,
+      "evidence": "migration/evidence/RN09/android-bundle-inventory.json"
+    },
+    {
+      "check": "Protected-path diff",
+      "command": "git diff --exit-code -- migration/core migration/nativescript migration/reference src public",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN09/receipts/protected-path-diff.receipt.json"
+    },
+    {
+      "check": "Existing-test edit diff",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/RN09/receipts/existing-test-edit-diff.receipt.json",
+      "evidence": "migration/evidence/RN09/existing-test-edits.json",
+      "policy": "Only A1 lines 42-44/description and two tabs route imports/map entries; every other existing test byte unchanged after LF normalization."
+    },
+    {
+      "check": "Allowed-path porcelain and empty index",
+      "status": "PASS",
+      "evidence": "migration/evidence/RN09/scope-checks.json",
+      "receipts": [
+        "migration/evidence/RN09/receipts/packet-index.receipt.json",
+        "migration/evidence/RN09/receipts/packet-porcelain.receipt.json"
+      ]
+    },
+    {
+      "check": "Privacy content scan with verified photo exemption",
+      "status": "PASS",
+      "evidence": "migration/evidence/RN09/recovery-a2/privacy-scan.json",
+      "exactFinalScan": "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/final-packet-scan.json",
+      "priorAttemptEvidence": "migration/evidence/RN09/privacy-scan.json",
+      "photoVerification": "migration/evidence/RN09/recovery-a2/photo-verification.json"
+    },
+    {
+      "check": "LF text and Amendment A2 binary-photo exemption",
+      "textStatus": "PASS",
+      "literalAllFileStatus": "NOT_APPLICABLE_UNDER_A2",
+      "evidence": "migration/evidence/RN09/recovery-a2/text-lf-check.json",
+      "reason": "Human Amendment A2 applies LF/no-CR to text only; the 13 mandatory binary JPEGs remain byte-identical to source and match P02 SHA-256 and size.",
+      "priorAttemptEvidence": "migration/evidence/RN09/lf-check.json",
+      "priorAttemptDisposition": "Attempt b BLOCKED at freeze on literal all-file CR absence; resolved by human A2, not by altering photos."
+    },
+    {
+      "check": "Recovery A2 gate and immutable-draft preservation",
+      "status": "PASS",
+      "gate": "migration/evidence/RN09/recovery-a2/gate.json",
+      "draftsBeforeWrite": "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/drafts-before-official-write.json",
+      "policy": "Gate evaluated exactly once before any migration write; all drafts other than the handoff, RN09 Status line and manifest remain byte-identical to the coordinator's list."
+    },
+    {
+      "check": "Official manifest hash write and check",
+      "required": "0 problem(s)",
+      "receipts": [
+        "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/receipts/manifest-write.receipt.json",
+        "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/receipts/manifest-check.receipt.json"
+      ],
+      "result": "tools/qwen-supervisor/.runs/sol-rn09-r1-c-20261029/result.json",
+      "priorAttemptDisposition": "Attempt b did not run the official write/check; its preview was not a freeze. Phase c freezes only on actual zero-problem official output and writes nothing under migration afterward."
+    }
+  ],
+  "unverified": [
+    "Independent review and human acceptance pending; coordinator dispatches review. No RN10 work or review dispatch by executor.",
+    "All device-side acceptance is RN10 after human go-ahead: hardware Back on both new routes/not-found, cold known/unknown entry in standalone APK, large text and TalkBack on list/detail, dark-mode photos, actual decoding/cropping, tab stack/selection/favorite retention and native headers/system bars.",
+    "No native APK build/install, device/emulator, Metro development server, Ionic execution, iOS or physical-device acceptance; Android export is JavaScript bundle evidence only. Historical RN07 device limitations not retested."
+  ]
+}
