@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "passed": true,
+  "fileCount": 28,
+  "files": [
+    {
+      "path": "migration/evidence/P02/commands.jsonl",
+      "bytes": 2503
+    },
+    {
+      "path": "migration/evidence/P02/entry.json",
+      "bytes": 1800
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.receipt.json",
+      "bytes": 475
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stdout.log",
+      "bytes": 18
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.receipt.json",
+      "bytes": 464
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stdout.log",
+      "bytes": 41
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.receipt.json",
+      "bytes": 485
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stdout.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.receipt.json",
+      "bytes": 539
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+      "bytes": 10
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.receipt.json",
+      "bytes": 510
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stdout.log",
+      "bytes": 55
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.receipt.json",
+      "bytes": 471
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stderr.log",
+      "bytes": 0
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stdout.log",
+      "bytes": 41
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1.json",
+      "bytes": 1246
+    },
+    {
+      "path": "migration/evidence/P02/run-comparison.json",
+      "bytes": 1602
+    },
+    {
+      "path": "migration/evidence/P02/verification.json",
+      "bytes": 3750
+    },
+    {
+      "path": "migration/handoffs/P02.md",
+      "bytes": 6769
+    },
+    {
+      "path": "migration/reference/derive-speakers.mjs",
+      "bytes": 9028
+    },
+    {
+      "path": "migration/reference/expected-speakers.json",
+      "bytes": 11979
+    },
+    {
+      "path": "migration/reference/speakers-contract.md",
+      "bytes": 17709
+    },
+    {
+      "path": "migration/work-packages/P02.md",
+      "bytes": 8178
+    }
+  ],
+  "ruleIds": [
+    "B64-PNG",
+    "B64-JPEG",
+    "B64-GIF",
+    "BIN-PNG",
+    "BIN-JPEG",
+    "BIN-GIF87",
+    "BIN-GIF89",
+    "BIN-ZIP-LOCAL",
+    "BIN-ZIP-EMPTY",
+    "BIN-ZIP-SPANNED",
+    "BIN-GZIP",
+    "BIN-PDF",
+    "BIN-WEBP"
+  ],
+  "hits": [],
+  "policy": "Content scan for PNG/JPEG/GIF base64 markers and file-start binary signatures. Source images are hashed/sized only and never packet payloads. Literal patterns are confined to run helpers.",
+  "scope": "Initial candidate packet before receipt snapshot; a final exact-files scan is mandatory before official freeze."
+}

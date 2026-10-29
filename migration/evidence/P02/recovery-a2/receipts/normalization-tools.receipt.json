@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "phase": "A2",
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "events": [
+    {
+      "command": "functions.write_file",
+      "args": [
+        "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+        "LF-only Node version text"
+      ],
+      "exitCode": null,
+      "startedAt": null,
+      "durationMs": null,
+      "outcome": "REFUSED_BEFORE_WRITE",
+      "reason": "Tool partial-read safeguard; file unchanged.",
+      "childLaunched": false
+    },
+    {
+      "command": "functions.read_file",
+      "args": [
+        "migration/evidence/P02/receipts/gate-1-node.stdout.log"
+      ],
+      "exitCode": null,
+      "startedAt": null,
+      "durationMs": null,
+      "outcome": "READ_BEFORE_SCOPED_RETRY",
+      "childLaunched": false
+    },
+    {
+      "command": "functions.patch",
+      "args": [
+        "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+        "CRLF to LF only"
+      ],
+      "exitCode": null,
+      "startedAt": null,
+      "durationMs": null,
+      "outcome": "REPORTED_SUCCESS_BUT_BYTE_CHECK_FAILED",
+      "childLaunched": false
+    }
+  ],
+  "helperFailure": "a2-verify exited 1 because the patch tool preserved CRLF despite reporting success; failed receipt and logs retained.",
+  "scopedRetry": "Exact executor command-line process check confirmed zero earlier executor children; a2-normalize rewrote only the authorized log through the LF writer, then verification retried as a2-verify-retry-1.",
+  "timingPolicy": "File-tool events expose no timestamps, durations or process exit codes; null is unknown, not fabricated. Child receipts contain actual timing.",
+  "retryScope": "Only normalization and failed verification step retried; one-shot gate not rerun."
+}

@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "phase": "A2",
+  "passed": true,
+  "files": 137,
+  "hits": 0,
+  "ruleIds": [
+    "B64_PNG",
+    "B64_JPEG",
+    "B64_GIF",
+    "BIN_PNG",
+    "BIN_JPEG",
+    "BIN_GIF",
+    "BIN_WEBP",
+    "BIN_ZIP",
+    "BIN_GZIP",
+    "BIN_PDF"
+  ],
+  "results": [
+    {
+      "path": "migration/evidence/P02/commands.jsonl",
+      "bytes": 10425,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/entry.json",
+      "bytes": 1800,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/privacy-scan.json",
+      "bytes": 3430,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.receipt.json",
+      "bytes": 613,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.stdout.log",
+      "bytes": 1602,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.receipt.json",
+      "bytes": 572,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.stdout.log",
+      "bytes": 240,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.receipt.json",
+      "bytes": 572,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.stdout.log",
+      "bytes": 240,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.receipt.json",
+      "bytes": 587,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.receipt.json",
+      "bytes": 581,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.stdout.log",
+      "bytes": 85,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.receipt.json",
+      "bytes": 475,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.stdout.log",
+      "bytes": 18,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.receipt.json",
+      "bytes": 464,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.receipt.json",
+      "bytes": 485,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.receipt.json",
+      "bytes": 512,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.stdout.log",
+      "bytes": 1556,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.receipt.json",
+      "bytes": 743,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.receipt.json",
+      "bytes": 559,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.receipt.json",
+      "bytes": 471,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.receipt.json",
+      "bytes": 475,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stdout.log",
+      "bytes": 18,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.receipt.json",
+      "bytes": 464,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.receipt.json",
+      "bytes": 485,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.receipt.json",
+      "bytes": 701,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+      "bytes": 9,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.receipt.json",
+      "bytes": 510,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stdout.log",
+      "bytes": 55,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.receipt.json",
+      "bytes": 471,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1.json",
+      "bytes": 1246,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.receipt.json",
+      "bytes": 622,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.stdout.log",
+      "bytes": 172,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.receipt.json",
+      "bytes": 624,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.stdout.log",
+      "bytes": 162,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.receipt.json",
+      "bytes": 739,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.receipt.json",
+      "bytes": 545,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/commands.jsonl",
+      "bytes": 10824,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/gate.json",
+      "bytes": 35186,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/lf-check.json",
+      "bytes": 17908,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/normalization.json",
+      "bytes": 505,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/privacy-scan.json",
+      "bytes": 21656,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/process-check.json",
+      "bytes": 390,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-failed-verify-process-check.receipt.json",
+      "bytes": 998,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-failed-verify-process-check.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-failed-verify-process-check.stdout.log",
+      "bytes": 3,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-branch.receipt.json",
+      "bytes": 680,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-branch.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-branch.stdout.log",
+      "bytes": 18,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-head.receipt.json",
+      "bytes": 669,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-head.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-head.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-index.receipt.json",
+      "bytes": 687,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-index.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-index.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-porcelain.receipt.json",
+      "bytes": 719,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-porcelain.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-porcelain.stdout.log",
+      "bytes": 4865,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-tree.receipt.json",
+      "bytes": 676,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-tree.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-freeze-tree.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-branch.receipt.json",
+      "bytes": 676,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-branch.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-branch.stdout.log",
+      "bytes": 18,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-head.receipt.json",
+      "bytes": 665,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-head.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-head.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-index.receipt.json",
+      "bytes": 683,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-index.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-index.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-node.receipt.json",
+      "bytes": 738,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-node.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-node.stdout.log",
+      "bytes": 9,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-porcelain.receipt.json",
+      "bytes": 715,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-porcelain.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-porcelain.stdout.log",
+      "bytes": 4623,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-tree.receipt.json",
+      "bytes": 672,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-tree.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-gate-tree.stdout.log",
+      "bytes": 41,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-init.receipt.json",
+      "bytes": 803,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-init.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-init.stdout.log",
+      "bytes": 63,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-normalize.receipt.json",
+      "bytes": 818,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-normalize.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-normalize.stdout.log",
+      "bytes": 80,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-safe-tracked-names.receipt.json",
+      "bytes": 749,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-safe-tracked-names.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-safe-tracked-names.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify-retry-1.receipt.json",
+      "bytes": 828,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify-retry-1.stderr.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify-retry-1.stdout.log",
+      "bytes": 526,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify.receipt.json",
+      "bytes": 811,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify.stderr.log",
+      "bytes": 914,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/a2-verify.stdout.log",
+      "bytes": 0,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/receipts/normalization-tools.receipt.json",
+      "bytes": 1780,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/recovery-a2/verification.json",
+      "bytes": 31506,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/run-comparison.json",
+      "bytes": 1602,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/scope-verification.json",
+      "bytes": 2253,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/evidence/P02/verification.json",
+      "bytes": 3750,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/handoffs/P02.md",
+      "bytes": 10268,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/reference/derive-speakers.mjs",
+      "bytes": 9028,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/reference/expected-speakers.json",
+      "bytes": 11979,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/reference/speakers-contract.md",
+      "bytes": 17709,
+      "outcome": "PASS",
+      "ruleIds": []
+    },
+    {
+      "path": "migration/work-packages/P02.md",
+      "bytes": 9427,
+      "outcome": "PASS",
+      "ruleIds": []
+    }
+  ]
+}

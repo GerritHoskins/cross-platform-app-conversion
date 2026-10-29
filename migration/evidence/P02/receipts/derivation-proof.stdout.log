@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "runs": 2,
+  "command": "node migration/reference/derive-speakers.mjs",
+  "firstSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+  "secondSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+  "identical": true,
+  "bytes": 11979,
+  "speakerCount": 13,
+  "sessionLinks": 26,
+  "invariants": {
+    "uniqueSpeakerIds": true,
+    "sessionCount": 20,
+    "sessionLinks": 26,
+    "resolvedSpeakerEntries": 26,
+    "sourceLocaleOrder": [
+      1,
+      2,
+      3,
+      5,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "deterministicOrderMatchesSource": true,
+    "everyProfileImageExists": true,
+    "unresolvedSpeakerNames": [],
+    "speakersWithOwnSessionsField": []
+  },
+  "protectedFiles": [
+    {
+      "path": "public/data/data.json",
+      "before": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "after": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "unchanged": true
+    },
+    {
+      "path": "migration/reference/contract.md",
+      "before": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "after": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "unchanged": true
+    },
+    {
+      "path": "migration/reference/expected-cases.json",
+      "before": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "after": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "unchanged": true
+    }
+  ],
+  "runtimeObserved": false
+}

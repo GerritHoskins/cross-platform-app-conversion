@@ -1,0 +1,543 @@
+{
+  "version": 1,
+  "phase": "A2",
+  "passed": true,
+  "gateEvaluations": 1,
+  "policy": "Subsequent checks verify recovery scope, not a rerun of the entry gate.",
+  "references": [
+    {
+      "path": "migration/reference/derive-speakers.mjs",
+      "expectedSha256": "12430b0e28a885ed4fe4657fe195bc3413f374edcffa68e730bbb8e55307e229",
+      "actualSha256": "12430b0e28a885ed4fe4657fe195bc3413f374edcffa68e730bbb8e55307e229",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/reference/expected-speakers.json",
+      "expectedSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+      "actualSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/reference/speakers-contract.md",
+      "expectedSha256": "c6ee05a79131f22649b7e03ae43840d64a3c3bc3d2a922cf190e605d1129dc90",
+      "actualSha256": "c6ee05a79131f22649b7e03ae43840d64a3c3bc3d2a922cf190e605d1129dc90",
+      "unchangedRequired": true
+    }
+  ],
+  "protectedInputs": [
+    {
+      "path": "public/data/data.json",
+      "expectedSha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75",
+      "actualSha256": "da6cdccfb8a1ac022d28ebb9a5e9323e49b75504f3202e88ade37e494ed7fb75"
+    },
+    {
+      "path": "migration/reference/contract.md",
+      "expectedSha256": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1",
+      "actualSha256": "96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1"
+    },
+    {
+      "path": "migration/reference/expected-cases.json",
+      "expectedSha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1",
+      "actualSha256": "ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1"
+    }
+  ],
+  "draftVerification": [
+    {
+      "path": "migration/evidence/P02/commands.jsonl",
+      "expectedSha256": "c7ca67f51d759a66fabf01ee72e6181172f9fe2c7f871fe1ae3b9ac886776a0e",
+      "actualSha256": "c7ca67f51d759a66fabf01ee72e6181172f9fe2c7f871fe1ae3b9ac886776a0e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/entry.json",
+      "expectedSha256": "c8b95ec874686891d6017154003a441a006b32b38e08e1fbf0ca24e622f2008b",
+      "actualSha256": "c8b95ec874686891d6017154003a441a006b32b38e08e1fbf0ca24e622f2008b",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/privacy-scan.json",
+      "expectedSha256": "739b9906fbb455d294452c1e7522b17ee5cf70348302a04bb1179075307dab28",
+      "actualSha256": "739b9906fbb455d294452c1e7522b17ee5cf70348302a04bb1179075307dab28",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.receipt.json",
+      "expectedSha256": "4239477efddd7f487bfe149cc3f86f8b0fa29745fcf0934d1217dc13b8cd710c",
+      "actualSha256": "4239477efddd7f487bfe149cc3f86f8b0fa29745fcf0934d1217dc13b8cd710c",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derivation-proof.stdout.log",
+      "expectedSha256": "cea4fdb425b48de6a32f6a603d86d829ac7ddfa239ce9d05850c2192a6bc61b0",
+      "actualSha256": "cea4fdb425b48de6a32f6a603d86d829ac7ddfa239ce9d05850c2192a6bc61b0",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.receipt.json",
+      "expectedSha256": "e105e2b1096a1e952f492101f363a775cd4eee246d1fd69359ac003519a6638a",
+      "actualSha256": "e105e2b1096a1e952f492101f363a775cd4eee246d1fd69359ac003519a6638a",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-1.stdout.log",
+      "expectedSha256": "8257b319d77bb0ef3e126779dc00eeed634ca19676b3272bbebdc75a794a4943",
+      "actualSha256": "8257b319d77bb0ef3e126779dc00eeed634ca19676b3272bbebdc75a794a4943",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.receipt.json",
+      "expectedSha256": "6810bd10782e8b8de3aaffc102e68d1a10b92c95485a59433a810c7b25e3a421",
+      "actualSha256": "6810bd10782e8b8de3aaffc102e68d1a10b92c95485a59433a810c7b25e3a421",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-run-2.stdout.log",
+      "expectedSha256": "8257b319d77bb0ef3e126779dc00eeed634ca19676b3272bbebdc75a794a4943",
+      "actualSha256": "8257b319d77bb0ef3e126779dc00eeed634ca19676b3272bbebdc75a794a4943",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.receipt.json",
+      "expectedSha256": "164fae2abd0ec8ac6e3f253b8f61f007c7a6a6caeee54534a6e92e04a905a621",
+      "actualSha256": "164fae2abd0ec8ac6e3f253b8f61f007c7a6a6caeee54534a6e92e04a905a621",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/derive-syntax.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.receipt.json",
+      "expectedSha256": "2cf8b3978a0fe30cc78d173b036c2b6ffd3260601250ab96e050e4e260c15750",
+      "actualSha256": "2cf8b3978a0fe30cc78d173b036c2b6ffd3260601250ab96e050e4e260c15750",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/entry.stdout.log",
+      "expectedSha256": "fa7608a25bc131a66235ba5b80a47f005060a1c9f3704cb4cbb25d5ee3f5405d",
+      "actualSha256": "fa7608a25bc131a66235ba5b80a47f005060a1c9f3704cb4cbb25d5ee3f5405d",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.receipt.json",
+      "expectedSha256": "05d5b82bbece3bcd3266253c5d4e15f6ebc492da1b09691dba0824b497739189",
+      "actualSha256": "05d5b82bbece3bcd3266253c5d4e15f6ebc492da1b09691dba0824b497739189",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-branch.stdout.log",
+      "expectedSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+      "actualSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.receipt.json",
+      "expectedSha256": "45141f264e680828324dfb06e6504ba0926feec4d266f66a462ed3016cad0ebe",
+      "actualSha256": "45141f264e680828324dfb06e6504ba0926feec4d266f66a462ed3016cad0ebe",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-head.stdout.log",
+      "expectedSha256": "e1820ca662a4f2f29e4385a5be5405efe72a58dfbb6a3169482895ebf5901f9e",
+      "actualSha256": "e1820ca662a4f2f29e4385a5be5405efe72a58dfbb6a3169482895ebf5901f9e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.receipt.json",
+      "expectedSha256": "8a341480a4d37fcbd761337e14129da0ef6925d33cf0daeaa53f99fc0daa1d28",
+      "actualSha256": "8a341480a4d37fcbd761337e14129da0ef6925d33cf0daeaa53f99fc0daa1d28",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-index.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.receipt.json",
+      "expectedSha256": "3115ab8fd0b66fd0ded5f6ea5e73ea5d9d3e632557c4bdd319f4b3473b260e4a",
+      "actualSha256": "3115ab8fd0b66fd0ded5f6ea5e73ea5d9d3e632557c4bdd319f4b3473b260e4a",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-porcelain.stdout.log",
+      "expectedSha256": "53f7e8f79f28a7f9d69f741c3b63c0cb8b3420b314386131f424641804892a27",
+      "actualSha256": "53f7e8f79f28a7f9d69f741c3b63c0cb8b3420b314386131f424641804892a27",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.receipt.json",
+      "expectedSha256": "9ce8ceeeb7765a66195bdd1b74f0c12e02e78386e11d05ebde9507aa4e11e201",
+      "actualSha256": "9ce8ceeeb7765a66195bdd1b74f0c12e02e78386e11d05ebde9507aa4e11e201",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-protected-diff.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.receipt.json",
+      "expectedSha256": "4f55d0e102ee27f7e2f663f1421ba9ac7fa0519c22cd3219e677198016866e27",
+      "actualSha256": "4f55d0e102ee27f7e2f663f1421ba9ac7fa0519c22cd3219e677198016866e27",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-safe-tracked-names.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.receipt.json",
+      "expectedSha256": "c804dbdfc4d8bb8746e508b6343c68c9191908188fb3b58922338d1a9176679a",
+      "actualSha256": "c804dbdfc4d8bb8746e508b6343c68c9191908188fb3b58922338d1a9176679a",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/freeze-tree.stdout.log",
+      "expectedSha256": "fe3f88eadc55ef06d4a89e8b8184221540a03ee5e1a2e4703377fe7e642b6953",
+      "actualSha256": "fe3f88eadc55ef06d4a89e8b8184221540a03ee5e1a2e4703377fe7e642b6953",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.receipt.json",
+      "expectedSha256": "266a2bf2a0a489d7272fc50067c98d12d3b7747a198221f4ce1670fefaaf3da8",
+      "actualSha256": "266a2bf2a0a489d7272fc50067c98d12d3b7747a198221f4ce1670fefaaf3da8",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-branch.stdout.log",
+      "expectedSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+      "actualSha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.receipt.json",
+      "expectedSha256": "2b02eaa5d6de44f6d6de885635c0bea6313a1f9dcffca920d2af1c581d99a9e9",
+      "actualSha256": "2b02eaa5d6de44f6d6de885635c0bea6313a1f9dcffca920d2af1c581d99a9e9",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-head.stdout.log",
+      "expectedSha256": "e1820ca662a4f2f29e4385a5be5405efe72a58dfbb6a3169482895ebf5901f9e",
+      "actualSha256": "e1820ca662a4f2f29e4385a5be5405efe72a58dfbb6a3169482895ebf5901f9e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.receipt.json",
+      "expectedSha256": "93be9d28c4ea744a0f161ff596b6a97aedb2431dc1d952d52aa59e09ed01fb1a",
+      "actualSha256": "93be9d28c4ea744a0f161ff596b6a97aedb2431dc1d952d52aa59e09ed01fb1a",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-index.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.receipt.json",
+      "expectedSha256": "18229e667c658e5460387a692a1652d78db1428d3fc2d685da5da8e11beb89e6",
+      "actualSha256": "dfe5138785de470d5193bdb15b9b805fd2a2f22f6912e562aecc6e649b2d56e0",
+      "unchangedRequired": false
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+      "expectedSha256": "bc697de995dc791df53d688ef69c08994cdffc8ce30c906b1ffc65b131ccd0eb",
+      "actualSha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "unchangedRequired": false
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.receipt.json",
+      "expectedSha256": "85dd6be8d1eea58bf918e47052ac4b45db0cea596fa0da4d1a8576fa3380d07e",
+      "actualSha256": "85dd6be8d1eea58bf918e47052ac4b45db0cea596fa0da4d1a8576fa3380d07e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-porcelain.stdout.log",
+      "expectedSha256": "1edf5c7a1687514c1fd46ad896f301e00e4592afce118369c44d3eca10f7b93c",
+      "actualSha256": "1edf5c7a1687514c1fd46ad896f301e00e4592afce118369c44d3eca10f7b93c",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.receipt.json",
+      "expectedSha256": "bae9176289b73f41c40c75988185d168ec8c47483b055a8a253af8f4e19bfe42",
+      "actualSha256": "bae9176289b73f41c40c75988185d168ec8c47483b055a8a253af8f4e19bfe42",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1-tree.stdout.log",
+      "expectedSha256": "fe3f88eadc55ef06d4a89e8b8184221540a03ee5e1a2e4703377fe7e642b6953",
+      "actualSha256": "fe3f88eadc55ef06d4a89e8b8184221540a03ee5e1a2e4703377fe7e642b6953",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/gate-1.json",
+      "expectedSha256": "163021f904ed5717888f8dffc9526fb4566ec8ff5a6486b16202149434947044",
+      "actualSha256": "163021f904ed5717888f8dffc9526fb4566ec8ff5a6486b16202149434947044",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.receipt.json",
+      "expectedSha256": "606b7023fe932a95e49ab50ab96591c7dde2a83266cb8d3b383d2490a2fb956e",
+      "actualSha256": "606b7023fe932a95e49ab50ab96591c7dde2a83266cb8d3b383d2490a2fb956e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/independent-verification.stdout.log",
+      "expectedSha256": "36aa17b5cfa9fb5d315db74e472e0f176bbb8caac08e88a69d5e556649604c8b",
+      "actualSha256": "36aa17b5cfa9fb5d315db74e472e0f176bbb8caac08e88a69d5e556649604c8b",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.receipt.json",
+      "expectedSha256": "1e312bdbba4830cac0d3a9f5e8c43a0527ec961dd4097529d2504324c40c6aec",
+      "actualSha256": "1e312bdbba4830cac0d3a9f5e8c43a0527ec961dd4097529d2504324c40c6aec",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/initial-privacy.stdout.log",
+      "expectedSha256": "c1fbd3a7f71352a56b53f49054bae744d3a2ae024da225d1a927be264b72f9ef",
+      "actualSha256": "c1fbd3a7f71352a56b53f49054bae744d3a2ae024da225d1a927be264b72f9ef",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.receipt.json",
+      "expectedSha256": "82a7bdc0d8815278be96f052ea89530849563166d9664ed570ee55b7f4690a99",
+      "actualSha256": "82a7bdc0d8815278be96f052ea89530849563166d9664ed570ee55b7f4690a99",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/protected-path-diff.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.receipt.json",
+      "expectedSha256": "87b18bbd96c95f05f7f388c37238ebba4b07d01b9765b03f97c97a00adb7867c",
+      "actualSha256": "87b18bbd96c95f05f7f388c37238ebba4b07d01b9765b03f97c97a00adb7867c",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.stderr.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/receipts/safe-tracked-names.stdout.log",
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/run-comparison.json",
+      "expectedSha256": "cea4fdb425b48de6a32f6a603d86d829ac7ddfa239ce9d05850c2192a6bc61b0",
+      "actualSha256": "cea4fdb425b48de6a32f6a603d86d829ac7ddfa239ce9d05850c2192a6bc61b0",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/scope-verification.json",
+      "expectedSha256": "e917af5bb991ab835d0f87fc1bbd6d3d6d1ddf7c862f6247f777bb35dba33f7a",
+      "actualSha256": "e917af5bb991ab835d0f87fc1bbd6d3d6d1ddf7c862f6247f777bb35dba33f7a",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/evidence/P02/verification.json",
+      "expectedSha256": "0c87438b2b684074ab6c50085878171f65e97b61d8cc827b8d123cb7037723a7",
+      "actualSha256": "0c87438b2b684074ab6c50085878171f65e97b61d8cc827b8d123cb7037723a7",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/handoffs/P02.md",
+      "expectedSha256": "3af753fab038761cdfca752b5bcb20495f2cfe72d66a66d49dde95de0fc2cafd",
+      "actualSha256": "cc88ea47dcd0c54b383a08db825a12c7455b2dd47758fad49d9a8af3e4fe13eb",
+      "unchangedRequired": false
+    },
+    {
+      "path": "migration/reference/derive-speakers.mjs",
+      "expectedSha256": "12430b0e28a885ed4fe4657fe195bc3413f374edcffa68e730bbb8e55307e229",
+      "actualSha256": "12430b0e28a885ed4fe4657fe195bc3413f374edcffa68e730bbb8e55307e229",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/reference/expected-speakers.json",
+      "expectedSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+      "actualSha256": "421435b6a09720f72a346256270ae03c2dfbec9c720f8a016517f7538de9e29e",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/reference/speakers-contract.md",
+      "expectedSha256": "c6ee05a79131f22649b7e03ae43840d64a3c3bc3d2a922cf190e605d1129dc90",
+      "actualSha256": "c6ee05a79131f22649b7e03ae43840d64a3c3bc3d2a922cf190e605d1129dc90",
+      "unchangedRequired": true
+    },
+    {
+      "path": "migration/work-packages/P02.md",
+      "expectedSha256": "bff80ae5d72ded40797ecd38e463becbf64b5fe3038d5acd60cdcb2ed4fc4afe",
+      "actualSha256": "baae466ea411e275a91967014164d243323361f1c9aaacc2814dac2a10347057",
+      "unchangedRequired": false
+    }
+  ],
+  "allowedChangedDrafts": [
+    "migration/evidence/P02/receipts/gate-1-node.stdout.log",
+    "migration/evidence/P02/receipts/gate-1-node.receipt.json",
+    "migration/handoffs/P02.md",
+    "migration/work-packages/P02.md"
+  ],
+  "otherExistingEvidenceByteIdentical": true,
+  "workPackageStatusOnly": true,
+  "receiptOnlyAuthorizedFields": true,
+  "indexEmpty": true,
+  "rawPorcelain": " M package-lock.json\n?? migration/evidence/P02/commands.jsonl\n?? migration/evidence/P02/entry.json\n?? migration/evidence/P02/privacy-scan.json\n?? migration/evidence/P02/receipts/derivation-proof.receipt.json\n?? migration/evidence/P02/receipts/derivation-proof.stderr.log\n?? migration/evidence/P02/receipts/derivation-proof.stdout.log\n?? migration/evidence/P02/receipts/derive-run-1.receipt.json\n?? migration/evidence/P02/receipts/derive-run-1.stderr.log\n?? migration/evidence/P02/receipts/derive-run-1.stdout.log\n?? migration/evidence/P02/receipts/derive-run-2.receipt.json\n?? migration/evidence/P02/receipts/derive-run-2.stderr.log\n?? migration/evidence/P02/receipts/derive-run-2.stdout.log\n?? migration/evidence/P02/receipts/derive-syntax.receipt.json\n?? migration/evidence/P02/receipts/derive-syntax.stderr.log\n?? migration/evidence/P02/receipts/derive-syntax.stdout.log\n?? migration/evidence/P02/receipts/entry.receipt.json\n?? migration/evidence/P02/receipts/entry.stderr.log\n?? migration/evidence/P02/receipts/entry.stdout.log\n?? migration/evidence/P02/receipts/freeze-branch.receipt.json\n?? migration/evidence/P02/receipts/freeze-branch.stderr.log\n?? migration/evidence/P02/receipts/freeze-branch.stdout.log\n?? migration/evidence/P02/receipts/freeze-head.receipt.json\n?? migration/evidence/P02/receipts/freeze-head.stderr.log\n?? migration/evidence/P02/receipts/freeze-head.stdout.log\n?? migration/evidence/P02/receipts/freeze-index.receipt.json\n?? migration/evidence/P02/receipts/freeze-index.stderr.log\n?? migration/evidence/P02/receipts/freeze-index.stdout.log\n?? migration/evidence/P02/receipts/freeze-porcelain.receipt.json\n?? migration/evidence/P02/receipts/freeze-porcelain.stderr.log\n?? migration/evidence/P02/receipts/freeze-porcelain.stdout.log\n?? migration/evidence/P02/receipts/freeze-protected-diff.receipt.json\n?? migration/evidence/P02/receipts/freeze-protected-diff.stderr.log\n?? migration/evidence/P02/receipts/freeze-protected-diff.stdout.log\n?? migration/evidence/P02/receipts/freeze-safe-tracked-names.receipt.json\n?? migration/evidence/P02/receipts/freeze-safe-tracked-names.stderr.log\n?? migration/evidence/P02/receipts/freeze-safe-tracked-names.stdout.log\n?? migration/evidence/P02/receipts/freeze-tree.receipt.json\n?? migration/evidence/P02/receipts/freeze-tree.stderr.log\n?? migration/evidence/P02/receipts/freeze-tree.stdout.log\n?? migration/evidence/P02/receipts/gate-1-branch.receipt.json\n?? migration/evidence/P02/receipts/gate-1-branch.stderr.log\n?? migration/evidence/P02/receipts/gate-1-branch.stdout.log\n?? migration/evidence/P02/receipts/gate-1-head.receipt.json\n?? migration/evidence/P02/receipts/gate-1-head.stderr.log\n?? migration/evidence/P02/receipts/gate-1-head.stdout.log\n?? migration/evidence/P02/receipts/gate-1-index.receipt.json\n?? migration/evidence/P02/receipts/gate-1-index.stderr.log\n?? migration/evidence/P02/receipts/gate-1-index.stdout.log\n?? migration/evidence/P02/receipts/gate-1-node.receipt.json\n?? migration/evidence/P02/receipts/gate-1-node.stderr.log\n?? migration/evidence/P02/receipts/gate-1-node.stdout.log\n?? migration/evidence/P02/receipts/gate-1-porcelain.receipt.json\n?? migration/evidence/P02/receipts/gate-1-porcelain.stderr.log\n?? migration/evidence/P02/receipts/gate-1-porcelain.stdout.log\n?? migration/evidence/P02/receipts/gate-1-tree.receipt.json\n?? migration/evidence/P02/receipts/gate-1-tree.stderr.log\n?? migration/evidence/P02/receipts/gate-1-tree.stdout.log\n?? migration/evidence/P02/receipts/gate-1.json\n?? migration/evidence/P02/receipts/independent-verification.receipt.json\n?? migration/evidence/P02/receipts/independent-verification.stderr.log\n?? migration/evidence/P02/receipts/independent-verification.stdout.log\n?? migration/evidence/P02/receipts/initial-privacy.receipt.json\n?? migration/evidence/P02/receipts/initial-privacy.stderr.log\n?? migration/evidence/P02/receipts/initial-privacy.stdout.log\n?? migration/evidence/P02/receipts/protected-path-diff.receipt.json\n?? migration/evidence/P02/receipts/protected-path-diff.stderr.log\n?? migration/evidence/P02/receipts/protected-path-diff.stdout.log\n?? migration/evidence/P02/receipts/safe-tracked-names.receipt.json\n?? migration/evidence/P02/receipts/safe-tracked-names.stderr.log\n?? migration/evidence/P02/receipts/safe-tracked-names.stdout.log\n?? migration/evidence/P02/recovery-a2/gate.json\n?? migration/evidence/P02/recovery-a2/normalization.json\n?? migration/evidence/P02/recovery-a2/process-check.json\n?? migration/evidence/P02/recovery-a2/receipts/normalization-tools.receipt.json\n?? migration/evidence/P02/run-comparison.json\n?? migration/evidence/P02/scope-verification.json\n?? migration/evidence/P02/verification.json\n?? migration/handoffs/P02.md\n?? migration/reference/derive-speakers.mjs\n?? migration/reference/expected-speakers.json\n?? migration/reference/speakers-contract.md\n?? migration/work-packages/P02.md\n",
+  "unexpected": [],
+  "head": "ccf1c3dabffb434f7bf41b2ed1600549ee9c54c9",
+  "headTree": "5ff7aafc353e07f11d9e8fadabb70e49a20861b4",
+  "branch": "migration/slice-2",
+  "failedHelpersThisPhase": [
+    {
+      "command": "a2-verify",
+      "exitCode": 1,
+      "reason": "Patch tool retained CRLF; byte assertion caught it before further verification writes.",
+      "receipt": "migration/evidence/P02/recovery-a2/receipts/a2-verify.receipt.json",
+      "recovery": "Exact executor process inventory found zero children; scoped LF normalization and verification retry, no gate rerun."
+    }
+  ],
+  "phaseAFailures": [
+    "Freeze-preparation helper failed on CRLF evidence before manifest creation.",
+    "A process-check helper misclassified coordinator viewer/monitor processes; phase A corrected exact-command-line inventory."
+  ],
+  "runOnlyFailurePolicy": "Any later failure and retry is recorded in run receipts; gate is not rerun."
+}

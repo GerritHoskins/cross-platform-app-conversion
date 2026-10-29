@@ -1,0 +1,31 @@
+{
+  "command": "powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$rows = @(Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' -and $_.CommandLine -match 'p02-a2-(driver|recovery|gate)\\.mjs' } | Select-Object ProcessId,ParentProcessId,Name,CommandLine); ConvertTo-Json -InputObject $rows -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-29T13:28:17.270Z",
+  "durationMs": 698,
+  "signal": null,
+  "error": null,
+  "stdout": {
+    "bytes": 3,
+    "totalBytes": 3,
+    "truncated": false,
+    "log": "a2-failed-verify-process-check.stdout.log"
+  },
+  "stderr": {
+    "bytes": 0,
+    "totalBytes": 0,
+    "truncated": false,
+    "log": "a2-failed-verify-process-check.stderr.log"
+  },
+  "outputNormalization": "LF at capture time",
+  "shell": false,
+  "pinnedNodeFirstOnChildPath": true,
+  "removedNoDefaultCurrentDirectoryInExePath": true
+}
