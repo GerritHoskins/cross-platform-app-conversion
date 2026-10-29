@@ -1,0 +1,232 @@
+{
+  "package": "E01",
+  "revision": 2,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-1",
+  "head": "2a79815c43e17bd3d40f0d80a15e5e6d6f3ccf91",
+  "headTree": "e649a7a7b3981efe1e99923b9ccb80c9bea376f9",
+  "date": "2026-10-29T07:47:55.917Z",
+  "headSource": "git rev-parse HEAD and git rev-parse HEAD^{tree}, timed revision-2 freeze-head/freeze-tree receipts; same HEAD/tree and unchanged target sources, no product checks rerun.",
+  "priorApprovedBaseline": {
+    "package": "NS07",
+    "revision": 2,
+    "commit": "2a79815c43e17bd3d40f0d80a15e5e6d6f3ccf91",
+    "verdict": "APPROVE",
+    "review": "migration/reviews/NS07-r2.md",
+    "policy": "Technical approval permits assigned E01 continuation; human acceptance remains separate."
+  },
+  "decisions": [
+    {
+      "id": "D1",
+      "summary": "Effort from committed history and whitelist-only numeric/name fields in local run metadata; missing run durations/tokens remain unknown.",
+      "source": [
+        "migration/work-packages/E01.md"
+      ]
+    },
+    {
+      "id": "D2",
+      "summary": "Recommend a separately assigned next slice and lead target with evidence and caveats; no full-app cost claim.",
+      "source": [
+        "migration/work-packages/E01.md"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "A1",
+      "date": "2026-10-29",
+      "by": "human",
+      "whatChanged": "Coordinator reworded the privacy rule to describe PNG/JPEG/GIF base64 markers without literal strings and added the Amendment A1 section; scan signatures, markers and any-hit blocking rule are unchanged. Executor changes only Status in A2.",
+      "phaseARun": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/",
+      "a2Rescan": "migration/evidence/E01/a2/privacy-scan.json"
+    }
+  ],
+  "session": {
+    "executor": "Hermes GPT-6.1 Sol high / openai-codex / translation-migration, human-chosen",
+    "coordinator": "Claude Code, live supervision and independent review dispatch",
+    "phase": "B: revision-2 recursive inventory correction, independent completeness proof, text/count reconciliation, checkpoint, privacy rescan and freeze only",
+    "runtime": "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029",
+    "formalReviewDispatched": false,
+    "stop": "Next: none; STOP — a second slice requires a new plan and a separate human assignment"
+  },
+  "environment": {
+    "nodeExecutable": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "nodeVersion": "v24.19.0",
+    "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+    "spawn": "spawnSync argument arrays; shell:false; pinned Node first on PATH; NoDefaultCurrentDirectoryInExePath removed case-insensitively",
+    "additions": [],
+    "deviceInteractionThisPreparation": false,
+    "androidBuildRerunThisPreparation": false,
+    "softwareGatesRerunThisPreparation": false,
+    "persistentEnvironmentChanged": false
+  },
+  "runResults": {
+    "entry": "migration/evidence/E01/r2/entry.json",
+    "verification": "migration/evidence/E01/r2/verification.json",
+    "inventoryCrosscheck": "migration/evidence/E01/r2/inventory-crosscheck.json",
+    "privacy": "migration/evidence/E01/r2/privacy-scan.json",
+    "commands": "migration/evidence/E01/r2/commands.jsonl",
+    "phaseABaselines": "migration/evidence/E01/checks.json",
+    "freezeReceipts": "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/",
+    "policy": "Revision-2 command snapshot is pre-scan; final scan, official manifest --write/check and manifest privacy receipts are run-only. No migration/ write after official --write."
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": [],
+    "status": "Coordinator dispatches independent revision-1 review; executor does not delegate or dispatch."
+  },
+  "preExistingChanges": {
+    "r2Entry": "migration/evidence/E01/r2/entry.json",
+    "priorPacket": "All revision-1 packet hashes matched except the human-approved E01.md decision-section addition; in-memory removal exactly reconstructed its old hash.",
+    "unrelated": [
+      "package-lock.json (unrelated tracked modification; never read, hashed, diffed, edited, staged or restored)"
+    ],
+    "policy": "Exact raw porcelain and index captured before migration writes. Executor edits E01.md only at Status. IDEA.md and root package-lock.json contents never read."
+  },
+  "protectedBaseline": {
+    "immutableHistory": "migration/evidence/E01/r2/verification.json",
+    "nonE01Inputs": "migration/evidence/E01/r2/entry.json",
+    "sources": "git diff --quiet HEAD -- migration/core migration/react-native migration/nativescript exited 0"
+  },
+  "hashGate": {
+    "tool": "migration/tools/manifest-hashes.mjs",
+    "write": "Every files[] sha256 starts empty; official --write computes hashes.",
+    "check": "Require 0 problem(s); exact output and timed receipts remain in revision-2 run directory.",
+    "rehearsal": "rehearsal-manifest-check.stdout.log in revision-2 run; 27 hash entries, 0 problem(s)"
+  },
+  "notRun": [
+    {
+      "check": "All product tests/typechecks/build/install/device/emulator acceptance in revision 2",
+      "reason": "Explicitly forbidden to rerun; identical HEAD/tree, unchanged target sources and immutable phase-A baseline evidence."
+    },
+    {
+      "check": "Full historical RN07 manifest protected IDEA.md hash",
+      "reason": "Phase A full checker unavailable under read prohibition; phase A safe projection passed. A2 does not rerun historical checks."
+    },
+    {
+      "check": "Manual TalkBack, docked-keyboard insets, iOS/release/physical-device and deferred integrations",
+      "reason": "Inherited acceptance limitations, fully retained in report; A2 provides no new product acceptance."
+    }
+  ],
+  "files": [
+    {
+      "path": "migration/evidence/E01/a2/commands.jsonl",
+      "sha256": "dee998e6f886fbf9287d1e1c0a5f3eea000368a3dbb6bd785920fe3b0fe2e50d"
+    },
+    {
+      "path": "migration/evidence/E01/a2/entry.json",
+      "sha256": "493cb15ae6bf40aedf0803ec915d5c874b5a701ee9de5a3ced67c652d0ad5bf5"
+    },
+    {
+      "path": "migration/evidence/E01/a2/privacy-scan.json",
+      "sha256": "fb85deb3a04b0906546c6fff872688451f78395cc2585d9364eaf21da63a95df"
+    },
+    {
+      "path": "migration/evidence/E01/a2/verification.json",
+      "sha256": "d892f5fa333ebcb7e7b530ead9e0ea32613a096756d1e6f21e4e7890b19d143c"
+    },
+    {
+      "path": "migration/evidence/E01/checks.json",
+      "sha256": "7497da221519ebd1382df8d21cc37f115997c882b3f5d33f50f39fda13452916"
+    },
+    {
+      "path": "migration/evidence/E01/commands.jsonl",
+      "sha256": "9b14ff4f724c640651980c07673e4b4ff2f7d2ebc99be0718ded1d9265bbdad7"
+    },
+    {
+      "path": "migration/evidence/E01/effort-runs.json",
+      "sha256": "ec7fb20c68281af5d94fd819b12e969cdb0d063c7c3741fe4c72ca5ac60fab59"
+    },
+    {
+      "path": "migration/evidence/E01/effort-summary.json",
+      "sha256": "0c1638f1021ce6cf24f025b387eac6e890a3ed3377d1995a15efb3fc83b930f9"
+    },
+    {
+      "path": "migration/evidence/E01/entry.json",
+      "sha256": "399a2b37293fe5ac83073843f39182b8e649eb031f37b610763508e081400b25"
+    },
+    {
+      "path": "migration/evidence/E01/privacy-scan.json",
+      "sha256": "056b90132c9da8040dc560cb70bdac9a13809392efea6547e3f21a70850a3b45"
+    },
+    {
+      "path": "migration/evidence/E01/provenance.json",
+      "sha256": "cf0dedf3b6d5aea70d0968de09113f3687ae208d31a96cba88beaa6b69c79fb6"
+    },
+    {
+      "path": "migration/evidence/E01/r2/commands.jsonl",
+      "sha256": "351aefd37a611c48ec434d3a13b93a8418ffd986fd90264729089ab1473d7866"
+    },
+    {
+      "path": "migration/evidence/E01/r2/entry.json",
+      "sha256": "717ce091c26b9e817eba19fe703f1aac19cff9b2d112eb60fe8610cada4f5f50"
+    },
+    {
+      "path": "migration/evidence/E01/r2/inventory-crosscheck.json",
+      "sha256": "2c90eb746c25142279f45cd1b0b5d556662f5f980869cc6e843b674b78ad2a78"
+    },
+    {
+      "path": "migration/evidence/E01/r2/privacy-scan.json",
+      "sha256": "97d39d7f37b6336bb6eac6b7f7b8e901b950ade8bc7c04c157917d5f5e441b63"
+    },
+    {
+      "path": "migration/evidence/E01/r2/verification.json",
+      "sha256": "5ec4ba72e084c08d51c146df1206bf087ba5c91ac5fae4fc00916219e07ed34d"
+    },
+    {
+      "path": "migration/evidence/E01/results-matrix.json",
+      "sha256": "264a8f4466c682db36f0773cd85fad6f16ab0b2e5224e7a546f450852ef56b3c"
+    },
+    {
+      "path": "migration/evidence/E01/size.json",
+      "sha256": "b96ee6466c7198b49d7bbc174f2799abf587c7c79ce859d6b810d82dadcaa8db"
+    },
+    {
+      "path": "migration/evidence/E01/verification.json",
+      "sha256": "4061e9a97e24ad69ac1806a844ee5992e7464f85b699bfb5007cf2bd64c0a04c"
+    },
+    {
+      "path": "migration/handoffs/E01-checkpoint-a.md",
+      "sha256": "0778e5e8964afd7a4fbf20b5de4388e8a7187f3e65524a74c5280a04eecdfa5a"
+    },
+    {
+      "path": "migration/handoffs/E01-checkpoint-a2.md",
+      "sha256": "d6729cdf7c883a6619d9ee6642c292feddeeb55e9288086cc871492a81d73d91"
+    },
+    {
+      "path": "migration/handoffs/E01-checkpoint-r2.md",
+      "sha256": "a98026eed4fee70152222e1e29c4564cca4c2211869160a93ecab97cc1585f71"
+    },
+    {
+      "path": "migration/handoffs/E01.md",
+      "sha256": "13122703ac7850a585076825a9f7fd780bff5033292cf62a045205c3993a8729"
+    },
+    {
+      "path": "migration/reports/E01-comparison.md",
+      "sha256": "5aaad3559dbdb76777e9db6adea901ce39a827f25e961cfb1fcfc59d3804bd20"
+    },
+    {
+      "path": "migration/reviews/E01-r1.md",
+      "sha256": "b04321e88f9de5e2f6f6295c2439ade92746d9d319dc36c0f2886f2d14cda19a"
+    },
+    {
+      "path": "migration/submissions/E01-r1.json",
+      "sha256": "50a3fad575599e50270e6f531105505422f52fc2f13c5c4fb4f6b652a8eccf24"
+    },
+    {
+      "path": "migration/work-packages/E01.md",
+      "sha256": "30fd9ba3f4c62ac334cd2b66d2ec20dd59d7a8b2fafe813d45bde0d20fd6a67f"
+    }
+  ],
+  "priorReview": {
+    "package": "E01",
+    "revision": 1,
+    "path": "migration/reviews/E01-r1.md",
+    "verdict": "CHANGES_REQUIRED",
+    "priority": "P2",
+    "required": "The claimed exhaustive record-level non-PASS inventory omitted NS /supplemental/7/observed (Settings.restore.g-settings): nested NOT RUN under parent PASS, no settings changed, environment equality unverified and entry gate failed before ADB. Rebuild recursive coverage, reconcile text/counts, rescan privacy and freeze revision 2 without changing the 50 parent grades.",
+    "resolution": "Walked every object at every depth in both ledgers for string status other than exact PASS; recorded RFC 6901 pointers, enclosing record and kind/evidence paths; retained and separately listed nonstandard status values. Independent explicit-stack traversal matched all 552 pointers/statuses (RN 216, NS 336), adding 48 to revision 1: the required NOT RUN observation plus 47 nonstandard fields, with zero removals. Standard-grade records 505; 46 lowercase passed test results and one READY_FOR_REVIEW metadata field are not defects. Report/handoff reconciled; 50 rows/parent grades, effort/size, sources and immutable history preserved. Complete-packet and manifest privacy checks required before FROZEN; independent revision-2 review pending."
+  }
+}

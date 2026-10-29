@@ -1,0 +1,550 @@
+{
+  "method": {
+    "snapshot": "Live tracked target bytes at gated HEAD; git ls-files target directories only.",
+    "lines": "Physical LF-delimited lines including blanks/comments; last nonterminated line counts once. No generated build or dependency output read.",
+    "inclusion": "Maintained code/style files under src/, test/, __tests__/, test-utils/, types/ with ts,tsx,js,jsx,mjs,cjs,vue,css,scss extensions; includes retained/modified shell and template-derived UI source. It is maintained-source size, not a claim all lines were newly typed.",
+    "exclusion": "node_modules; dist/build/build-test/dist-android; platforms/android/ios/App_Resources; .expo/.ns/.vitest/coverage; generated or ambient .d.ts; assets/fixtures including conference JSON; config/manifests/lockfiles/scripts/docs/evidence. Test utilities counted with tests. Exact file lists and excluded tracked paths follow.",
+    "dependencies": "Direct declared dependency key counts, including local @migration/core. Lock packages counts are package-location entries (including linked core), not unique package names, size, security or runtime-only graph."
+  },
+  "targets": {
+    "core": {
+      "source": {
+        "files": 7,
+        "lines": 391
+      },
+      "tests": {
+        "files": 5,
+        "lines": 761
+      },
+      "files": [
+        {
+          "path": "migration/core/src/favorites.ts",
+          "category": "source",
+          "lines": 18
+        },
+        {
+          "path": "migration/core/src/grouping.ts",
+          "category": "source",
+          "lines": 26
+        },
+        {
+          "path": "migration/core/src/index.ts",
+          "category": "source",
+          "lines": 9
+        },
+        {
+          "path": "migration/core/src/normalize.ts",
+          "category": "source",
+          "lines": 227
+        },
+        {
+          "path": "migration/core/src/selection.ts",
+          "category": "source",
+          "lines": 47
+        },
+        {
+          "path": "migration/core/src/time.ts",
+          "category": "source",
+          "lines": 23
+        },
+        {
+          "path": "migration/core/src/types.ts",
+          "category": "source",
+          "lines": 41
+        },
+        {
+          "path": "migration/core/test/algorithms.test.ts",
+          "category": "test",
+          "lines": 386
+        },
+        {
+          "path": "migration/core/test/expected-cases.test.ts",
+          "category": "test",
+          "lines": 154
+        },
+        {
+          "path": "migration/core/test/normalize.test.ts",
+          "category": "test",
+          "lines": 165
+        },
+        {
+          "path": "migration/core/test/smoke.test.ts",
+          "category": "test",
+          "lines": 19
+        },
+        {
+          "path": "migration/core/test/time.test.ts",
+          "category": "test",
+          "lines": 37
+        }
+      ],
+      "dependencies": {
+        "runtime": 0,
+        "dev": 2,
+        "source": "migration/core/package.json"
+      },
+      "lockfile": {
+        "source": "migration/core/package-lock.json",
+        "lockfileVersion": 3,
+        "packagesIncludingRoot": 4,
+        "packagesExcludingRoot": 3
+      },
+      "excludedTracked": [
+        "migration/core/.gitignore",
+        "migration/core/package-lock.json",
+        "migration/core/package.json",
+        "migration/core/tsconfig.json",
+        "migration/core/tsconfig.test.json"
+      ]
+    },
+    "react-native": {
+      "source": {
+        "files": 26,
+        "lines": 1750
+      },
+      "tests": {
+        "files": 8,
+        "lines": 1888
+      },
+      "files": [
+        {
+          "path": "migration/react-native/__tests__/conference-state.test.ts",
+          "category": "test",
+          "lines": 471
+        },
+        {
+          "path": "migration/react-native/__tests__/filter-screen.test.tsx",
+          "category": "test",
+          "lines": 252
+        },
+        {
+          "path": "migration/react-native/__tests__/root-layout.test.tsx",
+          "category": "test",
+          "lines": 46
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-screen.test.tsx",
+          "category": "test",
+          "lines": 608
+        },
+        {
+          "path": "migration/react-native/__tests__/schedule-swipe.test.tsx",
+          "category": "test",
+          "lines": 271
+        },
+        {
+          "path": "migration/react-native/__tests__/session-detail-screen.test.tsx",
+          "category": "test",
+          "lines": 161
+        },
+        {
+          "path": "migration/react-native/__tests__/shell-screen.test.tsx",
+          "category": "test",
+          "lines": 45
+        },
+        {
+          "path": "migration/react-native/src/app/_layout.tsx",
+          "category": "source",
+          "lines": 33
+        },
+        {
+          "path": "migration/react-native/src/app/filter.tsx",
+          "category": "source",
+          "lines": 1
+        },
+        {
+          "path": "migration/react-native/src/app/index.tsx",
+          "category": "source",
+          "lines": 1
+        },
+        {
+          "path": "migration/react-native/src/app/session/[sessionId].tsx",
+          "category": "source",
+          "lines": 9
+        },
+        {
+          "path": "migration/react-native/src/components/animated-icon.module.css",
+          "category": "source",
+          "lines": 6
+        },
+        {
+          "path": "migration/react-native/src/components/animated-icon.tsx",
+          "category": "source",
+          "lines": 148
+        },
+        {
+          "path": "migration/react-native/src/components/animated-icon.web.tsx",
+          "category": "source",
+          "lines": 108
+        },
+        {
+          "path": "migration/react-native/src/components/app-tabs.tsx",
+          "category": "source",
+          "lines": 32
+        },
+        {
+          "path": "migration/react-native/src/components/app-tabs.web.tsx",
+          "category": "source",
+          "lines": 116
+        },
+        {
+          "path": "migration/react-native/src/components/external-link.tsx",
+          "category": "source",
+          "lines": 25
+        },
+        {
+          "path": "migration/react-native/src/components/hint-row.tsx",
+          "category": "source",
+          "lines": 35
+        },
+        {
+          "path": "migration/react-native/src/components/themed-text.tsx",
+          "category": "source",
+          "lines": 57
+        },
+        {
+          "path": "migration/react-native/src/components/themed-view.tsx",
+          "category": "source",
+          "lines": 16
+        },
+        {
+          "path": "migration/react-native/src/components/ui/collapsible.tsx",
+          "category": "source",
+          "lines": 65
+        },
+        {
+          "path": "migration/react-native/src/components/web-badge.tsx",
+          "category": "source",
+          "lines": 43
+        },
+        {
+          "path": "migration/react-native/src/constants/theme.ts",
+          "category": "source",
+          "lines": 65
+        },
+        {
+          "path": "migration/react-native/src/data/load-conference.ts",
+          "category": "source",
+          "lines": 7
+        },
+        {
+          "path": "migration/react-native/src/global.css",
+          "category": "source",
+          "lines": 9
+        },
+        {
+          "path": "migration/react-native/src/hooks/use-color-scheme.ts",
+          "category": "source",
+          "lines": 1
+        },
+        {
+          "path": "migration/react-native/src/hooks/use-color-scheme.web.ts",
+          "category": "source",
+          "lines": 21
+        },
+        {
+          "path": "migration/react-native/src/hooks/use-theme.ts",
+          "category": "source",
+          "lines": 14
+        },
+        {
+          "path": "migration/react-native/src/screens/filter-screen.tsx",
+          "category": "source",
+          "lines": 109
+        },
+        {
+          "path": "migration/react-native/src/screens/schedule-screen.tsx",
+          "category": "source",
+          "lines": 435
+        },
+        {
+          "path": "migration/react-native/src/screens/session-detail-screen.tsx",
+          "category": "source",
+          "lines": 99
+        },
+        {
+          "path": "migration/react-native/src/screens/shell-screen.tsx",
+          "category": "source",
+          "lines": 60
+        },
+        {
+          "path": "migration/react-native/src/state/conference-state.tsx",
+          "category": "source",
+          "lines": 235
+        },
+        {
+          "path": "migration/react-native/test-utils/gesture-test-setup.ts",
+          "category": "test",
+          "lines": 34
+        }
+      ],
+      "dependencies": {
+        "runtime": 25,
+        "dev": 7,
+        "source": "migration/react-native/package.json"
+      },
+      "lockfile": {
+        "source": "migration/react-native/package-lock.json",
+        "lockfileVersion": 3,
+        "packagesIncludingRoot": 1165,
+        "packagesExcludingRoot": 1164
+      },
+      "excludedTracked": [
+        "migration/react-native/.gitignore",
+        "migration/react-native/LICENSE",
+        "migration/react-native/README.md",
+        "migration/react-native/app.json",
+        "migration/react-native/assets/expo.icon/Assets/expo-symbol 2.svg",
+        "migration/react-native/assets/expo.icon/Assets/grid.png",
+        "migration/react-native/assets/expo.icon/icon.json",
+        "migration/react-native/assets/images/android-icon-background.png",
+        "migration/react-native/assets/images/android-icon-foreground.png",
+        "migration/react-native/assets/images/android-icon-monochrome.png",
+        "migration/react-native/assets/images/expo-badge-white.png",
+        "migration/react-native/assets/images/expo-badge.png",
+        "migration/react-native/assets/images/expo-logo.png",
+        "migration/react-native/assets/images/favicon.png",
+        "migration/react-native/assets/images/icon.png",
+        "migration/react-native/assets/images/logo-glow.png",
+        "migration/react-native/assets/images/react-logo.png",
+        "migration/react-native/assets/images/react-logo@2x.png",
+        "migration/react-native/assets/images/react-logo@3x.png",
+        "migration/react-native/assets/images/splash-icon.png",
+        "migration/react-native/assets/images/tabIcons/explore.png",
+        "migration/react-native/assets/images/tabIcons/explore@2x.png",
+        "migration/react-native/assets/images/tabIcons/explore@3x.png",
+        "migration/react-native/assets/images/tabIcons/home.png",
+        "migration/react-native/assets/images/tabIcons/home@2x.png",
+        "migration/react-native/assets/images/tabIcons/home@3x.png",
+        "migration/react-native/assets/images/tutorial-web.png",
+        "migration/react-native/package-lock.json",
+        "migration/react-native/package.json",
+        "migration/react-native/scripts/reset-project.js",
+        "migration/react-native/scripts/verify-core-integration.cjs",
+        "migration/react-native/src/data/conference.json",
+        "migration/react-native/tsconfig.json"
+      ]
+    },
+    "nativescript": {
+      "source": {
+        "files": 13,
+        "lines": 881
+      },
+      "tests": {
+        "files": 7,
+        "lines": 864
+      },
+      "files": [
+        {
+          "path": "migration/nativescript/__tests__/conference-store.test.ts",
+          "category": "test",
+          "lines": 454
+        },
+        {
+          "path": "migration/nativescript/__tests__/load-conference.test.ts",
+          "category": "test",
+          "lines": 46
+        },
+        {
+          "path": "migration/nativescript/__tests__/row-swipe.test.ts",
+          "category": "test",
+          "lines": 62
+        },
+        {
+          "path": "migration/nativescript/__tests__/schedule-rows.test.ts",
+          "category": "test",
+          "lines": 39
+        },
+        {
+          "path": "migration/nativescript/__tests__/session-detail.test.ts",
+          "category": "test",
+          "lines": 68
+        },
+        {
+          "path": "migration/nativescript/__tests__/shell-content.test.ts",
+          "category": "test",
+          "lines": 9
+        },
+        {
+          "path": "migration/nativescript/__tests__/track-filter.test.ts",
+          "category": "test",
+          "lines": 186
+        },
+        {
+          "path": "migration/nativescript/src/app.css",
+          "category": "source",
+          "lines": 11
+        },
+        {
+          "path": "migration/nativescript/src/app.ts",
+          "category": "source",
+          "lines": 8
+        },
+        {
+          "path": "migration/nativescript/src/components/Home.vue",
+          "category": "source",
+          "lines": 29
+        },
+        {
+          "path": "migration/nativescript/src/components/Schedule.vue",
+          "category": "source",
+          "lines": 302
+        },
+        {
+          "path": "migration/nativescript/src/components/SessionDetail.vue",
+          "category": "source",
+          "lines": 136
+        },
+        {
+          "path": "migration/nativescript/src/components/TrackFilter.vue",
+          "category": "source",
+          "lines": 145
+        },
+        {
+          "path": "migration/nativescript/src/data/load-conference.ts",
+          "category": "source",
+          "lines": 6
+        },
+        {
+          "path": "migration/nativescript/src/shell/shell-content.ts",
+          "category": "source",
+          "lines": 9
+        },
+        {
+          "path": "migration/nativescript/src/state/conference-store.ts",
+          "category": "source",
+          "lines": 139
+        },
+        {
+          "path": "migration/nativescript/src/state/row-swipe.ts",
+          "category": "source",
+          "lines": 31
+        },
+        {
+          "path": "migration/nativescript/src/state/schedule-rows.ts",
+          "category": "source",
+          "lines": 12
+        },
+        {
+          "path": "migration/nativescript/src/state/session-detail.ts",
+          "category": "source",
+          "lines": 36
+        },
+        {
+          "path": "migration/nativescript/src/state/track-filter.ts",
+          "category": "source",
+          "lines": 17
+        }
+      ],
+      "dependencies": {
+        "runtime": 4,
+        "dev": 9,
+        "source": "migration/nativescript/package.json"
+      },
+      "lockfile": {
+        "source": "migration/nativescript/package-lock.json",
+        "lockfileVersion": 3,
+        "packagesIncludingRoot": 515,
+        "packagesExcludingRoot": 514
+      },
+      "excludedTracked": [
+        "migration/nativescript/.gitignore",
+        "migration/nativescript/App_Resources/Android/app.gradle",
+        "migration/nativescript/App_Resources/Android/before-plugins.gradle",
+        "migration/nativescript/App_Resources/Android/src/main/AndroidManifest.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-hdpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-ldpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-mdpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-nodpi/splash_screen.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xhdpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxhdpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/background.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable-xxxhdpi/logo.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/drawable/ic_launcher_foreground.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "migration/nativescript/App_Resources/Android/src/main/res/values-v21/colors.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/values-v21/styles.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/values-v29/styles.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/values/colors.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/values/ic_launcher_background.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/values/styles.xml",
+        "migration/nativescript/App_Resources/Android/src/main/res/xml/network_security.xml",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/Contents.json",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-1024.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-20@3x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-29@3x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-40@3x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-60@3x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-76@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/AppIcon.appiconset/icon-83.5@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/Contents.json",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/Contents.json",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.AspectFill.imageset/LaunchScreen-AspectFill@3x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/Contents.json",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@2x.png",
+        "migration/nativescript/App_Resources/iOS/Assets.xcassets/LaunchScreen.Center.imageset/LaunchScreen-Center@3x.png",
+        "migration/nativescript/App_Resources/iOS/Info.plist",
+        "migration/nativescript/App_Resources/iOS/LaunchScreen.storyboard",
+        "migration/nativescript/App_Resources/iOS/build.xcconfig",
+        "migration/nativescript/nativescript.config.ts",
+        "migration/nativescript/package-lock.json",
+        "migration/nativescript/package.json",
+        "migration/nativescript/scripts/verify-core-integration.cjs",
+        "migration/nativescript/src/data/conference.json",
+        "migration/nativescript/tsconfig.json",
+        "migration/nativescript/types/references.d.ts",
+        "migration/nativescript/types/shims.vue.d.ts",
+        "migration/nativescript/types/vuex.d.ts",
+        "migration/nativescript/webpack.config.js"
+      ]
+    }
+  },
+  "artifacts": {
+    "reactNative": {
+      "source": "migration/evidence/RN07/c-freeze/android-artifacts.json",
+      "bundle": [
+        {
+          "path": "migration/react-native/dist-android/_expo/static/js/android/entry-70dbf735a09df83f4fb7f2ab58b390f5.hbc",
+          "size": 4116492
+        }
+      ],
+      "exportFiles": 29,
+      "exportBytes": 5111963,
+      "apkBytes": null,
+      "apkUnknownReason": "RN07 reused installed development client, no RN07 native rebuild; RN07 handoff and b-device1 A05 record installed identity but do not provide a comparable fresh APK size."
+    },
+    "nativeScript": {
+      "source": "migration/evidence/NS07/f-fix5/candidate6.json",
+      "apk": {
+        "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+        "size": 118191268
+      },
+      "bundle": {
+        "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk!/assets/app/bundle.mjs",
+        "size": 160275
+      }
+    },
+    "comparison": "Not like-for-like: RN Hermes bytecode export vs NativeScript app-only bundle (vendor separate), and RN reused dev client vs NS fresh debug APK. Do not infer deployment footprint/performance from these numbers."
+  }
+}

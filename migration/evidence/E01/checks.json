@@ -1,0 +1,230 @@
+{
+  "checks": [
+    {
+      "id": "core-test",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-test.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-test.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-test.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "core-json",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-json.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-json.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-json.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "rn-typecheck",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-typecheck.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-typecheck.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-typecheck.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "rn-jest",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-jest.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-jest.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-jest.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "ns-typecheck",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-typecheck.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-typecheck.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-typecheck.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "ns-vitest",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-vitest.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-vitest.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-vitest.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "rn07-manifest-restricted",
+      "exitCode": 1,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-restricted.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-restricted.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-restricted.stderr.log",
+      "status": "UNAVAILABLE",
+      "reason": "Original checker blocked from IDEA.md by Node filesystem permission, honoring E01 privacy rule; safe projection checks remaining entries only."
+    },
+    {
+      "id": "rn07-manifest-safe-projection",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-safe-projection.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-safe-projection.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn07-manifest-safe-projection.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "ns07-manifest",
+      "exitCode": 0,
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns07-manifest.receipt.json",
+      "stdout": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns07-manifest.stdout.log",
+      "stderr": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns07-manifest.stderr.log",
+      "status": "PASS"
+    },
+    {
+      "id": "diff-check",
+      "exitCode": 0,
+      "status": "PASS",
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/diff-check.receipt.json"
+    },
+    {
+      "id": "index-empty",
+      "exitCode": 0,
+      "status": "PASS",
+      "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/index-empty.receipt.json"
+    }
+  ],
+  "counts": {
+    "core": {
+      "source": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/core-reporter.json",
+      "summaries": [
+        {
+          "success": true,
+          "counts": {
+            "tests": 19,
+            "failed": 0,
+            "passed": 19,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 19,
+            "suites": 0
+          },
+          "duration_ms": 17.8224,
+          "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\algorithms.test.js"
+        },
+        {
+          "success": true,
+          "counts": {
+            "tests": 12,
+            "failed": 0,
+            "passed": 12,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 12,
+            "suites": 0
+          },
+          "duration_ms": 9.7478,
+          "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\expected-cases.test.js"
+        },
+        {
+          "success": true,
+          "counts": {
+            "tests": 14,
+            "failed": 0,
+            "passed": 14,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 14,
+            "suites": 0
+          },
+          "duration_ms": 12.7432,
+          "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\normalize.test.js"
+        },
+        {
+          "success": true,
+          "counts": {
+            "tests": 2,
+            "failed": 0,
+            "passed": 2,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 2,
+            "suites": 0
+          },
+          "duration_ms": 13.0688,
+          "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\smoke.test.js"
+        },
+        {
+          "success": true,
+          "counts": {
+            "tests": 6,
+            "failed": 0,
+            "passed": 6,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 6,
+            "suites": 0
+          },
+          "duration_ms": 7.6226,
+          "file": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\core\\build-test\\test\\time.test.js"
+        },
+        {
+          "success": true,
+          "counts": {
+            "tests": 53,
+            "failed": 0,
+            "passed": 53,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "topLevel": 53,
+            "suites": 0
+          },
+          "duration_ms": 105.1161
+        }
+      ],
+      "final": {
+        "success": true,
+        "counts": {
+          "tests": 53,
+          "failed": 0,
+          "passed": 53,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 53,
+          "suites": 0
+        },
+        "duration_ms": 105.1161
+      }
+    },
+    "reactNative": {
+      "source": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/rn-jest.json",
+      "success": true,
+      "suites": 7,
+      "passedSuites": 7,
+      "tests": 99,
+      "passed": 99,
+      "failed": 0,
+      "pending": 0
+    },
+    "nativeScript": {
+      "source": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/ns-vitest.json",
+      "success": true,
+      "suites": 20,
+      "passedSuites": 20,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0,
+      "files": 7
+    }
+  },
+  "porcelainUnchangedAcrossChecks": true,
+  "beforeReceipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/checks-status-before.receipt.json",
+  "afterReceipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/checks-status-after.receipt.json",
+  "exceptions": [
+    "git diff --check excludes forbidden unrelated root package-lock.json; no contents read or diffed.",
+    "RN07 original manifest checker filesystem-denied at IDEA.md; safe projection omits its hash objects.",
+    "npm core test invokes its established build internally as expressly prescribed by E01; no target/native build.",
+    "npm exec --offline uses installed Vitest, equivalent to npx without network/install.",
+    "Core counts from additional compiled-suite JSON reporter only, not console text."
+  ]
+}

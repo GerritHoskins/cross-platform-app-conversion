@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "status": "PASS",
+  "scannedAt": "2026-10-29T07:23:27.296Z",
+  "scope": "Every files[] member by content, not extensions; final manifest scanned separately after --write in the run directory.",
+  "files": [
+    "migration/evidence/E01/a2/commands.jsonl",
+    "migration/evidence/E01/a2/entry.json",
+    "migration/evidence/E01/a2/privacy-scan.json",
+    "migration/evidence/E01/a2/verification.json",
+    "migration/evidence/E01/checks.json",
+    "migration/evidence/E01/commands.jsonl",
+    "migration/evidence/E01/effort-runs.json",
+    "migration/evidence/E01/effort-summary.json",
+    "migration/evidence/E01/entry.json",
+    "migration/evidence/E01/privacy-scan.json",
+    "migration/evidence/E01/provenance.json",
+    "migration/evidence/E01/results-matrix.json",
+    "migration/evidence/E01/size.json",
+    "migration/evidence/E01/verification.json",
+    "migration/handoffs/E01-checkpoint-a.md",
+    "migration/handoffs/E01-checkpoint-a2.md",
+    "migration/handoffs/E01.md",
+    "migration/reports/E01-comparison.md",
+    "migration/work-packages/E01.md"
+  ],
+  "filesScanned": 19,
+  "rules": [
+    {
+      "rule": "signature-PNG",
+      "count": 0
+    },
+    {
+      "rule": "signature-JPEG",
+      "count": 0
+    },
+    {
+      "rule": "signature-GIF87",
+      "count": 0
+    },
+    {
+      "rule": "signature-GIF89",
+      "count": 0
+    },
+    {
+      "rule": "signature-ZIP-local",
+      "count": 0
+    },
+    {
+      "rule": "signature-ZIP-empty",
+      "count": 0
+    },
+    {
+      "rule": "signature-ZIP-spanned",
+      "count": 0
+    },
+    {
+      "rule": "signature-GZIP",
+      "count": 0
+    },
+    {
+      "rule": "signature-PDF",
+      "count": 0
+    },
+    {
+      "rule": "signature-WEBP",
+      "count": 0
+    },
+    {
+      "rule": "base64-image-marker-1",
+      "count": 0
+    },
+    {
+      "rule": "base64-image-marker-2",
+      "count": 0
+    },
+    {
+      "rule": "base64-image-marker-3",
+      "count": 0
+    }
+  ],
+  "signatureHits": 0,
+  "base64MarkerHits": 0,
+  "hits": [],
+  "policyLiteralExemptions": 0,
+  "sensitiveData": {
+    "exitCode": 0,
+    "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a2-20261029/final-scan-sensitive-data.receipt.json",
+    "result": "Sensitive data check passed (19 files)."
+  },
+  "selfScan": "The final scan record is rescanned by content after writing; no self-hash.",
+  "phaseAHistory": "The original three-hit BLOCKED scan remains unchanged. Human Amendment A1 (2026-10-29) rewords policy prose only; identical scan signatures, markers and any-hit rule.",
+  "readOnlySensitiveData": "Explicit file arguments; no --staged/--all, no staging and no protected-file access."
+}

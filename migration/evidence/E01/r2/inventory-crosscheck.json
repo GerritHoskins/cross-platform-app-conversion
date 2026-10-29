@@ -1,0 +1,3382 @@
+{
+  "version": 1,
+  "status": "MATCH",
+  "method": "Second independent helper uses an explicit LIFO stack of nodes and path segments, no recursion, no import from the inventory builder. It tests every object for its own non-PASS string status. RFC 6901 encoding is implemented separately.",
+  "helper": "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/e01-r2-crosscheck.mjs",
+  "inputs": [
+    {
+      "path": "migration/evidence/RN07/results-r2.json",
+      "hash": "de622399ef9616c7a758b68b1026d2b4ae1368196717405fc3fe53e07ef030e1"
+    },
+    {
+      "path": "migration/evidence/NS07/results.json",
+      "hash": "af70099b67b21747eba2bdea457683d6cf2343241ee9f454ffe55c67ed65d950"
+    }
+  ],
+  "independentPointers": [
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/0/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/1/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/2/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/2/history/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/3",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/3/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/3/history/1",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/4",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/4/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/6/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/6/history/1",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/6/history/2",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/7/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/7/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/7/history/2",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/8/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/18/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/20/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/52",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/52/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/53",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/53/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/63/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/67",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/67/history/0",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/78",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/78/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/78/history/1",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/79",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/79/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/87",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/87/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/98/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/98/history/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/98/history/2",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/100/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/100/history/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/101/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/101/history/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/102/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/103/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/104/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/104/history/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/105",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/105/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/105/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/105/history/2",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/105/history/3",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/106/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/108",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/108/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/110",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/110/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/111",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/111/history/0",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/112",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/112/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/113",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/113/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/114",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/114/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/115",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/115/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/116/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/117/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/118",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/118/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/119",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/119/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/120",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/120/history/0",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/121",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/121/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/122/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/123",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/123/history/0",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/126",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/126/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/127",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/127/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/128",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/128/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/128/history/1",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/129/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/130",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/130/history/0",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/131",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/131/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/132",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/132/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/133",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/133/history/0",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/134",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/134/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/134/history/1",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/135",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/135/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/135/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/136",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/136/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/136/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/136/history/2",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/136/history/3",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/137",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/137/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/138",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/138/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/139",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/139/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/140",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/140/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/141",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/141/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/142",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/142/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/143",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/143/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/144",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/144/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/145",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/145/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/146",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/146/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/147",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/147/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/148",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/148/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/149/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/149/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/150/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/151/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/152/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/153/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/154/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/156/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/157/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/159/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/160/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/161/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/163/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/164/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/165/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/166/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/168/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/170/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/171/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/172/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/173/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/174/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/175/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/175/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/176/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/177/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/178/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/179/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/181/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/182/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/183/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/184/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/185/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/187/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/188/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/189/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/190/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/190/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/191/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/192/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/193/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/194/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/196/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/197/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/198/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/199/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/200/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/201/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/202/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/203/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/204/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/206/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/207/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/208/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/211/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/212",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/212/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/212/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/213/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/214/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/217",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/217/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/218",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/218/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/219",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/219/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/220",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/220/history/0",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/221",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/221/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/223",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/223/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/224",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/224/history/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/225",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/225/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/226/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/228/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/228/history/1",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/229/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/231/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/232/history/0",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/235/history/0",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "",
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/34",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/42",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/43",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/44",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/48",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/subcases/6",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/subcases/7",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/subcases/153",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/subcases/154",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/34",
+      "status": "N/A"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/93",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/94",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/95",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/96",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/97",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/98",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/99",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/100",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/101",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/102",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/103",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/104",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/105",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/106",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/107",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/108",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/109",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/110",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/111",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/112",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/117",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/128",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/129",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/130",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/131",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/132",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/133",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/134",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/135",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/136",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/137",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/139",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/140",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/141",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/142",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/143",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/144",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/145",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/146",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/147",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/148",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/150",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/151",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/152",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/153",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/154",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/155",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/156",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/157",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/158",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/159",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/161",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/162",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/163",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/164",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/165",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/166",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/167",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/168",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/169",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/170",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/171",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/172",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/173",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/175",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/176",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/177",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/178",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/179",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/184",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/206",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/208",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/222",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/234",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/235",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/236",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/237",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/238",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/239",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/240",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/242",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/244",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/246",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/248",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/250",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/252",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/253",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/256",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/259",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/262",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/294",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/306",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/318",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/319",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/320",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/321",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/322",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/323",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/324",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/326",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/328",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/330",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/332",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/334",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/336",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/337",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/340",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/343",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/346",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/366",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/367",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/368",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/369",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/370",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/371",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/372",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/374",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/375",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/376",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/378",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/379",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/381",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/382",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/384",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/385",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/387",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/388",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/390",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/391",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/393",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/394",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/395",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/397",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/398",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/400",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/401",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/403",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/404",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/406",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/407",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/409",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/410",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/412",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/413",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/414",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/416",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/417",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/419",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/420",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/422",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/423",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/425",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/426",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/428",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/429",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/433",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/434",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/436",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/446",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/455",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/484",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/486",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/494",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/495",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/496",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/498",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/516",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/518",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/519",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/520",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/521",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/522",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/523",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/524",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/525",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/526",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/527",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/528",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/529",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/530",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/531",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/532",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/533",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/534",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/535",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/536",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/537",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/538",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/539",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/540",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/541",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/542",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/543",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/544",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/545",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/546",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/547",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/564",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/566",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/584",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/585",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/586",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/587",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/588",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/589",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/590",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/591",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/592",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/593",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/594",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/595",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/596",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/597",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/598",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/599",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/600",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/627",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/628",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/639",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/667",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/668",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/669",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/670",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/671",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/672",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/673",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/674",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/675",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/676",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/677",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/678",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/713",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/715",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/716",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/717",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/718",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/719",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/720",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/721",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/722",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/723",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/724",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/725",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/726",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/727",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/728",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/729",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/730",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/731",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/732",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/733",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/734",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/735",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/736",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/737",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/738",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/739",
+      "status": "LIMITED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/740",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/741",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/746",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/747",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/748",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/749",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/750",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/751",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/752",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/753",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/754",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/755",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/756",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/757",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/0",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/1",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/2",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/3",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/4",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/5",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/6",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/7",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/8",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/9",
+      "status": "FAIL"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/authoritativeHistory/10",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/supplemental/7/observed",
+      "status": "NOT RUN"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/supplemental/18",
+      "status": "BLOCKED"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/supplemental/19",
+      "status": "FAIL"
+    }
+  ],
+  "independentCount": 552,
+  "inventoryCount": 552,
+  "pointerSetsIdentical": true,
+  "missing": [],
+  "extra": [],
+  "statusMismatches": [],
+  "requiredObservation": {
+    "ledger": "migration/evidence/NS07/results.json",
+    "pointer": "/supplemental/7/observed",
+    "present": true,
+    "status": "NOT RUN"
+  },
+  "countsByLedger": {
+    "migration/evidence/RN07/results-r2.json": {
+      "total": 216,
+      "byStatus": {
+        "BLOCKED": 85,
+        "FAIL": 14,
+        "LIMITED": 11,
+        "N/A": 4,
+        "NOT RUN": 96,
+        "passed": 6
+      },
+      "byKind": {
+        "nested history": 158,
+        "nested observation": 6,
+        "parent case": 8,
+        "subcase": 44
+      }
+    },
+    "migration/evidence/NS07/results.json": {
+      "total": 336,
+      "byStatus": {
+        "BLOCKED": 77,
+        "FAIL": 33,
+        "LIMITED": 180,
+        "N/A": 4,
+        "NOT RUN": 1,
+        "READY_FOR_REVIEW": 1,
+        "passed": 40
+      },
+      "byKind": {
+        "authoritative history": 11,
+        "history": 272,
+        "nested observation": 41,
+        "nested status": 1,
+        "parent case": 5,
+        "subcase": 4,
+        "supplemental": 2
+      }
+    }
+  },
+  "countsByStatus": {
+    "BLOCKED": 162,
+    "FAIL": 47,
+    "LIMITED": 191,
+    "N/A": 8,
+    "NOT RUN": 97,
+    "READY_FOR_REVIEW": 1,
+    "passed": 46
+  },
+  "countsByKind": {
+    "authoritative history": 11,
+    "history": 272,
+    "nested history": 158,
+    "nested observation": 47,
+    "nested status": 1,
+    "parent case": 13,
+    "subcase": 48,
+    "supplemental": 2
+  },
+  "kindCountSource": "Kind classification comes from inventory; independent traversal checks pointer/status coverage without sharing classification code.",
+  "nonstandardStatuses": [
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/3",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "",
+      "status": "READY_FOR_REVIEW",
+      "kind": "nested status"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/3",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/4",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/5",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/6",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/3",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/4",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/5",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/6",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/3",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/4",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/5",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/6",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/3",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/4",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/5",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/6",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/0",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/1",
+      "status": "passed",
+      "kind": "nested observation"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/2",
+      "status": "passed",
+      "kind": "nested observation"
+    }
+  ],
+  "revision1Count": 504,
+  "revision2Count": 552,
+  "delta": 48,
+  "newlyIncluded": [
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/26/observed/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/RN07/results-r2.json",
+      "pointer": "/entries/45/observed/tests/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "",
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/0/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/12/observed/reports/1/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/cases/21/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/0/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/3",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/4",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/5",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/12/observed/reports/1/matches/6",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/0/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/0",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/1",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/history/21/observed/reports/1/matches/2",
+      "status": "passed"
+    },
+    {
+      "ledger": "migration/evidence/NS07/results.json",
+      "pointer": "/supplemental/7/observed",
+      "status": "NOT RUN"
+    }
+  ],
+  "removed": [],
+  "matrixRowsUnchanged": true,
+  "parentCountsUnchanged": true
+}

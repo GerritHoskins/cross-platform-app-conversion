@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "passed": true,
+  "capturedAt": "2026-10-29T07:41:18.417Z",
+  "branch": "migration/slice-1",
+  "head": "2a79815c43e17bd3d40f0d80a15e5e6d6f3ccf91",
+  "headTree": "e649a7a7b3981efe1e99923b9ccb80c9bea376f9",
+  "indexRaw": "",
+  "porcelainRaw": " M package-lock.json\n?? migration/evidence/E01/a2/commands.jsonl\n?? migration/evidence/E01/a2/entry.json\n?? migration/evidence/E01/a2/privacy-scan.json\n?? migration/evidence/E01/a2/verification.json\n?? migration/evidence/E01/checks.json\n?? migration/evidence/E01/commands.jsonl\n?? migration/evidence/E01/effort-runs.json\n?? migration/evidence/E01/effort-summary.json\n?? migration/evidence/E01/entry.json\n?? migration/evidence/E01/privacy-scan.json\n?? migration/evidence/E01/provenance.json\n?? migration/evidence/E01/results-matrix.json\n?? migration/evidence/E01/size.json\n?? migration/evidence/E01/verification.json\n?? migration/handoffs/E01-checkpoint-a.md\n?? migration/handoffs/E01-checkpoint-a2.md\n?? migration/handoffs/E01.md\n?? migration/reports/E01-comparison.md\n?? migration/reviews/E01-r1.md\n?? migration/submissions/E01-r1.json\n?? migration/work-packages/E01.md\n",
+  "expectedPorcelain": " M package-lock.json\n?? migration/evidence/E01/a2/commands.jsonl\n?? migration/evidence/E01/a2/entry.json\n?? migration/evidence/E01/a2/privacy-scan.json\n?? migration/evidence/E01/a2/verification.json\n?? migration/evidence/E01/checks.json\n?? migration/evidence/E01/commands.jsonl\n?? migration/evidence/E01/effort-runs.json\n?? migration/evidence/E01/effort-summary.json\n?? migration/evidence/E01/entry.json\n?? migration/evidence/E01/privacy-scan.json\n?? migration/evidence/E01/provenance.json\n?? migration/evidence/E01/results-matrix.json\n?? migration/evidence/E01/size.json\n?? migration/evidence/E01/verification.json\n?? migration/handoffs/E01-checkpoint-a.md\n?? migration/handoffs/E01-checkpoint-a2.md\n?? migration/handoffs/E01.md\n?? migration/reports/E01-comparison.md\n?? migration/reviews/E01-r1.md\n?? migration/submissions/E01-r1.json\n?? migration/work-packages/E01.md\n",
+  "predicates": {
+    "gitCommandsPass": true,
+    "branch": true,
+    "head": true,
+    "indexEmpty": true,
+    "porcelainExact": true,
+    "reviewChangesRequired": true,
+    "manifestOnlyExpectedMismatch": true,
+    "onlyDecisionSectionChanged": true,
+    "inputsUnchanged": true,
+    "outputsAbsent": true,
+    "targetSourcesUnchanged": true
+  },
+  "workPackageDecision": {
+    "oldHash": "be28ab9bd18cbf2ce9aa19aefb8847d2c683e8c8e1c4fd9ca83971ebac0b64e2",
+    "newHash": "42d9ae181601d609f12072adcb2eaf48c7cf7250b0a5da55799ef523d4900ff2",
+    "reconstructedR1Hash": "be28ab9bd18cbf2ce9aa19aefb8847d2c683e8c8e1c4fd9ca83971ebac0b64e2",
+    "onlyChange": "Added Revision 1 review and revision 2 decision section; removing only that complete section reproduces the revision-1 manifest hash."
+  },
+  "nonE01InputComparisons": [
+    {
+      "path": "migration/plans/rn07-android-acceptance-checklist.md",
+      "oldHash": "3377626a98b4c51fc2d06414e695965745f66b08ada01614c2b1d394ba4aaccb",
+      "newHash": "3377626a98b4c51fc2d06414e695965745f66b08ada01614c2b1d394ba4aaccb",
+      "unchanged": true
+    },
+    {
+      "path": "migration/submissions/RN07-r2.json",
+      "oldHash": "0678a2643ab411380ef5f732241309fff1c25531ad8bff4b6c641504c21f5432",
+      "newHash": "0678a2643ab411380ef5f732241309fff1c25531ad8bff4b6c641504c21f5432",
+      "unchanged": true
+    },
+    {
+      "path": "migration/submissions/NS07-r2.json",
+      "oldHash": "3ac00171c03368c723628beba88db6112675bee0bebed4fedd3c8d7bfd5012e1",
+      "newHash": "3ac00171c03368c723628beba88db6112675bee0bebed4fedd3c8d7bfd5012e1",
+      "unchanged": true
+    },
+    {
+      "path": "migration/evidence/RN07/results-r2.json",
+      "oldHash": "de622399ef9616c7a758b68b1026d2b4ae1368196717405fc3fe53e07ef030e1",
+      "newHash": "de622399ef9616c7a758b68b1026d2b4ae1368196717405fc3fe53e07ef030e1",
+      "unchanged": true
+    },
+    {
+      "path": "migration/evidence/NS07/results.json",
+      "oldHash": "af70099b67b21747eba2bdea457683d6cf2343241ee9f454ffe55c67ed65d950",
+      "newHash": "af70099b67b21747eba2bdea457683d6cf2343241ee9f454ffe55c67ed65d950",
+      "unchanged": true
+    },
+    {
+      "path": "migration/handoffs/RN07.md",
+      "oldHash": "34adabe81ddafc8a05db023b41d2e3542d30bbb53a91310aae987ec666b79da8",
+      "newHash": "34adabe81ddafc8a05db023b41d2e3542d30bbb53a91310aae987ec666b79da8",
+      "unchanged": true
+    },
+    {
+      "path": "migration/handoffs/NS07.md",
+      "oldHash": "6fd851339f4cb72ba3edd55af9015c29c3ceb170b3191b8d4475aaa236f466a9",
+      "newHash": "6fd851339f4cb72ba3edd55af9015c29c3ceb170b3191b8d4475aaa236f466a9",
+      "unchanged": true
+    }
+  ],
+  "requiredAbsent": [
+    "migration/evidence/E01/r2",
+    "migration/handoffs/E01-checkpoint-r2.md",
+    "migration/submissions/E01-r2.json"
+  ],
+  "r1ManifestCheck": {
+    "exitCode": 1,
+    "anomalies": [
+      "MISMATCH be28ab9bd18c migration/work-packages/E01.md"
+    ],
+    "otherProblems": 0,
+    "receipt": "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-r1-manifest.receipt.json"
+  },
+  "receipts": [
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-branch.receipt.json",
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-head.receipt.json",
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-tree.receipt.json",
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-index.receipt.json",
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-porcelain.receipt.json",
+    "tools/qwen-supervisor/.runs/sol-e01-r2-b-20261029/gate-2026-10-29T07-41-17-982Z-sources.receipt.json"
+  ],
+  "bootstrap": "Initial terminal discovery was read-only and untimed; complete ordered gate recaptured here before any migration write. No protected contents read."
+}

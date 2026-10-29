@@ -1,0 +1,2084 @@
+{
+  "method": {
+    "history": "HEAD ancestry only; committer ISO timestamps; interval from previous migration(package) commit, not active work or package start. Intervening non-package commits/waits included. R00 previous package unavailable.",
+    "runRoot": "tools/qwen-supervisor/.runs",
+    "classification": "Directory basename /^sol-([a-z]+\\d+)-r(\\d+)-(.+)-(\\d{8})$/i only; nonmatching names not attributed.",
+    "runFields": "Final result numeric duration_ms/exit_code/tokens input,output,cache_read,cache_write,total and timestamp; tool_use event count; system/init model/timestamp only. No text/tool input/output retained.",
+    "inclusion": "All matching phases, including failed attempts, reviews, redactions and freeze; E01 reported in rows only, excluded from completed-track totals. Unclassified rows excluded from tracks. Present open run may have no final result.",
+    "missing": "null is unknown, never zero; totals cover known fields only; token total is reporter total, not recomputed from cache fields.",
+    "coordinatorTime": "unknown (not logged)",
+    "humanTime": "unknown (not logged)",
+    "reviewOrder": "Numeric revision order; r2 baseline record precedes r2-rerun; advice excluded from verdict sequence. Historical P01 r2–r4 non-authoritative/wrong-route records retained and labeled in report, not treated as valid Sol approvals."
+  },
+  "packages": [
+    {
+      "hash": "7d8ae9eed80d1a2ba7ed79ba5aa29e1781908199",
+      "time": "2026-10-18T23:08:00+02:00",
+      "package": "R00",
+      "subject": "migration(R00): Hermes profile and review handshake",
+      "previousPackageCommit": null,
+      "intervalFromPreviousPackageMs": null,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/R00-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings: migration/reviews/.dispatch-log:1-3 is an untracked, unmanifested file outside R00’s allowed paths (migration/work-packages/R00.md:30-34), created after review dispatch. Relocate its contents under migration/evidence/R00/ and include that file in a new revision manifest; record future dispatch handles in the parent’s reply without editing the submitted tree. All seven supplied file hashes match, and the global config hash is unchanged. Read-only inspection of runtime records confirms Qwen parent, Sol/high child, empty fallback configuration, and exact nonce delivery after the parent turn ended."
+          ]
+        },
+        {
+          "file": "migration/reviews/R00-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. R00-r1 finding resolved: migration/reviews/.dispatch-log is absent; its dispatch record is preserved in migration/evidence/R00/review-dispatch-r1.txt and included in the manifest. Every SHA-256 in R00-r2.json matches, including the profile config and unchanged global config. Git status contains only allowed, manifested paths plus the revision-2 manifest. Runtime records confirm Qwen parent, Sol/high child, no fallback, and exact nonce delivery after the parent turn ended."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/R00-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/R00-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/R00-r2.json",
+      "manifestFileCount": 9
+    },
+    {
+      "hash": "e9bbdb05ccb2950246c5ad715ec491486c58d163",
+      "time": "2026-10-19T11:21:22+02:00",
+      "package": "P01",
+      "subject": "migration(P01): reference behavior contract",
+      "previousPackageCommit": "7d8ae9eed80d1a2ba7ed79ba5aa29e1781908199",
+      "intervalFromPreviousPackageMs": 44002000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/P01-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "1. **Expected flat session IDs are not in display order.**  ",
+            "2. **The contract and submission evidence contain incorrect fixture facts.**  ",
+            "3. **The required multi-track exclusion check is not exercised.**  ",
+            "4. **A source watcher defect is omitted and the contract overstates favorites-mode behavior.**  ",
+            "5. **The citation acceptance criterion is not fully met.**  ",
+            "- Regenerate the corrected fixture twice and verify byte-identical output.",
+            "- Assert flat display IDs equal flattened group IDs for every case.",
+            "- Exercise the supplemental multi-track checks.",
+            "- Reconcile contract facts, citations, handoff results, and new revision manifest hashes.",
+            "- Confirm only allowed paths changed."
+          ]
+        },
+        {
+          "file": "migration/reviews/P01-r2.md",
+          "revision": 2,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Decision: **CHANGES_REQUIRED** (2 of 5 findings still open on revision 2; the other 3 PASS)",
+            "1. **PASS — Flat/grouped order.** `derive-expected.mjs:183-197,292-305` derives flat from groups (`groups.flatMap(g => g.sessionIds)`) and asserts the invariant. Both reruns exited 0 and are byte-identical at `ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1`. Affected cases agree: `expected-cases.json` `default-all` (lines 25-70), `single-track` (127-159), `search-case-insensitive` (180-245), `search-plus-track` (284-314).",
+            "2. **FAIL — Fixture facts (metadata).** The corrected facts are present (8 groups / 13 speakers at `contract.md:14`; Ionic `[4,2,5]` with session 3 excluded on track at `contract.md:109` / `expected-cases.json:127-159`; `node_modules` present at `contract.md:9`). But the **contract header is un-updated**: `contract.md:3` still reads \"revision 1 / 2026-10-18\", and `contract.md:6` records the **old** fixture hash `a1a4a148…` (r1) while the regenerated file is `ab44df1e…`. Required: header revision/date and the `expected-cases.json` hash must match revision 2/3.",
+            "3. **PASS — Supplemental dual-track self-check.** `derive-expected.mjs` checks both `allFiltered` and `favoritesFiltered` over synthetic dual-track sessions (lines 307-348), keeps the check out of `expected-cases.json` (11 cases, lines 4-6,466-518), and prints \"supplemental self-check PASSED (synthetic dual-track; not fixture)\".",
+            "4. **PASS — Competing-watchers defect.** Recorded at `contract.md:41` and `:95`; favorites order framed as getter-level contract intent, not observed behavior; `SessionList.vue:405-410` source confirms the unconditional `selectedSessions = filtered` assignment.",
+            "5. **PASS — Citations.** `isFirstLoad` at `sessions.ts:42`; icon map at `SessionListFilter.vue:114-125`; per-case fixture line refs attached at `contract.md:107-117`.",
+            "6. **FAIL — Scope (new).** `git status --short` shows untracked `IDEA.md` at the repo root — outside the P01 allowed list and not listed in `P01-r2.json`. No `src/`, `public/`, manifest, or native edits. Resolution: either remove it, or (preferred) **establish and record that it pre-dates and is outside this package's scope**."
+          ]
+        },
+        {
+          "file": "migration/reviews/P01-r3.md",
+          "revision": 3,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Result: CHANGES_REQUIRED",
+            "## Findings",
+            "- **PASS — 1. Flat vs grouped order:** two `node migration/reference/derive-expected.mjs` runs both exit 0 and both yield SHA-256 `ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1`; invariant asserted at `derive-expected.mjs:292-305`; default-all, single-track, search-case-insensitive, search-plus-track have flat == group-derived order.",
+            "- **PASS — 2. Fixture facts + metadata:** `contract.md:3,6,14,109` — revision 3, regenerated fixture hash, 8 groups, 13 speakers, Ionic IDs `[4,2,5]`; session 3 excluded by track; `node_modules` present.",
+            "- **PASS — 3. Supplemental check:** `derive-expected.mjs:307-348` checks both `allFiltered` and `favoritesFiltered` over synthetic dual-track sessions; labeled supplemental; remains outside the 11 fixture cases.",
+            "- **PASS — 4. Watcher defect:** `SessionList.vue:405-410` unconditionally assigns the grouped `allFiltered`; `contract.md:41,95` records it and frames favorites order as getter-level intent, not observed behavior.",
+            "- **PASS — 5. Citations:** `sessions.ts:42` (`isFirstLoad: true`); `SessionListFilter.vue:114-125` (icon map); per-case fixture line refs at `contract.md:107-117`.",
+            "- **PASS — IDEA.md provenance:** 89-byte human-authored note, hash `56b5dc0e…`, mtime 2026-10-19 08:34, `git log --all -- IDEA.md` empty; recorded and accepted as pre-existing/out-of-scope.",
+            "- **PASS — Manifest hashes:** every SHA-256 in `P01-r3.json` matches disk.",
+            "- **FAIL — Scope:** working-tree change extends to `migration/work-packages/P01.md:10` (the purpose line), beyond the status line the package allows (`P01.md:31`); no other out-of-scope source edits found.",
+            "## Routing"
+          ]
+        },
+        {
+          "file": "migration/reviews/P01-r4.md",
+          "revision": 4,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "## Decision",
+            "**APPROVE — Routing: CONTINUE C01.** All 9 independent criteria PASS.",
+            "## Findings (all PASS, reviewer re-ran and re-cited each)",
+            "1. **r3 scope fix (the revision-4 resolution) — PASS.** `git diff HEAD -- migration/work-packages/P01.md` shows only the status line changed; the purpose line (old line 10, about `node_modules`) matches HEAD. The allowed status-line-only edit is specified at `P01.md:32`. ← This was r3's only FAIL.",
+            "2. **r1 #1 flat vs grouped order — PASS.** Two `node derive-expected.mjs` runs exited 0 and both produced SHA-256 `ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1`. `derive-expected.mjs:183-197,292-305` derives flat IDs from groups and asserts the invariant (throws on mismatch). The four named cases match their grouped order in `expected-cases.json` (default-all `:25-108`, single-track `:137-158`, search-case-insensitive `:180-245`, search-plus-track `:284-314`).",
+            "3. **r1 #2 + r2 item A (fixture facts + metadata) — PASS.** `contract.md:3,6,9,14,109` records revision 4 + date, the regenerated hash, node_modules present, 8 groups / 13 speakers / 20 sessions, and Ionic IDs displayed `[4,2,5]`; session 3 is excluded by track (not name).",
+            "4. **r1 #3 (supplemental dual-track self-check) — PASS.** `derive-expected.mjs:307-348` checks both `allFiltered` and `favoritesFiltered` over synthetic dual-track sessions (IDs 100, 200; tracks AlphaTrack/BetaTrack); labeled supplemental / not fixture; `expected-cases.json` holds exactly 11 cases; `contract.md:27` documents the distinction.",
+            "5. **r1 #4 (SessionList.vue:405-410 watcher defect) — PASS.** `SessionList.vue:405-410` watches `allFiltered` and unconditionally assigns the grouped result (`selectedSessions = filtered` at 408); `contract.md:41,95` records the defect, keeps favorites expectations at getter-level `favoritesFiltered` intent (not observed behavior), tags it `[static]`, and states it was NOT fixed in P01.",
+            "6. **r1 #5 (citations) — PASS.** `sessions.ts:42` confirms `isFirstLoad: true`; `SessionListFilter.vue:114-125` is the track icon map; the per-case fixture line refs at `contract.md:107-117` match the fixture for all 11 cases.",
+            "7. **r2 item B (IDEA.md provenance) — PASS.** The file is the stated 89-byte human note; SHA-256 `56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d`; mtime 2026-10-19 08:34; `git log --all -- IDEA.md` empty. Provenance documented in `P01-r4.json:66-71` and `handoffs/P01.md:27`.",
+            "8. **Integrity — PASS.** Every SHA-256 in `P01-r4.json` (`files` + `outOfScopePreExisting`) matches the on-disk file, including contract `96bea4b9…`, script `7c763e28…`, fixture `ab44df1e…`, handoff `880fa6ce…` (independently re-verified with `verify-r4.mjs`: ALL MATCH).",
+            "9. **Scope — PASS.** `git status --short` shows only allowed P01 paths + the documented pre-existing `IDEA.md`; `git diff --name-only HEAD` shows only `migration/work-packages/P01.md` (status line only). `node_modules` present and not reinstalled; Ionic app not run; `derive-expected.mjs` is dependency-free ESM.",
+            "## Next",
+            "**C01** — P01 is approved and routed to the next eligible package (C01). C01 should use `migration/reference/expected-cases.json` (`ab44df1e…`) as the canonical expected output (do not re-derive), honor the `[static]`/`[unverified]` split, not run the Ionic app, and decide on the recorded `SessionList.vue:405-410` watcher defect (preserve vs fix) during C01/C02/C03.",
+            "## Artifacts (this package)",
+            "- `migration/reference/contract.md` — `96bea4b93cc38fa6cca1fe33eb75b9810f67d0fc8e573a89eb7d60e76063d3b1` (revision 4 header).",
+            "- `migration/reference/derive-expected.mjs` — `7c763e2800f44959e12c8e1d1e9e6931baffc9ce13ed20f731db86ab4700b954`.",
+            "- `migration/reference/expected-cases.json` — `ab44df1e22e95051e7f994565a90188679c11ff2b7715f43e8285b0619693fe1`.",
+            "- `migration/handoffs/P01.md` — `880fa6ce96b53ae8b4c217ffb246dc389cee23240e2dec6c9628f067140d72d5` (revision 4 handoff).",
+            "- `migration/submissions/P01-r4.json` — manifest (hashes re-verified against disk).",
+            "- Retained: `P01-r1.md/.json`, `P01-r2.md/.json`, `P01-r3.md/.json`, all unchanged."
+          ]
+        },
+        {
+          "file": "migration/reviews/P01-r5.md",
+          "revision": 5,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none blocking. All five authoritative P01-r1 findings are resolved:",
+            "- F1: Flat session IDs are derived from groups and asserted consistent (`derive-expected.mjs:183-197,254-305`). All 11 cases independently matched the actual source functions.",
+            "- F2: Corrected fixture facts verified: 8 groups, 20 sessions, 10 tracks, 13 speakers; Ionic-only display order `[4,2,5]`; root `node_modules` is present.",
+            "- F3: Supplemental dual-track checks pass for both filtering modes (`derive-expected.mjs:307-348`), with synthetic evidence distinguished from source-derived cases.",
+            "- F4: The competing-watchers defect and getter-level contract distinction are documented (`contract.md:41,95`). An in-memory Vue harness reproduced the defect; source remains unchanged.",
+            "- F5: Previously incorrect citations and missing case references are corrected (`contract.md:30,42,62,107-117`)."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/P01-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/P01-r2.md",
+          "revision": 2,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/P01-r3.md",
+          "revision": 3,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/P01-r4.md",
+          "revision": 4,
+          "verdict": "APPROVE"
+        },
+        {
+          "file": "migration/reviews/P01-r5.md",
+          "revision": 5,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 5,
+      "committedSubmission": "migration/submissions/P01-r5.json",
+      "manifestFileCount": 5
+    },
+    {
+      "hash": "b857af263eb30b58e63ac3c753a949eb760fdf13",
+      "time": "2026-10-19T11:43:00+02:00",
+      "package": "C01",
+      "subject": "migration(C01): core package shell",
+      "previousPackageCommit": "e9bbdb05ccb2950246c5ad715ec491486c58d163",
+      "intervalFromPreviousPackageMs": 1298000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/C01-r1-advice.md",
+          "revision": 1,
+          "verdict": null,
+          "advice": true,
+          "findingLines": [
+            "- original fixed text,",
+            "- reproduced Node v26.3.0 directory-argument failure,",
+            "- exact replacement text,",
+            "- this explicit second-opinion exception."
+          ]
+        },
+        {
+          "file": "migration/reviews/C01-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "**Independent verification** — Windows, Node v26.3.0, npm 11.1.0:",
+            "**Exception and evidence**",
+            "- The original test-script directory argument independently reproduced `MODULE_NOT_FOUND`, exit 1.",
+            "- `package.json:20` exactly matches the narrow replacement authorized by `migration/reviews/C01-r1-advice.md:3–23`. Both corrected full npm test runs passed; this is not a waiver.",
+            "- All 12 recorded SHA-256 values matched before and after verification, including the corrected package.json, handoff, advice, and disclosed out-of-scope files.",
+            "- Package configuration, exports, exact dependency pins, and both smoke tests match C01. No domain implementation or secrets found.",
+            "- Branch remains `migration/slice-1`; HEAD remains `1ab8233ea6cfc71da6171f349d8bde25d729d05b`. `git diff HEAD` is empty. Status contains exactly the 13 expected untracked paths, with generated directories ignored and no staged or modified tracked files.",
+            "- The root pack dry-run now lists 238 files versus the earlier recorded 235, consistent with the three subsequently added review artifacts; the actual core package still contains exactly three files.",
+            "Findings: none"
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/C01-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/C01-r1.json",
+      "manifestFileCount": 8
+    },
+    {
+      "hash": "7b4078063a035d4b4da73e06f6255dfee1705024",
+      "time": "2026-10-19T13:12:07+02:00",
+      "package": "C02",
+      "subject": "migration(C02): core types, time parsing and normalization",
+      "previousPackageCommit": "b857af263eb30b58e63ac3c753a949eb760fdf13",
+      "intervalFromPreviousPackageMs": 5347000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/C02-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings: Repository identity mismatch; review stopped before source review or test execution. `git rev-parse HEAD` returned `c4ca6fcce7762e2c6e794a06148e9f1e2ffb63be`, but the review request and migration/submissions/C02-r1.json:8 identify `c4ca6fc91d24090d3d166e0485723276e44cbcc5`. The branch is `migration/slice-1`, and the initial `git status --porcelain -uall` exactly matches the requested path list. C01-r1 and R00-r2 contain the required prerequisite approvals. Reconcile the actual baseline with the submission and review request; do not change repository history merely to match an unverified identifier."
+          ]
+        },
+        {
+          "file": "migration/reviews/C02-r2.md",
+          "revision": 2,
+          "verdict": "BLOCKED",
+          "advice": false,
+          "findingLines": [
+            "Findings: The baseline status differs from the exact required list: `git status --porcelain -uall` additionally reports `?? migration/core/test/time.test.ts`. Although this file appears in the package’s allowed paths and your full submission list, it is absent from the explicitly permitted baseline status. Your instruction requires stopping on any other difference."
+          ]
+        },
+        {
+          "file": "migration/reviews/C02-r2-rerun.md",
+          "revision": 2,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- `migration/submissions/C02-r2.json:94–118`: all six `unchangedC01Files` hashes disagree with disk and the approved C01 manifest: `package.json`, `tsconfig.json`, `tsconfig.test.json`, `.gitignore`, `test/smoke.test.ts`, and `package-lock.json`. The recorded tsconfig hash has 68 characters; the lockfile hash has 71, so neither is a valid SHA-256 value. The actual files are byte-identical to HEAD and match C01’s original hashes. Recompute these values in a new revision; do not modify the unchanged files to match incorrect hashes.",
+            "- `migration/work-packages/C02.md:3` and `migration/handoffs/C02.md:12` incorrectly claim the r1 reviewer confirmed file hashes. `migration/reviews/C02-r1.md:5` explicitly says hash verification was unperformed. Correct these summaries without altering frozen submissions or reviewer artifacts.",
+            "- No implementation findings. Fixed interfaces, time behavior, normalization rules, and required test coverage satisfy C02. Branch/HEAD match; all `files[]` hashes, fixture hash, and expected status paths match. Fresh typecheck exited 0; both fresh test runs exited 0 with 22 passed and 0 failed. Dependency diff exited 0; supplementary normalization/error/purity probes passed. No source or review files were edited."
+          ]
+        },
+        {
+          "file": "migration/reviews/C02-r3.md",
+          "revision": 3,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. Manifest HEAD, branch and status match; all 21 hashes pass; all six unchanged C01 files match the approved baseline. Prior hash and review-history defects are corrected. Interfaces, normalization and time behavior satisfy C02."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/C02-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/C02-r2.md",
+          "revision": 2,
+          "verdict": "BLOCKED"
+        },
+        {
+          "file": "migration/reviews/C02-r2-rerun.md",
+          "revision": 2,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/C02-r3.md",
+          "revision": 3,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 3,
+      "committedSubmission": "migration/submissions/C02-r3.json",
+      "manifestFileCount": 13
+    },
+    {
+      "hash": "7461a5ac88e0090c311610a113976e9db81ca51e",
+      "time": "2026-10-20T16:57:58+02:00",
+      "package": "C03",
+      "subject": "migration(C03): selection, grouping and favorites",
+      "previousPackageCommit": "7b4078063a035d4b4da73e06f6255dfee1705024",
+      "intervalFromPreviousPackageMs": 99951000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/C03-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- `migration/core/test/expected-cases.test.ts:30-44,82-102,115-118` omits and ignores the fixture's actual `action` field, incorrectly claiming it does not exist. Both action cases contain machine-readable `{ op, sessionId }`. Add the optional action to `FixtureCase` and execute it directly, removing the case-name map and description parsing as required by C03 step 4.",
+            "- `migration/core/test/algorithms.test.ts:242-257` passes a mutable selection result to `groupSessions`, not the frozen sessions array. Also, `expected-cases.test.ts:123-138` checks selection length and grouped order but never raw selection order, despite the handoff claiming otherwise. In-memory mutation probes confirmed that both an input-mutating grouping sort and an incorrectly sorted selection output still pass all 51 tests. Add a direct grouping call on a reverse-ordered, deeply frozen array and assert that selection preserves a deliberately nonchronological input order.",
+            "- Correct verification records: `migration/handoffs/C03.md:36` and `migration/submissions/C03-r1.json:136` describe a Vite build, but `migration/core/package.json:19-21` runs TypeScript. Update the handoff's selection-order claim at line 77 to match the revised assertions."
+          ]
+        },
+        {
+          "file": "migration/reviews/C03-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. Previous findings are addressed: fixture actions are applied directly (`expected-cases.test.ts:104-115`), raw selection order is asserted (`:120-125`; `algorithms.test.ts:326-348`), and grouping receives deeply frozen, reverse-chronological input (`algorithms.test.ts:286-324`). Verification records correctly describe TypeScript. HEAD, branch, scope and all 24 hashes match."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/C03-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/C03-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/C03-r2.json",
+      "manifestFileCount": 11
+    },
+    {
+      "hash": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+      "time": "2026-10-21T17:31:53+02:00",
+      "package": "RN01",
+      "subject": "migration(RN01): Expo shell and verified Android development build",
+      "previousPackageCommit": "7461a5ac88e0090c311610a113976e9db81ca51e",
+      "intervalFromPreviousPackageMs": 88435000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN01-r1.md",
+          "revision": 1,
+          "verdict": "BLOCKED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- `migration/react-native/src/components/app-tabs.web.tsx:38`: independently reproduced TS2322 under Node v24.19.0; `npm run typecheck` exits 2. RN01 requires exit 0. The failing template support file is outside the permitted hand-authored edits (`migration/work-packages/RN01.md:39-42,104`). An owner decision authorizing a narrowly scoped typing correction is required; do not exclude the file, weaken checks or change dependency pins without authorization.",
+            "- Native acceptance remains blocked: `emulator -list-avds` returned no AVDs, and `adb devices` showed no devices. Provide an assigned SDK AVD through authorized environment support; RN01 prohibits provisioning it. Build/install and observed development-client launch remain unverified (`migration/work-packages/RN01.md:123-127,141-143`).",
+            "- `migration/react-native/src/app/_layout.tsx:4` returns only `<Stack />`, without configuring the index screen title `Conference`, required by RN01 line 101. Add the explicit index-screen title.",
+            "- `migration/submissions/RN01-r1.json:17` incorrectly identifies C02-r1 as APPROVE. That review says CHANGES_REQUIRED; the approval is C02-r3. Correct the baseline reference in the next submission."
+          ]
+        },
+        {
+          "file": "migration/reviews/RN01-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. R1 findings are resolved: host-instance ref typing preserves forwarding (`migration/react-native/src/components/app-tabs.web.tsx:34-39`); the index title is configured (`src/app/_layout.tsx:6`); approved baseline references are corrected (`migration/submissions/RN01-r2.json:19-21`); native acceptance now has build/install/launch and observed-screen evidence. Branch, HEAD/tree and submitted inventory match; hash verification reports 123 entries, 0 problems. Protected paths and index are unchanged."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN01-r1.md",
+          "revision": 1,
+          "verdict": "BLOCKED"
+        },
+        {
+          "file": "migration/reviews/RN01-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/RN01-r2.json",
+      "manifestFileCount": 122
+    },
+    {
+      "hash": "f78a759741b57ed1a19c7b6630af67640571ff61",
+      "time": "2026-10-21T20:24:58+02:00",
+      "package": "RN02",
+      "subject": "migration(RN02): integrate compiled core and bundled conference data",
+      "previousPackageCommit": "af44ce10e1c3c6c62f598a8f2c17cfda943872be",
+      "intervalFromPreviousPackageMs": 10385000,
+      "runMetrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "wallClock": "unknown",
+      "tokensAvailability": "unknown",
+      "unknownReason": "No classified local run directory; R00–RN02 used Qwen-parent sessions, not captured by this run archive.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN02-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- Native evidence omits a failed command and misstates shutdown/error status. `migration/evidence/RN02/final-android-run.log:706-718` proves build/install/bundling, but `:720-735` records Node heap exhaustion and `expo_run_android_exit=134`. `final-app-pid.logcat:125-166` also contains a nonfatal ReactNoCrashSoftException, contradicting the zero-exception claim in `migration/handoffs/RN02.md:43`. Correct the handoff/manifest to distinguish successful build and observed UI from the subsequent Metro failure and nonfatal startup exception; document any recovery rather than claiming only intentional shutdown.",
+            "- Required visual inspection remains outstanding (`migration/handoffs/RN02.md:44`; package `migration/work-packages/RN02.md:135`). No vision tool is exposed to this reviewer, so I could not inspect `final-ui.png`. Obtain a vision-capable coordinator's inspection of that exact screenshot and include its evidence; XML text is insufficient.",
+            "- The lockfile removes `dev` metadata from 41 existing registry entries, beyond the local-link/root dependency additions—for example, `migration/react-native/package-lock.json:1472-1480`. The submission acknowledges these are dev-only chains (`migration/submissions/RN02-r1.json:80,325`), not necessary local-core linkage metadata. This conflicts with the minimal-lockfile boundary and stop-on-unrelated-churn rule (`migration/work-packages/RN02.md:41,98`). Regenerate a compliant lockfile without hand-editing entries, or stop for an explicit human scope decision.",
+            "- Submission inventory is incomplete: new `migration/evidence/RN02/tmp-core-test.log` and `tmp-install.log` are absent from `files[]` and pre-existing-change records. Account for or remove these scratch logs in the next revision. Also correct `migration/handoffs/RN02.md:51`: the manifest contains 31 deliverables, not 30.",
+            "- Complete screenshot inspection and accurately reconcile the native failure/recovery evidence. If recovery was not captured, repeat the scoped current-JS observation using the existing client, recording the owned Metro process and its termination.",
+            "- After correcting the lockfile, repeat the prescribed clean-reinstall, unchanged-lockfile, integration, typecheck, twice-Jest and Android-export gates; regenerate the next revision's packet hashes.",
+            "- Independent read-only checks passed under Node v24.19.0: integration verification from repository and unrelated working directories; target typecheck; two Jest runs, each 4/4 tests; core no-emit checks and existing compiled tests, 53/53. Manifest verification reports 32 hash entries, 0 problems; branch/HEAD/tree match; protected paths, IDEA hash and index are unchanged. Reviewed recorded reinstall/export evidence and verified the exported artifact hash. Install/build commands were not rerun. No files were modified."
+          ]
+        },
+        {
+          "file": "migration/reviews/RN02-r2.md",
+          "revision": 2,
+          "verdict": "BLOCKED",
+          "advice": false,
+          "findingLines": [
+            "## Findings",
+            "1. **MAJOR — Lockfile scope decision remains outstanding.** The unchanged lockfile still includes the 41 registry-entry `dev` re-marks identified in r1. Reproduction across npm versions explains the churn but does not authorize it. The handoff now correctly treats this as a requested human exception, not an accepted deviation (`migration/handoffs/RN02.md:11`; `migration/submissions/RN02-r2.json:137-139,383`). The existing boundary still permits only local-package/linkage metadata (`migration/work-packages/RN02.md:41,98`). Approval requires that scope decision or an authorized compliant correction; this reviewer cannot grant the exception.",
+            "2. **MAJOR — Required Git checks could not be independently completed within the command restriction.** This review was explicitly limited to the single hash-gate command. Consequently, no `git rev-parse`, ancestor check, protected-path diff, staged diff or Git-status command was run. Recorded claims (`migration/submissions/RN02-r2.json:8,28-30,378`) cannot substitute for live verification. The hash tool checks file hashes only, not Git state (`migration/tools/manifest-hashes.mjs:62-82`).",
+            "3. **NOTE — Native failure/recovery narrative is substantively corrected.** The r1 log establishes successful build, installation/open progression and bundling before host Node heap exhaustion and exit 134 (`migration/evidence/RN02/final-android-run.log:706-735`). R2 separately records Metro readiness and fresh bundling without an OOM in the captured log (`r2-metro.log:13-16`). Its app log discloses the soft exception at 16:42:17 and subsequent bundle loading and `Running \"main\"` (`r2-app-pid.logcat:123-164,169-178,245`). XML contains each required diagnostic text (`r2-ui.xml:1`). This supports observed recovery/rendering, not general stability beyond the recorded window.",
+            "4. **MINOR — Corrected handoff still uses inaccurate literal quotations.** `migration/handoffs/RN02.md:9` attributes `Installing APK ... INSTALL SUCCESSFUL` and `FATAL ERROR: Reached heap limit...` to the r1 log. The actual cited log shows `› Installing ...`, subsequent opening/bundling, and `FATAL ERROR: Ineffective mark-compacts near heap limit...` (`final-android-run.log:713-724`). Preserve the substantive interpretation, but use accurate quotations or label these as paraphrases in a future authorized revision.",
+            "## r1 findings closure",
+            "1. **CLOSED — Native diagnosis, substantively.** Failure, nonfatal exception and rendered UI are now distinguished (`migration/handoffs/RN02.md:9,33-38`), supported by the logs cited above. Finding 4 above is a residual quotation-accuracy issue.",
+            "2. **CLOSED — Visual inspection.** The delegated report identifies both exact screenshots, delegation `deleg_ed15c8ec`, expected visible text, absence of error states and PASS (`migration/evidence/RN02/r2-visual-inspection.md:3-25`). This is acceptable under the explicit coordinator-inspection route (`migration/work-packages/RN02.md:135`), also used by RN01 (`migration/reviews/RN01-r2.md:5`). I could not directly view the PNG with the exposed tools; I relied on this recorded pixel inspection and corroborating XML text.",
+            "3. **OPEN — Lockfile scope.** Correct escalation is not human authorization. No approval of the exception is supplied.",
+            "4. **CLOSED — Submitted inventory discrepancy.** The current evidence-directory listing matches the submitted evidence paths; neither scratch log remains. Their removal is documented (`migration/handoffs/RN02.md:12`; submission `:380`). The seven product paths agree between handoff `:14-16` and submission `:131-164`; their hashes match r1. The gate validates the current packet inventory. The handoff’s “15 versus 18” description is not the actual r1 wording, which cited 31 versus 30 plus omitted scratch logs (`migration/reviews/RN02-r1.md:16`), but the current inventory issue is resolved.",
+            "## Mechanical checks",
+            "- **Hash gate:** exact permitted command executed; exit 0; **50 hash entries, 0 problem(s)**.",
+            "- **HEAD:** `.git/HEAD:1` names `migration/slice-1`; its loose ref contains `af44ce10e1c3c6c62f598a8f2c17cfda943872be`, matching the manifest. Requested `git rev-parse` was not executed.",
+            "- **Ancestor:** not independently verified.",
+            "- **Protected-path dirty-tree diff / staged diff:** recorded clean in the submission; not independently verified.",
+            "- **IDEA.md:** current untracked status not independently verified. SHA-256 **MATCH**: `56b5dc0ebd13907b3214f0325c11380e03d463c29284f3213054de7f0a097d9d`.",
+            "- **Recorded software gates:** core 53/53 (`r2-core-test.log:66-72`); reinstall and unchanged lockfile (`r2-exits.txt:9-11`); integration PASS (`r2-verify-core-integration.log:7-36`); typecheck exit 0 (`r2-exits.txt:13`); Jest 4/4 twice (`r2-test-run1.log:5-9`, `r2-test-run2.log:5-9`); Android export (`r2-android-export.log:28-34`). These were reviewed, not rerun.",
+            "- No files modified; no commit, publication or RN03 work performed.",
+            "## Required response from human"
+          ]
+        },
+        {
+          "file": "migration/reviews/RN02-r3.md",
+          "revision": 3,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. Prior blockers are resolved: the manifest records explicit human authorization, and independent baseline comparison confirms exactly the authorized 41 dev:true removals plus local-core linkage metadata, with no other dependency changes. The native-log narrative is substantively accurate and the quotation correction is adequate (`migration/handoffs/RN02.md:18-45`). Branch, HEAD/tree and ancestor match the manifest; protected paths and index remain unchanged. All changed/untracked files are accounted for."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN02-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/RN02-r2.md",
+          "revision": 2,
+          "verdict": "BLOCKED"
+        },
+        {
+          "file": "migration/reviews/RN02-r3.md",
+          "revision": 3,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 3,
+      "committedSubmission": "migration/submissions/RN02-r3.json",
+      "manifestFileCount": 53
+    },
+    {
+      "hash": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+      "time": "2026-10-25T10:27:26+01:00",
+      "package": "RN03",
+      "subject": "migration(RN03): conference state and native schedule browsing",
+      "previousPackageCommit": "f78a759741b57ed1a19c7b6630af67640571ff61",
+      "intervalFromPreviousPackageMs": 313348000,
+      "runMetrics": {
+        "runCount": 3,
+        "durationKnownRuns": 3,
+        "totalDurationMs": 1244405,
+        "medianDurationMs": 325712,
+        "tokens": {
+          "input": {
+            "total": 3593870,
+            "knownRuns": 3
+          },
+          "output": {
+            "total": 35066,
+            "knownRuns": 3
+          },
+          "cacheRead": {
+            "total": 3364480,
+            "knownRuns": 3
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 3
+          },
+          "total": {
+            "total": 3628936,
+            "knownRuns": 3
+          }
+        },
+        "toolCalls": {
+          "total": 129,
+          "knownRuns": 3
+        },
+        "exitCodes": {
+          "0": 3
+        },
+        "runIds": [
+          "sol-rn03-r2-fix-prepare-20261024",
+          "sol-rn03-r2-prepare-20261024",
+          "sol-rn03-r2-review-20261024"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN03-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- MAJOR — Native evidence contradicts the submitted fixture/core. `migration/evidence/RN03/RN03-native-observations.txt:24-27` claims exactly five matches for `ionic` and lists incorrect session times. Independently executing the real core against the bundled fixture produces 15 matches, consistent with the frozen case. For example, “University of Ionic” starts at 9:15 am, not 12:15 pm; “Ionic Tooling” starts at 9:45 am, not 2:30 pm. Reconcile the actual captures/current bundle with the fixture and correct the record from observed evidence, distinguishing mounted rows from total results. Capture the required mixed-case native search and explicit clear/return sequence. Pixel inspection remains outstanding: `migration/handoffs/RN03.md:32-33` delegates it but supplies no completed inspection; this reviewer has no image-inspection tool.",
+            "- MODERATE — The screen search test does not establish the frozen matching results. `migration/react-native/__tests__/schedule-screen.test.tsx:291-296` checks only that session 4 appears and session 1 disappears. A screen that drops the other matching sessions would pass. Add virtualization-aware assertions covering the expected section/row mapping for `IOnic`, while retaining real SectionList rendering.",
+            "- MINOR — Per-suite counts are inaccurate in `migration/handoffs/RN03.md:18-19,26` and `migration/submissions/RN03-r1.json:33-34,94,99`. Jest’s JSON results report conference-state 24, schedule-screen 8, shell-screen 4; the total remains 36. Correct these records in the next revision and recompute hashes.",
+            "- Independently passed under Node v24.19.0: manifest verification (36 entries, zero problems), integration verification, target typecheck, and two consecutive full Jest runs (3 suites, 36 tests each). A further JSON-report run confirmed the suite counts.",
+            "- Branch, HEAD/tree and RN02 ancestor match the submission. Protected-path diff, staged diff and whitespace checks pass. RN02 records remain unchanged against HEAD. IDEA.md was hashed only and matches the recorded protected baseline.",
+            "- Existing Android export metadata, artifact name and byte size match the submission; export was not rerun because review is read-only.",
+            "- Before resubmission: strengthen the screen search assertion, rerun the prescribed automated gates, reconcile native evidence, complete documented pixel inspection through a vision-capable coordinator, correct counts and verify the new manifest with zero problems.",
+            "- No files were modified, staged or committed; RN04 was not started."
+          ]
+        },
+        {
+          "file": "migration/reviews/RN03-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. R1 findings are resolved:",
+            "- The strengthened search test inspects the actual rendered SectionList’s complete section-title/key/ordered-row mapping against the frozen cases, including clear restoration and truncation negative controls (`migration/react-native/__tests__/schedule-screen.test.tsx:292-397`).",
+            "- Corrected native observations distinguish 15 matching sessions from viewport subsets, correct session times, and document the actual mixed-case search/clear/favorites/return chronology. Timestamped acquisition logs and completed independent pixel inspection support the selected captures (`migration/evidence/RN03/RN03-native-observations.txt:14-84`; `migration/evidence/RN03/r2-sol-packet/pixel-inspection-verbatim.md:7-75`).",
+            "- Current per-suite counts are corrected to state 24, screen 8, shell 4. Runtime implementation files remain unchanged from r1; the amended screen test stays in scope."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN03-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/RN03-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/RN03-r2.json",
+      "manifestFileCount": 230
+    },
+    {
+      "hash": "a2d83ca18b7b451dad5b1d859257969d6ab98e6c",
+      "time": "2026-10-25T12:32:09+01:00",
+      "package": "RN04",
+      "subject": "migration(RN04): session detail route and favorite controls",
+      "previousPackageCommit": "c283c7eaa0d80ad72dd4d39fe8c10d986ea74257",
+      "intervalFromPreviousPackageMs": 7483000,
+      "runMetrics": {
+        "runCount": 11,
+        "durationKnownRuns": 11,
+        "totalDurationMs": 4618794,
+        "medianDurationMs": 345667,
+        "tokens": {
+          "input": {
+            "total": 9986973,
+            "knownRuns": 11
+          },
+          "output": {
+            "total": 128423,
+            "knownRuns": 11
+          },
+          "cacheRead": {
+            "total": 9288704,
+            "knownRuns": 11
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 11
+          },
+          "total": {
+            "total": 10115396,
+            "knownRuns": 11
+          }
+        },
+        "toolCalls": {
+          "total": 356,
+          "knownRuns": 11
+        },
+        "exitCodes": {
+          "0": 11
+        },
+        "runIds": [
+          "sol-rn04-r1-freeze-20261025",
+          "sol-rn04-r1-freeze2-20261025",
+          "sol-rn04-r1-implement-20261025",
+          "sol-rn04-r1-native-20261025",
+          "sol-rn04-r1-review-20261025",
+          "sol-rn04-r2-freeze-20261025",
+          "sol-rn04-r2-freeze2-20261025",
+          "sol-rn04-r2-native-20261025",
+          "sol-rn04-r2-native2-20261025",
+          "sol-rn04-r2-native3-20261025",
+          "sol-rn04-r2-review-20261025"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN04-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings:",
+            "- Required native detail-toggle removal was not exercised. `migration/work-packages/RN04.md:142` requires detail add/remove observations, while `migration/handoffs/RN04.md:81` and `migration/evidence/RN04/native/capture-notes.md:105` explicitly leave removal automated-only. Add timestamped native removal evidence and coordinator pixel inspection; no product change is currently indicated.",
+            "- Export evidence needs reconciliation. `migration/submissions/RN04-r1.json:1407-1411` pairs the phase C export receipt with the phase A artifact inventory. The HBC hash in `migration/evidence/RN04/checks-a/android-artifacts.json:143-145` does not match the current same-path, same-size artifact. Preserve the historical inventory and distinguish it from a fresh read-only inventory of the current export; this mismatch alone does not establish a product defect.",
+            "- Native detail removal: verify immediate return to “Add to favorites,” unselected state, no confirmation alert, and removal reflected in Favorites; capture and visually inspect the result.",
+            "- Reconcile export inventory metadata and freeze a new revision with matching hashes.",
+            "- Independently passed under Node v24.19.0: manifest verification (294 hash entries, zero problems), integration verification, typecheck, two consecutive full Jest runs (4 suites, 60 tests each), whitespace, protected-path and staged-diff checks. Manifest branch/HEAD/tree, baseline ancestry, scope and protected IDEA.md hash match. Reviewed successful Android-export receipts; did not rerun builds or device actions. Native cold entry remains explicitly unverified under the package’s permitted development-client exception. No repository files were changed."
+          ]
+        },
+        {
+          "file": "migration/reviews/RN04-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. Both revision 1 findings are resolved:",
+            "- Native detail removal now has timestamped acquisition evidence, selected→unselected XML, no dialog nodes, Favorites propagation and coordinator pixel inspection (`migration/evidence/RN04/r2-native-retry2/capture-notes.md:30-38`; `migration/evidence/RN04/r2-pixel-inspection-coordinator.md:9-18`).",
+            "- Export evidence distinguishes the preserved phase A inventory from the current phase C inventory. Independently verified all 29 current artifact sizes/hashes and the reconciliation: 28 unchanged, one differing HBC (`migration/evidence/RN04/checks-r2/android-artifacts-current.json`; `migration/evidence/RN04/checks-r2/export-inventory-reconciliation.json:3-24`).",
+            "- All eight implementation/test files remain unchanged from revision 1; scope and acceptance coverage are satisfied."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN04-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/RN04-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/RN04-r2.json",
+      "manifestFileCount": 410
+    },
+    {
+      "hash": "0bfead89e33f2632c226f4f490c8eb98a80e0ca1",
+      "time": "2026-10-25T14:03:25+01:00",
+      "package": "RN05",
+      "subject": "migration(RN05): track filter modal",
+      "previousPackageCommit": "a2d83ca18b7b451dad5b1d859257969d6ab98e6c",
+      "intervalFromPreviousPackageMs": 5476000,
+      "runMetrics": {
+        "runCount": 4,
+        "durationKnownRuns": 4,
+        "totalDurationMs": 2220291,
+        "medianDurationMs": 530870,
+        "tokens": {
+          "input": {
+            "total": 5576226,
+            "knownRuns": 4
+          },
+          "output": {
+            "total": 53866,
+            "knownRuns": 4
+          },
+          "cacheRead": {
+            "total": 5273856,
+            "knownRuns": 4
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 4
+          },
+          "total": {
+            "total": 5630092,
+            "knownRuns": 4
+          }
+        },
+        "toolCalls": {
+          "total": 160,
+          "knownRuns": 4
+        },
+        "exitCodes": {
+          "0": 4
+        },
+        "runIds": [
+          "sol-rn05-r1-freeze-20261025",
+          "sol-rn05-r1-implement-20261025",
+          "sol-rn05-r1-native-20261025",
+          "sol-rn05-r1-review-20261025"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN05-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. The eight-file implementation satisfies the selector, local draft, Done/replacement, close/discard, accessibility and schedule-control contracts. Router tests compare actual SectionList groups/IDs against frozen cases and cover search/favorites preservation, reopening, loading/retry and unchanged loader counts. Native acquisition records and coordinator pixel inspection support the required Android observations (`migration/evidence/RN05/native/capture-notes.md:81-104`; `migration/evidence/RN05/pixel-inspection-coordinator.md:11-29`)."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN05-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/RN05-r1.json",
+      "manifestFileCount": 241
+    },
+    {
+      "hash": "f8b50216c36449f1aac6e35e7c254d466ca941fc",
+      "time": "2026-10-25T16:51:31+01:00",
+      "package": "RN06",
+      "subject": "migration(RN06): swipe actions on schedule rows",
+      "previousPackageCommit": "0bfead89e33f2632c226f4f490c8eb98a80e0ca1",
+      "intervalFromPreviousPackageMs": 10086000,
+      "runMetrics": {
+        "runCount": 10,
+        "durationKnownRuns": 10,
+        "totalDurationMs": 5405214,
+        "medianDurationMs": 482144,
+        "tokens": {
+          "input": {
+            "total": 13827838,
+            "knownRuns": 10
+          },
+          "output": {
+            "total": 124395,
+            "knownRuns": 10
+          },
+          "cacheRead": {
+            "total": 13055232,
+            "knownRuns": 10
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 10
+          },
+          "total": {
+            "total": 13952233,
+            "knownRuns": 10
+          }
+        },
+        "toolCalls": {
+          "total": 415,
+          "knownRuns": 10
+        },
+        "exitCodes": {
+          "0": 10
+        },
+        "runIds": [
+          "sol-rn06-r1-freeze-20261025",
+          "sol-rn06-r1-implement-20261025",
+          "sol-rn06-r1-implement2-20261025",
+          "sol-rn06-r1-implement3-20261025",
+          "sol-rn06-r1-implement4-20261025",
+          "sol-rn06-r1-implement5-20261025",
+          "sol-rn06-r1-native-20261025",
+          "sol-rn06-r1-native2-20261025",
+          "sol-rn06-r1-native3-20261025",
+          "sol-rn06-r1-review-20261025"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN06-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none. The seven-file implementation satisfies RN06 under Amendments A1/A2: shared favorite handling, alert-button settlement, right-only actions, single-open tracking, selection-change closure, link guard, retained accessible buttons and stable keys. The authorized Swipeable test double is confined to test infrastructure; Jest results are not treated as real gesture evidence. Native acquisition records and coordinator pixel inspection support the required bounded Android observations (`migration/evidence/RN06/pixel-inspection-coordinator.md:13-45`). Historical blockers and superseded captures remain explicitly disclosed."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN06-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/RN06-r1.json",
+      "manifestFileCount": 718
+    },
+    {
+      "hash": "c02ae32d04828c403411865cf43aa6a1f6e828b5",
+      "time": "2026-10-26T11:51:23+01:00",
+      "package": "RN07",
+      "subject": "migration(RN07): Android acceptance on emulator with fixes F-1..F-4",
+      "previousPackageCommit": "f8b50216c36449f1aac6e35e7c254d466ca941fc",
+      "intervalFromPreviousPackageMs": 68392000,
+      "runMetrics": {
+        "runCount": 20,
+        "durationKnownRuns": 20,
+        "totalDurationMs": 22685766,
+        "medianDurationMs": 765051,
+        "tokens": {
+          "input": {
+            "total": 60237551,
+            "knownRuns": 20
+          },
+          "output": {
+            "total": 414782,
+            "knownRuns": 20
+          },
+          "cacheRead": {
+            "total": 57929088,
+            "knownRuns": 20
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 20
+          },
+          "total": {
+            "total": 60652333,
+            "knownRuns": 20
+          }
+        },
+        "toolCalls": {
+          "total": 1021,
+          "knownRuns": 20
+        },
+        "exitCodes": {
+          "0": 20
+        },
+        "runIds": [
+          "sol-rn07-r1-a11y-20261026",
+          "sol-rn07-r1-c-20261026",
+          "sol-rn07-r1-c2-20261026",
+          "sol-rn07-r1-device1-20261025",
+          "sol-rn07-r1-device2-20261025",
+          "sol-rn07-r1-fix1-20261025",
+          "sol-rn07-r1-g1-20261025",
+          "sol-rn07-r1-g1b-20261025",
+          "sol-rn07-r1-g2a-20261025",
+          "sol-rn07-r1-g2b-20261025",
+          "sol-rn07-r1-g2c-20261025",
+          "sol-rn07-r1-g3-20261026",
+          "sol-rn07-r1-gates-20261025",
+          "sol-rn07-r1-gates2-20261025",
+          "sol-rn07-r1-gates3-20261025",
+          "sol-rn07-r1-review-20261026",
+          "sol-rn07-r2-c-20261026",
+          "sol-rn07-r2-redact-20261026",
+          "sol-rn07-r2-redact2-20261026",
+          "sol-rn07-r2-review-20261026"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/RN07-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings: Required coordinator pixel inspection is incomplete. `migration/work-packages/RN07.md:6,71` requires direct inspection of every B/G frame, but `migration/evidence/RN07/pixel-inspection-coordinator.md:146,341,634,894,908` explicitly leaves substantial sets NOT INSPECTED. This includes acceptance outcomes, not just setup: candidate-2 G02 first-tap frames are unviewed (`:827-850`), while G02 is declared PASS in `migration/evidence/RN07/results.json:7037-7044`; candidate-2 F03 outcome frames are likewise unviewed (`pixel-inspection-coordinator.md:749-760`) while F03 is PASS (`results.json:6190-6211`). The XML evidence is useful but does not satisfy the separate visual gate. Complete the mandated inspection in a supplemental report, reconcile affected results/handoff and freeze revision 2. Reducing inspection scope instead requires an explicit human amendment; none of D1–D12 grants that exception. No additional product-code correction identified."
+          ]
+        },
+        {
+          "file": "migration/reviews/RN07-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. The supplemental coordinator report resolves r1’s incomplete visual gate, including G02 first-tap outcomes (`migration/evidence/RN07/pixel-inspection-coordinator-r2.md:199-215`) and valid F03 replacements (`:310-313`). Independently reconciled coverage of all 1,028 B/G PNGs, report references, result counts and unchanged case statuses. D13’s 35 text-log redactions and nine PNG redactions match recorded hashes; PNG dimensions and opaque-black regions verified. Approval is bounded by the recorded human decisions: native cold links, diagonal gesture failure, TalkBack traversal/focus, keyboard insets and live font-scale recreation issues remain disclosed—not passed or resolved (`migration/handoffs/RN07.md:216-219,269`). Technical approval does not constitute unqualified native acceptance or human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/RN07-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/RN07-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/RN07-r2.json",
+      "manifestFileCount": 19338
+    },
+    {
+      "hash": "8d5b2fe30fe8bf5029e1946663955e92984b839e",
+      "time": "2026-10-26T14:33:01+01:00",
+      "package": "NS01",
+      "subject": "migration(NS01): NativeScript-Vue shell and Android launch",
+      "previousPackageCommit": "c02ae32d04828c403411865cf43aa6a1f6e828b5",
+      "intervalFromPreviousPackageMs": 9698000,
+      "runMetrics": {
+        "runCount": 8,
+        "durationKnownRuns": 8,
+        "totalDurationMs": 4435847,
+        "medianDurationMs": 499092,
+        "tokens": {
+          "input": {
+            "total": 7636605,
+            "knownRuns": 8
+          },
+          "output": {
+            "total": 99610,
+            "knownRuns": 8
+          },
+          "cacheRead": {
+            "total": 7095808,
+            "knownRuns": 8
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 8
+          },
+          "total": {
+            "total": 7736215,
+            "knownRuns": 8
+          }
+        },
+        "toolCalls": {
+          "total": 310,
+          "knownRuns": 8
+        },
+        "exitCodes": {
+          "0": 8
+        },
+        "runIds": [
+          "sol-ns01-r1-a-20261026",
+          "sol-ns01-r1-a2-20261026",
+          "sol-ns01-r1-a3-20261026",
+          "sol-ns01-r1-a4-20261026",
+          "sol-ns01-r1-b-20261026",
+          "sol-ns01-r1-b2-20261026",
+          "sol-ns01-r1-c-20261026",
+          "sol-ns01-r1-review-20261026"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS01-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. The independent target implements the required Frame/Page shell without core/data/store/navigation scope expansion. Successful Android build evidence matches all 71 current target-file hashes; the APK matches the recorded installed copy. Relaunch XML confirms both required strings, and the coordinator inspected all three captured PNGs (`migration/evidence/NS01/pixel-inspection-coordinator.md:5-13`). Missing first-launch XML/timing proof, unexercised npm android script, default-light-only observation, dependency warnings and audit findings remain explicitly disclosed (`migration/handoffs/NS01.md:65-98`); approval does not imply those checks passed or constitute human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS01-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS01-r1.json",
+      "manifestFileCount": 842
+    },
+    {
+      "hash": "533ed4ab41a751b4761af31e43a757f4126e2ea0",
+      "time": "2026-10-26T21:18:13+01:00",
+      "package": "NS02",
+      "subject": "migration(NS02): shared core and bundled fixture in NativeScript",
+      "previousPackageCommit": "8d5b2fe30fe8bf5029e1946663955e92984b839e",
+      "intervalFromPreviousPackageMs": 24312000,
+      "runMetrics": {
+        "runCount": 5,
+        "durationKnownRuns": 5,
+        "totalDurationMs": 2060979,
+        "medianDurationMs": 373370,
+        "tokens": {
+          "input": {
+            "total": 4270949,
+            "knownRuns": 5
+          },
+          "output": {
+            "total": 57089,
+            "knownRuns": 5
+          },
+          "cacheRead": {
+            "total": 3909504,
+            "knownRuns": 5
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 5
+          },
+          "total": {
+            "total": 4328038,
+            "knownRuns": 5
+          }
+        },
+        "toolCalls": {
+          "total": 180,
+          "knownRuns": 5
+        },
+        "exitCodes": {
+          "0": 5
+        },
+        "runIds": [
+          "sol-ns02-r1-a-20261026",
+          "sol-ns02-r1-b-20261026",
+          "sol-ns02-r1-b2-20261026",
+          "sol-ns02-r1-c-20261026",
+          "sol-ns02-r1-review-20261026"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS02-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. The loader calls the public compiled core on every invocation without caching (`migration/nativescript/src/data/load-conference.ts:1-6`); the diagnostic uses actual normalized results, and the lockfile delta is limited to the authorized local dependency/linkage. Android build/install evidence, both cold-launch XML captures and coordinator-inspected pixels establish the required native diagnostic (`migration/evidence/NS02/pixel-inspection-coordinator.md:5-12`). The first-launch helper’s false negative is explicitly dispositioned without altering historical records. Dependency warnings, bounded-log warnings and default-light-only coverage remain disclosed; approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS02-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS02-r1.json",
+      "manifestFileCount": 537
+    },
+    {
+      "hash": "66655162f7f0d7ad7edded2ec6d86ec2dbe18258",
+      "time": "2026-10-27T08:14:56+01:00",
+      "package": "NS03",
+      "subject": "migration(NS03): Vuex-backed schedule list in NativeScript",
+      "previousPackageCommit": "533ed4ab41a751b4761af31e43a757f4126e2ea0",
+      "intervalFromPreviousPackageMs": 39403000,
+      "runMetrics": {
+        "runCount": 6,
+        "durationKnownRuns": 6,
+        "totalDurationMs": 2804731,
+        "medianDurationMs": 493328.5,
+        "tokens": {
+          "input": {
+            "total": 9153083,
+            "knownRuns": 6
+          },
+          "output": {
+            "total": 93767,
+            "knownRuns": 6
+          },
+          "cacheRead": {
+            "total": 8643840,
+            "knownRuns": 6
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 6
+          },
+          "total": {
+            "total": 9246850,
+            "knownRuns": 6
+          }
+        },
+        "toolCalls": {
+          "total": 307,
+          "knownRuns": 6
+        },
+        "exitCodes": {
+          "0": 6
+        },
+        "runIds": [
+          "sol-ns03-r1-a-20261026",
+          "sol-ns03-r1-a2-20261026",
+          "sol-ns03-r1-a3-20261026",
+          "sol-ns03-r1-b-20261026",
+          "sol-ns03-r1-c-20261026",
+          "sol-ns03-r1-review-20261027"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS03-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. Store mutations, public-core-derived groups and request-generation protection satisfy D2 (`migration/nativescript/src/state/conference-store.ts:34-91`); native controls, state branches and ListView satisfy the UI contract (`migration/nativescript/src/components/Schedule.vue:43-103`). Lockfile changes match amended D1; the declaration shim is type-only. Historical Android evidence and coordinator-inspected frames establish launch, scrolling, mode switching and no keyboard at launch (`migration/evidence/NS03/pixel-inspection-coordinator.md:5-16`). Human dispositions preserve the original failures without concealing them. Search/no-match/clear remain device-unverified as explicitly allowed; light-only and bounded-log limitations remain disclosed. Approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS03-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS03-r1.json",
+      "manifestFileCount": 710
+    },
+    {
+      "hash": "230a054818bc90477d6d0a67fa86d3891d810d12",
+      "time": "2026-10-27T09:29:14+01:00",
+      "package": "NS04",
+      "subject": "migration(NS04): session detail and favorites in NativeScript",
+      "previousPackageCommit": "66655162f7f0d7ad7edded2ec6d86ec2dbe18258",
+      "intervalFromPreviousPackageMs": 4458000,
+      "runMetrics": {
+        "runCount": 5,
+        "durationKnownRuns": 5,
+        "totalDurationMs": 3045664,
+        "medianDurationMs": 689379,
+        "tokens": {
+          "input": {
+            "total": 8978999,
+            "knownRuns": 5
+          },
+          "output": {
+            "total": 72152,
+            "knownRuns": 5
+          },
+          "cacheRead": {
+            "total": 8517504,
+            "knownRuns": 5
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 5
+          },
+          "total": {
+            "total": 9051151,
+            "knownRuns": 5
+          }
+        },
+        "toolCalls": {
+          "total": 221,
+          "knownRuns": 5
+        },
+        "exitCodes": {
+          "0": 5
+        },
+        "runIds": [
+          "sol-ns04-r1-a-20261027",
+          "sol-ns04-r1-a2-20261027",
+          "sol-ns04-r1-b-20261027",
+          "sol-ns04-r1-c-20261027",
+          "sol-ns04-r1-review-20261027"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS04-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. Public-core favorite mutations/getters satisfy D2 (`migration/nativescript/src/state/conference-store.ts:77-99`); strict parsing and exact dialog plans satisfy D3/D4 (`migration/nativescript/src/state/session-detail.ts:3-35`, `migration/nativescript/src/components/Schedule.vue:18-29,112-134`). The independent detail page and one-shot development harness satisfy D5/D6 (`migration/nativescript/src/components/SessionDetail.vue:6-65`, `migration/nativescript/src/components/Home.vue:10-22`). Historical device XML and coordinator-inspected pixels establish the required navigation, immediate toggle, dialog branches, retained viewport and cold/unknown entries (`migration/evidence/NS04/pixel-inspection-coordinator.md:10-38`). Search retention remains source/store-only; release exclusion, native error/retry rendering and NS07 accessibility concerns remain explicitly unverified/deferred. Approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS04-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS04-r1.json",
+      "manifestFileCount": 1143
+    },
+    {
+      "hash": "96139c00be18030b68e0fa0f14c64a78df853e32",
+      "time": "2026-10-27T10:56:14+01:00",
+      "package": "NS05",
+      "subject": "migration(NS05): track filter modal in NativeScript",
+      "previousPackageCommit": "230a054818bc90477d6d0a67fa86d3891d810d12",
+      "intervalFromPreviousPackageMs": 5220000,
+      "runMetrics": {
+        "runCount": 4,
+        "durationKnownRuns": 4,
+        "totalDurationMs": 2350817,
+        "medianDurationMs": 595333,
+        "tokens": {
+          "input": {
+            "total": 6099874,
+            "knownRuns": 4
+          },
+          "output": {
+            "total": 59479,
+            "knownRuns": 4
+          },
+          "cacheRead": {
+            "total": 5683584,
+            "knownRuns": 4
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 4
+          },
+          "total": {
+            "total": 6159353,
+            "knownRuns": 4
+          }
+        },
+        "toolCalls": {
+          "total": 191,
+          "knownRuns": 4
+        },
+        "exitCodes": {
+          "0": 4
+        },
+        "runIds": [
+          "sol-ns05-r1-a-20261027",
+          "sol-ns05-r1-b-20261027",
+          "sol-ns05-r1-c-20261027",
+          "sol-ns05-r1-review-20261027"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS05-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. The fresh, guarded getter uses public core sorting (`migration/nativescript/src/state/conference-store.ts:125-137`); immutable helpers and array-only application satisfy D2 (`migration/nativescript/src/state/track-filter.ts:3-16`). The local draft, native switches, four controls and no-data close satisfy D3/D4 (`migration/nativescript/src/components/TrackFilter.vue:7-54`); the ready-gated schedule control satisfies D5 (`migration/nativescript/src/components/Schedule.vue:20-24,84-106`). Historical native XML confirms draft changes and reopening; close-button and Android-Back cancellation produce XML identical to the applied single-track schedule. Coordinator pixel evidence covers D7 (`migration/evidence/NS05/pixel-inspection-coordinator.md:11-45`). Search-plus-track remains device-unverified as explicitly permitted; accessibility, dark mode and other Back paths remain deferred. Approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS05-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS05-r1.json",
+      "manifestFileCount": 1403
+    },
+    {
+      "hash": "ff675971b4654ccdfc3f9694eac4a61503d86906",
+      "time": "2026-10-27T13:56:01+01:00",
+      "package": "NS06",
+      "subject": "migration(NS06): swipe actions on schedule rows in NativeScript",
+      "previousPackageCommit": "96139c00be18030b68e0fa0f14c64a78df853e32",
+      "intervalFromPreviousPackageMs": 10787000,
+      "runMetrics": {
+        "runCount": 8,
+        "durationKnownRuns": 8,
+        "totalDurationMs": 5690406,
+        "medianDurationMs": 633098,
+        "tokens": {
+          "input": {
+            "total": 17631999,
+            "knownRuns": 8
+          },
+          "output": {
+            "total": 149377,
+            "knownRuns": 8
+          },
+          "cacheRead": {
+            "total": 16599936,
+            "knownRuns": 8
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 8
+          },
+          "total": {
+            "total": 17781376,
+            "knownRuns": 8
+          }
+        },
+        "toolCalls": {
+          "total": 347,
+          "knownRuns": 8
+        },
+        "exitCodes": {
+          "0": 8
+        },
+        "runIds": [
+          "sol-ns06-r1-a-20261027",
+          "sol-ns06-r1-a2-20261027",
+          "sol-ns06-r1-b-20261027",
+          "sol-ns06-r1-b2-20261027",
+          "sol-ns06-r1-b3-20261027",
+          "sol-ns06-r1-b4-20261027",
+          "sol-ns06-r1-c-20261027",
+          "sol-ns06-r1-review-20261027"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS06-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. Core-only gestures, A1 visibility, the accessibility-hidden 96 dp reveal and unchanged accessible buttons satisfy D1/D2 (`migration/nativescript/src/components/Schedule.vue:36–42,159–193`). The swipe wrapper awaits the existing favorite handler before settling (`:52–65`). The watcher excludes favorites, and the pure reducer implements single-open, matching close, list-change close and tap guarding (`Schedule.vue:13–20,44–49`; `src/state/row-swipe.ts:13–30`). Historical B3/B4 native XML, action receipts and coordinator-inspected pixels support the prescribed dialogs, scrolling, navigation guard, replacement, right-swipe close and mode/filter closes. Earlier failures remain disclosed and are resolved by A1/C1/C2. Search-triggered closing remains device-unverified as disclosed; gesture feel, hardware Back, keyboard, large text, dark mode and broader Android acceptance remain outside this approval. Technical approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS06-r1.md",
+          "revision": 1,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 1,
+      "committedSubmission": "migration/submissions/NS06-r1.json",
+      "manifestFileCount": 4426
+    },
+    {
+      "hash": "2a79815c43e17bd3d40f0d80a15e5e6d6f3ccf91",
+      "time": "2026-10-28T23:14:01+01:00",
+      "package": "NS07",
+      "subject": "migration(NS07): Android acceptance of the NativeScript slice with fixes F1-F10",
+      "previousPackageCommit": "ff675971b4654ccdfc3f9694eac4a61503d86906",
+      "intervalFromPreviousPackageMs": 119880000,
+      "runMetrics": {
+        "runCount": 20,
+        "durationKnownRuns": 20,
+        "totalDurationMs": 25826198,
+        "medianDurationMs": 1151679,
+        "tokens": {
+          "input": {
+            "total": 77758661,
+            "knownRuns": 20
+          },
+          "output": {
+            "total": 505866,
+            "knownRuns": 20
+          },
+          "cacheRead": {
+            "total": 75167360,
+            "knownRuns": 20
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 20
+          },
+          "total": {
+            "total": 78264527,
+            "knownRuns": 20
+          }
+        },
+        "toolCalls": {
+          "total": 1487,
+          "knownRuns": 20
+        },
+        "exitCodes": {
+          "0": 20
+        },
+        "runIds": [
+          "sol-ns07-r1-a-20261027",
+          "sol-ns07-r1-b-20261027",
+          "sol-ns07-r1-c-20261028",
+          "sol-ns07-r1-c2-20261028",
+          "sol-ns07-r1-f-20261027",
+          "sol-ns07-r1-f10-20261028",
+          "sol-ns07-r1-f11-20261028",
+          "sol-ns07-r1-f2-20261028",
+          "sol-ns07-r1-f3-20261028",
+          "sol-ns07-r1-f4-20261028",
+          "sol-ns07-r1-f5-20261028",
+          "sol-ns07-r1-f6-20261028",
+          "sol-ns07-r1-f7-20261028",
+          "sol-ns07-r1-f8-20261028",
+          "sol-ns07-r1-f9-20261028",
+          "sol-ns07-r1-g-20261027",
+          "sol-ns07-r1-review-20261028",
+          "sol-ns07-r2-c-20261028",
+          "sol-ns07-r2-g-20261027",
+          "sol-ns07-r2-review-20261028"
+        ]
+      },
+      "wallClock": "partial observed run durations only",
+      "tokensAvailability": "only numeric final-result token fields counted",
+      "unknownReason": "Missing final result/stream or missing token fields remain unknown; overlapping run sums are not elapsed human labor.",
+      "reviews": [
+        {
+          "file": "migration/reviews/NS07-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED",
+          "advice": false,
+          "findingLines": [
+            "Findings: P1 — Ten unredacted screenshot copies remain in the frozen packet. These `.stdout.log` files contain PNG bytes whose verified SHA-256 values equal the corresponding `sha256Before` values in `migration/evidence/NS07/redaction/record.json:13–142` and `redaction-g2/record.json:13–34`:",
+            "- `migration/evidence/NS07/b-device/`: `0129-B03-query-focused-screencap.stdout.log`, `0134-B03-query-screencap.stdout.log`, `0208-B04-restored-scroll-1-screencap.stdout.log`, `0245-B05-space-focused-screencap.stdout.log`, `0250-B05-space-screencap.stdout.log`, `0254-B05-results-top-screencap.stdout.log`, `1610-E09-close-clear-screencap.stdout.log`, `1624-E09-final-close-screencap.stdout.log`.",
+            "- `migration/evidence/NS07/g-settings2/`: `1010-G08-query-focused-screenshot.stdout.log`, `1014-G08-query-screenshot.stdout.log`."
+          ]
+        },
+        {
+          "file": "migration/reviews/NS07-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE",
+          "advice": false,
+          "findingLines": [
+            "Findings: none requiring revision. Revision 1’s privacy finding is resolved: all ten corrected receipts match their redacted PNG pairs (`migration/evidence/NS07/redaction-r2/record.json:12–122`). Independent signature scanning of all 38,407 deliverables found 2,400 PNG payloads; every raw image copy matches a coordinator-inspected PNG, no recorded unredacted-image digest remains, and no other checked image/archive signatures or base64 image markers were found. Product changes remain within the three authorized components. All 50 checklist cases are recorded, with justified limitations and candidate-specific carry-forward evidence. Technical approval is not human acceptance."
+          ]
+        }
+      ],
+      "verdictSequence": [
+        {
+          "file": "migration/reviews/NS07-r1.md",
+          "revision": 1,
+          "verdict": "CHANGES_REQUIRED"
+        },
+        {
+          "file": "migration/reviews/NS07-r2.md",
+          "revision": 2,
+          "verdict": "APPROVE"
+        }
+      ],
+      "revisionCount": 2,
+      "committedSubmission": "migration/submissions/NS07-r2.json",
+      "manifestFileCount": 38407
+    }
+  ],
+  "tracks": {
+    "workflow": {
+      "packages": [
+        "R00"
+      ],
+      "calendarIntervalSumMs": null,
+      "metrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "unknownPackages": [
+        "R00"
+      ],
+      "submissionRevisionSum": 2,
+      "reviewRecordCount": 2
+    },
+    "shared": {
+      "packages": [
+        "P01",
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "calendarIntervalSumMs": 150598000,
+      "metrics": {
+        "runCount": 0,
+        "durationKnownRuns": 0,
+        "totalDurationMs": null,
+        "medianDurationMs": null,
+        "tokens": {
+          "input": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "output": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheRead": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "cacheWrite": {
+            "total": null,
+            "knownRuns": 0
+          },
+          "total": {
+            "total": null,
+            "knownRuns": 0
+          }
+        },
+        "toolCalls": {
+          "total": null,
+          "knownRuns": 0
+        },
+        "exitCodes": {},
+        "runIds": []
+      },
+      "unknownPackages": [
+        "P01",
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "submissionRevisionSum": 11,
+      "reviewRecordCount": 12
+    },
+    "reactNative": {
+      "packages": [
+        "RN01",
+        "RN02",
+        "RN03",
+        "RN04",
+        "RN05",
+        "RN06",
+        "RN07"
+      ],
+      "calendarIntervalSumMs": 503605000,
+      "metrics": {
+        "runCount": 48,
+        "durationKnownRuns": 48,
+        "totalDurationMs": 36174470,
+        "medianDurationMs": 579277.5,
+        "tokens": {
+          "input": {
+            "total": 93222458,
+            "knownRuns": 48
+          },
+          "output": {
+            "total": 756532,
+            "knownRuns": 48
+          },
+          "cacheRead": {
+            "total": 88911360,
+            "knownRuns": 48
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 48
+          },
+          "total": {
+            "total": 93978990,
+            "knownRuns": 48
+          }
+        },
+        "toolCalls": {
+          "total": 2081,
+          "knownRuns": 48
+        },
+        "exitCodes": {
+          "0": 48
+        },
+        "runIds": [
+          "sol-rn03-r2-fix-prepare-20261024",
+          "sol-rn03-r2-prepare-20261024",
+          "sol-rn03-r2-review-20261024",
+          "sol-rn04-r1-freeze-20261025",
+          "sol-rn04-r1-freeze2-20261025",
+          "sol-rn04-r1-implement-20261025",
+          "sol-rn04-r1-native-20261025",
+          "sol-rn04-r1-review-20261025",
+          "sol-rn04-r2-freeze-20261025",
+          "sol-rn04-r2-freeze2-20261025",
+          "sol-rn04-r2-native-20261025",
+          "sol-rn04-r2-native2-20261025",
+          "sol-rn04-r2-native3-20261025",
+          "sol-rn04-r2-review-20261025",
+          "sol-rn05-r1-freeze-20261025",
+          "sol-rn05-r1-implement-20261025",
+          "sol-rn05-r1-native-20261025",
+          "sol-rn05-r1-review-20261025",
+          "sol-rn06-r1-freeze-20261025",
+          "sol-rn06-r1-implement-20261025",
+          "sol-rn06-r1-implement2-20261025",
+          "sol-rn06-r1-implement3-20261025",
+          "sol-rn06-r1-implement4-20261025",
+          "sol-rn06-r1-implement5-20261025",
+          "sol-rn06-r1-native-20261025",
+          "sol-rn06-r1-native2-20261025",
+          "sol-rn06-r1-native3-20261025",
+          "sol-rn06-r1-review-20261025",
+          "sol-rn07-r1-a11y-20261026",
+          "sol-rn07-r1-c-20261026",
+          "sol-rn07-r1-c2-20261026",
+          "sol-rn07-r1-device1-20261025",
+          "sol-rn07-r1-device2-20261025",
+          "sol-rn07-r1-fix1-20261025",
+          "sol-rn07-r1-g1-20261025",
+          "sol-rn07-r1-g1b-20261025",
+          "sol-rn07-r1-g2a-20261025",
+          "sol-rn07-r1-g2b-20261025",
+          "sol-rn07-r1-g2c-20261025",
+          "sol-rn07-r1-g3-20261026",
+          "sol-rn07-r1-gates-20261025",
+          "sol-rn07-r1-gates2-20261025",
+          "sol-rn07-r1-gates3-20261025",
+          "sol-rn07-r1-review-20261026",
+          "sol-rn07-r2-c-20261026",
+          "sol-rn07-r2-redact-20261026",
+          "sol-rn07-r2-redact2-20261026",
+          "sol-rn07-r2-review-20261026"
+        ]
+      },
+      "unknownPackages": [
+        "RN01",
+        "RN02"
+      ],
+      "submissionRevisionSum": 13,
+      "reviewRecordCount": 13
+    },
+    "nativeScript": {
+      "packages": [
+        "NS01",
+        "NS02",
+        "NS03",
+        "NS04",
+        "NS05",
+        "NS06",
+        "NS07"
+      ],
+      "calendarIntervalSumMs": 213758000,
+      "metrics": {
+        "runCount": 56,
+        "durationKnownRuns": 56,
+        "totalDurationMs": 46214642,
+        "medianDurationMs": 640236,
+        "tokens": {
+          "input": {
+            "total": 131530170,
+            "knownRuns": 56
+          },
+          "output": {
+            "total": 1037340,
+            "knownRuns": 56
+          },
+          "cacheRead": {
+            "total": 125617536,
+            "knownRuns": 56
+          },
+          "cacheWrite": {
+            "total": 0,
+            "knownRuns": 56
+          },
+          "total": {
+            "total": 132567510,
+            "knownRuns": 56
+          }
+        },
+        "toolCalls": {
+          "total": 3043,
+          "knownRuns": 56
+        },
+        "exitCodes": {
+          "0": 56
+        },
+        "runIds": [
+          "sol-ns01-r1-a-20261026",
+          "sol-ns01-r1-a2-20261026",
+          "sol-ns01-r1-a3-20261026",
+          "sol-ns01-r1-a4-20261026",
+          "sol-ns01-r1-b-20261026",
+          "sol-ns01-r1-b2-20261026",
+          "sol-ns01-r1-c-20261026",
+          "sol-ns01-r1-review-20261026",
+          "sol-ns02-r1-a-20261026",
+          "sol-ns02-r1-b-20261026",
+          "sol-ns02-r1-b2-20261026",
+          "sol-ns02-r1-c-20261026",
+          "sol-ns02-r1-review-20261026",
+          "sol-ns03-r1-a-20261026",
+          "sol-ns03-r1-a2-20261026",
+          "sol-ns03-r1-a3-20261026",
+          "sol-ns03-r1-b-20261026",
+          "sol-ns03-r1-c-20261026",
+          "sol-ns03-r1-review-20261027",
+          "sol-ns04-r1-a-20261027",
+          "sol-ns04-r1-a2-20261027",
+          "sol-ns04-r1-b-20261027",
+          "sol-ns04-r1-c-20261027",
+          "sol-ns04-r1-review-20261027",
+          "sol-ns05-r1-a-20261027",
+          "sol-ns05-r1-b-20261027",
+          "sol-ns05-r1-c-20261027",
+          "sol-ns05-r1-review-20261027",
+          "sol-ns06-r1-a-20261027",
+          "sol-ns06-r1-a2-20261027",
+          "sol-ns06-r1-b-20261027",
+          "sol-ns06-r1-b2-20261027",
+          "sol-ns06-r1-b3-20261027",
+          "sol-ns06-r1-b4-20261027",
+          "sol-ns06-r1-c-20261027",
+          "sol-ns06-r1-review-20261027",
+          "sol-ns07-r1-a-20261027",
+          "sol-ns07-r1-b-20261027",
+          "sol-ns07-r1-c-20261028",
+          "sol-ns07-r1-c2-20261028",
+          "sol-ns07-r1-f-20261027",
+          "sol-ns07-r1-f10-20261028",
+          "sol-ns07-r1-f11-20261028",
+          "sol-ns07-r1-f2-20261028",
+          "sol-ns07-r1-f3-20261028",
+          "sol-ns07-r1-f4-20261028",
+          "sol-ns07-r1-f5-20261028",
+          "sol-ns07-r1-f6-20261028",
+          "sol-ns07-r1-f7-20261028",
+          "sol-ns07-r1-f8-20261028",
+          "sol-ns07-r1-f9-20261028",
+          "sol-ns07-r1-g-20261027",
+          "sol-ns07-r1-review-20261028",
+          "sol-ns07-r2-c-20261028",
+          "sol-ns07-r2-g-20261027",
+          "sol-ns07-r2-review-20261028"
+        ]
+      },
+      "unknownPackages": [],
+      "submissionRevisionSum": 8,
+      "reviewRecordCount": 8
+    }
+  },
+  "unclassified": [
+    "2026-10-21T21-07-40-271Z-c611cd40",
+    "2026-10-21T21-32-59-789Z-920effdc",
+    "2026-10-22T05-57-27-009Z-e40e49c1",
+    "2026-10-22T06-03-16-616Z-2ca242ec",
+    "2026-10-22T06-13-03-128Z-047af0e5",
+    "progress-update",
+    "sol-native-20261024",
+    "sol-native-20261024-r2",
+    "sol-native-20261024-r3",
+    "sol-pixel-correction-20261024"
+  ],
+  "selfRun": [
+    "sol-e01-r1-a-20261029"
+  ]
+}

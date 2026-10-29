@@ -1,0 +1,113 @@
+{
+  "outerLaunches": [
+    {
+      "id": "outer-launch-disclosure-1",
+      "command": "terminal-tool",
+      "args": [
+        "pwd && git branch --show-current && git rev-parse HEAD && git diff --cached --name-status && git status --porcelain=v1 --untracked-files=all"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-2",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-entry.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-3",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-inspect.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-4",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-effort.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-5",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-checks.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-6",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-privacy-preflight.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-7",
+      "command": "C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "args": [
+        "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-matrices.mjs"
+      ],
+      "exitCode": 0,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    },
+    {
+      "id": "outer-launch-disclosure-8",
+      "command": "terminal-tool",
+      "args": [
+        "\"C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe\" tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-effort.mjs > tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/effort-helper-summary.log && \"C:/Users/Gerrit/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe\" tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/e01-refine.mjs"
+      ],
+      "exitCode": 1,
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": null,
+      "durationMs": null,
+      "timing": "Not acquired prospectively; exit from terminal result. Nested native commands separately fully receipted. No retrospective timing fabricated."
+    }
+  ],
+  "corrections": [
+    {
+      "helper": "e01-refine.mjs",
+      "failure": "SyntaxError before helper execution (extra closing parenthesis)",
+      "exitCode": 1,
+      "disposition": "Helper-only syntax corrected; receipted retry through e01-launch.mjs exited 0. No child launched by the syntax-failing helper; no ambiguous live child or non-TTY failure."
+    }
+  ],
+  "receiptPolicy": "Fully timed native child commands use spawnSync argument arrays/shell:false. Early outer helper/tool invocations lack prospective timing; nulls are unknown, not manufactured. Repeated extraction command IDs reuse bounded log filenames; commands.jsonl retains each captured command/timing. Unique indexed metadata copies retained in this run.",
+  "commandsSnapshot": "E01 commands.jsonl is the pre-scan snapshot; final scan/check/audit receipts and full append-only command log remain run-only. No historical run output copied.",
+  "privacy": "Read historical streams only through whitelist parser; classified by directory basename only. No other historical run files opened. Policy literals are not waived.",
+  "e01NonStatusUnchanged": true,
+  "freezing": "Not attempted: mandatory any-hit scan blocked; no manifest and no official hash write/check."
+}

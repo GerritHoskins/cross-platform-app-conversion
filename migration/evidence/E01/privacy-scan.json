@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "scannedAt": "2026-10-29T07:11:08.300Z",
+  "status": "BLOCKED",
+  "scope": "Every intended files[] member, not extensions; no E01 manifest exists because the precondition is blocked.",
+  "files": [
+    "migration/evidence/E01/checks.json",
+    "migration/evidence/E01/commands.jsonl",
+    "migration/evidence/E01/effort-runs.json",
+    "migration/evidence/E01/effort-summary.json",
+    "migration/evidence/E01/entry.json",
+    "migration/evidence/E01/privacy-scan.json",
+    "migration/evidence/E01/provenance.json",
+    "migration/evidence/E01/results-matrix.json",
+    "migration/evidence/E01/size.json",
+    "migration/evidence/E01/verification.json",
+    "migration/handoffs/E01-checkpoint-a.md",
+    "migration/handoffs/E01.md",
+    "migration/reports/E01-comparison.md",
+    "migration/work-packages/E01.md"
+  ],
+  "filesScanned": 14,
+  "signatureHits": 0,
+  "base64MarkerHits": 3,
+  "hits": [
+    {
+      "path": "migration/work-packages/E01.md",
+      "rule": "base64-image-marker-1",
+      "offset": 5675,
+      "line": 41
+    },
+    {
+      "path": "migration/work-packages/E01.md",
+      "rule": "base64-image-marker-2",
+      "offset": 5690,
+      "line": 41
+    },
+    {
+      "path": "migration/work-packages/E01.md",
+      "rule": "base64-image-marker-3",
+      "offset": 5699,
+      "line": 41
+    }
+  ],
+  "policyLiteralExemptions": 0,
+  "sensitiveData": {
+    "exitCode": 0,
+    "receipt": "tools/qwen-supervisor/.runs/sol-e01-r1-a-20261029/privacy-sensitive-data-final.receipt.json",
+    "result": "Sensitive data check passed (14 files)."
+  },
+  "selfScan": "Initial record scanned, final record rescanned; findings unchanged. No own hash recorded, avoiding recursive hash dependency.",
+  "resolution": "The required E01 work-package contains literal marker examples in its privacy policy. Status-only permission cannot remove them. Any hit requires BLOCKED; an explicit human amendment is required before freeze."
+}
