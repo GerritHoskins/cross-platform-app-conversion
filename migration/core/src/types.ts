@@ -22,6 +22,18 @@ export interface Speaker {
   name: string;
 }
 
+export interface SpeakerProfile extends Speaker {
+  title: string;
+  about: string;
+  profilePic: string;
+}
+
+export type SpeakerNotFoundReason = 'malformed-id' | 'unknown-id';
+
+export type SpeakerLookup<T extends Speaker = Speaker> =
+  | { status: 'found'; speaker: T }
+  | { status: 'not-found'; reason: SpeakerNotFoundReason };
+
 export interface Conference {
   date: string;
   sessions: Session[];

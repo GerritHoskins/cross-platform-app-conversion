@@ -1,5 +1,5 @@
 import { parseTimeToMinutes } from './time';
-import type { Conference, Speaker, Track } from './types';
+import type { Conference, Speaker, SpeakerProfile, Track } from './types';
 
 export class ConferenceDataError extends Error {
   readonly path: string;
@@ -53,6 +53,41 @@ function parseableTime(value: unknown, path: string): string {
     throw new ConferenceDataError(path, `expected a 12-hour time like "8:00 am", got ${JSON.stringify(value)}`);
   }
   return value;
+}
+
+function optionalSpeakerText(value: unknown, path: string): string {
+  if (value === undefined || value === null) return '';
+  if (typeof value !== 'string') {
+    throw new ConferenceDataError(path, `expected a string, null, or absent value, got ${describe(value)}`);
+  }
+  return value;
+}
+
+// speakers-contract.md, "Data and normalization", P02 CD3: read-only fields
+// default to empty strings. C04 retains C02's stricter non-empty name rule,
+// sharing its existing id/name validators and exact error paths/messages.
+// Profiles are independent of schedule and track validation.
+export function normalizeSpeakerProfiles(raw: unknown): SpeakerProfile[] {
+  if (!isRecord(raw)) {
+    throw new ConferenceDataError('(root)', `expected an object, got ${describe(raw)}`);
+  }
+  const rawSpeakers = raw['speakers'];
+  if (!Array.isArray(rawSpeakers)) {
+    throw new ConferenceDataError('speakers', `expected an array, got ${describe(rawSpeakers)}`);
+  }
+  return rawSpeakers.map((rawSpeaker: unknown, speakerIndex: number) => {
+    const speakerPath = `speakers[${speakerIndex}]`;
+    if (!isRecord(rawSpeaker)) {
+      throw new ConferenceDataError(speakerPath, `expected an object, got ${describe(rawSpeaker)}`);
+    }
+    return {
+      id: parseId(rawSpeaker['id'], `${speakerPath}.id`),
+      name: nonEmptyString(rawSpeaker['name'], `${speakerPath}.name`),
+      title: optionalSpeakerText(rawSpeaker['title'], `${speakerPath}.title`),
+      about: optionalSpeakerText(rawSpeaker['about'], `${speakerPath}.about`),
+      profilePic: optionalSpeakerText(rawSpeaker['profilePic'], `${speakerPath}.profilePic`),
+    };
+  });
 }
 
 export function normalizeConference(raw: unknown): Conference {

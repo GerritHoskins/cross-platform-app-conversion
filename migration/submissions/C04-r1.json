@@ -1,0 +1,561 @@
+{
+  "version": 1,
+  "package": "C04",
+  "revision": 1,
+  "status": "READY_FOR_REVIEW",
+  "branch": "migration/slice-2",
+  "head": "04b4998eb222ff98f3b7d2f8a6e62a38596e848d",
+  "headTree": "5d2a8afe9d0f64ceb79cf23b2aa567a0596e526d",
+  "priorApprovedBaseline": {
+    "package": "P02",
+    "commit": "04b4998eb222ff98f3b7d2f8a6e62a38596e848d"
+  },
+  "reviewerRouting": {
+    "provider": "openai-codex",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "fallback": []
+  },
+  "preExistingChanges": [
+    {
+      "porcelain": " M package-lock.json",
+      "partOfC04": false,
+      "policy": "Excluded from C04; no direct read, hash, diff, edit, restore or staging operation performed."
+    }
+  ],
+  "files": [
+    {
+      "path": "migration/core/src/index.ts",
+      "sha256": "0e78472152d117beadb2f8fb244fa050347144efaf6726536c32c7b220e90abf"
+    },
+    {
+      "path": "migration/core/src/normalize.ts",
+      "sha256": "7eb1b8672405d7313e2b0f7a97c790e31ad506ac2f7f18022a50c4697c83347e"
+    },
+    {
+      "path": "migration/core/src/speakers.ts",
+      "sha256": "771c9b875c9c8897ef8ac4dc3c53906df8b04de5acdb7b07c481687b0ba8cd0d"
+    },
+    {
+      "path": "migration/core/src/types.ts",
+      "sha256": "0a5ec0ab77e45bb7398e50d111c8ddbfcc2b2fadcb78d9c84c14e5c2d9c8acaa"
+    },
+    {
+      "path": "migration/core/test/expected-speakers.test.ts",
+      "sha256": "956ac99f5841357291cc49bc256da0704f2059921c557de90a46b75c8c34dd97"
+    },
+    {
+      "path": "migration/core/test/smoke.test.ts",
+      "sha256": "a86e5cacb82fc6f8f4dadaafc95bdd3514af3eebf46143241722e6cdee87af74"
+    },
+    {
+      "path": "migration/core/test/speakers.test.ts",
+      "sha256": "fdd9ce4c692bdb40cca42621937fc14bc9d85bc9cc347fdf8176b249dc5bafb2"
+    },
+    {
+      "path": "migration/evidence/C04/api-and-regression-checks.json",
+      "sha256": "d9dccfebd47644d5167bbc4f6e0603dbfabcefe159a243ad44b87559f0bcb8be"
+    },
+    {
+      "path": "migration/evidence/C04/commands.jsonl",
+      "sha256": "f03ea52a174a78bc580d7914105a321bc7658acae37ac91ab2f71e28d52f807d"
+    },
+    {
+      "path": "migration/evidence/C04/core-checks.json",
+      "sha256": "039955dba55f5bedec413493d22f72771edffe96d6e5f668b07a8baaabb2b697"
+    },
+    {
+      "path": "migration/evidence/C04/entry.json",
+      "sha256": "867c57445c03fe02b458bc45bac948d6cd7e12cd11f16461e67bb5cc46f8694c"
+    },
+    {
+      "path": "migration/evidence/C04/lf-check.json",
+      "sha256": "290c989982ccb406a3f9bb49b2b751878220c74c9802256bc9e9e777d008c14d"
+    },
+    {
+      "path": "migration/evidence/C04/pack-failure-and-retry.json",
+      "sha256": "aea2d7bdc145b18c685432b01920ab1adeff801b9e3f3eff48901ec99b0bcd71"
+    },
+    {
+      "path": "migration/evidence/C04/privacy-scan.json",
+      "sha256": "d27ddcf9669342bbc144ccbf09bfb57a782d815e2fd7ddf8f4420c8c57dd6366"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/allowed-diff-check.receipt.json",
+      "sha256": "75f4d02a9ef0e99534b3db7a5bf2c0673afcfedae59dcd7a965b0604ddf84d53"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/allowed-diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/allowed-diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-index-ts.receipt.json",
+      "sha256": "c898999c0617c86b59a3999dbfd1adea0be0862ebddac85c8d5338194d3d275d"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-index-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-index-ts.stdout.log",
+      "sha256": "de094976cdd807afa6ef3409c6bb7236c494e36f7740633320306615577c9377"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-normalize-ts.receipt.json",
+      "sha256": "c6d1dcf5375c59ff25683e7ac28fcc87271158613d774cb42bc74ccf3f62a80e"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-normalize-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-normalize-ts.stdout.log",
+      "sha256": "814c3e28561d539d0fe46445a0a0e461579f74d90a8d6f9c31b563faf60fe7d7"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-smoke-test-ts.receipt.json",
+      "sha256": "447b19cf2f84c59e4639e2ef27682b2eccad113e7389ba4e2b234607b09d4c45"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-smoke-test-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-smoke-test-ts.stdout.log",
+      "sha256": "7818ba913cb79fb29033ec644a8e3e29a83b7b72d2d21c93acc0bc5d98924e12"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-types-ts.receipt.json",
+      "sha256": "293211f251fb6ece7f910440b2b66b861753aedbd0be521dea233dc3521bcb05"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-types-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/baseline-types-ts.stdout.log",
+      "sha256": "08be30012c09c880534984873609e5065eb9656bc79764f38a2cd9b41b40ed08"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run-retry.receipt.json",
+      "sha256": "068c42861efa065be0cbc4f3cc12581366762517666cd2401fa901bbedce4050"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run-retry.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run-retry.stdout.log",
+      "sha256": "62dc455ff27f3b00fc53219914d46865ae04f03688f6fae472c855fcc98603cc"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run.receipt.json",
+      "sha256": "c38c032064f3dc6fb2836ca7fac58c8a750a24b05b03fa7d7fefe78e6de77aa2"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run.stderr.log",
+      "sha256": "b57caa295919b31f9ae5073e204bb579f2407a75888d109e94a9c5cc64fe39fb"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-pack-dry-run.stdout.log",
+      "sha256": "bd3c52d1337902e6e6fe16bbbddbf7f74326524b7a50466ccaedead896e78243"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-1.receipt.json",
+      "sha256": "8bac7c0b7d9bb35d7444b7ca863146829f0e5fd02aab270fcb38a6c45eae8828"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-1.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-1.stdout.log",
+      "sha256": "6f1ed65ff7d4c9c493bf8a8df562281ca41b56613786b26cc45e93a63f095ddf"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-2.receipt.json",
+      "sha256": "9d9ca17f5e7e5cb240fbe3e6ac985edd8bc165dcc95b247029c7cd2cd04a7f21"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-tests-2.stdout.log",
+      "sha256": "8c48f366f4eb4805f822582ce4e5e9ff6194411706527bd8fabb3d59c6e71888"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-typecheck.receipt.json",
+      "sha256": "ff340dcd902b304d2ac7f159bc44ddf205f9bbc7bcbe5fda428728aaf899aa41"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/core-typecheck.stdout.log",
+      "sha256": "6fc5cb8fc6bc4e90a69ec8c9bba948f4a9d8810d0229a43856dc39e1dde50476"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-branch.receipt.json",
+      "sha256": "912d6d7cd0e2657dedee04bbb2494164fd949b2027139560ffca604ce33eef89"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-branch.stdout.log",
+      "sha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-head.receipt.json",
+      "sha256": "3f47c49ca61163b52883c56a3b3c6c5317a077db7bc535221b92f51320c5e290"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-head.stdout.log",
+      "sha256": "6a45dba6a1fe1775bd8100fdc1a255f4bbf15d1a934c14b63ab0eff8639b21ea"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-index.receipt.json",
+      "sha256": "dfab97fc8d5b920c87151eeaf6e1ea05f4cbffed3bceb5a91659dea72eaffeda"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-node.receipt.json",
+      "sha256": "2c500ffca3b74be4437e392ef42d20d33e2c9f540eb3dbf4f27d961f113d87e4"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-node.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-node.stdout.log",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-porcelain.receipt.json",
+      "sha256": "138bb73e7e5deaa9989186c66c0c10bf5fe72e19d2ae67d51e89e1c225c4540b"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-porcelain.stdout.log",
+      "sha256": "ee2b9e729596f0ad636f3e75b98d9978bcadf59b9ac26f59f48ad4983587586a"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-tree.receipt.json",
+      "sha256": "06cce34b4cfcdfffe03a7eb20f316df526c48498fd8f6b9f73d132d6d758779b"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/gate-tree.stdout.log",
+      "sha256": "723bd9fb223589898e9ed182693d1b5cec87bdf6c7bf0579d021b173e25494c8"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-tests.receipt.json",
+      "sha256": "0a0b70b6617dc85bd617b29f4a8bfb32512282f4f1cc26dd79f38c15cc160e59"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-tests.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-tests.stdout.log",
+      "sha256": "e495061239b63f26892971751c1fd03b7174863962f15ef359b27ab9eb96fab2"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-typecheck.receipt.json",
+      "sha256": "7c07d231b3fa8a594c225380c9bd208e538f2eb9922fccefecab330b8611862d"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/ns-typecheck.stdout.log",
+      "sha256": "84329210b873f36224f1720f2e09ae1db2d04c9094a0ea8c41bd148203a8a6f9"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/post-check-porcelain.receipt.json",
+      "sha256": "1dd84639cf459f9bde9ad4085178834342365b0deff23ecd45317f0564a19af0"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/post-check-porcelain.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/post-check-porcelain.stdout.log",
+      "sha256": "279b3ca4a4aa54298104962d926637705ccfb578216cb73945a2bfafa2d7553a"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/prior-manifest-shape.receipt.json",
+      "sha256": "9c7ff26ab4c4ab0de700fcbf59177d9ea8a0dedce23a4a5a088826b02d15d279"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/prior-manifest-shape.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/prior-manifest-shape.stdout.log",
+      "sha256": "976e1a090d760e588c7e7903e34eeb41f673769aa6d844023f3e3e8a07d6e184"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/protected-path-diff.receipt.json",
+      "sha256": "e678ac4d9544f924cabbd03c8b66ee35526e2fdacb24015ec0e57379c1a8c258"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/protected-path-diff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/protected-path-diff.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-tests.receipt.json",
+      "sha256": "7cb98c730426dc2a0390c0730a710f16bc295a2b66a323cc797bced8a33b46f7"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-tests.stderr.log",
+      "sha256": "02acaa8e68c99c4deb2070c28d891e138ec4563eb2f2e42393cefe373069f886"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-tests.stdout.log",
+      "sha256": "9894844f2d74f3f2786a50591804b4f557a7c433e9262e828f764f33d4b89bfc"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-typecheck.receipt.json",
+      "sha256": "e2f782357fdcbe7a527667e295b092b14363cb37c38358bac58bca83c195096b"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-typecheck.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/rn-typecheck.stdout.log",
+      "sha256": "dca5473d05fedcfdcbdb606f6db31d32cf64fd247b358b514c576bc7d9efb3d8"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/safe-tracked-names.receipt.json",
+      "sha256": "e9d2d4676c327e2a507dfa9a3835d5c9c726ed135aa16a2770aa4dae798ad7df"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/safe-tracked-names.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/safe-tracked-names.stdout.log",
+      "sha256": "9a5647ab3c16091caad9a1e00dda0c5106582c850201ceb59c03c40730460ebe"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-branch.receipt.json",
+      "sha256": "cfae81cab4ae42d28b3ac7f281ae3b421cafc6670a784b9fd1aef000c9b61f1d"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-branch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-branch.stdout.log",
+      "sha256": "b7dc2e8a797a35f0113ff408369b28cb0e84d2148e25c6bc8733e49a19154db7"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-head.receipt.json",
+      "sha256": "5c53db4663a44923e79ca95676dd380163af8824a670211cdf46329982d0c85f"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-head.stdout.log",
+      "sha256": "6a45dba6a1fe1775bd8100fdc1a255f4bbf15d1a934c14b63ab0eff8639b21ea"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-index.receipt.json",
+      "sha256": "f21a04b5b7380ecb3c2f1215756f72487438073cf07d5d05782a3b1f41e1584f"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-index.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-index.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-tree.receipt.json",
+      "sha256": "bf4e5a69bad8c99237107277ec97adea727fad0f766754203fc0076113997e34"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-tree.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "migration/evidence/C04/receipts/submission-tree.stdout.log",
+      "sha256": "723bd9fb223589898e9ed182693d1b5cec87bdf6c7bf0579d021b173e25494c8"
+    },
+    {
+      "path": "migration/evidence/C04/scope-checks.json",
+      "sha256": "5dfd49084d67212b95e65314802ce76512eeae3707d9ec765f162e7cf6a869b0"
+    },
+    {
+      "path": "migration/evidence/C04/target-checks.json",
+      "sha256": "12d31ff4f403f866fb5f7ac04a73024a443c319710847e1abb2d2369083fd502"
+    },
+    {
+      "path": "migration/handoffs/C04.md",
+      "sha256": "20475477de577035eab042933b30a88ca2de78e90f55aecc7842fd3722d677c1"
+    },
+    {
+      "path": "migration/work-packages/C04.md",
+      "sha256": "ed80c02533e16838dd778a3bd2240111842151722efd0389df1db420e68bedcc"
+    }
+  ],
+  "checks": [
+    {
+      "check": "Core typecheck",
+      "command": "npm --prefix migration/core run typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "receipt": "migration/evidence/C04/receipts/core-typecheck.receipt.json"
+    },
+    {
+      "check": "Core tests run 1",
+      "command": "npm --prefix migration/core test",
+      "status": "PASS",
+      "tests": 139,
+      "passed": 139,
+      "failed": 0,
+      "skipped": 0,
+      "receipt": "migration/evidence/C04/receipts/core-tests-1.receipt.json"
+    },
+    {
+      "check": "Core tests run 2",
+      "command": "npm --prefix migration/core test",
+      "status": "PASS",
+      "tests": 139,
+      "passed": 139,
+      "failed": 0,
+      "skipped": 0,
+      "identicalCounts": true,
+      "receipt": "migration/evidence/C04/receipts/core-tests-2.receipt.json"
+    },
+    {
+      "check": "Core pack dry-run",
+      "command": "npm pack --dry-run --json",
+      "cwd": "migration/core",
+      "status": "PASS",
+      "files": [
+        "dist/favorites.d.ts",
+        "dist/favorites.js",
+        "dist/grouping.d.ts",
+        "dist/grouping.js",
+        "dist/index.d.ts",
+        "dist/index.js",
+        "dist/normalize.d.ts",
+        "dist/normalize.js",
+        "dist/selection.d.ts",
+        "dist/selection.js",
+        "dist/speakers.d.ts",
+        "dist/speakers.js",
+        "dist/time.d.ts",
+        "dist/time.js",
+        "dist/types.d.ts",
+        "dist/types.js",
+        "package.json"
+      ],
+      "receipt": "migration/evidence/C04/receipts/core-pack-dry-run-retry.receipt.json",
+      "correction": "npm --prefix pack inspected the repository. Retried only pack with cwd migration/core after exact process inspection; no tarball created."
+    },
+    {
+      "check": "RN typecheck",
+      "command": "npm --prefix migration/react-native run typecheck",
+      "status": "PASS",
+      "receipt": "migration/evidence/C04/receipts/rn-typecheck.receipt.json"
+    },
+    {
+      "check": "RN tests",
+      "command": "npm --prefix migration/react-native test -- --json --outputFile=<run-directory>/rn-tests.json",
+      "status": "PASS",
+      "passed": 99,
+      "failed": 0,
+      "files": 7,
+      "reporter": "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/rn-tests.json",
+      "receipt": "migration/evidence/C04/receipts/rn-tests.receipt.json"
+    },
+    {
+      "check": "NS typecheck",
+      "command": "npm --prefix migration/nativescript run typecheck",
+      "status": "PASS",
+      "receipt": "migration/evidence/C04/receipts/ns-typecheck.receipt.json"
+    },
+    {
+      "check": "NS vitest",
+      "command": "npx --no-install vitest run --reporter=default --reporter=json --outputFile=<run-directory>/ns-tests.json",
+      "cwd": "migration/nativescript",
+      "status": "PASS",
+      "passed": 115,
+      "failed": 0,
+      "files": 7,
+      "reporter": "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/ns-tests.json",
+      "receipt": "migration/evidence/C04/receipts/ns-tests.receipt.json"
+    },
+    {
+      "check": "Protected-path diff",
+      "command": "git diff --exit-code -- migration/core/package.json migration/core/package-lock.json migration/reference/ migration/react-native/ migration/nativescript/ src/ public/",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "migration/evidence/C04/scope-checks.json"
+    },
+    {
+      "check": "Additive API and unchanged existing normalization",
+      "status": "PASS",
+      "evidence": "migration/evidence/C04/api-and-regression-checks.json"
+    },
+    {
+      "check": "Privacy and LF preflight",
+      "status": "PASS",
+      "evidence": [
+        "migration/evidence/C04/privacy-scan.json",
+        "migration/evidence/C04/lf-check.json"
+      ],
+      "finalScan": "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/final-packet-scan.json"
+    },
+    {
+      "check": "Official manifest hash write/check",
+      "required": "0 problem(s)",
+      "receipts": [
+        "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/receipts/manifest-write.receipt.json",
+        "tools/qwen-supervisor/.runs/sol-c04-r1-a-20261029/receipts/manifest-check.receipt.json"
+      ],
+      "policy": "Official manifest begins with empty sha256 values; no migration write after official --write. Actual final outcome is in run-directory result.json."
+    }
+  ],
+  "unverified": [
+    "Independent review and human acceptance are pending; the coordinator dispatches review. No next package started.",
+    "No Ionic app, native build/install, device/emulator, UI rendering, navigation/Back/cold entry, accessibility or image bundling checks. Automated target suites only.",
+    "The rejected --prefix pack selected the repository package and constructed an in-memory tarball. No excluded contents were directly opened or printed, but absence of internal npm reads of excluded files cannot be attested; coordinator/reviewer disposition of this scope incident is pending. Only the corrected cwd migration/core packaging result is accepted."
+  ]
+}

@@ -6,7 +6,7 @@ import { CORE_PACKAGE_NAME, CORE_API_VERSION } from '@migration/core';
 
 test('public package exports are correct', () => {
   assert.equal(CORE_PACKAGE_NAME, '@migration/core');
-  assert.equal(CORE_API_VERSION, 1);
+  assert.equal(CORE_API_VERSION, 2);
 });
 
 test('self-reference resolves to the built dist entrypoint', () => {

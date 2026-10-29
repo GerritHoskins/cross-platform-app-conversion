@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "filesScanned": 102,
+  "totalBytes": 312877,
+  "rules": [
+    "B64-PNG",
+    "B64-JPEG",
+    "B64-GIF",
+    "SIG-PNG",
+    "SIG-JPEG",
+    "SIG-GIF87",
+    "SIG-GIF89",
+    "SIG-ZIP-LOCAL",
+    "SIG-ZIP-EMPTY",
+    "SIG-ZIP-SPANNED",
+    "SIG-GZIP",
+    "SIG-PDF",
+    "SIG-WEBP"
+  ],
+  "hits": [],
+  "crFiles": [],
+  "policy": "Content scan of every files[] candidate, including evidence, handoff and full work package. PNG/JPEG/GIF base64 markers and specified binary file-start signatures. Exact final-byte rescan is saved in the run directory before the official freeze."
+}

@@ -1,0 +1,43 @@
+{
+  "typecheck": "PASS",
+  "runs": 2,
+  "run1": {
+    "tests": 139,
+    "passed": 139,
+    "failed": 0,
+    "skipped": 0
+  },
+  "run2": {
+    "tests": 139,
+    "passed": 139,
+    "failed": 0,
+    "skipped": 0
+  },
+  "identical": true,
+  "existingTests": 53,
+  "pack": {
+    "status": "PASS",
+    "files": [
+      "dist/favorites.d.ts",
+      "dist/favorites.js",
+      "dist/grouping.d.ts",
+      "dist/grouping.js",
+      "dist/index.d.ts",
+      "dist/index.js",
+      "dist/normalize.d.ts",
+      "dist/normalize.js",
+      "dist/selection.d.ts",
+      "dist/selection.js",
+      "dist/speakers.d.ts",
+      "dist/speakers.js",
+      "dist/time.d.ts",
+      "dist/time.js",
+      "dist/types.d.ts",
+      "dist/types.js",
+      "package.json"
+    ],
+    "receipt": "core-pack-dry-run-retry",
+    "supersedes": "core-pack-dry-run",
+    "correction": "npm --prefix pack inspected the repository. Retried only pack with cwd migration/core after exact process inspection; no tarball created."
+  }
+}

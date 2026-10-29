@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "normalizeConferenceBodyUnchanged": true,
+  "existingValidationHelpersUnchanged": true,
+  "smokeVersionAssertionOnly": true,
+  "existingTypesUnchanged": true,
+  "newTypeExports": [
+    "SpeakerProfile",
+    "SpeakerNotFoundReason",
+    "SpeakerLookup"
+  ],
+  "runtimeExports": [
+    "CORE_API_VERSION",
+    "CORE_PACKAGE_NAME",
+    "ConferenceDataError",
+    "addFavorite",
+    "compareTimes",
+    "createInitialSelection",
+    "findSpeakerByRouteId",
+    "groupSessions",
+    "initialSelectedTracks",
+    "normalizeConference",
+    "normalizeSpeakerProfiles",
+    "parseSpeakerRouteId",
+    "parseTimeToMinutes",
+    "removeFavorite",
+    "selectSessions",
+    "sessionsForSpeaker",
+    "sortSpeakers",
+    "sortTracksByName"
+  ],
+  "existingTestFiles": [
+    "algorithms.test.ts",
+    "expected-cases.test.ts",
+    "normalize.test.ts",
+    "smoke.test.ts",
+    "time.test.ts"
+  ],
+  "existingTests": 53,
+  "newTests": 86,
+  "corePassingTestLines": 139,
+  "newFileLines": {
+    "migration/core/src/speakers.ts": 42,
+    "migration/core/test/speakers.test.ts": 192,
+    "migration/core/test/expected-speakers.test.ts": 124
+  }
+}
