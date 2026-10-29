@@ -1,0 +1,16 @@
+{
+  "command": "bash",
+  "args": [
+    "-lc",
+    "command -v node; node --version; git config --get core.autocrlf; test ! -e migration/evidence/NS07/f-device/ && printf 'f-device absent\\n'; test ! -e tools/qwen-supervisor/.runs/sol-ns07-r1-f2-20261028/ && printf 'run absent\\n'"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 1,
+  "startedAt": "2026-10-28T10:03:42.771Z",
+  "durationMs": 2941,
+  "toolCallId": "call_619280fc669545d582611f62b38b7667",
+  "stdout": "outer-call_619280fc669545d582611f62b38b7667.stdout.log",
+  "stderr": "outer-call_619280fc669545d582611f62b38b7667.stderr.log",
+  "provenance": "Hermes terminal input/result events; runtime-provided timing, not fabricated subprocess timing",
+  "stdoutBoundCharacters": 131072
+}

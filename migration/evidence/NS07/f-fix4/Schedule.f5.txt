@@ -1,0 +1,278 @@
+<script lang="ts" setup>
+import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
+import { Dialogs, SwipeDirection, type EventData, type Page, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
+import SessionDetail from './SessionDetail.vue';
+import TrackFilter from './TrackFilter.vue';
+import { applyFilterResult } from '../state/track-filter';
+import { useConferenceStore } from '../state/conference-store';
+import { listFavoriteAction } from '../state/session-detail';
+import { toScheduleRows, type ScheduleRow } from '../state/schedule-rows';
+import { rowSwipeReducer, rowTapAction, swipeActionLabel, type RowSwipeState } from '../state/row-swipe';
+
+const store = useConferenceStore();
+const swipeState = ref<RowSwipeState>({ openId: null });
+const swipeActionWidths = ref<Record<number, number>>({});
+let statusBarPage: Page | undefined;
+let statusBarObserver: android.view.ViewTreeObserver | undefined;
+let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+
+function pageLoaded(event: EventData) {
+  if (statusBarPage) return;
+  const page = event.object as Page;
+  if (!page.android || android.os.Build.VERSION.SDK_INT < 30) return;
+  statusBarPage = page;
+  statusBarObserver = page.android.getViewTreeObserver();
+  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
+    onPreDraw() {
+      if (statusBarPage !== page || !page.isLoaded) return true;
+      // F5: repair after this window's configuration/insets/layout, not a posted delay.
+      const controller = page.getClosestWindow().getInsetsController();
+      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
+      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
+        page.updateStatusBarStyle('dark');
+      }
+      return true;
+    },
+  });
+  statusBarObserver?.addOnPreDrawListener(statusBarPreDraw);
+}
+
+function pageUnloaded() {
+  const observer = statusBarObserver?.isAlive() ? statusBarObserver : statusBarPage?.android?.getViewTreeObserver();
+  if (observer?.isAlive() && statusBarPreDraw) observer.removeOnPreDrawListener(statusBarPreDraw);
+  statusBarPage = undefined;
+  statusBarObserver = undefined;
+  statusBarPreDraw = undefined;
+}
+
+function measureSwipeAction(event: EventData, id: number) {
+  const action = event.object as View;
+  const width = action.getActualSize().width;
+  if (action.visibility === 'visible' && width > 0 && swipeActionWidths.value[id] !== width) {
+    swipeActionWidths.value[id] = width;
+  }
+}
+
+watch([
+  () => store.state.selection?.searchText,
+  () => store.state.selection?.mode,
+  () => store.state.selection?.selectedTracks,
+], () => {
+  swipeState.value = rowSwipeReducer(swipeState.value, { type: 'list-changed' });
+});
+const ready = computed(() => store.state.status === 'ready');
+const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');
+const rows = computed(() => toScheduleRows(store.getters.scheduleGroups));
+const emptyMessage = computed(() => store.state.selection?.mode === 'favorites' && !store.state.selection.favoriteIds.length
+  ? 'No favorite sessions.'
+  : 'No sessions match your search or filters.');
+const templateFor = ({ item }: { item: ScheduleRow }) => item.kind;
+
+function openFilter() {
+  $showModal(TrackFilter, {
+    fullscreen: true,
+    closeCallback: (result: unknown) => applyFilterResult(store, result),
+  });
+}
+
+function swipeRow(event: SwipeGestureEventData, id: number) {
+  if (event.direction === SwipeDirection.left) {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-left', id });
+  } else if (event.direction === SwipeDirection.right) {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-right', id });
+  }
+}
+
+function openSession(event: EventData, id: number) {
+  if (rowTapAction(swipeState.value, id) === 'close') {
+    swipeState.value = rowSwipeReducer(swipeState.value, { type: 'swipe-right', id });
+    return;
+  }
+  $navigateTo(SessionDetail, { frame: (event.object as View).page.frame, props: { sessionId: String(id) } });
+}
+
+async function changeSwipeFavorite(id: number) {
+  await changeFavorite(id);
+  swipeState.value = rowSwipeReducer(swipeState.value, { type: 'settled', id });
+}
+
+async function changeFavorite(id: number) {
+  const plan = listFavoriteAction(store.state.selection?.mode ?? 'all', store.getters.isFavorite(id));
+  if (plan.kind === 'add-then-alert') {
+    store.commit('favoriteAdded', id);
+    await Dialogs.alert(plan.dialog);
+  } else if (await Dialogs.confirm(plan.dialog)) {
+    store.commit('favoriteRemoved', id);
+  }
+}
+
+function changeSearch(event: EventData) {
+  store.commit('setSearchText', (event.object as SearchBar).text);
+}
+
+function clearLaunchFocus(event: EventData) {
+  const search = event.object as SearchBar;
+  if (search.android) {
+    // Give the containing layout focus so Android does not immediately refocus
+    // its first text input after SearchView.clearFocus(). Tapping still works.
+    const parent = search.parent?.android;
+    parent?.setFocusable(true);
+    parent?.setFocusableInTouchMode(true);
+    parent?.requestFocus();
+    search.android.clearFocus();
+    search.dismissSoftInput();
+  }
+}
+
+onMounted(() => {
+  if (store.state.status === 'idle') void store.dispatch('load');
+});
+</script>
+
+<template>
+  <Page class="conference-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+    <ActionBar title="Conference" class="conference-action-bar" />
+    <GridLayout rows="auto,auto,*">
+      <SearchBar
+        row="0"
+        hint="Search sessions"
+        automationText="Search sessions"
+        :text="store.state.selection?.searchText ?? ''"
+        :isEnabled="ready"
+        color="#111111"
+        backgroundColor="#ffffff"
+        textFieldHintColor="#555555"
+        @textChange="changeSearch"
+        @loaded="clearLaunchFocus"
+      />
+      <GridLayout row="1" columns="*,auto">
+        <StackLayout col="0" margin="8,12">
+          <Button
+            text="All sessions"
+            accessibilityLabel="All sessions"
+            accessibilityRole="radioButton"
+            :accessibilityState="store.state.selection?.mode !== 'favorites' ? 'checked' : 'unchecked'"
+            :isEnabled="ready"
+            textWrap="true"
+            minHeight="48"
+            padding="8,12"
+            color="#111111"
+            :backgroundColor="store.state.selection?.mode !== 'favorites' ? '#c5ddf4' : '#eeeeee'"
+            @tap="store.commit('setMode', 'all')"
+          />
+          <Button
+            text="Favorite sessions"
+            accessibilityLabel="Favorite sessions"
+            accessibilityRole="radioButton"
+            :accessibilityState="store.state.selection?.mode === 'favorites' ? 'checked' : 'unchecked'"
+            :isEnabled="ready"
+            textWrap="true"
+            minHeight="48"
+            padding="8,12"
+            color="#111111"
+            :backgroundColor="store.state.selection?.mode === 'favorites' ? '#c5ddf4' : '#eeeeee'"
+            @tap="store.commit('setMode', 'favorites')"
+          />
+        </StackLayout>
+        <Button
+          col="1"
+          text="Filter"
+          automationText="Filter sessions"
+          accessibilityLabel="Filter sessions"
+          :isEnabled="ready"
+          margin="8,12,8,0"
+          @tap="openFilter"
+        />
+      </GridLayout>
+      <StackLayout v-if="loading" row="2" verticalAlignment="center" margin="24">
+        <ActivityIndicator :busy="true" color="#245a91" />
+        <Label text="Loading sessions…" textAlignment="center" color="#111111" />
+      </StackLayout>
+      <StackLayout v-else-if="store.state.status === 'error'" row="2" verticalAlignment="center" margin="24">
+        <Label text="Unable to load sessions." textWrap="true" textAlignment="center" color="#111111" />
+        <Label :text="store.state.error ?? ''" textWrap="true" textAlignment="center" color="#111111" />
+        <Button text="Retry" @tap="store.dispatch('retry')" />
+      </StackLayout>
+      <Label
+        v-else-if="!rows.length"
+        row="2"
+        :text="emptyMessage"
+        textWrap="true"
+        textAlignment="center"
+        verticalAlignment="center"
+        margin="24"
+        color="#111111"
+      />
+      <ListView v-else row="2" :items="rows" :itemTemplateSelector="templateFor" separatorColor="#dddddd">
+        <template #header="{ item }">
+          <Label :key="item.key" :text="item.groupTime" class="schedule-heading" />
+        </template>
+        <template #session="{ item }">
+          <GridLayout :key="item.key" columns="*,auto">
+            <GridLayout col="0">
+              <Button
+                :text="swipeActionLabel(store.state.selection?.mode ?? 'all')"
+                :automationText="`swipe-action-${item.session.id}`"
+                :visibility="swipeState.openId === item.session.id ? 'visible' : 'collapse'"
+                :accessibilityHidden="true"
+                horizontalAlignment="right"
+                width="auto"
+                minWidth="96"
+                minHeight="48"
+                textWrap="false"
+                padding="8,16"
+                @loaded="measureSwipeAction($event, item.session.id)"
+                @layoutChanged="measureSwipeAction($event, item.session.id)"
+                @tap="changeSwipeFavorite(item.session.id)"
+              />
+              <StackLayout
+                :automationText="`session-${item.session.id}`"
+                class="schedule-session"
+                :translateX="swipeState.openId === item.session.id ? -(swipeActionWidths[item.session.id] ?? 96) : 0"
+                accessibilityRole="link"
+                :accessibilityLabel="item.session.name"
+                @swipe="swipeRow($event, item.session.id)"
+                @tap="openSession($event, item.session.id)"
+              >
+                <Label :text="item.session.name" textWrap="true" fontSize="18" fontWeight="bold" color="#111111" />
+                <Label :text="`${item.session.timeStart}–${item.session.timeEnd}`" textWrap="true" color="#333333" />
+                <Label :text="item.session.location" textWrap="true" color="#333333" />
+                <Label :text="item.session.tracks.join(', ')" textWrap="true" color="#333333" />
+              </StackLayout>
+            </GridLayout>
+            <Button
+              col="1"
+              :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
+              :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
+              :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
+              textWrap="true"
+              padding="8,16"
+              verticalAlignment="center"
+              margin="8"
+              @tap="changeFavorite(item.session.id)"
+            />
+          </GridLayout>
+        </template>
+      </ListView>
+    </GridLayout>
+  </Page>
+</template>
+
+<style scoped>
+.conference-page,
+.conference-action-bar {
+  background-color: #ffffff;
+  color: #111111;
+}
+.schedule-heading {
+  background-color: #e9eff5;
+  color: #111111;
+  font-size: 18;
+  font-weight: bold;
+  padding: 12 16;
+}
+.schedule-session {
+  background-color: #ffffff;
+  padding: 12 16;
+}
+</style>

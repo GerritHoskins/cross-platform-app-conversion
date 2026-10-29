@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "phase": "F5",
+  "status": "CHECKPOINTED",
+  "summary": "Replaced the F3 appearance-event post with lifecycle-scoped, conditional pre-draw repair on each Page's actual Window. All prescribed software gates pass; candidate 4 built. No device confirmation; STOP for F6.",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "branch": "migration/slice-1",
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+  "fixes": [
+    {
+      "id": "F5-G07-LIVE",
+      "case": "G07-1 live light/dark switches on Schedule, SessionDetail and TrackFilter",
+      "cause": "Application appearance event precedes activity refresh; dialog configuration independently refreshes its own Window. A single View.post is not a configuration/traversal boundary. Exact F4 direction split is not explained by installed sources.",
+      "change": "Per-loaded-Page OnPreDraw observer conditionally repairs LIGHT_STATUS_BARS on getClosestWindow(); remove on unload; no timer/fallback/permanent process listener.",
+      "files": [
+        "migration/nativescript/src/components/Schedule.vue",
+        "migration/nativescript/src/components/SessionDetail.vue",
+        "migration/nativescript/src/components/TrackFilter.vue"
+      ],
+      "diffHunkRef": [
+        "migration/evidence/NS07/f-fix3/fix-f5-delta.diff:13",
+        "migration/evidence/NS07/f-fix3/fix-f5-delta.diff:65",
+        "migration/evidence/NS07/f-fix3/fix-f5-delta.diff:124"
+      ],
+      "status": "IMPLEMENTED",
+      "visualConfirmation": false
+    }
+  ],
+  "checks": [
+    {
+      "id": "entry-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/entry-branch.receipt.json"
+    },
+    {
+      "id": "entry-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/entry-head.receipt.json"
+    },
+    {
+      "id": "entry-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/entry-index.receipt.json"
+    },
+    {
+      "id": "entry-porcelain",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/entry-porcelain.receipt.json"
+    },
+    {
+      "id": "entry-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/entry-diff.receipt.json"
+    },
+    {
+      "id": "core-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/core-test.receipt.json"
+    },
+    {
+      "id": "npm-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/npm-ci.receipt.json"
+    },
+    {
+      "id": "toolchain-after-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/toolchain-after-ci.receipt.json"
+    },
+    {
+      "id": "verify-core-first",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/verify-core-first.receipt.json"
+    },
+    {
+      "id": "core-test-repeat",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/core-test-repeat.receipt.json"
+    },
+    {
+      "id": "verify-core-second",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/verify-core-second.receipt.json"
+    },
+    {
+      "id": "verify-core-repeatability",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/verify-core-repeatability.receipt.json"
+    },
+    {
+      "id": "core-json-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/core-json-test.receipt.json"
+    },
+    {
+      "id": "core-json-counts",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/core-json-counts.receipt.json"
+    },
+    {
+      "id": "typecheck-r2",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/typecheck-r2.receipt.json"
+    },
+    {
+      "id": "tests-first",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/tests-first.receipt.json"
+    },
+    {
+      "id": "tests-first-counts",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/tests-first-counts.receipt.json"
+    },
+    {
+      "id": "tests-second",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/tests-second.receipt.json"
+    },
+    {
+      "id": "tests-second-counts",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/tests-second-counts.receipt.json"
+    },
+    {
+      "id": "status-bar-lifecycle-probes",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/status-bar-lifecycle-probes.receipt.json"
+    },
+    {
+      "id": "build-android",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/build-android.receipt.json"
+    },
+    {
+      "id": "candidate4",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/candidate4.receipt.json"
+    },
+    {
+      "id": "bundle-evidence",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/bundle-evidence.receipt.json"
+    },
+    {
+      "id": "preservation-final",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/preservation-final.receipt.json"
+    },
+    {
+      "id": "write-scope-audit",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/write-scope-audit.receipt.json"
+    },
+    {
+      "id": "checkpoint-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/checkpoint-branch.receipt.json"
+    },
+    {
+      "id": "checkpoint-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/checkpoint-head.receipt.json"
+    },
+    {
+      "id": "checkpoint-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/checkpoint-index.receipt.json"
+    },
+    {
+      "id": "checkpoint-diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/checkpoint-diff-check.receipt.json"
+    },
+    {
+      "id": "checkpoint-porcelain",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix3/checkpoint-porcelain.receipt.json"
+    }
+  ],
+  "gateChecks": [
+    {
+      "id": "branch",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "head",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "indexEmpty",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "porcelain",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "diffIdentical",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "candidate3",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    },
+    {
+      "id": "fFix3Absent",
+      "pass": true,
+      "exitCode": 0,
+      "evidence": "migration/evidence/NS07/f-fix3/entry-gate.json"
+    }
+  ],
+  "candidate3": {
+    "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "size": 117669928,
+    "sha256": "0d4c089755b895d09c80fd406aa6c671947691b6124ad9e399d9ff3025cca50e"
+  },
+  "candidate4": {
+    "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "size": 118191269,
+    "sha256": "68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44"
+  },
+  "apk": {
+    "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "size": 118191269,
+    "sha256": "68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44"
+  },
+  "testCounts": {
+    "core": {
+      "tests": 53,
+      "passed": 53,
+      "failed": 0
+    },
+    "nativescript": [
+      {
+        "files": 7,
+        "tests": 115,
+        "passed": 115,
+        "failed": 0,
+        "pending": 0,
+        "success": true
+      },
+      {
+        "files": 7,
+        "tests": 115,
+        "passed": 115,
+        "failed": 0,
+        "pending": 0,
+        "success": true
+      }
+    ],
+    "softwareMockProbes": 24
+  },
+  "preservation": {
+    "total": 58367,
+    "changes": [
+      {
+        "path": "migration/nativescript/src/components/Schedule.vue",
+        "entrySha256": "da50b1ea77229a42b072095b273792a99fc5e1393ee95d73a4feb5a63cfdb44d",
+        "finalSha256": "d5b1b84d2c9dd5812749b5aac2ef6d1613ddbf6cf02836060c2fe732b087588b"
+      },
+      {
+        "path": "migration/nativescript/src/components/SessionDetail.vue",
+        "entrySha256": "588577be6ffe7b06f8b5d7bee5b5b0f8a8cd285255e5404c7ef8f07d8d17b553",
+        "finalSha256": "4a10c12d3fe267af9edc6acd2f9f4078b72d43ae75b78f11e28cbe280e4ac807"
+      },
+      {
+        "path": "migration/nativescript/src/components/TrackFilter.vue",
+        "entrySha256": "fb675f7c69362fb4dcf22e4f568711909833d7b17a40e81d1e4bd397d401e32d",
+        "finalSha256": "8a535207719f761b191376c7c35ab26ca39e77aaba6fc5ad82244c483e7d9124"
+      }
+    ],
+    "protectedUnchanged": true,
+    "nativescriptTracked": 89,
+    "protectedFiles": 58278
+  },
+  "bundle": {
+    "apk": {
+      "path": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+      "size": 118191269,
+      "sha256": "68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44"
+    },
+    "bundle": {
+      "path": "assets/app/bundle.mjs",
+      "present": true,
+      "size": 154626,
+      "sha256": "ccbaf3d2ce6f394da20c06a994bd80f62422f76d2b8b92ca686604fd21dfa484"
+    },
+    "markers": [
+      {
+        "marker": "swipe-action-",
+        "present": true,
+        "count": 1,
+        "excerpt": "                                           automationText: `swipe-action-${item.session.id}`,\n                                                            visibility: $setup."
+      },
+      {
+        "marker": "Filter Sessions",
+        "present": true,
+        "count": 1,
+        "excerpt": "de)(_component_ActionBar, {\n                        title: \"Filter Sessions\",\n                        class: \"filter-action-bar\"\n                    }, {\n                     "
+      },
+      {
+        "marker": "ns04SessionId",
+        "present": true,
+        "count": 1,
+        "excerpt": "ication.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');\n                const sessionId = (0,_state_session_detail__WEBPACK_IMPORTED_MODULE_4__.directEn"
+      },
+      {
+        "marker": "OnPreDrawListener",
+        "present": true,
+        "count": 9,
+        "excerpt": "       statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({\n                onPreDraw() {\n                    if (statusBarPage !== page || !page.isLoaded)\n "
+      },
+      {
+        "marker": "getSystemBarsAppearance",
+        "present": true,
+        "count": 3,
+        "excerpt": "US_BARS;\n                    if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {\n                        page.updateStatusBarStyle('dark');\n                    }\n"
+      }
+    ]
+  },
+  "retainedFailedCommands": [
+    {
+      "id": "widgets-utils-bytecode",
+      "exitCode": 1,
+      "receipt": "widgets-utils-bytecode.receipt.json",
+      "expected": false
+    },
+    {
+      "id": "bytecode-androidx-activity-EdgeToEdgeApi35",
+      "exitCode": 1,
+      "receipt": "bytecode-androidx-activity-EdgeToEdgeApi35.receipt.json",
+      "expected": false
+    },
+    {
+      "id": "resolved-androidx-activity-EdgeToEdgeApi28",
+      "exitCode": 1,
+      "receipt": "resolved-androidx-activity-EdgeToEdgeApi28.receipt.json",
+      "expected": false
+    },
+    {
+      "id": "typecheck",
+      "exitCode": 2,
+      "receipt": "typecheck.receipt.json",
+      "expected": false
+    },
+    {
+      "id": "fix-f5-delta-Schedule",
+      "exitCode": 1,
+      "receipt": "fix-f5-delta-Schedule.receipt.json",
+      "expected": true
+    },
+    {
+      "id": "fix-f5-delta-SessionDetail",
+      "exitCode": 1,
+      "receipt": "fix-f5-delta-SessionDetail.receipt.json",
+      "expected": true
+    },
+    {
+      "id": "fix-f5-delta-TrackFilter",
+      "exitCode": 1,
+      "receipt": "fix-f5-delta-TrackFilter.receipt.json",
+      "expected": true
+    }
+  ],
+  "unresolved": [
+    "F6 must verify repeated both-direction switches on all three already-open Pages, both dialog/activity Windows across modal open/close, and coordinator full-resolution pixels.",
+    "Installed sources do not establish the exact F4 direction split or a device-observed total ordering; API35 framework source only, not API36 runtime.",
+    "Initial outer terminal timing unavailable; explicitly null bootstrap provenance. npm audit/pending script approvals and upstream DEP0190 warning retained."
+  ],
+  "checkpoint": "migration/handoffs/NS07-checkpoint-f5.md",
+  "prohibitedActionsPerformed": []
+}

@@ -1,0 +1,49 @@
+﻿{
+    "version":  1,
+    "package":  "NS07",
+    "decision":  "D2 (privacy safeguard; RN07 D13 precedent)",
+    "phase":  "G run 2",
+    "redactedBy":  "Claude Code coordinator (claude-opus-5-5)",
+    "redactedAt":  "2026-10-27T16:50:03.8907413Z",
+    "finding":  "Gboard showed a clipboard paste-suggestion chip (the current system clipboard item, which clearing Gboard clipboard history does not remove) above the SearchBar in 2 of 142 distinct phase G run 2 frames. The chip is absent from all UI XML, logs, receipts and the run stream (text search of every non-PNG file found no clipboard content).",
+    "detection":  "Coordinator visual inspection of all 142 distinct phase G run 2 frames via 18 contact sheets, then full-resolution crops of y 120-380 px for the two chip frames. All other frames, including every other SearchBar-focused frame (G01-*, G08-clear*, G08-keyboard-insets, G09-query*), show only the floating Gboard toolbar with no clipboard content.",
+    "originals":  "Unredacted originals were moved outside version control to the git-ignored /_backup_ns07_redaction/g-settings2/ folder (*.unredacted.png); they are never committed.",
+    "files":  [
+                  {
+                      "path":  "migration/evidence/NS07/g-settings2/G08-query.png",
+                      "kind":  "png",
+                      "sha256Before":  "c8059008211ee984d2413d2968ab0e774ef420c9179f72394615b1f665e2a1d1",
+                      "sha256After":  "2e4ae5803dd5ffd25e44e175e48c60e35484efa5a514f9fe0cd5f1934c41ef03",
+                      "bytesBefore":  105701,
+                      "bytesAfter":  95597,
+                      "regions":  [
+                                      {
+                                          "x":  468,
+                                          "y":  185,
+                                          "width":  588,
+                                          "height":  115,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard paste-suggestion chip (current system clipboard item)"
+                                      }
+                                  ]
+                  },
+                  {
+                      "path":  "migration/evidence/NS07/g-settings2/G08-query-focused.png",
+                      "kind":  "png",
+                      "sha256Before":  "e27711c187b72732cb6d6f319ce7419ca29a22610b6422e912bb08aedd388cd6",
+                      "sha256After":  "f3623d39c8d49583b2712b6068702462387ac47388597e0b0f843305d0ccba18",
+                      "bytesBefore":  213791,
+                      "bytesAfter":  181829,
+                      "regions":  [
+                                      {
+                                          "x":  45,
+                                          "y":  181,
+                                          "width":  589,
+                                          "height":  115,
+                                          "fill":  "black",
+                                          "content":  "Gboard clipboard paste-suggestion chip (current system clipboard item)"
+                                      }
+                                  ]
+                  }
+              ]
+}

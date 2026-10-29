@@ -1,0 +1,249 @@
+diff --git a/migration/nativescript/src/components/Schedule.vue b/migration/nativescript/src/components/Schedule.vue
+index fed33fc8..3cf2231c 100644
+--- a/migration/nativescript/src/components/Schedule.vue
++++ b/migration/nativescript/src/components/Schedule.vue
+@@ -1,6 +1,6 @@
+ <script lang="ts" setup>
+ import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
+-import { Dialogs, SwipeDirection, type EventData, type SearchBar, type SegmentedBar, type SwipeGestureEventData, type View } from '@nativescript/core';
++import { Application, Dialogs, SwipeDirection, type EventData, type Page, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
+ import SessionDetail from './SessionDetail.vue';
+ import TrackFilter from './TrackFilter.vue';
+ import { applyFilterResult } from '../state/track-filter';
+@@ -11,6 +11,36 @@ import { rowSwipeReducer, rowTapAction, swipeActionLabel, type RowSwipeState } f
+ 
+ const store = useConferenceStore();
+ const swipeState = ref<RowSwipeState>({ openId: null });
++const swipeActionWidths = ref<Record<number, number>>({});
++let statusBarPage: Page | undefined;
++
++function reapplyStatusBarStyle() {
++  const page = statusBarPage;
++  // Core refreshes edge-to-edge after emitting the appearance event.
++  page?.android?.post(() => {
++    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
++  });
++}
++
++function pageLoaded(event: EventData) {
++  if (statusBarPage) return;
++  statusBarPage = event.object as Page;
++  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++}
++
++function pageUnloaded() {
++  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  statusBarPage = undefined;
++}
++
++function measureSwipeAction(event: EventData, id: number) {
++  const action = event.object as View;
++  const width = action.getActualSize().width;
++  if (action.visibility === 'visible' && width > 0 && swipeActionWidths.value[id] !== width) {
++    swipeActionWidths.value[id] = width;
++  }
++}
++
+ watch([
+   () => store.state.selection?.searchText,
+   () => store.state.selection?.mode,
+@@ -68,10 +98,6 @@ function changeSearch(event: EventData) {
+   store.commit('setSearchText', (event.object as SearchBar).text);
+ }
+ 
+-function changeMode(event: EventData) {
+-  store.commit('setMode', (event.object as SegmentedBar).selectedIndex === 1 ? 'favorites' : 'all');
+-}
+-
+ function clearLaunchFocus(event: EventData) {
+   const search = event.object as SearchBar;
+   if (search.android) {
+@@ -92,7 +118,7 @@ onMounted(() => {
+ </script>
+ 
+ <template>
+-  <Page class="conference-page">
++  <Page class="conference-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+     <ActionBar title="Conference" class="conference-action-bar" />
+     <GridLayout rows="auto,auto,*">
+       <SearchBar
+@@ -108,19 +134,34 @@ onMounted(() => {
+         @loaded="clearLaunchFocus"
+       />
+       <GridLayout row="1" columns="*,auto">
+-        <SegmentedBar
+-          col="0"
+-          :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
+-          :isEnabled="ready"
+-          color="#111111"
+-          backgroundColor="#eeeeee"
+-          selectedBackgroundColor="#c5ddf4"
+-          margin="8,12"
+-          @selectedIndexChange="changeMode"
+-        >
+-          <SegmentedBarItem title="All sessions" />
+-          <SegmentedBarItem title="Favorite sessions" />
+-        </SegmentedBar>
++        <StackLayout col="0" margin="8,12">
++          <Button
++            text="All sessions"
++            accessibilityLabel="All sessions"
++            accessibilityRole="radioButton"
++            :accessibilityState="store.state.selection?.mode !== 'favorites' ? 'checked' : 'unchecked'"
++            :isEnabled="ready"
++            textWrap="true"
++            minHeight="48"
++            padding="8,12"
++            color="#111111"
++            :backgroundColor="store.state.selection?.mode !== 'favorites' ? '#c5ddf4' : '#eeeeee'"
++            @tap="store.commit('setMode', 'all')"
++          />
++          <Button
++            text="Favorite sessions"
++            accessibilityLabel="Favorite sessions"
++            accessibilityRole="radioButton"
++            :accessibilityState="store.state.selection?.mode === 'favorites' ? 'checked' : 'unchecked'"
++            :isEnabled="ready"
++            textWrap="true"
++            minHeight="48"
++            padding="8,12"
++            color="#111111"
++            :backgroundColor="store.state.selection?.mode === 'favorites' ? '#c5ddf4' : '#eeeeee'"
++            @tap="store.commit('setMode', 'favorites')"
++          />
++        </StackLayout>
+         <Button
+           col="1"
+           text="Filter"
+@@ -163,14 +204,19 @@ onMounted(() => {
+                 :visibility="swipeState.openId === item.session.id ? 'visible' : 'collapse'"
+                 :accessibilityHidden="true"
+                 horizontalAlignment="right"
+-                width="96"
++                width="auto"
++                minWidth="96"
+                 minHeight="48"
++                textWrap="false"
++                padding="8,16"
++                @loaded="measureSwipeAction($event, item.session.id)"
++                @layoutChanged="measureSwipeAction($event, item.session.id)"
+                 @tap="changeSwipeFavorite(item.session.id)"
+               />
+               <StackLayout
+                 :automationText="`session-${item.session.id}`"
+                 class="schedule-session"
+-                :translateX="swipeState.openId === item.session.id ? -96 : 0"
++                :translateX="swipeState.openId === item.session.id ? -(swipeActionWidths[item.session.id] ?? 96) : 0"
+                 accessibilityRole="link"
+                 :accessibilityLabel="item.session.name"
+                 @swipe="swipeRow($event, item.session.id)"
+@@ -187,6 +233,8 @@ onMounted(() => {
+               :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
+               :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
+               :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
++              textWrap="true"
++              padding="8,16"
+               verticalAlignment="center"
+               margin="8"
+               @tap="changeFavorite(item.session.id)"
+diff --git a/migration/nativescript/src/components/SessionDetail.vue b/migration/nativescript/src/components/SessionDetail.vue
+index 41cad1db..7f920c67 100644
+--- a/migration/nativescript/src/components/SessionDetail.vue
++++ b/migration/nativescript/src/components/SessionDetail.vue
+@@ -1,10 +1,32 @@
+ <script lang="ts" setup>
+ import { $navigateBack, computed, onMounted } from 'nativescript-vue';
++import { Application, type EventData, type Page } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { parseSessionId } from '../state/session-detail';
+ 
+ const props = defineProps<{ sessionId: string }>();
+ const store = useConferenceStore();
++let statusBarPage: Page | undefined;
++
++function reapplyStatusBarStyle() {
++  const page = statusBarPage;
++  // Core refreshes edge-to-edge after emitting the appearance event.
++  page?.android?.post(() => {
++    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
++  });
++}
++
++function pageLoaded(event: EventData) {
++  if (statusBarPage) return;
++  statusBarPage = event.object as Page;
++  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++}
++
++function pageUnloaded() {
++  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  statusBarPage = undefined;
++}
++
+ const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');
+ const session = computed(() => {
+   const id = parseSessionId(props.sessionId);
+@@ -24,7 +46,7 @@ onMounted(() => {
+ </script>
+ 
+ <template>
+-  <Page class="session-page">
++  <Page class="session-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+     <ActionBar title="Session" class="session-action-bar">
+       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack()" />
+     </ActionBar>
+@@ -52,7 +74,7 @@ onMounted(() => {
+             :text="favorite ? 'Remove from favorites' : 'Add to favorites'"
+             automationText="favorite-toggle"
+             :isEnabled="!!session"
+-            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : undefined"
++            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : 'unchecked'"
+             marginTop="16"
+             @tap="toggleFavorite"
+           />
+diff --git a/migration/nativescript/src/components/TrackFilter.vue b/migration/nativescript/src/components/TrackFilter.vue
+index 03624c76..4dbd8ecd 100644
+--- a/migration/nativescript/src/components/TrackFilter.vue
++++ b/migration/nativescript/src/components/TrackFilter.vue
+@@ -1,11 +1,31 @@
+ <script lang="ts" setup>
+ import { $closeModal, ref } from 'nativescript-vue';
+-import type { EventData, Switch } from '@nativescript/core';
++import { Application, type EventData, type Page, type Switch } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { checkedTrackNames, setAllTracks, toggleTrack } from '../state/track-filter';
+ 
+ const store = useConferenceStore();
+ const draft = ref(store.getters.trackOptions);
++let statusBarPage: Page | undefined;
++
++function reapplyStatusBarStyle() {
++  const page = statusBarPage;
++  // Core refreshes edge-to-edge after emitting the appearance event.
++  page?.android?.post(() => {
++    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
++  });
++}
++
++function pageLoaded(event: EventData) {
++  if (statusBarPage) return;
++  statusBarPage = event.object as Page;
++  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++}
++
++function pageUnloaded() {
++  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  statusBarPage = undefined;
++}
+ 
+ function changeTrack(event: EventData, name: string) {
+   // checkedChange also fires for programmatic updates; only a changed native
+@@ -19,7 +39,7 @@ function changeTrack(event: EventData, name: string) {
+ 
+ <template>
+   <Frame>
+-    <Page class="filter-page">
++    <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+       <ActionBar title="Filter Sessions" class="filter-action-bar">
+         <NavigationButton
+           text="Close"

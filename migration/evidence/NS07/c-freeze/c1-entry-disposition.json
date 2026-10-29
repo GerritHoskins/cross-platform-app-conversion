@@ -1,0 +1,26 @@
+{
+  "source": "tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/entry-gate.json",
+  "status": "BLOCKED",
+  "reason": "Mandatory entry NS06 manifest check exited 1, not the required 0 problem(s). No gate amendment inferred from the known candidate/source/root-lockfile changes.",
+  "manifestCheck": "4777 hash entries, 5 problem(s)",
+  "mismatches": [
+    "MISMATCH e58c43978bb5 C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "MISMATCH 01921ee8b98e migration/nativescript/src/components/SessionDetail.vue",
+    "MISMATCH dfb8abe45579 migration/nativescript/src/components/TrackFilter.vue",
+    "MISMATCH ca8851075cf3 package-lock.json",
+    "MISMATCH b1e2d1d9f259 migration/nativescript/src/components/Schedule.vue"
+  ],
+  "receipt": "tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/entry-ns06-manifest.receipt.json",
+  "rawPorcelain": "tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/entry-porcelain.raw.txt",
+  "migrationOutputsAbsent": [
+    "migration/evidence/NS07/c-freeze",
+    "migration/evidence/NS07/results.json",
+    "migration/evidence/NS07/results.md",
+    "migration/handoffs/NS07.md",
+    "migration/handoffs/NS07-checkpoint-c.md",
+    "migration/submissions/NS07-r1.json"
+  ],
+  "continuation": "Requires explicit human/coordinator gate amendment; do not restore any historical artifact or alter candidate 6 to satisfy the prior manifest.",
+  "tooling": "Terminal returned child exit code 1 with error:null; spawnSync had completed. No retry, background command or uncertain-running-child condition occurred. Initial read-only terminal capture is retained by the Hermes tool transcript; unavailable timing is not fabricated.",
+  "disposition": "Phase C run1 tools/qwen-supervisor/.runs/sol-ns07-r1-c-20261028/ (outside packet) stopped BLOCKED before migration writes: earlier coordinator prompt demanded NS06 zero-problem manifest after NS07 fixes. Exact five expected mismatches (components3, rebuilt APK, unrelated root lockfile) remain in its gate. No scope change. This is C2; explicit amended gate accepts exactly those five and no others."
+}

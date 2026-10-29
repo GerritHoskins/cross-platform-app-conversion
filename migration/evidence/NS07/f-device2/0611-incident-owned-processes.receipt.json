@@ -1,0 +1,17 @@
+{
+  "command": "powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\" | Where-Object { $_.CommandLine -like '*f4-scales.mjs*' } | Select-Object ProcessId,ParentProcessId,CommandLine | ConvertTo-Json -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-28T13:00:30.237Z",
+  "durationMs": 521,
+  "label": "incident-owned-processes",
+  "error": null,
+  "stdout": "0611-incident-owned-processes.stdout.log",
+  "stderr": "0611-incident-owned-processes.stderr.log"
+}

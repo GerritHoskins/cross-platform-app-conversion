@@ -1,0 +1,130 @@
+{
+  "audit": {
+    "branch": "migration/slice-1",
+    "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+    "index": "",
+    "changed": [],
+    "unexpected": [],
+    "missing": [],
+    "captureCount": 64,
+    "g07Count": 12,
+    "windowCount": 23,
+    "commandCount": 644,
+    "problems": [],
+    "sourceDiffMatches": true,
+    "earlierFilesChecked": 32576,
+    "pass": true
+  },
+  "failures": [
+    {
+      "case": "FS.filter.1.3",
+      "status": "FAIL",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-1.3.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-1.3.xml"
+      ]
+    },
+    {
+      "case": "FS.filter.2.0",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-2.0.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-2.0.xml"
+      ]
+    },
+    {
+      "case": "FS.filter.restored",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-restored.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-restored.xml"
+      ]
+    },
+    {
+      "case": "FS.filter.execution",
+      "status": "BLOCKED",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-exception.json"
+      ]
+    },
+    {
+      "case": "FS.filter.after-nav",
+      "status": "FAIL",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-restored.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-restored.xml",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-after-nav.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-after-nav.xml",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-recovery-open-tap.json"
+      ]
+    },
+    {
+      "case": "FS.filter",
+      "status": "FAIL",
+      "evidence": [
+        "migration/evidence/NS07/f-device5/F9-FS-filter-1.3.png",
+        "migration/evidence/NS07/f-device5/F9-FS-filter-1.3.xml",
+        "migration/evidence/NS07/f-device5/filter-execution-resolution.json"
+      ]
+    }
+  ],
+  "regression": [
+    {
+      "case": "R01.schedule",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.search",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear-full-list",
+      "status": "PASS"
+    },
+    {
+      "case": "R03.mode-switch",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-toolbar-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-system-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R05.filter-Done",
+      "status": "PASS"
+    },
+    {
+      "case": "R06.favorite-add",
+      "status": "PASS"
+    },
+    {
+      "case": "R07.already-favorite",
+      "status": "PASS"
+    },
+    {
+      "case": "R08.favorite-remove",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-reveal",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-action",
+      "status": "PASS"
+    }
+  ],
+  "settingsRestored": true,
+  "allRequiredPatternsZero": true,
+  "modeChecks": 13,
+  "modeChecksAllValid": true,
+  "tapCount": 33
+}

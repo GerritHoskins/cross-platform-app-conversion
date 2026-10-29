@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
-import { Dialogs, SwipeDirection, type EventData, type SearchBar, type SegmentedBar, type SwipeGestureEventData, type View } from '@nativescript/core';
+import { Dialogs, SwipeDirection, type EventData, type Page, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
 import SessionDetail from './SessionDetail.vue';
 import TrackFilter from './TrackFilter.vue';
 import { applyFilterResult } from '../state/track-filter';
@@ -11,6 +11,72 @@ import { rowSwipeReducer, rowTapAction, swipeActionLabel, type RowSwipeState } f
 
 const store = useConferenceStore();
 const swipeState = ref<RowSwipeState>({ openId: null });
+const swipeActionWidths = ref<Record<number, number>>({});
+let statusBarPage: Page | undefined;
+let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+let statusBarAttachState: android.view.View.OnAttachStateChangeListener | undefined;
+let statusBarPreDrawRegistered = false;
+
+function setStatusBarPreDraw(view: android.view.View, registered: boolean) {
+  if (!statusBarPreDraw || statusBarPreDrawRegistered === registered) return;
+  // F7: obtain the current observer while its view still owns it; never cache it.
+  const observer = view.getViewTreeObserver();
+  if (registered) observer.addOnPreDrawListener(statusBarPreDraw);
+  else observer.removeOnPreDrawListener(statusBarPreDraw);
+  statusBarPreDrawRegistered = registered;
+}
+
+function pageLoaded(event: EventData) {
+  if (statusBarPage) return;
+  const page = event.object as Page;
+  const view = page.android;
+  if (!view || android.os.Build.VERSION.SDK_INT < 30) return;
+  statusBarPage = page;
+  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
+    onPreDraw() {
+      if (statusBarPage !== page || !page.isLoaded) return true;
+      // F5: repair after this window's configuration/insets/layout, not a posted delay.
+      const controller = page.getClosestWindow().getInsetsController();
+      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
+      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
+        page.updateStatusBarStyle('dark');
+      }
+      return true;
+    },
+  });
+  statusBarAttachState = new android.view.View.OnAttachStateChangeListener({
+    onViewAttachedToWindow(view) {
+      if (statusBarPage === page && page.isLoaded) setStatusBarPreDraw(view, true);
+    },
+    onViewDetachedFromWindow(view) {
+      // Android still exposes the attached tree here, before clearing AttachInfo.
+      if (statusBarPage === page) setStatusBarPreDraw(view, false);
+    },
+  });
+  view.addOnAttachStateChangeListener(statusBarAttachState);
+  setStatusBarPreDraw(view, true);
+}
+
+function pageUnloaded() {
+  const view = statusBarPage?.android;
+  if (view) {
+    setStatusBarPreDraw(view, false);
+    if (statusBarAttachState) view.removeOnAttachStateChangeListener(statusBarAttachState);
+  }
+  statusBarPage = undefined;
+  statusBarPreDraw = undefined;
+  statusBarAttachState = undefined;
+  statusBarPreDrawRegistered = false;
+}
+
+function measureSwipeAction(event: EventData, id: number) {
+  const action = event.object as View;
+  const width = action.getActualSize().width;
+  if (action.visibility === 'visible' && width > 0 && swipeActionWidths.value[id] !== width) {
+    swipeActionWidths.value[id] = width;
+  }
+}
+
 watch([
   () => store.state.selection?.searchText,
   () => store.state.selection?.mode,
@@ -68,10 +134,6 @@ function changeSearch(event: EventData) {
   store.commit('setSearchText', (event.object as SearchBar).text);
 }
 
-function changeMode(event: EventData) {
-  store.commit('setMode', (event.object as SegmentedBar).selectedIndex === 1 ? 'favorites' : 'all');
-}
-
 function clearLaunchFocus(event: EventData) {
   const search = event.object as SearchBar;
   if (search.android) {
@@ -92,7 +154,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Page class="conference-page">
+  <Page class="conference-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
     <ActionBar title="Conference" class="conference-action-bar" />
     <GridLayout rows="auto,auto,*">
       <SearchBar
@@ -108,19 +170,34 @@ onMounted(() => {
         @loaded="clearLaunchFocus"
       />
       <GridLayout row="1" columns="*,auto">
-        <SegmentedBar
-          col="0"
-          :selectedIndex="store.state.selection?.mode === 'favorites' ? 1 : 0"
-          :isEnabled="ready"
-          color="#111111"
-          backgroundColor="#eeeeee"
-          selectedBackgroundColor="#c5ddf4"
-          margin="8,12"
-          @selectedIndexChange="changeMode"
-        >
-          <SegmentedBarItem title="All sessions" />
-          <SegmentedBarItem title="Favorite sessions" />
-        </SegmentedBar>
+        <StackLayout col="0" margin="8,12">
+          <Button
+            text="All sessions"
+            accessibilityLabel="All sessions"
+            accessibilityRole="radioButton"
+            :accessibilityState="store.state.selection?.mode !== 'favorites' ? 'checked' : 'unchecked'"
+            :isEnabled="ready"
+            textWrap="true"
+            minHeight="48"
+            padding="8,12"
+            color="#111111"
+            :backgroundColor="store.state.selection?.mode !== 'favorites' ? '#c5ddf4' : '#eeeeee'"
+            @tap="store.commit('setMode', 'all')"
+          />
+          <Button
+            text="Favorite sessions"
+            accessibilityLabel="Favorite sessions"
+            accessibilityRole="radioButton"
+            :accessibilityState="store.state.selection?.mode === 'favorites' ? 'checked' : 'unchecked'"
+            :isEnabled="ready"
+            textWrap="true"
+            minHeight="48"
+            padding="8,12"
+            color="#111111"
+            :backgroundColor="store.state.selection?.mode === 'favorites' ? '#c5ddf4' : '#eeeeee'"
+            @tap="store.commit('setMode', 'favorites')"
+          />
+        </StackLayout>
         <Button
           col="1"
           text="Filter"
@@ -163,14 +240,19 @@ onMounted(() => {
                 :visibility="swipeState.openId === item.session.id ? 'visible' : 'collapse'"
                 :accessibilityHidden="true"
                 horizontalAlignment="right"
-                width="96"
+                width="auto"
+                minWidth="96"
                 minHeight="48"
+                textWrap="false"
+                padding="8,16"
+                @loaded="measureSwipeAction($event, item.session.id)"
+                @layoutChanged="measureSwipeAction($event, item.session.id)"
                 @tap="changeSwipeFavorite(item.session.id)"
               />
               <StackLayout
                 :automationText="`session-${item.session.id}`"
                 class="schedule-session"
-                :translateX="swipeState.openId === item.session.id ? -96 : 0"
+                :translateX="swipeState.openId === item.session.id ? -(swipeActionWidths[item.session.id] ?? 96) : 0"
                 accessibilityRole="link"
                 :accessibilityLabel="item.session.name"
                 @swipe="swipeRow($event, item.session.id)"
@@ -187,6 +269,8 @@ onMounted(() => {
               :text="store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'"
               :automationText="`${store.state.selection?.mode === 'favorites' ? 'remove' : 'favorite'}-${item.session.id}`"
               :accessibilityLabel="`${store.state.selection?.mode === 'favorites' ? 'Remove' : 'Favorite'} ${item.session.name}`"
+              textWrap="true"
+              padding="8,16"
               verticalAlignment="center"
               margin="8"
               @tap="changeFavorite(item.session.id)"

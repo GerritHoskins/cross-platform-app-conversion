@@ -1,0 +1,52 @@
+{
+  "id": "add-duplicate",
+  "description": "favoriteSessions is [1, 12] and the list \"Favorite\" action fires for session 12: the action branch detects the existing favorite instead of adding (SessionList.vue:306-308) and the store mutation itself is a no-op without duplicates (sessions.ts:72-76). expected.favoriteIds equals the pre-state.",
+  "action": {
+    "op": "addFavorite",
+    "sessionId": 12
+  },
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [
+      1,
+      12
+    ],
+    "mode": "favorites"
+  },
+  "expected": {
+    "favoriteIds": [
+      1,
+      12
+    ],
+    "sessionIds": [
+      1,
+      12
+    ],
+    "groups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  }
+}

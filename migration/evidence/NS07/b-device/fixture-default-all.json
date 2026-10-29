@@ -1,0 +1,107 @@
+{
+  "id": "default-all",
+  "description": "First-load state (sessions.ts:123-128): every track appearing on a session is selected, search empty, \"all\" mode (SessionList.vue:293-299). All 20 sessions render; group headings come from the group time and groups appear in first-occurrence order after the timeStart sort; within the 10:00 am group sessions 6 and 7 share 10:15 am and keep input order, and in the 11:00 am group sessions 10 and 11 share 11:30 am and keep input order (stability, SessionList.vue:270-272).",
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [],
+    "mode": "all"
+  },
+  "expected": {
+    "sessionIds": [
+      1,
+      4,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "groups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "groupTime": "11:00 am",
+        "sessionIds": [
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      },
+      {
+        "groupTime": "1:00 pm",
+        "sessionIds": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "groupTime": "3:00 pm",
+        "sessionIds": [
+          19,
+          20
+        ]
+      }
+    ]
+  }
+}

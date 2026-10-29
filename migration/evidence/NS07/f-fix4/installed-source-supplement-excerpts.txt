@@ -1,0 +1,109 @@
+
+migration/nativescript/node_modules/@nativescript/core/ui/page/index.android.js
+10|export class Page extends PageBase {
+11|    constructor() {
+12|        super();
+13|        this.androidOverflowEdge = 'none';
+14|    }
+15|    createNativeView() {
+16|        const layout = new org.nativescript.widgets.GridLayout(this._context);
+17|        layout.addRowsFromJSON(JSON.stringify([
+18|            { value: 1, type: 0 /* org.nativescript.widgets.GridUnitType.auto */ },
+19|            { value: 1, type: 2 /* org.nativescript.widgets.GridUnitType.star */ },
+20|        ]));
+21|        return layout;
+22|    }
+23|    initNativeView() {
+24|        super.initNativeView();
+25|        this.nativeViewProtected.setBackgroundColor(-1); // White color.
+26|    }
+41|    onLoaded() {
+42|        super.onLoaded();
+43|        if (!this.hasActionBar && this.actionBarHidden !== true) {
+44|            // ensure actionBar is created
+45|            // but we only need to do that if the actionBarHidden is not hidden
+46|            this.actionBar = new ActionBar();
+47|        }
+48|        if (this.hasActionBar) {
+49|            this.updateActionBar();
+50|        }
+51|    }
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/fragment.android.js
+28|    onCreateView(inflater, container, savedInstanceState) {
+29|        return this._callbacks.onCreateView(this, inflater, container, savedInstanceState, superProto.onCreateView);
+30|    },
+31|    onSaveInstanceState(outState) {
+32|        this._callbacks.onSaveInstanceState(this, outState, superProto.onSaveInstanceState);
+33|    },
+34|    onDestroyView() {
+35|        this._callbacks.onDestroyView(this, superProto.onDestroyView);
+36|    },
+37|    onDestroy() {
+38|        this._callbacks.onDestroy(this, superProto.onDestroy);
+39|        this._callbacks = null;
+
+migration/nativescript/node_modules/@nativescript/core/ui/frame/frame-helper-for-android.js
+159|    onDestroyView(fragment, superFunc) {
+160|        try {
+161|            if (Trace.isEnabled()) {
+162|                Trace.write(`${fragment}.onDestroyView()`, Trace.categories.NativeLifecycle);
+163|            }
+164|            const hasRemovingParent = fragment.getRemovingParentFragment();
+165|            if (hasRemovingParent) {
+166|                const nativeFrameView = this.frame.nativeViewProtected;
+167|                if (nativeFrameView) {
+168|                    const bitmapDrawable = new android.graphics.drawable.BitmapDrawable(getNativeApp().getApplicationContext().getResources(), this.backgroundBitmap);
+169|                    this.frame._originalBackground = this.frame.backgroundColor || new Color('White');
+170|                    nativeFrameView.setBackgroundDrawable(bitmapDrawable);
+171|                    this.backgroundBitmap = null;
+172|                }
+173|            }
+174|        }
+175|        finally {
+176|            superFunc.call(fragment);
+177|        }
+178|    }
+244|    onStop(fragment, superFunc) {
+245|        superFunc.call(fragment);
+246|    }
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/view/ViewRootImpl.java
+6212|    void dispatchDetachedFromWindow() {
+6213|        // Make sure we free-up insets resources if view never received onWindowFocusLost()
+6214|        // because of a die-signal
+6215|        mInsetsController.onWindowFocusLost();
+6216|        mFirstInputStage.onDetachedFromWindow();
+6217|        if (mView != null && mView.mAttachInfo != null) {
+6218|            mAttachInfo.mTreeObserver.dispatchOnWindowAttachedChange(false);
+6219|            mView.dispatchDetachedFromWindow();
+6220|        }
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/view/View.java
+22889|        onAttachedToWindow();
+22890|
+22891|        ListenerInfo li = mListenerInfo;
+22892|        final CopyOnWriteArrayList<OnAttachStateChangeListener> listeners =
+22893|                li != null ? li.mOnAttachStateChangeListeners : null;
+22894|        if (listeners != null && listeners.size() > 0) {
+22895|            // NOTE: because of the use of CopyOnWriteArrayList, we *must* use an iterator to
+22896|            // perform the dispatching. The iterator is a safe guard against listeners that
+22897|            // could mutate the list by calling the various add/remove methods. This prevents
+22898|            // the array from being modified while we iterate it.
+22899|            for (OnAttachStateChangeListener listener : listeners) {
+22900|                listener.onViewAttachedToWindow(this);
+22901|            }
+22902|        }
+22903|
+
+C:/Users/Gerrit/AppData/Local/Android/Sdk/sources/android-35/android/view/ViewTreeObserver.java
+486|        if (observer.mGestureExclusionListeners != null) {
+487|            if (mGestureExclusionListeners != null) {
+488|                mGestureExclusionListeners.addAll(observer.mGestureExclusionListeners);
+489|            } else {
+490|                mGestureExclusionListeners = observer.mGestureExclusionListeners;
+491|            }
+492|        }
+493|
+494|        observer.kill();
+495|    }

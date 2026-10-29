@@ -1,0 +1,2220 @@
+[
+  {
+    "case": "A05.install",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Installed APK equals candidate 2",
+    "observed": {
+      "apkPath": "/data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk",
+      "sha256": "5f9f7d1abee8fc49989d666ef1aefce460fc4f8a95c611d6be186e82362d2409"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/install-check.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch-preflight",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Tapping Favorite sessions selects Favorites; both new mode Buttons are usable",
+    "observed": {
+      "before": [
+        {
+          "index": "0",
+          "text": "All sessions",
+          "resource-id": "",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "All sessions",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "true",
+          "bounds": "[32,422][785,548]",
+          "drawing-order": "1",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite sessions",
+          "resource-id": "",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite sessions",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "false",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[32,548][785,674]",
+          "drawing-order": "2",
+          "hint": ""
+        }
+      ],
+      "after": [
+        {
+          "index": "0",
+          "text": "All sessions",
+          "resource-id": "",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "All sessions",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "true",
+          "bounds": "[32,422][785,548]",
+          "drawing-order": "1",
+          "hint": ""
+        },
+        {
+          "index": "1",
+          "text": "Favorite sessions",
+          "resource-id": "",
+          "class": "android.widget.Button",
+          "package": "dev.translationtest.ns",
+          "content-desc": "Favorite sessions",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "true",
+          "enabled": "true",
+          "focusable": "true",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "true",
+          "bounds": "[32,548][785,674]",
+          "drawing-order": "2",
+          "hint": ""
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R03-mode-before.png",
+      "migration/evidence/NS07/f-device/F2-R03-mode-before.xml",
+      "migration/evidence/NS07/f-device/F2-R03-favorite-observed.png",
+      "migration/evidence/NS07/f-device/F2-R03-favorite-observed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.execution",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Complete representative flow",
+    "observed": "Cannot seek row 6",
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.accessibility-mode-state",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly the active mode Button exposes selected=true; the other exposes selected=false",
+    "observed": {
+      "samples": [
+        {
+          "label": "F2-G05-1.0-retry1-all-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "false"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-retry1-favorites-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-retry1-all-again",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-retry1-swipe-measurement",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-again.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-again.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Important labels and Favorite/Remove actions readable/reachable without clipping at scale 1.0",
+    "observed": {
+      "representativeFlows": "All/Favorites top/scrolled; detail; filter Done; alert; duplicate dialog Cancel; swipe",
+      "measurements": "F2-G05-1.0-retry1-measurements.json",
+      "visualGrade": "Provisional; coordinator must inspect all pixels and raw selected state"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-again.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-all-again.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.accessibility-mode-state",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly the active mode Button exposes selected=true; the other exposes selected=false",
+    "observed": {
+      "samples": [
+        {
+          "label": "F2-G05-1.3-all-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "false"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-favorites-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-all-again",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-swipe-measurement",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-again.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-again.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Important labels and Favorite/Remove actions readable/reachable without clipping at scale 1.3",
+    "observed": {
+      "representativeFlows": "All/Favorites top/scrolled; detail; filter Done; alert; duplicate dialog Cancel; swipe",
+      "measurements": "F2-G05-1.3-measurements.json",
+      "visualGrade": "Provisional; coordinator must inspect all pixels and raw selected state"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-again.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-all-again.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.execution",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Complete representative flow",
+    "observed": "Cannot seek row 1",
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.settled-accessibility",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button selected; raw selected/checked preserved",
+    "observed": {
+      "samples": [
+        {
+          "label": "F2-G05-1.0-settled-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[828,877][1059,1003]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[828,1248][1059,1374]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[828,1498][1059,1624]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[828,1748][1059,1874]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-5",
+              "text": "Favorite",
+              "bounds": "[828,2119][1059,2245]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[828,876][1059,1002]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[828,1247][1059,1373]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[828,1497][1059,1623]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-3",
+              "text": "Remove",
+              "bounds": "[828,1747][1059,1873]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-5",
+              "text": "Remove",
+              "bounds": "[828,2118][1059,2244]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[828,877][1059,1003]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[828,1248][1059,1374]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[828,1498][1059,1624]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[828,1748][1059,1874]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-5",
+              "text": "Favorite",
+              "bounds": "[828,2119][1059,2245]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.settled-flows",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At actual scale 1.0, true schedule tops/scrolled in both modes, described detail/bottom, filter, favorite dialog and swipe are visually usable",
+    "observed": {
+      "fontScale": "1.0",
+      "samples": [
+        {
+          "label": "F2-G05-1.0-settled-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[828,877][1059,1003]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[828,1248][1059,1374]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[828,1498][1059,1624]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[828,1748][1059,1874]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-5",
+              "text": "Favorite",
+              "bounds": "[828,2119][1059,2245]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[828,876][1059,1002]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[828,1247][1059,1373]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[828,1497][1059,1623]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-3",
+              "text": "Remove",
+              "bounds": "[828,1747][1059,1873]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-5",
+              "text": "Remove",
+              "bounds": "[828,2118][1059,2244]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[828,877][1059,1003]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[828,1248][1059,1374]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[828,1498][1059,1624]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[828,1748][1059,1874]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-5",
+              "text": "Favorite",
+              "bounds": "[828,2119][1059,2245]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ],
+      "coordinatorPixelInspection": "pending; XML not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.settled-execution",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Complete corrected settled samples",
+    "observed": "Scroll container count 0",
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.settled-accessibility",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button selected; raw selected/checked preserved",
+    "observed": {
+      "samples": [
+        {
+          "label": "F2-G05-1.3-settled2-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[799,915][1059,1041]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[799,1350][1059,1476]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[799,1653][1059,1779]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[799,1956][1059,2082]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[798,900][1059,1026]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[798,1335][1059,1461]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[798,1638][1059,1764]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-3",
+              "text": "Remove",
+              "bounds": "[798,1941][1059,2067]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[799,887][1059,1013]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[799,1322][1059,1448]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[799,1625][1059,1751]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[799,1928][1059,2054]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.settled-flows",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At actual scale 1.3, true schedule tops/scrolled in both modes, described detail/bottom, filter, favorite dialog and swipe are visually usable",
+    "observed": {
+      "fontScale": "1.3",
+      "samples": [
+        {
+          "label": "F2-G05-1.3-settled2-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[799,915][1059,1041]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[799,1350][1059,1476]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[799,1653][1059,1779]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[799,1956][1059,2082]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[798,900][1059,1026]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[798,1335][1059,1461]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[798,1638][1059,1764]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-3",
+              "text": "Remove",
+              "bounds": "[798,1941][1059,2067]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[799,887][1059,1013]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[799,1322][1059,1448]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[799,1625][1059,1751]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-3",
+              "text": "Favorite",
+              "bounds": "[799,1928][1059,2054]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ],
+      "coordinatorPixelInspection": "pending; XML not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.settled-accessibility",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button selected; raw selected/checked preserved",
+    "observed": {
+      "samples": [
+        {
+          "label": "F2-G05-2.0-settled-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[732,987][1059,1113]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[732,1589][1059,1715]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[732,2082][1059,2208]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[729,967][1059,1093]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[729,1569][1059,1695]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[729,2062][1059,2188]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[732,965][1059,1091]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[732,1567][1059,1693]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[732,2060][1059,2186]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.settled-flows",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At actual scale 2.0, true schedule tops/scrolled in both modes, described detail/bottom, filter, favorite dialog and swipe are visually usable",
+    "observed": {
+      "fontScale": "2.0",
+      "samples": [
+        {
+          "label": "F2-G05-2.0-settled-all-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[732,987][1059,1113]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[732,1589][1059,1715]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[732,2082][1059,2208]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-favorites-top",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "remove-1",
+              "text": "Remove",
+              "bounds": "[729,967][1059,1093]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-4",
+              "text": "Remove",
+              "bounds": "[729,1569][1059,1695]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "remove-2",
+              "text": "Remove",
+              "bounds": "[729,2062][1059,2188]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-swipe-measurement",
+          "modeButtons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "rowButtons": [
+            {
+              "id": "favorite-1",
+              "text": "Favorite",
+              "bounds": "[732,965][1059,1091]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-4",
+              "text": "Favorite",
+              "bounds": "[732,1567][1059,1693]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "id": "favorite-2",
+              "text": "Favorite",
+              "bounds": "[732,2060][1059,2186]",
+              "selected": "false",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ],
+          "stripWidthPx": 252
+        }
+      ],
+      "coordinatorPixelInspection": "pending; XML not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-measurement.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-measurement.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.execution",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Complete light/cold-dark/live rerun",
+    "observed": "F2-G07-light-filter-close target count 0",
+    "evidence": [
+      "migration/evidence/NS07/f-device/G07-exception.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07-light-retry1",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Light-page content, selected states and status-bar icons readable on schedule/detail/filter/dialog; navigation and modal transitions preserve usable system bars",
+    "observed": {
+      "surfaces": "schedule; detail and toolbar return; filter Close/reopen/Done; favorite alert/duplicate Cancel; swipe",
+      "visualGrade": "Coordinator pixels required"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail-back.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail-back.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-closed.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-closed.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-reopened.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-reopened.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-done.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter-done.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-favorite-alert.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-favorite-alert.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-favorite-dialog.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-favorite-dialog.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-swipe.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-swipe.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07-dark-cold",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Light-page content, selected states and status-bar icons readable on schedule/detail/filter/dialog; navigation and modal transitions preserve usable system bars",
+    "observed": {
+      "surfaces": "schedule; detail and toolbar return; filter Close/reopen/Done; favorite alert/duplicate Cancel; swipe",
+      "visualGrade": "Coordinator pixels required"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail-back.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail-back.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-closed.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-closed.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-reopened.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-reopened.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-done.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-done.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-favorite-alert.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-favorite-alert.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-favorite-dialog.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-favorite-dialog.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-swipe.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-swipe.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-switch",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Switch light/dark/light while app stays open on Schedule, SessionDetail and TrackFilter; status icons remain visible",
+    "observed": {
+      "pidBefore": "32359",
+      "pidAfter": "32359",
+      "sameProcess": true,
+      "visualGrade": "provisional; coordinator pixel inspection pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-navigation.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-navigation.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-navigation.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-navigation.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G01",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Confirm full on-screen keyboard, type query and use Back only after screenshot/XML confirmation",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G02",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "One interaction while full on-screen keyboard is visibly present",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G08",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Classify full keyboard and observe whether schedule content is inset or covered",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R01.schedule",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Cold baseline loads schedule beginning Breakfast and University of Ionic",
+    "observed": {
+      "visibleIds": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "scope": "short load regression, not full B01 twenty-row coverage"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R01-cold.png",
+      "migration/evidence/NS07/f-device/F2-R01-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.search",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "IOnic produces case-insensitive name matches; visible results include University of Ionic and exclude Breakfast",
+    "observed": {
+      "visibleRows": [
+        {
+          "id": "session-4",
+          "name": "University of Ionic"
+        },
+        {
+          "id": "session-2",
+          "name": "Getting Started with Ionic"
+        },
+        {
+          "id": "session-3",
+          "name": "Ionic Tooling"
+        },
+        {
+          "id": "session-5",
+          "name": "Migrating to Ionic"
+        },
+        {
+          "id": "session-7",
+          "name": "The Evolution of Ionicons"
+        },
+        {
+          "id": "session-8",
+          "name": "Ionic Pro"
+        }
+      ],
+      "scope": "mounted results only"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R02-search-focused.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-focused.xml",
+      "migration/evidence/NS07/f-device/F2-R02-search-results.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-results.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Own SearchBar clear control empties query and restores Breakfast",
+    "observed": {
+      "visibleIds": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R02-search-cleared.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-cleared.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "All -> Favorite -> All changes dataset correctly, retaining empty search",
+    "observed": {
+      "favoriteEmpty": true,
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R03-all-before.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-before.xml",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.xml",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-accessibility",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode exposed selected=true after each switch",
+    "observed": {
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.xml",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-back",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "University of Ionic detail opens, one Android Back returns to schedule",
+    "observed": {
+      "returnedSchedule": true,
+      "visibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R04-detail.png",
+      "migration/evidence/NS07/f-device/F2-R04-detail.xml",
+      "migration/evidence/NS07/f-device/F2-R04-back-schedule.png",
+      "migration/evidence/NS07/f-device/F2-R04-back-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R05.filter-Done",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Filter opens with ten tracks selected; Done returns to schedule unchanged",
+    "observed": {
+      "switches": [
+        {
+          "name": "Communication",
+          "checked": "true"
+        },
+        {
+          "name": "Design",
+          "checked": "true"
+        },
+        {
+          "name": "Documentation",
+          "checked": "true"
+        },
+        {
+          "name": "Food",
+          "checked": "true"
+        },
+        {
+          "name": "Ionic",
+          "checked": "true"
+        },
+        {
+          "name": "Navigation",
+          "checked": "true"
+        },
+        {
+          "name": "Services",
+          "checked": "true"
+        },
+        {
+          "name": "Tooling",
+          "checked": "true"
+        },
+        {
+          "name": "Vue",
+          "checked": "true"
+        },
+        {
+          "name": "Workshop",
+          "checked": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R05-filter.png",
+      "migration/evidence/NS07/f-device/F2-R05-filter.xml",
+      "migration/evidence/NS07/f-device/F2-R05-filter-return.png",
+      "migration/evidence/NS07/f-device/F2-R05-filter-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R06.favorite-add",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Favorite Breakfast adds immediately once; acknowledgement; Favorites contains exactly Breakfast",
+    "observed": {
+      "visibleRows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-alert.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-alert.xml",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-acknowledged.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-acknowledged.xml",
+      "migration/evidence/NS07/f-device/F2-R06-favorites-added.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorites-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R07.already-favorite",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Already-favorite invocation shows remove-confirmation; Cancel preserves one Breakfast",
+    "observed": {
+      "visibleRows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R07-already-favorite.png",
+      "migration/evidence/NS07/f-device/F2-R07-already-favorite.xml",
+      "migration/evidence/NS07/f-device/F2-R07-favorites-preserved.png",
+      "migration/evidence/NS07/f-device/F2-R07-favorites-preserved.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R08.favorite-remove",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Remove in Favorite mode confirms and removes Breakfast, restoring favorite-empty state",
+    "observed": {
+      "visibleRows": [],
+      "empty": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R08-remove-confirm.png",
+      "migration/evidence/NS07/f-device/F2-R08-remove-confirm.xml",
+      "migration/evidence/NS07/f-device/F2-R08-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R08-favorites-empty.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-reveal",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "One All-mode row reveals its action without navigation or mutation",
+    "observed": {
+      "stripWidthPx": 252,
+      "detailVisible": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R09-swipe-revealed.png",
+      "migration/evidence/NS07/f-device/F2-R09-swipe-revealed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "No detected fatal/unhandled patterns in bounded PID logs; retain warnings/errors verbatim",
+    "observed": {
+      "windows": 21,
+      "pids": [
+        "18371",
+        "18561",
+        "20609",
+        "22520",
+        "24605",
+        "31094",
+        "31556",
+        "32359",
+        "2768",
+        "3521",
+        "4965"
+      ],
+      "fatalPatternWindows": [],
+      "pidChangesWithinWindow": [],
+      "warningErrorLines": 1465,
+      "evidence": [
+        {
+          "label": "F2-G05-1.0-baseline-previous",
+          "log": "F2-G05-1.0-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.0-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-retry1-baseline-previous",
+          "log": "F2-G05-1.0-retry1-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.0-retry1-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-retry1-window",
+          "log": "F2-G05-1.0-retry1-window-logcat.txt",
+          "warnings": "F2-G05-1.0-retry1-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-baseline-previous",
+          "log": "F2-G05-1.3-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.3-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-window",
+          "log": "F2-G05-1.3-window-logcat.txt",
+          "warnings": "F2-G05-1.3-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-2.0-baseline-previous",
+          "log": "F2-G05-2.0-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-2.0-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-settled-window",
+          "log": "F2-G05-1.0-settled-window-logcat.txt",
+          "warnings": "F2-G05-1.0-settled-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-settled2-window",
+          "log": "F2-G05-1.3-settled2-window-logcat.txt",
+          "warnings": "F2-G05-1.3-settled2-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-2.0-settled-window",
+          "log": "F2-G05-2.0-settled-window-logcat.txt",
+          "warnings": "F2-G05-2.0-settled-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-baseline-previous",
+          "log": "F2-G07-light-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-light-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-retry1-baseline-previous",
+          "log": "F2-G07-light-retry1-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-light-retry1-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-retry1-window",
+          "log": "F2-G07-light-retry1-window-logcat.txt",
+          "warnings": "F2-G07-light-retry1-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-dark-cold-baseline-previous",
+          "log": "F2-G07-dark-cold-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-dark-cold-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-dark-cold-window",
+          "log": "F2-G07-dark-cold-window-logcat.txt",
+          "warnings": "F2-G07-dark-cold-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-live-window",
+          "log": "F2-G07-live-window-logcat.txt",
+          "warnings": "F2-G07-live-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-K-baseline-previous",
+          "log": "F2-K-baseline-previous-logcat.txt",
+          "warnings": "F2-K-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-K-blocked-window",
+          "log": "F2-K-blocked-window-logcat.txt",
+          "warnings": "F2-K-blocked-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R01-cold-previous",
+          "log": "F2-R01-cold-previous-logcat.txt",
+          "warnings": "F2-R01-cold-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R-window",
+          "log": "F2-R-window-logcat.txt",
+          "warnings": "F2-R-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R10-final-cold-previous",
+          "log": "F2-R10-final-cold-previous-logcat.txt",
+          "warnings": "F2-R10-final-cold-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R-final-window",
+          "log": "F2-R-final-window-logcat.txt",
+          "warnings": "F2-R-final-window-warnings-errors-verbatim.txt"
+        }
+      ],
+      "scope": "Up to 400 lines per recorded PID/process window, no cleared buffers; not exhaustive stability, not warning-free; direct pixels remain coordinator work"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/A06-log-review.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-live-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-live-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-K-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-K-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-K-blocked-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-K-blocked-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R01-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R01-cold-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R10-final-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R10-final-cold-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R-final-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R-final-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "settings-restoration",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Every recorded environment value equals step-1 value",
+    "observed": {
+      "settingsRestored": true,
+      "comparison": {
+        "model": {
+          "before": "sdk_gphone64_x86_64",
+          "after": "sdk_gphone64_x86_64",
+          "equal": true
+        },
+        "sdk": {
+          "before": "36",
+          "after": "36",
+          "equal": true
+        },
+        "size": {
+          "before": "Physical size: 1080x2400",
+          "after": "Physical size: 1080x2400",
+          "equal": true
+        },
+        "density": {
+          "before": "Physical density: 420",
+          "after": "Physical density: 420",
+          "equal": true
+        },
+        "densityProperty": {
+          "before": "",
+          "after": "",
+          "equal": true
+        },
+        "fontScale": {
+          "before": "1.0",
+          "after": "1.0",
+          "equal": true
+        },
+        "night": {
+          "before": "Night mode: no",
+          "after": "Night mode: no",
+          "equal": true
+        },
+        "accessibilityServices": {
+          "before": "null",
+          "after": "null",
+          "equal": true
+        },
+        "accessibilityEnabled": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "hardKeyboardIme": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "defaultIme": {
+          "before": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "after": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "equal": true
+        }
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  }
+]

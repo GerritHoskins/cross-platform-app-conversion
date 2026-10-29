@@ -1,0 +1,1265 @@
+{
+  "windows": [
+    {
+      "label": "F9-FS-filter-1.3-window-old",
+      "PID": "4956",
+      "steps": {
+        "start": "F9-FS-filter-baseline",
+        "end": "F9-FS-filter-1.3"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 46,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-FS-filter-1.3-window-old-logcat.txt",
+        "F9-FS-filter-1.3-window-old-warnings-errors-verbatim.txt",
+        "F9-FS-filter-1.3-window-old-patterns-verbatim.txt"
+      ]
+    },
+    {
+      "label": "F9-FS-filter-2.0-window-old",
+      "PID": "4956",
+      "steps": {
+        "start": "F9-FS-filter-1.3",
+        "end": "F9-FS-filter-2.0"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 55,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-FS-filter-2.0-window-old-logcat.txt",
+        "F9-FS-filter-2.0-window-old-warnings-errors-verbatim.txt",
+        "F9-FS-filter-2.0-window-old-patterns-verbatim.txt"
+      ]
+    },
+    {
+      "label": "F9-FS-filter-restored-window-old",
+      "PID": "4956",
+      "steps": {
+        "start": "F9-FS-filter-2.0",
+        "end": "F9-FS-filter-restored"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 65,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-FS-filter-restored-window-old-logcat.txt",
+        "F9-FS-filter-restored-window-old-warnings-errors-verbatim.txt",
+        "F9-FS-filter-restored-window-old-patterns-verbatim.txt"
+      ]
+    },
+    {
+      "label": "F9-FS-filter-page-window",
+      "PID": "4956",
+      "steps": {
+        "start": "F9-FS-filter-baseline",
+        "end": "F9-FS-filter-restored; modal dismissed at1.3"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 65,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-FS-filter-page-window-logcat.txt",
+        "F9-FS-filter-page-window-warnings-errors-verbatim.txt",
+        "F9-FS-filter-page-window-patterns-verbatim.txt"
+      ]
+    },
+    {
+      "label": "F9-FS-filter-recovery-window",
+      "PID": "4956",
+      "steps": {
+        "start": "F9-FS-filter-recovery-open tap",
+        "end": "F9-FS-filter-after-nav"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 66,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-FS-filter-recovery-window-logcat.txt",
+        "F9-FS-filter-recovery-window-warnings-errors-verbatim.txt",
+        "F9-FS-filter-recovery-window-patterns-verbatim.txt"
+      ]
+    },
+    {
+      "label": "F9-spot-prepare-previous",
+      "PID": "4956",
+      "steps": {
+        "start": "previous process window",
+        "end": "F9-spot-prepare before force-stop"
+      },
+      "patternCounts": {
+        "cleared object reference": 0,
+        "Failed to get Java object": 0,
+        "Unhandled error": 0,
+        "Error during execution of native event handler": 0,
+        "FATAL": 0,
+        "AndroidRuntime": 0
+      },
+      "warningCount": 66,
+      "matchedLines": [],
+      "pass": true,
+      "evidence": [
+        "F9-spot-prepare-previous-logcat.txt",
+        "F9-spot-prepare-previous-warnings-errors-verbatim.txt",
+        "F9-spot-prepare-previous-patterns-verbatim.txt"
+      ]
+    }
+  ],
+  "xmls": [
+    {
+      "path": "migration/evidence/NS07/f-device5/F9-FS-filter-1.3.xml",
+      "nodes": [
+        {
+          "text": "Conference",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "Conference",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,166][316,237]"
+        },
+        {
+          "text": "   Search sessions",
+          "class": "android.widget.AutoCompleteTextView",
+          "resource-id": "dev.translationtest.ns:id/search_src_text",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "true",
+          "bounds": "[21,289][954,384]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.ImageView",
+          "resource-id": "dev.translationtest.ns:id/search_close_btn",
+          "content-desc": "Clear query",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[954,275][1059,398]"
+        },
+        {
+          "text": "All sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "All sessions",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,422][785,548]"
+        },
+        {
+          "text": "Favorite sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "Favorite sessions",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,548][785,674]"
+        },
+        {
+          "text": "Filter",
+          "class": "android.widget.Button",
+          "resource-id": "Filter sessions",
+          "content-desc": "Filter sessions. Filter",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[817,422][1048,674]"
+        },
+        {
+          "text": "8:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,695][1080,826]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-1",
+          "content-desc": "Breakfast",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,827][778,1129]"
+        },
+        {
+          "text": "Breakfast",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,859][736,926]"
+        },
+        {
+          "text": "8:00 am–9:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,926][736,983]"
+        },
+        {
+          "text": "Dining Hall",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,983][736,1040]"
+        },
+        {
+          "text": "Food",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1040][736,1097]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-1",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[799,915][1059,1041]"
+        },
+        {
+          "text": "9:15 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1130][1080,1261]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-4",
+          "content-desc": "University of Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1262][778,1517]"
+        },
+        {
+          "text": "University of Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1294][736,1361]"
+        },
+        {
+          "text": "9:15 am–9:30 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1361][736,1418]"
+        },
+        {
+          "text": "Hall 3",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1418][736,1475]"
+        },
+        {
+          "text": "Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1475][736,1517]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-4",
+          "content-desc": "Favorite University of Ionic. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[799,1350][1059,1476]"
+        }
+      ]
+    },
+    {
+      "path": "migration/evidence/NS07/f-device5/F9-FS-filter-2.0.xml",
+      "nodes": [
+        {
+          "text": "Conference",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "Conference",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,166][316,237]"
+        },
+        {
+          "text": "   Search sessions",
+          "class": "android.widget.AutoCompleteTextView",
+          "resource-id": "dev.translationtest.ns:id/search_src_text",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "true",
+          "bounds": "[21,289][954,384]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.ImageView",
+          "resource-id": "dev.translationtest.ns:id/search_close_btn",
+          "content-desc": "Clear query",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[954,275][1059,398]"
+        },
+        {
+          "text": "All sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "All sessions",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,422][785,548]"
+        },
+        {
+          "text": "Favorite sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "Favorite sessions",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,548][785,674]"
+        },
+        {
+          "text": "Filter",
+          "class": "android.widget.Button",
+          "resource-id": "Filter sessions",
+          "content-desc": "Filter sessions. Filter",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[817,422][1048,674]"
+        },
+        {
+          "text": "8:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,695][1080,851]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-1",
+          "content-desc": "Breakfast",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,852][711,1248]"
+        },
+        {
+          "text": "Breakfast",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,884][669,976]"
+        },
+        {
+          "text": "8:00 am–9:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,976][669,1056]"
+        },
+        {
+          "text": "Dining Hall",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1056][669,1136]"
+        },
+        {
+          "text": "Food",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1136][669,1216]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-1",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[732,987][1059,1113]"
+        },
+        {
+          "text": "9:15 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1249][1080,1405]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-4",
+          "content-desc": "University of Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1406][711,1517]"
+        },
+        {
+          "text": "University of Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1438][669,1517]"
+        }
+      ]
+    },
+    {
+      "path": "migration/evidence/NS07/f-device5/F9-FS-filter-after-nav.xml",
+      "nodes": [
+        {
+          "text": "Conference",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "Conference",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,166][316,237]"
+        },
+        {
+          "text": "   Search sessions",
+          "class": "android.widget.AutoCompleteTextView",
+          "resource-id": "dev.translationtest.ns:id/search_src_text",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "true",
+          "bounds": "[21,289][954,384]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.ImageView",
+          "resource-id": "dev.translationtest.ns:id/search_close_btn",
+          "content-desc": "Clear query",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[954,275][1059,398]"
+        },
+        {
+          "text": "All sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "All sessions",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,422][785,548]"
+        },
+        {
+          "text": "Favorite sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "Favorite sessions",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,548][785,674]"
+        },
+        {
+          "text": "Filter",
+          "class": "android.widget.Button",
+          "resource-id": "Filter sessions",
+          "content-desc": "Filter sessions. Filter",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[817,422][1048,674]"
+        },
+        {
+          "text": "8:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,695][1080,815]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-1",
+          "content-desc": "Breakfast",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,816][807,1065]"
+        },
+        {
+          "text": "Breakfast",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,848][765,904]"
+        },
+        {
+          "text": "8:00 am–9:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,904][765,947]"
+        },
+        {
+          "text": "Dining Hall",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,947][765,990]"
+        },
+        {
+          "text": "Food",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,990][765,1033]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-1",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,877][1059,1003]"
+        },
+        {
+          "text": "9:15 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1066][1080,1186]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-4",
+          "content-desc": "University of Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1187][807,1436]"
+        },
+        {
+          "text": "University of Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1219][765,1275]"
+        },
+        {
+          "text": "9:15 am–9:30 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1275][765,1318]"
+        },
+        {
+          "text": "Hall 3",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1318][765,1361]"
+        },
+        {
+          "text": "Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1361][765,1404]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-4",
+          "content-desc": "Favorite University of Ionic. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,1248][1059,1374]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-2",
+          "content-desc": "Getting Started with Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1437][807,1517]"
+        },
+        {
+          "text": "Getting Started with Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1469][765,1517]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-2",
+          "content-desc": "Favorite Getting Started with Ionic. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,1498][1059,1517]"
+        }
+      ]
+    },
+    {
+      "path": "migration/evidence/NS07/f-device5/F9-FS-filter-baseline.xml",
+      "nodes": [
+        {
+          "text": "",
+          "class": "android.widget.ImageButton",
+          "resource-id": "",
+          "content-desc": "Close",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,128][147,275]"
+        },
+        {
+          "text": "Filter Sessions",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "Filter Sessions",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[189,166][539,237]"
+        },
+        {
+          "text": "Tracks",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,307][1017,380]"
+        },
+        {
+          "text": "Communication",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,394][895,437]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Communication",
+          "content-desc": "Communication",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,380][1017,451]"
+        },
+        {
+          "text": "Design",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,520][895,563]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Design",
+          "content-desc": "Design",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,506][1017,577]"
+        },
+        {
+          "text": "Documentation",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,646][895,689]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Documentation",
+          "content-desc": "Documentation",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,632][1017,703]"
+        },
+        {
+          "text": "Food",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,772][895,815]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Food",
+          "content-desc": "Food",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,758][1017,829]"
+        },
+        {
+          "text": "Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,898][895,941]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Ionic",
+          "content-desc": "Ionic",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,884][1017,955]"
+        },
+        {
+          "text": "Navigation",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,1024][895,1067]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Navigation",
+          "content-desc": "Navigation",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,1010][1017,1081]"
+        },
+        {
+          "text": "Services",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,1150][895,1193]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Services",
+          "content-desc": "Services",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,1136][1017,1207]"
+        },
+        {
+          "text": "Tooling",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,1276][895,1319]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Tooling",
+          "content-desc": "Tooling",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,1262][1017,1333]"
+        },
+        {
+          "text": "Vue",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,1402][895,1445]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Vue",
+          "content-desc": "Vue",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,1388][1017,1459]"
+        },
+        {
+          "text": "Workshop",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[63,1528][895,1571]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.Switch",
+          "resource-id": "track-Workshop",
+          "content-desc": "Workshop",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[895,1514][1017,1585]"
+        },
+        {
+          "text": "Deselect All",
+          "class": "android.widget.Button",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,2053][540,2179]"
+        },
+        {
+          "text": "Select All",
+          "class": "android.widget.Button",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[540,2053][1048,2179]"
+        },
+        {
+          "text": "Reset",
+          "class": "android.widget.Button",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,2179][540,2305]"
+        },
+        {
+          "text": "Done",
+          "class": "android.widget.Button",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[540,2179][1048,2305]"
+        }
+      ]
+    },
+    {
+      "path": "migration/evidence/NS07/f-device5/F9-FS-filter-restored.xml",
+      "nodes": [
+        {
+          "text": "Conference",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "Conference",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,166][316,237]"
+        },
+        {
+          "text": "   Search sessions",
+          "class": "android.widget.AutoCompleteTextView",
+          "resource-id": "dev.translationtest.ns:id/search_src_text",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "true",
+          "bounds": "[21,289][954,384]"
+        },
+        {
+          "text": "",
+          "class": "android.widget.ImageView",
+          "resource-id": "dev.translationtest.ns:id/search_close_btn",
+          "content-desc": "Clear query",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[954,275][1059,398]"
+        },
+        {
+          "text": "All sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "All sessions",
+          "checked": "true",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,422][785,548]"
+        },
+        {
+          "text": "Favorite sessions",
+          "class": "android.widget.RadioButton",
+          "resource-id": "",
+          "content-desc": "Favorite sessions",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[32,548][785,674]"
+        },
+        {
+          "text": "Filter",
+          "class": "android.widget.Button",
+          "resource-id": "Filter sessions",
+          "content-desc": "Filter sessions. Filter",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[817,422][1048,674]"
+        },
+        {
+          "text": "8:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,695][1080,815]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-1",
+          "content-desc": "Breakfast",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,816][807,1065]"
+        },
+        {
+          "text": "Breakfast",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,848][765,904]"
+        },
+        {
+          "text": "8:00 am–9:00 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,904][765,947]"
+        },
+        {
+          "text": "Dining Hall",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,947][765,990]"
+        },
+        {
+          "text": "Food",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,990][765,1033]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-1",
+          "content-desc": "Favorite Breakfast. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,877][1059,1003]"
+        },
+        {
+          "text": "9:15 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1066][1080,1186]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-4",
+          "content-desc": "University of Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1187][807,1436]"
+        },
+        {
+          "text": "University of Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1219][765,1275]"
+        },
+        {
+          "text": "9:15 am–9:30 am",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1275][765,1318]"
+        },
+        {
+          "text": "Hall 3",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1318][765,1361]"
+        },
+        {
+          "text": "Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1361][765,1404]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-4",
+          "content-desc": "Favorite University of Ionic. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,1248][1059,1374]"
+        },
+        {
+          "text": "",
+          "class": "android.view.ViewGroup",
+          "resource-id": "session-2",
+          "content-desc": "Getting Started with Ionic",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[0,1437][807,1517]"
+        },
+        {
+          "text": "Getting Started with Ionic",
+          "class": "android.widget.TextView",
+          "resource-id": "",
+          "content-desc": "",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[42,1469][765,1517]"
+        },
+        {
+          "text": "Favorite",
+          "class": "android.widget.Button",
+          "resource-id": "favorite-2",
+          "content-desc": "Favorite Getting Started with Ionic. Favorite",
+          "checked": "false",
+          "enabled": "true",
+          "focused": "false",
+          "bounds": "[828,1498][1059,1517]"
+        }
+      ]
+    }
+  ]
+}

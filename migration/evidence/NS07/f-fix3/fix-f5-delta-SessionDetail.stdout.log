@@ -1,0 +1,59 @@
+diff --git a/migration/evidence/NS07/f-fix3/f3-SessionDetail.vue b/migration/nativescript/src/components/SessionDetail.vue
+index 7f920c67..8728db03 100644
+--- a/migration/evidence/NS07/f-fix3/f3-SessionDetail.vue
++++ b/migration/nativescript/src/components/SessionDetail.vue
+@@ -1,30 +1,42 @@
+ <script lang="ts" setup>
+ import { $navigateBack, computed, onMounted } from 'nativescript-vue';
+-import { Application, type EventData, type Page } from '@nativescript/core';
++import { type EventData, type Page } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { parseSessionId } from '../state/session-detail';
+ 
+ const props = defineProps<{ sessionId: string }>();
+ const store = useConferenceStore();
+ let statusBarPage: Page | undefined;
+-
+-function reapplyStatusBarStyle() {
+-  const page = statusBarPage;
+-  // Core refreshes edge-to-edge after emitting the appearance event.
+-  page?.android?.post(() => {
+-    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
+-  });
+-}
++let statusBarObserver: android.view.ViewTreeObserver | undefined;
++let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+ 
+ function pageLoaded(event: EventData) {
+   if (statusBarPage) return;
+-  statusBarPage = event.object as Page;
+-  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  const page = event.object as Page;
++  if (!page.android || android.os.Build.VERSION.SDK_INT < 30) return;
++  statusBarPage = page;
++  statusBarObserver = page.android.getViewTreeObserver();
++  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
++    onPreDraw() {
++      if (statusBarPage !== page || !page.isLoaded) return true;
++      // F5: repair after this window's configuration/insets/layout, not a posted delay.
++      const controller = page.getClosestWindow().getInsetsController();
++      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
++      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
++        page.updateStatusBarStyle('dark');
++      }
++      return true;
++    },
++  });
++  statusBarObserver?.addOnPreDrawListener(statusBarPreDraw);
+ }
+ 
+ function pageUnloaded() {
+-  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  const observer = statusBarObserver?.isAlive() ? statusBarObserver : statusBarPage?.android?.getViewTreeObserver();
++  if (observer?.isAlive() && statusBarPreDraw) observer.removeOnPreDrawListener(statusBarPreDraw);
+   statusBarPage = undefined;
++  statusBarObserver = undefined;
++  statusBarPreDraw = undefined;
+ }
+ 
+ const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');

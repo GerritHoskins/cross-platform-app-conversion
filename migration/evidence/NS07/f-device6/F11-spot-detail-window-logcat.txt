@@ -1,0 +1,60 @@
+--------- beginning of main
+10-28 20:32:00.607 11279 11279 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-28 20:32:00.620 11279 11279 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-28 20:32:00.622 11279 11279 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-28 20:32:00.622 11279 11279 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-28 20:32:00.631 11279 11279 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-28 20:32:00.779 11279 11279 D nativeloader: Configuring clns-9 for other apk /data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/lib/x86_64:/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-28 20:32:00.788 11279 11279 I nslationtest.ns: AssetManager2(0x7bd26900f558) locale list changing from [] to [en-US]
+10-28 20:32:00.796 11279 11279 V GraphicsEnvironment: Currently set values for:
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-28 20:32:00.797 11279 11279 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 20:32:00.897 11279 11279 D nativeloader: Load /data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~AIh_ZLOrzU1pVoNLrMJC0A==/dev.translationtest.ns-jWSfbInaklN3Zm0mC26nHA==/base.apk!classes5.dex): ok
+10-28 20:32:00.898 11279 11279 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-28 20:32:00.936 11279 11279 D TNS.Runtime: V8 version 14.9.207.39
+10-28 20:32:01.196 11279 11279 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+--------- beginning of system
+10-28 20:32:01.358 11279 11316 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-28 20:32:01.359 11279 11279 I nslationtest.ns: AssetManager2(0x7bd269017258) locale list changing from [] to [en-US]
+10-28 20:32:01.410 11279 11316 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-28 20:32:01.411 11279 11316 I EGL_emulation: Opening libGLESv2_emulation.so
+10-28 20:32:01.444 11279 11316 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 20:32:01.444 11279 11316 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 20:32:01.454 11279 11279 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-28 20:32:01.455 11279 11279 I nslationtest.ns: AssetManager2(0x7bd269016f38) locale list changing from [] to [en-US]
+10-28 20:32:01.461 11279 11279 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-28 20:32:01.518 11279 11279 W HWUI    : Image decoding logging dropped!
+10-28 20:32:01.520 11279 11279 W HWUI    : Image decoding logging dropped!
+10-28 20:32:01.551 11279 11279 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-28 20:32:01.553 11279 11279 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-28 20:32:01.619 11279 11279 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-28 20:32:01.812 11279 11279 W HWUI    : Image decoding logging dropped!
+10-28 20:32:01.812 11279 11279 W HWUI    : Image decoding logging dropped!
+10-28 20:32:01.820 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:01.836 11279 11279 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-28 20:32:01.916 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:01.917 11279 11279 I ImeTracker: dev.translationtest.ns:47ca94c2: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-28 20:32:01.920 11279 11279 I ImeTracker: dev.translationtest.ns:47ca94c2: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 20:32:01.920 11279 11279 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-28 20:32:01.992 11279 11279 W HWUI    : Unknown dataspace 0
+10-28 20:32:02.012 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:02.012 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:02.252 11279 11279 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:32:02.252 11279 11279 I ImeTracker: dev.translationtest.ns:ff681deb: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:32:02.461 11279 11283 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 20:32:06.678 11279 11341 D ProfileInstaller: Installing profile for dev.translationtest.ns
+10-28 20:32:07.184 11279 11279 I nslationtest.ns: AssetManager2(0x7bd269015f98) locale list changing from [] to [en-US]
+10-28 20:32:07.184 11279 11279 I nslationtest.ns: AssetManager2(0x7bd26901d978) locale list changing from [] to [en-US]
+10-28 20:32:30.811 11279 11279 W HWUI    : Image decoding logging dropped!
+10-28 20:32:30.840 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:30.840 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:30.853 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:30.861 11279 11279 I ImeTracker: dev.translationtest.ns:9b5d3a7c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_CLOSE_CURRENT_SESSION fromUser false
+10-28 20:32:30.861 11279 11279 D InsetsController: hide(ime(), fromIme=false)
+10-28 20:32:30.862 11279 11279 I ImeTracker: dev.translationtest.ns:9b5d3a7c: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-28 20:32:31.009 11279 11279 D AutofillManager: view not autofillable - not passing ime action check
+10-28 20:32:31.010 11279 11279 D AutofillManager: view not autofillable - not passing ime action check

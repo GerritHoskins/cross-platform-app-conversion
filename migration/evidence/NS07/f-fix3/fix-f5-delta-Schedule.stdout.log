@@ -1,0 +1,60 @@
+diff --git a/migration/evidence/NS07/f-fix3/f3-Schedule.vue b/migration/nativescript/src/components/Schedule.vue
+index 3cf2231c..23a99600 100644
+--- a/migration/evidence/NS07/f-fix3/f3-Schedule.vue
++++ b/migration/nativescript/src/components/Schedule.vue
+@@ -1,6 +1,6 @@
+ <script lang="ts" setup>
+ import { $navigateTo, $showModal, computed, onMounted, ref, watch } from 'nativescript-vue';
+-import { Application, Dialogs, SwipeDirection, type EventData, type Page, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
++import { Dialogs, SwipeDirection, type EventData, type Page, type SearchBar, type SwipeGestureEventData, type View } from '@nativescript/core';
+ import SessionDetail from './SessionDetail.vue';
+ import TrackFilter from './TrackFilter.vue';
+ import { applyFilterResult } from '../state/track-filter';
+@@ -13,24 +13,36 @@ const store = useConferenceStore();
+ const swipeState = ref<RowSwipeState>({ openId: null });
+ const swipeActionWidths = ref<Record<number, number>>({});
+ let statusBarPage: Page | undefined;
+-
+-function reapplyStatusBarStyle() {
+-  const page = statusBarPage;
+-  // Core refreshes edge-to-edge after emitting the appearance event.
+-  page?.android?.post(() => {
+-    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
+-  });
+-}
++let statusBarObserver: android.view.ViewTreeObserver | undefined;
++let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+ 
+ function pageLoaded(event: EventData) {
+   if (statusBarPage) return;
+-  statusBarPage = event.object as Page;
+-  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  const page = event.object as Page;
++  if (!page.android || android.os.Build.VERSION.SDK_INT < 30) return;
++  statusBarPage = page;
++  statusBarObserver = page.android.getViewTreeObserver();
++  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
++    onPreDraw() {
++      if (statusBarPage !== page || !page.isLoaded) return true;
++      // F5: repair after this window's configuration/insets/layout, not a posted delay.
++      const controller = page.getClosestWindow().getInsetsController();
++      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
++      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
++        page.updateStatusBarStyle('dark');
++      }
++      return true;
++    },
++  });
++  statusBarObserver?.addOnPreDrawListener(statusBarPreDraw);
+ }
+ 
+ function pageUnloaded() {
+-  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  const observer = statusBarObserver?.isAlive() ? statusBarObserver : statusBarPage?.android?.getViewTreeObserver();
++  if (observer?.isAlive() && statusBarPreDraw) observer.removeOnPreDrawListener(statusBarPreDraw);
+   statusBarPage = undefined;
++  statusBarObserver = undefined;
++  statusBarPreDraw = undefined;
+ }
+ 
+ function measureSwipeAction(event: EventData, id: number) {

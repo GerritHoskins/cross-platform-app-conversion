@@ -1,0 +1,120 @@
+{
+  "entries": 68,
+  "counts": {
+    "PASS": 19,
+    "FAIL": 5,
+    "BLOCKED": 3,
+    "LIMITED": 41
+  },
+  "failedCases": [
+    "G05.1.0.mode-state",
+    "G05.1.3.mode-state",
+    "G05.2.0.mode-state",
+    "G05",
+    "R03.mode-accessibility"
+  ],
+  "blockedCases": [
+    "G01",
+    "G02",
+    "G08"
+  ],
+  "settingsRestored": true,
+  "installedSha256": "5f9f7d1abee8fc49989d666ef1aefce460fc4f8a95c611d6be186e82362d2409",
+  "regression": [
+    {
+      "case": "R01.schedule",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.search",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear",
+      "status": "PASS"
+    },
+    {
+      "case": "R03.mode-switch",
+      "status": "PASS"
+    },
+    {
+      "case": "R03.mode-accessibility",
+      "status": "FAIL"
+    },
+    {
+      "case": "R04.detail-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R05.filter-Done",
+      "status": "PASS"
+    },
+    {
+      "case": "R06.favorite-add",
+      "status": "PASS"
+    },
+    {
+      "case": "R07.already-favorite",
+      "status": "PASS"
+    },
+    {
+      "case": "R08.favorite-remove",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-reveal",
+      "status": "PASS"
+    }
+  ],
+  "captureCount": 276,
+  "toolingIncidents": [
+    {
+      "attempt": "G05 initial default",
+      "status": "RESOLVED TOOLING",
+      "reason": "Oversized scroll overshot row 6; preserved original frames/error; smaller overlapping scroll succeeded on retry1",
+      "evidence": [
+        "migration/evidence/NS07/f-device/F2-G05-1.0-exception.json"
+      ],
+      "replacement": "F2-G05-1.0-retry1-* and F2-G05-1.0-settled-*"
+    },
+    {
+      "attempt": "G05 initial 2.0",
+      "status": "RESOLVED TOOLING",
+      "reason": "Seek oscillated when first row was clipped by list viewport; font restored; true-top samples corrected",
+      "evidence": [
+        "migration/evidence/NS07/f-device/F2-G05-2.0-exception.json"
+      ],
+      "replacement": "F2-G05-2.0-settled-*"
+    },
+    {
+      "attempt": "G05 1.3 first settled detail",
+      "status": "RESOLVED TOOLING",
+      "reason": "Compressed XML omits NativeScript ScrollView; helper stopped before gesture; used fresh bounded visible padded content ViewGroup on retry; font restored on both attempts",
+      "evidence": [
+        "migration/evidence/NS07/f-device/F2-G05-1.3-settled-exception.json"
+      ],
+      "replacement": "F2-G05-1.3-settled2-*"
+    },
+    {
+      "attempt": "G07 first light",
+      "status": "RESOLVED TOOLING",
+      "reason": "Native NavigationButton exposes Close rather than automation id Close filter; helper stopped before tap; used exact fresh content-desc Close on retry",
+      "evidence": [
+        "migration/evidence/NS07/f-device/G07-exception.json"
+      ],
+      "replacement": "F2-G07-light-retry1-*"
+    },
+    {
+      "attempt": "Keyboard",
+      "status": "UNRESOLVED BLOCKER",
+      "reason": "No IME nodes, no image-view tool, no coordinator coordinates; authorized menu choice not reached; no guessed tap or Back; setting restored",
+      "evidence": [
+        "migration/evidence/NS07/f-device/F2-K-attempt-summary.json",
+        "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+        "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+        "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+        "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+      ]
+    }
+  ]
+}

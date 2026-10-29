@@ -1,0 +1,275 @@
+{
+  "status": "PASS",
+  "protectedFilesChecked": 30647,
+  "mismatches": [],
+  "phaseAFileSetUnchanged": true,
+  "phaseAFiles": 219,
+  "unexpectedPorcelain": [],
+  "apkSha256": "fa06fb8a0f840d3865ce16e100277e5b58fed40ec9ca37f20df31709070451d5",
+  "apkSize": 117638026,
+  "captureCount": 265,
+  "resultEntries": 87,
+  "mainStatuses": {
+    "PASS": 36,
+    "N/A": 1
+  },
+  "allEntryStatuses": {
+    "PASS": 86,
+    "N/A": 1
+  },
+  "adbCommands": 2106,
+  "failedCommands": [
+    {
+      "command": "C:/Users/Gerrit/AppData/Local/Android/Sdk/platform-tools/adb.exe",
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "pidof",
+        "dev.translationtest.ns"
+      ],
+      "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+      "startedAt": 1793109049.4856074,
+      "durationMs": 21035,
+      "timeoutSeconds": 30,
+      "exitCode": 1,
+      "stdout": "0031-A05-cold-launch-pid.stdout.log",
+      "stderr": "0031-A05-cold-launch-pid.stderr.log"
+    }
+  ],
+  "polls": 253,
+  "failedPolls": [],
+  "maxPollSeconds": 8.21828309999546,
+  "keyRecords": [
+    {
+      "case": "C08",
+      "keyevent": 3,
+      "preKeyXml": "C08-home-pre-key.xml",
+      "keyboardPackages": [
+        "dev.translationtest.ns"
+      ]
+    },
+    {
+      "case": "D02",
+      "keyevent": 4,
+      "preKeyXml": "D02-system-return-pre-key.xml",
+      "keyboardPackages": [
+        "dev.translationtest.ns"
+      ]
+    },
+    {
+      "case": "D05",
+      "keyevent": 4,
+      "preKeyXml": "D05-detail-back-pre-key.xml",
+      "keyboardPackages": [
+        "dev.translationtest.ns"
+      ]
+    },
+    {
+      "case": "D05",
+      "keyevent": 4,
+      "preKeyXml": "D05-root-back-pre-key.xml",
+      "keyboardPackages": [
+        "dev.translationtest.ns"
+      ]
+    },
+    {
+      "case": "E07",
+      "keyevent": 4,
+      "preKeyXml": "E07-back-pre-key.xml",
+      "keyboardPackages": [
+        "dev.translationtest.ns"
+      ]
+    }
+  ],
+  "textInputs": [
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "IOnic"
+      ],
+      "receiptStdout": "0130-B03-query-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "zzz-no-such-session"
+      ],
+      "receiptStdout": "0180-B04-no-match-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "%s"
+      ],
+      "receiptStdout": "0246-B05-space-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "IOnic"
+      ],
+      "receiptStdout": "0271-B06-search-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "%s"
+      ],
+      "receiptStdout": "0349-B05-retry-space-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "IOnic"
+      ],
+      "receiptStdout": "1021-D02-query-text.stdout.log"
+    },
+    {
+      "args": [
+        "-s",
+        "emulator-5554",
+        "shell",
+        "input",
+        "text",
+        "IOnic"
+      ],
+      "receiptStdout": "1349-E03-query-text.stdout.log"
+    }
+  ],
+  "relaunches": [
+    {
+      "label": "A05-cold-launch",
+      "pid": "22522",
+      "entry": null
+    },
+    {
+      "label": "B01-coverage-retry-cold",
+      "pid": "22818",
+      "entry": null
+    },
+    {
+      "label": "B03-cold-baseline",
+      "pid": "23189",
+      "entry": null
+    },
+    {
+      "label": "B05-retry-cold",
+      "pid": "24756",
+      "entry": null
+    },
+    {
+      "label": "C01-cold",
+      "pid": "25203",
+      "entry": null
+    },
+    {
+      "label": "C03-cold",
+      "pid": "25707",
+      "entry": null
+    },
+    {
+      "label": "C06-cold",
+      "pid": "27802",
+      "entry": null
+    },
+    {
+      "label": "C07-cold",
+      "pid": "28295",
+      "entry": null
+    },
+    {
+      "label": "C08-new-process",
+      "pid": "29193",
+      "entry": null
+    },
+    {
+      "label": "D01-cold",
+      "pid": "29326",
+      "entry": null
+    },
+    {
+      "label": "D03-direct3",
+      "pid": "30763",
+      "entry": "3"
+    },
+    {
+      "label": "D04-9999-direct",
+      "pid": "30916",
+      "entry": "9999"
+    },
+    {
+      "label": "D04-abc-direct",
+      "pid": "31086",
+      "entry": "abc"
+    },
+    {
+      "label": "D05-cold",
+      "pid": "31265",
+      "entry": null
+    },
+    {
+      "label": "E01-cold",
+      "pid": "31530",
+      "entry": null
+    },
+    {
+      "label": "F01-cold",
+      "pid": "3101",
+      "entry": null
+    },
+    {
+      "label": "F02-cold",
+      "pid": "4345",
+      "entry": null
+    },
+    {
+      "label": "F03-cold",
+      "pid": "4712",
+      "entry": null
+    },
+    {
+      "label": "F04-cold",
+      "pid": "5164",
+      "entry": null
+    },
+    {
+      "label": "F05-cold",
+      "pid": "6185",
+      "entry": null
+    },
+    {
+      "label": "F05-final-cold",
+      "pid": "6852",
+      "entry": null
+    }
+  ],
+  "finalSettingsMatch": true,
+  "pixelInspection": "PENDING coordinator; executor has not inspected pixels.",
+  "helperDiagnostics": "Python helpers executed successfully; LSP Pyright inference/import diagnostics are not product/test results. No product lint/build/test command run in phase B.",
+  "rawProvisionalCases": "cases.json retains initial automation coverage FAILs superseded explicitly in results-b.json. No product failure inferred from off-screen XML absence."
+}

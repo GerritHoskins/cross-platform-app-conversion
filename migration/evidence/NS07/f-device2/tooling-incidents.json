@@ -1,0 +1,26 @@
+[
+  {
+    "incident": "TTY/orphan/race",
+    "status": "resolved with replacement samples",
+    "evidence": [
+      "tooling-incident-tty.json",
+      "results-f4-incremental-history.json"
+    ],
+    "details": "PID13064 terminated only after exact own commandline identification. Original partial1.3 samples invalid; rerun PID54196 and theme PID62808 were awaited, not relaunched, after wrapper tty errors. No further device concurrency."
+  },
+  {
+    "incident": "Audit empty SearchBar interpretation",
+    "status": "resolved without device input",
+    "details": "Two helper assertions incorrectly treated empty XML text and absent Clear query as necessary. Actual native empty field exposes text equal to hint (three leading spaces + Search sessions), plus persistent Clear query accessibility node. Correct audit compares text===hint and Breakfast presence after recorded cold launch; both original frames retained."
+  },
+  {
+    "incident": "Bounds restrictions",
+    "status": "unresolved",
+    "details": "Toolbar Back centre x74 and SearchBar clear centre x1007 conflict with no edge-zone tap requirement. No tap was sent to either; G07 dark navigation-back and regression clear BLOCKED."
+  },
+  {
+    "incident": "Receipt provenance",
+    "status": "LIMITED",
+    "details": "Outer tool exact timings not available; potential in-flight receipt at orphan kill. See outer-command-provenance.json."
+  }
+]

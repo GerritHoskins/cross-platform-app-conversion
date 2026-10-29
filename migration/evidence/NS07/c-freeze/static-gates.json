@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "node-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/node-version.receipt.json"
+    },
+    {
+      "id": "npm-version",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/npm-version.receipt.json"
+    },
+    {
+      "id": "core-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/core-test.receipt.json"
+    },
+    {
+      "id": "core-json-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/core-json-test.receipt.json"
+    },
+    {
+      "id": "verify-core-before-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/verify-core-before-ci.receipt.json"
+    },
+    {
+      "id": "npm-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/npm-ci.receipt.json"
+    },
+    {
+      "id": "verify-core-after-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/verify-core-after-ci.receipt.json"
+    },
+    {
+      "id": "typecheck",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/typecheck.receipt.json"
+    },
+    {
+      "id": "tests-first",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/tests-first.receipt.json"
+    },
+    {
+      "id": "tests-second",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/tests-second.receipt.json"
+    },
+    {
+      "id": "diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/diff-check.receipt.json"
+    },
+    {
+      "id": "empty-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/c-freeze/empty-index.receipt.json"
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "success": true,
+      "counts": {
+        "tests": 53,
+        "failed": 0,
+        "passed": 53,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 53,
+        "suites": 0
+      },
+      "duration_ms": 90.3841
+    },
+    "first": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    },
+    "second": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "sourceDiff": "migration/evidence/NS07/f-fix5/fix.diff",
+  "rootLockfile": "Excluded explicitly from diff --check; retained unchanged by executor. NS06 checker is the sole authorized baseline hash read.",
+  "noBuild": true,
+  "noDeviceInteraction": true
+}

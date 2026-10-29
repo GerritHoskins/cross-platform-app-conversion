@@ -1,0 +1,55 @@
+diff --git "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix2\\f1-SessionDetail.vue" "b/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\src\\components\\SessionDetail.vue"
+index 15a4d96c..7f920c67 100644
+--- "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix2\\f1-SessionDetail.vue"
++++ "b/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\src\\components\\SessionDetail.vue"
+@@ -1,10 +1,32 @@
+ <script lang="ts" setup>
+ import { $navigateBack, computed, onMounted } from 'nativescript-vue';
++import { Application, type EventData, type Page } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { parseSessionId } from '../state/session-detail';
+ 
+ const props = defineProps<{ sessionId: string }>();
+ const store = useConferenceStore();
++let statusBarPage: Page | undefined;
++
++function reapplyStatusBarStyle() {
++  const page = statusBarPage;
++  // Core refreshes edge-to-edge after emitting the appearance event.
++  page?.android?.post(() => {
++    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
++  });
++}
++
++function pageLoaded(event: EventData) {
++  if (statusBarPage) return;
++  statusBarPage = event.object as Page;
++  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++}
++
++function pageUnloaded() {
++  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  statusBarPage = undefined;
++}
++
+ const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');
+ const session = computed(() => {
+   const id = parseSessionId(props.sessionId);
+@@ -24,7 +46,7 @@ onMounted(() => {
+ </script>
+ 
+ <template>
+-  <Page class="session-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff">
++  <Page class="session-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+     <ActionBar title="Session" class="session-action-bar">
+       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack()" />
+     </ActionBar>
+@@ -52,7 +74,7 @@ onMounted(() => {
+             :text="favorite ? 'Remove from favorites' : 'Add to favorites'"
+             automationText="favorite-toggle"
+             :isEnabled="!!session"
+-            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : undefined"
++            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : 'unchecked'"
+             marginTop="16"
+             @tap="toggleFavorite"
+           />

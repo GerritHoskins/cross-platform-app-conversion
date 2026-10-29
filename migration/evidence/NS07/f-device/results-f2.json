@@ -1,0 +1,1754 @@
+[
+  {
+    "case": "entry-gate",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Exact branch/HEAD/empty index, authorized porcelain, F1 diff, candidate bytes/hash and booted AVD match",
+    "observed": "All entry checks true; gate evaluated before first migration write",
+    "evidence": [
+      "migration/evidence/NS07/f-device/entry-gate.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A05.install",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Installed APK equals candidate 2",
+    "observed": {
+      "apkPath": "/data/app/~~3FnXFBgfuByn0c5UsYT9yQ==/dev.translationtest.ns-HgT-i6rj1mr1bgbALFnOXQ==/base.apk",
+      "sha256": "5f9f7d1abee8fc49989d666ef1aefce460fc4f8a95c611d6be186e82362d2409"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/install-check.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.mode-state",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button exposes selected=true, inactive Button selected=false",
+    "observed": {
+      "states": [
+        {
+          "label": "F2-G05-1.0-settled-all-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-favorites-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.0-settled-swipe-measurement",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        }
+      ],
+      "checked": "false on both; raw enabled/selected preserved",
+      "observedIssue": "After mode switches both mode Buttons expose selected=true; functional dataset switching still works"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.all-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, all-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.all-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, all-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.favorites-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, favorites-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.favorites-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, favorites-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.detail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, detail important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-detail.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.filter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, filter important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-filter.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.favorite-dialog",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, favorite-dialog important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorite-dialog.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorite-dialog.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.swipe-action",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.0, swipe-action important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.detail-bottom",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Described session detail can reach bottom controls",
+    "observed": {
+      "bottomFrames": [],
+      "observed": "Leave Feedback exposed; at 1.0 it is already present in initial detail XML",
+      "visualGrading": "coordinator pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-detail.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.swipe-strip",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Open row content right edge is >=240 px left of closed right edge; record actual action-strip width",
+    "observed": {
+      "stripWidthPx": 252,
+      "closed": {
+        "x1": 0,
+        "y1": 816,
+        "x2": 807,
+        "y2": 1065,
+        "cx": 404,
+        "cy": 941,
+        "width": 807,
+        "height": 249
+      },
+      "opened": {
+        "x1": 0,
+        "y1": 816,
+        "x2": 555,
+        "y2": 1065,
+        "cx": 278,
+        "cy": 941,
+        "width": 555,
+        "height": 249
+      },
+      "hiddenActionXml": null,
+      "scope": "XML geometry only; action pixels provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-action-strip.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.mode-state",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button exposes selected=true, inactive Button selected=false",
+    "observed": {
+      "states": [
+        {
+          "label": "F2-G05-1.3-settled2-all-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-favorites-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-1.3-settled2-swipe-measurement",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        }
+      ],
+      "checked": "false on both; raw enabled/selected preserved",
+      "observedIssue": "After mode switches both mode Buttons expose selected=true; functional dataset switching still works"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.all-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, all-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.all-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, all-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.favorites-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, favorites-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.favorites-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, favorites-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.detail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, detail important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-detail.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.filter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, filter important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-filter.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.favorite-dialog",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, favorite-dialog important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorite-dialog.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorite-dialog.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.swipe-action",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 1.3, swipe-action important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-1.3-settled2-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.detail-bottom",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Described session detail can reach bottom controls",
+    "observed": {
+      "bottomFrames": [
+        "F2-G05-1.3-settled2-detail-scrolled-1"
+      ],
+      "observed": "Leave Feedback exposed; at 1.0 it is already present in initial detail XML",
+      "visualGrading": "coordinator pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-detail-scrolled-1.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-detail-scrolled-1.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.3.swipe-strip",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Open row content right edge is >=240 px left of closed right edge; record actual action-strip width",
+    "observed": {
+      "stripWidthPx": 252,
+      "closed": {
+        "x1": 0,
+        "y1": 799,
+        "x2": 778,
+        "y2": 1101,
+        "cx": 389,
+        "cy": 950,
+        "width": 778,
+        "height": 302
+      },
+      "opened": {
+        "x1": 0,
+        "y1": 799,
+        "x2": 526,
+        "y2": 1101,
+        "cx": 263,
+        "cy": 950,
+        "width": 526,
+        "height": 302
+      },
+      "hiddenActionXml": null,
+      "scope": "XML geometry only; action pixels provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-action-strip.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.mode-state",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode Button exposes selected=true, inactive Button selected=false",
+    "observed": {
+      "states": [
+        {
+          "label": "F2-G05-2.0-settled-all-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-favorites-top",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        },
+        {
+          "label": "F2-G05-2.0-settled-swipe-measurement",
+          "buttons": [
+            {
+              "text": "All sessions",
+              "bounds": "[32,422][785,548]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            },
+            {
+              "text": "Favorite sessions",
+              "bounds": "[32,548][785,674]",
+              "selected": "true",
+              "checked": "false",
+              "enabled": "true"
+            }
+          ]
+        }
+      ],
+      "checked": "false on both; raw enabled/selected preserved",
+      "observedIssue": "After mode switches both mode Buttons expose selected=true; functional dataset switching still works"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.all-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, all-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.all-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, all-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.favorites-top",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, favorites-top important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.favorites-scrolled",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, favorites-scrolled important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-scrolled.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-scrolled.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.detail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, detail important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.filter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, filter important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-filter.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.favorite-dialog",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, favorite-dialog important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorite-dialog.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorite-dialog.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.swipe-action",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "At accepted font scale 2.0, swipe-action important labels/actions are readable and reachable without clipping",
+    "observed": {
+      "nativeInteraction": "Captured after XML state polling",
+      "measurements": "F2-G05-2.0-settled-measurements.json",
+      "visualGrading": "PROVISIONAL: coordinator direct pixel inspection required; XML alone is not visual proof"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.detail-bottom",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Described session detail can reach bottom controls",
+    "observed": {
+      "bottomFrames": [
+        "F2-G05-2.0-settled-detail-scrolled-1",
+        "F2-G05-2.0-settled-detail-scrolled-2"
+      ],
+      "observed": "Leave Feedback exposed; at 1.0 it is already present in initial detail XML",
+      "visualGrading": "coordinator pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail-scrolled-1.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail-scrolled-1.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail-scrolled-2.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-detail-scrolled-2.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.swipe-strip",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Open row content right edge is >=240 px left of closed right edge; record actual action-strip width",
+    "observed": {
+      "stripWidthPx": 252,
+      "closed": {
+        "x1": 0,
+        "y1": 830,
+        "x2": 711,
+        "y2": 1226,
+        "cx": 356,
+        "cy": 1028,
+        "width": 711,
+        "height": 396
+      },
+      "opened": {
+        "x1": 0,
+        "y1": 830,
+        "x2": 459,
+        "y2": 1226,
+        "cx": 230,
+        "cy": 1028,
+        "width": 459,
+        "height": 396
+      },
+      "hiddenActionXml": null,
+      "scope": "XML geometry only; action pixels provisional"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-action-strip.json",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-action.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-swipe-action.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "F1 preserves accurate selected-mode accessibility state while fixing label/action layout",
+    "observed": {
+      "layout": "LIMITED pending coordinator pixels at 1.0/1.3/2.0",
+      "newFailure": "Both mode Buttons retain selected=true after switching. Functional All/Favorite dataset transitions pass.",
+      "fixAppliedInF2": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-favorites-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-measurements.json",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-all-top.xml",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.png",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-favorites-top.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.Schedule",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Schedule in light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.SessionDetail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "SessionDetail in light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.light.TrackFilter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "TrackFilter in light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark-cold.Schedule",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Schedule in dark-cold has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark-cold.SessionDetail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "SessionDetail in dark-cold has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark-cold.TrackFilter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "TrackFilter in dark-cold has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-dark.Schedule",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Schedule in live-dark has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-dark.SessionDetail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "SessionDetail in live-dark has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-dark.TrackFilter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "TrackFilter in live-dark has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-light.Schedule",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Schedule in live-light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-light.SessionDetail",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "SessionDetail in live-light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-light.TrackFilter",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "TrackFilter in live-light has readable light-page content and visible status-bar icons",
+    "observed": {
+      "surface": "PNG/XML captured on candidate 2",
+      "visualGrading": "PROVISIONAL; coordinator pixels decide G07-1"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live-process",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "App stays in same process during live light/dark/light transitions",
+    "observed": {
+      "pidBefore": "32359",
+      "pidAfter": "32359",
+      "sameProcess": true,
+      "relaunchesDuringLive": 0
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/G07-live-process.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark-navigation",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "Navigate into detail and open/close filter while dark without invisible system bars",
+    "observed": {
+      "coldAndLiveDark": "Detail toolbar return and filter Close/reopen/Done exercised",
+      "visualGrading": "coordinator pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail-back.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail-back.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-closed.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-closed.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-reopened.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-reopened.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-done.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter-done.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-navigation.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-navigation.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-return.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail-return.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-navigation.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-navigation.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-return.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07",
+    "status": "LIMITED",
+    "run": "f-device",
+    "expected": "G07-1 status-bar clock/icons visible on all three pages in light/dark/cold/live",
+    "observed": {
+      "allAssignedThemeSurfacesCaptured": true,
+      "samePidForLive": true,
+      "nightRestored": "Night mode: no",
+      "coordinatorPixelInspection": "pending, no executor visual approval"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-dark-filter.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-schedule.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-detail.xml",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.png",
+      "migration/evidence/NS07/f-device/F2-G07-live-light-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G01",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Confirm full on-screen keyboard, type query and use Back only after screenshot/XML confirmation",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G02",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "One interaction while full on-screen keyboard is visibly present",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G08",
+    "status": "BLOCKED",
+    "run": "f-device",
+    "expected": "Classify full keyboard and observe whether schedule content is inset or covered",
+    "observed": {
+      "reason": "Compressed XML exposes no Gboard nodes; no image-view tool in this session; no coordinator visible-control coordinates supplied. Authorized More -> Show on-screen keyboard choice not reached. No blind tap or keyboard Back sent.",
+      "surface": "UNCONFIRMED by executor; PNG retained for coordinator classification",
+      "keyboardSetting": "0 -> 1 accepted; restored to 0",
+      "menuChoiceCount": 0,
+      "fullKeyboardConfirmed": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.png",
+      "migration/evidence/NS07/f-device/F2-K-focused-surface.xml",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.png",
+      "migration/evidence/NS07/f-device/F2-K-awaiting-visible-menu-coordinates.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R01.schedule",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Cold baseline loads schedule beginning Breakfast and University of Ionic",
+    "observed": {
+      "visibleIds": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "scope": "short load regression, not full B01 twenty-row coverage"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R01-cold.png",
+      "migration/evidence/NS07/f-device/F2-R01-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.search",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "IOnic produces case-insensitive name matches; visible results include University of Ionic and exclude Breakfast",
+    "observed": {
+      "visibleRows": [
+        {
+          "id": "session-4",
+          "name": "University of Ionic"
+        },
+        {
+          "id": "session-2",
+          "name": "Getting Started with Ionic"
+        },
+        {
+          "id": "session-3",
+          "name": "Ionic Tooling"
+        },
+        {
+          "id": "session-5",
+          "name": "Migrating to Ionic"
+        },
+        {
+          "id": "session-7",
+          "name": "The Evolution of Ionicons"
+        },
+        {
+          "id": "session-8",
+          "name": "Ionic Pro"
+        }
+      ],
+      "scope": "mounted results only"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R02-search-focused.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-focused.xml",
+      "migration/evidence/NS07/f-device/F2-R02-search-results.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-results.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Own SearchBar clear control empties query and restores Breakfast",
+    "observed": {
+      "visibleIds": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R02-search-cleared.png",
+      "migration/evidence/NS07/f-device/F2-R02-search-cleared.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "All -> Favorite -> All changes dataset correctly, retaining empty search",
+    "observed": {
+      "favoriteEmpty": true,
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R03-all-before.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-before.xml",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.xml",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-accessibility",
+    "status": "FAIL",
+    "run": "f-device",
+    "expected": "Exactly one active mode exposed selected=true after each switch",
+    "observed": {
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "selected": "true",
+          "checked": "false",
+          "enabled": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R03-favorites-empty.xml",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.png",
+      "migration/evidence/NS07/f-device/F2-R03-all-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-back",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "University of Ionic detail opens, one Android Back returns to schedule",
+    "observed": {
+      "returnedSchedule": true,
+      "visibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R04-detail.png",
+      "migration/evidence/NS07/f-device/F2-R04-detail.xml",
+      "migration/evidence/NS07/f-device/F2-R04-back-schedule.png",
+      "migration/evidence/NS07/f-device/F2-R04-back-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R05.filter-Done",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Filter opens with ten tracks selected; Done returns to schedule unchanged",
+    "observed": {
+      "switches": [
+        {
+          "name": "Communication",
+          "checked": "true"
+        },
+        {
+          "name": "Design",
+          "checked": "true"
+        },
+        {
+          "name": "Documentation",
+          "checked": "true"
+        },
+        {
+          "name": "Food",
+          "checked": "true"
+        },
+        {
+          "name": "Ionic",
+          "checked": "true"
+        },
+        {
+          "name": "Navigation",
+          "checked": "true"
+        },
+        {
+          "name": "Services",
+          "checked": "true"
+        },
+        {
+          "name": "Tooling",
+          "checked": "true"
+        },
+        {
+          "name": "Vue",
+          "checked": "true"
+        },
+        {
+          "name": "Workshop",
+          "checked": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R05-filter.png",
+      "migration/evidence/NS07/f-device/F2-R05-filter.xml",
+      "migration/evidence/NS07/f-device/F2-R05-filter-return.png",
+      "migration/evidence/NS07/f-device/F2-R05-filter-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R06.favorite-add",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Favorite Breakfast adds immediately once; acknowledgement; Favorites contains exactly Breakfast",
+    "observed": {
+      "visibleRows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-alert.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-alert.xml",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-acknowledged.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorite-1-acknowledged.xml",
+      "migration/evidence/NS07/f-device/F2-R06-favorites-added.png",
+      "migration/evidence/NS07/f-device/F2-R06-favorites-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R07.already-favorite",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Already-favorite invocation shows remove-confirmation; Cancel preserves one Breakfast",
+    "observed": {
+      "visibleRows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R07-already-favorite.png",
+      "migration/evidence/NS07/f-device/F2-R07-already-favorite.xml",
+      "migration/evidence/NS07/f-device/F2-R07-favorites-preserved.png",
+      "migration/evidence/NS07/f-device/F2-R07-favorites-preserved.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R08.favorite-remove",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Remove in Favorite mode confirms and removes Breakfast, restoring favorite-empty state",
+    "observed": {
+      "visibleRows": [],
+      "empty": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R08-remove-confirm.png",
+      "migration/evidence/NS07/f-device/F2-R08-remove-confirm.xml",
+      "migration/evidence/NS07/f-device/F2-R08-favorites-empty.png",
+      "migration/evidence/NS07/f-device/F2-R08-favorites-empty.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-reveal",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "One All-mode row reveals its action without navigation or mutation",
+    "observed": {
+      "stripWidthPx": 252,
+      "detailVisible": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/F2-R09-swipe-revealed.png",
+      "migration/evidence/NS07/f-device/F2-R09-swipe-revealed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "No detected fatal/unhandled patterns in bounded PID logs; retain warnings/errors verbatim",
+    "observed": {
+      "windows": 21,
+      "pids": [
+        "18371",
+        "18561",
+        "20609",
+        "22520",
+        "24605",
+        "31094",
+        "31556",
+        "32359",
+        "2768",
+        "3521",
+        "4965"
+      ],
+      "fatalPatternWindows": [],
+      "pidChangesWithinWindow": [],
+      "warningErrorLines": 1465,
+      "evidence": [
+        {
+          "label": "F2-G05-1.0-baseline-previous",
+          "log": "F2-G05-1.0-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.0-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-retry1-baseline-previous",
+          "log": "F2-G05-1.0-retry1-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.0-retry1-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-retry1-window",
+          "log": "F2-G05-1.0-retry1-window-logcat.txt",
+          "warnings": "F2-G05-1.0-retry1-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-baseline-previous",
+          "log": "F2-G05-1.3-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-1.3-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-window",
+          "log": "F2-G05-1.3-window-logcat.txt",
+          "warnings": "F2-G05-1.3-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-2.0-baseline-previous",
+          "log": "F2-G05-2.0-baseline-previous-logcat.txt",
+          "warnings": "F2-G05-2.0-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.0-settled-window",
+          "log": "F2-G05-1.0-settled-window-logcat.txt",
+          "warnings": "F2-G05-1.0-settled-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-1.3-settled2-window",
+          "log": "F2-G05-1.3-settled2-window-logcat.txt",
+          "warnings": "F2-G05-1.3-settled2-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G05-2.0-settled-window",
+          "log": "F2-G05-2.0-settled-window-logcat.txt",
+          "warnings": "F2-G05-2.0-settled-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-baseline-previous",
+          "log": "F2-G07-light-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-light-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-retry1-baseline-previous",
+          "log": "F2-G07-light-retry1-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-light-retry1-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-light-retry1-window",
+          "log": "F2-G07-light-retry1-window-logcat.txt",
+          "warnings": "F2-G07-light-retry1-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-dark-cold-baseline-previous",
+          "log": "F2-G07-dark-cold-baseline-previous-logcat.txt",
+          "warnings": "F2-G07-dark-cold-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-dark-cold-window",
+          "log": "F2-G07-dark-cold-window-logcat.txt",
+          "warnings": "F2-G07-dark-cold-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-G07-live-window",
+          "log": "F2-G07-live-window-logcat.txt",
+          "warnings": "F2-G07-live-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-K-baseline-previous",
+          "log": "F2-K-baseline-previous-logcat.txt",
+          "warnings": "F2-K-baseline-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-K-blocked-window",
+          "log": "F2-K-blocked-window-logcat.txt",
+          "warnings": "F2-K-blocked-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R01-cold-previous",
+          "log": "F2-R01-cold-previous-logcat.txt",
+          "warnings": "F2-R01-cold-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R-window",
+          "log": "F2-R-window-logcat.txt",
+          "warnings": "F2-R-window-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R10-final-cold-previous",
+          "log": "F2-R10-final-cold-previous-logcat.txt",
+          "warnings": "F2-R10-final-cold-previous-warnings-errors-verbatim.txt"
+        },
+        {
+          "label": "F2-R-final-window",
+          "log": "F2-R-final-window-logcat.txt",
+          "warnings": "F2-R-final-window-warnings-errors-verbatim.txt"
+        }
+      ],
+      "scope": "Up to 400 lines per recorded PID/process window, no cleared buffers; not exhaustive stability, not warning-free; direct pixels remain coordinator work"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/A06-log-review.json",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-retry1-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.0-settled-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-1.3-settled2-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G05-2.0-settled-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-light-retry1-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-dark-cold-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-G07-live-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-G07-live-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-K-baseline-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-K-baseline-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-K-blocked-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-K-blocked-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R01-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R01-cold-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R-window-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R10-final-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R10-final-cold-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device/F2-R-final-window-logcat.txt",
+      "migration/evidence/NS07/f-device/F2-R-final-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "settings-restoration",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "Every recorded environment value equals step-1 value",
+    "observed": {
+      "settingsRestored": true,
+      "comparison": {
+        "model": {
+          "before": "sdk_gphone64_x86_64",
+          "after": "sdk_gphone64_x86_64",
+          "equal": true
+        },
+        "sdk": {
+          "before": "36",
+          "after": "36",
+          "equal": true
+        },
+        "size": {
+          "before": "Physical size: 1080x2400",
+          "after": "Physical size: 1080x2400",
+          "equal": true
+        },
+        "density": {
+          "before": "Physical density: 420",
+          "after": "Physical density: 420",
+          "equal": true
+        },
+        "densityProperty": {
+          "before": "",
+          "after": "",
+          "equal": true
+        },
+        "fontScale": {
+          "before": "1.0",
+          "after": "1.0",
+          "equal": true
+        },
+        "night": {
+          "before": "Night mode: no",
+          "after": "Night mode: no",
+          "equal": true
+        },
+        "accessibilityServices": {
+          "before": "null",
+          "after": "null",
+          "equal": true
+        },
+        "accessibilityEnabled": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "hardKeyboardIme": {
+          "before": "0",
+          "after": "0",
+          "equal": true
+        },
+        "defaultIme": {
+          "before": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "after": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+          "equal": true
+        }
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device/environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "preservation",
+    "status": "PASS",
+    "run": "f-device",
+    "expected": "F1/product state and immutable A/B/G/F1/redaction records unchanged; empty index",
+    "observed": "All 12568 snapshot files retain SHA-256; source diff byte-equals F1 fix.diff; gate/status audit passed",
+    "evidence": [
+      "migration/evidence/NS07/f-device/preservation-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  }
+]

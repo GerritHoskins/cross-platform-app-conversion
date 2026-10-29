@@ -1,0 +1,364 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "phase": "F10",
+  "status": "CHECKPOINTED",
+  "summary": "Implemented clean TrackFilter draft cancellation before configuration teardown, using existing modal cleanup. F7 status-bar lifecycle unchanged. Software gates pass; candidate 6 built; STOP for F11.",
+  "observer": "Hermes GPT-6.1 Sol high (software)",
+  "fixes": [
+    {
+      "id": "F10-FILTER-RECREATE",
+      "case": "TrackFilter font-scale activity recreation; F9-FS-filter-1.3 and F9-FS-filter-after-nav",
+      "cause": "Configuration dismissal skips normal core/Vue close; restored numeric-tag dialog removed while Vue retains detached Frame. Later default target is stale; recovery log contains unhandled promise rejection / FragmentTransaction NullPointerException.",
+      "files": [
+        "migration/nativescript/src/components/TrackFilter.vue"
+      ],
+      "diffHunkRef": [
+        "migration/evidence/NS07/f-fix5/fix-f10-delta.diff:5 (@@ -1,11 +1,33 @@)",
+        "migration/evidence/NS07/f-fix5/fix-f10-delta.diff:41 (@@ -74,7 +96,7 @@)"
+      ],
+      "status": "IMPLEMENTED",
+      "behavior": "Own-host configuration activityStopped closes modal through normal API with undefined result: discard draft, settle once, unmount/unsubscribe; next open initializes from committed store.",
+      "deviceConfirmation": "NOT RUN — F11 required"
+    }
+  ],
+  "checks": [
+    {
+      "id": "entry-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-branch.receipt.json"
+    },
+    {
+      "id": "entry-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-head.receipt.json"
+    },
+    {
+      "id": "entry-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-index.receipt.json"
+    },
+    {
+      "id": "entry-porcelain",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-porcelain.receipt.json"
+    },
+    {
+      "id": "entry-ns-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-ns-diff.receipt.json"
+    },
+    {
+      "id": "entry-all-files",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-all-files.receipt.json"
+    },
+    {
+      "id": "entry-ns-tracked",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/entry-ns-tracked.receipt.json"
+    },
+    {
+      "id": "source-inspection",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/source-inspection.receipt.json"
+    },
+    {
+      "id": "verify-core-entry",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/verify-core-entry.receipt.json"
+    },
+    {
+      "id": "core-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/core-test.receipt.json"
+    },
+    {
+      "id": "npm-ci",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/npm-ci.receipt.json"
+    },
+    {
+      "id": "verify-core-post-test",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/verify-core-post-test.receipt.json"
+    },
+    {
+      "id": "typecheck",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/typecheck.receipt.json"
+    },
+    {
+      "id": "tests-first",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/tests-first.receipt.json"
+    },
+    {
+      "id": "tests-second",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/tests-second.receipt.json"
+    },
+    {
+      "id": "build-android",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/build-android.receipt.json"
+    },
+    {
+      "id": "core-json-test",
+      "exitCode": 7,
+      "receipt": "migration/evidence/NS07/f-fix5/core-json-test.receipt.json",
+      "note": "Supplemental helper failure retained; corrected run passed. spawnSync returned numeric exit code, so child reaped before continuation; no transport/non-TTY failure."
+    },
+    {
+      "id": "core-json-test-corrected",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/core-json-test-corrected.receipt.json"
+    },
+    {
+      "id": "fix-cumulative-diff",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/fix-cumulative-diff.receipt.json"
+    },
+    {
+      "id": "fix-f10-delta",
+      "exitCode": 1,
+      "receipt": "migration/evidence/NS07/f-fix5/fix-f10-delta.receipt.json",
+      "note": "git diff --no-index exit 1 is expected for changed files; only headers normalized to repository paths"
+    },
+    {
+      "id": "candidate-and-counts",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/candidate-and-counts.receipt.json"
+    },
+    {
+      "id": "source-supplement",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/source-supplement.receipt.json"
+    },
+    {
+      "id": "lifecycle-probes",
+      "exitCode": 1,
+      "receipt": "migration/evidence/NS07/f-fix5/lifecycle-probes.receipt.json",
+      "note": "Supplemental helper failure retained; corrected run passed. spawnSync returned numeric exit code, so child reaped before continuation; no transport/non-TTY failure."
+    },
+    {
+      "id": "lifecycle-probes-corrected",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/lifecycle-probes-corrected.receipt.json"
+    },
+    {
+      "id": "preservation-final",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/preservation-final.receipt.json"
+    },
+    {
+      "id": "final-diff-check",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/final-diff-check.receipt.json"
+    },
+    {
+      "id": "final-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/final-index.receipt.json"
+    },
+    {
+      "id": "checkpoint-branch",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/checkpoint-branch.receipt.json"
+    },
+    {
+      "id": "checkpoint-head",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/checkpoint-head.receipt.json"
+    },
+    {
+      "id": "checkpoint-index",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/checkpoint-index.receipt.json"
+    },
+    {
+      "id": "checkpoint-porcelain",
+      "exitCode": 0,
+      "receipt": "migration/evidence/NS07/f-fix5/checkpoint-porcelain.receipt.json"
+    }
+  ],
+  "testCounts": {
+    "core": {
+      "success": true,
+      "counts": {
+        "tests": 53,
+        "failed": 0,
+        "passed": 53,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 53,
+        "suites": 0
+      },
+      "duration_ms": 97.5784
+    },
+    "first": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    },
+    "second": {
+      "files": 7,
+      "tests": 115,
+      "passed": 115,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    },
+    "lifecycleProbes": {
+      "assertions": 99,
+      "pass": true,
+      "nativeProof": false
+    }
+  },
+  "apk": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "size": 118191268,
+    "sha256": "ca575f8091724a05783bfbbfb086e71a3f2f9ce454a6f2d60d447a6380766593"
+  },
+  "unresolved": [
+    "F11 device confirmation of repeated open-filter font transitions at 1.3/2.0/back, changed-draft discard, one-tap reopen, Done/Close and once-only effects; native restoration timing is not established by software probes.",
+    "NativeScript internal modalMap may retain closed owner options during configuration dismissal; not patched or claimed leak-free. F11 must check for stray restored dialogs/errors.",
+    "Existing npm audit findings/pending script approvals and upstream DEP0190 retained; no dependency changes."
+  ],
+  "gate": {
+    "branch": "migration/slice-1",
+    "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+    "checks": {
+      "branch": true,
+      "head": true,
+      "index": true,
+      "porcelain": true,
+      "diff": true,
+      "candidate5": true,
+      "absent": true
+    },
+    "unexpected": [],
+    "missing": [],
+    "porcelainEntries": 34881,
+    "candidate5": {
+      "path": "migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+      "size": 118191268,
+      "sha256": "f6afb8fd0c5cac73515af4c9ffad26c4ab95cdaa9e22a0810ab8874554a94363"
+    },
+    "checksWithExitCodes": [
+      {
+        "id": "entry-branch",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-branch.receipt.json"
+      },
+      {
+        "id": "entry-head",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-head.receipt.json"
+      },
+      {
+        "id": "entry-index",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-index.receipt.json"
+      },
+      {
+        "id": "entry-porcelain",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-porcelain.receipt.json"
+      },
+      {
+        "id": "entry-ns-diff",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-ns-diff.receipt.json"
+      },
+      {
+        "id": "entry-all-files",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-all-files.receipt.json"
+      },
+      {
+        "id": "entry-ns-tracked",
+        "exitCode": 0,
+        "receipt": "migration/evidence/NS07/f-fix5/entry-ns-tracked.receipt.json"
+      }
+    ]
+  },
+  "preservation": {
+    "compared": 65100,
+    "trackedNativeScript": 89,
+    "changed": [
+      "migration/nativescript/src/components/TrackFilter.vue"
+    ],
+    "protectedUnchanged": true,
+    "statusBarBlockByteIdentical": true
+  },
+  "bundle": {
+    "path": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main/migration/nativescript/platforms/android/app/build/outputs/apk/debug/app-debug.apk!/assets/app/bundle.mjs",
+    "size": 160275,
+    "sha256": "6fbe0901e26774cdc005d5d3f779861895fea1cf8ac17d3f71141ec7a4d99c5a",
+    "present": true,
+    "markers": [
+      {
+        "marker": "swipe-action-",
+        "offset": 74354,
+        "excerpt": "ction?.mode ?? 'all'),\n                                                            automationText: `swipe-action-${item.session.id}`,\n                                                            visibility: $setup.swipeState.openId === item.session.id ? "
+      },
+      {
+        "marker": "Filter Sessions",
+        "offset": 96502,
+        "excerpt": "e__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionBar, {\n                        title: \"Filter Sessions\",\n                        class: \"filter-action-bar\"\n                    }, {\n                        default: (0,vue__WEBPACK_IMPORTED_MOD"
+      },
+      {
+        "marker": "ns04SessionId",
+        "offset": 34346,
+        "excerpt": "t_core__WEBPACK_IMPORTED_MODULE_1__.Application.android.startActivity?.getIntent()?.getStringExtra('ns04SessionId');\n                const sessionId = (0,_state_session_detail__WEBPACK_IMPORTED_MODULE_4__.directEntrySessionId)(extra, true);\n            "
+      },
+      {
+        "marker": "getSystemBarsAppearance",
+        "offset": 39297,
+        "excerpt": "owInsetsController.APPEARANCE_LIGHT_STATUS_BARS;\n                    if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {\n                        page.updateStatusBarStyle('dark');\n                    }\n                    return true;\n       "
+      },
+      {
+        "marker": "onViewDetachedFromWindow",
+        "offset": 39779,
+        "excerpt": "Loaded)\n                        setStatusBarPreDraw(view, true);\n                },\n                onViewDetachedFromWindow(view) {\n                    // Android still exposes the attached tree here, before clearing AttachInfo.\n                    if (statusBarP"
+      },
+      {
+        "marker": "isChangingConfigurations",
+        "offset": 54723,
+        "excerpt": "t frame = filterFrame;\n            if (frame && frame._context === event.activity && event.activity.isChangingConfigurations()) {\n                // F10: close before native teardown strands Vue's modal stack; no result discards the draft.\n                frame.cl"
+      }
+    ]
+  },
+  "diffs": {
+    "cumulative": "migration/evidence/NS07/f-fix5/fix.diff",
+    "delta": "migration/evidence/NS07/f-fix5/fix-f10-delta.diff"
+  },
+  "checkpoint": "migration/handoffs/NS07-checkpoint-f10.md",
+  "historicalA06Correction": "Original F9 pattern counts are preserved. F9-FS-filter-recovery-window-logcat.txt:169-184 contains D-priority Unhandled promise rejection / FragmentTransaction NullPointerException not matched by the six historical patterns.",
+  "scope": {
+    "noDeviceInteraction": true,
+    "noDelegation": true,
+    "noStagingCommitPush": true,
+    "noHistoryEdits": true,
+    "rootLockfileStatusOnly": true,
+    "noIdeaContentsRead": true
+  },
+  "tooling": {
+    "failedSupplementalHelpersRetained": [
+      "core-json-test: Windows reporter path corrected to file URL",
+      "lifecycle-probes: adapter missing ViewCommon constant corrected; product unchanged"
+    ],
+    "orphanAssessment": "All failures returned completed synchronous numeric exit statuses, recorded in receipts. No tool transport/non-TTY failure or possibly running child occurred.",
+    "text": "Authored text LF; raw subprocess logs may retain CRLF",
+    "outerEnvelopeTiming": "Unavailable/null in outer-command-provenance.json; not fabricated"
+  },
+  "sourceInventory": [
+    "migration/evidence/NS07/f-fix5/installed-source-inventory.json",
+    "migration/evidence/NS07/f-fix5/source-supplement-inventory.json"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "search-plus-track",
+  "description": "Query \"Ionic\" intersected with the track subset [Ionic, Design]: a session must satisfy both the name match and the every-track-inclusion rule (sessions.ts:193-205). Remaining: the name-matching sessions whose track is Ionic (2, 4, 5) or Design (7, 18). Excluded although their names match the query: 3 (Tooling), 8 and 15 and 16 (Services), 9 (Workshop), 11 (Navigation), 13 and 14 (Communication), 17 (Documentation), 19 (Vue).",
+  "input": {
+    "searchText": "Ionic",
+    "selectedTracks": [
+      "Ionic",
+      "Design"
+    ],
+    "favoriteIds": [],
+    "mode": "all"
+  },
+  "expected": {
+    "sessionIds": [
+      4,
+      2,
+      5,
+      7,
+      18
+    ],
+    "groups": [
+      {
+        "groupTime": "9:15 am",
+        "sessionIds": [
+          4,
+          2
+        ]
+      },
+      {
+        "groupTime": "10:00 am",
+        "sessionIds": [
+          5,
+          7
+        ]
+      },
+      {
+        "groupTime": "2:00 pm",
+        "sessionIds": [
+          18
+        ]
+      }
+    ]
+  }
+}

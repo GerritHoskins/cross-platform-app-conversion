@@ -1,11 +1,89 @@
 <script lang="ts" setup>
-import { $closeModal, ref } from 'nativescript-vue';
-import type { EventData, Switch } from '@nativescript/core';
+import { $closeModal, onMounted, onUnmounted, ref } from 'nativescript-vue';
+import { Application, type AndroidActivityEventData, type EventData, type Frame, type Page, type Switch } from '@nativescript/core';
 import { useConferenceStore } from '../state/conference-store';
 import { checkedTrackNames, setAllTracks, toggleTrack } from '../state/track-filter';
 
 const store = useConferenceStore();
 const draft = ref(store.getters.trackOptions);
+let filterFrame: Frame | undefined;
+
+function filterLoaded(event: EventData) {
+  filterFrame = event.object as Frame;
+}
+
+function discardOnActivityRecreation(event: AndroidActivityEventData) {
+  const frame = filterFrame;
+  if (frame && frame._context === event.activity && event.activity.isChangingConfigurations()) {
+    // F10: close before native teardown strands Vue's modal stack; no result discards the draft.
+    frame.closeModal();
+  }
+}
+
+onMounted(() => {
+  Application.android.on(Application.android.activityStoppedEvent, discardOnActivityRecreation);
+});
+onUnmounted(() => {
+  Application.android.off(Application.android.activityStoppedEvent, discardOnActivityRecreation);
+  filterFrame = undefined;
+});
+
+let statusBarPage: Page | undefined;
+let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+let statusBarAttachState: android.view.View.OnAttachStateChangeListener | undefined;
+let statusBarPreDrawRegistered = false;
+
+function setStatusBarPreDraw(view: android.view.View, registered: boolean) {
+  if (!statusBarPreDraw || statusBarPreDrawRegistered === registered) return;
+  // F7: obtain the current observer while its view still owns it; never cache it.
+  const observer = view.getViewTreeObserver();
+  if (registered) observer.addOnPreDrawListener(statusBarPreDraw);
+  else observer.removeOnPreDrawListener(statusBarPreDraw);
+  statusBarPreDrawRegistered = registered;
+}
+
+function pageLoaded(event: EventData) {
+  if (statusBarPage) return;
+  const page = event.object as Page;
+  const view = page.android;
+  if (!view || android.os.Build.VERSION.SDK_INT < 30) return;
+  statusBarPage = page;
+  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
+    onPreDraw() {
+      if (statusBarPage !== page || !page.isLoaded) return true;
+      // F5: repair after this window's configuration/insets/layout, not a posted delay.
+      const controller = page.getClosestWindow().getInsetsController();
+      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
+      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
+        page.updateStatusBarStyle('dark');
+      }
+      return true;
+    },
+  });
+  statusBarAttachState = new android.view.View.OnAttachStateChangeListener({
+    onViewAttachedToWindow(view) {
+      if (statusBarPage === page && page.isLoaded) setStatusBarPreDraw(view, true);
+    },
+    onViewDetachedFromWindow(view) {
+      // Android still exposes the attached tree here, before clearing AttachInfo.
+      if (statusBarPage === page) setStatusBarPreDraw(view, false);
+    },
+  });
+  view.addOnAttachStateChangeListener(statusBarAttachState);
+  setStatusBarPreDraw(view, true);
+}
+
+function pageUnloaded() {
+  const view = statusBarPage?.android;
+  if (view) {
+    setStatusBarPreDraw(view, false);
+    if (statusBarAttachState) view.removeOnAttachStateChangeListener(statusBarAttachState);
+  }
+  statusBarPage = undefined;
+  statusBarPreDraw = undefined;
+  statusBarAttachState = undefined;
+  statusBarPreDrawRegistered = false;
+}
 
 function changeTrack(event: EventData, name: string) {
   // checkedChange also fires for programmatic updates; only a changed native
@@ -18,8 +96,8 @@ function changeTrack(event: EventData, name: string) {
 </script>
 
 <template>
-  <Frame>
-    <Page class="filter-page">
+  <Frame @loaded="filterLoaded">
+    <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
       <ActionBar title="Filter Sessions" class="filter-action-bar">
         <NavigationButton
           text="Close"

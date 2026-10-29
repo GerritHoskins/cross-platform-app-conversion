@@ -1,0 +1,43 @@
+HEALTH step5-before-regression 0.69 0.69 0.33 1/2580 11928 MemAvailable:     567208 kB
+HEALTH F11-R01-prepare-before-cold 0.69 0.69 0.33 1/2580 11948 MemAvailable:     566732 kB
+LOG F11-R01-prepare-previous PID=11279 {"cleared object reference":0,"Failed to get Java object":0,"Unhandled error":0,"Unhandled promise rejection":0,"Error during execution of native event handler":0,"NullPointerException":0,"FragmentTransaction":0,"Could not show modal":0,"not attached":0,"FATAL":0,"AndroidRuntime":0}
+FRAME F11-R01-cold-schedule
+HEALTH step5-before-R02 1.55 0.88 0.40 1/2581 12064 MemAvailable:     571684 kB
+FRAME F11-R02-focused
+FRAME F11-R02-results
+FRAME F11-R02-cleared
+FRAME F11-R02-full-list-scroll-0
+FRAME F11-R02-full-list-scroll-1
+FRAME F11-R02-full-list-scroll-2
+FRAME F11-R02-full-list-scroll-3
+FRAME F11-R02-full-list-scroll-4
+HEALTH step5-before-R03 0.93 0.83 0.40 1/2588 12442 MemAvailable:     584888 kB
+FRAME F11-R03-favorite
+FRAME F11-R03-all
+HEALTH step5-before-R04 0.87 0.82 0.41 1/2587 12570 MemAvailable:     587116 kB
+FRAME F11-R04-toolbar-detail
+FRAME F11-R04-toolbar-return
+FRAME F11-R04-system-detail
+FRAME F11-R04-system-return
+HEALTH step5-before-R05 0.57 0.75 0.40 1/2586 12797 MemAvailable:     579008 kB
+FRAME F11-R05-filter
+FRAME F11-R05-return
+HEALTH step5-before-R06 0.51 0.73 0.39 1/2585 12924 MemAvailable:     577800 kB
+FRAME F11-R06-add-alert
+FRAME F11-R06-add-acknowledged
+FRAME F11-R06-favorite-added
+HEALTH step5-before-R07 0.45 0.70 0.39 1/2585 13112 MemAvailable:     565212 kB
+FRAME F11-R07-all
+FRAME F11-R07-already-added
+FRAME F11-R07-favorite-preserved
+HEALTH step5-before-R08 0.32 0.66 0.38 1/2582 13342 MemAvailable:     587248 kB
+FRAME F11-R08-confirm
+FRAME F11-R08-empty
+HEALTH step5-before-R09 0.33 0.64 0.38 1/2585 13475 MemAvailable:     586408 kB
+FRAME F11-R09-all
+FRAME F11-R09-swipe-reveal
+FRAME F11-R09-swipe-action-alert
+FRAME F11-R09-swipe-action-favorite
+FRAME F11-R10-final-All
+LOG F11-R-regression-window PID=11974 {"cleared object reference":0,"Failed to get Java object":0,"Unhandled error":0,"Unhandled promise rejection":0,"Error during execution of native event handler":0,"NullPointerException":0,"FragmentTransaction":0,"Could not show modal":0,"not attached":0,"FATAL":0,"AndroidRuntime":0}
+REGRESSION COMPLETE {"expectedIds":[1,4,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"observedIds":[1,4,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"correctNames":true,"emptyQueryThroughout":true,"noColdResetBetweenOwnClearAndCensus":true}

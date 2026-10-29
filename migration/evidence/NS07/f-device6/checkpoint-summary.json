@@ -1,0 +1,1430 @@
+{
+  "branch": "migration/slice-1",
+  "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+  "index": "",
+  "changed": [],
+  "unexpected": [],
+  "missing": [],
+  "captureCount": 78,
+  "g07Count": 12,
+  "windowCount": 36,
+  "commandCount": 868,
+  "problems": [],
+  "sourceDiffMatches": true,
+  "earlierFilesChecked": 35013,
+  "pass": true,
+  "failures": [
+    {
+      "case": "FF.b.execution",
+      "status": "BLOCKED",
+      "expected": "Complete filter recreation subcase without cold recovery",
+      "observed": "F11-FF-b-Close target count 0",
+      "evidence": [
+        "migration/evidence/NS07/f-device6/filter-font-exception.json"
+      ]
+    }
+  ],
+  "filterAfterFont": [
+    {
+      "part": "a",
+      "pidStart": "9013",
+      "pidEnd": "9013",
+      "pidUnchanged": true,
+      "windowIdentity": {
+        "label": "F11-FF-a-end",
+        "pid": "9013",
+        "activityOrWindowLines": [
+          "  Window #0 Window{219d463 u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{eca04e5 u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{a89fad u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(276x704) sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{273a6b1 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{848ef90 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{b9b61e3 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{4bf6aa7 u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{3049288 u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{e585362 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{73602588 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t199}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{dc13222 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{67323719 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{7c48c0a u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{e585362 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{e585362 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{e585362 u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{3049288 u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "logPatternCounts": {
+        "F11-FF-a-open-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-a-1.3-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-a-restored-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-a-reopen-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-a-done-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "part": "b",
+      "pidStart": "9013",
+      "pidEnd": "9013",
+      "pidUnchanged": true,
+      "windowIdentity": {
+        "label": "F11-FF-b-end",
+        "pid": "9013",
+        "activityOrWindowLines": [
+          "  Window #0 Window{219d463 u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{eca04e5 u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{a89fad u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(276x704) sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{273a6b1 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{848ef90 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{b9b61e3 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{4bf6aa7 u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{3049288 u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{464e45f u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{73602588 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t199}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{ba27fe9 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{67323719 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{7c48c0a u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{464e45f u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{464e45f u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{464e45f u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{3049288 u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "logPatternCounts": {
+        "F11-FF-b-draft-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-b-2.0-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-b-restored-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-b-reopen-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-b-closed-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "part": "c",
+      "pidStart": "9013",
+      "pidEnd": "9013",
+      "pidUnchanged": true,
+      "windowIdentity": {
+        "label": "F11-FF-c-end",
+        "pid": "9013",
+        "activityOrWindowLines": [
+          "  Window #0 Window{219d463 u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{eca04e5 u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{a89fad u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(276x704) sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{273a6b1 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{848ef90 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{b9b61e3 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{4bf6aa7 u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{3049288 u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{73602588 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t199}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{e27dd0e u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{67323719 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{7c48c0a u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{3049288 u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "logPatternCounts": {
+        "F11-FF-c-open-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-c-1.3-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-c-restored-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-c-reopen-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-c-done-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "part": "d",
+      "pidStart": "9013",
+      "pidEnd": "9013",
+      "pidUnchanged": true,
+      "windowIdentity": {
+        "label": "F11-FF-d-end",
+        "pid": "9013",
+        "activityOrWindowLines": [
+          "  Window #0 Window{219d463 u0 ScreenDecorOverlayBottom}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #1 Window{eca04e5 u0 ScreenDecorOverlay}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxwrap) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #2 Window{a89fad u0 EdgeBackGestureHandler0}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(276x704) sim={adjust=pan} ty=NAVIGATION_BAR_PANEL fmt=TRANSLUCENT",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #3 Window{273a6b1 u0 Taskbar}:",
+          "    mOwnerUid=10180 showForAllUsers=true package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillx63) gr=BOTTOM CENTER_VERTICAL sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=NAVIGATION_BAR fmt=TRANSLUCENT receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #4 Window{848ef90 u0 NotificationShade}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=NOTIFICATION_SHADE fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #5 Window{b9b61e3 u0 StatusBar}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(fillx128) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #6 Window{4bf6aa7 u0 ShellDropTarget}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=SYSTEM_ALERT_WINDOW",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=pan} layoutInDisplayCutoutMode=always ty=APPLICATION_OVERLAY fmt=TRANSLUCENT",
+          "    mViewVisibility=0x4 mHaveFrame=true mObscured=false",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #7 Window{3049288 u0 InputMethod}:",
+          "    mOwnerUid=10160 showForAllUsers=false package=com.google.android.inputmethod.latin appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} ty=INPUT_METHOD fmt=TRANSPARENT wanim=0x1030056 receive insets ignoring z-order",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #8 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}:",
+          "    mOwnerUid=10216 showForAllUsers=false package=dev.translationtest.ns appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=resize} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION wanim=0x103030e",
+          "      apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS",
+          "    mActivityRecord=ActivityRecord{73602588 u0 dev.translationtest.ns/com.tns.NativeScriptActivity t199}",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=false",
+          "    mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false",
+          "  Window #9 Window{e27dd0e u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+          "    mOwnerUid=10180 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+          "    mAttrs={(0,0)(fillxfill) sim={adjust=nothing} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030302",
+          "    mActivityRecord=ActivityRecord{67323719 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t2}",
+          "    mViewVisibility=0x8 mHaveFrame=true mObscured=true",
+          "    mHasSurface=false isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  Window #10 Window{7c48c0a u0 com.android.systemui.wallpapers.ImageWallpaper}:",
+          "    mOwnerUid=10185 showForAllUsers=true package=com.android.systemui appop=NONE",
+          "    mAttrs={(0,0)(2161x2400) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103031e",
+          "    mViewVisibility=0x0 mHaveFrame=true mObscured=true",
+          "    mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false",
+          "  imeLayeringTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeInputTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  imeControlTarget in display# 0 Window{8b754d u0 dev.translationtest.ns/com.tns.NativeScriptActivity}",
+          "  mInputMethodWindow=Window{3049288 u0 InputMethod}"
+        ],
+        "limit": "Activity/window IDs corroborate native recreation; no JS Page instrumentation or listener census."
+      },
+      "logPatternCounts": {
+        "F11-FF-d-applied-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        },
+        "F11-FF-d-all-restored-window": {
+          "cleared object reference": 0,
+          "Failed to get Java object": 0,
+          "Unhandled error": 0,
+          "Unhandled promise rejection": 0,
+          "Error during execution of native event handler": 0,
+          "NullPointerException": 0,
+          "FragmentTransaction": 0,
+          "Could not show modal": 0,
+          "not attached": 0,
+          "FATAL": 0,
+          "AndroidRuntime": 0
+        }
+      },
+      "status": "PASS"
+    }
+  ],
+  "fontTable": [
+    {
+      "page": "schedule",
+      "stage": "baseline",
+      "pid": "10434",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "1.3",
+      "pid": "10434",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "2.0",
+      "pid": "10434",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "restored",
+      "pid": "10434",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "baseline",
+      "pid": "10865",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "1.3",
+      "pid": "10865",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "2.0",
+      "pid": "10865",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "restored",
+      "pid": "10865",
+      "pidChanged": false,
+      "pageRetained": true
+    }
+  ],
+  "g07": [
+    {
+      "frame": "F11-G07-schedule-dark-3s",
+      "page": "schedule",
+      "mode": "dark",
+      "delay": 3,
+      "statusBarInk": 4020,
+      "actualDelayMs": 3014
+    },
+    {
+      "frame": "F11-G07-schedule-dark-8s",
+      "page": "schedule",
+      "mode": "dark",
+      "delay": 8,
+      "statusBarInk": 4020,
+      "actualDelayMs": 8007
+    },
+    {
+      "frame": "F11-G07-schedule-light-3s",
+      "page": "schedule",
+      "mode": "light",
+      "delay": 3,
+      "statusBarInk": 4020,
+      "actualDelayMs": 3009
+    },
+    {
+      "frame": "F11-G07-schedule-light-8s",
+      "page": "schedule",
+      "mode": "light",
+      "delay": 8,
+      "statusBarInk": 4020,
+      "actualDelayMs": 8011
+    },
+    {
+      "frame": "F11-G07-detail-dark-3s",
+      "page": "detail",
+      "mode": "dark",
+      "delay": 3,
+      "statusBarInk": 4020,
+      "actualDelayMs": 3003
+    },
+    {
+      "frame": "F11-G07-detail-dark-8s",
+      "page": "detail",
+      "mode": "dark",
+      "delay": 8,
+      "statusBarInk": 4020,
+      "actualDelayMs": 8005
+    },
+    {
+      "frame": "F11-G07-detail-light-3s",
+      "page": "detail",
+      "mode": "light",
+      "delay": 3,
+      "statusBarInk": 3950,
+      "actualDelayMs": 3003
+    },
+    {
+      "frame": "F11-G07-detail-light-8s",
+      "page": "detail",
+      "mode": "light",
+      "delay": 8,
+      "statusBarInk": 3950,
+      "actualDelayMs": 8008
+    },
+    {
+      "frame": "F11-G07-filter-dark-3s",
+      "page": "filter",
+      "mode": "dark",
+      "delay": 3,
+      "statusBarInk": 3962,
+      "actualDelayMs": 3004
+    },
+    {
+      "frame": "F11-G07-filter-dark-8s",
+      "page": "filter",
+      "mode": "dark",
+      "delay": 8,
+      "statusBarInk": 3962,
+      "actualDelayMs": 8008
+    },
+    {
+      "frame": "F11-G07-filter-light-3s",
+      "page": "filter",
+      "mode": "light",
+      "delay": 3,
+      "statusBarInk": 3897,
+      "actualDelayMs": 3015
+    },
+    {
+      "frame": "F11-G07-filter-light-8s",
+      "page": "filter",
+      "mode": "light",
+      "delay": 8,
+      "statusBarInk": 3897,
+      "actualDelayMs": 8004
+    }
+  ],
+  "regression": [
+    {
+      "case": "R01.schedule",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.search",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear",
+      "status": "PASS"
+    },
+    {
+      "case": "R02.clear-full-list",
+      "status": "PASS"
+    },
+    {
+      "case": "R03.mode-switch",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-toolbar-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R04.detail-system-back",
+      "status": "PASS"
+    },
+    {
+      "case": "R05.filter-Done",
+      "status": "PASS"
+    },
+    {
+      "case": "R06.favorite-add",
+      "status": "PASS"
+    },
+    {
+      "case": "R07.already-favorite",
+      "status": "PASS"
+    },
+    {
+      "case": "R08.favorite-remove",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-reveal",
+      "status": "PASS"
+    },
+    {
+      "case": "R09.swipe-action",
+      "status": "PASS"
+    }
+  ],
+  "edgeTaps": [
+    {
+      "label": "F11-FF-b-Close-native",
+      "target": "android.widget.ImageButton",
+      "text": "",
+      "description": "Close",
+      "resourceId": "",
+      "bounds": "[0,128][147,275]",
+      "point": [
+        74,
+        202
+      ]
+    },
+    {
+      "label": "F11-FS-detail-toolbar-Back",
+      "target": "android.widget.ImageButton",
+      "text": "",
+      "description": "Back",
+      "resourceId": "",
+      "bounds": "[0,128][147,275]",
+      "point": [
+        74,
+        202
+      ]
+    },
+    {
+      "label": "F11-spot-detail-Back",
+      "target": "android.widget.ImageButton",
+      "text": "",
+      "description": "Back",
+      "resourceId": "",
+      "bounds": "[0,128][147,275]",
+      "point": [
+        74,
+        202
+      ]
+    },
+    {
+      "label": "F11-R02-own-Clear-query",
+      "target": "android.widget.ImageView",
+      "text": "",
+      "description": "Clear query",
+      "resourceId": "dev.translationtest.ns:id/search_close_btn",
+      "bounds": "[954,275][1059,398]",
+      "point": [
+        1007,
+        337
+      ]
+    },
+    {
+      "label": "F11-R04-toolbar-Back",
+      "target": "android.widget.ImageButton",
+      "text": "",
+      "description": "Back",
+      "resourceId": "",
+      "bounds": "[0,128][147,275]",
+      "point": [
+        74,
+        202
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "label": "F11-FF-a-1.3",
+      "key": "fontScale",
+      "before": "1.0",
+      "requested": "1.3",
+      "after": "1.3",
+      "changedAt": "2026-10-28T20:27:52.488Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FF-a-restored",
+      "key": "fontScale",
+      "before": "1.3",
+      "requested": "1.0",
+      "after": "1.0",
+      "changedAt": "2026-10-28T20:27:58.690Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FF-b-2.0",
+      "key": "fontScale",
+      "before": "1.0",
+      "requested": "2.0",
+      "after": "2.0",
+      "changedAt": "2026-10-28T20:28:23.695Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FF-b-restored",
+      "key": "fontScale",
+      "before": "2.0",
+      "requested": "1.0",
+      "after": "1.0",
+      "changedAt": "2026-10-28T20:28:29.488Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FF-c-1.3",
+      "key": "fontScale",
+      "before": "1.0",
+      "requested": "1.3",
+      "after": "1.3",
+      "changedAt": "2026-10-28T20:29:38.294Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FF-c-restored",
+      "key": "fontScale",
+      "before": "1.3",
+      "requested": "1.0",
+      "after": "1.0",
+      "changedAt": "2026-10-28T20:29:44.219Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-schedule-1.3",
+      "key": "fontScale",
+      "before": "1.0",
+      "requested": "1.3",
+      "after": "1.3",
+      "changedAt": "2026-10-28T20:30:45.309Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-schedule-2.0",
+      "key": "fontScale",
+      "before": "1.3",
+      "requested": "2.0",
+      "after": "2.0",
+      "changedAt": "2026-10-28T20:30:51.148Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-schedule-restored",
+      "key": "fontScale",
+      "before": "2.0",
+      "requested": "1.0",
+      "after": "1.0",
+      "changedAt": "2026-10-28T20:30:56.982Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-detail-1.3",
+      "key": "fontScale",
+      "before": "1.0",
+      "requested": "1.3",
+      "after": "1.3",
+      "changedAt": "2026-10-28T20:31:28.077Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-detail-2.0",
+      "key": "fontScale",
+      "before": "1.3",
+      "requested": "2.0",
+      "after": "2.0",
+      "changedAt": "2026-10-28T20:31:34.013Z",
+      "verified": true
+    },
+    {
+      "label": "F11-FS-detail-restored",
+      "key": "fontScale",
+      "before": "2.0",
+      "requested": "1.0",
+      "after": "1.0",
+      "changedAt": "2026-10-28T20:31:40.043Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-schedule-dark",
+      "key": "night",
+      "before": "Night mode: no",
+      "requested": "yes",
+      "after": "Night mode: yes",
+      "changedAt": "2026-10-28T20:32:07.663Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-schedule-light",
+      "key": "night",
+      "before": "Night mode: yes",
+      "requested": "no",
+      "after": "Night mode: no",
+      "changedAt": "2026-10-28T20:32:18.347Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-detail-dark",
+      "key": "night",
+      "before": "Night mode: no",
+      "requested": "yes",
+      "after": "Night mode: yes",
+      "changedAt": "2026-10-28T20:32:33.530Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-detail-light",
+      "key": "night",
+      "before": "Night mode: yes",
+      "requested": "no",
+      "after": "Night mode: no",
+      "changedAt": "2026-10-28T20:32:44.089Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-filter-dark",
+      "key": "night",
+      "before": "Night mode: no",
+      "requested": "yes",
+      "after": "Night mode: yes",
+      "changedAt": "2026-10-28T20:33:03.620Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-filter-light",
+      "key": "night",
+      "before": "Night mode: yes",
+      "requested": "no",
+      "after": "Night mode: no",
+      "changedAt": "2026-10-28T20:33:14.211Z",
+      "verified": true
+    },
+    {
+      "label": "F11-spot-restore-night",
+      "key": "night",
+      "before": "Night mode: no",
+      "requested": "no",
+      "after": "Night mode: no",
+      "changedAt": "2026-10-28T20:33:31.562Z",
+      "verified": true
+    }
+  ],
+  "health": [
+    {
+      "label": "step1-start",
+      "at": "2026-10-28T20:26:17.393Z",
+      "uptime": "20:26:16 up  2:41,  0 users,  load average: 0.00, 0.00, 0.00",
+      "loadavg": "0.00 0.00 0.00 1/2531 8801",
+      "MemAvailable": "MemAvailable:     565516 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-filter-font",
+      "at": "2026-10-28T20:27:35.894Z",
+      "uptime": "20:27:35 up  2:42,  0 users,  load average: 0.66, 0.36, 0.14",
+      "loadavg": "0.66 0.36 0.14 1/2552 8985",
+      "MemAvailable": "MemAvailable:     724340 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FF-prepare-before-cold",
+      "at": "2026-10-28T20:27:36.050Z",
+      "uptime": "20:27:35 up  2:42,  0 users,  load average: 0.66, 0.36, 0.14",
+      "loadavg": "0.66 0.36 0.14 1/2552 8991",
+      "MemAvailable": "MemAvailable:     723108 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-a",
+      "at": "2026-10-28T20:27:46.999Z",
+      "uptime": "20:27:46 up  2:42,  0 users,  load average: 0.56, 0.35, 0.13",
+      "loadavg": "0.56 0.35 0.13 1/2582 9109",
+      "MemAvailable": "MemAvailable:     645216 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-a-1.3",
+      "at": "2026-10-28T20:27:52.391Z",
+      "uptime": "20:27:51 up  2:42,  0 users,  load average: 0.51, 0.35, 0.13",
+      "loadavg": "0.51 0.35 0.13 1/2584 9171",
+      "MemAvailable": "MemAvailable:     643848 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-a-restored",
+      "at": "2026-10-28T20:27:58.596Z",
+      "uptime": "20:27:58 up  2:42,  0 users,  load average: 0.55, 0.36, 0.14",
+      "loadavg": "0.55 0.36 0.14 1/2608 9259",
+      "MemAvailable": "MemAvailable:     588892 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-b",
+      "at": "2026-10-28T20:28:14.221Z",
+      "uptime": "20:28:13 up  2:42,  0 users,  load average: 0.50, 0.36, 0.14",
+      "loadavg": "0.50 0.36 0.14 1/2616 9440",
+      "MemAvailable": "MemAvailable:     590672 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-b-2.0",
+      "at": "2026-10-28T20:28:23.597Z",
+      "uptime": "20:28:23 up  2:43,  0 users,  load average: 0.43, 0.34, 0.14",
+      "loadavg": "0.43 0.34 0.14 1/2613 9539",
+      "MemAvailable": "MemAvailable:     588924 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-b-restored",
+      "at": "2026-10-28T20:28:29.392Z",
+      "uptime": "20:28:28 up  2:43,  0 users,  load average: 0.39, 0.34, 0.14",
+      "loadavg": "0.39 0.34 0.14 1/2612 9600",
+      "MemAvailable": "MemAvailable:     574196 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-b-close-continuation",
+      "at": "2026-10-28T20:29:28.224Z",
+      "uptime": "20:29:27 up  2:44,  0 users,  load average: 0.14, 0.27, 0.13",
+      "loadavg": "0.14 0.27 0.13 1/2608 9749",
+      "MemAvailable": "MemAvailable:     587580 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-c",
+      "at": "2026-10-28T20:29:33.198Z",
+      "uptime": "20:29:32 up  2:44,  0 users,  load average: 0.13, 0.27, 0.13",
+      "loadavg": "0.13 0.27 0.13 1/2608 9812",
+      "MemAvailable": "MemAvailable:     586456 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-c-1.3",
+      "at": "2026-10-28T20:29:38.181Z",
+      "uptime": "20:29:37 up  2:44,  0 users,  load average: 0.20, 0.28, 0.13",
+      "loadavg": "0.20 0.28 0.13 1/2608 9872",
+      "MemAvailable": "MemAvailable:     585404 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-F11-FF-c-restored",
+      "at": "2026-10-28T20:29:44.123Z",
+      "uptime": "20:29:43 up  2:44,  0 users,  load average: 0.18, 0.28, 0.13",
+      "loadavg": "0.18 0.28 0.13 1/2609 9936",
+      "MemAvailable": "MemAvailable:     588884 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step2-before-d",
+      "at": "2026-10-28T20:29:59.759Z",
+      "uptime": "20:29:59 up  2:44,  0 users,  load average: 0.14, 0.26, 0.13",
+      "loadavg": "0.14 0.26 0.13 1/2614 10110",
+      "MemAvailable": "MemAvailable:     591212 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-schedule-step3-before",
+      "at": "2026-10-28T20:30:35.521Z",
+      "uptime": "20:30:34 up  2:45,  0 users,  load average: 0.27, 0.28, 0.14",
+      "loadavg": "0.27 0.28 0.14 1/2609 10401",
+      "MemAvailable": "MemAvailable:     591196 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-schedule-prepare-before-cold",
+      "at": "2026-10-28T20:30:35.632Z",
+      "uptime": "20:30:35 up  2:45,  0 users,  load average: 0.27, 0.28, 0.14",
+      "loadavg": "0.27 0.28 0.14 1/2609 10407",
+      "MemAvailable": "MemAvailable:     591196 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-schedule-before-1.3",
+      "at": "2026-10-28T20:30:45.220Z",
+      "uptime": "20:30:44 up  2:45,  0 users,  load average: 0.23, 0.27, 0.13",
+      "loadavg": "0.23 0.27 0.13 1/2598 10531",
+      "MemAvailable": "MemAvailable:     582532 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-schedule-before-2.0",
+      "at": "2026-10-28T20:30:51.055Z",
+      "uptime": "20:30:50 up  2:45,  0 users,  load average: 1.00, 0.44, 0.19",
+      "loadavg": "1.00 0.44 0.19 1/2610 10603",
+      "MemAvailable": "MemAvailable:     592132 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-schedule-before-restored",
+      "at": "2026-10-28T20:30:56.888Z",
+      "uptime": "20:30:56 up  2:45,  0 users,  load average: 0.92, 0.43, 0.19",
+      "loadavg": "0.92 0.43 0.19 1/2613 10665",
+      "MemAvailable": "MemAvailable:     581760 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-detail-step3-before",
+      "at": "2026-10-28T20:31:14.056Z",
+      "uptime": "20:31:13 up  2:45,  0 users,  load average: 0.72, 0.41, 0.19",
+      "loadavg": "0.72 0.41 0.19 1/2613 10834",
+      "MemAvailable": "MemAvailable:     592148 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-detail-prepare-before-cold",
+      "at": "2026-10-28T20:31:14.205Z",
+      "uptime": "20:31:13 up  2:45,  0 users,  load average: 0.72, 0.41, 0.19",
+      "loadavg": "0.72 0.41 0.19 1/2613 10840",
+      "MemAvailable": "MemAvailable:     592148 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-detail-before-1.3",
+      "at": "2026-10-28T20:31:27.962Z",
+      "uptime": "20:31:27 up  2:46,  0 users,  load average: 0.69, 0.42, 0.19",
+      "loadavg": "0.69 0.42 0.19 1/2594 10999",
+      "MemAvailable": "MemAvailable:     601156 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-detail-before-2.0",
+      "at": "2026-10-28T20:31:33.889Z",
+      "uptime": "20:31:33 up  2:46,  0 users,  load average: 0.64, 0.42, 0.19",
+      "loadavg": "0.64 0.42 0.19 1/2595 11058",
+      "MemAvailable": "MemAvailable:     571400 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-FS-detail-before-restored",
+      "at": "2026-10-28T20:31:39.909Z",
+      "uptime": "20:31:39 up  2:46,  0 users,  load average: 0.59, 0.41, 0.19",
+      "loadavg": "0.59 0.41 0.19 1/2597 11116",
+      "MemAvailable": "MemAvailable:     568736 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step4-before-G07",
+      "at": "2026-10-28T20:32:00.427Z",
+      "uptime": "20:31:59 up  2:46,  0 users,  load average: 0.49, 0.40, 0.19",
+      "loadavg": "0.49 0.40 0.19 1/2597 11238",
+      "MemAvailable": "MemAvailable:     580344 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-spot-prepare-before-cold",
+      "at": "2026-10-28T20:32:00.624Z",
+      "uptime": "20:32:00 up  2:46,  0 users,  load average: 0.49, 0.40, 0.19",
+      "loadavg": "0.49 0.40 0.19 1/2597 11253",
+      "MemAvailable": "MemAvailable:     580092 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step4-before-schedule",
+      "at": "2026-10-28T20:32:07.433Z",
+      "uptime": "20:32:06 up  2:46,  0 users,  load average: 2.70, 0.89, 0.35",
+      "loadavg": "2.70 0.89 0.35 1/2594 11348",
+      "MemAvailable": "MemAvailable:     571288 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step4-before-detail",
+      "at": "2026-10-28T20:32:29.107Z",
+      "uptime": "20:32:28 up  2:47,  0 users,  load average: 2.06, 0.87, 0.36",
+      "loadavg": "2.06 0.87 0.36 2/2592 11477",
+      "MemAvailable": "MemAvailable:     574620 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step4-before-filter",
+      "at": "2026-10-28T20:32:59.045Z",
+      "uptime": "20:32:58 up  2:47,  0 users,  load average: 1.25, 0.78, 0.35",
+      "loadavg": "1.25 0.78 0.35 1/2589 11683",
+      "MemAvailable": "MemAvailable:     573060 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-regression",
+      "at": "2026-10-28T20:33:35.238Z",
+      "uptime": "20:33:34 up  2:48,  0 users,  load average: 0.69, 0.69, 0.33",
+      "loadavg": "0.69 0.69 0.33 1/2580 11928",
+      "MemAvailable": "MemAvailable:     567208 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "F11-R01-prepare-before-cold",
+      "at": "2026-10-28T20:33:35.481Z",
+      "uptime": "20:33:34 up  2:48,  0 users,  load average: 0.69, 0.69, 0.33",
+      "loadavg": "0.69 0.69 0.33 1/2580 11948",
+      "MemAvailable": "MemAvailable:     566732 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R02",
+      "at": "2026-10-28T20:33:44.700Z",
+      "uptime": "20:33:44 up  2:48,  0 users,  load average: 1.55, 0.88, 0.40",
+      "loadavg": "1.55 0.88 0.40 1/2581 12064",
+      "MemAvailable": "MemAvailable:     571684 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R03",
+      "at": "2026-10-28T20:34:29.541Z",
+      "uptime": "20:34:28 up  2:49,  0 users,  load average: 0.93, 0.83, 0.40",
+      "loadavg": "0.93 0.83 0.40 1/2588 12442",
+      "MemAvailable": "MemAvailable:     584888 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R04",
+      "at": "2026-10-28T20:34:42.988Z",
+      "uptime": "20:34:42 up  2:49,  0 users,  load average: 0.87, 0.82, 0.41",
+      "loadavg": "0.87 0.82 0.41 1/2587 12570",
+      "MemAvailable": "MemAvailable:     587116 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R05",
+      "at": "2026-10-28T20:35:07.750Z",
+      "uptime": "20:35:07 up  2:49,  0 users,  load average: 0.57, 0.75, 0.40",
+      "loadavg": "0.57 0.75 0.40 1/2586 12797",
+      "MemAvailable": "MemAvailable:     579008 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R06",
+      "at": "2026-10-28T20:35:21.105Z",
+      "uptime": "20:35:20 up  2:50,  0 users,  load average: 0.51, 0.73, 0.39",
+      "loadavg": "0.51 0.73 0.39 1/2585 12924",
+      "MemAvailable": "MemAvailable:     577800 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R07",
+      "at": "2026-10-28T20:35:41.094Z",
+      "uptime": "20:35:40 up  2:50,  0 users,  load average: 0.40, 0.70, 0.39",
+      "loadavg": "0.45 0.70 0.39 1/2585 13112",
+      "MemAvailable": "MemAvailable:     565212 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R08",
+      "at": "2026-10-28T20:36:05.191Z",
+      "uptime": "20:36:04 up  2:50,  0 users,  load average: 0.32, 0.66, 0.38",
+      "loadavg": "0.32 0.66 0.38 1/2582 13342",
+      "MemAvailable": "MemAvailable:     587248 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step5-before-R09",
+      "at": "2026-10-28T20:36:18.411Z",
+      "uptime": "20:36:17 up  2:51,  0 users,  load average: 0.33, 0.64, 0.38",
+      "loadavg": "0.33 0.64 0.38 1/2585 13475",
+      "MemAvailable": "MemAvailable:     586408 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step6-before-restore",
+      "at": "2026-10-28T20:37:26.035Z",
+      "uptime": "20:37:25 up  2:52,  0 users,  load average: 0.22, 0.56, 0.36",
+      "loadavg": "0.22 0.56 0.36 1/2580 13815",
+      "MemAvailable": "MemAvailable:     567688 kB",
+      "grade": "record only"
+    },
+    {
+      "label": "step6-end",
+      "at": "2026-10-28T20:37:41.122Z",
+      "uptime": "20:37:40 up  2:52,  0 users,  load average: 1.12, 0.74, 0.43",
+      "loadavg": "1.12 0.74 0.43 1/2581 14014",
+      "MemAvailable": "MemAvailable:     582492 kB",
+      "grade": "record only"
+    }
+  ],
+  "pids": [
+    "9013",
+    "10434",
+    "10865",
+    "11279",
+    "11974"
+  ],
+  "allRequiredPatternsZero": true,
+  "uniqueErrors": [
+    "10-28 20:27:38.594  9013  9013 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:27:58.724  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:28:29.412  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:29:44.097  9013  9013 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:30:36.704 10434 10434 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:30:51.120 10434 10434 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:30:56.901 10434 10434 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240",
+    "10-28 20:31:15.071 10865 10865 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:32:01.461 11279 11279 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:33:36.269 11974 11974 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.",
+    "10-28 20:34:44.974 11974 11974 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 197553240"
+  ],
+  "uniqueMatches": [],
+  "settingsRestored": true,
+  "modeChecks": 13,
+  "modeChecksAllValid": true,
+  "tapCount": 49,
+  "gestures": [
+    {
+      "file": "F11-R02-full-list-scroll-0-gesture.json",
+      "args": [
+        540,
+        2200,
+        540,
+        1450,
+        650
+      ]
+    },
+    {
+      "file": "F11-R02-full-list-scroll-1-gesture.json",
+      "args": [
+        540,
+        2200,
+        540,
+        1450,
+        650
+      ]
+    },
+    {
+      "file": "F11-R02-full-list-scroll-2-gesture.json",
+      "args": [
+        540,
+        2200,
+        540,
+        1450,
+        650
+      ]
+    },
+    {
+      "file": "F11-R02-full-list-scroll-3-gesture.json",
+      "args": [
+        540,
+        2200,
+        540,
+        1450,
+        650
+      ]
+    },
+    {
+      "file": "F11-R02-full-list-scroll-4-gesture.json",
+      "args": [
+        540,
+        2200,
+        540,
+        1450,
+        650
+      ]
+    },
+    {
+      "file": "F11-R09-swipe-reveal-gesture.json",
+      "args": [
+        697,
+        941,
+        120,
+        941,
+        400
+      ]
+    }
+  ],
+  "keys": 1,
+  "texts": [
+    "IOnic"
+  ],
+  "installCount": 1
+}

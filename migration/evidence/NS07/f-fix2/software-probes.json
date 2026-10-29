@@ -1,0 +1,37 @@
+{
+  "boundary": "Source-extracted component logic with mocked views/events; installed set-value. Not native Android, pixel or accessibility-service proof.",
+  "checks": [
+    {
+      "name": "installed set-value deletes undefined without invoking inherited setter; defined state resets",
+      "status": "PASS"
+    },
+    {
+      "name": "Schedule: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+      "status": "PASS"
+    },
+    {
+      "name": "SessionDetail: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+      "status": "PASS"
+    },
+    {
+      "name": "TrackFilter: one listener per load; deferred reapply after core overwrite; unload removes and invalidates queued callbacks",
+      "status": "PASS"
+    },
+    {
+      "name": "mode bindings: checked/unchecked defined through cold readiness and repeated bidirectional switches; labels/layout/commit unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "no accessibility binding contains undefined/null in any fix component",
+      "status": "PASS"
+    },
+    {
+      "name": "swipe measures each actual positive visible width; translation follows it and returns to zero when closed",
+      "status": "PASS"
+    },
+    {
+      "name": "A1/automation/gesture/action contracts and entire column-1 Button preserved",
+      "status": "PASS"
+    }
+  ]
+}

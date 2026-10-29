@@ -1,0 +1,34 @@
+Compiled from "EdgeToEdge.kt"
+final class androidx.activity.EdgeToEdgeApi30 extends androidx.activity.EdgeToEdgeApi29 {
+  public androidx.activity.EdgeToEdgeApi30();
+    Code:
+       0: aload_0
+       1: invokespecial #8                  // Method androidx/activity/EdgeToEdgeApi29."<init>":()V
+       4: return
+    LineNumberTable:
+      line 335: 0
+      line 334: 4
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Landroidx/activity/EdgeToEdgeApi30;
+
+  public void adjustLayoutInDisplayCutoutMode(android.view.Window);
+    Code:
+       0: aload_1
+       1: ldc           #16                 // String window
+       3: invokestatic  #22                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: invokevirtual #28                 // Method android/view/Window.getAttributes:()Landroid/view/WindowManager$LayoutParams;
+      10: iconst_3
+      11: putfield      #34                 // Field android/view/WindowManager$LayoutParams.layoutInDisplayCutoutMode:I
+      14: return
+    LineNumberTable:
+      line 339: 6
+      line 340: 10
+      line 339: 11
+      line 341: 14
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      15     0  this   Landroidx/activity/EdgeToEdgeApi30;
+          0      15     1 window   Landroid/view/Window;
+}

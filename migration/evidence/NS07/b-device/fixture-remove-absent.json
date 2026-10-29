@@ -1,0 +1,52 @@
+{
+  "id": "remove-absent",
+  "description": "favoriteSessions is [1, 12] and removeFavorite is dispatched for session 99, which is not in the list: the filter is a no-op (sessions.ts:77-79). expected.favoriteIds equals the pre-state.",
+  "action": {
+    "op": "removeFavorite",
+    "sessionId": 99
+  },
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [
+      1,
+      12
+    ],
+    "mode": "favorites"
+  },
+  "expected": {
+    "favoriteIds": [
+      1,
+      12
+    ],
+    "sessionIds": [
+      1,
+      12
+    ],
+    "groups": [
+      {
+        "groupTime": "8:00 am",
+        "sessionIds": [
+          1
+        ]
+      },
+      {
+        "groupTime": "12:00 pm",
+        "sessionIds": [
+          12
+        ]
+      }
+    ]
+  }
+}

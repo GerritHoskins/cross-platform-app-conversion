@@ -1,0 +1,49 @@
+diff --git migration/evidence/NS07/f-fix5/entry-components/TrackFilter.vue migration/nativescript/src/components/TrackFilter.vue
+index 4d04fa43..4d169aa2 100644
+--- migration/evidence/NS07/f-fix5/entry-components/TrackFilter.vue
++++ migration/nativescript/src/components/TrackFilter.vue
+@@ -1,11 +1,33 @@
+ <script lang="ts" setup>
+-import { $closeModal, ref } from 'nativescript-vue';
+-import { type EventData, type Page, type Switch } from '@nativescript/core';
++import { $closeModal, onMounted, onUnmounted, ref } from 'nativescript-vue';
++import { Application, type AndroidActivityEventData, type EventData, type Frame, type Page, type Switch } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { checkedTrackNames, setAllTracks, toggleTrack } from '../state/track-filter';
+ 
+ const store = useConferenceStore();
+ const draft = ref(store.getters.trackOptions);
++let filterFrame: Frame | undefined;
++
++function filterLoaded(event: EventData) {
++  filterFrame = event.object as Frame;
++}
++
++function discardOnActivityRecreation(event: AndroidActivityEventData) {
++  const frame = filterFrame;
++  if (frame && frame._context === event.activity && event.activity.isChangingConfigurations()) {
++    // F10: close before native teardown strands Vue's modal stack; no result discards the draft.
++    frame.closeModal();
++  }
++}
++
++onMounted(() => {
++  Application.android.on(Application.android.activityStoppedEvent, discardOnActivityRecreation);
++});
++onUnmounted(() => {
++  Application.android.off(Application.android.activityStoppedEvent, discardOnActivityRecreation);
++  filterFrame = undefined;
++});
++
+ let statusBarPage: Page | undefined;
+ let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+ let statusBarAttachState: android.view.View.OnAttachStateChangeListener | undefined;
+@@ -74,7 +96,7 @@ function changeTrack(event: EventData, name: string) {
+ </script>
+ 
+ <template>
+-  <Frame>
++  <Frame @loaded="filterLoaded">
+     <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+       <ActionBar title="Filter Sessions" class="filter-action-bar">
+         <NavigationButton

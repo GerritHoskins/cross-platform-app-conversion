@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "decision": "D2 (privacy safeguard; RN07 D13 precedent)",
+  "phase": "F4 (device rerun, candidate 3), with an addendum to the F2 redaction",
+  "redactedBy": "Claude Code coordinator (claude-opus-5-5)",
+  "redactedAt": "2026-10-28T13:50:58Z",
+  "finding": "Gboard showed its clipboard-history suggestion list (four entries, including personal items from earlier host clipboard contents, not the harmless string the human placed for this run) below the focused SearchBar in 1 of 180 distinct F4 frames: F4-G05-1.3-filter-return, one of the eleven original font-scale-1.3 frames the executor marked invalid after the overlapping-helper incident (tooling-incidents.json). The list is absent from all UI XML, logs, receipts, the checkpoint, the run stream and the run directory (text search of every non-PNG file found none of its content). The frame's raw screenshot receipt (0467-...-screenshot.stdout.bin) is byte-identical to the PNG and is redacted with it. capture-index.json, commands.jsonl and the receipt keep the executor's pre-redaction hashes; sha256After below is authoritative for the committed files.",
+  "detection": "Coordinator visual inspection of all 180 distinct F4 frames via 15 contact sheets, then a full-resolution crop with a coordinate grid for the affected frame. Every other SearchBar-focused frame (F4-K-*, F4-R02-*, *-1.3-*, *-1.3-rerun-*) shows only the floating Gboard toolbar or the full floating keyboard with no clipboard content. A byte comparison of every *.stdout.bin receipt in a-gates, b-device, g-settings, g-settings2, f-device and f-device2 against the saved PNGs found the receipts listed here as the only raw screenshots with unredacted content.",
+  "originals": "Unredacted originals were moved outside version control to the git-ignored /_backup_ns07_redaction/f-device2/ and /_backup_ns07_redaction/f-device/ folders (*.unredacted.png, *.unredacted.stdout.bin); they are never committed.",
+  "files": [
+    {
+      "path": "migration/evidence/NS07/f-device2/F4-G05-1.3-filter-return.png",
+      "kind": "png",
+      "sha256Before": "39a33a518ec70ee0824ddead71c37de6c582f56401acfba019650b02c6bfb8f9",
+      "sha256After": "ec3b63c86d719344657bd246282e693488d52f875e6b54034518cb948e58d381",
+      "bytesBefore": 214186,
+      "bytesAfter": 161356,
+      "regions": [
+        {
+          "x": 45,
+          "y": 370,
+          "width": 805,
+          "height": 395,
+          "fill": "black",
+          "content": "Gboard clipboard-history suggestion list (four entries)"
+        }
+      ]
+    },
+    {
+      "path": "migration/evidence/NS07/f-device2/0467-F4-G05-1.3-filter-return-screenshot.stdout.bin",
+      "kind": "raw screenshot receipt (PNG bytes)",
+      "sha256Before": "39a33a518ec70ee0824ddead71c37de6c582f56401acfba019650b02c6bfb8f9",
+      "sha256After": "ec3b63c86d719344657bd246282e693488d52f875e6b54034518cb948e58d381",
+      "method": "replaced with the redacted PNG bytes above (identical before redaction)"
+    }
+  ],
+  "f2Addendum": {
+    "finding": "The F2 redaction (redaction-f2/record.json) covered the two chip PNGs but missed their raw screenshot receipts, which were byte-identical to the unredacted PNGs (their sha256 equals that record's sha256Before). Nothing had been committed. The receipts are now replaced with the redacted PNG bytes; redaction-f2/record.json is left unchanged as history.",
+    "files": [
+      {
+        "path": "migration/evidence/NS07/f-device/1195-F2-G05-1.0-settled-all-return-top-screenshot.stdout.bin",
+        "kind": "raw screenshot receipt (PNG bytes)",
+        "sha256Before": "1771359cb4a0b71fc53200494f465bd80931f7198af2c900db613bdaaa723cfe",
+        "sha256After": "0ecafb73f33ae55cf1f305f1442eb795376a4847fede5f799601296e60357ce0",
+        "method": "replaced with the redacted F2-G05-1.0-settled-all-return-top.png bytes"
+      },
+      {
+        "path": "migration/evidence/NS07/f-device/1327-F2-G05-1.3-settled-all-return-top-up-0-screenshot.stdout.bin",
+        "kind": "raw screenshot receipt (PNG bytes)",
+        "sha256Before": "0762a99791239d9ad6b76cc8f0e81290fe647c707da29cf508b67894945f854c",
+        "sha256After": "fed6c15ab85cc1f389b8eefaeb3dc5252e31a7c7075b95f72e6ed78e78399c32",
+        "method": "replaced with the redacted F2-G05-1.3-settled-all-return-top-up-0.png bytes"
+      }
+    ]
+  }
+}

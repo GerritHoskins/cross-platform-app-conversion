@@ -1,0 +1,12 @@
+{
+  "id": "initial-terminal-discovery",
+  "command": "pwd && git branch --show-current && git rev-parse HEAD && git diff --cached --exit-code && git status --porcelain=v1 --untracked-files=all",
+  "cwd": "C:/Users/Gerrit/job-search/POCs/cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": null,
+  "durationMs": null,
+  "rawToolOutputPath": "C:/Users/Gerrit/AppData/Local/hermes/profiles/translation-migration/cache/terminal-output/out-1793186309-1632-b100.log",
+  "limitation": "This bootstrap terminal call preceded the receipt helper; its execution timing was not exposed by the tool and is not invented. It made no file changes. Its terminal stdout was truncated for display, with the full output retained at rawToolOutputPath. It is not counted among the 38 helper receipts checked by checkpoint-audit.json.",
+  "mitigation": "All branch, HEAD, index and exhaustive raw-porcelain gate commands were independently recaptured by the helper and the full gate evaluated before the first migration write. Those receipts, bounded logs, raw porcelain and gate checks are under f-fix2/.",
+  "equivalentGateReceipts": ["entry-branch.receipt.json", "entry-head.receipt.json", "entry-index.receipt.json", "entry-porcelain.receipt.json"]
+}

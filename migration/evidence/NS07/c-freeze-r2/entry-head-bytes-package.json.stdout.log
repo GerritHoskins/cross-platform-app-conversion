@@ -1,0 +1,30 @@
+{
+  "name": "nativescript",
+  "main": "src/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "android": "npx --yes nativescript@9.1.2 run android --no-hmr",
+    "build:android": "npx --yes nativescript@9.1.2 build android",
+    "verify:core": "node scripts/verify-core-integration.cjs"
+  },
+  "dependencies": {
+    "@migration/core": "file:../core",
+    "@nativescript/core": "~9.1.1",
+    "nativescript-vue": "3.1.2",
+    "vuex": "4.1.0"
+  },
+  "devDependencies": {
+    "@nativescript/android": "9.1.1",
+    "@nativescript/tailwind": "~4.0.10",
+    "@nativescript/types": "~9.1.1",
+    "@nativescript/webpack": "~5.0.38",
+    "@types/node": "~26.5.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "vitest": "5.0.5",
+    "vue-tsc": "3.3.13"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "command": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$p = @(Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\" | Where-Object { $_.CommandLine -like '*sol-ns07-r1-f8-20261028*f8-*.mjs*' -and $_.CommandLine -notlike '*f8-idle.mjs*' } | Select-Object ProcessId,ParentProcessId,CommandLine); ConvertTo-Json -InputObject $p -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-28T17:09:27.944Z",
+  "durationMs": 438,
+  "label": "tooling-exact-helper-process-query",
+  "error": null,
+  "stdout": "0148-tooling-exact-helper-process-query.stdout.log",
+  "stderr": "0148-tooling-exact-helper-process-query.stderr.log"
+}

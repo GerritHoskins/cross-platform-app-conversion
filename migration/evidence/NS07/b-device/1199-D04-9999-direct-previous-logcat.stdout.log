@@ -1,0 +1,69 @@
+--------- beginning of main
+10-27 14:10:59.974 30763 30763 I nslationtest.ns: Late-enabling -Xcheck:jni
+10-27 14:11:00.000 30763 30763 I nslationtest.ns: Using CollectorTypeCMC GC.
+10-27 14:11:00.000 30763 30763 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.
+10-27 14:11:00.000 30763 30763 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-27 14:11:00.029 30763 30763 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-27 14:11:00.264 30763 30763 D nativeloader: Configuring clns-9 for other apk /data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/lib/x86_64:/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.translationtest.ns
+10-27 14:11:00.275 30763 30763 I nslationtest.ns: AssetManager2(0x738ba9013458) locale list changing from [] to [en-US]
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment: Currently set values for:
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment: dev.translationtest.ns is not listed in per-application setting
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment: ANGLE allowlist from config: 
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment: dev.translationtest.ns is not listed in ANGLE allowlist or settings, returning default
+10-27 14:11:00.283 30763 30763 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-27 14:11:00.419 30763 30763 D nativeloader: Load /data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!/lib/x86_64/libNativeScript.so using class loader ns clns-9 (caller=/data/app/~~A178Ox26otAdnJU2-lEoSw==/dev.translationtest.ns-PdXKsMNmqFtHlJ4SmlEM2A==/base.apk!classes5.dex): ok
+10-27 14:11:00.419 30763 30763 I TNS.Runtime: NativeScript Runtime Version 9.1.1, commit 60d03e98f215d63f3043cce926197f8044950ad1
+10-27 14:11:00.544 30763 30763 D TNS.Runtime: V8 version 14.9.207.39
+10-27 14:11:00.813 30763 30763 I nslationtest.ns: hiddenapi: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;)V (runtime_flags=CorePlatformApi, domain=core-platform, api=unsupported,core-platform-api) from Lcom/tns/DexFactory; (domain=app) using reflection: allowed
+10-27 14:11:00.974 30763 30763 I Choreographer: Skipped 37 frames!  The application may be doing too much work on its main thread.
+--------- beginning of system
+10-27 14:11:00.977 30763 30788 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+10-27 14:11:00.978 30763 30763 I nslationtest.ns: AssetManager2(0x738ba9007298) locale list changing from [] to [en-US]
+10-27 14:11:01.026 30763 30788 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-27 14:11:01.027 30763 30788 I EGL_emulation: Opening libGLESv2_emulation.so
+10-27 14:11:01.032 30763 30788 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-27 14:11:01.060 30763 30763 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-27 14:11:01.060 30763 30763 I nslationtest.ns: AssetManager2(0x738ba9013db8) locale list changing from [] to [en-US]
+10-27 14:11:01.070 30763 30763 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-27 14:11:01.153 30763 30763 W HWUI    : Image decoding logging dropped!
+10-27 14:11:01.156 30763 30763 W HWUI    : Image decoding logging dropped!
+10-27 14:11:01.215 30763 30763 D CompatChangeReporter: Compat change id reported: 377864165; UID 10216; state: ENABLED
+10-27 14:11:01.217 30763 30763 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-27 14:11:01.286 30763 30763 I nslationtest.ns: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+10-27 14:11:01.532 30763 30763 W HWUI    : Image decoding logging dropped!
+10-27 14:11:01.532 30763 30763 W HWUI    : Image decoding logging dropped!
+10-27 14:11:01.544 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:01.597 30763 30763 D CompatChangeReporter: Compat change id reported: 376561342; UID 10216; state: ENABLED
+10-27 14:11:01.651 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:01.653 30763 30763 I ImeTracker: dev.translationtest.ns:ac950d3f: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-27 14:11:01.656 30763 30763 I ImeTracker: dev.translationtest.ns:ac950d3f: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-27 14:11:01.656 30763 30763 D CompatChangeReporter: Compat change id reported: 395521150; UID 10216; state: ENABLED
+10-27 14:11:01.720 30763 30763 W HWUI    : Unknown dataspace 0
+10-27 14:11:01.740 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:01.740 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.287 30763 30763 W HWUI    : Image decoding logging dropped!
+10-27 14:11:02.298 30763 30767 I nslationtest.ns: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-27 14:11:02.303 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@109d6b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:02.303 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@109d6b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:02.304 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@109d6b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:02.320 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.320 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.324 30763 30763 I Choreographer: Skipped 34 frames!  The application may be doing too much work on its main thread.
+10-27 14:11:02.334 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.362 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.362 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:02.496 30763 30811 I HWUI    : Davey! duration=711ms; Flags=0, FrameTimelineVsyncId=234331, IntendedVsync=56149520702804, Vsync=56150087369448, InputEventId=0, HandleInputStart=56150094945700, AnimationStart=56150094975200, PerformTraversalsStart=56150095303500, DrawStart=56150111304100, FrameDeadline=56150037369450, FrameStartTime=56150094731200, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=56150120131100, SyncStart=56150120828700, IssueDrawCommandsStart=56150120997700, SwapBuffers=56150203287400, FrameCompleted=56150233093200, DequeueBufferDuration=66300, QueueBufferDuration=296700, GpuCompleted=56150233093200, SwapBuffersCompleted=56150215281100, DisplayPresentTime=0, CommandSubmissionCompleted=56150203287400, 
+10-27 14:11:02.499 30763 30763 D InsetsController: hide(ime(), fromIme=false)
+10-27 14:11:02.499 30763 30763 I ImeTracker: dev.translationtest.ns:4ace5d08: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-27 14:11:06.804 30763 30763 I ImeTracker: dev.translationtest.ns:ac5bcea6: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-27 14:11:06.804 30763 30763 I ImeTracker: dev.translationtest.ns:ac5bcea6: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-27 14:11:06.812 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:06.813 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:06.814 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@643361b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:06.815 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@643361b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:06.815 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:06.815 30763 30763 V FragmentManager: Predictive back not available for AndroidX Transition CustomTransition@643361b: interp(android.view.animation.AccelerateDecelerateInterpolator@2cbd0c8) . Please enable seeking support for the designated transition by overriding isSeekingSupported().
+10-27 14:11:06.816 30763 30763 D AutofillManager: view not autofillable - not passing ime action check
+10-27 14:11:06.895 30763 30851 D ProfileInstaller: Installing profile for dev.translationtest.ns

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "package": "NS07",
+  "decision": "Phase C freeze decision (human, 2026-10-28): exclude the third-party AndroidX jars from the submission and the commit; commit all other NS07 evidence",
+  "phase": "F5 (fix run, evidence f-fix3/)",
+  "excludedBy": "Claude Code coordinator (claude-opus-5-5)",
+  "excludedAt": "2026-10-28T21:55:00Z",
+  "reason": "During F5 the executor extracted the classes.jar of three AndroidX libraries (Google, Apache-2.0) and their resolved build variants into f-fix3/ only as the javap classpath for its bytecode reading. They are third-party binaries, reproducible from the Gradle cache and Google Maven; the F10 run later forbade copying such binaries into evidence. The javap output that F5's analysis relies on stays committed as text (f-fix3/bytecode-*.stdout.log and resolved-*.stdout.log with their receipts); no F5 result, analysis or checkpoint names a jar as evidence. Receipts and porcelain listings that mention a jar path keep their original text.",
+  "retained": "Byte-identical copies are kept outside the repository in the coordinator's local NS07 backup (not committed); the SHA-256 values below were verified against those copies before the originals were removed.",
+  "files": [
+    { "path": "migration/evidence/NS07/f-fix3/activity-1.11.0-classes.jar", "bytes": 220423, "sha256": "2ecbd38f0ac44b10b57797d30c5a8d5626652b7bb38f3b497edb34a7d149298f" },
+    { "path": "migration/evidence/NS07/f-fix3/appcompat-1.8.0-classes.jar", "bytes": 840536, "sha256": "6f781809b5ea0e1308b8bbf4424d8fc54a13d3802febe4055f30daefe4ffa929" },
+    { "path": "migration/evidence/NS07/f-fix3/core-1.18.0-classes.jar", "bytes": 1383395, "sha256": "d1f5a319a77555df7e23858ffb5ed45a95ebb4263fa1ab7a993510ceb53555a0" },
+    { "path": "migration/evidence/NS07/f-fix3/resolved-activity-classes.jar", "bytes": 173358, "sha256": "19cc1c0e8f925eccae7b8feadcd0efcec57262a206a7754817626ea4d3b37738" },
+    { "path": "migration/evidence/NS07/f-fix3/resolved-appcompat-classes.jar", "bytes": 791932, "sha256": "036566c1bf780cd8a8759713820203bb219a4bebfb1c6de551625cf3b879656e" },
+    { "path": "migration/evidence/NS07/f-fix3/resolved-core-classes.jar", "bytes": 1261357, "sha256": "bbbb0c4e02faa69f1303cff45201d7c6a7f208571fc8e5a69935cd7f334439bf" },
+    { "path": "migration/evidence/NS07/f-fix3/widgets-classes.jar", "bytes": 304242, "sha256": "e83e42036bb3e499def563c225a418560f3ff083e16bd2702fd86dcd5d60ce03" }
+  ]
+}

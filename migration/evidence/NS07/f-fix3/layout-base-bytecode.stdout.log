@@ -1,0 +1,822 @@
+Compiled from "LayoutBase.java"
+public abstract class org.nativescript.widgets.LayoutBase extends android.view.ViewGroup {
+  private boolean passThroughParent;
+
+  boolean applyingEdges;
+
+  public static final int OverflowEdgeIgnore;
+
+  public static final int OverflowEdgeNone;
+
+  public static final int OverflowEdgeLeft;
+
+  public static final int OverflowEdgeTop;
+
+  public static final int OverflowEdgeRight;
+
+  public static final int OverflowEdgeBottom;
+
+  public static final int OverflowEdgeDontApply;
+
+  public static final int OverflowEdgeLeftDontConsume;
+
+  public static final int OverflowEdgeTopDontConsume;
+
+  public static final int OverflowEdgeRightDontConsume;
+
+  public static final int OverflowEdgeBottomDontConsume;
+
+  public static final int OverflowEdgeAllButLeft;
+
+  public static final int OverflowEdgeAllButTop;
+
+  public static final int OverflowEdgeAllButRight;
+
+  public static final int OverflowEdgeAllButBottom;
+
+  public static final int OverflowEdgeCutout;
+
+  int mPaddingLeft;
+
+  int mPaddingTop;
+
+  int mPaddingRight;
+
+  int mPaddingBottom;
+
+  androidx.core.graphics.Insets edgeInsets;
+
+  androidx.core.graphics.Insets imeInsets;
+
+  int overflowEdge;
+
+  private static final byte[] EMPTY_INSETS;
+
+  private java.nio.ByteBuffer mInsetBuffer;
+
+  private org.nativescript.widgets.LayoutBase$WindowInsetListener insetListener;
+
+  private androidx.core.view.OnApplyWindowInsetsListener windowInsetsListener;
+
+  private boolean pendingInsetApply;
+
+  private final android.view.View$OnAttachStateChangeListener onAttachStateChangeListener;
+
+  private java.nio.ByteBuffer getInsetBuffer();
+    Code:
+       0: aload_0
+       1: getfield      #34                 // Field mInsetBuffer:Ljava/nio/ByteBuffer;
+       4: ifnonnull     27
+       7: aload_0
+       8: bipush        72
+      10: invokestatic  #38                 // Method java/nio/ByteBuffer.allocateDirect:(I)Ljava/nio/ByteBuffer;
+      13: putfield      #34                 // Field mInsetBuffer:Ljava/nio/ByteBuffer;
+      16: aload_0
+      17: getfield      #34                 // Field mInsetBuffer:Ljava/nio/ByteBuffer;
+      20: invokestatic  #44                 // Method java/nio/ByteOrder.nativeOrder:()Ljava/nio/ByteOrder;
+      23: invokevirtual #50                 // Method java/nio/ByteBuffer.order:(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+      26: pop
+      27: aload_0
+      28: getfield      #34                 // Field mInsetBuffer:Ljava/nio/ByteBuffer;
+      31: areturn
+    LineNumberTable:
+      line 101: 0
+      line 102: 7
+      line 103: 16
+      line 105: 27
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      32     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public void setInsetListener(org.nativescript.widgets.LayoutBase$WindowInsetListener);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #11                 // Field insetListener:Lorg/nativescript/widgets/LayoutBase$WindowInsetListener;
+       5: return
+    LineNumberTable:
+      line 112: 0
+      line 113: 5
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       6     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0       6     1 insetListener   Lorg/nativescript/widgets/LayoutBase$WindowInsetListener;
+
+  public org.nativescript.widgets.LayoutBase(android.content.Context, android.util.AttributeSet, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: iload_3
+       4: invokespecial #54                 // Method android/view/ViewGroup."<init>":(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+       7: aload_0
+       8: iconst_0
+       9: putfield      #60                 // Field mPaddingLeft:I
+      12: aload_0
+      13: iconst_0
+      14: putfield      #64                 // Field mPaddingTop:I
+      17: aload_0
+      18: iconst_0
+      19: putfield      #67                 // Field mPaddingRight:I
+      22: aload_0
+      23: iconst_0
+      24: putfield      #70                 // Field mPaddingBottom:I
+      27: aload_0
+      28: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      31: putfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      34: aload_0
+      35: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      38: putfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+      41: aload_0
+      42: iconst_m1
+      43: putfield      #85                 // Field overflowEdge:I
+      46: aload_0
+      47: aconst_null
+      48: putfield      #11                 // Field insetListener:Lorg/nativescript/widgets/LayoutBase$WindowInsetListener;
+      51: aload_0
+      52: aconst_null
+      53: putfield      #88                 // Field windowInsetsListener:Landroidx/core/view/OnApplyWindowInsetsListener;
+      56: aload_0
+      57: iconst_0
+      58: putfield      #30                 // Field pendingInsetApply:Z
+      61: aload_0
+      62: new           #92                 // class org/nativescript/widgets/LayoutBase$1
+      65: dup
+      66: aload_0
+      67: invokespecial #94                 // Method org/nativescript/widgets/LayoutBase$1."<init>":(Lorg/nativescript/widgets/LayoutBase;)V
+      70: putfield      #26                 // Field onAttachStateChangeListener:Landroid/view/View$OnAttachStateChangeListener;
+      73: return
+    LineNumberTable:
+      line 137: 0
+      line 86: 7
+      line 87: 12
+      line 88: 17
+      line 89: 22
+      line 91: 27
+      line 92: 34
+      line 94: 41
+      line 108: 46
+      line 109: 51
+      line 120: 56
+      line 121: 61
+      line 138: 73
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      74     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      74     1 context   Landroid/content/Context;
+          0      74     2 attrs   Landroid/util/AttributeSet;
+          0      74     3 defStyleAttr   I
+
+  public org.nativescript.widgets.LayoutBase(android.content.Context);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #97                 // Method android/view/ViewGroup."<init>":(Landroid/content/Context;)V
+       5: aload_0
+       6: iconst_0
+       7: putfield      #60                 // Field mPaddingLeft:I
+      10: aload_0
+      11: iconst_0
+      12: putfield      #64                 // Field mPaddingTop:I
+      15: aload_0
+      16: iconst_0
+      17: putfield      #67                 // Field mPaddingRight:I
+      20: aload_0
+      21: iconst_0
+      22: putfield      #70                 // Field mPaddingBottom:I
+      25: aload_0
+      26: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      29: putfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      32: aload_0
+      33: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      36: putfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+      39: aload_0
+      40: iconst_m1
+      41: putfield      #85                 // Field overflowEdge:I
+      44: aload_0
+      45: aconst_null
+      46: putfield      #11                 // Field insetListener:Lorg/nativescript/widgets/LayoutBase$WindowInsetListener;
+      49: aload_0
+      50: aconst_null
+      51: putfield      #88                 // Field windowInsetsListener:Landroidx/core/view/OnApplyWindowInsetsListener;
+      54: aload_0
+      55: iconst_0
+      56: putfield      #30                 // Field pendingInsetApply:Z
+      59: aload_0
+      60: new           #92                 // class org/nativescript/widgets/LayoutBase$1
+      63: dup
+      64: aload_0
+      65: invokespecial #94                 // Method org/nativescript/widgets/LayoutBase$1."<init>":(Lorg/nativescript/widgets/LayoutBase;)V
+      68: putfield      #26                 // Field onAttachStateChangeListener:Landroid/view/View$OnAttachStateChangeListener;
+      71: return
+    LineNumberTable:
+      line 141: 0
+      line 86: 5
+      line 87: 10
+      line 88: 15
+      line 89: 20
+      line 91: 25
+      line 92: 32
+      line 94: 39
+      line 108: 44
+      line 109: 49
+      line 120: 54
+      line 121: 59
+      line 142: 71
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      72     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      72     1 context   Landroid/content/Context;
+
+  public androidx.core.graphics.Insets getEdgeInsets();
+    Code:
+       0: aload_0
+       1: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+       4: areturn
+    LineNumberTable:
+      line 145: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public androidx.core.graphics.Insets getImeInsets();
+    Code:
+       0: aload_0
+       1: getfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+       4: areturn
+    LineNumberTable:
+      line 149: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  protected android.view.ViewGroup$LayoutParams generateDefaultLayoutParams();
+    Code:
+       0: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+       3: dup
+       4: invokespecial #102                // Method org/nativescript/widgets/CommonLayoutParams."<init>":()V
+       7: areturn
+    LineNumberTable:
+      line 154: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       8     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet);
+    Code:
+       0: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+       3: dup
+       4: invokespecial #102                // Method org/nativescript/widgets/CommonLayoutParams."<init>":()V
+       7: areturn
+    LineNumberTable:
+      line 162: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       8     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0       8     1 attrs   Landroid/util/AttributeSet;
+
+  protected boolean checkLayoutParams(android.view.ViewGroup$LayoutParams);
+    Code:
+       0: aload_1
+       1: instanceof    #100                // class org/nativescript/widgets/CommonLayoutParams
+       4: ireturn
+    LineNumberTable:
+      line 170: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0       5     1     p   Landroid/view/ViewGroup$LayoutParams;
+
+  protected android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams);
+    Code:
+       0: aload_1
+       1: instanceof    #100                // class org/nativescript/widgets/CommonLayoutParams
+       4: ifeq          19
+       7: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+      10: dup
+      11: aload_1
+      12: checkcast     #100                // class org/nativescript/widgets/CommonLayoutParams
+      15: invokespecial #104                // Method org/nativescript/widgets/CommonLayoutParams."<init>":(Lorg/nativescript/widgets/CommonLayoutParams;)V
+      18: areturn
+      19: aload_1
+      20: instanceof    #107                // class android/widget/FrameLayout$LayoutParams
+      23: ifeq          38
+      26: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+      29: dup
+      30: aload_1
+      31: checkcast     #107                // class android/widget/FrameLayout$LayoutParams
+      34: invokespecial #109                // Method org/nativescript/widgets/CommonLayoutParams."<init>":(Landroid/widget/FrameLayout$LayoutParams;)V
+      37: areturn
+      38: aload_1
+      39: instanceof    #112                // class android/view/ViewGroup$MarginLayoutParams
+      42: ifeq          57
+      45: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+      48: dup
+      49: aload_1
+      50: checkcast     #112                // class android/view/ViewGroup$MarginLayoutParams
+      53: invokespecial #114                // Method org/nativescript/widgets/CommonLayoutParams."<init>":(Landroid/view/ViewGroup$MarginLayoutParams;)V
+      56: areturn
+      57: new           #100                // class org/nativescript/widgets/CommonLayoutParams
+      60: dup
+      61: aload_1
+      62: invokespecial #117                // Method org/nativescript/widgets/CommonLayoutParams."<init>":(Landroid/view/ViewGroup$LayoutParams;)V
+      65: areturn
+    LineNumberTable:
+      line 175: 0
+      line 176: 7
+      line 178: 19
+      line 179: 26
+      line 181: 38
+      line 182: 45
+      line 184: 57
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      66     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      66     1  from   Landroid/view/ViewGroup$LayoutParams;
+
+  public boolean shouldDelayChildPressedState();
+    Code:
+       0: iconst_0
+       1: ireturn
+    LineNumberTable:
+      line 189: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       2     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public boolean onTouchEvent(android.view.MotionEvent);
+    Code:
+       0: aload_0
+       1: getfield      #120                // Field passThroughParent:Z
+       4: ifne          13
+       7: aload_0
+       8: aload_1
+       9: invokespecial #123                // Method android/view/ViewGroup.onTouchEvent:(Landroid/view/MotionEvent;)Z
+      12: ireturn
+      13: iconst_0
+      14: ireturn
+    LineNumberTable:
+      line 194: 0
+      line 195: 7
+      line 201: 13
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      15     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      15     1 event   Landroid/view/MotionEvent;
+
+  protected static int getGravity(android.view.View);
+    Code:
+       0: iconst_m1
+       1: istore_1
+       2: aload_0
+       3: invokevirtual #127                // Method android/view/View.getLayoutParams:()Landroid/view/ViewGroup$LayoutParams;
+       6: astore_2
+       7: aload_2
+       8: instanceof    #107                // class android/widget/FrameLayout$LayoutParams
+      11: ifeq          22
+      14: aload_2
+      15: checkcast     #107                // class android/widget/FrameLayout$LayoutParams
+      18: getfield      #133                // Field android/widget/FrameLayout$LayoutParams.gravity:I
+      21: istore_1
+      22: iload_1
+      23: iconst_m1
+      24: if_icmpne     30
+      27: bipush        119
+      29: istore_1
+      30: iload_1
+      31: ireturn
+    LineNumberTable:
+      line 205: 0
+      line 206: 2
+      line 207: 7
+      line 208: 14
+      line 211: 22
+      line 212: 27
+      line 215: 30
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      32     0  view   Landroid/view/View;
+          2      30     1 gravity   I
+          7      25     2 params   Landroid/view/ViewGroup$LayoutParams;
+
+  public boolean getPassThroughParent();
+    Code:
+       0: aload_0
+       1: getfield      #120                // Field passThroughParent:Z
+       4: ireturn
+    LineNumberTable:
+      line 219: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public void setPassThroughParent(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #120                // Field passThroughParent:Z
+       5: return
+    LineNumberTable:
+      line 223: 0
+      line 224: 5
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       6     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0       6     1 value   Z
+
+  public void setPadding(int, int, int, int);
+    Code:
+       0: iload_1
+       1: istore        5
+       3: iload_2
+       4: istore        6
+       6: iload_3
+       7: istore        7
+       9: iload         4
+      11: istore        8
+      13: aload_0
+      14: getfield      #138                // Field applyingEdges:Z
+      17: ifne          99
+      20: aload_0
+      21: iload_1
+      22: putfield      #60                 // Field mPaddingLeft:I
+      25: aload_0
+      26: iload_2
+      27: putfield      #64                 // Field mPaddingTop:I
+      30: aload_0
+      31: iload_3
+      32: putfield      #67                 // Field mPaddingRight:I
+      35: aload_0
+      36: iload         4
+      38: putfield      #70                 // Field mPaddingBottom:I
+      41: iload         5
+      43: aload_0
+      44: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      47: getfield      #141                // Field androidx/core/graphics/Insets.left:I
+      50: iadd
+      51: istore        5
+      53: iload         6
+      55: aload_0
+      56: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      59: getfield      #144                // Field androidx/core/graphics/Insets.top:I
+      62: iadd
+      63: istore        6
+      65: iload         7
+      67: aload_0
+      68: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      71: getfield      #147                // Field androidx/core/graphics/Insets.right:I
+      74: iadd
+      75: istore        7
+      77: iload         8
+      79: aload_0
+      80: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      83: getfield      #150                // Field androidx/core/graphics/Insets.bottom:I
+      86: aload_0
+      87: getfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+      90: getfield      #150                // Field androidx/core/graphics/Insets.bottom:I
+      93: invokestatic  #153                // Method java/lang/Math.max:(II)I
+      96: iadd
+      97: istore        8
+      99: aload_0
+     100: iload         5
+     102: iload         6
+     104: iload         7
+     106: iload         8
+     108: invokespecial #159                // Method android/view/ViewGroup.setPadding:(IIII)V
+     111: return
+    LineNumberTable:
+      line 228: 0
+      line 229: 3
+      line 230: 6
+      line 231: 9
+      line 233: 13
+      line 234: 20
+      line 235: 25
+      line 236: 30
+      line 237: 35
+      line 238: 41
+      line 239: 53
+      line 240: 65
+      line 244: 77
+      line 246: 99
+      line 247: 111
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0     112     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0     112     1  left   I
+          0     112     2   top   I
+          0     112     3 right   I
+          0     112     4 bottom   I
+          3     109     5 appliedLeft   I
+          6     106     6 appliedTop   I
+          9     103     7 appliedRight   I
+         13      99     8 appliedBottom   I
+
+  private void putInset(int, int);
+    Code:
+       0: aload_0
+       1: invokespecial #7                  // Method getInsetBuffer:()Ljava/nio/ByteBuffer;
+       4: iload_1
+       5: iload_2
+       6: invokevirtual #163                // Method java/nio/ByteBuffer.putInt:(II)Ljava/nio/ByteBuffer;
+       9: pop
+      10: return
+    LineNumberTable:
+      line 250: 0
+      line 251: 10
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      11     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      11     1 offset   I
+          0      11     2 value   I
+
+  private int getInset(int);
+    Code:
+       0: aload_0
+       1: invokespecial #7                  // Method getInsetBuffer:()Ljava/nio/ByteBuffer;
+       4: iload_1
+       5: invokevirtual #167                // Method java/nio/ByteBuffer.getInt:(I)I
+       8: ireturn
+    LineNumberTable:
+      line 254: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       9     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0       9     1 offset   I
+
+  private void resetInset();
+    Code:
+       0: aload_0
+       1: invokespecial #7                  // Method getInsetBuffer:()Ljava/nio/ByteBuffer;
+       4: astore_1
+       5: aload_1
+       6: iconst_0
+       7: invokevirtual #170                // Method java/nio/ByteBuffer.position:(I)Ljava/nio/Buffer;
+      10: pop
+      11: aload_1
+      12: getstatic     #174                // Field EMPTY_INSETS:[B
+      15: iconst_0
+      16: getstatic     #174                // Field EMPTY_INSETS:[B
+      19: arraylength
+      20: invokevirtual #178                // Method java/nio/ByteBuffer.put:([BII)Ljava/nio/ByteBuffer;
+      23: pop
+      24: aload_1
+      25: iconst_0
+      26: invokevirtual #170                // Method java/nio/ByteBuffer.position:(I)Ljava/nio/Buffer;
+      29: pop
+      30: return
+    LineNumberTable:
+      line 258: 0
+      line 259: 5
+      line 260: 11
+      line 261: 24
+      line 262: 30
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      31     0  this   Lorg/nativescript/widgets/LayoutBase;
+          5      26     1 buffer   Ljava/nio/ByteBuffer;
+
+  private void clearEdgeInsets();
+    Code:
+       0: aload_0
+       1: getfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+       4: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+       7: if_acmpne     21
+      10: aload_0
+      11: getfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+      14: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      17: if_acmpne     21
+      20: return
+      21: aload_0
+      22: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      25: putfield      #79                 // Field edgeInsets:Landroidx/core/graphics/Insets;
+      28: aload_0
+      29: getstatic     #73                 // Field androidx/core/graphics/Insets.NONE:Landroidx/core/graphics/Insets;
+      32: putfield      #82                 // Field imeInsets:Landroidx/core/graphics/Insets;
+      35: aload_0
+      36: iconst_1
+      37: putfield      #138                // Field applyingEdges:Z
+      40: aload_0
+      41: aload_0
+      42: getfield      #60                 // Field mPaddingLeft:I
+      45: aload_0
+      46: getfield      #64                 // Field mPaddingTop:I
+      49: aload_0
+      50: getfield      #67                 // Field mPaddingRight:I
+      53: aload_0
+      54: getfield      #70                 // Field mPaddingBottom:I
+      57: invokevirtual #182                // Method setPadding:(IIII)V
+      60: aload_0
+      61: iconst_0
+      62: putfield      #138                // Field applyingEdges:Z
+      65: return
+    LineNumberTable:
+      line 270: 0
+      line 271: 20
+      line 274: 21
+      line 275: 28
+      line 277: 35
+      line 278: 40
+      line 279: 60
+      line 280: 65
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      66     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  public void setOverflowEdge(int);
+    Code:
+       0: aload_0
+       1: getfield      #85                 // Field overflowEdge:I
+       4: istore_2
+       5: aload_0
+       6: iload_1
+       7: putfield      #85                 // Field overflowEdge:I
+      10: iload_1
+      11: iconst_m1
+      12: if_icmpne     25
+      15: iload_2
+      16: iconst_m1
+      17: if_icmpeq     24
+      20: aload_0
+      21: invokespecial #23                 // Method clearEdgeInsets:()V
+      24: return
+      25: aload_0
+      26: getfield      #88                 // Field windowInsetsListener:Landroidx/core/view/OnApplyWindowInsetsListener;
+      29: ifnonnull     52
+      32: aload_0
+      33: new           #183                // class org/nativescript/widgets/LayoutBase$2
+      36: dup
+      37: aload_0
+      38: invokespecial #185                // Method org/nativescript/widgets/LayoutBase$2."<init>":(Lorg/nativescript/widgets/LayoutBase;)V
+      41: putfield      #88                 // Field windowInsetsListener:Landroidx/core/view/OnApplyWindowInsetsListener;
+      44: aload_0
+      45: aload_0
+      46: getfield      #88                 // Field windowInsetsListener:Landroidx/core/view/OnApplyWindowInsetsListener;
+      49: invokestatic  #186                // Method androidx/core/view/ViewCompat.setOnApplyWindowInsetsListener:(Landroid/view/View;Landroidx/core/view/OnApplyWindowInsetsListener;)V
+      52: aload_0
+      53: getfield      #30                 // Field pendingInsetApply:Z
+      56: ifne          86
+      59: aload_0
+      60: invokevirtual #192                // Method isAttachedToWindow:()Z
+      63: ifeq          73
+      66: aload_0
+      67: invokestatic  #196                // Method androidx/core/view/ViewCompat.requestApplyInsets:(Landroid/view/View;)V
+      70: goto          86
+      73: aload_0
+      74: iconst_1
+      75: putfield      #30                 // Field pendingInsetApply:Z
+      78: aload_0
+      79: aload_0
+      80: getfield      #26                 // Field onAttachStateChangeListener:Landroid/view/View$OnAttachStateChangeListener;
+      83: invokevirtual #200                // Method addOnAttachStateChangeListener:(Landroid/view/View$OnAttachStateChangeListener;)V
+      86: return
+    LineNumberTable:
+      line 283: 0
+      line 284: 5
+      line 286: 10
+      line 289: 15
+      line 290: 20
+      line 292: 24
+      line 295: 25
+      line 296: 32
+      line 531: 44
+      line 534: 52
+      line 535: 59
+      line 536: 66
+      line 538: 73
+      line 539: 78
+      line 542: 86
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      87     0  this   Lorg/nativescript/widgets/LayoutBase;
+          0      87     1 value   I
+          5      82     2 previous   I
+
+  public int getOverflowEdge();
+    Code:
+       0: aload_0
+       1: getfield      #85                 // Field overflowEdge:I
+       4: ireturn
+    LineNumberTable:
+      line 545: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0  this   Lorg/nativescript/widgets/LayoutBase;
+
+  static boolean access$000(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: getfield      #30                 // Field pendingInsetApply:Z
+       4: ireturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static boolean access$002(org.nativescript.widgets.LayoutBase, boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: dup_x1
+       3: putfield      #30                 // Field pendingInsetApply:Z
+       6: ireturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       7     0    x0   Lorg/nativescript/widgets/LayoutBase;
+          0       7     1    x1   Z
+
+  static android.view.View$OnAttachStateChangeListener access$100(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: getfield      #26                 // Field onAttachStateChangeListener:Landroid/view/View$OnAttachStateChangeListener;
+       4: areturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static void access$200(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: invokespecial #23                 // Method clearEdgeInsets:()V
+       4: return
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static void access$300(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: invokespecial #19                 // Method resetInset:()V
+       4: return
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static void access$400(org.nativescript.widgets.LayoutBase, int, int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: iload_2
+       3: invokespecial #15                 // Method putInset:(II)V
+       6: return
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       7     0    x0   Lorg/nativescript/widgets/LayoutBase;
+          0       7     1    x1   I
+          0       7     2    x2   I
+
+  static org.nativescript.widgets.LayoutBase$WindowInsetListener access$500(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: getfield      #11                 // Field insetListener:Lorg/nativescript/widgets/LayoutBase$WindowInsetListener;
+       4: areturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static java.nio.ByteBuffer access$600(org.nativescript.widgets.LayoutBase);
+    Code:
+       0: aload_0
+       1: invokespecial #7                  // Method getInsetBuffer:()Ljava/nio/ByteBuffer;
+       4: areturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       5     0    x0   Lorg/nativescript/widgets/LayoutBase;
+
+  static int access$700(org.nativescript.widgets.LayoutBase, int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: invokespecial #1                  // Method getInset:(I)I
+       5: ireturn
+    LineNumberTable:
+      line 23: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0       6     0    x0   Lorg/nativescript/widgets/LayoutBase;
+          0       6     1    x1   I
+
+  static {};
+    Code:
+       0: bipush        72
+       2: newarray       byte
+       4: putstatic     #174                // Field EMPTY_INSETS:[B
+       7: return
+    LineNumberTable:
+      line 96: 0
+}

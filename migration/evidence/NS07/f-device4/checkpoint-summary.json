@@ -1,0 +1,189 @@
+{
+  "captures": 11,
+  "windows": 15,
+  "patternTotals": {
+    "cleared object reference": 0,
+    "Failed to get Java object": 0,
+    "Unhandled error": 0,
+    "Error during execution of native event handler": 0,
+    "FATAL": 0,
+    "AndroidRuntime": 0
+  },
+  "transitions": [
+    {
+      "page": "schedule",
+      "stage": "baseline",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "1.3",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "2.0",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "schedule",
+      "stage": "restored",
+      "pid": "28549",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "baseline",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "1.3",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "2.0",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true
+    },
+    {
+      "page": "detail",
+      "stage": "restored",
+      "pid": "28946",
+      "pidChanged": false,
+      "pageRetained": true
+    }
+  ],
+  "edgeTaps": [
+    {
+      "label": "F8-FS-detail-toolbar-Back",
+      "target": {
+        "index": "0",
+        "text": "",
+        "resource-id": "",
+        "class": "android.widget.ImageButton",
+        "package": "dev.translationtest.ns",
+        "content-desc": "Back",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,128][147,275]",
+        "drawing-order": "2",
+        "hint": ""
+      },
+      "bounds": {
+        "x1": 0,
+        "y1": 128,
+        "x2": 147,
+        "y2": 275,
+        "cx": 74,
+        "cy": 202,
+        "width": 147,
+        "height": 147
+      },
+      "point": [
+        74,
+        202
+      ]
+    }
+  ],
+  "tapCount": 4,
+  "settingsRestored": true,
+  "finalForeground": [
+    "com.google.android.apps.nexuslauncher"
+  ],
+  "anrs": [
+    {
+      "timestamp": "2026-10-28 17:13:58.305",
+      "pid": "29788",
+      "reason": "ANR",
+      "description": "importance=100 pss=0.00 rss=95MB description=bg anr: Process ProcessRecord{668d7ac 29788:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-13-50-020.gz"
+    },
+    {
+      "timestamp": "2026-10-28 17:10:28.562",
+      "pid": "29567",
+      "reason": "ANR",
+      "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{fc455bf 29567:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-10-16-983.gz"
+    },
+    {
+      "timestamp": "2026-10-28 17:08:47.571",
+      "pid": "29395",
+      "reason": "ANR",
+      "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{2f6c72b 29395:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-08-42-227.gz"
+    }
+  ],
+  "audit": {
+    "priorFilesChecked": 31768,
+    "changed": [],
+    "branch": "migration/slice-1",
+    "head": "d7a4067e7849f119b937fd3723c389b7b834c71c",
+    "index": "",
+    "porcelainLines": 32559,
+    "unexpected": [],
+    "sourceDiffMatches": true,
+    "pass": true
+  },
+  "failures": [
+    {
+      "case": "A06",
+      "observed": {
+        "patternScan": "All specified counts zero in every collected window",
+        "startupAnrs": [
+          {
+            "timestamp": "2026-10-28 17:13:58.305",
+            "pid": "29788",
+            "reason": "ANR",
+            "description": "importance=100 pss=0.00 rss=95MB description=bg anr: Process ProcessRecord{668d7ac 29788:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-13-50-020.gz"
+          },
+          {
+            "timestamp": "2026-10-28 17:10:28.562",
+            "pid": "29567",
+            "reason": "ANR",
+            "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{fc455bf 29567:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-10-16-983.gz"
+          },
+          {
+            "timestamp": "2026-10-28 17:08:47.571",
+            "pid": "29395",
+            "reason": "ANR",
+            "description": "importance=100 pss=0.00 rss=96MB description=bg anr: Process ProcessRecord{2f6c72b 29395:dev.translationtest.ns/u0a216} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-28-17-08-42-227.gz"
+          }
+        ],
+        "rootCause": "Not established; do not attribute to F7 or host without further evidence",
+        "warnings": "Preserved verbatim in each window warnings/errors file"
+      },
+      "evidence": [
+        "migration/evidence/NS07/f-device4/a06-windows.json",
+        "migration/evidence/NS07/f-device4/startup-anrs.json",
+        "migration/evidence/NS07/f-device4/final-package-exit-info.txt"
+      ]
+    }
+  ],
+  "unresolved": [
+    "TrackFilter font transitions not executed: startup ANRs",
+    "G07 live spot check not executed: startup ANRs",
+    "Regression subset not executed: startup ANRs",
+    "Final Schedule foreground cannot be established; actual foreground is Android launcher and app PID absent",
+    "Root cause of startup ANRs is not established",
+    "Coordinator pixel/privacy inspection required for every retained PNG and raw screenshot receipt"
+  ]
+}

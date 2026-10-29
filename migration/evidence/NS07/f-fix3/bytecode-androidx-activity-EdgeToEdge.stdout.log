@@ -1,0 +1,299 @@
+Compiled from "EdgeToEdge.kt"
+public final class androidx.activity.EdgeToEdge {
+  private static final int DefaultLightScrim;
+
+  private static final int DefaultDarkScrim;
+
+  private static androidx.activity.EdgeToEdgeImpl Impl;
+
+  public static final int getDefaultLightScrim();
+    Code:
+       0: getstatic     #10                 // Field DefaultLightScrim:I
+       3: ireturn
+    LineNumberTable:
+      line 37: 0
+
+  public static void getDefaultLightScrim$annotations();
+    Code:
+       0: return
+
+  public static final int getDefaultDarkScrim();
+    Code:
+       0: getstatic     #17                 // Field DefaultDarkScrim:I
+       3: ireturn
+    LineNumberTable:
+      line 42: 0
+
+  public static void getDefaultDarkScrim$annotations();
+    Code:
+       0: return
+
+  public static final void enable(androidx.activity.ComponentActivity, androidx.activity.SystemBarStyle, androidx.activity.SystemBarStyle);
+    Code:
+       0: aload_0
+       1: ldc           #26                 // String <this>
+       3: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: ldc           #34                 // String statusBarStyle
+       9: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_2
+      13: ldc           #36                 // String navigationBarStyle
+      15: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      18: aload_0
+      19: invokevirtual #42                 // Method androidx/activity/ComponentActivity.getWindow:()Landroid/view/Window;
+      22: invokevirtual #48                 // Method android/view/Window.getDecorView:()Landroid/view/View;
+      25: dup
+      26: ldc           #50                 // String getDecorView(...)
+      28: invokestatic  #53                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      31: astore_3
+      32: aload_1
+      33: invokevirtual #59                 // Method androidx/activity/SystemBarStyle.getDetectDarkMode$activity_release:()Lkotlin/jvm/functions/Function1;
+      36: aload_3
+      37: invokevirtual #65                 // Method android/view/View.getResources:()Landroid/content/res/Resources;
+      40: dup
+      41: ldc           #67                 // String getResources(...)
+      43: invokestatic  #53                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      46: invokeinterface #73,  2           // InterfaceMethod kotlin/jvm/functions/Function1.invoke:(Ljava/lang/Object;)Ljava/lang/Object;
+      51: checkcast     #75                 // class java/lang/Boolean
+      54: invokevirtual #79                 // Method java/lang/Boolean.booleanValue:()Z
+      57: istore        4
+      59: aload_2
+      60: invokevirtual #59                 // Method androidx/activity/SystemBarStyle.getDetectDarkMode$activity_release:()Lkotlin/jvm/functions/Function1;
+      63: aload_3
+      64: invokevirtual #65                 // Method android/view/View.getResources:()Landroid/content/res/Resources;
+      67: dup
+      68: ldc           #67                 // String getResources(...)
+      70: invokestatic  #53                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      73: invokeinterface #73,  2           // InterfaceMethod kotlin/jvm/functions/Function1.invoke:(Ljava/lang/Object;)Ljava/lang/Object;
+      78: checkcast     #75                 // class java/lang/Boolean
+      81: invokevirtual #79                 // Method java/lang/Boolean.booleanValue:()Z
+      84: istore        5
+      86: getstatic     #83                 // Field Impl:Landroidx/activity/EdgeToEdgeImpl;
+      89: dup
+      90: ifnonnull     249
+      93: pop
+      94: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+      97: bipush        30
+      99: if_icmplt     115
+     102: new           #90                 // class androidx/activity/EdgeToEdgeApi30
+     105: dup
+     106: invokespecial #93                 // Method androidx/activity/EdgeToEdgeApi30."<init>":()V
+     109: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     112: goto          246
+     115: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+     118: bipush        29
+     120: if_icmplt     136
+     123: new           #97                 // class androidx/activity/EdgeToEdgeApi29
+     126: dup
+     127: invokespecial #98                 // Method androidx/activity/EdgeToEdgeApi29."<init>":()V
+     130: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     133: goto          246
+     136: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+     139: bipush        28
+     141: if_icmplt     157
+     144: new           #100                // class androidx/activity/EdgeToEdgeApi28
+     147: dup
+     148: invokespecial #101                // Method androidx/activity/EdgeToEdgeApi28."<init>":()V
+     151: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     154: goto          246
+     157: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+     160: bipush        26
+     162: if_icmplt     178
+     165: new           #103                // class androidx/activity/EdgeToEdgeApi26
+     168: dup
+     169: invokespecial #104                // Method androidx/activity/EdgeToEdgeApi26."<init>":()V
+     172: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     175: goto          246
+     178: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+     181: bipush        23
+     183: if_icmplt     199
+     186: new           #106                // class androidx/activity/EdgeToEdgeApi23
+     189: dup
+     190: invokespecial #107                // Method androidx/activity/EdgeToEdgeApi23."<init>":()V
+     193: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     196: goto          246
+     199: getstatic     #88                 // Field android/os/Build$VERSION.SDK_INT:I
+     202: bipush        21
+     204: if_icmplt     220
+     207: new           #109                // class androidx/activity/EdgeToEdgeApi21
+     210: dup
+     211: invokespecial #110                // Method androidx/activity/EdgeToEdgeApi21."<init>":()V
+     214: checkcast     #95                 // class androidx/activity/EdgeToEdgeBase
+     217: goto          227
+     220: new           #95                 // class androidx/activity/EdgeToEdgeBase
+     223: dup
+     224: invokespecial #111                // Method androidx/activity/EdgeToEdgeBase."<init>":()V
+     227: astore        7
+     229: aload         7
+     231: astore        8
+     233: iconst_0
+     234: istore        9
+     236: aload         8
+     238: checkcast     #113                // class androidx/activity/EdgeToEdgeImpl
+     241: putstatic     #83                 // Field Impl:Landroidx/activity/EdgeToEdgeImpl;
+     244: aload         7
+     246: checkcast     #113                // class androidx/activity/EdgeToEdgeImpl
+     249: astore        6
+     251: aload         6
+     253: aload_1
+     254: aload_2
+     255: aload_0
+     256: invokevirtual #42                 // Method androidx/activity/ComponentActivity.getWindow:()Landroid/view/Window;
+     259: dup
+     260: ldc           #115                // String getWindow(...)
+     262: invokestatic  #53                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     265: aload_3
+     266: iload         4
+     268: iload         5
+     270: invokeinterface #119,  7          // InterfaceMethod androidx/activity/EdgeToEdgeImpl.setUp:(Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;Landroid/view/Window;Landroid/view/View;ZZ)V
+     275: aload         6
+     277: aload_0
+     278: invokevirtual #42                 // Method androidx/activity/ComponentActivity.getWindow:()Landroid/view/Window;
+     281: dup
+     282: ldc           #115                // String getWindow(...)
+     284: invokestatic  #53                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     287: invokeinterface #123,  2          // InterfaceMethod androidx/activity/EdgeToEdgeImpl.adjustLayoutInDisplayCutoutMode:(Landroid/view/Window;)V
+     292: return
+    LineNumberTable:
+      line 73: 18
+      line 74: 32
+      line 75: 59
+      line 77: 86
+      line 78: 94
+      line 79: 102
+      line 80: 115
+      line 81: 123
+      line 82: 136
+      line 83: 144
+      line 84: 157
+      line 85: 165
+      line 86: 178
+      line 87: 186
+      line 89: 199
+      line 90: 207
+      line 92: 220
+      line 94: 229
+      line 344: 233
+      line 94: 236
+      line 94: 244
+      line 77: 249
+      line 76: 249
+      line 95: 251
+      line 96: 253
+      line 97: 254
+      line 98: 255
+      line 99: 265
+      line 100: 266
+      line 101: 268
+      line 95: 270
+      line 103: 275
+      line 104: 292
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+        236       8     9 $i$a$-also-EdgeToEdge$enableEdgeToEdge$impl$1   I
+        233      11     8    it   Landroidx/activity/EdgeToEdgeBase;
+         32     261     3  view   Landroid/view/View;
+         59     234     4 statusBarIsDark   Z
+         86     207     5 navigationBarIsDark   Z
+        251      42     6  impl   Landroidx/activity/EdgeToEdgeImpl;
+          0     293     0 $this$enableEdgeToEdge   Landroidx/activity/ComponentActivity;
+          0     293     1 statusBarStyle   Landroidx/activity/SystemBarStyle;
+          0     293     2 navigationBarStyle   Landroidx/activity/SystemBarStyle;
+
+  public static void enable$default(androidx.activity.ComponentActivity, androidx.activity.SystemBarStyle, androidx.activity.SystemBarStyle, int, java.lang.Object);
+    Code:
+       0: iload_3
+       1: iconst_1
+       2: iand
+       3: ifeq          18
+       6: getstatic     #141                // Field androidx/activity/SystemBarStyle.Companion:Landroidx/activity/SystemBarStyle$Companion;
+       9: iconst_0
+      10: iconst_0
+      11: aconst_null
+      12: iconst_4
+      13: aconst_null
+      14: invokestatic  #147                // Method androidx/activity/SystemBarStyle$Companion.auto$default:(Landroidx/activity/SystemBarStyle$Companion;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/activity/SystemBarStyle;
+      17: astore_1
+      18: iload_3
+      19: iconst_2
+      20: iand
+      21: ifeq          40
+      24: getstatic     #141                // Field androidx/activity/SystemBarStyle.Companion:Landroidx/activity/SystemBarStyle$Companion;
+      27: getstatic     #10                 // Field DefaultLightScrim:I
+      30: getstatic     #17                 // Field DefaultDarkScrim:I
+      33: aconst_null
+      34: iconst_4
+      35: aconst_null
+      36: invokestatic  #147                // Method androidx/activity/SystemBarStyle$Companion.auto$default:(Landroidx/activity/SystemBarStyle$Companion;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/activity/SystemBarStyle;
+      39: astore_2
+      40: aload_0
+      41: aload_1
+      42: aload_2
+      43: invokestatic  #149                // Method enable:(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;)V
+      46: return
+    LineNumberTable:
+      line 67: 0
+      line 70: 6
+      line 67: 18
+      line 71: 24
+      line 67: 40
+
+  public static final void enable(androidx.activity.ComponentActivity, androidx.activity.SystemBarStyle);
+    Code:
+       0: aload_0
+       1: ldc           #26                 // String <this>
+       3: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: ldc           #34                 // String statusBarStyle
+       9: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_0
+      13: aload_1
+      14: aconst_null
+      15: iconst_2
+      16: aconst_null
+      17: invokestatic  #152                // Method enable$default:(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;ILjava/lang/Object;)V
+      20: return
+    LineNumberTable:
+      line 104: 20
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      21     0 $this$enableEdgeToEdge   Landroidx/activity/ComponentActivity;
+          0      21     1 statusBarStyle   Landroidx/activity/SystemBarStyle;
+
+  public static final void enable(androidx.activity.ComponentActivity);
+    Code:
+       0: aload_0
+       1: ldc           #26                 // String <this>
+       3: invokestatic  #32                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aconst_null
+       8: aconst_null
+       9: iconst_3
+      10: aconst_null
+      11: invokestatic  #152                // Method enable$default:(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;ILjava/lang/Object;)V
+      14: return
+    LineNumberTable:
+      line 104: 14
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0      15     0 $this$enableEdgeToEdge   Landroidx/activity/ComponentActivity;
+
+  static {};
+    Code:
+       0: sipush        230
+       3: sipush        255
+       6: sipush        255
+       9: sipush        255
+      12: invokestatic  #160                // Method android/graphics/Color.argb:(IIII)I
+      15: putstatic     #10                 // Field DefaultLightScrim:I
+      18: sipush        128
+      21: bipush        27
+      23: bipush        27
+      25: bipush        27
+      27: invokestatic  #160                // Method android/graphics/Color.argb:(IIII)I
+      30: putstatic     #17                 // Field DefaultDarkScrim:I
+      33: return
+    LineNumberTable:
+      line 37: 0
+      line 42: 18
+}

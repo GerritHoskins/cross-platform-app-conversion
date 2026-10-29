@@ -1,0 +1,17 @@
+{
+  "command": "powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\" | Where-Object { $_.CommandLine -like '*f4-theme.mjs*' -and $_.CommandLine -notlike '*f4-owned-status.mjs*' } | Select-Object ProcessId,ParentProcessId,CommandLine | ConvertTo-Json -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-28T13:11:26.860Z",
+  "durationMs": 531,
+  "label": "owned-status-1793193086860",
+  "error": null,
+  "stdout": "1388-owned-status-1793193086860.stdout.log",
+  "stderr": "1388-owned-status-1793193086860.stderr.log"
+}

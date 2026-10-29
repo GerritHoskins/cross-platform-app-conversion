@@ -1,0 +1,445 @@
+{
+  "scope": "logcat -d -t 400 --pid per recorded process window; no Metro for NativeScript; not exhaustive stability or warning-free evidence",
+  "windowCount": 15,
+  "allPidsStable": true,
+  "fatalPatternDetected": false,
+  "windows": [
+    {
+      "launch": {
+        "label": "G01-cold",
+        "pid": "8846",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118019.1793256
+      },
+      "pidBefore": "8846",
+      "pidAfter": "8846",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 10,
+      "log": "G03-audit-cold-previous-logcat.txt",
+      "warnings": "G03-audit-cold-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G03-audit-cold",
+        "pid": "9117",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118154.8999665
+      },
+      "pidBefore": "9117",
+      "pidAfter": "9117",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 9,
+      "log": "G03-tree-cold-top-previous-logcat.txt",
+      "warnings": "G03-tree-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G03-tree-cold-top",
+        "pid": "9201",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118160.6962478
+      },
+      "pidBefore": "9201",
+      "pidAfter": "9201",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 38,
+      "log": "G03-tree2-cold-top-previous-logcat.txt",
+      "warnings": "G03-tree2-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G03-tree2-cold-top",
+        "pid": "9586",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118251.059825
+      },
+      "pidBefore": "9586",
+      "pidAfter": "9586",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 41,
+      "log": "G05-default-cold-top-previous-logcat.txt",
+      "warnings": "G05-default-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G05-default-cold-top",
+        "pid": "10338",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118389.6873007
+      },
+      "pidBefore": "10338",
+      "pidAfter": "10338",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 46,
+      "log": "G05-font1-3-cold-top-previous-logcat.txt",
+      "warnings": "G05-font1-3-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G05-font1-3-cold-top",
+        "pid": "11061",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118473.1280289
+      },
+      "pidBefore": "11061",
+      "pidAfter": "11061",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 77,
+      "log": "G05-font2-0-cold-top-previous-logcat.txt",
+      "warnings": "G05-font2-0-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G05-font2-0-cold-top",
+        "pid": "11821",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118556.1372325
+      },
+      "pidBefore": "11821",
+      "pidAfter": "11821",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 19,
+      "log": "G05-font2-retry-cold-top-previous-logcat.txt",
+      "warnings": "G05-font2-retry-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G05-font2-retry-cold-top",
+        "pid": "12244",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118668.6481013
+      },
+      "pidBefore": "12244",
+      "pidAfter": "12244",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 48,
+      "log": "G06-default-cold-top-previous-logcat.txt",
+      "warnings": "G06-default-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G06-default-cold-top",
+        "pid": "13115",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118764.265875
+      },
+      "pidBefore": "13115",
+      "pidAfter": "13115",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 47,
+      "log": "G06-density504-cold-top-previous-logcat.txt",
+      "warnings": "G06-density504-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G06-density504-cold-top",
+        "pid": "13877",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118841.4794016
+      },
+      "pidBefore": "13877",
+      "pidAfter": "13877",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 74,
+      "log": "G07-light-cold-top-previous-logcat.txt",
+      "warnings": "G07-light-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G07-light-cold-top",
+        "pid": "14736",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793118933.1371062
+      },
+      "pidBefore": "14736",
+      "pidAfter": "14736",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 68,
+      "log": "G07-dark-cold-cold-top-previous-logcat.txt",
+      "warnings": "G07-dark-cold-cold-top-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G07-dark-cold-cold-top",
+        "pid": "15520",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793119012.5017607
+      },
+      "pidBefore": "15520",
+      "pidAfter": "15520",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 69,
+      "log": "G08-cold-baseline-previous-logcat.txt",
+      "warnings": "G08-cold-baseline-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G08-cold-baseline",
+        "pid": "16505",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793119179.8563833
+      },
+      "pidBefore": "16505",
+      "pidAfter": "16505",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 10,
+      "log": "G09-cold-previous-logcat.txt",
+      "warnings": "G09-cold-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G09-cold",
+        "pid": "16949",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793119224.898319
+      },
+      "pidBefore": "16949",
+      "pidAfter": "16949",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 16,
+      "log": "G09-force-stop-new-process-previous-logcat.txt",
+      "warnings": "G09-force-stop-new-process-previous-warnings-errors-verbatim.txt"
+    },
+    {
+      "launch": {
+        "label": "G09-force-stop-new-process",
+        "pid": "17476",
+        "launchArgs": [
+          "shell",
+          "monkey",
+          "-p",
+          "dev.translationtest.ns",
+          "-c",
+          "android.intent.category.LAUNCHER",
+          "1"
+        ],
+        "startedAt": 1793119273.385372
+      },
+      "pidBefore": "17476",
+      "pidAfter": "17476",
+      "pidStable": true,
+      "fatalPatternDetected": false,
+      "warningErrorLines": 38,
+      "log": "A06-final-logcat.txt",
+      "warnings": "A06-final-warnings-errors-verbatim.txt"
+    }
+  ],
+  "warningsErrorsVerbatim": [
+    {
+      "window": "G01-cold",
+      "path": "G03-audit-cold-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:20:08.773  8846  8846 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:20:08.773  8846  8846 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:20:10.245  8846  8883 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:20:10.275  8846  8846 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:20:10.356  8846  8846 W HWUI    : Image decoding logging dropped!\r\n10-27 16:20:10.359  8846  8846 W HWUI    : Image decoding logging dropped!\r\n10-27 16:20:10.730  8846  8846 W HWUI    : Image decoding logging dropped!\r\n10-27 16:20:10.730  8846  8846 W HWUI    : Image decoding logging dropped!\r\n10-27 16:20:10.980  8846  8846 W HWUI    : Unknown dataspace 0\r\n10-27 16:21:12.744  8846  8983 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns\r\n",
+      "lineCount": 10
+    },
+    {
+      "window": "G03-audit-cold",
+      "path": "G03-tree-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:22:27.845  9117  9117 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:22:27.845  9117  9117 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:22:28.728  9117  9117 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:22:28.765  9117  9141 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:22:28.834  9117  9117 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:28.840  9117  9117 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:29.322  9117  9117 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:29.322  9117  9117 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:29.544  9117  9117 W HWUI    : Unknown dataspace 0\r\n",
+      "lineCount": 9
+    },
+    {
+      "window": "G03-tree-cold-top",
+      "path": "G03-tree2-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:22:33.759  9201  9201 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:22:33.759  9201  9201 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:22:34.722  9201  9224 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:22:34.739  9201  9201 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:22:34.819  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:34.821  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:35.248  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:35.249  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:22:35.438  9201  9201 W HWUI    : Unknown dataspace 0\r\n10-27 16:22:57.081  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.365  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.377  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.378  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.379  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.379  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.380  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.381  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.381  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.381  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.382  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.382  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.383  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.383  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.384  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.384  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.385  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.385  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.391  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.392  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.392  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.393  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.393  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.393  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.394  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.394  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.395  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.396  9201  9201 W HWUI    : Image decoding logging dropped!\r\n10-27 16:23:06.475  9201  9201 W HWUI    : Image decoding logging dropped!\r\n",
+      "lineCount": 38
+    },
+    {
+      "window": "G03-tree2-cold-top",
+      "path": "G05-default-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:24:02.257  9586  9586 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:24:02.257  9586  9586 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:24:03.097  9586  9610 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:24:03.120  9586  9586 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:24:03.187  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:03.188  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:03.478  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:03.478  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:03.666  9586  9586 W HWUI    : Unknown dataspace 0\r\n10-27 16:24:27.241  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.611  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.611  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.612  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.612  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.613  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.617  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.620  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.620  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.621  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.623  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.624  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.625  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.627  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.628  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.630  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.631  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.634  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.634  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.635  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.638  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.639  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.639  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.640  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.640  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.641  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.643  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.645  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:38.723  9586  9586 W HWUI    : Image decoding logging dropped!\r\n10-27 16:24:45.611  9586  9586 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@65d2ebc\r\n10-27 16:25:02.074  9586  9586 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@85fa6df\r\n10-27 16:25:11.821  9586  9586 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@27d85b1\r\n",
+      "lineCount": 41
+    },
+    {
+      "window": "G05-default-cold-top",
+      "path": "G05-font1-3-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:26:22.616 10338 10338 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:26:22.616 10338 10338 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:26:24.326 10338 10338 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:26:24.372 10338 10374 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:26:24.498 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:26:24.505 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:26:25.192 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:26:25.193 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:26:25.962 10338 10338 W HWUI    : Unknown dataspace 0\r\n10-27 16:26:27.404 10338 10390 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[NativeScriptActivity]#0) as ready\r\n10-27 16:26:27.405 10338 10390 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[NativeScriptActivity]#1) as ready\r\n10-27 16:26:27.662 10338 10399 W nslationtest.ns: Verification of void androidx.emoji2.text.DefaultEmojiCompatConfig.<init>() took 105.913ms (37.77 bytecodes/s) (0B arena alloc)\r\n10-27 16:26:48.779 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.485 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.498 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.499 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.499 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.500 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.500 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.500 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.501 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.502 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.505 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.505 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.506 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.506 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.507 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.507 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.508 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.508 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.511 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.515 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.517 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.519 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.519 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.520 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.521 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.522 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.523 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.524 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:00.632 10338 10338 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:07.821 10338 10338 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@e268e9f\r\n10-27 16:27:25.888 10338 10338 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@4bd9f44\r\n10-27 16:27:37.138 10338 10338 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@62b81ee\r\n10-27 16:27:42.424 10338 10338 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c5e7035\r\n10-27 16:27:42.541 10338 10338 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b07926c\r\n",
+      "lineCount": 46
+    },
+    {
+      "window": "G05-font1-3-cold-top",
+      "path": "G05-font2-0-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:27:45.788 11061 11061 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:27:45.788 11061 11061 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:27:48.797 11061 11061 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:27:49.579 11061 11108 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:27:49.829 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:49.832 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:50.887 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:50.888 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:27:51.617 11061 11061 W HWUI    : Unknown dataspace 0\r\n10-27 16:27:56.273 11061 11068 W nslationtest.ns: Suspending all threads took: 14.836ms\r\n10-27 16:28:15.343 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.783 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.795 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.796 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.805 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.807 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.808 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.811 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.812 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.813 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.814 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.815 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.815 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.816 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.817 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.818 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.819 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.819 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.820 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.820 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.821 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.823 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.823 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.824 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.824 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.824 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.824 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.825 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.888 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.889 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.890 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.890 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.891 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.892 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.892 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.892 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.893 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.893 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.894 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.894 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.894 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.895 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.895 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.896 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.898 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.899 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.899 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.899 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.900 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.900 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.900 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.901 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.901 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.901 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.902 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:27.955 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:28:34.992 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@822b009\r\n10-27 16:28:52.764 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@26ac0b1\r\n10-27 16:29:05.043 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@f3a734d\r\n10-27 16:29:08.035 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c5e7035\r\n10-27 16:29:08.142 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b07926c\r\n10-27 16:29:08.219 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:08.221 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:08.276 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:08.276 11061 11061 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:09.004 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@cf6a3c1\r\n10-27 16:29:09.121 11061 11061 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@6916ca8\r\n",
+      "lineCount": 77
+    },
+    {
+      "window": "G05-font2-0-cold-top",
+      "path": "G05-font2-retry-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:29:10.266 11821 11821 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:29:10.266 11821 11821 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:29:11.869 11821 11863 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:29:11.873 11821 11821 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:29:11.968 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:11.970 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:12.294 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:12.295 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:12.526 11821 11821 W HWUI    : Unknown dataspace 0\r\n10-27 16:29:34.241 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:44.602 11821 11821 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c5e7035\r\n10-27 16:29:44.656 11821 11821 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b07926c\r\n10-27 16:29:44.734 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:44.743 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:29:44.798 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:30:58.899 11821 11821 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c0c77ba\r\n10-27 16:30:58.940 11821 11821 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b4a0e5\r\n10-27 16:30:59.025 11821 11821 W HWUI    : Image decoding logging dropped!\r\n10-27 16:30:59.027 11821 11821 W HWUI    : Image decoding logging dropped!\r\n",
+      "lineCount": 19
+    },
+    {
+      "window": "G05-font2-retry-cold-top",
+      "path": "G06-default-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:31:00.294 12244 12244 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:31:00.294 12244 12244 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:31:01.331 12244 12272 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:31:01.361 12244 12244 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:31:01.847 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:01.851 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:02.563 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:02.564 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:02.917 12244 12244 W HWUI    : Unknown dataspace 0\r\n10-27 16:31:24.968 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.531 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.536 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.537 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.539 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.539 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.540 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.540 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.540 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.541 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.541 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.541 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.541 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.545 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.546 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.547 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.548 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.548 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.550 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.552 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.552 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.553 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.553 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.557 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.558 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.558 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.560 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.561 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:50.652 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:31:57.493 12244 12244 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@f50b7d8\r\n10-27 16:32:13.961 12244 12244 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@93c7a51\r\n10-27 16:32:23.169 12244 12244 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@2621f72\r\n10-27 16:32:25.787 12244 12244 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@8641cca\r\n10-27 16:32:25.865 12244 12244 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@c5e7035\r\n10-27 16:32:25.924 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:25.928 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:25.943 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:25.943 12244 12244 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:26.706 12244 13087 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns\r\n",
+      "lineCount": 48
+    },
+    {
+      "window": "G06-default-cold-top",
+      "path": "G06-density504-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:32:37.251 13115 13115 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:32:37.251 13115 13115 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:32:38.228 13115 13138 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:32:38.255 13115 13115 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:32:38.318 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:38.321 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:38.653 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:38.654 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:32:38.896 13115 13115 W HWUI    : Unknown dataspace 0\r\n10-27 16:33:02.387 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.299 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.302 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.302 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.303 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.303 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.304 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.304 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.305 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.306 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.307 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.309 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.310 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.312 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.313 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.313 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.315 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.316 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.317 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.318 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.319 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.321 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.322 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.322 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.323 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.323 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.329 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.331 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:16.392 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:23.725 13115 13115 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c69a493\r\n10-27 16:33:40.684 13115 13115 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@32d9a38\r\n10-27 16:33:50.112 13115 13115 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@c249a65\r\n10-27 16:33:53.243 13115 13115 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c5e7035\r\n10-27 16:33:53.352 13115 13115 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b07926c\r\n10-27 16:33:53.476 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:53.478 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:53.497 13115 13115 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:53.497 13115 13115 W HWUI    : Image decoding logging dropped!\r\n",
+      "lineCount": 47
+    },
+    {
+      "window": "G06-density504-cold-top",
+      "path": "G07-light-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:33:54.561 13877 13877 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:33:54.561 13877 13877 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:33:56.291 13877 13877 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:33:56.445 13877 13924 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:33:57.397 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:57.404 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:58.873 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:58.874 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:33:59.621 13877 13877 W HWUI    : Unknown dataspace 0\r\n10-27 16:34:26.820 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.396 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.403 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.404 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.407 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.407 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.408 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.409 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.409 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.413 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.414 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.415 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.416 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.416 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.427 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.428 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.429 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.431 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.431 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.432 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.433 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.434 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.435 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.435 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.436 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.436 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.437 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.439 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.508 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.508 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.509 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.510 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.512 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.513 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.514 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.514 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.515 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.515 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.518 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.518 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.520 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.520 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.521 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.523 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.523 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.527 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.527 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.528 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.528 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.528 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.529 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.529 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.531 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.531 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.533 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:46.591 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:34:54.090 13877 13877 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@a35a7a8\r\n10-27 16:35:11.123 13877 13877 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@f7f4f6d\r\n10-27 16:35:20.850 13877 13877 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@a2daff\r\n10-27 16:35:23.626 13877 13877 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@c5e7035\r\n10-27 16:35:23.757 13877 13877 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@b07926c\r\n10-27 16:35:23.844 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:23.847 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:23.872 13877 13877 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:23.872 13877 13877 W HWUI    : Image decoding logging dropped!\r\n",
+      "lineCount": 74
+    },
+    {
+      "window": "G07-light-cold-top",
+      "path": "G07-dark-cold-cold-top-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:35:27.244 14736 14736 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:35:27.244 14736 14736 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:35:30.420 14736 14736 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:35:30.427 14736 14808 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:35:30.655 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:30.658 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:32.190 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:32.190 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:35:32.972 14736 14736 W HWUI    : Unknown dataspace 0\r\n10-27 16:35:54.743 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.554 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.566 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.567 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.567 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.568 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.568 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.568 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.570 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.571 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.572 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.575 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.579 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.580 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.580 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.581 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.582 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.582 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.583 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.583 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.583 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.584 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.584 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.585 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.587 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.588 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.588 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.589 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.645 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.645 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.646 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.646 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.646 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.648 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.648 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.649 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.651 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.652 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.653 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.653 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.660 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.660 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.661 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.661 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.662 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.663 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.664 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.664 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.665 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.666 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.666 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.669 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.669 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.670 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.670 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:06.745 14736 14736 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:13.773 14736 14736 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@250c15\r\n10-27 16:36:31.554 14736 14736 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@b3cd874\r\n10-27 16:36:42.017 14736 14736 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@226d7b5\r\n",
+      "lineCount": 68
+    },
+    {
+      "window": "G07-dark-cold-cold-top",
+      "path": "G08-cold-baseline-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:36:46.488 15520 15520 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:36:46.488 15520 15520 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:36:47.913 15520 15557 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:36:47.934 15520 15520 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:36:48.066 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:48.068 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:48.622 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:48.623 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:36:48.997 15520 15520 W HWUI    : Unknown dataspace 0\r\n10-27 16:37:09.776 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.679 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.691 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.695 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.696 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.696 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.697 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.697 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.701 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.702 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.702 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.703 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.707 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.708 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.710 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.711 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.712 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.713 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.714 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.716 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.717 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.717 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.719 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.719 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.720 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.721 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.721 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.722 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:21.785 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:37:28.859 15520 15520 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@3db278c\r\n10-27 16:37:45.287 15520 15520 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@7f2dc41\r\n10-27 16:37:54.692 15520 15520 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Dialog$$ExternalSyntheticLambda2@e92605\r\n10-27 16:38:14.066 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.068 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.069 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.069 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.071 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.072 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.072 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.073 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.074 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.074 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.075 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.075 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.076 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.077 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.077 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.079 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.079 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.080 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.080 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.081 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.084 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.086 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.087 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.088 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.088 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.089 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:14.090 15520 15520 W HWUI    : Image decoding logging dropped!\r\n10-27 16:38:18.640 15520 15520 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@8049071\r\n",
+      "lineCount": 69
+    },
+    {
+      "window": "G08-cold-baseline",
+      "path": "G09-cold-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:39:32.777 16505 16505 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:39:32.777 16505 16505 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:39:33.705 16505 16530 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:39:33.731 16505 16505 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:39:33.803 16505 16505 W HWUI    : Image decoding logging dropped!\r\n10-27 16:39:33.805 16505 16505 W HWUI    : Image decoding logging dropped!\r\n10-27 16:39:34.245 16505 16505 W HWUI    : Image decoding logging dropped!\r\n10-27 16:39:34.245 16505 16505 W HWUI    : Image decoding logging dropped!\r\n10-27 16:39:34.499 16505 16505 W HWUI    : Unknown dataspace 0\r\n10-27 16:39:59.488 16505 16788 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns\r\n",
+      "lineCount": 10
+    },
+    {
+      "window": "G09-cold",
+      "path": "G09-force-stop-new-process-previous-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:40:15.525 16949 16949 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:40:15.525 16949 16949 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:40:16.790 16949 16975 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:40:16.803 16949 16949 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:40:16.872 16949 16949 W HWUI    : Image decoding logging dropped!\r\n10-27 16:40:16.875 16949 16949 W HWUI    : Image decoding logging dropped!\r\n10-27 16:40:17.254 16949 16949 W HWUI    : Image decoding logging dropped!\r\n10-27 16:40:17.255 16949 16949 W HWUI    : Image decoding logging dropped!\r\n10-27 16:40:17.500 16949 16949 W HWUI    : Unknown dataspace 0\r\n10-27 16:40:25.001 16949 17050 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=dev.translationtest.ns\r\n10-27 16:40:32.922 16949 16949 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@fa7204a\r\n10-27 16:40:33.153 16949 16949 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@8641cca\r\n10-27 16:40:36.570 16949 16949 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 119656391\r\n10-27 16:40:36.574 16949 16949 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@fa7204a\r\n10-27 16:40:41.220 16949 16949 W HWUI    : Image decoding logging dropped!\r\n10-27 16:40:51.062 16949 16949 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@8641cca\r\n",
+      "lineCount": 16
+    },
+    {
+      "window": "G09-force-stop-new-process",
+      "path": "A06-final-warnings-errors-verbatim.txt",
+      "verbatim": "10-27 16:41:06.496 17476 17476 W nslationtest.ns: Unexpected CPU variant for x86: x86_64.\r\n10-27 16:41:06.496 17476 17476 W nslationtest.ns: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default\r\n10-27 16:41:07.360 17476 17499 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS\r\n10-27 16:41:07.387 17476 17476 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.\r\n10-27 16:41:07.459 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:07.461 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:07.830 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:07.831 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:08.029 17476 17476 W HWUI    : Unknown dataspace 0\r\n10-27 16:41:23.056 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.062 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.063 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.063 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.067 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.068 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.069 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.070 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.071 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.072 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.073 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.073 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.074 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.075 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.076 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.077 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.079 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.081 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.081 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.082 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.083 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.084 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.085 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.085 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.086 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.086 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.087 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:23.140 17476 17476 W HWUI    : Image decoding logging dropped!\r\n10-27 16:41:27.708 17476 17476 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@a24455f\r\n",
+      "lineCount": 38
+    }
+  ]
+}

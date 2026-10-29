@@ -1,0 +1,25 @@
+{
+  "launch": {
+    "label": "D04-abc-direct",
+    "pid": "31086",
+    "entry": "abc",
+    "launchArgs": [
+      "shell",
+      "am",
+      "start",
+      "-n",
+      "dev.translationtest.ns/com.tns.NativeScriptActivity",
+      "--es",
+      "ns04SessionId",
+      "abc"
+    ],
+    "startedAt": 1793110293.3342378
+  },
+  "pidBefore": "31086",
+  "pidAfter": "31086",
+  "pidStable": true,
+  "fatalPatternDetected": false,
+  "warningErrorLines": 10,
+  "log": "D05-cold-previous-logcat.txt",
+  "warnings": "D05-cold-previous-warnings-errors-verbatim.txt"
+}

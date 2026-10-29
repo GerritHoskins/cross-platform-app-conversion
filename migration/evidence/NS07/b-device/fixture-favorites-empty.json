@@ -1,0 +1,25 @@
+{
+  "id": "favorites-empty",
+  "description": "\"Favorites\" mode with an empty favorite list: favoritesFiltered excludes everything (sessions.ts:210), so no sessions render.",
+  "input": {
+    "searchText": "",
+    "selectedTracks": [
+      "Food",
+      "Ionic",
+      "Tooling",
+      "Vue",
+      "Design",
+      "Services",
+      "Workshop",
+      "Communication",
+      "Navigation",
+      "Documentation"
+    ],
+    "favoriteIds": [],
+    "mode": "favorites"
+  },
+  "expected": {
+    "sessionIds": [],
+    "groups": []
+  }
+}

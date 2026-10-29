@@ -1,0 +1,17 @@
+{
+  "command": "powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$items = @(Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' -and $_.ProcessId -ne 58268 -and $_.CommandLine -like '*sol-ns07-r1-f9-20261028*f9-*.mjs*' -and $_.CommandLine -notlike '*f9-launch.mjs*' -and $_.CommandLine -notlike '*f9-idle.mjs*' } | Select-Object ProcessId,ParentProcessId,CommandLine); ConvertTo-Json -InputObject $items -Depth 4 -Compress"
+  ],
+  "cwd": "C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main",
+  "exitCode": 0,
+  "startedAt": "2026-10-28T17:59:02.458Z",
+  "durationMs": 507,
+  "label": "idle-exact-command-lines",
+  "error": null,
+  "stdout": "f9-0189-idle-exact-command-lines.stdout.log",
+  "stderr": "f9-0189-idle-exact-command-lines.stderr.log"
+}

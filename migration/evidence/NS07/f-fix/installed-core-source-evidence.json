@@ -1,0 +1,399 @@
+{
+  "version": "9.1.3",
+  "sources": [
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/segmented-bar/index.android.js",
+      "sha256": "2f548b5f658fca7673090a0a9940ecd4843998e1011cc2da89a45b55f5fe635d",
+      "excerpts": [
+        {
+          "first": 83,
+          "last": 100,
+          "lines": [
+            "export class SegmentedBarItem extends SegmentedBarItemBase {",
+            "    setupNativeView(tabIndex) {",
+            "        // TabHost.TabSpec.setIndicator DOES NOT WORK once the title has been set.",
+            "        // http://stackoverflow.com/questions/2935781/modify-tab-indicator-dynamically-in-android",
+            "        const titleTextView = this.parent.nativeViewProtected.getTabWidget().getChildAt(tabIndex).findViewById(TITLE_TEXT_VIEW_ID);",
+            "        this.setNativeView(titleTextView);",
+            "        if (titleTextView) {",
+            "            if (this.titleDirty) {",
+            "                this._update();",
+            "            }",
+            "        }",
+            "    }",
+            "    _update() {",
+            "        const tv = this.nativeViewProtected;",
+            "        if (tv) {",
+            "            let title = this.title;",
+            "            title = title === null || title === undefined ? '' : title;",
+            "            tv.setText(title);"
+          ]
+        },
+        {
+          "first": 114,
+          "last": 123,
+          "lines": [
+            "    [fontSizeProperty.getDefault]() {",
+            "        return { nativeSize: this.nativeViewProtected.getTextSize() };",
+            "    }",
+            "    [fontSizeProperty.setNative](value) {",
+            "        if (typeof value === 'number') {",
+            "            this.nativeViewProtected.setTextSize(value);",
+            "        }",
+            "        else {",
+            "            this.nativeViewProtected.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, value.nativeSize);",
+            "        }"
+          ]
+        },
+        {
+          "first": 166,
+          "last": 180,
+          "lines": [
+            "    createNativeView() {",
+            "        initializeNativeClasses();",
+            "        const context = this._context;",
+            "        const nativeView = new TabHost(context, null);",
+            "        const tabHostLayout = new android.widget.LinearLayout(context);",
+            "        tabHostLayout.setOrientation(android.widget.LinearLayout.VERTICAL);",
+            "        const tabWidget = new android.widget.TabWidget(context);",
+            "        tabWidget.setId(R_ID_TABS);",
+            "        tabHostLayout.addView(tabWidget);",
+            "        const frame = new android.widget.FrameLayout(context);",
+            "        frame.setId(R_ID_TABCONTENT);",
+            "        frame.setVisibility(android.view.View.GONE);",
+            "        tabHostLayout.addView(frame);",
+            "        nativeView.addView(tabHostLayout);",
+            "        return nativeView;"
+          ]
+        },
+        {
+          "first": 206,
+          "last": 215,
+          "lines": [
+            "    insertTab(tabItem, index) {",
+            "        const tabHost = this.nativeViewProtected;",
+            "        const tab = tabHost.newTabSpec(index + '');",
+            "        tab.setIndicator(tabItem.title + '');",
+            "        tab.setContent(this._tabContentFactory);",
+            "        this._addingTab = true;",
+            "        tabHost.addTab(tab);",
+            "        tabItem.setupNativeView(index);",
+            "        this._addingTab = false;",
+            "    }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/button/index.android.js",
+      "sha256": "c8a9f1cd5160f74ebab7fd9a9863d2687a7534328c3ca2b2690591e6c32c784c",
+      "excerpts": [
+        {
+          "first": 48,
+          "last": 64,
+          "lines": [
+            "export class Button extends ButtonBase {",
+            "    createNativeView() {",
+            "        if (!AndroidButton) {",
+            "            AndroidButton = android.widget.Button;",
+            "        }",
+            "        return new AndroidButton(this._context);",
+            "    }",
+            "    initNativeView() {",
+            "        super.initNativeView();",
+            "        const nativeView = this.nativeViewProtected;",
+            "        // make consistent with iOS, easier on users given css styling",
+            "        nativeView.setAllCaps(false);",
+            "        initializeClickListener();",
+            "        const clickListener = new ClickListener(this);",
+            "        nativeView.setOnClickListener(clickListener);",
+            "        nativeView.clickListener = clickListener;",
+            "    }"
+          ]
+        },
+        {
+          "first": 98,
+          "last": 104,
+          "lines": [
+            "    [paddingInternalProperty.setNative](_value) {",
+            "        const left = this.effectivePaddingLeft + Length.toDevicePixels(this.style.borderLeftWidth, 0);",
+            "        const top = this.effectivePaddingTop + Length.toDevicePixels(this.style.borderTopWidth, 0);",
+            "        const right = this.effectivePaddingRight + Length.toDevicePixels(this.style.borderRightWidth, 0);",
+            "        const bottom = this.effectivePaddingBottom + Length.toDevicePixels(this.style.borderBottomWidth, 0);",
+            "        this.nativeViewProtected.setPadding(left, top, right, bottom);",
+            "    }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/button/button-common.js",
+      "sha256": "6344aa107ad57e1dd9663fb8f8bafc2056b74a04476b9b45f46868aff752f7bb",
+      "excerpts": [
+        {
+          "first": 5,
+          "last": 18,
+          "lines": [
+            "let ButtonBase = class ButtonBase extends TextBase {",
+            "    constructor() {",
+            "        super(...arguments);",
+            "        this.accessibilityRole = AccessibilityRole.Button;",
+            "    }",
+            "    get textWrap() {",
+            "        return this.style.whiteSpace === 'normal';",
+            "    }",
+            "    set textWrap(value) {",
+            "        if (typeof value === 'string') {",
+            "            value = booleanConverter(value);",
+            "        }",
+            "        this.style.whiteSpace = value ? 'normal' : 'nowrap';",
+            "    }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/text-base/index.android.js",
+      "sha256": "447e3e1502c15c56e9571366804b1524a791bf351c05744b0aa845ad36569c24",
+      "excerpts": [
+        {
+          "first": 301,
+          "last": 325,
+          "lines": [
+            "    adjustLineBreak() {",
+            "        const whiteSpace = this.whiteSpace;",
+            "        const textOverflow = this.textOverflow;",
+            "        const nativeView = this.nativeTextViewProtected;",
+            "        switch (whiteSpace) {",
+            "            case 'initial':",
+            "            case 'normal':",
+            "            case 'wrap':",
+            "                nativeView.setSingleLine(false);",
+            "                nativeView.setEllipsize(null);",
+            "                break;",
+            "            case 'nowrap': {",
+            "                const isRtl = this.direction === CoreTypes.LayoutDirection.rtl;",
+            "                switch (textOverflow) {",
+            "                    case 'initial':",
+            "                    case 'ellipsis':",
+            "                        nativeView.setSingleLine(true);",
+            "                        break;",
+            "                    default:",
+            "                        nativeView.setSingleLine(false);",
+            "                        break;",
+            "                }",
+            "                nativeView.setEllipsize(isRtl ? android.text.TextUtils.TruncateAt.START : android.text.TextUtils.TruncateAt.END);",
+            "                break;",
+            "            }"
+          ]
+        },
+        {
+          "first": 341,
+          "last": 355,
+          "lines": [
+            "    [fontSizeProperty.getDefault]() {",
+            "        return { nativeSize: this.nativeTextViewProtected.getTextSize() };",
+            "    }",
+            "    [fontSizeProperty.setNative](value) {",
+            "        if (value == null) {",
+            "            return;",
+            "        }",
+            "        if (!this.formattedText || typeof value !== 'number') {",
+            "            if (typeof value === 'number') {",
+            "                this.nativeTextViewProtected.setTextSize(value);",
+            "            }",
+            "            else {",
+            "                this.nativeTextViewProtected.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, value.nativeSize);",
+            "            }",
+            "        }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/page/page-common.js",
+      "sha256": "0ee9b6afe12bf6c62b1b329713a974c91b74c9a2c90deb2477c1cfc9ed726fd4",
+      "excerpts": [
+        {
+          "first": 41,
+          "last": 46,
+          "lines": [
+            "    get androidStatusBarBackground() {",
+            "        return this.style.androidStatusBarBackground;",
+            "    }",
+            "    set androidStatusBarBackground(value) {",
+            "        this.style.androidStatusBarBackground = value;",
+            "    }"
+          ]
+        },
+        {
+          "first": 184,
+          "last": 190,
+          "lines": [
+            "export const androidStatusBarBackgroundProperty = new CssProperty({",
+            "    name: 'androidStatusBarBackground',",
+            "    cssName: 'android-status-bar-background',",
+            "    equalityComparer: Color.equals,",
+            "    valueConverter: (v) => new Color(v),",
+            "});",
+            "androidStatusBarBackgroundProperty.register(Style);"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/page/index.android.js",
+      "sha256": "fa4ffc3992e4fddc962f58d27332c9139a1e85c2f703afb45512e09c8ad0a1bb",
+      "excerpts": [
+        {
+          "first": 66,
+          "last": 79,
+          "lines": [
+            "    [androidStatusBarBackgroundProperty.getDefault]() {",
+            "        if (SDK_VERSION >= 21) {",
+            "            const window = this.getClosestWindow();",
+            "            return window.getStatusBarColor();",
+            "        }",
+            "        return null;",
+            "    }",
+            "    [androidStatusBarBackgroundProperty.setNative](value) {",
+            "        if (SDK_VERSION >= 21) {",
+            "            const window = this.getClosestWindow();",
+            "            const color = value instanceof Color ? value.android : value;",
+            "            window.setStatusBarColor(color);",
+            "        }",
+            "    }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/core/view/index.android.js",
+      "sha256": "8bd499045836de736d70843b47a9f38f5f955f858c69ade26f1eac089014a0d0",
+      "excerpts": [
+        {
+          "first": 1078,
+          "last": 1129,
+          "lines": [
+            "    [statusBarStyleProperty.getDefault]() {",
+            "        return this.style.statusBarStyle;",
+            "    }",
+            "    [statusBarStyleProperty.setNative](value) {",
+            "        this.updateStatusBarStyle(value);",
+            "    }",
+            "    updateStatusBarStyle(value) {",
+            "        if (SDK_VERSION < 21)",
+            "            return; // nothing we can do",
+            "        const window = this.getClosestWindow();",
+            "        // Ensure the window draws system bar backgrounds (required to color status bar)",
+            "        window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);",
+            "        window.addFlags(android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);",
+            "        const decorView = window.getDecorView();",
+            "        // API 30+ path (preferred)",
+            "        if (SDK_VERSION >= 30) {",
+            "            const controller = window.getInsetsController?.();",
+            "            if (controller) {",
+            "                const APPEARANCE_LIGHT_STATUS_BARS = android.view.WindowInsetsController?.APPEARANCE_LIGHT_STATUS_BARS;",
+            "                if (typeof value === 'string') {",
+            "                    this.style.statusBarStyle = value;",
+            "                    if (value === 'light') {",
+            "                        // light icons/text",
+            "                        controller.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS);",
+            "                    }",
+            "                    else {",
+            "                        // dark icons/text",
+            "                        controller.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS);",
+            "                    }",
+            "                }",
+            "                else {",
+            "                    if (value.color != null)",
+            "                        window.setStatusBarColor(value.color);",
+            "                    // No direct passthrough for systemUiVisibility on API 30+, use appearances instead",
+            "                }",
+            "            }",
+            "            return;",
+            "        }",
+            "        // API 23–29 path (systemUiVisibility)",
+            "        if (SDK_VERSION >= 23) {",
+            "            if (typeof value === 'string') {",
+            "                this.style.statusBarStyle = value;",
+            "                let flags = decorView.getSystemUiVisibility();",
+            "                if (value === 'light') {",
+            "                    // Add the LIGHT_STATUS_BAR bit without clobbering other flags",
+            "                    flags |= android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;",
+            "                    decorView.setSystemUiVisibility(flags);",
+            "                }",
+            "                else {",
+            "                    // Remove only the LIGHT_STATUS_BAR bit",
+            "                    flags &= ~android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;",
+            "                    decorView.setSystemUiVisibility(flags);"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/ui/core/view/view-common.js",
+      "sha256": "f9088c4b153efe25e194c14c3bb44e78aad3caf9d0e6195e4cc535e52276e95f",
+      "excerpts": [
+        {
+          "first": 129,
+          "last": 135,
+          "lines": [
+            "        super.onLoaded();",
+            "        setupAccessibleView(this);",
+            "        if (this.statusBarStyle) {",
+            "            // reapply status bar style on load",
+            "            // helps back navigation cases to restore if overridden",
+            "            this.updateStatusBarStyle(this.statusBarStyle);",
+            "        }"
+          ]
+        },
+        {
+          "first": 866,
+          "last": 874,
+          "lines": [
+            "    get statusBarStyle() {",
+            "        return this.style.statusBarStyle;",
+            "    }",
+            "    set statusBarStyle(value) {",
+            "        this.style.statusBarStyle = value;",
+            "    }",
+            "    updateStatusBarStyle(value) {",
+            "        // platform specific impl",
+            "    }"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "migration/nativescript/node_modules/@nativescript/core/application/application.android.js",
+      "sha256": "49f923cf5d9a88756c36a513572a4bc64eabb840fbae14a8dd3a4be7d301e5ba",
+      "excerpts": [
+        {
+          "first": 1123,
+          "last": 1140,
+          "lines": [
+            "                switch (accessibilityRole) {",
+            "                    case AccessibilityRole.Switch:",
+            "                    case AccessibilityRole.RadioButton:",
+            "                    case AccessibilityRole.Checkbox: {",
+            "                        if (Trace.isEnabled()) {",
+            "                            Trace.write(\"onInitializeAccessibilityNodeInfo \".concat(view, \" - set checkable and check=\").concat(view.accessibilityState === AccessibilityState.Checked), Trace.categories.Accessibility);",
+            "                        }",
+            "                        info.setCheckable(true);",
+            "                        info.setChecked(view.accessibilityState === AccessibilityState.Checked);",
+            "                        break;",
+            "                    }",
+            "                    default: {",
+            "                        if (Trace.isEnabled()) {",
+            "                            Trace.write(\"onInitializeAccessibilityNodeInfo \".concat(view, \" - set enabled=\").concat(view.accessibilityState !== AccessibilityState.Disabled, \" and selected=\").concat(view.accessibilityState === AccessibilityState.Selected), Trace.categories.Accessibility);",
+            "                        }",
+            "                        info.setEnabled(view.accessibilityState !== AccessibilityState.Disabled);",
+            "                        info.setSelected(view.accessibilityState === AccessibilityState.Selected);",
+            "                        break;"
+          ]
+        }
+      ]
+    }
+  ]
+}

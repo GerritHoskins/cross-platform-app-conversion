@@ -1,0 +1,3211 @@
+[
+  {
+    "case": "A05.install",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "One replace-install; installed candidate4 hash exactly matches",
+    "observed": {
+      "apkPath": "/data/app/~~KV618fbKCAolgoXjyGOMhQ==/dev.translationtest.ns-Am6yobbB5SxbFbHyoMqP5A==/base.apk",
+      "sha256": "68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/install-check.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-light-baseline-schedule",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c1-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c1-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c1.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 1,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c1-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c1-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c1-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c1.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 1,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c1-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c2-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c2-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c2.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 2,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c2-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c2-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c2-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c2.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 2,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c2-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c3-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c3-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c3.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 3,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c3-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c3-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-schedule-c3-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "schedule",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.schedule.c3.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "21947",
+      "pidAfter": "21947",
+      "page": "schedule",
+      "cycle": 3,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-schedule-c3-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-light-baseline-detail",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c1-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c1-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c1.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 1,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c1-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c1-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c1-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c1.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 1,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c1-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c2-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c2-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c2.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 2,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c2-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c2-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c2-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c2.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 2,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c2-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c3-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c3-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c3.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 3,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c3-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c3-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-detail-c3-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "detail",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.detail.c3.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22457",
+      "pidAfter": "22457",
+      "page": "detail",
+      "cycle": 3,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-detail-c3-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-light-baseline-filter",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c1-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c1-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c1.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 1,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c1-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c1-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c1-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c1.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 1,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c1-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c2-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c2-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c2.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 2,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c2-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c2-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c2-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c2.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 2,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c2-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c3-dark-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c3-dark-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "dark",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c3.dark",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 3,
+      "mode": "dark",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c3-dark-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c3-light-3s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.frame.F6-G07-filter-c3-light-8s",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content; coordinator decides pixel grade",
+    "observed": {
+      "page": "filter",
+      "mode": "light",
+      "mechanicalPagePresent": true,
+      "statusBarInkIsMeasurementNotGrade": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.live.filter.c3.light",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Same process and expected page after switch with no navigation",
+    "observed": {
+      "pidBefore": "22982",
+      "pidAfter": "22982",
+      "page": "filter",
+      "cycle": 3,
+      "mode": "light",
+      "navigationBetweenSwitchAndFrames": false,
+      "identityEvidence": "F6-G07-filter-c3-light-after-identity.json",
+      "limit": "Same PID is not proof of no Activity recreation; window identities separately recorded"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-after-identity.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.execution.filter",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Complete three live cycles on filter and post-cycle modal closure",
+    "observed": {
+      "initialToolingStop": "F6-G07-filter-postcycles-Close target count 0; no tap sent",
+      "resolution": "All 12 live frames had already completed. Exact-command-line idle check found no prior helper; continuation tapped the observed exact Close node and captured Schedule. No cycle was repeated or superseded.",
+      "completed": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/G07-filter-exception.json",
+      "migration/evidence/NS07/f-device3/tooling-idle-confirmation.json",
+      "migration/evidence/NS07/f-device3/tooling-incidents.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.modal-postcycles",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "After live filter cycles: Done, schedule, reopen, Close at fresh XML bounds, schedule",
+    "observed": {
+      "doneReturned": true,
+      "reopened": true,
+      "closeReturned": true,
+      "continuation": "XML content-desc Close, not component automationText Close filter; original helper stopped before tap"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-schedule.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-reopened.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-reopened.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.schedule",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content on cold dark schedule; pixels graded by coordinator",
+    "observed": {
+      "coldProcess": true,
+      "expectedPage": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.detail",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content on cold dark detail; pixels graded by coordinator",
+    "observed": {
+      "coldProcess": true,
+      "expectedPage": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.detail-toolbar-Back",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Open University detail from row; toolbar Back at XML bounds returns to schedule in dark mode",
+    "observed": {
+      "returned": true,
+      "toolbarTap": true,
+      "systemKey": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-before.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-before.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-after.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-after.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.cold.filter",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable status bar/content on cold dark filter; pixels graded by coordinator",
+    "observed": {
+      "coldProcess": true,
+      "expectedPage": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07.dark.filter-Done",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Dark modal Done returns to schedule",
+    "observed": {
+      "returned": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-Done-after.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-Done-after.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-1.0-cold",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-1.0-favorite",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.favorite-empty",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Favorite mode initially empty",
+    "observed": {
+      "rows": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-1.0-all",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.strip",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Open row displacement252px",
+    "observed": {
+      "label": "F6-G05-1.0-strip",
+      "id": 1,
+      "closed": {
+        "x1": 0,
+        "y1": 816,
+        "x2": 807,
+        "y2": 1065,
+        "cx": 404,
+        "cy": 941,
+        "width": 807,
+        "height": 249
+      },
+      "opened": {
+        "x1": 0,
+        "y1": 816,
+        "x2": 555,
+        "y2": 1065,
+        "cx": 278,
+        "cy": 941,
+        "width": 555,
+        "height": 249
+      },
+      "stripWidthPx": 252,
+      "strip": {
+        "x1": 555,
+        "x2": 807,
+        "y1": 816,
+        "y2": 1065
+      },
+      "xmlAction": null,
+      "scale": "1.0",
+      "darkInkBounds": {
+        "x1": 619,
+        "x2": 745,
+        "y1": 926,
+        "y2": 952,
+        "width": 127,
+        "height": 27
+      },
+      "darkInkPixels": 921,
+      "threshold": "R+G+B<400 within revealed strip,16px vertical trim",
+      "limit": "Dark-ink bounds are provisional text-fit corroboration, not a visual grade or guaranteed glyph-only segmentation"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-text-measure.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.strip-close",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Tap open row closes it within10px of closed edge",
+    "observed": {
+      "closedRight": 807,
+      "returnedRight": 807
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-closed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-closed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.detail-selected-add",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Detail favorite selected=true after add",
+    "observed": {
+      "index": "1",
+      "text": "Remove from favorites",
+      "resource-id": "favorite-toggle",
+      "class": "android.widget.Button",
+      "package": "dev.translationtest.ns",
+      "content-desc": "",
+      "checkable": "false",
+      "checked": "false",
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "true",
+      "focused": "false",
+      "scrollable": "false",
+      "long-clickable": "false",
+      "password": "false",
+      "selected": "true",
+      "bounds": "[63,1144][1017,1270]",
+      "drawing-order": "8",
+      "hint": ""
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.detail-selected-remove",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Detail favorite selected=false after remove",
+    "observed": {
+      "index": "1",
+      "text": "Add to favorites",
+      "resource-id": "favorite-toggle",
+      "class": "android.widget.Button",
+      "package": "dev.translationtest.ns",
+      "content-desc": "",
+      "checkable": "false",
+      "checked": "false",
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "true",
+      "focused": "false",
+      "scrollable": "false",
+      "long-clickable": "false",
+      "password": "false",
+      "selected": "false",
+      "bounds": "[63,1144][1017,1270]",
+      "drawing-order": "8",
+      "hint": ""
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.1.0.visual",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable and reachable scaled schedule/detail/filter; coordinator pixel grade required",
+    "observed": {
+      "scale": "1.0",
+      "representativePagesCaptured": true,
+      "textFitProvisional": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-2.0-cold",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-2.0-favorite",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.favorite-empty",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Favorite mode initially empty",
+    "observed": {
+      "rows": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.mode.F6-G05-2.0-all",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Both enabled/checkable; exactly active mode checked",
+    "observed": [
+      {
+        "text": "All sessions",
+        "bounds": "[32,422][785,548]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "true",
+        "selected": "false"
+      },
+      {
+        "text": "Favorite sessions",
+        "bounds": "[32,548][785,674]",
+        "class": "android.widget.RadioButton",
+        "enabled": "true",
+        "checkable": "true",
+        "checked": "false",
+        "selected": "false"
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.strip",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Larger strip; strip wider than observed dark text ink; coordinator confirms fit",
+    "observed": {
+      "label": "F6-G05-2.0-strip",
+      "id": 1,
+      "closed": {
+        "x1": 0,
+        "y1": 852,
+        "x2": 711,
+        "y2": 1248,
+        "cx": 356,
+        "cy": 1050,
+        "width": 711,
+        "height": 396
+      },
+      "opened": {
+        "x1": 0,
+        "y1": 852,
+        "x2": 384,
+        "y2": 1248,
+        "cx": 192,
+        "cy": 1050,
+        "width": 384,
+        "height": 396
+      },
+      "stripWidthPx": 327,
+      "strip": {
+        "x1": 384,
+        "x2": 711,
+        "y1": 852,
+        "y2": 1248
+      },
+      "xmlAction": null,
+      "scale": "2.0",
+      "darkInkBounds": {
+        "x1": 433,
+        "x2": 666,
+        "y1": 1024,
+        "y2": 1073,
+        "width": 234,
+        "height": 50
+      },
+      "darkInkPixels": 3369,
+      "threshold": "R+G+B<400 within revealed strip,16px vertical trim",
+      "limit": "Dark-ink bounds are provisional text-fit corroboration, not a visual grade or guaranteed glyph-only segmentation"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-text-measure.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.strip-close",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Tap open row closes it within10px of closed edge",
+    "observed": {
+      "closedRight": 711,
+      "returnedRight": 711
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-closed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-closed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.detail-selected-add",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Detail favorite selected=true after add",
+    "observed": {
+      "index": "1",
+      "text": "Remove from favorites",
+      "resource-id": "favorite-toggle",
+      "class": "android.widget.Button",
+      "package": "dev.translationtest.ns",
+      "content-desc": "",
+      "checkable": "false",
+      "checked": "false",
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "true",
+      "focused": "false",
+      "scrollable": "false",
+      "long-clickable": "false",
+      "password": "false",
+      "selected": "true",
+      "bounds": "[63,1802][1017,1928]",
+      "drawing-order": "8",
+      "hint": ""
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.detail-selected-remove",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Detail favorite selected=false after remove",
+    "observed": {
+      "index": "1",
+      "text": "Add to favorites",
+      "resource-id": "favorite-toggle",
+      "class": "android.widget.Button",
+      "package": "dev.translationtest.ns",
+      "content-desc": "",
+      "checkable": "false",
+      "checked": "false",
+      "clickable": "true",
+      "enabled": "true",
+      "focusable": "true",
+      "focused": "false",
+      "scrollable": "false",
+      "long-clickable": "false",
+      "password": "false",
+      "selected": "false",
+      "bounds": "[63,1802][1017,1928]",
+      "drawing-order": "8",
+      "hint": ""
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05.2.0.visual",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Readable and reachable scaled schedule/detail/filter; coordinator pixel grade required",
+    "observed": {
+      "scale": "2.0",
+      "representativePagesCaptured": true,
+      "textFitProvisional": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R01.schedule",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Cold schedule loads Breakfast and University of Ionic",
+    "observed": {
+      "visibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "scope": "short assigned regression subset, not full B01"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R01-cold.png",
+      "migration/evidence/NS07/f-device3/F6-R01-cold.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.search",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "IOnic produces case-insensitive name results",
+    "observed": {
+      "query": "IOnic",
+      "mountedRows": [
+        {
+          "id": "session-4",
+          "name": "University of Ionic"
+        },
+        {
+          "id": "session-2",
+          "name": "Getting Started with Ionic"
+        },
+        {
+          "id": "session-3",
+          "name": "Ionic Tooling"
+        },
+        {
+          "id": "session-5",
+          "name": "Migrating to Ionic"
+        },
+        {
+          "id": "session-7",
+          "name": "The Evolution of Ionicons"
+        },
+        {
+          "id": "session-8",
+          "name": "Ionic Pro"
+        }
+      ],
+      "scope": "mounted results only"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-results.png",
+      "migration/evidence/NS07/f-device3/F6-R02-results.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Own SearchBar Clear query empties query and restores unfiltered All list at its original top",
+    "observed": {
+      "search": {
+        "index": "0",
+        "text": "   Search sessions",
+        "resource-id": "dev.translationtest.ns:id/search_src_text",
+        "class": "android.widget.AutoCompleteTextView",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "true",
+        "scrollable": "false",
+        "long-clickable": "true",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[21,289][954,384]",
+        "drawing-order": "3",
+        "hint": "   Search sessions"
+      },
+      "queryEmpty": true,
+      "beforeQueryVisibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "afterClearVisibleRows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "sameTopRows": true,
+      "noColdReset": true,
+      "scope": "Full-list restoration corroborated by restored baseline mounted rows; not an exhaustive20-row census"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R01-cold.png",
+      "migration/evidence/NS07/f-device3/F6-R01-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-results.png",
+      "migration/evidence/NS07/f-device3/F6-R02-results.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.png",
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R03.mode-switch",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "All -> Favorite -> All changes dataset; exactly active mode checked",
+    "observed": {
+      "favoriteEmpty": true,
+      "favoriteStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "false",
+          "selected": "false"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "true",
+          "selected": "false"
+        }
+      ],
+      "allStates": [
+        {
+          "text": "All sessions",
+          "bounds": "[32,422][785,548]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "true",
+          "selected": "false"
+        },
+        {
+          "text": "Favorite sessions",
+          "bounds": "[32,548][785,674]",
+          "class": "android.widget.RadioButton",
+          "enabled": "true",
+          "checkable": "true",
+          "checked": "false",
+          "selected": "false"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.png",
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.xml",
+      "migration/evidence/NS07/f-device3/F6-R03-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-R03-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-R03-all.png",
+      "migration/evidence/NS07/f-device3/F6-R03-all.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-toolbar-back",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "University detail -> toolbar Back at XML bounds -> schedule",
+    "observed": {
+      "returned": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-detail.png",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-return.png",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R04.detail-system-back",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "University detail -> one Back key after fresh XML -> schedule",
+    "observed": {
+      "returned": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R04-system-detail.png",
+      "migration/evidence/NS07/f-device3/F6-R04-system-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-system-return.png",
+      "migration/evidence/NS07/f-device3/F6-R04-system-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R05.filter-Done",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Ten checked track switches; Done returns unchanged",
+    "observed": {
+      "switches": [
+        {
+          "name": "Communication",
+          "checked": "true"
+        },
+        {
+          "name": "Design",
+          "checked": "true"
+        },
+        {
+          "name": "Documentation",
+          "checked": "true"
+        },
+        {
+          "name": "Food",
+          "checked": "true"
+        },
+        {
+          "name": "Ionic",
+          "checked": "true"
+        },
+        {
+          "name": "Navigation",
+          "checked": "true"
+        },
+        {
+          "name": "Services",
+          "checked": "true"
+        },
+        {
+          "name": "Tooling",
+          "checked": "true"
+        },
+        {
+          "name": "Vue",
+          "checked": "true"
+        },
+        {
+          "name": "Workshop",
+          "checked": "true"
+        }
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R05-filter.png",
+      "migration/evidence/NS07/f-device3/F6-R05-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-R05-return.png",
+      "migration/evidence/NS07/f-device3/F6-R05-return.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R06.favorite-add",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Add Breakfast once, acknowledge; Favorite mode contains only Breakfast",
+    "observed": {
+      "rows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R06-add-alert.png",
+      "migration/evidence/NS07/f-device3/F6-R06-add-alert.xml",
+      "migration/evidence/NS07/f-device3/F6-R06-add-acknowledged.png",
+      "migration/evidence/NS07/f-device3/F6-R06-add-acknowledged.xml",
+      "migration/evidence/NS07/f-device3/F6-R06-favorite-added.png",
+      "migration/evidence/NS07/f-device3/F6-R06-favorite-added.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R07.already-favorite",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Already-favorite dialog Cancel preserves one Breakfast",
+    "observed": {
+      "rows": [
+        "session-1"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R07-already-added.png",
+      "migration/evidence/NS07/f-device3/F6-R07-already-added.xml",
+      "migration/evidence/NS07/f-device3/F6-R07-favorite-preserved.png",
+      "migration/evidence/NS07/f-device3/F6-R07-favorite-preserved.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R08.favorite-remove",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Favorite-mode Remove confirms then empty state",
+    "observed": {
+      "rows": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R08-confirm.png",
+      "migration/evidence/NS07/f-device3/F6-R08-confirm.xml",
+      "migration/evidence/NS07/f-device3/F6-R08-empty.png",
+      "migration/evidence/NS07/f-device3/F6-R08-empty.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-reveal",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "One row reveals252px default strip",
+    "observed": {
+      "strip": {
+        "label": "F6-R09-swipe-reveal",
+        "id": 1,
+        "closed": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 807,
+          "y2": 1065,
+          "cx": 404,
+          "cy": 941,
+          "width": 807,
+          "height": 249
+        },
+        "opened": {
+          "x1": 0,
+          "y1": 816,
+          "x2": 555,
+          "y2": 1065,
+          "cx": 278,
+          "cy": 941,
+          "width": 555,
+          "height": 249
+        },
+        "stripWidthPx": 252,
+        "strip": {
+          "x1": 555,
+          "x2": 807,
+          "y1": 816,
+          "y2": 1065
+        },
+        "xmlAction": null
+      }
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-reveal.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-reveal.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R09.swipe-action",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Computed revealed strip action adds Breakfast once without navigation",
+    "observed": {
+      "rows": [
+        "session-1"
+      ],
+      "detailVisible": false
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-alert.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-alert.xml",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-favorite.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "R02.clear-full-list",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Own clear restores empty query and all20 named fixture sessions in order",
+    "observed": {
+      "expectedIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "observedIds": [
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "correctNames": true,
+      "emptyQueryThroughout": true,
+      "noColdResetBetweenOwnClearAndCensus": true,
+      "coldResetOnlyAfterAssertion": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-full-query.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-query.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-cleared.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-cleared.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-0.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-0.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-1.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-1.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-2.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-2.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-3.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-3.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-4.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-4.xml",
+      "migration/evidence/NS07/f-device3/R02-full-list-census.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Settings.restore",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Every recorded setting equals step1; font1.0/night no restored",
+    "observed": [
+      {
+        "key": "model",
+        "before": "sdk_gphone64_x86_64",
+        "after": "sdk_gphone64_x86_64",
+        "equal": true
+      },
+      {
+        "key": "sdk",
+        "before": "36",
+        "after": "36",
+        "equal": true
+      },
+      {
+        "key": "size",
+        "before": "Physical size: 1080x2400",
+        "after": "Physical size: 1080x2400",
+        "equal": true
+      },
+      {
+        "key": "density",
+        "before": "Physical density: 420",
+        "after": "Physical density: 420",
+        "equal": true
+      },
+      {
+        "key": "densityProperty",
+        "before": "",
+        "after": "",
+        "equal": true
+      },
+      {
+        "key": "fontScale",
+        "before": "1.0",
+        "after": "1.0",
+        "equal": true
+      },
+      {
+        "key": "night",
+        "before": "Night mode: no",
+        "after": "Night mode: no",
+        "equal": true
+      },
+      {
+        "key": "accessibilityServices",
+        "before": "null",
+        "after": "null",
+        "equal": true
+      },
+      {
+        "key": "accessibilityEnabled",
+        "before": "0",
+        "after": "0",
+        "equal": true
+      },
+      {
+        "key": "hardKeyboardIme",
+        "before": "0",
+        "after": "0",
+        "equal": true
+      },
+      {
+        "key": "defaultIme",
+        "before": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+        "after": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+        "equal": true
+      }
+    ],
+    "evidence": [
+      "migration/evidence/NS07/f-device3/environment-comparison.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Final.foreground",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Foreground Schedule, light/default sizes, All sessions, empty query, unchanged installed candidate4",
+    "observed": {
+      "schedule": true,
+      "foregroundPackageNodes": true,
+      "allChecked": true,
+      "favoriteUnchecked": true,
+      "queryEmpty": true,
+      "search": {
+        "index": "0",
+        "text": "   Search sessions",
+        "resource-id": "dev.translationtest.ns:id/search_src_text",
+        "class": "android.widget.AutoCompleteTextView",
+        "package": "dev.translationtest.ns",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "true",
+        "enabled": "true",
+        "focusable": "true",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "true",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[21,289][954,384]",
+        "drawing-order": "3",
+        "hint": "   Search sessions"
+      },
+      "rows": [
+        "session-1",
+        "session-4",
+        "session-2",
+        "session-3",
+        "session-5",
+        "session-6"
+      ],
+      "breakfastVisible": true,
+      "installed": {
+        "apkPath": "/data/app/~~KV618fbKCAolgoXjyGOMhQ==/dev.translationtest.ns-Am6yobbB5SxbFbHyoMqP5A==/base.apk",
+        "sha256": "68928e565ba6c340d230088d28eb4c19bebb3d0dfc4b36089a02a0951df94e44"
+      },
+      "night": "Night mode: no",
+      "fontScale": "1.0"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-final-verified-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-final-verified-schedule.xml",
+      "migration/evidence/NS07/f-device3/final-device-state.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Preservation",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Earlier history, redactions, package/checklist and source unchanged; only allowed F6 outputs",
+    "observed": {
+      "branch": true,
+      "head": true,
+      "indexEmpty": true,
+      "nativeDiffByteIdentical": true,
+      "historyUnchanged": true,
+      "porcelainOnlyAllowedAdditions": true,
+      "installedCandidate4": true,
+      "finalForeground": true,
+      "settingsRestored": true
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/preservation-final.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-schedule-live-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "21947",
+      "pidAfter": "21947",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-live-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-live-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-detail-prepare-cold-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "21947",
+      "pidAfter": "21947",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-prepare-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-prepare-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-detail-live-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "22457",
+      "pidAfter": "22457",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-detail-live-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-live-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-filter-prepare-cold-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "22457",
+      "pidAfter": "22457",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-filter-prepare-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-prepare-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-cold-schedule-prepare-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "22982",
+      "pidAfter": "22982",
+      "warningCount": 66,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule-prepare-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule-prepare-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-schedule-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "23741",
+      "pidAfter": "23741",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-schedule-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-schedule-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-cold-detail-prepare-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "23741",
+      "pidAfter": "23741",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail-prepare-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail-prepare-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-detail-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "23856",
+      "pidAfter": "23856",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-cold-filter-prepare-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "23856",
+      "pidAfter": "23856",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter-prepare-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter-prepare-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G07-dark-filter-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "24085",
+      "pidAfter": "24085",
+      "warningCount": 38,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G05-1.0-cold-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "24085",
+      "pidAfter": "24085",
+      "warningCount": 38,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G05-1.0-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "24334",
+      "pidAfter": "24334",
+      "warningCount": 39,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G05-2.0-cold-previous",
+    "status": "FAIL",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "24334",
+      "pidAfter": "24334",
+      "warningCount": 47,
+      "unhandledHandlerError": true,
+      "fatalCrashMarker": false,
+      "errors": [
+        "10-28 14:59:19.158 24334 24334 E JS      : CONSOLE ERROR: Error during execution of native event handler: Error: Failed to get Java object by ID. id=1641, class=android/view/ViewTreeObserver. com.tns.NativeScriptException: Attempt to use cleared object reference id=1641",
+        "10-28 14:59:19.159 24334 24334 W JS      : CONSOLE WARN: [Vue warn]: Unhandled error during execution of app errorHandler",
+        "10-28 14:59:19.160 24334 24334 D TNS.Native: pageUnloaded(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:586:49)"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-G05-2.0-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "25058",
+      "pidAfter": "25058",
+      "warningCount": 39,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R01-cold-previous",
+    "status": "FAIL",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "25058",
+      "pidAfter": "25058",
+      "warningCount": 48,
+      "unhandledHandlerError": true,
+      "fatalCrashMarker": false,
+      "errors": [
+        "10-28 15:00:39.371 25058 25058 E JS      : CONSOLE ERROR: Error during execution of native event handler: Error: Failed to get Java object by ID. id=1088, class=android/view/ViewTreeObserver. com.tns.NativeScriptException: Attempt to use cleared object reference id=1088",
+        "10-28 15:00:39.371 25058 25058 W JS      : CONSOLE WARN: [Vue warn]: Unhandled error during execution of app errorHandler",
+        "10-28 15:00:39.376 25058 25058 D TNS.Native: pageUnloaded(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:586:49)"
+      ]
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R01-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R01-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R-regression-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "25868",
+      "pidAfter": "25868",
+      "warningCount": 47,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R-regression-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R-regression-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R10-final-cold-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "25868",
+      "pidAfter": "25868",
+      "warningCount": 47,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R10-final-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R10-final-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R-final-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "27373",
+      "pidAfter": "27373",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R-final-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R-final-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R02-full-census-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "27373",
+      "pidAfter": "27373",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-full-census-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R02-full-census-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R02-full-final-cold-previous",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "27373",
+      "pidAfter": "27373",
+      "warningCount": 10,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-full-final-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R02-full-final-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-R02-full-final-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "27870",
+      "pidAfter": "27870",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R02-full-final-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R02-full-final-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06.window.F6-final-log-window",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS event-handler error in bounded400-line PID window",
+    "observed": {
+      "pid": "27870",
+      "pidAfter": "27870",
+      "warningCount": 9,
+      "unhandledHandlerError": false,
+      "fatalCrashMarker": false,
+      "errors": []
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-final-log-window-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-final-log-window-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "A06",
+    "status": "FAIL",
+    "run": "f-device3",
+    "expected": "No fatal crash or unhandled JS error in representative bounded PID log windows",
+    "observed": {
+      "windowCount": 22,
+      "failedWindows": [
+        {
+          "label": "F6-G05-2.0-cold-previous",
+          "pid": "24334",
+          "errors": [
+            "10-28 14:59:19.158 24334 24334 E JS      : CONSOLE ERROR: Error during execution of native event handler: Error: Failed to get Java object by ID. id=1641, class=android/view/ViewTreeObserver. com.tns.NativeScriptException: Attempt to use cleared object reference id=1641",
+            "10-28 14:59:19.159 24334 24334 W JS      : CONSOLE WARN: [Vue warn]: Unhandled error during execution of app errorHandler",
+            "10-28 14:59:19.160 24334 24334 D TNS.Native: pageUnloaded(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:586:49)"
+          ]
+        },
+        {
+          "label": "F6-R01-cold-previous",
+          "pid": "25058",
+          "errors": [
+            "10-28 15:00:39.371 25058 25058 E JS      : CONSOLE ERROR: Error during execution of native event handler: Error: Failed to get Java object by ID. id=1088, class=android/view/ViewTreeObserver. com.tns.NativeScriptException: Attempt to use cleared object reference id=1088",
+            "10-28 15:00:39.371 25058 25058 W JS      : CONSOLE WARN: [Vue warn]: Unhandled error during execution of app errorHandler",
+            "10-28 15:00:39.376 25058 25058 D TNS.Native: pageUnloaded(file:///data/data/dev.translationtest.ns/files/app/bundle.mjs:586:49)"
+          ]
+        }
+      ],
+      "observedEffect": "At font-scale set/restore boundaries, pageUnloaded emitted cleared ViewTreeObserver reference errors and Vue unhandled errorHandler warnings. PID survived within captured window; UI flows continued; no fatal-crash marker. No fix performed.",
+      "warnings": "CPU variant, ashmem pinning, HWUI/image decoding, Back-dispatch, jank and input messages retained verbatim; not warning-free"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/A06-log-review.json",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold-previous-warnings-errors-verbatim.txt",
+      "migration/evidence/NS07/f-device3/F6-R01-cold-previous-logcat.txt",
+      "migration/evidence/NS07/f-device3/F6-R01-cold-previous-warnings-errors-verbatim.txt"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G05",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Required1.0/2.0 spot checks with coordinator visual acceptance",
+    "observed": {
+      "modeChecks": 6,
+      "allModeChecksPassed": true,
+      "strips": [
+        {
+          "scale": "1.0",
+          "stripWidthPx": 252,
+          "darkInkBounds": {
+            "x1": 619,
+            "x2": 745,
+            "y1": 926,
+            "y2": 952,
+            "width": 127,
+            "height": 27
+          },
+          "darkInkPixels": 921,
+          "threshold": "R+G+B<400 within revealed strip,16px vertical trim",
+          "limit": "Dark-ink bounds are provisional text-fit corroboration, not a visual grade or guaranteed glyph-only segmentation"
+        },
+        {
+          "scale": "2.0",
+          "stripWidthPx": 327,
+          "darkInkBounds": {
+            "x1": 433,
+            "x2": 666,
+            "y1": 1024,
+            "y2": 1073,
+            "width": 234,
+            "height": 50
+          },
+          "darkInkPixels": 3369,
+          "threshold": "R+G+B<400 within revealed strip,16px vertical trim",
+          "limit": "Dark-ink bounds are provisional text-fit corroboration, not a visual grade or guaranteed glyph-only segmentation"
+        }
+      ],
+      "detailFavoriteStates": "Selected true after add; false after remove at both scales",
+      "visual": "Coordinator pixels pending",
+      "separateFailure": "A06 unhandled pageUnloaded errors appeared at font-scale transitions"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-all.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-text-measure.json",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-closed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-strip-closed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-added.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail-removed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G05-1.0-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-all.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-text-measure.json",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-closed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-strip-closed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-added.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail-removed.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G05-2.0-filter.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "G07",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "36 live frames, three baselines, cold dark pages and modal/detail navigation; visual grade by coordinator",
+    "observed": {
+      "liveFrames": 36,
+      "allLiveFramesCaptured": true,
+      "blankLiveBars": [],
+      "allG07Frames": 48,
+      "statusBarInk": "Measurement only, not a grade",
+      "visual": "Coordinator pixel/privacy inspection pending"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-schedule.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c1-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c2-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-schedule-c3-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c1-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c2-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-detail-c3-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G07-light-baseline-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c1-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c2-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-dark-after-identity.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-3s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-8s.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-c3-light-after-identity.json",
+      "migration/evidence/NS07/f-device3/G07-filter-exception.json",
+      "migration/evidence/NS07/f-device3/tooling-idle-confirmation.json",
+      "migration/evidence/NS07/f-device3/tooling-incidents.json",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-closed-schedule.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-schedule.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-reopened.png",
+      "migration/evidence/NS07/f-device3/F6-G07-filter-postcycles-reopened.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-schedule.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-before.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-before.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-after.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-detail-back-after.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-cold-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-Done-after.png",
+      "migration/evidence/NS07/f-device3/F6-G07-dark-filter-Done-after.xml"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Regression",
+    "status": "PASS",
+    "run": "f-device3",
+    "expected": "Assigned short regression subset including own Clear query and full restored list",
+    "observed": {
+      "cases": [
+        {
+          "case": "R01.schedule",
+          "status": "PASS"
+        },
+        {
+          "case": "R02.search",
+          "status": "PASS"
+        },
+        {
+          "case": "R02.clear",
+          "status": "PASS"
+        },
+        {
+          "case": "R03.mode-switch",
+          "status": "PASS"
+        },
+        {
+          "case": "R04.detail-toolbar-back",
+          "status": "PASS"
+        },
+        {
+          "case": "R04.detail-system-back",
+          "status": "PASS"
+        },
+        {
+          "case": "R05.filter-Done",
+          "status": "PASS"
+        },
+        {
+          "case": "R06.favorite-add",
+          "status": "PASS"
+        },
+        {
+          "case": "R07.already-favorite",
+          "status": "PASS"
+        },
+        {
+          "case": "R08.favorite-remove",
+          "status": "PASS"
+        },
+        {
+          "case": "R09.swipe-reveal",
+          "status": "PASS"
+        },
+        {
+          "case": "R09.swipe-action",
+          "status": "PASS"
+        },
+        {
+          "case": "R02.clear-full-list",
+          "status": "PASS"
+        }
+      ],
+      "scope": "Not full Phase B/G acceptance"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/F6-R01-cold.png",
+      "migration/evidence/NS07/f-device3/F6-R01-cold.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-results.png",
+      "migration/evidence/NS07/f-device3/F6-R02-results.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.png",
+      "migration/evidence/NS07/f-device3/F6-R02-cleared.xml",
+      "migration/evidence/NS07/f-device3/F6-R03-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-R03-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-R03-all.png",
+      "migration/evidence/NS07/f-device3/F6-R03-all.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-detail.png",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-return.png",
+      "migration/evidence/NS07/f-device3/F6-R04-toolbar-return.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-system-detail.png",
+      "migration/evidence/NS07/f-device3/F6-R04-system-detail.xml",
+      "migration/evidence/NS07/f-device3/F6-R04-system-return.png",
+      "migration/evidence/NS07/f-device3/F6-R04-system-return.xml",
+      "migration/evidence/NS07/f-device3/F6-R05-filter.png",
+      "migration/evidence/NS07/f-device3/F6-R05-filter.xml",
+      "migration/evidence/NS07/f-device3/F6-R05-return.png",
+      "migration/evidence/NS07/f-device3/F6-R05-return.xml",
+      "migration/evidence/NS07/f-device3/F6-R06-add-alert.png",
+      "migration/evidence/NS07/f-device3/F6-R06-add-alert.xml",
+      "migration/evidence/NS07/f-device3/F6-R06-add-acknowledged.png",
+      "migration/evidence/NS07/f-device3/F6-R06-add-acknowledged.xml",
+      "migration/evidence/NS07/f-device3/F6-R06-favorite-added.png",
+      "migration/evidence/NS07/f-device3/F6-R06-favorite-added.xml",
+      "migration/evidence/NS07/f-device3/F6-R07-already-added.png",
+      "migration/evidence/NS07/f-device3/F6-R07-already-added.xml",
+      "migration/evidence/NS07/f-device3/F6-R07-favorite-preserved.png",
+      "migration/evidence/NS07/f-device3/F6-R07-favorite-preserved.xml",
+      "migration/evidence/NS07/f-device3/F6-R08-confirm.png",
+      "migration/evidence/NS07/f-device3/F6-R08-confirm.xml",
+      "migration/evidence/NS07/f-device3/F6-R08-empty.png",
+      "migration/evidence/NS07/f-device3/F6-R08-empty.xml",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-reveal.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-reveal.xml",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-alert.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-alert.xml",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-favorite.png",
+      "migration/evidence/NS07/f-device3/F6-R09-swipe-action-favorite.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-query.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-query.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-cleared.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-cleared.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-0.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-0.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-1.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-1.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-2.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-2.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-3.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-3.xml",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-4.png",
+      "migration/evidence/NS07/f-device3/F6-R02-full-list-scroll-4.xml",
+      "migration/evidence/NS07/f-device3/R02-full-list-census.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  },
+  {
+    "case": "Tooling.outer-provenance",
+    "status": "LIMITED",
+    "run": "f-device3",
+    "expected": "Timed receipts for every command",
+    "observed": {
+      "childReceipts": "Actual command/args/cwd/exit/start/duration and bounded stdout/stderr complete",
+      "outerReceipts": "Terminal commands/exits and bounded excerpts recorded; outer startedAt/durationMs null and separate streams unavailable"
+    },
+    "evidence": [
+      "migration/evidence/NS07/f-device3/outer-terminal-ledger.json",
+      "migration/evidence/NS07/f-device3/outer-command-provenance.json"
+    ],
+    "observer": "Hermes GPT-6.1 Sol high (device)"
+  }
+]

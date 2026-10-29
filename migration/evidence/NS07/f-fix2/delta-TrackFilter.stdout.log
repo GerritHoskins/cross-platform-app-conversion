@@ -1,0 +1,46 @@
+diff --git "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix2\\f1-TrackFilter.vue" "b/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\src\\components\\TrackFilter.vue"
+index ba6fa835..4dbd8ecd 100644
+--- "a/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\evidence\\NS07\\f-fix2\\f1-TrackFilter.vue"
++++ "b/C:\\Users\\Gerrit\\job-search\\POCs\\cross-platform-translation-test-app-main\\migration\\nativescript\\src\\components\\TrackFilter.vue"
+@@ -1,11 +1,31 @@
+ <script lang="ts" setup>
+ import { $closeModal, ref } from 'nativescript-vue';
+-import type { EventData, Switch } from '@nativescript/core';
++import { Application, type EventData, type Page, type Switch } from '@nativescript/core';
+ import { useConferenceStore } from '../state/conference-store';
+ import { checkedTrackNames, setAllTracks, toggleTrack } from '../state/track-filter';
+ 
+ const store = useConferenceStore();
+ const draft = ref(store.getters.trackOptions);
++let statusBarPage: Page | undefined;
++
++function reapplyStatusBarStyle() {
++  const page = statusBarPage;
++  // Core refreshes edge-to-edge after emitting the appearance event.
++  page?.android?.post(() => {
++    if (statusBarPage === page && page.isLoaded) page.updateStatusBarStyle('dark');
++  });
++}
++
++function pageLoaded(event: EventData) {
++  if (statusBarPage) return;
++  statusBarPage = event.object as Page;
++  Application.on(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++}
++
++function pageUnloaded() {
++  Application.off(Application.systemAppearanceChangedEvent, reapplyStatusBarStyle);
++  statusBarPage = undefined;
++}
+ 
+ function changeTrack(event: EventData, name: string) {
+   // checkedChange also fires for programmatic updates; only a changed native
+@@ -19,7 +39,7 @@ function changeTrack(event: EventData, name: string) {
+ 
+ <template>
+   <Frame>
+-    <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff">
++    <Page class="filter-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
+       <ActionBar title="Filter Sessions" class="filter-action-bar">
+         <NavigationButton
+           text="Close"

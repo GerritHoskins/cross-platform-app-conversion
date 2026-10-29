@@ -1,10 +1,68 @@
 <script lang="ts" setup>
 import { $navigateBack, computed, onMounted } from 'nativescript-vue';
+import { type EventData, type Page } from '@nativescript/core';
 import { useConferenceStore } from '../state/conference-store';
 import { parseSessionId } from '../state/session-detail';
 
 const props = defineProps<{ sessionId: string }>();
 const store = useConferenceStore();
+let statusBarPage: Page | undefined;
+let statusBarPreDraw: android.view.ViewTreeObserver.OnPreDrawListener | undefined;
+let statusBarAttachState: android.view.View.OnAttachStateChangeListener | undefined;
+let statusBarPreDrawRegistered = false;
+
+function setStatusBarPreDraw(view: android.view.View, registered: boolean) {
+  if (!statusBarPreDraw || statusBarPreDrawRegistered === registered) return;
+  // F7: obtain the current observer while its view still owns it; never cache it.
+  const observer = view.getViewTreeObserver();
+  if (registered) observer.addOnPreDrawListener(statusBarPreDraw);
+  else observer.removeOnPreDrawListener(statusBarPreDraw);
+  statusBarPreDrawRegistered = registered;
+}
+
+function pageLoaded(event: EventData) {
+  if (statusBarPage) return;
+  const page = event.object as Page;
+  const view = page.android;
+  if (!view || android.os.Build.VERSION.SDK_INT < 30) return;
+  statusBarPage = page;
+  statusBarPreDraw = new android.view.ViewTreeObserver.OnPreDrawListener({
+    onPreDraw() {
+      if (statusBarPage !== page || !page.isLoaded) return true;
+      // F5: repair after this window's configuration/insets/layout, not a posted delay.
+      const controller = page.getClosestWindow().getInsetsController();
+      const darkIcons = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS;
+      if (controller && !(controller.getSystemBarsAppearance() & darkIcons)) {
+        page.updateStatusBarStyle('dark');
+      }
+      return true;
+    },
+  });
+  statusBarAttachState = new android.view.View.OnAttachStateChangeListener({
+    onViewAttachedToWindow(view) {
+      if (statusBarPage === page && page.isLoaded) setStatusBarPreDraw(view, true);
+    },
+    onViewDetachedFromWindow(view) {
+      // Android still exposes the attached tree here, before clearing AttachInfo.
+      if (statusBarPage === page) setStatusBarPreDraw(view, false);
+    },
+  });
+  view.addOnAttachStateChangeListener(statusBarAttachState);
+  setStatusBarPreDraw(view, true);
+}
+
+function pageUnloaded() {
+  const view = statusBarPage?.android;
+  if (view) {
+    setStatusBarPreDraw(view, false);
+    if (statusBarAttachState) view.removeOnAttachStateChangeListener(statusBarAttachState);
+  }
+  statusBarPage = undefined;
+  statusBarPreDraw = undefined;
+  statusBarAttachState = undefined;
+  statusBarPreDrawRegistered = false;
+}
+
 const loading = computed(() => store.state.status === 'idle' || store.state.status === 'loading');
 const session = computed(() => {
   const id = parseSessionId(props.sessionId);
@@ -24,7 +82,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Page class="session-page">
+  <Page class="session-page" statusBarStyle="dark" androidStatusBarBackground="#ffffff" @loaded="pageLoaded" @unloaded="pageUnloaded">
     <ActionBar title="Session" class="session-action-bar">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack()" />
     </ActionBar>
@@ -52,7 +110,7 @@ onMounted(() => {
             :text="favorite ? 'Remove from favorites' : 'Add to favorites'"
             automationText="favorite-toggle"
             :isEnabled="!!session"
-            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : undefined"
+            :accessibilityState="!session ? 'disabled' : favorite ? 'selected' : 'unchecked'"
             marginTop="16"
             @tap="toggleFavorite"
           />

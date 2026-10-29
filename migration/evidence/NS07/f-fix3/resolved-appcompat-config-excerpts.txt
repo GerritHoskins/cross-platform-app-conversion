@@ -1,0 +1,387 @@
+
+  public void onConfigurationChanged(android.content.res.Configuration);
+    Code:
+       0: aload_0
+       1: getfield      #313                // Field mHasActionBar:Z
+       4: ifeq          28
+       7: aload_0
+       8: getfield      #384                // Field mSubDecorInstalled:Z
+      11: ifeq          28
+      14: aload_0
+      15: invokevirtual #327                // Method getSupportActionBar:()Landroidx/appcompat/app/ActionBar;
+      18: astore_2
+      19: aload_2
+      20: ifnull        28
+      23: aload_2
+      24: aload_1
+      25: invokevirtual #387                // Method androidx/appcompat/app/ActionBar.onConfigurationChanged:(Landroid/content/res/Configuration;)V
+      28: invokestatic  #390                // Method androidx/appcompat/widget/AppCompatDrawableManager.get:()Landroidx/appcompat/widget/AppCompatDrawableManager;
+      31: aload_0
+      32: getfield      #49                 // Field mContext:Landroid/content/Context;
+      35: invokevirtual #393                // Method androidx/appcompat/widget/AppCompatDrawableManager.onConfigurationChanged:(Landroid/content/Context;)V
+      38: aload_0
+      39: new           #199                // class android/content/res/Configuration
+      42: dup
+      43: aload_0
+      44: getfield      #49                 // Field mContext:Landroid/content/Context;
+      47: invokevirtual #215                // Method android/content/Context.getResources:()Landroid/content/res/Resources;
+      50: invokevirtual #219                // Method android/content/res/Resources.getConfiguration:()Landroid/content/res/Configuration;
+      53: invokespecial #286                // Method android/content/res/Configuration."<init>":(Landroid/content/res/Configuration;)V
+      56: putfield      #288                // Field mEffectiveConfiguration:Landroid/content/res/Configuration;
+      59: aload_0
+      60: iconst_0
+      61: iconst_0
+      62: invokespecial #395                // Method applyApplicationSpecificConfig:(ZZ)Z
+      65: pop
+      66: return
+    LineNumberTable:
+      line 675: 0
+      line 678: 14
+      line 679: 19
+      line 680: 23
+      line 685: 28
+      line 689: 38
+      line 702: 59
+      line 704: 66
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+         19       9     2    ab   Landroidx/appcompat/app/ActionBar;
+          0      67     0  this   Landroidx/appcompat/app/AppCompatDelegateImpl;
+          0      67     1 newConfig   Landroid/content/res/Configuration;
+
+
+  private boolean updateAppConfiguration(int, androidx.core.os.LocaleListCompat, boolean);
+    Code:
+       0: iconst_0
+       1: istore        4
+       3: aload_0
+       4: aload_0
+       5: getfield      #49                 // Field mContext:Landroid/content/Context;
+       8: iload_1
+       9: aload_2
+      10: aconst_null
+      11: iconst_0
+      12: invokespecial #179                // Method createOverrideAppConfiguration:(Landroid/content/Context;ILandroidx/core/os/LocaleListCompat;Landroid/content/res/Configuration;Z)Landroid/content/res/Configuration;
+      15: astore        5
+      17: aload_0
+      18: aload_0
+      19: getfield      #49                 // Field mContext:Landroid/content/Context;
+      22: invokespecial #1769               // Method getActivityHandlesConfigChangesFlags:(Landroid/content/Context;)I
+      25: istore        6
+      27: aload_0
+      28: getfield      #288                // Field mEffectiveConfiguration:Landroid/content/res/Configuration;
+      31: ifnonnull     47
+      34: aload_0
+      35: getfield      #49                 // Field mContext:Landroid/content/Context;
+      38: invokevirtual #215                // Method android/content/Context.getResources:()Landroid/content/res/Resources;
+      41: invokevirtual #219                // Method android/content/res/Resources.getConfiguration:()Landroid/content/res/Configuration;
+      44: goto          51
+      47: aload_0
+      48: getfield      #288                // Field mEffectiveConfiguration:Landroid/content/res/Configuration;
+      51: astore        7
+      53: aload         7
+      55: getfield      #202                // Field android/content/res/Configuration.uiMode:I
+      58: bipush        48
+      60: iand
+      61: istore        8
+      63: aload         5
+      65: getfield      #202                // Field android/content/res/Configuration.uiMode:I
+      68: bipush        48
+      70: iand
+      71: istore        9
+      73: aload_0
+      74: aload         7
+      76: invokevirtual #1670               // Method getConfigurationLocales:(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
+      79: astore        10
+      81: aload_2
+      82: ifnonnull     91
+      85: aconst_null
+      86: astore        11
+      88: goto          99
+      91: aload_0
+      92: aload         5
+      94: invokevirtual #1670               // Method getConfigurationLocales:(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
+      97: astore        11
+      99: iconst_0
+     100: istore        12
+     102: iload         8
+     104: iload         9
+     106: if_icmpeq     117
+     109: iload         12
+     111: sipush        512
+     114: ior
+     115: istore        12
+     117: aload         11
+     119: ifnull        146
+     122: aload         10
+     124: aload         11
+     126: invokevirtual #1662               // Method androidx/core/os/LocaleListCompat.equals:(Ljava/lang/Object;)Z
+     129: ifne          146
+     132: iload         12
+     134: iconst_4
+     135: ior
+     136: istore        12
+     138: iload         12
+     140: sipush        8192
+     143: ior
+     144: istore        12
+     146: iload         6
+     148: iconst_m1
+     149: ixor
+     150: iload         12
+     152: iand
+     153: ifeq          258
+     156: iload_3
+     157: ifeq          258
+     160: aload_0
+     161: getfield      #155                // Field mBaseContextAttached:Z
+     164: ifeq          258
+     167: getstatic     #192                // Field sCanReturnDifferentContext:Z
+     170: ifne          180
+     173: aload_0
+     174: getfield      #292                // Field mCreated:Z
+     177: ifeq          258
+     180: aload_0
+     181: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     184: instanceof    #132                // class android/app/Activity
+     187: ifeq          258
+     190: aload_0
+     191: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     194: checkcast     #132                // class android/app/Activity
+     197: invokevirtual #1775               // Method android/app/Activity.isChild:()Z
+     200: ifne          258
+     203: getstatic     #142                // Field android/os/Build$VERSION.SDK_INT:I
+     206: bipush        31
+     208: if_icmplt     245
+     211: iload         12
+     213: sipush        8192
+     216: iand
+     217: ifeq          245
+     220: aload_0
+     221: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     224: checkcast     #132                // class android/app/Activity
+     227: invokevirtual #134                // Method android/app/Activity.getWindow:()Landroid/view/Window;
+     230: invokevirtual #441                // Method android/view/Window.getDecorView:()Landroid/view/View;
+     233: astore        13
+     235: aload         13
+     237: aload         5
+     239: invokevirtual #1778               // Method android/content/res/Configuration.getLayoutDirection:()I
+     242: invokevirtual #1781               // Method android/view/View.setLayoutDirection:(I)V
+     245: aload_0
+     246: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     249: checkcast     #132                // class android/app/Activity
+     252: invokestatic  #1783               // Method androidx/core/app/ActivityCompat.recreate:(Landroid/app/Activity;)V
+     255: iconst_1
+     256: istore        4
+     258: iload         4
+     260: ifne          295
+     263: iload         12
+     265: ifeq          295
+     268: aload_0
+     269: iload         9
+     271: aload         11
+     273: iload         12
+     275: iload         6
+     277: iand
+     278: iload         12
+     280: if_icmpne     287
+     283: iconst_1
+     284: goto          288
+     287: iconst_0
+     288: aconst_null
+     289: invokespecial #1789               // Method updateResourcesConfiguration:(ILandroidx/core/os/LocaleListCompat;ZLandroid/content/res/Configuration;)V
+     292: iconst_1
+     293: istore        4
+     295: iload         4
+     297: ifeq          348
+     300: aload_0
+     301: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     304: instanceof    #66                 // class androidx/appcompat/app/AppCompatActivity
+     307: ifeq          348
+     310: iload         12
+     312: sipush        512
+     315: iand
+     316: ifeq          330
+     319: aload_0
+     320: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     323: checkcast     #66                 // class androidx/appcompat/app/AppCompatActivity
+     326: iload_1
+     327: invokevirtual #1793               // Method androidx/appcompat/app/AppCompatActivity.onNightModeChanged:(I)V
+     330: iload         12
+     332: iconst_4
+     333: iand
+     334: ifeq          348
+     337: aload_0
+     338: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     341: checkcast     #66                 // class androidx/appcompat/app/AppCompatActivity
+     344: aload_2
+     345: invokevirtual #1796               // Method androidx/appcompat/app/AppCompatActivity.onLocalesChanged:(Landroidx/core/os/LocaleListCompat;)V
+     348: aload         11
+     350: ifnull        371
+     353: aload_0
+     354: aload_0
+     355: aload_0
+     356: getfield      #49                 // Field mContext:Landroid/content/Context;
+     359: invokevirtual #215                // Method android/content/Context.getResources:()Landroid/content/res/Resources;
+     362: invokevirtual #219                // Method android/content/res/Resources.getConfiguration:()Landroid/content/res/Configuration;
+     365: invokevirtual #1670               // Method getConfigurationLocales:(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
+     368: invokevirtual #1799               // Method setDefaultLocalesForLocaleList:(Landroidx/core/os/LocaleListCompat;)V
+     371: iload         4
+     373: ireturn
+    LineNumberTable:
+      line 2744: 0
+      line 2746: 3
+      line 2747: 12
+      line 2749: 17
+      line 2750: 27
+      line 2751: 34
+      line 2752: 53
+      line 2754: 63
+      line 2756: 73
+      line 2758: 81
+      line 2759: 85
+      line 2761: 91
+      line 2766: 99
+      line 2767: 102
+      line 2768: 109
+      line 2770: 117
+      line 2771: 132
+      line 2772: 138
+      line 2793: 146
+      line 2798: 197
+      line 2809: 203
+      line 2811: 220
+      line 2812: 235
+      line 2814: 245
+      line 2815: 255
+      line 2820: 258
+      line 2828: 268
+      line 2832: 292
+      line 2841: 295
+      line 2842: 310
+      line 2843: 319
+      line 2845: 330
+      line 2846: 337
+      line 2850: 348
+      line 2855: 353
+      line 2856: 359
+      line 2855: 365
+      line 2858: 371
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+         88       3    11 newLocales   Landroidx/core/os/LocaleListCompat;
+        235      10    13  view   Landroid/view/View;
+          0     374     0  this   Landroidx/appcompat/app/AppCompatDelegateImpl;
+          0     374     1 nightMode   I
+          0     374     2 locales   Landroidx/core/os/LocaleListCompat;
+          0     374     3 allowRecreation   Z
+          3     371     4 handled   Z
+         17     357     5 overrideConfig   Landroid/content/res/Configuration;
+         27     347     6 activityHandlingConfigChange   I
+         53     321     7 currentConfiguration   Landroid/content/res/Configuration;
+         63     311     8 currentNightMode   I
+         73     301     9 newNightMode   I
+         81     293    10 currentLocales   Landroidx/core/os/LocaleListCompat;
+         99     275    11 newLocales   Landroidx/core/os/LocaleListCompat;
+        102     272    12 configChanges   I
+
+
+  private void updateResourcesConfiguration(int, androidx.core.os.LocaleListCompat, boolean, android.content.res.Configuration);
+    Code:
+       0: aload_0
+       1: getfield      #49                 // Field mContext:Landroid/content/Context;
+       4: invokevirtual #215                // Method android/content/Context.getResources:()Landroid/content/res/Resources;
+       7: astore        5
+       9: new           #199                // class android/content/res/Configuration
+      12: dup
+      13: aload         5
+      15: invokevirtual #219                // Method android/content/res/Resources.getConfiguration:()Landroid/content/res/Configuration;
+      18: invokespecial #286                // Method android/content/res/Configuration."<init>":(Landroid/content/res/Configuration;)V
+      21: astore        6
+      23: aload         4
+      25: ifnull        36
+      28: aload         6
+      30: aload         4
+      32: invokevirtual #1802               // Method android/content/res/Configuration.updateFrom:(Landroid/content/res/Configuration;)I
+      35: pop
+      36: aload         6
+      38: iload_1
+      39: aload         5
+      41: invokevirtual #219                // Method android/content/res/Resources.getConfiguration:()Landroid/content/res/Configuration;
+      44: getfield      #202                // Field android/content/res/Configuration.uiMode:I
+      47: bipush        -49
+      49: iand
+      50: ior
+      51: putfield      #202                // Field android/content/res/Configuration.uiMode:I
+      54: aload_2
+      55: ifnull        65
+      58: aload_0
+      59: aload         6
+      61: aload_2
+      62: invokevirtual #1766               // Method setConfigurationLocales:(Landroid/content/res/Configuration;Landroidx/core/os/LocaleListCompat;)V
+      65: aload         5
+      67: aload         6
+      69: aconst_null
+      70: invokevirtual #1806               // Method android/content/res/Resources.updateConfiguration:(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
+      73: getstatic     #142                // Field android/os/Build$VERSION.SDK_INT:I
+      76: bipush        26
+      78: if_icmpge     86
+      81: aload         5
+      83: invokestatic  #1810               // Method androidx/appcompat/app/ResourcesFlusher.flush:(Landroid/content/res/Resources;)V
+      86: aload_0
+      87: getfield      #478                // Field mThemeResId:I
+      90: ifeq          127
+      93: aload_0
+      94: getfield      #49                 // Field mContext:Landroid/content/Context;
+      97: aload_0
+      98: getfield      #478                // Field mThemeResId:I
+     101: invokevirtual #1816               // Method android/content/Context.setTheme:(I)V
+     104: getstatic     #142                // Field android/os/Build$VERSION.SDK_INT:I
+     107: bipush        23
+     109: if_icmplt     127
+     112: aload_0
+     113: getfield      #49                 // Field mContext:Landroid/content/Context;
+     116: invokevirtual #241                // Method android/content/Context.getTheme:()Landroid/content/res/Resources$Theme;
+     119: aload_0
+     120: getfield      #478                // Field mThemeResId:I
+     123: iconst_1
+     124: invokevirtual #908                // Method android/content/res/Resources$Theme.applyStyle:(IZ)V
+     127: iload_3
+     128: ifeq          147
+     131: aload_0
+     132: getfield      #57                 // Field mHost:Ljava/lang/Object;
+     135: instanceof    #132                // class android/app/Activity
+     138: ifeq          147
+     141: aload_0
+     142: aload         6
+     144: invokespecial #1819               // Method updateActivityConfiguration:(Landroid/content/res/Configuration;)V
+     147: return
+    LineNumberTable:
+      line 2866: 0
+      line 2867: 9
+      line 2868: 23
+      line 2869: 28
+      line 2871: 36
+      line 2872: 41
+      line 2873: 54
+      line 2874: 58
+      line 2876: 65
+      line 2879: 73
+      line 2880: 81
+      line 2883: 86
+      line 2886: 93
+      line 2888: 104
+      line 2894: 112
+      line 2898: 127
+      line 2899: 141
+      line 2901: 147
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+          0     148     0  this   Landroidx/appcompat/app/AppCompatDelegateImpl;
+          0     148     1 uiModeNightModeValue   I
+          0     148     2 locales   Landroidx/core/os/LocaleListCompat;
+          0     148     3 callOnConfigChange   Z
+          0     148     4 configOverlay   Landroid/content/res/Configuration;
+          9     139     5   res   Landroid/content/res/Resources;
+         23     125     6  conf   Landroid/content/res/Configuration;
+
